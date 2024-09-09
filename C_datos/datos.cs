@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_datos
 {
-    public partial class Form1 : Form
+    public partial class datos : Form
     {
-        public Form1()
+        public datos()
         {
             InitializeComponent();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
