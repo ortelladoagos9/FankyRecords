@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class Form1 : Form
+    public partial class menuAdmin : Form
     {
-        public Form1()
+        public menuAdmin()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
