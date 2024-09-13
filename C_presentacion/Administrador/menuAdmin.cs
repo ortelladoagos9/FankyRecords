@@ -27,11 +27,20 @@ namespace FankyRecords.C_presentacion.Administrador
 
             // Mostrar el formulario de ventas
             ventas.Show();
+
+            ventas.BringToFront();
         }
 
         private void menuAdmin_Load(object sender, EventArgs e)
         {
+            // Crear una nueva instancia del formulario 'ventas'
+            inicioMenuAdmin inicioMenu = new inicioMenuAdmin();
 
+            // Especificar que el formulario de ventas es hijo del MDI Parent
+            inicioMenu.MdiParent = this;
+
+            // Mostrar el formulario de ventas
+            inicioMenu.Show();
         }
     }
 }
