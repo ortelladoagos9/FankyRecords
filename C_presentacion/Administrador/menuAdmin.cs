@@ -17,7 +17,19 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario 'ventas'
+            ventas ventas = new ventas();
+
+            // Especificar que el formulario de ventas es hijo del MDI Parent
+            ventas.MdiParent = this;
+
+            // Mostrar el formulario de ventas
+            ventas.Show();
+        }
+
+        private void menuAdmin_Load(object sender, EventArgs e)
         {
 
         }
