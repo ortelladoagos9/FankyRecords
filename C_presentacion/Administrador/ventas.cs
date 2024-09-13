@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class Form1 : Form
+    public partial class ventas : Form
     {
-        public Form1()
+        public ventas()
         {
             InitializeComponent();
+        }
+
+        private void ventas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

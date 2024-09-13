@@ -58,11 +58,23 @@
     <Compile Include="C_negocio\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_presentacion\Administrador\Form1.cs">
+    <Compile Include="C_presentacion\Administrador\inicioMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_presentacion\Administrador\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="C_presentacion\Administrador\inicioMenuAdmin.Designer.cs">
+      <DependentUpon>inicioMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\ventas.Designer.cs">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\menuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\menuAdmin.Designer.cs">
+      <DependentUpon>menuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="C_presentacion\Administrativo\Form1.cs">
       <SubType>Form</SubType>
@@ -81,6 +93,15 @@
     <EmbeddedResource Include="C_datos\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\inicioMenuAdmin.resx">
+      <DependentUpon>inicioMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\menuAdmin.resx">
+      <DependentUpon>menuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\ventas.resx">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +124,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vinilo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vinilo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fankyrecords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fankyrecords1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño sin título %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
