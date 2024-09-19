@@ -63,9 +63,9 @@ namespace FankyRecords.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cerrar_sesion {
+        internal static System.Drawing.Bitmap Fanky_records1 {
             get {
-                object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
+                object obj = ResourceManager.GetObject("Fanky records1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,79 +73,9 @@ namespace FankyRecords.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Diseño_sin_título {
+        internal static System.Drawing.Bitmap fondoFanky1 {
             get {
-                object obj = ResourceManager.GetObject("Diseño sin título", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Diseño_sin_título__1___1_ {
-            get {
-                object obj = ResourceManager.GetObject("Diseño sin título (1) (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Diseño_sin_título__2_ {
-            get {
-                object obj = ResourceManager.GetObject("Diseño sin título (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fankyrecords {
-            get {
-                object obj = ResourceManager.GetObject("Fankyrecords", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fankyrecords1 {
-            get {
-                object obj = ResourceManager.GetObject("Fankyrecords1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fondo {
-            get {
-                object obj = ResourceManager.GetObject("fondo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vinilo {
-            get {
-                object obj = ResourceManager.GetObject("vinilo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vinilo1 {
-            get {
-                object obj = ResourceManager.GetObject("vinilo1", resourceCulture);
+                object obj = ResourceManager.GetObject("fondoFanky1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
