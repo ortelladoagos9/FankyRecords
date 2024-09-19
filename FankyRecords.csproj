@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +50,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C_datos\Form1.cs">
@@ -57,18 +64,6 @@
     </Compile>
     <Compile Include="C_negocio\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\inicioMenuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\inicioMenuAdmin.Designer.cs">
-      <DependentUpon>inicioMenuAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\ventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\ventas.Designer.cs">
-      <DependentUpon>ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="C_presentacion\Administrador\menuAdmin.cs">
       <SubType>Form</SubType>
@@ -93,14 +88,8 @@
     <EmbeddedResource Include="C_datos\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C_presentacion\Administrador\inicioMenuAdmin.resx">
-      <DependentUpon>inicioMenuAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\menuAdmin.resx">
       <DependentUpon>menuAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_presentacion\Administrador\ventas.resx">
-      <DependentUpon>ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,6 +101,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -151,6 +141,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Diseño sin título %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanky records.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viniloTheStrokes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanky Records %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanky Records %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoFanky.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
