@@ -152,10 +152,19 @@
     <None Include="Resources\Fanky Records %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Fanky Records %282%29.png" />
+    <None Include="Resources\fondoFa.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondoFanky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoFanky1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanky Records %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanky records1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

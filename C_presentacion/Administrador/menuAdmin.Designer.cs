@@ -134,7 +134,7 @@
             // contenedor
             // 
             this.contenedor.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedor.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky;
+            this.contenedor.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky1;
             this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 160);
@@ -146,10 +146,10 @@
             // 
             this.picFankyRecords.BackColor = System.Drawing.Color.DarkRed;
             this.picFankyRecords.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picFankyRecords.Image = global::FankyRecords.Properties.Resources.Fanky_records;
-            this.picFankyRecords.Location = new System.Drawing.Point(22, 12);
+            this.picFankyRecords.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
+            this.picFankyRecords.Location = new System.Drawing.Point(12, 12);
             this.picFankyRecords.Name = "picFankyRecords";
-            this.picFankyRecords.Size = new System.Drawing.Size(74, 71);
+            this.picFankyRecords.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecords.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFankyRecords.TabIndex = 3;
             this.picFankyRecords.TabStop = false;
