@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class menuAdmin : Form
+    public partial class formMenuAdmin : Form
     {
-        public menuAdmin()
+        public formMenuAdmin()
         {
             InitializeComponent();
         }

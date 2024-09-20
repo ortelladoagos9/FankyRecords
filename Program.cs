@@ -17,7 +17,7 @@ namespace FankyRecords
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menuAdmin());
+            Application.Run(new formMenuAdmin());
         }
     }
 }
