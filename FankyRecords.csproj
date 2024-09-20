@@ -77,16 +77,19 @@
     <Compile Include="C_presentacion\Administrativo\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_presentacion\Vendedor\Form1.cs">
+    <Compile Include="C_presentacion\Vendedor\menuVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_presentacion\Vendedor\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="C_presentacion\Vendedor\menuVendedor.Designer.cs">
+      <DependentUpon>menuVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="C_datos\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
+      <DependentUpon>menuVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\menuAdmin.resx">
       <DependentUpon>menuAdmin.cs</DependentUpon>
@@ -114,57 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vinilo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vinilo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cerrar-sesion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fankyrecords.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fankyrecords1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Diseño sin título.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Diseño sin título %281%29 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Diseño sin título %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fanky records.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\viniloTheStrokes.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fanky Records %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondoFa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondoFanky.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondoFanky1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fanky Records %281%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fanky records1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
