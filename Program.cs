@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FankyRecords.C_presentacion.Administrador
+//namespace FankyRecords.C_presentacion.Administrador
+namespace FankyRecords.C_presentacion.Administrativo
+
 {
     internal static class Program
     {
