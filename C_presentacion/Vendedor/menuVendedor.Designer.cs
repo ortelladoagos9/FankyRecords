@@ -1,6 +1,6 @@
 ﻿namespace FankyRecords.C_presentacion.Vendedor
 {
-    partial class Form1
+    partial class menuVendedor
     {
         /// <summary>
         /// Required designer variable.

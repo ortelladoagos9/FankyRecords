@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Vendedor
 {
-    public partial class Form1 : Form
+    public partial class menuVendedor : Form
     {
-        public Form1()
+        public menuVendedor()
         {
             InitializeComponent();
         }

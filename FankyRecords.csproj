@@ -70,11 +70,11 @@
     <Compile Include="C_presentacion\Administrativo\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_presentacion\Vendedor\Form1.cs">
+    <Compile Include="C_presentacion\Vendedor\menuVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C_presentacion\Vendedor\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="C_presentacion\Vendedor\menuVendedor.Designer.cs">
+      <DependentUpon>menuVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
