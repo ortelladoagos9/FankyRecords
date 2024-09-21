@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuVendedor));
             this.menuVendedor = new System.Windows.Forms.MenuStrip();
+            this.iconMenuItemClientesVendedor = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItemVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItemRegistrarVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItemDetalleVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItemProductoVendedor = new FontAwesome.Sharp.IconMenuItem();
             this.menuTituloVendedor = new System.Windows.Forms.MenuStrip();
             this.iconMenuItemSalirVendedor = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItemExpandirVendedor = new FontAwesome.Sharp.IconMenuItem();
@@ -39,11 +44,6 @@
             this.picFankyRecordsVendedor = new System.Windows.Forms.PictureBox();
             this.labFankyRecordsMenuVendedor = new System.Windows.Forms.Label();
             this.labUsuarioRolVendedor = new System.Windows.Forms.Label();
-            this.iconMenuItemClientesVendedor = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemRegistrarVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemDetalleVentasVendedor = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemProductoVendedor = new FontAwesome.Sharp.IconMenuItem();
             this.menuVendedor.SuspendLayout();
             this.menuTituloVendedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFankyRecordsVendedor)).BeginInit();
@@ -62,6 +62,81 @@
             this.menuVendedor.Name = "menuVendedor";
             this.menuVendedor.Size = new System.Drawing.Size(1200, 63);
             this.menuVendedor.TabIndex = 0;
+            // 
+            // iconMenuItemClientesVendedor
+            // 
+            this.iconMenuItemClientesVendedor.AutoSize = false;
+            this.iconMenuItemClientesVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconMenuItemClientesVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemClientesVendedor.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.iconMenuItemClientesVendedor.IconColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemClientesVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemClientesVendedor.IconSize = 45;
+            this.iconMenuItemClientesVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItemClientesVendedor.Name = "iconMenuItemClientesVendedor";
+            this.iconMenuItemClientesVendedor.Size = new System.Drawing.Size(100, 59);
+            this.iconMenuItemClientesVendedor.Text = "Clientes";
+            this.iconMenuItemClientesVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // iconMenuItemVentasVendedor
+            // 
+            this.iconMenuItemVentasVendedor.AutoSize = false;
+            this.iconMenuItemVentasVendedor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItemRegistrarVentasVendedor,
+            this.iconMenuItemDetalleVentasVendedor});
+            this.iconMenuItemVentasVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconMenuItemVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.iconMenuItemVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemVentasVendedor.IconSize = 45;
+            this.iconMenuItemVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItemVentasVendedor.Name = "iconMenuItemVentasVendedor";
+            this.iconMenuItemVentasVendedor.Size = new System.Drawing.Size(100, 59);
+            this.iconMenuItemVentasVendedor.Text = "Ventas";
+            this.iconMenuItemVentasVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // iconMenuItemRegistrarVentasVendedor
+            // 
+            this.iconMenuItemRegistrarVentasVendedor.AutoSize = false;
+            this.iconMenuItemRegistrarVentasVendedor.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.iconMenuItemRegistrarVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemRegistrarVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.iconMenuItemRegistrarVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemRegistrarVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemRegistrarVentasVendedor.IconSize = 25;
+            this.iconMenuItemRegistrarVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItemRegistrarVentasVendedor.Name = "iconMenuItemRegistrarVentasVendedor";
+            this.iconMenuItemRegistrarVentasVendedor.Size = new System.Drawing.Size(230, 35);
+            this.iconMenuItemRegistrarVentasVendedor.Text = "Registrar ventas";
+            // 
+            // iconMenuItemDetalleVentasVendedor
+            // 
+            this.iconMenuItemDetalleVentasVendedor.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.iconMenuItemDetalleVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemDetalleVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconMenuItemDetalleVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemDetalleVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemDetalleVentasVendedor.IconSize = 25;
+            this.iconMenuItemDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItemDetalleVentasVendedor.Name = "iconMenuItemDetalleVentasVendedor";
+            this.iconMenuItemDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
+            this.iconMenuItemDetalleVentasVendedor.Text = "Detalle de venta";
+            // 
+            // iconMenuItemProductoVendedor
+            // 
+            this.iconMenuItemProductoVendedor.AutoSize = false;
+            this.iconMenuItemProductoVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconMenuItemProductoVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemProductoVendedor.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
+            this.iconMenuItemProductoVendedor.IconColor = System.Drawing.Color.DarkRed;
+            this.iconMenuItemProductoVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemProductoVendedor.IconSize = 45;
+            this.iconMenuItemProductoVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItemProductoVendedor.Name = "iconMenuItemProductoVendedor";
+            this.iconMenuItemProductoVendedor.Size = new System.Drawing.Size(100, 59);
+            this.iconMenuItemProductoVendedor.Text = "Productos";
+            this.iconMenuItemProductoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // menuTituloVendedor
             // 
@@ -173,81 +248,6 @@
             this.labUsuarioRolVendedor.TabIndex = 4;
             this.labUsuarioRolVendedor.Text = "Usuario:";
             // 
-            // iconMenuItemClientesVendedor
-            // 
-            this.iconMenuItemClientesVendedor.AutoSize = false;
-            this.iconMenuItemClientesVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconMenuItemClientesVendedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemClientesVendedor.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.iconMenuItemClientesVendedor.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemClientesVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemClientesVendedor.IconSize = 45;
-            this.iconMenuItemClientesVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemClientesVendedor.Name = "iconMenuItemClientesVendedor";
-            this.iconMenuItemClientesVendedor.Size = new System.Drawing.Size(100, 59);
-            this.iconMenuItemClientesVendedor.Text = "Clientes";
-            this.iconMenuItemClientesVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // iconMenuItemVentasVendedor
-            // 
-            this.iconMenuItemVentasVendedor.AutoSize = false;
-            this.iconMenuItemVentasVendedor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iconMenuItemRegistrarVentasVendedor,
-            this.iconMenuItemDetalleVentasVendedor});
-            this.iconMenuItemVentasVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconMenuItemVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.iconMenuItemVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemVentasVendedor.IconSize = 45;
-            this.iconMenuItemVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemVentasVendedor.Name = "iconMenuItemVentasVendedor";
-            this.iconMenuItemVentasVendedor.Size = new System.Drawing.Size(100, 59);
-            this.iconMenuItemVentasVendedor.Text = "Ventas";
-            this.iconMenuItemVentasVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // iconMenuItemRegistrarVentasVendedor
-            // 
-            this.iconMenuItemRegistrarVentasVendedor.AutoSize = false;
-            this.iconMenuItemRegistrarVentasVendedor.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconMenuItemRegistrarVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemRegistrarVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
-            this.iconMenuItemRegistrarVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemRegistrarVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemRegistrarVentasVendedor.IconSize = 25;
-            this.iconMenuItemRegistrarVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemRegistrarVentasVendedor.Name = "iconMenuItemRegistrarVentasVendedor";
-            this.iconMenuItemRegistrarVentasVendedor.Size = new System.Drawing.Size(230, 35);
-            this.iconMenuItemRegistrarVentasVendedor.Text = "Registrar ventas";
-            // 
-            // iconMenuItemDetalleVentasVendedor
-            // 
-            this.iconMenuItemDetalleVentasVendedor.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.iconMenuItemDetalleVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemDetalleVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.iconMenuItemDetalleVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemDetalleVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemDetalleVentasVendedor.IconSize = 25;
-            this.iconMenuItemDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemDetalleVentasVendedor.Name = "iconMenuItemDetalleVentasVendedor";
-            this.iconMenuItemDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
-            this.iconMenuItemDetalleVentasVendedor.Text = "Detalle de venta";
-            // 
-            // iconMenuItemProductoVendedor
-            // 
-            this.iconMenuItemProductoVendedor.AutoSize = false;
-            this.iconMenuItemProductoVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconMenuItemProductoVendedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemProductoVendedor.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
-            this.iconMenuItemProductoVendedor.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemProductoVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemProductoVendedor.IconSize = 45;
-            this.iconMenuItemProductoVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemProductoVendedor.Name = "iconMenuItemProductoVendedor";
-            this.iconMenuItemProductoVendedor.Size = new System.Drawing.Size(100, 59);
-            this.iconMenuItemProductoVendedor.Text = "Productos";
-            this.iconMenuItemProductoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // formMenuVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,10 +277,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuVendedor;
-        private System.Windows.Forms.MenuStrip menuTituloVendedor;
-        private System.Windows.Forms.Panel contenedorVendedor;
         private System.Windows.Forms.PictureBox picFankyRecordsVendedor;
         private System.Windows.Forms.Label labFankyRecordsMenuVendedor;
         private System.Windows.Forms.Label labUsuarioRolVendedor;
@@ -293,5 +289,8 @@
         private FontAwesome.Sharp.IconMenuItem iconMenuItemRegistrarVentasVendedor;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemDetalleVentasVendedor;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemProductoVendedor;
+        public System.Windows.Forms.MenuStrip menuVendedor;
+        public System.Windows.Forms.MenuStrip menuTituloVendedor;
+        public System.Windows.Forms.Panel contenedorVendedor;
     }
 }
