@@ -167,7 +167,7 @@
             this.iconMenuItemDetalleVentasAdministrador.IconSize = 25;
             this.iconMenuItemDetalleVentasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemDetalleVentasAdministrador.Name = "iconMenuItemDetalleVentasAdministrador";
-            this.iconMenuItemDetalleVentasAdministrador.Size = new System.Drawing.Size(229, 32);
+            this.iconMenuItemDetalleVentasAdministrador.Size = new System.Drawing.Size(226, 32);
             this.iconMenuItemDetalleVentasAdministrador.Text = "Detalle de venta";
             // 
             // iconMenuItemDevolucionAdministrador
@@ -314,7 +314,7 @@
             this.iconMenuItemSalirAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemSalirAdministrador.Name = "iconMenuItemSalirAdministrador";
             this.iconMenuItemSalirAdministrador.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemSalirAdministrador.Click += new System.EventHandler(this.iconMenuItemSalir_Click);
+            this.iconMenuItemSalirAdministrador.Click += new System.EventHandler(this.iconMenuItemSalirAdministrador_Click);
             // 
             // iconMenuItemExpandirAdministrador
             // 
@@ -326,7 +326,7 @@
             this.iconMenuItemExpandirAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemExpandirAdministrador.Name = "iconMenuItemExpandirAdministrador";
             this.iconMenuItemExpandirAdministrador.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemExpandirAdministrador.Click += new System.EventHandler(this.iconMenuItemExpandir_Click);
+            this.iconMenuItemExpandirAdministrador.Click += new System.EventHandler(this.iconMenuItemExpandirAdministrador_Click);
             // 
             // iconMenuItemMinimizarAdministrador
             // 
@@ -338,7 +338,7 @@
             this.iconMenuItemMinimizarAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemMinimizarAdministrador.Name = "iconMenuItemMinimizarAdministrador";
             this.iconMenuItemMinimizarAdministrador.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemMinimizarAdministrador.Click += new System.EventHandler(this.iconMenuItemMinimizar_Click);
+            this.iconMenuItemMinimizarAdministrador.Click += new System.EventHandler(this.iconMenuItemMinimizarAdministrador_Click);
             // 
             // labFankyRecordsMenuAdministrador
             // 

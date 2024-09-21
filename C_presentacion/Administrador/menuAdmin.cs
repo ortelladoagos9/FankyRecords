@@ -52,12 +52,12 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
-        private void iconMenuItemSalir_Click(object sender, EventArgs e)
+        private void iconMenuItemSalirAdministrador_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconMenuItemExpandir_Click(object sender, EventArgs e)
+        private void iconMenuItemExpandirAdministrador_Click(object sender, EventArgs e)
         {
             // Si el formulario ya está maximizado, restaurarlo
             if (this.WindowState == FormWindowState.Maximized)
@@ -70,12 +70,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void iconMenuItemMinimizar_Click(object sender, EventArgs e)
+        private void iconMenuItemMinimizarAdministrador_Click(object sender, EventArgs e)
         {
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;
         }
 
-      
+        
     }
 }
