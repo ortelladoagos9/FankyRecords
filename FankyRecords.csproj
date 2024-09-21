@@ -65,12 +65,6 @@
     <Compile Include="C_negocio\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_presentacion\Administrador\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="C_presentacion\Administrativo\menuAdministrativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondoFanky2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="C_presentacion\Administrador\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
