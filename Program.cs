@@ -16,7 +16,7 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menuVendedor());
+            Application.Run(new formMenuVendedor());
         }
     }
 }
