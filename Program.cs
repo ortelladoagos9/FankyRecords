@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FankyRecords.C_presentacion.Vendedor
+namespace FankyRecords
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMenuVendedor());
+            Application.Run(new Form());
         }
     }
 }
