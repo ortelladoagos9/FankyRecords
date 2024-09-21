@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FankyRecords
+namespace FankyRecords.C_presentacion.Administrador
 {
     internal static class Program
     {
@@ -17,7 +17,7 @@ namespace FankyRecords
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formMenuAdmin());
-            Application.Run(new formMenuVendedor());
+            //Application.Run(new formMenuVendedor());
         }
     }
 }
