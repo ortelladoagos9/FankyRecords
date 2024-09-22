@@ -76,6 +76,9 @@ namespace FankyRecords.C_presentacion.Administrador
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void iconMenuItemVentasAdministrador_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
