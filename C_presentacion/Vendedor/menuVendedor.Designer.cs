@@ -120,7 +120,7 @@
             this.iconMenuItemDetalleVentasVendedor.IconSize = 25;
             this.iconMenuItemDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemDetalleVentasVendedor.Name = "iconMenuItemDetalleVentasVendedor";
-            this.iconMenuItemDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
+            this.iconMenuItemDetalleVentasVendedor.Size = new System.Drawing.Size(226, 32);
             this.iconMenuItemDetalleVentasVendedor.Text = "Detalle de venta";
             // 
             // iconMenuItemProductoVendedor
@@ -197,7 +197,7 @@
             this.contenedorVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorVendedor.Location = new System.Drawing.Point(0, 160);
             this.contenedorVendedor.Name = "contenedorVendedor";
-            this.contenedorVendedor.Size = new System.Drawing.Size(1200, 501);
+            this.contenedorVendedor.Size = new System.Drawing.Size(1200, 652);
             this.contenedorVendedor.TabIndex = 7;
             // 
             // labVendedor
@@ -252,7 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 661);
+            this.ClientSize = new System.Drawing.Size(1200, 812);
             this.Controls.Add(this.labVendedor);
             this.Controls.Add(this.labUsuarioRolVendedor);
             this.Controls.Add(this.labFankyRecordsMenuVendedor);
