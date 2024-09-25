@@ -17,38 +17,9 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
 
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-
-            // Crear una nueva instancia del formulario 'ventas'
-           // ventasAdmin ventas = new ventasAdmin();
-            //ventas.TopLevel = false;
-            //this.panelContenedor.Controls.Add(ventas);
-
-            // Especificar que el formulario de ventas es hijo del MDI Parent
-            //ventas.MdiParent = this;
-
-            // Mostrar el formulario de ventas
-            //ventas.Show();
-            //this.panelContenedor.Controls.(ventas);
-
-
-           // ventas.BringToFront();
-        }
-
         private void menuAdmin_Load(object sender, EventArgs e)
         {
-            // Crear una nueva instancia del formulario 'ventas'
-            //inicioMenuAdmin inicioMenu = new inicioMenuAdmin();
-           
-            //this.panel1.Controls.Add(inicioMenu);
-
-            // Especificar que el formulario de ventas es hijo del MDI Parent
-         //   inicioMenu.MdiParent = this;
-
-            // Mostrar el formulario de ventas
-          //  inicioMenu.Show();
-
+            
 
         }
 
@@ -76,6 +47,9 @@ namespace FankyRecords.C_presentacion.Administrador
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void iconMenuItemProductoAdministrador_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
