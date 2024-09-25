@@ -31,13 +31,62 @@ namespace FankyRecords.C_negocio
             return char.IsDigit(e.KeyChar);
         }
 
+        /*public static bool TodosLosCamposLlenos(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is TextBox && string.IsNullOrWhiteSpace(control.Text))
+                {
+                    return false; // Si hay algún campo vacío, retorna false
+                }
+            }
+            return true; // Si todos los campos están llenos, retorna true
+        }*/
+
+
         public static bool EstaVacio(string e)
         {
             string campo = e.ToString();
             return string.IsNullOrEmpty(campo);
         }
-  
-       
+
+        public static bool ContraseñaCorrecta(string e, string e2)
+        {
+            string password = e.ToString();
+            string confirmPassword = e2.ToString();
+
+            // Validar si las contraseñas coinciden
+            if (password != confirmPassword)
+            {
+                return false;
+            }
+
+            // Validar si la contraseña contiene espacios en blanco
+            if (password.Contains(" "))
+            {
+                return false;
+            }
+         
+            return true; // Si pasa todas las validaciones, la contraseña es correcta.
+        }
+
+        public static bool EmailCorrecto(string e)
+        {
+            string email = e;
+
+            // Expresión regular para validar el formato de correo electrónico
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            // Verificar si el email tiene el formato válido
+            if (!Regex.IsMatch(email, emailPattern))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
 
     }
 }
