@@ -385,7 +385,7 @@
             this.contenedorAdministrador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrador.Location = new System.Drawing.Point(0, 160);
             this.contenedorAdministrador.Name = "contenedorAdministrador";
-            this.contenedorAdministrador.Size = new System.Drawing.Size(1200, 501);
+            this.contenedorAdministrador.Size = new System.Drawing.Size(1200, 652);
             this.contenedorAdministrador.TabIndex = 6;
             // 
             // picFankyRecordsAdministrador
@@ -405,7 +405,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1200, 661);
+            this.ClientSize = new System.Drawing.Size(1200, 812);
             this.Controls.Add(this.contenedorAdministrador);
             this.Controls.Add(this.labAdministrador);
             this.Controls.Add(this.labUsuarioRolAdministrador);

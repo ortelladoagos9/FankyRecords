@@ -59,7 +59,12 @@
     <Compile Include="C_datos\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_negocio\Validaciones.cs" />
+    <Compile Include="C_negocio\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_negocio\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrador\formProductos.cs">
       <SubType>Form</SubType>
     </Compile>
