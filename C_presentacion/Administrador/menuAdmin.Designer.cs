@@ -94,6 +94,7 @@
             this.iconMenuItemUsuariosAdministrador.Size = new System.Drawing.Size(100, 59);
             this.iconMenuItemUsuariosAdministrador.Text = "Usuarios";
             this.iconMenuItemUsuariosAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconMenuItemUsuariosAdministrador.Click += new System.EventHandler(this.iconMenuItemUsuariosAdministrador_Click);
             // 
             // iconMenuItemProductoAdministrador
             // 
@@ -109,7 +110,6 @@
             this.iconMenuItemProductoAdministrador.Size = new System.Drawing.Size(100, 59);
             this.iconMenuItemProductoAdministrador.Text = "Productos";
             this.iconMenuItemProductoAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconMenuItemProductoAdministrador.Click += new System.EventHandler(this.iconMenuItemProductoAdministrador_Click);
             // 
             // iconMenuItemProveedorAdministrador
             // 
@@ -383,6 +383,7 @@
             this.contenedorAdministrador.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky1;
             this.contenedorAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedorAdministrador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.contenedorAdministrador.Location = new System.Drawing.Point(0, 160);
             this.contenedorAdministrador.Name = "contenedorAdministrador";
             this.contenedorAdministrador.Size = new System.Drawing.Size(1200, 652);
@@ -419,7 +420,6 @@
             this.Name = "formMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrador";
-            this.Load += new System.EventHandler(this.menuAdmin_Load);
             this.menuAdministrador.ResumeLayout(false);
             this.menuAdministrador.PerformLayout();
             this.menuTituloAdministrador.ResumeLayout(false);
@@ -453,8 +453,8 @@
         private FontAwesome.Sharp.IconMenuItem iconMenuItemDetalleVentasAdministrador;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemRegistrarComprasAdministrador;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemDetalleCompraAdministrador;
-        private System.Windows.Forms.Panel contenedorAdministrador;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemSalirAdministrador;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemExpandirAdministrador;
+        public System.Windows.Forms.Panel contenedorAdministrador;
     }
 }
