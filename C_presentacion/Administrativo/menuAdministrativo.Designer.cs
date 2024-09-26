@@ -178,7 +178,6 @@
             // 
             // contenedorAdministrativo
             // 
-            this.contenedorAdministrativo.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky;
             this.contenedorAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrativo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrativo.Location = new System.Drawing.Point(0, 160);
@@ -189,7 +188,6 @@
             // picFankyRecordsAdministrativo
             // 
             this.picFankyRecordsAdministrativo.BackColor = System.Drawing.Color.DarkRed;
-            this.picFankyRecordsAdministrativo.Image = global::FankyRecords.Properties.Resources.Fanky_records;
             this.picFankyRecordsAdministrativo.Location = new System.Drawing.Point(12, 12);
             this.picFankyRecordsAdministrativo.Name = "picFankyRecordsAdministrativo";
             this.picFankyRecordsAdministrativo.Size = new System.Drawing.Size(72, 72);
