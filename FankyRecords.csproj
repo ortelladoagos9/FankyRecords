@@ -99,6 +99,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\menuAdmin.resx">
       <DependentUpon>menuAdmin.cs</DependentUpon>
