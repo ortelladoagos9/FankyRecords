@@ -65,12 +65,6 @@
     <Compile Include="C_negocio\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_presentacion\Administrador\formProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_presentacion\Administrador\formProductos.Designer.cs">
-      <DependentUpon>formProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="C_presentacion\Administrador\menuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +87,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="C_datos\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_presentacion\Administrador\formProductos.resx">
-      <DependentUpon>formProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>
