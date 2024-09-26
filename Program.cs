@@ -1,12 +1,15 @@
 ﻿using FankyRecords.C_presentacion.Administrador;
+using FankyRecords.C_presentacion.Administrativo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FankyRecords.C_presentacion.Administrador
 //namespace FankyRecords.C_presentacion.Vendedor
+//namespace FankyRecords.C_presentacion.Administrador
+namespace FankyRecords.C_presentacion.Administrativo
+
 {
     internal static class Program
     {
@@ -21,6 +24,7 @@ namespace FankyRecords.C_presentacion.Administrador
             Application.Run(new formMenuAdmin());
             //Application.Run(new formMenuVendedor());
             //Application.Run(new GestionUsuarios());
+            //Application.Run(new formMenuAdministrativo());
         }
     }
 }

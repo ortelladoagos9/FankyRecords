@@ -41,7 +41,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;
         }
-       
+
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             // Limpiar cualquier formulario previamente abierto
@@ -63,7 +63,7 @@ namespace FankyRecords.C_presentacion.Administrador
             formulario.BringToFront(); // Trae el formulario al frente
             formulario.Show(); // Muestra el formulario
         }
-
+        
         private void iconMenuItemUsuariosAdministrador_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new GestionUsuarios());
