@@ -31,19 +31,6 @@ namespace FankyRecords.C_negocio
             return char.IsDigit(e.KeyChar);
         }
 
-        /*public static bool TodosLosCamposLlenos(Control.ControlCollection controls)
-        {
-            foreach (Control control in controls)
-            {
-                if (control is TextBox && string.IsNullOrWhiteSpace(control.Text))
-                {
-                    return false; // Si hay algún campo vacío, retorna false
-                }
-            }
-            return true; // Si todos los campos están llenos, retorna true
-        }*/
-
-
         public static bool EstaVacio(string e)
         {
             string campo = e.ToString();
