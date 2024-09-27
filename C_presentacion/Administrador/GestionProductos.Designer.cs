@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
+            this.contenedorFotoBotones.SuspendLayout();
+            this.contenedorGestionUsuarios.SuspendLayout();
+            this.contenedorLista.SuspendLayout();
+            this.contenedorDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // Bguardar
@@ -47,6 +51,10 @@
             // 
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             // 
+            // contenedorDatos
+            // 
+            this.contenedorDatos.BackColor = System.Drawing.Color.Chocolate;
+            // 
             // GestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -55,6 +63,11 @@
             this.Name = "GestionProductos";
             this.Text = "GestionProductos";
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
+            this.contenedorFotoBotones.ResumeLayout(false);
+            this.contenedorGestionUsuarios.ResumeLayout(false);
+            this.contenedorLista.ResumeLayout(false);
+            this.contenedorDatos.ResumeLayout(false);
+            this.contenedorDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }
