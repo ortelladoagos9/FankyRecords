@@ -78,14 +78,15 @@
     <Compile Include="C_presentacion\Administrador\GestionUsuarios.Designer.cs">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </Compile>
-      
     <Compile Include="C_presentacion\Vendedor\menuVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="C_presentacion\Vendedor\menuVendedor.Designer.cs">
       <DependentUpon>menuVendedor.cs</DependentUpon>
     </Compile>
-
+    <EmbeddedResource Include="C_presentacion\Administrador\GestionProductos.resx">
+      <DependentUpon>GestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -96,16 +97,20 @@
     <EmbeddedResource Include="C_presentacion\Administrador\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-   <EmbeddedResource Include="C_presentacion\Administrativo\menuAdministrativo.resx">
+    <EmbeddedResource Include="C_presentacion\Administrativo\menuAdministrativo.resx">
       <DependentUpon>menuAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
-
+    <Compile Include="C_presentacion\Administrador\GestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\GestionProductos.Designer.cs">
+      <DependentUpon>GestionProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="C_datos\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-   
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -141,5 +146,4 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  
 </Project>

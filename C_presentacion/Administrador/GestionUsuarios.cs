@@ -121,7 +121,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     if (folderDialog.ShowDialog() == DialogResult.OK)
                     {
                         string rutaDirectorio = folderDialog.SelectedPath;
-                        string ruta = Path.Combine(rutaDirectorio, nombrearchivo(openFileDialog1.FileName));
+                        string ruta = Path.Combine(rutaDirectorio, NombreArchivo(openFileDialog1.FileName));
 
                         try
                         {
@@ -140,11 +140,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private string nombrearchivo(string ruta)
+        private string NombreArchivo(string ruta)
         {
             // Simplificación del nombre de archivo
             return Path.GetFileName(ruta);  // Devuelve el nombre del archivo completo con extensión
         }
-       
+
+        
     }
 }

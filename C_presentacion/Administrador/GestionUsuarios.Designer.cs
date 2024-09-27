@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LGestionUsuarios = new System.Windows.Forms.Label();
-            this.picFotoUsuario = new System.Windows.Forms.PictureBox();
             this.LNombre = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
             this.LDni = new System.Windows.Forms.Label();
@@ -58,9 +57,6 @@
             this.CBRol = new System.Windows.Forms.ComboBox();
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
-            this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.Beditar = new FontAwesome.Sharp.IconButton();
-            this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.listadoUsuarios = new System.Windows.Forms.DataGridView();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,15 +73,19 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.contenedorFotoBotones = new System.Windows.Forms.Panel();
+            this.picFotoUsuario = new System.Windows.Forms.PictureBox();
             this.contenedorLista = new System.Windows.Forms.Panel();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
+            this.Beliminar = new FontAwesome.Sharp.IconButton();
+            this.Beditar = new FontAwesome.Sharp.IconButton();
+            this.Bguardar = new FontAwesome.Sharp.IconButton();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
             this.SuspendLayout();
@@ -103,19 +103,6 @@
             this.LGestionUsuarios.TabIndex = 0;
             this.LGestionUsuarios.Text = "Gestión de Usuarios";
             this.LGestionUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picFotoUsuario
-            // 
-            this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
-            this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFotoUsuario.Location = new System.Drawing.Point(46, 57);
-            this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.picFotoUsuario.Name = "picFotoUsuario";
-            this.picFotoUsuario.Size = new System.Drawing.Size(183, 189);
-            this.picFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFotoUsuario.TabIndex = 2;
-            this.picFotoUsuario.TabStop = false;
             // 
             // LNombre
             // 
@@ -424,82 +411,18 @@
             this.rBactivo.Text = "Activo";
             this.rBactivo.UseVisualStyleBackColor = true;
             // 
-            // Bguardar
-            // 
-            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
-            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bguardar.ForeColor = System.Drawing.Color.White;
-            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
-            this.Bguardar.IconColor = System.Drawing.Color.White;
-            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(46, 264);
-            this.Bguardar.Name = "Bguardar";
-            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Bguardar.Size = new System.Drawing.Size(183, 31);
-            this.Bguardar.TabIndex = 7;
-            this.Bguardar.Text = "Guardar";
-            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bguardar.UseVisualStyleBackColor = false;
-            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
-            // 
-            // Beditar
-            // 
-            this.Beditar.BackColor = System.Drawing.Color.Navy;
-            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beditar.ForeColor = System.Drawing.Color.White;
-            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.Beditar.IconColor = System.Drawing.Color.White;
-            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(46, 300);
-            this.Beditar.Name = "Beditar";
-            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beditar.Size = new System.Drawing.Size(183, 31);
-            this.Beditar.TabIndex = 9;
-            this.Beditar.Text = "Editar";
-            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beditar.UseVisualStyleBackColor = false;
-            // 
-            // Beliminar
-            // 
-            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beliminar.ForeColor = System.Drawing.Color.White;
-            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.Beliminar.IconColor = System.Drawing.Color.White;
-            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(46, 336);
-            this.Beliminar.Name = "Beliminar";
-            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beliminar.Size = new System.Drawing.Size(183, 31);
-            this.Beliminar.TabIndex = 10;
-            this.Beliminar.Text = "Eliminar";
-            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beliminar.UseVisualStyleBackColor = false;
-            // 
             // listadoUsuarios
             // 
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.LightGray;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_usuario,
@@ -655,22 +578,43 @@
             this.CBbuscar.TabIndex = 1;
             this.CBbuscar.Text = "Nro DNI";
             // 
-            // btnLimpiar
+            // contenedorFotoBotones
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.contenedorFotoBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorFotoBotones.Controls.Add(this.picFotoUsuario);
+            this.contenedorFotoBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.contenedorFotoBotones.ForeColor = System.Drawing.Color.Transparent;
+            this.contenedorFotoBotones.Location = new System.Drawing.Point(0, 0);
+            this.contenedorFotoBotones.Name = "contenedorFotoBotones";
+            this.contenedorFotoBotones.Size = new System.Drawing.Size(261, 410);
+            this.contenedorFotoBotones.TabIndex = 17;
+            // 
+            // picFotoUsuario
+            // 
+            this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
+            this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picFotoUsuario.Location = new System.Drawing.Point(46, 57);
+            this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.picFotoUsuario.Name = "picFotoUsuario";
+            this.picFotoUsuario.Size = new System.Drawing.Size(183, 189);
+            this.picFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFotoUsuario.TabIndex = 2;
+            this.picFotoUsuario.TabStop = false;
+            // 
+            // contenedorLista
+            // 
+            this.contenedorLista.BackColor = System.Drawing.Color.White;
+            this.contenedorLista.Controls.Add(this.Lbuscar);
+            this.contenedorLista.Controls.Add(this.CBbuscar);
+            this.contenedorLista.Controls.Add(this.btnBuscar);
+            this.contenedorLista.Controls.Add(this.btnLimpiar);
+            this.contenedorLista.Controls.Add(this.LListaUsuarios);
+            this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.contenedorLista.Location = new System.Drawing.Point(0, 410);
+            this.contenedorLista.Name = "contenedorLista";
+            this.contenedorLista.Size = new System.Drawing.Size(1182, 35);
+            this.contenedorLista.TabIndex = 18;
             // 
             // btnBuscar
             // 
@@ -688,30 +632,22 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // contenedorFotoBotones
+            // btnLimpiar
             // 
-            this.contenedorFotoBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedorFotoBotones.Controls.Add(this.picFotoUsuario);
-            this.contenedorFotoBotones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.contenedorFotoBotones.ForeColor = System.Drawing.Color.Transparent;
-            this.contenedorFotoBotones.Location = new System.Drawing.Point(0, 0);
-            this.contenedorFotoBotones.Name = "contenedorFotoBotones";
-            this.contenedorFotoBotones.Size = new System.Drawing.Size(261, 410);
-            this.contenedorFotoBotones.TabIndex = 17;
-            // 
-            // contenedorLista
-            // 
-            this.contenedorLista.BackColor = System.Drawing.Color.White;
-            this.contenedorLista.Controls.Add(this.Lbuscar);
-            this.contenedorLista.Controls.Add(this.CBbuscar);
-            this.contenedorLista.Controls.Add(this.btnBuscar);
-            this.contenedorLista.Controls.Add(this.btnLimpiar);
-            this.contenedorLista.Controls.Add(this.LListaUsuarios);
-            this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.contenedorLista.Location = new System.Drawing.Point(0, 410);
-            this.contenedorLista.Name = "contenedorLista";
-            this.contenedorLista.Size = new System.Drawing.Size(1182, 35);
-            this.contenedorLista.TabIndex = 18;
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // contenedorGestionUsuarios
             // 
@@ -722,6 +658,70 @@
             this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
             this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 56);
             this.contenedorGestionUsuarios.TabIndex = 19;
+            // 
+            // Beliminar
+            // 
+            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beliminar.ForeColor = System.Drawing.Color.White;
+            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.Beliminar.IconColor = System.Drawing.Color.White;
+            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beliminar.IconSize = 21;
+            this.Beliminar.Location = new System.Drawing.Point(46, 336);
+            this.Beliminar.Name = "Beliminar";
+            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beliminar.Size = new System.Drawing.Size(183, 31);
+            this.Beliminar.TabIndex = 10;
+            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beliminar.UseVisualStyleBackColor = false;
+            // 
+            // Beditar
+            // 
+            this.Beditar.BackColor = System.Drawing.Color.Navy;
+            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beditar.ForeColor = System.Drawing.Color.White;
+            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.Beditar.IconColor = System.Drawing.Color.White;
+            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beditar.IconSize = 25;
+            this.Beditar.Location = new System.Drawing.Point(46, 300);
+            this.Beditar.Name = "Beditar";
+            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beditar.Size = new System.Drawing.Size(183, 31);
+            this.Beditar.TabIndex = 9;
+            this.Beditar.Text = "Editar";
+            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beditar.UseVisualStyleBackColor = false;
+            // 
+            // Bguardar
+            // 
+            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
+            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bguardar.ForeColor = System.Drawing.Color.White;
+            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
+            this.Bguardar.IconColor = System.Drawing.Color.White;
+            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bguardar.IconSize = 25;
+            this.Bguardar.Location = new System.Drawing.Point(46, 264);
+            this.Bguardar.Name = "Bguardar";
+            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Bguardar.Size = new System.Drawing.Size(183, 31);
+            this.Bguardar.TabIndex = 7;
+            this.Bguardar.Text = "Guardar";
+            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bguardar.UseVisualStyleBackColor = false;
+            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
             // 
             // GestionUsuarios
             // 
@@ -743,11 +743,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "GestionUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).EndInit();
             this.contenedorFotoBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.contenedorGestionUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -755,35 +755,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LGestionUsuarios;
-        private System.Windows.Forms.Label LNombre;
-        private System.Windows.Forms.Label LApellido;
-        private System.Windows.Forms.Label LDni;
-        private System.Windows.Forms.Label LFechaNac;
-        private System.Windows.Forms.Label LTelefono;
-        private System.Windows.Forms.TextBox TBnombre;
-        private System.Windows.Forms.TextBox TBapellido;
-        private System.Windows.Forms.TextBox TBdni;
-        private System.Windows.Forms.Label LDireccion;
-        private System.Windows.Forms.MaskedTextBox TBtelefono;
-        private System.Windows.Forms.DateTimePicker DTFechanac;
-        private System.Windows.Forms.TextBox TBdireccion;
-        private System.Windows.Forms.Label LEmail;
-        private System.Windows.Forms.TextBox TBemail;
-        private System.Windows.Forms.Label LContraseña;
-        private System.Windows.Forms.Label LConfirmarContraseña;
-        private System.Windows.Forms.Label LRol;
-        private System.Windows.Forms.Label LEstado;
-        private System.Windows.Forms.TextBox TBcontraseña;
-        private System.Windows.Forms.TextBox TBconfirmarContraseña;
-        private System.Windows.Forms.Panel contenedorDatos;
-        private System.Windows.Forms.RadioButton rBactivo;
-        private System.Windows.Forms.RadioButton rBinactivo;
-        private System.Windows.Forms.ComboBox CBRol;
-        private System.Windows.Forms.DataGridView listadoUsuarios;
-        private System.Windows.Forms.TextBox rutaFoto;
-        private System.Windows.Forms.Button Bfoto;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
@@ -796,17 +767,45 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn contraseña;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Panel contenedorFotoBotones;
         public System.Windows.Forms.PictureBox picFotoUsuario;
         public FontAwesome.Sharp.IconButton Bguardar;
         public FontAwesome.Sharp.IconButton Beditar;
         public FontAwesome.Sharp.IconButton Beliminar;
-        private System.Windows.Forms.Panel contenedorLista;
-        private System.Windows.Forms.Label LListaUsuarios;
-        private System.Windows.Forms.Label Lbuscar;
         public FontAwesome.Sharp.IconButton btnLimpiar;
         public FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.ComboBox CBbuscar;
-        private System.Windows.Forms.Panel contenedorGestionUsuarios;
+        public System.Windows.Forms.Panel contenedorFotoBotones;
+        public System.Windows.Forms.Panel contenedorGestionUsuarios;
+        public System.Windows.Forms.DataGridView listadoUsuarios;
+        public System.Windows.Forms.Panel contenedorLista;
+        public System.Windows.Forms.Label Lbuscar;
+        public System.Windows.Forms.ComboBox CBbuscar;
+        public System.Windows.Forms.Panel contenedorDatos;
+        public System.Windows.Forms.Label LListaUsuarios;
+        public System.Windows.Forms.Label LGestionUsuarios;
+        public System.Windows.Forms.Label LNombre;
+        public System.Windows.Forms.Label LApellido;
+        public System.Windows.Forms.Label LDni;
+        public System.Windows.Forms.Label LFechaNac;
+        public System.Windows.Forms.Label LTelefono;
+        public System.Windows.Forms.TextBox TBnombre;
+        public System.Windows.Forms.TextBox TBapellido;
+        public System.Windows.Forms.TextBox TBdni;
+        public System.Windows.Forms.Label LDireccion;
+        public System.Windows.Forms.MaskedTextBox TBtelefono;
+        public System.Windows.Forms.DateTimePicker DTFechanac;
+        public System.Windows.Forms.TextBox TBdireccion;
+        public System.Windows.Forms.Label LEmail;
+        public System.Windows.Forms.TextBox TBemail;
+        public System.Windows.Forms.Label LContraseña;
+        public System.Windows.Forms.Label LConfirmarContraseña;
+        public System.Windows.Forms.Label LRol;
+        public System.Windows.Forms.Label LEstado;
+        public System.Windows.Forms.TextBox TBcontraseña;
+        public System.Windows.Forms.TextBox TBconfirmarContraseña;
+        public System.Windows.Forms.RadioButton rBactivo;
+        public System.Windows.Forms.RadioButton rBinactivo;
+        public System.Windows.Forms.ComboBox CBRol;
+        public System.Windows.Forms.TextBox rutaFoto;
+        public System.Windows.Forms.Button Bfoto;
     }
 }
