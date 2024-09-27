@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LGestionUsuarios = new System.Windows.Forms.Label();
             this.picFotoUsuario = new System.Windows.Forms.PictureBox();
             this.LNombre = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             this.LNombre.Location = new System.Drawing.Point(14, 25);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(80, 21);
+            this.LNombre.Size = new System.Drawing.Size(66, 17);
             this.LNombre.TabIndex = 0;
             this.LNombre.Text = "Nombre";
             // 
@@ -136,7 +136,7 @@
             this.LApellido.Location = new System.Drawing.Point(13, 90);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(82, 21);
+            this.LApellido.Size = new System.Drawing.Size(68, 17);
             this.LApellido.TabIndex = 1;
             this.LApellido.Text = "Apellido";
             // 
@@ -147,7 +147,7 @@
             this.LDni.Location = new System.Drawing.Point(13, 155);
             this.LDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(46, 21);
+            this.LDni.Size = new System.Drawing.Size(38, 17);
             this.LDni.TabIndex = 2;
             this.LDni.Text = "DNI";
             // 
@@ -158,7 +158,7 @@
             this.LFechaNac.Location = new System.Drawing.Point(14, 220);
             this.LFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LFechaNac.Name = "LFechaNac";
-            this.LFechaNac.Size = new System.Drawing.Size(194, 21);
+            this.LFechaNac.Size = new System.Drawing.Size(162, 17);
             this.LFechaNac.TabIndex = 3;
             this.LFechaNac.Text = "Fecha de Nacimiento";
             // 
@@ -169,7 +169,7 @@
             this.LTelefono.Location = new System.Drawing.Point(571, 25);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
-            this.LTelefono.Size = new System.Drawing.Size(87, 21);
+            this.LTelefono.Size = new System.Drawing.Size(72, 17);
             this.LTelefono.TabIndex = 4;
             this.LTelefono.Text = "Teléfono";
             // 
@@ -179,7 +179,7 @@
             this.TBnombre.Location = new System.Drawing.Point(17, 54);
             this.TBnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBnombre.Name = "TBnombre";
-            this.TBnombre.Size = new System.Drawing.Size(242, 28);
+            this.TBnombre.Size = new System.Drawing.Size(242, 24);
             this.TBnombre.TabIndex = 5;
             this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -189,7 +189,7 @@
             this.TBapellido.Location = new System.Drawing.Point(16, 120);
             this.TBapellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(243, 28);
+            this.TBapellido.Size = new System.Drawing.Size(243, 24);
             this.TBapellido.TabIndex = 6;
             this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -200,7 +200,7 @@
             this.TBdni.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(242, 28);
+            this.TBdni.Size = new System.Drawing.Size(242, 24);
             this.TBdni.TabIndex = 7;
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -211,7 +211,7 @@
             this.LDireccion.Location = new System.Drawing.Point(293, 25);
             this.LDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDireccion.Name = "LDireccion";
-            this.LDireccion.Size = new System.Drawing.Size(95, 21);
+            this.LDireccion.Size = new System.Drawing.Size(80, 17);
             this.LDireccion.TabIndex = 10;
             this.LDireccion.Text = "Dirección";
             // 
@@ -222,7 +222,7 @@
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBtelefono.Mask = "(000)0000000";
             this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
+            this.TBtelefono.Size = new System.Drawing.Size(242, 24);
             this.TBtelefono.TabIndex = 11;
             // 
             // DTFechanac
@@ -232,7 +232,7 @@
             this.DTFechanac.Location = new System.Drawing.Point(17, 249);
             this.DTFechanac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTFechanac.Name = "DTFechanac";
-            this.DTFechanac.Size = new System.Drawing.Size(242, 28);
+            this.DTFechanac.Size = new System.Drawing.Size(242, 24);
             this.DTFechanac.TabIndex = 15;
             this.DTFechanac.Value = new System.DateTime(2024, 9, 25, 10, 46, 43, 0);
             // 
@@ -242,7 +242,7 @@
             this.TBdireccion.Location = new System.Drawing.Point(296, 54);
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdireccion.Name = "TBdireccion";
-            this.TBdireccion.Size = new System.Drawing.Size(242, 28);
+            this.TBdireccion.Size = new System.Drawing.Size(242, 24);
             this.TBdireccion.TabIndex = 16;
             // 
             // LEmail
@@ -252,7 +252,7 @@
             this.LEmail.Location = new System.Drawing.Point(293, 90);
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
-            this.LEmail.Size = new System.Drawing.Size(61, 21);
+            this.LEmail.Size = new System.Drawing.Size(51, 17);
             this.LEmail.TabIndex = 17;
             this.LEmail.Text = "Email";
             // 
@@ -262,7 +262,7 @@
             this.TBemail.Location = new System.Drawing.Point(297, 120);
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBemail.Name = "TBemail";
-            this.TBemail.Size = new System.Drawing.Size(241, 28);
+            this.TBemail.Size = new System.Drawing.Size(241, 24);
             this.TBemail.TabIndex = 18;
             // 
             // LContraseña
@@ -272,7 +272,7 @@
             this.LContraseña.Location = new System.Drawing.Point(293, 156);
             this.LContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LContraseña.Name = "LContraseña";
-            this.LContraseña.Size = new System.Drawing.Size(112, 21);
+            this.LContraseña.Size = new System.Drawing.Size(94, 17);
             this.LContraseña.TabIndex = 19;
             this.LContraseña.Text = "Contraseña";
             // 
@@ -283,7 +283,7 @@
             this.LConfirmarContraseña.Location = new System.Drawing.Point(293, 220);
             this.LConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LConfirmarContraseña.Name = "LConfirmarContraseña";
-            this.LConfirmarContraseña.Size = new System.Drawing.Size(209, 21);
+            this.LConfirmarContraseña.Size = new System.Drawing.Size(174, 17);
             this.LConfirmarContraseña.TabIndex = 20;
             this.LConfirmarContraseña.Text = "Confirmar Contraseña";
             // 
@@ -294,7 +294,7 @@
             this.LRol.Location = new System.Drawing.Point(571, 90);
             this.LRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRol.Name = "LRol";
-            this.LRol.Size = new System.Drawing.Size(40, 21);
+            this.LRol.Size = new System.Drawing.Size(33, 17);
             this.LRol.TabIndex = 21;
             this.LRol.Text = "Rol";
             // 
@@ -305,7 +305,7 @@
             this.LEstado.Location = new System.Drawing.Point(571, 220);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(70, 21);
+            this.LEstado.Size = new System.Drawing.Size(58, 17);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -316,7 +316,7 @@
             this.TBcontraseña.MaxLength = 10;
             this.TBcontraseña.Name = "TBcontraseña";
             this.TBcontraseña.PasswordChar = '*';
-            this.TBcontraseña.Size = new System.Drawing.Size(242, 28);
+            this.TBcontraseña.Size = new System.Drawing.Size(242, 24);
             this.TBcontraseña.TabIndex = 23;
             // 
             // TBconfirmarContraseña
@@ -326,7 +326,7 @@
             this.TBconfirmarContraseña.MaxLength = 10;
             this.TBconfirmarContraseña.Name = "TBconfirmarContraseña";
             this.TBconfirmarContraseña.PasswordChar = '*';
-            this.TBconfirmarContraseña.Size = new System.Drawing.Size(242, 28);
+            this.TBconfirmarContraseña.Size = new System.Drawing.Size(242, 24);
             this.TBconfirmarContraseña.TabIndex = 24;
             // 
             // contenedorDatos
@@ -369,7 +369,7 @@
             this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutaFoto.Location = new System.Drawing.Point(670, 173);
             this.rutaFoto.Name = "rutaFoto";
-            this.rutaFoto.Size = new System.Drawing.Size(146, 28);
+            this.rutaFoto.Size = new System.Drawing.Size(146, 24);
             this.rutaFoto.TabIndex = 31;
             // 
             // Bfoto
@@ -395,7 +395,7 @@
             "Administrador"});
             this.CBRol.Location = new System.Drawing.Point(574, 120);
             this.CBRol.Name = "CBRol";
-            this.CBRol.Size = new System.Drawing.Size(242, 29);
+            this.CBRol.Size = new System.Drawing.Size(242, 25);
             this.CBRol.TabIndex = 29;
             this.CBRol.Text = "Seleccione una opcion";
             // 
@@ -405,7 +405,7 @@
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBinactivo.Location = new System.Drawing.Point(713, 253);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
+            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -418,7 +418,7 @@
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBactivo.Location = new System.Drawing.Point(615, 253);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(86, 25);
+            this.rBactivo.Size = new System.Drawing.Size(74, 21);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -492,14 +492,14 @@
             // 
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.LightGray;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_usuario,
@@ -651,7 +651,7 @@
             "Nombre"});
             this.CBbuscar.Location = new System.Drawing.Point(912, 0);
             this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(156, 27);
+            this.CBbuscar.Size = new System.Drawing.Size(156, 23);
             this.CBbuscar.TabIndex = 1;
             this.CBbuscar.Text = "Nro DNI";
             // 
@@ -725,7 +725,7 @@
             // 
             // GestionUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
