@@ -40,5 +40,10 @@ namespace FankyRecords.C_presentacion.Administrativo
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void contenedorAdministrativo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
