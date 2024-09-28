@@ -15,10 +15,10 @@ namespace FankyRecords.C_negocio
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-               // Si no es una letra, cancela el evento
-               e.Handled = true;
+                // Si no es una letra, cancela el evento
+                e.Handled = true;
             }
-               return char.IsLetter(e.KeyChar);
+            return char.IsLetter(e.KeyChar);
         }
         public static bool EsNumero(KeyPressEventArgs e)
         {
@@ -53,7 +53,7 @@ namespace FankyRecords.C_negocio
             {
                 return false;
             }
-         
+
             return true; // Si pasa todas las validaciones, la contraseña es correcta.
         }
 
@@ -72,8 +72,25 @@ namespace FankyRecords.C_negocio
             return true;
         }
 
+        public static bool mensajeConfirmacion()
+        {
+            DialogResult result = MessageBox.Show("¿Desea guardar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.No)
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool mensajeEliminar()
+        {
+            DialogResult result = MessageBox.Show("¿Desea eliminar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
+            if (result == DialogResult.No)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

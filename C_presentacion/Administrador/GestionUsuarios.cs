@@ -145,6 +145,10 @@ namespace FankyRecords.C_presentacion.Administrador
             // Simplificación del nombre de archivo
             return Path.GetFileName(ruta);  // Devuelve el nombre del archivo completo con extensión
         }
-       
+
+        private void TBnombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
