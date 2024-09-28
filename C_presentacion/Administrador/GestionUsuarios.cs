@@ -28,73 +28,88 @@ namespace FankyRecords.C_presentacion.Administrador
                C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
                C_negocio.Validaciones.EstaVacio(TBdireccion.Text) ||
                C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBcontraseña.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBconfirmarContraseña.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBclave.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBconfirmarClave.Text) ||
                C_negocio.Validaciones.EstaVacio(CBRol.Text) ||
                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
                C_negocio.Validaciones.EstaVacio(rutaFoto.Text))
             {
-                MessageBox.Show("Debe Completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //validar constraseñas 
-                string password = TBcontraseña.Text;
-                string confirmPassword = TBconfirmarContraseña.Text;
-                string email = TBemail.Text;
-
-                if (!C_negocio.Validaciones.ContraseñaCorrecta(password, confirmPassword))
+                // Mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?",
+                                                          "Confirmación",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Las contraseñas no coinciden o contienen espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //validar constraseñas 
+                    string password = TBclave.Text;
+                    string confirmPassword = TBconfirmarClave.Text;
+                    string email = TBemail.Text;
+
+                    if (!C_negocio.Validaciones.ContraseñaCorrecta(password, confirmPassword))
+                    {
+                       MessageBox.Show("Las contraseñas no coinciden o contienen espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (!C_negocio.Validaciones.EmailCorrecto(email))
+                    {
+                       MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else 
+                    {
+                       int n = listadoUsuarios.Rows.Add();
+
+                       listadoUsuarios.Rows[n].Cells[0].Value = 0;
+                       listadoUsuarios.Rows[n].Cells[1].Value = TBdni.Text;
+                       listadoUsuarios.Rows[n].Cells[2].Value = TBapellido.Text;
+                       listadoUsuarios.Rows[n].Cells[3].Value = TBnombre.Text;
+                       listadoUsuarios.Rows[n].Cells[4].Value = DTFechanac.Value;
+                       listadoUsuarios.Rows[n].Cells[5].Value = TBdireccion.Text;
+                       listadoUsuarios.Rows[n].Cells[6].Value = TBemail.Text;
+                       listadoUsuarios.Rows[n].Cells[7].Value = TBtelefono.Text;
+                       listadoUsuarios.Rows[n].Cells[9].Value = CBRol.Text;
+
+                       if (rBactivo.Checked)
+                       {
+                          listadoUsuarios.Rows[n].Cells[10].Value = "Activo";
+                       }
+                       else
+                       {
+                          listadoUsuarios.Rows[n].Cells[10].Value = "Inactivo";
+                       }
+
+                       // limpia campos
+                       TBnombre.Clear();
+                       TBapellido.Clear();
+                       rutaFoto.Clear();
+                       TBdireccion.Clear();
+                       TBtelefono.Clear();
+                       TBdni.Clear();
+                       TBemail.Clear();
+                       picFotoUsuario.Image = null;
+                       TBclave.Clear();
+                       TBconfirmarClave.Clear();
+                       CBRol.SelectedIndex = -1;  // Deselect the ComboBox
+                       
+                       MessageBox.Show("Los datos han sido guardados correctamente.",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
                 }
-                else if (!C_negocio.Validaciones.EmailCorrecto(email))
+                else
                 {
-                    MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else 
-                {
-                    int n = listadoUsuarios.Rows.Add();
-
-                    listadoUsuarios.Rows[n].Cells[0].Value = 0;
-                    listadoUsuarios.Rows[n].Cells[1].Value = TBdni.Text;
-                    listadoUsuarios.Rows[n].Cells[2].Value = TBapellido.Text;
-                    listadoUsuarios.Rows[n].Cells[3].Value = TBnombre.Text;
-                    listadoUsuarios.Rows[n].Cells[4].Value = DTFechanac.Value;
-                    listadoUsuarios.Rows[n].Cells[5].Value = TBdireccion.Text;
-                    listadoUsuarios.Rows[n].Cells[6].Value = TBemail.Text;
-                    listadoUsuarios.Rows[n].Cells[7].Value = TBtelefono.Text;
-                    listadoUsuarios.Rows[n].Cells[8].Value = CBRol.SelectedItem.ToString();
-
-
-                    if (rBactivo.Checked)
-                    {
-                        listadoUsuarios.Rows[n].Cells[9].Value = "Activo";
-                    }
-                    else if (rBinactivo.Checked)
-                    {
-                        listadoUsuarios.Rows[n].Cells[9].Value = "Inactivo";
-                    }
-                    else
-                    {
-                        listadoUsuarios.Rows[n].Cells[9].Value = "X";
-                    }
-
-                    // limpia campos
-                    TBnombre.Clear();
-                    TBapellido.Clear();
-                    rutaFoto.Clear();
-                    TBdireccion.Clear();
-                    TBtelefono.Clear();
-                    TBdni.Clear();
-                    TBemail.Clear();
-                    picFotoUsuario.Image = null;
-                    TBcontraseña.Clear();
-                    TBconfirmarContraseña.Clear();
-                    CBRol.SelectedIndex = -1;  // Deselect the ComboBox
-
+                    MessageBox.Show("La operación de guardado ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
                 }
             }
         }
+
         private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsLetra(e);
