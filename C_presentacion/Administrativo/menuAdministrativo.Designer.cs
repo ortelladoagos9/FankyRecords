@@ -1,6 +1,6 @@
 ﻿namespace FankyRecords.C_presentacion.Administrativo
 {
-    partial class formMenuAdministrativo
+    partial class FormMenuAdministrativo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuAdministrativo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuAdministrativo));
             this.menuAdministrativo = new System.Windows.Forms.MenuStrip();
-            this.iconMenuItemProductosAdministrativo = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemCategoriaAdministrativo = new FontAwesome.Sharp.IconMenuItem();
+            this.MenuProductosAdministrativo = new FontAwesome.Sharp.IconMenuItem();
+            this.MenuCategoriaAdministrativo = new FontAwesome.Sharp.IconMenuItem();
             this.menuTituloAdministrativo = new System.Windows.Forms.MenuStrip();
-            this.iconMenuItemSalirAdministrativo = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemExpandirAdministrativo = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItemMinimizarAdministrativo = new FontAwesome.Sharp.IconMenuItem();
+            this.IconSalirAdministrativo = new FontAwesome.Sharp.IconMenuItem();
+            this.IconExpandirAdministrativo = new FontAwesome.Sharp.IconMenuItem();
+            this.IconMinimizarAdministrativo = new FontAwesome.Sharp.IconMenuItem();
             this.labFankyRecordsMenuAdministrativo = new System.Windows.Forms.Label();
             this.labUsuarioRolAdministrativo = new System.Windows.Forms.Label();
             this.labAdministrativo = new System.Windows.Forms.Label();
@@ -52,42 +52,42 @@
             this.menuAdministrativo.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.menuAdministrativo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuAdministrativo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iconMenuItemProductosAdministrativo,
-            this.iconMenuItemCategoriaAdministrativo});
+            this.MenuProductosAdministrativo,
+            this.MenuCategoriaAdministrativo});
             this.menuAdministrativo.Location = new System.Drawing.Point(0, 97);
             this.menuAdministrativo.Name = "menuAdministrativo";
             this.menuAdministrativo.Size = new System.Drawing.Size(1200, 63);
             this.menuAdministrativo.TabIndex = 0;
             // 
-            // iconMenuItemProductosAdministrativo
+            // MenuProductosAdministrativo
             // 
-            this.iconMenuItemProductosAdministrativo.AutoSize = false;
-            this.iconMenuItemProductosAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconMenuItemProductosAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemProductosAdministrativo.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
-            this.iconMenuItemProductosAdministrativo.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemProductosAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemProductosAdministrativo.IconSize = 45;
-            this.iconMenuItemProductosAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemProductosAdministrativo.Name = "iconMenuItemProductosAdministrativo";
-            this.iconMenuItemProductosAdministrativo.Size = new System.Drawing.Size(150, 59);
-            this.iconMenuItemProductosAdministrativo.Text = "Productos";
-            this.iconMenuItemProductosAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuProductosAdministrativo.AutoSize = false;
+            this.MenuProductosAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProductosAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
+            this.MenuProductosAdministrativo.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
+            this.MenuProductosAdministrativo.IconColor = System.Drawing.Color.DarkRed;
+            this.MenuProductosAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuProductosAdministrativo.IconSize = 45;
+            this.MenuProductosAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuProductosAdministrativo.Name = "MenuProductosAdministrativo";
+            this.MenuProductosAdministrativo.Size = new System.Drawing.Size(150, 59);
+            this.MenuProductosAdministrativo.Text = "Productos";
+            this.MenuProductosAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // iconMenuItemCategoriaAdministrativo
+            // MenuCategoriaAdministrativo
             // 
-            this.iconMenuItemCategoriaAdministrativo.AutoSize = false;
-            this.iconMenuItemCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconMenuItemCategoriaAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemCategoriaAdministrativo.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.iconMenuItemCategoriaAdministrativo.IconColor = System.Drawing.Color.DarkRed;
-            this.iconMenuItemCategoriaAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemCategoriaAdministrativo.IconSize = 45;
-            this.iconMenuItemCategoriaAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemCategoriaAdministrativo.Name = "iconMenuItemCategoriaAdministrativo";
-            this.iconMenuItemCategoriaAdministrativo.Size = new System.Drawing.Size(150, 59);
-            this.iconMenuItemCategoriaAdministrativo.Text = "Categorias";
-            this.iconMenuItemCategoriaAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuCategoriaAdministrativo.AutoSize = false;
+            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCategoriaAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
+            this.MenuCategoriaAdministrativo.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.MenuCategoriaAdministrativo.IconColor = System.Drawing.Color.DarkRed;
+            this.MenuCategoriaAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuCategoriaAdministrativo.IconSize = 45;
+            this.MenuCategoriaAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuCategoriaAdministrativo.Name = "MenuCategoriaAdministrativo";
+            this.MenuCategoriaAdministrativo.Size = new System.Drawing.Size(150, 59);
+            this.MenuCategoriaAdministrativo.Text = "Categorias";
+            this.MenuCategoriaAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // menuTituloAdministrativo
             // 
@@ -95,50 +95,50 @@
             this.menuTituloAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.menuTituloAdministrativo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuTituloAdministrativo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iconMenuItemSalirAdministrativo,
-            this.iconMenuItemExpandirAdministrativo,
-            this.iconMenuItemMinimizarAdministrativo});
+            this.IconSalirAdministrativo,
+            this.IconExpandirAdministrativo,
+            this.IconMinimizarAdministrativo});
             this.menuTituloAdministrativo.Location = new System.Drawing.Point(0, 0);
             this.menuTituloAdministrativo.Name = "menuTituloAdministrativo";
             this.menuTituloAdministrativo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuTituloAdministrativo.Size = new System.Drawing.Size(1200, 97);
             this.menuTituloAdministrativo.TabIndex = 1;
             // 
-            // iconMenuItemSalirAdministrativo
+            // IconSalirAdministrativo
             // 
-            this.iconMenuItemSalirAdministrativo.AutoSize = false;
-            this.iconMenuItemSalirAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.iconMenuItemSalirAdministrativo.IconColor = System.Drawing.Color.Gold;
-            this.iconMenuItemSalirAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemSalirAdministrativo.IconSize = 30;
-            this.iconMenuItemSalirAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemSalirAdministrativo.Name = "iconMenuItemSalirAdministrativo";
-            this.iconMenuItemSalirAdministrativo.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemSalirAdministrativo.Click += new System.EventHandler(this.iconMenuItemSalirAdministrativo_Click);
+            this.IconSalirAdministrativo.AutoSize = false;
+            this.IconSalirAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.IconSalirAdministrativo.IconColor = System.Drawing.Color.Gold;
+            this.IconSalirAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IconSalirAdministrativo.IconSize = 30;
+            this.IconSalirAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.IconSalirAdministrativo.Name = "IconSalirAdministrativo";
+            this.IconSalirAdministrativo.Size = new System.Drawing.Size(50, 93);
+            this.IconSalirAdministrativo.Click += new System.EventHandler(this.IconSalirAdministrativo_Click);
             // 
-            // iconMenuItemExpandirAdministrativo
+            // IconExpandirAdministrativo
             // 
-            this.iconMenuItemExpandirAdministrativo.AutoSize = false;
-            this.iconMenuItemExpandirAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Square;
-            this.iconMenuItemExpandirAdministrativo.IconColor = System.Drawing.Color.Gold;
-            this.iconMenuItemExpandirAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemExpandirAdministrativo.IconSize = 25;
-            this.iconMenuItemExpandirAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemExpandirAdministrativo.Name = "iconMenuItemExpandirAdministrativo";
-            this.iconMenuItemExpandirAdministrativo.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemExpandirAdministrativo.Click += new System.EventHandler(this.iconMenuItemExpandirAdministrativo_Click);
+            this.IconExpandirAdministrativo.AutoSize = false;
+            this.IconExpandirAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.IconExpandirAdministrativo.IconColor = System.Drawing.Color.Gold;
+            this.IconExpandirAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IconExpandirAdministrativo.IconSize = 25;
+            this.IconExpandirAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.IconExpandirAdministrativo.Name = "IconExpandirAdministrativo";
+            this.IconExpandirAdministrativo.Size = new System.Drawing.Size(50, 93);
+            this.IconExpandirAdministrativo.Click += new System.EventHandler(this.IconExpandirAdministrativo_Click);
             // 
-            // iconMenuItemMinimizarAdministrativo
+            // IconMinimizarAdministrativo
             // 
-            this.iconMenuItemMinimizarAdministrativo.AutoSize = false;
-            this.iconMenuItemMinimizarAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconMenuItemMinimizarAdministrativo.IconColor = System.Drawing.Color.Gold;
-            this.iconMenuItemMinimizarAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItemMinimizarAdministrativo.IconSize = 30;
-            this.iconMenuItemMinimizarAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItemMinimizarAdministrativo.Name = "iconMenuItemMinimizarAdministrativo";
-            this.iconMenuItemMinimizarAdministrativo.Size = new System.Drawing.Size(50, 93);
-            this.iconMenuItemMinimizarAdministrativo.Click += new System.EventHandler(this.iconMenuItemMinimizarAdministrativo_Click);
+            this.IconMinimizarAdministrativo.AutoSize = false;
+            this.IconMinimizarAdministrativo.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.IconMinimizarAdministrativo.IconColor = System.Drawing.Color.Gold;
+            this.IconMinimizarAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IconMinimizarAdministrativo.IconSize = 30;
+            this.IconMinimizarAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.IconMinimizarAdministrativo.Name = "IconMinimizarAdministrativo";
+            this.IconMinimizarAdministrativo.Size = new System.Drawing.Size(50, 93);
+            this.IconMinimizarAdministrativo.Click += new System.EventHandler(this.IconMinimizarAdministrativo_Click);
             // 
             // labFankyRecordsMenuAdministrativo
             // 
@@ -185,7 +185,6 @@
             this.contenedorAdministrativo.Name = "contenedorAdministrativo";
             this.contenedorAdministrativo.Size = new System.Drawing.Size(1200, 652);
             this.contenedorAdministrativo.TabIndex = 6;
-            this.contenedorAdministrativo.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedorAdministrativo_Paint);
             // 
             // picFankyRecordsAdministrativo
             // 
@@ -198,7 +197,7 @@
             this.picFankyRecordsAdministrativo.TabIndex = 2;
             this.picFankyRecordsAdministrativo.TabStop = false;
             // 
-            // formMenuAdministrativo
+            // FormMenuAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,7 +213,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuAdministrativo;
-            this.Name = "formMenuAdministrativo";
+            this.Name = "FormMenuAdministrativo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrativo";
             this.menuAdministrativo.ResumeLayout(false);
@@ -232,14 +231,14 @@
         private System.Windows.Forms.MenuStrip menuAdministrativo;
         private System.Windows.Forms.MenuStrip menuTituloAdministrativo;
         private System.Windows.Forms.PictureBox picFankyRecordsAdministrativo;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemCategoriaAdministrativo;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemProductosAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem MenuCategoriaAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem MenuProductosAdministrativo;
         private System.Windows.Forms.Label labFankyRecordsMenuAdministrativo;
         private System.Windows.Forms.Label labUsuarioRolAdministrativo;
         private System.Windows.Forms.Label labAdministrativo;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemSalirAdministrativo;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemExpandirAdministrativo;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemMinimizarAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem IconSalirAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem IconExpandirAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem IconMinimizarAdministrativo;
         private System.Windows.Forms.Panel contenedorAdministrativo;
     }
 }

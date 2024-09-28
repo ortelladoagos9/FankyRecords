@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrativo
 {
-    public partial class formMenuAdministrativo : Form
+    public partial class FormMenuAdministrativo : Form
     {
-        public formMenuAdministrativo()
+        public FormMenuAdministrativo()
         {
             InitializeComponent();
         }
 
-        private void iconMenuItemSalirAdministrativo_Click(object sender, EventArgs e)
+        private void IconSalirAdministrativo_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconMenuItemExpandirAdministrativo_Click(object sender, EventArgs e)
+        private void IconExpandirAdministrativo_Click(object sender, EventArgs e)
         {
             // Si el formulario ya está maximizado, restaurarlo
             if (this.WindowState == FormWindowState.Maximized)
@@ -35,15 +35,12 @@ namespace FankyRecords.C_presentacion.Administrativo
             }
         }
 
-        private void iconMenuItemMinimizarAdministrativo_Click(object sender, EventArgs e)
+        private void IconMinimizarAdministrativo_Click(object sender, EventArgs e)
         {
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void contenedorAdministrativo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }

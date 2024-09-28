@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Vendedor
 {
-    public partial class formMenuVendedor : Form
+    public partial class FormMenuVendedor : Form
     {
-        public formMenuVendedor()
+        public FormMenuVendedor()
         {
             InitializeComponent();
         }
 
-        private void iconMenuItemSalirVendedor_Click(object sender, EventArgs e)
+        private void IconSalirVendedor_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconMenuItemExpandirVendedor_Click(object sender, EventArgs e)
+        private void IconExpandirVendedor_Click(object sender, EventArgs e)
         {
             // Si el formulario ya está maximizado, restaurarlo
             if (this.WindowState == FormWindowState.Maximized)
@@ -35,7 +35,7 @@ namespace FankyRecords.C_presentacion.Vendedor
             }
         }
 
-        private void iconMenuItemMinimizarVendedor_Click(object sender, EventArgs e)
+        private void IconMinimizarVendedor_Click(object sender, EventArgs e)
         {
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;

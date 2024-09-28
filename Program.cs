@@ -19,7 +19,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMenuAdmin());
+            Application.Run(new FormMenuAdmin());
             //Application.Run(new formMenuVendedor());
             //Application.Run(new formMenuAdministrativo());
         }

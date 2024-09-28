@@ -1,6 +1,6 @@
 ﻿namespace FankyRecords.C_presentacion.Administrador
 {
-    partial class formMenuAdmin
+    partial class FormMenuAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuAdmin));
             this.menuAdministrador = new System.Windows.Forms.MenuStrip();
             this.MenuUsuariosAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.MenuProductoAdministrador = new FontAwesome.Sharp.IconMenuItem();
@@ -42,6 +42,8 @@
             this.SubmenuDetalleCompraAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.MenuNegocioAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.MenuReportesAdministrador = new FontAwesome.Sharp.IconMenuItem();
+            this.SubmenuReporteVentas = new FontAwesome.Sharp.IconMenuItem();
+            this.SubmenuReporteCompras = new FontAwesome.Sharp.IconMenuItem();
             this.MenuGraficosAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.MenuBackupAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.menuTituloAdministrador = new System.Windows.Forms.MenuStrip();
@@ -53,8 +55,6 @@
             this.labAdministrador = new System.Windows.Forms.Label();
             this.contenedorAdministrador = new System.Windows.Forms.Panel();
             this.picFankyRecordsAdministrador = new System.Windows.Forms.PictureBox();
-            this.SubmenuReporteVentas = new FontAwesome.Sharp.IconMenuItem();
-            this.SubmenuReporteCompras = new FontAwesome.Sharp.IconMenuItem();
             this.menuAdministrador.SuspendLayout();
             this.menuTituloAdministrador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFankyRecordsAdministrador)).BeginInit();
@@ -269,6 +269,34 @@
             this.MenuReportesAdministrador.Text = "Reportes";
             this.MenuReportesAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // SubmenuReporteVentas
+            // 
+            this.SubmenuReporteVentas.AutoSize = false;
+            this.SubmenuReporteVentas.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.SubmenuReporteVentas.ForeColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteVentas.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.SubmenuReporteVentas.IconColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubmenuReporteVentas.IconSize = 25;
+            this.SubmenuReporteVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.SubmenuReporteVentas.Name = "SubmenuReporteVentas";
+            this.SubmenuReporteVentas.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuReporteVentas.Text = "Reporte Ventas";
+            // 
+            // SubmenuReporteCompras
+            // 
+            this.SubmenuReporteCompras.AutoSize = false;
+            this.SubmenuReporteCompras.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.SubmenuReporteCompras.ForeColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteCompras.IconChar = FontAwesome.Sharp.IconChar.ChartGantt;
+            this.SubmenuReporteCompras.IconColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubmenuReporteCompras.IconSize = 25;
+            this.SubmenuReporteCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.SubmenuReporteCompras.Name = "SubmenuReporteCompras";
+            this.SubmenuReporteCompras.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuReporteCompras.Text = "Reporte Compras";
+            // 
             // MenuGraficosAdministrador
             // 
             this.MenuGraficosAdministrador.AutoSize = false;
@@ -410,35 +438,7 @@
             this.picFankyRecordsAdministrador.TabIndex = 3;
             this.picFankyRecordsAdministrador.TabStop = false;
             // 
-            // SubmenuReporteVentas
-            // 
-            this.SubmenuReporteVentas.AutoSize = false;
-            this.SubmenuReporteVentas.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.SubmenuReporteVentas.ForeColor = System.Drawing.Color.DarkRed;
-            this.SubmenuReporteVentas.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.SubmenuReporteVentas.IconColor = System.Drawing.Color.DarkRed;
-            this.SubmenuReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubmenuReporteVentas.IconSize = 25;
-            this.SubmenuReporteVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.SubmenuReporteVentas.Name = "SubmenuReporteVentas";
-            this.SubmenuReporteVentas.Size = new System.Drawing.Size(230, 35);
-            this.SubmenuReporteVentas.Text = "Reporte Ventas";
-            // 
-            // SubmenuReporteCompras
-            // 
-            this.SubmenuReporteCompras.AutoSize = false;
-            this.SubmenuReporteCompras.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.SubmenuReporteCompras.ForeColor = System.Drawing.Color.DarkRed;
-            this.SubmenuReporteCompras.IconChar = FontAwesome.Sharp.IconChar.ChartGantt;
-            this.SubmenuReporteCompras.IconColor = System.Drawing.Color.DarkRed;
-            this.SubmenuReporteCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubmenuReporteCompras.IconSize = 25;
-            this.SubmenuReporteCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.SubmenuReporteCompras.Name = "SubmenuReporteCompras";
-            this.SubmenuReporteCompras.Size = new System.Drawing.Size(230, 35);
-            this.SubmenuReporteCompras.Text = "Reporte Compras";
-            // 
-            // formMenuAdmin
+            // FormMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -454,7 +454,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "formMenuAdmin";
+            this.Name = "FormMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrador";
             this.menuAdministrador.ResumeLayout(false);

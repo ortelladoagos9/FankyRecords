@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class formMenuAdmin : Form
+    public partial class FormMenuAdmin : Form
     {
-        public formMenuAdmin()
+        public FormMenuAdmin()
         {
             InitializeComponent();
         }
