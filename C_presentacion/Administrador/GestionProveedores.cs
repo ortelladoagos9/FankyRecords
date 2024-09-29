@@ -20,13 +20,13 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Bguardar_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBrasonSocial.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
+            if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
             {
-                MessageBox.Show("Debe Completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -46,7 +46,7 @@ namespace FankyRecords.C_presentacion.Administrador
                         int n = DGlistaproveedores.Rows.Add();
 
                         DGlistaproveedores.Rows[n].Cells[0].Value = 0;
-                        DGlistaproveedores.Rows[n].Cells[1].Value = TBrasonSocial.Text;
+                        DGlistaproveedores.Rows[n].Cells[1].Value = TBRazonSocial.Text;
                         DGlistaproveedores.Rows[n].Cells[2].Value = TBcuit.Text;
                         DGlistaproveedores.Rows[n].Cells[3].Value = TBdomiciliop.Text;
                         DGlistaproveedores.Rows[n].Cells[4].Value = TBcorreo.Text;
@@ -61,7 +61,7 @@ namespace FankyRecords.C_presentacion.Administrador
                         }
 
                         // limpia campos
-                        TBrasonSocial.Clear();
+                        TBRazonSocial.Clear();
                         TBcuit.Clear();
                         TBcorreo.Clear();
                         TBtelefono.Clear();
@@ -71,30 +71,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsLetra(e);
@@ -106,13 +82,13 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBrasonSocial.Text) ||
+            if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
                           C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
                           C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
                           C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
                           C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
             {
-                MessageBox.Show("Debe haber algo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -120,7 +96,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     MessageBox.Show("Eliminado!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     // limpia campos
-                    TBrasonSocial.Clear();
+                    TBRazonSocial.Clear();
                     TBcuit.Clear();
                     TBcorreo.Clear();
                     TBtelefono.Clear();

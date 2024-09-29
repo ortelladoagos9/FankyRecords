@@ -68,5 +68,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             AbrirFormulario((IconMenuItem)sender, new GestionUsuarios());
         }
+
+        
     }
 }

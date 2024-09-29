@@ -74,10 +74,10 @@
             this.iconMenuItemReportesAdministrador,
             this.iconMenuItemGraficosAdministrador,
             this.iconMenuItemBackupAdministrador});
-            this.menuAdministrador.Location = new System.Drawing.Point(0, 79);
+            this.menuAdministrador.Location = new System.Drawing.Point(0, 97);
             this.menuAdministrador.Name = "menuAdministrador";
-            this.menuAdministrador.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuAdministrador.Size = new System.Drawing.Size(1200, 51);
+            this.menuAdministrador.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuAdministrador.Size = new System.Drawing.Size(1600, 63);
             this.menuAdministrador.TabIndex = 0;
             this.menuAdministrador.Text = "menuStrip1";
             // 
@@ -169,7 +169,7 @@
             this.iconMenuItemDetalleVentasAdministrador.IconSize = 25;
             this.iconMenuItemDetalleVentasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemDetalleVentasAdministrador.Name = "iconMenuItemDetalleVentasAdministrador";
-            this.iconMenuItemDetalleVentasAdministrador.Size = new System.Drawing.Size(184, 32);
+            this.iconMenuItemDetalleVentasAdministrador.Size = new System.Drawing.Size(226, 32);
             this.iconMenuItemDetalleVentasAdministrador.Text = "Detalle de venta";
             // 
             // iconMenuItemDevolucionAdministrador
@@ -215,7 +215,7 @@
             this.iconMenuItemRegistrarComprasAdministrador.IconSize = 25;
             this.iconMenuItemRegistrarComprasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemRegistrarComprasAdministrador.Name = "iconMenuItemRegistrarComprasAdministrador";
-            this.iconMenuItemRegistrarComprasAdministrador.Size = new System.Drawing.Size(197, 32);
+            this.iconMenuItemRegistrarComprasAdministrador.Size = new System.Drawing.Size(241, 32);
             this.iconMenuItemRegistrarComprasAdministrador.Text = "Registrar compras";
             // 
             // iconMenuItemDetalleCompraAdministrador
@@ -228,7 +228,7 @@
             this.iconMenuItemDetalleCompraAdministrador.IconSize = 25;
             this.iconMenuItemDetalleCompraAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItemDetalleCompraAdministrador.Name = "iconMenuItemDetalleCompraAdministrador";
-            this.iconMenuItemDetalleCompraAdministrador.Size = new System.Drawing.Size(197, 32);
+            this.iconMenuItemDetalleCompraAdministrador.Size = new System.Drawing.Size(241, 32);
             this.iconMenuItemDetalleCompraAdministrador.Text = "Detalle de compra";
             // 
             // iconMenuItemNegocioAdministrador
@@ -302,9 +302,9 @@
             this.iconMenuItemMinimizarAdministrador});
             this.menuTituloAdministrador.Location = new System.Drawing.Point(0, 0);
             this.menuTituloAdministrador.Name = "menuTituloAdministrador";
-            this.menuTituloAdministrador.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuTituloAdministrador.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuTituloAdministrador.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTituloAdministrador.Size = new System.Drawing.Size(1200, 79);
+            this.menuTituloAdministrador.Size = new System.Drawing.Size(1600, 97);
             this.menuTituloAdministrador.TabIndex = 1;
             // 
             // iconMenuItemSalirAdministrador
@@ -349,10 +349,9 @@
             this.labFankyRecordsMenuAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.labFankyRecordsMenuAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFankyRecordsMenuAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labFankyRecordsMenuAdministrador.Location = new System.Drawing.Point(76, 28);
-            this.labFankyRecordsMenuAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labFankyRecordsMenuAdministrador.Location = new System.Drawing.Point(101, 34);
             this.labFankyRecordsMenuAdministrador.Name = "labFankyRecordsMenuAdministrador";
-            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(177, 24);
+            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(210, 29);
             this.labFankyRecordsMenuAdministrador.TabIndex = 2;
             this.labFankyRecordsMenuAdministrador.Text = "Fanky Records";
             // 
@@ -362,10 +361,9 @@
             this.labUsuarioRolAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labUsuarioRolAdministrador.Location = new System.Drawing.Point(804, 35);
-            this.labUsuarioRolAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labUsuarioRolAdministrador.Location = new System.Drawing.Point(1072, 43);
             this.labUsuarioRolAdministrador.Name = "labUsuarioRolAdministrador";
-            this.labUsuarioRolAdministrador.Size = new System.Drawing.Size(70, 16);
+            this.labUsuarioRolAdministrador.Size = new System.Drawing.Size(86, 20);
             this.labUsuarioRolAdministrador.TabIndex = 4;
             this.labUsuarioRolAdministrador.Text = "Usuario:";
             // 
@@ -375,10 +373,9 @@
             this.labAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.labAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labAdministrador.Location = new System.Drawing.Point(896, 35);
-            this.labAdministrador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labAdministrador.Location = new System.Drawing.Point(1195, 43);
             this.labAdministrador.Name = "labAdministrador";
-            this.labAdministrador.Size = new System.Drawing.Size(118, 16);
+            this.labAdministrador.Size = new System.Drawing.Size(144, 20);
             this.labAdministrador.TabIndex = 5;
             this.labAdministrador.Text = "Administrador";
             // 
@@ -389,10 +386,10 @@
             this.contenedorAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.contenedorAdministrador.Location = new System.Drawing.Point(0, 130);
-            this.contenedorAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contenedorAdministrador.Location = new System.Drawing.Point(0, 160);
+            this.contenedorAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contenedorAdministrador.Name = "contenedorAdministrador";
-            this.contenedorAdministrador.Size = new System.Drawing.Size(1200, 658);
+            this.contenedorAdministrador.Size = new System.Drawing.Size(1600, 810);
             this.contenedorAdministrador.TabIndex = 6;
             // 
             // picFankyRecordsAdministrador
@@ -400,20 +397,20 @@
             this.picFankyRecordsAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.picFankyRecordsAdministrador.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsAdministrador.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
-            this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(9, 10);
-            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(12, 12);
+            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picFankyRecordsAdministrador.Name = "picFankyRecordsAdministrador";
-            this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(54, 58);
+            this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(72, 71);
             this.picFankyRecordsAdministrador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFankyRecordsAdministrador.TabIndex = 3;
             this.picFankyRecordsAdministrador.TabStop = false;
             // 
             // formMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1600, 970);
             this.Controls.Add(this.contenedorAdministrador);
             this.Controls.Add(this.labAdministrador);
             this.Controls.Add(this.labUsuarioRolAdministrador);
@@ -424,7 +421,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "formMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrador";
