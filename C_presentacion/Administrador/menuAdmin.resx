@@ -126,6 +126,9 @@
   <metadata name="MenuProductoAdministrador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 35</value>
   </metadata>
+  <metadata name="MenuCategoriaAdministrativo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 76</value>
+  </metadata>
   <metadata name="MenuProveedorAdministrador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>918, 35</value>
   </metadata>

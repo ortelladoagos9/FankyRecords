@@ -72,6 +72,12 @@
     <Compile Include="C_presentacion\Administrador\menuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C_presentacion\Administrador\registrarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\registrarVentas.Designer.cs">
+      <DependentUpon>registrarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrativo\menuAdministrativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="C_presentacion\Administrador\gestionProductos.resx">
       <DependentUpon>gestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\registrarVentas.resx">
+      <DependentUpon>registrarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>

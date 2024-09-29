@@ -161,6 +161,16 @@ namespace FankyRecords.C_presentacion.Administrador
             return Path.GetFileName(ruta);  // Devuelve el nombre del archivo completo con extensión
         }
 
-        
+        private void Beliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar todas las filas del DataGridView
+            listadoUsuarios.Rows.Clear();
+
+        }
     }
 }

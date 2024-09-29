@@ -25,9 +25,6 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(TBcodigo_prod.Text) ||
                C_negocio.Validaciones.EstaVacio(TBnombre_prod.Text) ||
                C_negocio.Validaciones.EstaVacio(TBdescripcion.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBstock.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBPrecio_Compra.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBPrecio_Venta.Text) ||
                C_negocio.Validaciones.EstaVacio(CBcategoria.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,25 +44,21 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoProductos.Rows[n].Cells[1].Value = TBnombre_prod.Text;
                     listadoProductos.Rows[n].Cells[2].Value = TBdescripcion.Text;
                     listadoProductos.Rows[n].Cells[3].Value = CBcategoria.Text;
-                    listadoProductos.Rows[n].Cells[4].Value = TBstock.Text;
-                    listadoProductos.Rows[n].Cells[5].Value = TBPrecio_Compra.Text;
-                    listadoProductos.Rows[n].Cells[6].Value = TBPrecio_Venta.Text;
-                    
+                    listadoProductos.Rows[n].Cells[4].Value = TBPrecio_Venta.Text;
+                                        
                     if (rBactivo.Checked)
                     {
-                        listadoProductos.Rows[n].Cells[7].Value = "Activo";
+                        listadoProductos.Rows[n].Cells[5].Value = "Activo";
                     }
                     else
                     {
-                        listadoProductos.Rows[n].Cells[7].Value = "Inactivo";
+                        listadoProductos.Rows[n].Cells[5].Value = "Inactivo";
                     }
 
                     // limpia campos
                     TBcodigo_prod.Clear();
                     TBnombre_prod.Clear();
                     TBdescripcion.Clear();
-                    TBstock.Clear();
-                    TBPrecio_Compra.Clear();
                     TBPrecio_Venta.Clear();
                     CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
                                                     
@@ -95,6 +88,13 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar todas las filas del DataGridView
+            listadoProductos.Rows.Clear();
 
         }
     }

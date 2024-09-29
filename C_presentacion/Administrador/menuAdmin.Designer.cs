@@ -55,6 +55,7 @@
             this.labAdministrador = new System.Windows.Forms.Label();
             this.contenedorAdministrador = new System.Windows.Forms.Panel();
             this.picFankyRecordsAdministrador = new System.Windows.Forms.PictureBox();
+            this.MenuCategoriaAdministrativo = new FontAwesome.Sharp.IconMenuItem();
             this.menuAdministrador.SuspendLayout();
             this.menuTituloAdministrador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFankyRecordsAdministrador)).BeginInit();
@@ -68,6 +69,7 @@
             this.menuAdministrador.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuUsuariosAdministrador,
             this.MenuProductoAdministrador,
+            this.MenuCategoriaAdministrativo,
             this.MenuProveedorAdministrador,
             this.MenuVentasAdministrador,
             this.MenuDevolucionAdministrador,
@@ -160,6 +162,7 @@
             this.SubmenuRegistrarVentasAdministrador.Name = "SubmenuRegistrarVentasAdministrador";
             this.SubmenuRegistrarVentasAdministrador.Size = new System.Drawing.Size(230, 35);
             this.SubmenuRegistrarVentasAdministrador.Text = "Registrar ventas";
+            this.SubmenuRegistrarVentasAdministrador.Click += new System.EventHandler(this.SubmenuRegistrarVentasAdministrador_Click);
             // 
             // SubmenuDetalleVentasAdministrador
             // 
@@ -250,6 +253,7 @@
             this.MenuNegocioAdministrador.Size = new System.Drawing.Size(100, 59);
             this.MenuNegocioAdministrador.Text = "Negocio";
             this.MenuNegocioAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuNegocioAdministrador.Visible = false;
             // 
             // MenuReportesAdministrador
             // 
@@ -311,6 +315,8 @@
             this.MenuGraficosAdministrador.Size = new System.Drawing.Size(100, 59);
             this.MenuGraficosAdministrador.Text = "Gráficos";
             this.MenuGraficosAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuGraficosAdministrador.Visible = false;
+            this.MenuGraficosAdministrador.Click += new System.EventHandler(this.MenuGraficosAdministrador_Click);
             // 
             // MenuBackupAdministrador
             // 
@@ -438,6 +444,21 @@
             this.picFankyRecordsAdministrador.TabIndex = 3;
             this.picFankyRecordsAdministrador.TabStop = false;
             // 
+            // MenuCategoriaAdministrativo
+            // 
+            this.MenuCategoriaAdministrativo.AutoSize = false;
+            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCategoriaAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
+            this.MenuCategoriaAdministrativo.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.MenuCategoriaAdministrativo.IconColor = System.Drawing.Color.DarkRed;
+            this.MenuCategoriaAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuCategoriaAdministrativo.IconSize = 45;
+            this.MenuCategoriaAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuCategoriaAdministrativo.Name = "MenuCategoriaAdministrativo";
+            this.MenuCategoriaAdministrativo.Size = new System.Drawing.Size(100, 59);
+            this.MenuCategoriaAdministrativo.Text = "Categorias";
+            this.MenuCategoriaAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // FormMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -495,5 +516,6 @@
         public System.Windows.Forms.Panel contenedorAdministrador;
         private FontAwesome.Sharp.IconMenuItem SubmenuReporteVentas;
         private FontAwesome.Sharp.IconMenuItem SubmenuReporteCompras;
+        private FontAwesome.Sharp.IconMenuItem MenuCategoriaAdministrativo;
     }
 }
