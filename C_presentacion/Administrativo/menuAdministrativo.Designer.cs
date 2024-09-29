@@ -41,6 +41,9 @@
             this.labAdministrativo = new System.Windows.Forms.Label();
             this.contenedorAdministrativo = new System.Windows.Forms.Panel();
             this.picFankyRecordsAdministrativo = new System.Windows.Forms.PictureBox();
+            this.MenuComprasAdministrador = new FontAwesome.Sharp.IconMenuItem();
+            this.SubmenuRegistrarComprasAdministrador = new FontAwesome.Sharp.IconMenuItem();
+            this.SubmenuDetalleCompraAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.menuAdministrativo.SuspendLayout();
             this.menuTituloAdministrativo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFankyRecordsAdministrativo)).BeginInit();
@@ -53,7 +56,8 @@
             this.menuAdministrativo.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuAdministrativo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuProductosAdministrativo,
-            this.MenuCategoriaAdministrativo});
+            this.MenuCategoriaAdministrativo,
+            this.MenuComprasAdministrador});
             this.menuAdministrativo.Location = new System.Drawing.Point(0, 97);
             this.menuAdministrativo.Name = "menuAdministrativo";
             this.menuAdministrativo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -204,6 +208,52 @@
             this.picFankyRecordsAdministrativo.TabIndex = 2;
             this.picFankyRecordsAdministrativo.TabStop = false;
             // 
+            // MenuComprasAdministrador
+            // 
+            this.MenuComprasAdministrador.AutoSize = false;
+            this.MenuComprasAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SubmenuRegistrarComprasAdministrador,
+            this.SubmenuDetalleCompraAdministrador});
+            this.MenuComprasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuComprasAdministrador.ForeColor = System.Drawing.Color.DarkRed;
+            this.MenuComprasAdministrador.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.MenuComprasAdministrador.IconColor = System.Drawing.Color.DarkRed;
+            this.MenuComprasAdministrador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MenuComprasAdministrador.IconSize = 45;
+            this.MenuComprasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuComprasAdministrador.Name = "MenuComprasAdministrador";
+            this.MenuComprasAdministrador.Size = new System.Drawing.Size(150, 59);
+            this.MenuComprasAdministrador.Text = "Compras";
+            this.MenuComprasAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // SubmenuRegistrarComprasAdministrador
+            // 
+            this.SubmenuRegistrarComprasAdministrador.AutoSize = false;
+            this.SubmenuRegistrarComprasAdministrador.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.SubmenuRegistrarComprasAdministrador.ForeColor = System.Drawing.Color.DarkRed;
+            this.SubmenuRegistrarComprasAdministrador.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.SubmenuRegistrarComprasAdministrador.IconColor = System.Drawing.Color.DarkRed;
+            this.SubmenuRegistrarComprasAdministrador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubmenuRegistrarComprasAdministrador.IconSize = 25;
+            this.SubmenuRegistrarComprasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.SubmenuRegistrarComprasAdministrador.Name = "SubmenuRegistrarComprasAdministrador";
+            this.SubmenuRegistrarComprasAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuRegistrarComprasAdministrador.Text = "Registrar compras";
+            // 
+            // SubmenuDetalleCompraAdministrador
+            // 
+            this.SubmenuDetalleCompraAdministrador.AutoSize = false;
+            this.SubmenuDetalleCompraAdministrador.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.SubmenuDetalleCompraAdministrador.ForeColor = System.Drawing.Color.DarkRed;
+            this.SubmenuDetalleCompraAdministrador.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.SubmenuDetalleCompraAdministrador.IconColor = System.Drawing.Color.DarkRed;
+            this.SubmenuDetalleCompraAdministrador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubmenuDetalleCompraAdministrador.IconSize = 25;
+            this.SubmenuDetalleCompraAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.SubmenuDetalleCompraAdministrador.Name = "SubmenuDetalleCompraAdministrador";
+            this.SubmenuDetalleCompraAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuDetalleCompraAdministrador.Text = "Detalle de compra";
+            // 
             // FormMenuAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +297,8 @@
         private FontAwesome.Sharp.IconMenuItem IconExpandirAdministrativo;
         private FontAwesome.Sharp.IconMenuItem IconMinimizarAdministrativo;
         private System.Windows.Forms.Panel contenedorAdministrativo;
+        private FontAwesome.Sharp.IconMenuItem MenuComprasAdministrador;
+        private FontAwesome.Sharp.IconMenuItem SubmenuRegistrarComprasAdministrador;
+        private FontAwesome.Sharp.IconMenuItem SubmenuDetalleCompraAdministrador;
     }
 }

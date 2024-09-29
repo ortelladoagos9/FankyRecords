@@ -41,8 +41,6 @@
             this.nombre_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -59,10 +57,6 @@
             this.LEstado = new System.Windows.Forms.Label();
             this.LCategoria = new System.Windows.Forms.Label();
             this.LPrecio_Venta = new System.Windows.Forms.Label();
-            this.TBPrecio_Compra = new System.Windows.Forms.TextBox();
-            this.LPrecio_Compra = new System.Windows.Forms.Label();
-            this.TBstock = new System.Windows.Forms.TextBox();
-            this.LStock = new System.Windows.Forms.Label();
             this.TBdescripcion = new System.Windows.Forms.TextBox();
             this.TBcodigo_prod = new System.Windows.Forms.TextBox();
             this.TBnombre_prod = new System.Windows.Forms.TextBox();
@@ -186,6 +180,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // listadoProductos
             // 
@@ -205,8 +200,6 @@
             this.nombre_prod,
             this.descripcion,
             this.categoria,
-            this.stock,
-            this.precio_compra,
             this.precio_venta,
             this.Estado});
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -247,22 +240,6 @@
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
             this.categoria.Width = 125;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 125;
-            // 
-            // precio_compra
-            // 
-            this.precio_compra.HeaderText = "Precio Compra";
-            this.precio_compra.MinimumWidth = 6;
-            this.precio_compra.Name = "precio_compra";
-            this.precio_compra.ReadOnly = true;
-            this.precio_compra.Width = 130;
             // 
             // precio_venta
             // 
@@ -397,10 +374,6 @@
             this.contenedorDatos.Controls.Add(this.LEstado);
             this.contenedorDatos.Controls.Add(this.LCategoria);
             this.contenedorDatos.Controls.Add(this.LPrecio_Venta);
-            this.contenedorDatos.Controls.Add(this.TBPrecio_Compra);
-            this.contenedorDatos.Controls.Add(this.LPrecio_Compra);
-            this.contenedorDatos.Controls.Add(this.TBstock);
-            this.contenedorDatos.Controls.Add(this.LStock);
             this.contenedorDatos.Controls.Add(this.TBdescripcion);
             this.contenedorDatos.Controls.Add(this.TBcodigo_prod);
             this.contenedorDatos.Controls.Add(this.TBnombre_prod);
@@ -427,7 +400,7 @@
             "Rock and Roll",
             "Pop",
             "Indie/Alternative"});
-            this.CBcategoria.Location = new System.Drawing.Point(613, 66);
+            this.CBcategoria.Location = new System.Drawing.Point(470, 145);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(242, 29);
@@ -438,7 +411,7 @@
             // 
             this.rBinactivo.AutoSize = true;
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBinactivo.Location = new System.Drawing.Point(751, 149);
+            this.rBinactivo.Location = new System.Drawing.Point(608, 228);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBinactivo.Name = "rBinactivo";
             this.rBinactivo.Size = new System.Drawing.Size(103, 25);
@@ -452,7 +425,7 @@
             this.rBactivo.AutoSize = true;
             this.rBactivo.Checked = true;
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBactivo.Location = new System.Drawing.Point(652, 149);
+            this.rBactivo.Location = new System.Drawing.Point(509, 228);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBactivo.Name = "rBactivo";
             this.rBactivo.Size = new System.Drawing.Size(86, 25);
@@ -464,7 +437,7 @@
             // TBPrecio_Venta
             // 
             this.TBPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio_Venta.Location = new System.Drawing.Point(321, 226);
+            this.TBPrecio_Venta.Location = new System.Drawing.Point(470, 66);
             this.TBPrecio_Venta.Margin = new System.Windows.Forms.Padding(4);
             this.TBPrecio_Venta.MaxLength = 10;
             this.TBPrecio_Venta.Name = "TBPrecio_Venta";
@@ -476,7 +449,7 @@
             // 
             this.LEstado.AutoSize = true;
             this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEstado.Location = new System.Drawing.Point(613, 111);
+            this.LEstado.Location = new System.Drawing.Point(470, 190);
             this.LEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LEstado.Name = "LEstado";
             this.LEstado.Size = new System.Drawing.Size(70, 21);
@@ -487,7 +460,7 @@
             // 
             this.LCategoria.AutoSize = true;
             this.LCategoria.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCategoria.Location = new System.Drawing.Point(613, 30);
+            this.LCategoria.Location = new System.Drawing.Point(470, 109);
             this.LCategoria.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCategoria.Name = "LCategoria";
             this.LCategoria.Size = new System.Drawing.Size(95, 21);
@@ -498,59 +471,17 @@
             // 
             this.LPrecio_Venta.AutoSize = true;
             this.LPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio_Venta.Location = new System.Drawing.Point(321, 190);
+            this.LPrecio_Venta.Location = new System.Drawing.Point(470, 30);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
             this.LPrecio_Venta.Size = new System.Drawing.Size(124, 21);
             this.LPrecio_Venta.TabIndex = 19;
             this.LPrecio_Venta.Text = "Precio Venta";
             // 
-            // TBPrecio_Compra
-            // 
-            this.TBPrecio_Compra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio_Compra.Location = new System.Drawing.Point(321, 146);
-            this.TBPrecio_Compra.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBPrecio_Compra.Name = "TBPrecio_Compra";
-            this.TBPrecio_Compra.Size = new System.Drawing.Size(242, 28);
-            this.TBPrecio_Compra.TabIndex = 18;
-            this.TBPrecio_Compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
-            // 
-            // LPrecio_Compra
-            // 
-            this.LPrecio_Compra.AutoSize = true;
-            this.LPrecio_Compra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio_Compra.Location = new System.Drawing.Point(321, 110);
-            this.LPrecio_Compra.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LPrecio_Compra.Name = "LPrecio_Compra";
-            this.LPrecio_Compra.Size = new System.Drawing.Size(140, 21);
-            this.LPrecio_Compra.TabIndex = 17;
-            this.LPrecio_Compra.Text = "Precio Compra";
-            // 
-            // TBstock
-            // 
-            this.TBstock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBstock.Location = new System.Drawing.Point(321, 66);
-            this.TBstock.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBstock.Name = "TBstock";
-            this.TBstock.Size = new System.Drawing.Size(242, 28);
-            this.TBstock.TabIndex = 16;
-            this.TBstock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
-            // 
-            // LStock
-            // 
-            this.LStock.AutoSize = true;
-            this.LStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LStock.Location = new System.Drawing.Point(321, 30);
-            this.LStock.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LStock.Name = "LStock";
-            this.LStock.Size = new System.Drawing.Size(58, 21);
-            this.LStock.TabIndex = 10;
-            this.LStock.Text = "Stock";
-            // 
             // TBdescripcion
             // 
             this.TBdescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdescripcion.Location = new System.Drawing.Point(29, 226);
+            this.TBdescripcion.Location = new System.Drawing.Point(134, 225);
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBdescripcion.MaxLength = 8;
             this.TBdescripcion.Name = "TBdescripcion";
@@ -560,7 +491,7 @@
             // TBcodigo_prod
             // 
             this.TBcodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBcodigo_prod.Location = new System.Drawing.Point(29, 66);
+            this.TBcodigo_prod.Location = new System.Drawing.Point(134, 65);
             this.TBcodigo_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBcodigo_prod.Name = "TBcodigo_prod";
             this.TBcodigo_prod.Size = new System.Drawing.Size(242, 28);
@@ -570,7 +501,7 @@
             // TBnombre_prod
             // 
             this.TBnombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombre_prod.Location = new System.Drawing.Point(29, 146);
+            this.TBnombre_prod.Location = new System.Drawing.Point(134, 145);
             this.TBnombre_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBnombre_prod.Name = "TBnombre_prod";
             this.TBnombre_prod.Size = new System.Drawing.Size(242, 28);
@@ -581,7 +512,7 @@
             // 
             this.LDescripcion.AutoSize = true;
             this.LDescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDescripcion.Location = new System.Drawing.Point(29, 190);
+            this.LDescripcion.Location = new System.Drawing.Point(134, 189);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LDescripcion.Name = "LDescripcion";
             this.LDescripcion.Size = new System.Drawing.Size(114, 21);
@@ -592,7 +523,7 @@
             // 
             this.LCodigo_prod.AutoSize = true;
             this.LCodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCodigo_prod.Location = new System.Drawing.Point(29, 30);
+            this.LCodigo_prod.Location = new System.Drawing.Point(134, 29);
             this.LCodigo_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCodigo_prod.Name = "LCodigo_prod";
             this.LCodigo_prod.Size = new System.Drawing.Size(70, 21);
@@ -604,7 +535,7 @@
             this.LNombre_prod.AutoSize = true;
             this.LNombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre_prod.ForeColor = System.Drawing.Color.DarkRed;
-            this.LNombre_prod.Location = new System.Drawing.Point(29, 110);
+            this.LNombre_prod.Location = new System.Drawing.Point(134, 109);
             this.LNombre_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNombre_prod.Name = "LNombre_prod";
             this.LNombre_prod.Size = new System.Drawing.Size(80, 21);
@@ -660,10 +591,6 @@
         public System.Windows.Forms.Label LEstado;
         public System.Windows.Forms.Label LCategoria;
         public System.Windows.Forms.Label LPrecio_Venta;
-        public System.Windows.Forms.TextBox TBPrecio_Compra;
-        public System.Windows.Forms.Label LPrecio_Compra;
-        public System.Windows.Forms.TextBox TBstock;
-        public System.Windows.Forms.Label LStock;
         public System.Windows.Forms.TextBox TBdescripcion;
         public System.Windows.Forms.TextBox TBcodigo_prod;
         public System.Windows.Forms.TextBox TBnombre_prod;
@@ -676,8 +603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_prod;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }

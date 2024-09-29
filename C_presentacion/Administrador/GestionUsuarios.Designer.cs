@@ -79,10 +79,10 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.Beditar = new FontAwesome.Sharp.IconButton();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
@@ -222,7 +222,7 @@
             this.DTFechanac.Name = "DTFechanac";
             this.DTFechanac.Size = new System.Drawing.Size(242, 28);
             this.DTFechanac.TabIndex = 15;
-            this.DTFechanac.Value = new System.DateTime(2024, 9, 25, 10, 46, 43, 0);
+            this.DTFechanac.Value = new System.DateTime(2024, 9, 28, 0, 0, 0, 0);
             // 
             // TBdireccion
             // 
@@ -660,6 +660,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // contenedorGestionUsuarios
             // 
@@ -670,6 +671,10 @@
             this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
             this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 56);
             this.contenedorGestionUsuarios.TabIndex = 19;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Beliminar
             // 
@@ -691,6 +696,7 @@
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Beliminar.UseVisualStyleBackColor = false;
+            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
             // 
             // Beditar
             // 
@@ -734,10 +740,6 @@
             this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Bguardar.UseVisualStyleBackColor = false;
             this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // GestionUsuarios
             // 

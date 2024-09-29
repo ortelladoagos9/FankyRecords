@@ -20,6 +20,15 @@ namespace FankyRecords.C_negocio
             }
             return char.IsLetter(e.KeyChar);
         }
+        public static bool EsConcatenacionTexto(KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                // Si no es una letra, cancela el evento
+                e.Handled = true;
+            }
+            return char.IsLetter(e.KeyChar);
+        }
         public static bool EsNumero(KeyPressEventArgs e)
         {
             // Verifica si el carácter presionado no es un número
@@ -30,7 +39,16 @@ namespace FankyRecords.C_negocio
             }
             return char.IsDigit(e.KeyChar);
         }
-
+        public static bool EsDecimal(KeyPressEventArgs e)
+        {
+            // Permite solo números, punto decimal, backspace y teclas de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            return char.IsDigit(e.KeyChar);
+        }
+        
         public static bool EstaVacio(string e)
         {
             string campo = e.ToString();
