@@ -29,9 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BdescargarPDF = new FontAwesome.Sharp.IconButton();
+            this.TBmontoTotal = new System.Windows.Forms.TextBox();
+            this.LmontoTotal = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Bbuscar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Lusuario = new System.Windows.Forms.Label();
+            this.TBUsuario = new System.Windows.Forms.TextBox();
+            this.TBtipoDoc = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.Blimpiar = new FontAwesome.Sharp.IconButton();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
             this.LnumDoc = new System.Windows.Forms.Label();
@@ -41,19 +53,7 @@
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.FechaCopraDetalle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TBtipoDoc = new System.Windows.Forms.TextBox();
-            this.TBUsuario = new System.Windows.Forms.TextBox();
-            this.Lusuario = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.LmontoTotal = new System.Windows.Forms.Label();
-            this.TBmontoTotal = new System.Windows.Forms.TextBox();
-            this.BdescargarPDF = new FontAwesome.Sharp.IconButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +80,42 @@
             this.panel1.Size = new System.Drawing.Size(667, 616);
             this.panel1.TabIndex = 0;
             // 
+            // BdescargarPDF
+            // 
+            this.BdescargarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BdescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BdescargarPDF.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BdescargarPDF.ForeColor = System.Drawing.Color.DarkRed;
+            this.BdescargarPDF.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.BdescargarPDF.IconColor = System.Drawing.Color.DarkRed;
+            this.BdescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BdescargarPDF.IconSize = 19;
+            this.BdescargarPDF.Location = new System.Drawing.Point(424, 577);
+            this.BdescargarPDF.Name = "BdescargarPDF";
+            this.BdescargarPDF.Size = new System.Drawing.Size(174, 31);
+            this.BdescargarPDF.TabIndex = 12;
+            this.BdescargarPDF.Text = "Descargar en PDF";
+            this.BdescargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BdescargarPDF.UseVisualStyleBackColor = true;
+            // 
+            // TBmontoTotal
+            // 
+            this.TBmontoTotal.Location = new System.Drawing.Point(127, 579);
+            this.TBmontoTotal.Name = "TBmontoTotal";
+            this.TBmontoTotal.Size = new System.Drawing.Size(170, 26);
+            this.TBmontoTotal.TabIndex = 11;
+            this.TBmontoTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
+            // 
+            // LmontoTotal
+            // 
+            this.LmontoTotal.AutoSize = true;
+            this.LmontoTotal.ForeColor = System.Drawing.Color.DarkRed;
+            this.LmontoTotal.Location = new System.Drawing.Point(15, 582);
+            this.LmontoTotal.Name = "LmontoTotal";
+            this.LmontoTotal.Size = new System.Drawing.Size(106, 19);
+            this.LmontoTotal.TabIndex = 10;
+            this.LmontoTotal.Text = "Monto Total:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
@@ -93,6 +129,40 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Proveedor";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(286, 70);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(293, 26);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Razón Social";
+            // 
+            // TB
+            // 
+            this.TB.Location = new System.Drawing.Point(21, 70);
+            this.TB.Name = "TB";
+            this.TB.Size = new System.Drawing.Size(160, 26);
+            this.TB.TabIndex = 1;
+            this.TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Numero Documento";
             // 
             // Bbuscar
             // 
@@ -114,12 +184,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.Lusuario);
             this.groupBox1.Controls.Add(this.TBUsuario);
             this.groupBox1.Controls.Add(this.TBtipoDoc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.FechaCopraDetalle);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Location = new System.Drawing.Point(19, 96);
             this.groupBox1.Name = "groupBox1";
@@ -127,6 +197,50 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inormación Compra";
+            // 
+            // Lusuario
+            // 
+            this.Lusuario.AutoSize = true;
+            this.Lusuario.Location = new System.Drawing.Point(424, 52);
+            this.Lusuario.Name = "Lusuario";
+            this.Lusuario.Size = new System.Drawing.Size(71, 19);
+            this.Lusuario.TabIndex = 5;
+            this.Lusuario.Text = "Usuario";
+            // 
+            // TBUsuario
+            // 
+            this.TBUsuario.Location = new System.Drawing.Point(428, 83);
+            this.TBUsuario.Name = "TBUsuario";
+            this.TBUsuario.Size = new System.Drawing.Size(181, 26);
+            this.TBUsuario.TabIndex = 4;
+            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            // 
+            // TBtipoDoc
+            // 
+            this.TBtipoDoc.Location = new System.Drawing.Point(237, 83);
+            this.TBtipoDoc.Name = "TBtipoDoc";
+            this.TBtipoDoc.Size = new System.Drawing.Size(162, 26);
+            this.TBtipoDoc.TabIndex = 3;
+            this.TBtipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(233, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tipo Documento";
+            // 
+            // FechaCopraDetalle
+            // 
+            this.FechaCopraDetalle.AutoSize = true;
+            this.FechaCopraDetalle.Location = new System.Drawing.Point(17, 52);
+            this.FechaCopraDetalle.Name = "FechaCopraDetalle";
+            this.FechaCopraDetalle.Size = new System.Drawing.Size(56, 19);
+            this.FechaCopraDetalle.TabIndex = 1;
+            this.FechaCopraDetalle.Text = "Fecha";
+            this.FechaCopraDetalle.Click += new System.EventHandler(this.FechaCopraDetalle_Click);
             // 
             // Blimpiar
             // 
@@ -211,128 +325,18 @@
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             // 
-            // maskedTextBox1
+            // dateTimePicker1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(21, 83);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.maskedTextBox1.TabIndex = 0;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // FechaCopraDetalle
-            // 
-            this.FechaCopraDetalle.AutoSize = true;
-            this.FechaCopraDetalle.Location = new System.Drawing.Point(17, 52);
-            this.FechaCopraDetalle.Name = "FechaCopraDetalle";
-            this.FechaCopraDetalle.Size = new System.Drawing.Size(56, 19);
-            this.FechaCopraDetalle.TabIndex = 1;
-            this.FechaCopraDetalle.Text = "Fecha";
-            this.FechaCopraDetalle.Click += new System.EventHandler(this.FechaCopraDetalle_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tipo Documento";
-            // 
-            // TBtipoDoc
-            // 
-            this.TBtipoDoc.Location = new System.Drawing.Point(171, 83);
-            this.TBtipoDoc.Name = "TBtipoDoc";
-            this.TBtipoDoc.Size = new System.Drawing.Size(183, 26);
-            this.TBtipoDoc.TabIndex = 3;
-            this.TBtipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
-            // 
-            // TBUsuario
-            // 
-            this.TBUsuario.Location = new System.Drawing.Point(428, 83);
-            this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(181, 26);
-            this.TBUsuario.TabIndex = 4;
-            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
-            // 
-            // Lusuario
-            // 
-            this.Lusuario.AutoSize = true;
-            this.Lusuario.Location = new System.Drawing.Point(424, 52);
-            this.Lusuario.Name = "Lusuario";
-            this.Lusuario.Size = new System.Drawing.Size(71, 19);
-            this.Lusuario.TabIndex = 5;
-            this.Lusuario.Text = "Usuario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Numero Documento";
-            // 
-            // TB
-            // 
-            this.TB.Location = new System.Drawing.Point(21, 70);
-            this.TB.Name = "TB";
-            this.TB.Size = new System.Drawing.Size(160, 26);
-            this.TB.TabIndex = 1;
-            this.TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Razón Social";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(286, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 26);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
-            // 
-            // LmontoTotal
-            // 
-            this.LmontoTotal.AutoSize = true;
-            this.LmontoTotal.ForeColor = System.Drawing.Color.DarkRed;
-            this.LmontoTotal.Location = new System.Drawing.Point(15, 582);
-            this.LmontoTotal.Name = "LmontoTotal";
-            this.LmontoTotal.Size = new System.Drawing.Size(106, 19);
-            this.LmontoTotal.TabIndex = 10;
-            this.LmontoTotal.Text = "Monto Total:";
-            // 
-            // TBmontoTotal
-            // 
-            this.TBmontoTotal.Location = new System.Drawing.Point(127, 579);
-            this.TBmontoTotal.Name = "TBmontoTotal";
-            this.TBmontoTotal.Size = new System.Drawing.Size(170, 26);
-            this.TBmontoTotal.TabIndex = 11;
-            this.TBmontoTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
-            // 
-            // BdescargarPDF
-            // 
-            this.BdescargarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BdescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BdescargarPDF.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdescargarPDF.ForeColor = System.Drawing.Color.DarkRed;
-            this.BdescargarPDF.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.BdescargarPDF.IconColor = System.Drawing.Color.DarkRed;
-            this.BdescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BdescargarPDF.IconSize = 19;
-            this.BdescargarPDF.Location = new System.Drawing.Point(424, 577);
-            this.BdescargarPDF.Name = "BdescargarPDF";
-            this.BdescargarPDF.Size = new System.Drawing.Size(174, 31);
-            this.BdescargarPDF.TabIndex = 12;
-            this.BdescargarPDF.Text = "Descargar en PDF";
-            this.BdescargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BdescargarPDF.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 83);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
             // 
             // detalleCompra
             // 
@@ -374,7 +378,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label FechaCopraDetalle;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox TBtipoDoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBUsuario;
@@ -386,5 +389,6 @@
         private System.Windows.Forms.Label LmontoTotal;
         private FontAwesome.Sharp.IconButton BdescargarPDF;
         private System.Windows.Forms.TextBox TBmontoTotal;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
