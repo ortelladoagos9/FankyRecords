@@ -74,22 +74,36 @@ namespace FankyRecords.C_negocio
 
         public static bool mensajeConfirmacion()
         {
-            DialogResult result = MessageBox.Show("¿Desea guardar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
             {
+                MessageBox.Show("La operación de guardado ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
                 return false;
             }
+            MessageBox.Show("Los datos han sido guardados correctamente.",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
             return true;
         }
         public static bool mensajeEliminar()
         {
-            DialogResult result = MessageBox.Show("¿Desea eliminar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
             {
+                MessageBox.Show("La operación de eliminado ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
                 return false;
             }
+            MessageBox.Show("Los datos han sido eliminados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             return true;
         }
     }

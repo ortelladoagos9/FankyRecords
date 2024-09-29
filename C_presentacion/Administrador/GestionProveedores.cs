@@ -94,7 +94,6 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
-                    MessageBox.Show("Eliminado!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     // limpia campos
                     TBRazonSocial.Clear();
                     TBcuit.Clear();
@@ -103,6 +102,11 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBdomiciliop.Clear();
                 }
             }
-        } 
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -457,6 +457,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // contenedorFotoBotones
             // 
