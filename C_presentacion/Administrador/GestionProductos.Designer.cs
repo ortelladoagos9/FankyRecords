@@ -392,6 +392,7 @@
             // CBcategoria
             // 
             this.CBcategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBcategoria.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBcategoria.ForeColor = System.Drawing.Color.DarkRed;
             this.CBcategoria.FormattingEnabled = true;
@@ -405,7 +406,6 @@
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(242, 29);
             this.CBcategoria.TabIndex = 29;
-            this.CBcategoria.Text = "Seleccione una opcion";
             // 
             // rBinactivo
             // 

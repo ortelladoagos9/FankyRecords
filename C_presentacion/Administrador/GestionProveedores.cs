@@ -106,7 +106,8 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            // Limpiar todas las filas del DataGridView
+            DGlistaproveedores.Rows.Clear();
         }
     }
 }

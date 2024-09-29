@@ -38,12 +38,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                // Mensaje de confirmación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?",
-                                                          "Confirmación",
-                                                          MessageBoxButtons.YesNo,
-                                                          MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
                     //validar constraseñas 
                     string password = TBclave.Text;
@@ -93,20 +88,9 @@ namespace FankyRecords.C_presentacion.Administrador
                        TBclave.Clear();
                        TBconfirmarClave.Clear();
                        CBRol.SelectedIndex = -1;  // Deselect the ComboBox
-                       
-                       MessageBox.Show("Los datos han sido guardados correctamente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+
                     }
-                }
-                else
-                {
-                    MessageBox.Show("La operación de guardado ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
-                }
+                }   
             }
         }
 
@@ -163,7 +147,37 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
-
+            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdireccion.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBclave.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBconfirmarClave.Text) ||
+               C_negocio.Validaciones.EstaVacio(CBRol.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+               C_negocio.Validaciones.EstaVacio(rutaFoto.Text))
+            {
+                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeEliminar())
+                {
+                    // limpia campos
+                    TBnombre.Clear();
+                    TBapellido.Clear();
+                    rutaFoto.Clear();
+                    TBdireccion.Clear();
+                    TBtelefono.Clear();
+                    TBdni.Clear();
+                    TBemail.Clear();
+                    picFotoUsuario.Image = null;
+                    TBclave.Clear();
+                    TBconfirmarClave.Clear();
+                    CBRol.SelectedIndex = -1;  // Deselect the ComboBox
+                }
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

@@ -61,7 +61,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBNroDocumento.Clear();
                     cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
 
-
+                    permitirTextChanged = true;
 
                     MessageBox.Show("Los datos han sido agregados correctamente.",
                                         "Éxito",
@@ -95,8 +95,8 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnCrearVenta_Click(object sender, EventArgs e)
         {
-            permitirTextChanged = false; // Desactivamos el evento TextChanged
-
+            delayTimer.Stop();
+            
             if (C_negocio.Validaciones.EstaVacio(TBTotalAPagar.Text) ||
                C_negocio.Validaciones.EstaVacio(TBRecibe.Text) ||
                C_negocio.Validaciones.EstaVacio(TBCambio.Text))
@@ -105,6 +105,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
+                permitirTextChanged = false; // Desactivamos el evento TextChanged
                 // Mensaje de confirmación
                 DialogResult result = MessageBox.Show("¿Estás seguro de que deseas crear la venta?",
                                                           "Confirmación",

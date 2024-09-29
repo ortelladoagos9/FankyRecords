@@ -31,12 +31,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                // Mensaje de confirmación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?",
-                                                          "Confirmación",
-                                                          MessageBoxButtons.YesNo,
-                                                          MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
                     int n = listadoProductos.Rows.Add();
 
@@ -61,18 +56,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBdescripcion.Clear();
                     TBPrecio_Venta.Clear();
                     CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
-                                                    
-                    MessageBox.Show("Los datos han sido guardados correctamente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                   MessageBox.Show("La operación de guardado ha sido cancelada.",
-                                        "Cancelado",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning);
+
                 }
             }
         }
@@ -86,16 +70,36 @@ namespace FankyRecords.C_presentacion.Administrador
             C_negocio.Validaciones.EsNumero(e);
         }
 
-        private void Beliminar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar todas las filas del DataGridView
             listadoProductos.Rows.Clear();
 
+        }
+
+        private void Beliminar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBcodigo_prod.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBnombre_prod.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdescripcion.Text) ||
+               C_negocio.Validaciones.EstaVacio(CBcategoria.Text))
+            {
+                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeEliminar())
+                {
+                    // limpia campos
+                    TBcodigo_prod.Clear();
+                    TBnombre_prod.Clear();
+                    TBdescripcion.Clear();
+                    TBPrecio_Venta.Clear();
+                    CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+                }
+            }
         }
     }
 }

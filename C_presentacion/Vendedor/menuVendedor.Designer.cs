@@ -60,8 +60,7 @@
             this.MenuProductoVendedor});
             this.menuVendedor.Location = new System.Drawing.Point(0, 97);
             this.menuVendedor.Name = "menuVendedor";
-            this.menuVendedor.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuVendedor.Size = new System.Drawing.Size(1200, 51);
+            this.menuVendedor.Size = new System.Drawing.Size(1200, 63);
             this.menuVendedor.TabIndex = 0;
             // 
             // MenuClientesVendedor
@@ -75,7 +74,7 @@
             this.MenuClientesVendedor.IconSize = 45;
             this.MenuClientesVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuClientesVendedor.Name = "MenuClientesVendedor";
-            this.MenuClientesVendedor.Size = new System.Drawing.Size(100, 59);
+            this.MenuClientesVendedor.Size = new System.Drawing.Size(150, 59);
             this.MenuClientesVendedor.Text = "Clientes";
             this.MenuClientesVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -93,7 +92,7 @@
             this.MenuVentasVendedor.IconSize = 45;
             this.MenuVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuVentasVendedor.Name = "MenuVentasVendedor";
-            this.MenuVentasVendedor.Size = new System.Drawing.Size(100, 59);
+            this.MenuVentasVendedor.Size = new System.Drawing.Size(152, 59);
             this.MenuVentasVendedor.Text = "Ventas";
             this.MenuVentasVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -135,7 +134,7 @@
             this.MenuProductoVendedor.IconSize = 45;
             this.MenuProductoVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuProductoVendedor.Name = "MenuProductoVendedor";
-            this.MenuProductoVendedor.Size = new System.Drawing.Size(100, 59);
+            this.MenuProductoVendedor.Size = new System.Drawing.Size(150, 59);
             this.MenuProductoVendedor.Text = "Productos";
             this.MenuProductoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -150,9 +149,8 @@
             this.IconMinimizarVendedor});
             this.menuTituloVendedor.Location = new System.Drawing.Point(0, 0);
             this.menuTituloVendedor.Name = "menuTituloVendedor";
-            this.menuTituloVendedor.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuTituloVendedor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTituloVendedor.Size = new System.Drawing.Size(1200, 79);
+            this.menuTituloVendedor.Size = new System.Drawing.Size(1200, 97);
             this.menuTituloVendedor.TabIndex = 1;
             // 
             // IconSalirVendedor
@@ -197,10 +195,9 @@
             this.contenedorVendedor.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky1;
             this.contenedorVendedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedorVendedor.Location = new System.Drawing.Point(0, 130);
-            this.contenedorVendedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contenedorVendedor.Location = new System.Drawing.Point(0, 160);
             this.contenedorVendedor.Name = "contenedorVendedor";
-            this.contenedorVendedor.Size = new System.Drawing.Size(1200, 658);
+            this.contenedorVendedor.Size = new System.Drawing.Size(1200, 652);
             this.contenedorVendedor.TabIndex = 7;
             // 
             // labVendedor
@@ -210,9 +207,8 @@
             this.labVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labVendedor.ForeColor = System.Drawing.Color.Gold;
             this.labVendedor.Location = new System.Drawing.Point(896, 35);
-            this.labVendedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labVendedor.Name = "labVendedor";
-            this.labVendedor.Size = new System.Drawing.Size(79, 16);
+            this.labVendedor.Size = new System.Drawing.Size(94, 20);
             this.labVendedor.TabIndex = 5;
             this.labVendedor.Text = "Vendedor";
             // 
@@ -221,10 +217,9 @@
             this.picFankyRecordsVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.picFankyRecordsVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsVendedor.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
-            this.picFankyRecordsVendedor.Location = new System.Drawing.Point(9, 10);
-            this.picFankyRecordsVendedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFankyRecordsVendedor.Location = new System.Drawing.Point(12, 12);
             this.picFankyRecordsVendedor.Name = "picFankyRecordsVendedor";
-            this.picFankyRecordsVendedor.Size = new System.Drawing.Size(54, 58);
+            this.picFankyRecordsVendedor.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFankyRecordsVendedor.TabIndex = 3;
             this.picFankyRecordsVendedor.TabStop = false;
@@ -235,10 +230,9 @@
             this.labFankyRecordsMenuVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.labFankyRecordsMenuVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFankyRecordsMenuVendedor.ForeColor = System.Drawing.Color.Gold;
-            this.labFankyRecordsMenuVendedor.Location = new System.Drawing.Point(76, 28);
-            this.labFankyRecordsMenuVendedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labFankyRecordsMenuVendedor.Location = new System.Drawing.Point(102, 35);
             this.labFankyRecordsMenuVendedor.Name = "labFankyRecordsMenuVendedor";
-            this.labFankyRecordsMenuVendedor.Size = new System.Drawing.Size(177, 24);
+            this.labFankyRecordsMenuVendedor.Size = new System.Drawing.Size(210, 29);
             this.labFankyRecordsMenuVendedor.TabIndex = 2;
             this.labFankyRecordsMenuVendedor.Text = "Fanky Records";
             // 
@@ -249,17 +243,16 @@
             this.labUsuarioRolVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolVendedor.ForeColor = System.Drawing.Color.Gold;
             this.labUsuarioRolVendedor.Location = new System.Drawing.Point(804, 35);
-            this.labUsuarioRolVendedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labUsuarioRolVendedor.Name = "labUsuarioRolVendedor";
-            this.labUsuarioRolVendedor.Size = new System.Drawing.Size(70, 16);
+            this.labUsuarioRolVendedor.Size = new System.Drawing.Size(86, 20);
             this.labUsuarioRolVendedor.TabIndex = 4;
             this.labUsuarioRolVendedor.Text = "Usuario:";
             // 
             // FormMenuVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1200, 812);
             this.Controls.Add(this.labVendedor);
             this.Controls.Add(this.labUsuarioRolVendedor);
             this.Controls.Add(this.labFankyRecordsMenuVendedor);

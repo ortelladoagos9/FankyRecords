@@ -60,8 +60,7 @@
             this.MenuComprasAdministrador});
             this.menuAdministrativo.Location = new System.Drawing.Point(0, 97);
             this.menuAdministrativo.Name = "menuAdministrativo";
-            this.menuAdministrativo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuAdministrativo.Size = new System.Drawing.Size(1200, 51);
+            this.menuAdministrativo.Size = new System.Drawing.Size(1200, 63);
             this.menuAdministrativo.TabIndex = 0;
             // 
             // MenuProductosAdministrativo
@@ -105,9 +104,8 @@
             this.IconMinimizarAdministrativo});
             this.menuTituloAdministrativo.Location = new System.Drawing.Point(0, 0);
             this.menuTituloAdministrativo.Name = "menuTituloAdministrativo";
-            this.menuTituloAdministrativo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuTituloAdministrativo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTituloAdministrativo.Size = new System.Drawing.Size(1200, 79);
+            this.menuTituloAdministrativo.Size = new System.Drawing.Size(1200, 97);
             this.menuTituloAdministrativo.TabIndex = 1;
             // 
             // IconSalirAdministrativo
@@ -152,10 +150,9 @@
             this.labFankyRecordsMenuAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.labFankyRecordsMenuAdministrativo.Font = new System.Drawing.Font("Lucida Calligraphy", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFankyRecordsMenuAdministrativo.ForeColor = System.Drawing.Color.Gold;
-            this.labFankyRecordsMenuAdministrativo.Location = new System.Drawing.Point(76, 28);
-            this.labFankyRecordsMenuAdministrativo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labFankyRecordsMenuAdministrativo.Location = new System.Drawing.Point(102, 35);
             this.labFankyRecordsMenuAdministrativo.Name = "labFankyRecordsMenuAdministrativo";
-            this.labFankyRecordsMenuAdministrativo.Size = new System.Drawing.Size(177, 24);
+            this.labFankyRecordsMenuAdministrativo.Size = new System.Drawing.Size(210, 29);
             this.labFankyRecordsMenuAdministrativo.TabIndex = 2;
             this.labFankyRecordsMenuAdministrativo.Text = "Fanky Records";
             // 
@@ -165,10 +162,9 @@
             this.labUsuarioRolAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolAdministrativo.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolAdministrativo.ForeColor = System.Drawing.Color.Gold;
-            this.labUsuarioRolAdministrativo.Location = new System.Drawing.Point(804, 35);
-            this.labUsuarioRolAdministrativo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labUsuarioRolAdministrativo.Location = new System.Drawing.Point(795, 35);
             this.labUsuarioRolAdministrativo.Name = "labUsuarioRolAdministrativo";
-            this.labUsuarioRolAdministrativo.Size = new System.Drawing.Size(70, 16);
+            this.labUsuarioRolAdministrativo.Size = new System.Drawing.Size(86, 20);
             this.labUsuarioRolAdministrativo.TabIndex = 4;
             this.labUsuarioRolAdministrativo.Text = "Usuario:";
             // 
@@ -178,10 +174,9 @@
             this.labAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.labAdministrativo.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAdministrativo.ForeColor = System.Drawing.Color.Gold;
-            this.labAdministrativo.Location = new System.Drawing.Point(896, 35);
-            this.labAdministrativo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labAdministrativo.Location = new System.Drawing.Point(875, 35);
             this.labAdministrativo.Name = "labAdministrativo";
-            this.labAdministrativo.Size = new System.Drawing.Size(122, 16);
+            this.labAdministrativo.Size = new System.Drawing.Size(151, 20);
             this.labAdministrativo.TabIndex = 5;
             this.labAdministrativo.Text = "Administrativo";
             // 
@@ -190,20 +185,18 @@
             this.contenedorAdministrativo.BackgroundImage = global::FankyRecords.Properties.Resources.fondoFanky1;
             this.contenedorAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrativo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedorAdministrativo.Location = new System.Drawing.Point(0, 130);
-            this.contenedorAdministrativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.contenedorAdministrativo.Location = new System.Drawing.Point(0, 160);
             this.contenedorAdministrativo.Name = "contenedorAdministrativo";
-            this.contenedorAdministrativo.Size = new System.Drawing.Size(1200, 658);
+            this.contenedorAdministrativo.Size = new System.Drawing.Size(1200, 652);
             this.contenedorAdministrativo.TabIndex = 6;
             // 
             // picFankyRecordsAdministrativo
             // 
             this.picFankyRecordsAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.picFankyRecordsAdministrativo.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
-            this.picFankyRecordsAdministrativo.Location = new System.Drawing.Point(9, 10);
-            this.picFankyRecordsAdministrativo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFankyRecordsAdministrativo.Location = new System.Drawing.Point(12, 12);
             this.picFankyRecordsAdministrativo.Name = "picFankyRecordsAdministrativo";
-            this.picFankyRecordsAdministrativo.Size = new System.Drawing.Size(54, 58);
+            this.picFankyRecordsAdministrativo.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsAdministrativo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFankyRecordsAdministrativo.TabIndex = 2;
             this.picFankyRecordsAdministrativo.TabStop = false;
@@ -256,10 +249,10 @@
             // 
             // FormMenuAdministrativo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1200, 788);
+            this.ClientSize = new System.Drawing.Size(1200, 812);
             this.Controls.Add(this.contenedorAdministrativo);
             this.Controls.Add(this.labAdministrativo);
             this.Controls.Add(this.labUsuarioRolAdministrativo);
