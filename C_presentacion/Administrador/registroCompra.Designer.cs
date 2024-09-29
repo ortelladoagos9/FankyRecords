@@ -36,8 +36,12 @@
             this.LTotalPagar = new System.Windows.Forms.Label();
             this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.DGcompraProd = new System.Windows.Forms.DataGridView();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cantProd = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,14 +59,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tipoDoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGcompraProd)).BeginInit();
@@ -92,7 +92,7 @@
             this.label1.Location = new System.Drawing.Point(67, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 30);
+            this.label1.Size = new System.Drawing.Size(190, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registrar Compra";
             // 
@@ -134,7 +134,7 @@
             this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBtotalPagar.Location = new System.Drawing.Point(29, 491);
             this.TBtotalPagar.Name = "TBtotalPagar";
-            this.TBtotalPagar.Size = new System.Drawing.Size(182, 28);
+            this.TBtotalPagar.Size = new System.Drawing.Size(182, 24);
             this.TBtotalPagar.TabIndex = 2;
             // 
             // LTotalPagar
@@ -144,7 +144,7 @@
             this.LTotalPagar.ForeColor = System.Drawing.Color.DarkRed;
             this.LTotalPagar.Location = new System.Drawing.Point(25, 469);
             this.LTotalPagar.Name = "LTotalPagar";
-            this.LTotalPagar.Size = new System.Drawing.Size(127, 21);
+            this.LTotalPagar.Size = new System.Drawing.Size(109, 17);
             this.LTotalPagar.TabIndex = 1;
             this.LTotalPagar.Text = "Total a Pagar";
             // 
@@ -183,6 +183,41 @@
             this.DGcompraProd.Size = new System.Drawing.Size(921, 209);
             this.DGcompraProd.TabIndex = 2;
             // 
+            // codigoProducto
+            // 
+            this.codigoProducto.HeaderText = "Código";
+            this.codigoProducto.MinimumWidth = 6;
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.Width = 130;
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.HeaderText = "Nombre";
+            this.nombreProducto.MinimumWidth = 6;
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.Width = 300;
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.Width = 150;
+            // 
+            // cantidadProducto
+            // 
+            this.cantidadProducto.HeaderText = "Cantidad";
+            this.cantidadProducto.MinimumWidth = 6;
+            this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.Width = 150;
+            // 
+            // subTotalProducto
+            // 
+            this.subTotalProducto.HeaderText = "Subtotal";
+            this.subTotalProducto.MinimumWidth = 6;
+            this.subTotalProducto.Name = "subTotalProducto";
+            this.subTotalProducto.Width = 150;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -193,14 +228,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(921, 389);
             this.panel3.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 28);
-            this.dateTimePicker1.TabIndex = 6;
             // 
             // groupBox3
             // 
@@ -231,7 +258,7 @@
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(120, 28);
+            this.cantProd.Size = new System.Drawing.Size(120, 24);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -244,7 +271,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(736, 53);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 21);
+            this.label10.Size = new System.Drawing.Size(74, 17);
             this.label10.TabIndex = 10;
             this.label10.Text = "Cantidad";
             // 
@@ -253,7 +280,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(571, 53);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 21);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 9;
             this.label9.Text = "Precio";
             // 
@@ -261,7 +288,7 @@
             // 
             this.TBprecio.Location = new System.Drawing.Point(575, 83);
             this.TBprecio.Name = "TBprecio";
-            this.TBprecio.Size = new System.Drawing.Size(114, 28);
+            this.TBprecio.Size = new System.Drawing.Size(114, 24);
             this.TBprecio.TabIndex = 8;
             this.TBprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -270,7 +297,7 @@
             this.TBproduct.Location = new System.Drawing.Point(237, 84);
             this.TBproduct.Name = "TBproduct";
             this.TBproduct.ReadOnly = true;
-            this.TBproduct.Size = new System.Drawing.Size(277, 28);
+            this.TBproduct.Size = new System.Drawing.Size(277, 24);
             this.TBproduct.TabIndex = 7;
             this.TBproduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -279,7 +306,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(233, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 21);
+            this.label8.Size = new System.Drawing.Size(76, 17);
             this.label8.TabIndex = 6;
             this.label8.Text = "Producto";
             // 
@@ -302,7 +329,7 @@
             // 
             this.TBcodProdunto.Location = new System.Drawing.Point(10, 84);
             this.TBcodProdunto.Name = "TBcodProdunto";
-            this.TBcodProdunto.Size = new System.Drawing.Size(135, 28);
+            this.TBcodProdunto.Size = new System.Drawing.Size(135, 24);
             this.TBcodProdunto.TabIndex = 1;
             this.TBcodProdunto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -311,7 +338,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 53);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 21);
+            this.label7.Size = new System.Drawing.Size(122, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Cdigo Producto";
             // 
@@ -351,7 +378,7 @@
             this.TBrazonSocial.Location = new System.Drawing.Point(240, 54);
             this.TBrazonSocial.Name = "TBrazonSocial";
             this.TBrazonSocial.ReadOnly = true;
-            this.TBrazonSocial.Size = new System.Drawing.Size(199, 28);
+            this.TBrazonSocial.Size = new System.Drawing.Size(199, 24);
             this.TBrazonSocial.TabIndex = 3;
             this.TBrazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -359,7 +386,7 @@
             // 
             this.TBcuil.Location = new System.Drawing.Point(31, 54);
             this.TBcuil.Name = "TBcuil";
-            this.TBcuil.Size = new System.Drawing.Size(130, 28);
+            this.TBcuil.Size = new System.Drawing.Size(130, 24);
             this.TBcuil.TabIndex = 2;
             this.TBcuil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -368,7 +395,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(236, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 21);
+            this.label5.Size = new System.Drawing.Size(104, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Razón Social";
             // 
@@ -377,7 +404,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(27, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 21);
+            this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Cuit";
             // 
@@ -396,6 +423,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "información compra";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(10, 57);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(157, 24);
+            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
+            // 
             // tipoDoc
             // 
             this.tipoDoc.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -405,8 +442,9 @@
             "Remito"});
             this.tipoDoc.Location = new System.Drawing.Point(192, 54);
             this.tipoDoc.Name = "tipoDoc";
-            this.tipoDoc.Size = new System.Drawing.Size(157, 29);
+            this.tipoDoc.Size = new System.Drawing.Size(157, 25);
             this.tipoDoc.TabIndex = 3;
+            this.tipoDoc.SelectedIndexChanged += new System.EventHandler(this.tipoDoc_SelectedIndexChanged);
             this.tipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // label3
@@ -414,7 +452,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(188, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 21);
+            this.label3.Size = new System.Drawing.Size(126, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Tipo documento";
             // 
@@ -423,48 +461,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha";
             // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Código";
-            this.codigoProducto.MinimumWidth = 6;
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.Width = 130;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.MinimumWidth = 6;
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.Width = 300;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.Width = 150;
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.MinimumWidth = 6;
-            this.cantidadProducto.Name = "cantidadProducto";
-            this.cantidadProducto.Width = 150;
-            // 
-            // subTotalProducto
-            // 
-            this.subTotalProducto.HeaderText = "Subtotal";
-            this.subTotalProducto.MinimumWidth = 6;
-            this.subTotalProducto.Name = "subTotalProducto";
-            this.subTotalProducto.Width = 150;
-            // 
             // registroCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.panel3);

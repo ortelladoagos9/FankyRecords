@@ -62,7 +62,7 @@ namespace FankyRecords.C_presentacion.Administrador
             TBcuil.Clear();
             cantProd = null;
             tipoDoc =null;
-            Fecha=null;
+            
 
         }
         private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
@@ -72,6 +72,11 @@ namespace FankyRecords.C_presentacion.Administrador
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsNumero(e);
+        }
+
+        private void tipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     } 
 }
