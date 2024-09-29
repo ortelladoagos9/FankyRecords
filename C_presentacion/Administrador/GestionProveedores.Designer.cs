@@ -1,0 +1,549 @@
+﻿namespace FankyRecords.C_presentacion.Administrador
+{
+    partial class GestionProveedores
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Bguardar = new FontAwesome.Sharp.IconButton();
+            this.Beditar = new FontAwesome.Sharp.IconButton();
+            this.Beliminar = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RBinactivop = new System.Windows.Forms.RadioButton();
+            this.RBactivop = new System.Windows.Forms.RadioButton();
+            this.TBtelefono = new System.Windows.Forms.MaskedTextBox();
+            this.TBcorreo = new System.Windows.Forms.TextBox();
+            this.TBdomiciliop = new System.Windows.Forms.TextBox();
+            this.TBcuit = new System.Windows.Forms.TextBox();
+            this.TBRazonSocial = new System.Windows.Forms.TextBox();
+            this.Lestadoproveedor = new System.Windows.Forms.Label();
+            this.Lcorreoproveedor = new System.Windows.Forms.Label();
+            this.Ltelefonoproveedor = new System.Windows.Forms.Label();
+            this.LdomicilioProveedor = new System.Windows.Forms.Label();
+            this.Lcuit = new System.Windows.Forms.Label();
+            this.Lrazonsocial = new System.Windows.Forms.Label();
+            this.LGestionProveedor = new System.Windows.Forms.Label();
+            this.DGlistaproveedores = new System.Windows.Forms.DataGridView();
+            this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilioProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaProveedores = new System.Windows.Forms.Label();
+            this.contenedorLista = new System.Windows.Forms.Panel();
+            this.Lbuscar = new System.Windows.Forms.Label();
+            this.CBbuscar = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.contenedorFotoBotones = new System.Windows.Forms.Panel();
+            this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
+            this.contenedorLista.SuspendLayout();
+            this.contenedorFotoBotones.SuspendLayout();
+            this.contenedorGestionUsuarios.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // Bguardar
+            // 
+            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
+            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bguardar.ForeColor = System.Drawing.Color.White;
+            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
+            this.Bguardar.IconColor = System.Drawing.Color.White;
+            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bguardar.IconSize = 25;
+            this.Bguardar.Location = new System.Drawing.Point(39, 150);
+            this.Bguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Bguardar.Name = "Bguardar";
+            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Bguardar.Size = new System.Drawing.Size(183, 31);
+            this.Bguardar.TabIndex = 8;
+            this.Bguardar.Text = "Guardar";
+            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bguardar.UseVisualStyleBackColor = false;
+            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
+            // 
+            // Beditar
+            // 
+            this.Beditar.BackColor = System.Drawing.Color.Navy;
+            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beditar.ForeColor = System.Drawing.Color.White;
+            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.Beditar.IconColor = System.Drawing.Color.White;
+            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beditar.IconSize = 25;
+            this.Beditar.Location = new System.Drawing.Point(39, 198);
+            this.Beditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beditar.Name = "Beditar";
+            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beditar.Size = new System.Drawing.Size(183, 31);
+            this.Beditar.TabIndex = 10;
+            this.Beditar.Text = "Editar";
+            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beditar.UseVisualStyleBackColor = false;
+            // 
+            // Beliminar
+            // 
+            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beliminar.ForeColor = System.Drawing.Color.White;
+            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.Beliminar.IconColor = System.Drawing.Color.White;
+            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beliminar.IconSize = 21;
+            this.Beliminar.Location = new System.Drawing.Point(39, 246);
+            this.Beliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beliminar.Name = "Beliminar";
+            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beliminar.Size = new System.Drawing.Size(183, 31);
+            this.Beliminar.TabIndex = 11;
+            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beliminar.UseVisualStyleBackColor = false;
+            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.RBinactivop);
+            this.panel1.Controls.Add(this.RBactivop);
+            this.panel1.Controls.Add(this.TBtelefono);
+            this.panel1.Controls.Add(this.TBcorreo);
+            this.panel1.Controls.Add(this.TBdomiciliop);
+            this.panel1.Controls.Add(this.TBcuit);
+            this.panel1.Controls.Add(this.TBRazonSocial);
+            this.panel1.Controls.Add(this.Lestadoproveedor);
+            this.panel1.Controls.Add(this.Lcorreoproveedor);
+            this.panel1.Controls.Add(this.Ltelefonoproveedor);
+            this.panel1.Controls.Add(this.LdomicilioProveedor);
+            this.panel1.Controls.Add(this.Lcuit);
+            this.panel1.Controls.Add(this.Lrazonsocial);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(261, 56);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(921, 354);
+            this.panel1.TabIndex = 12;
+            // 
+            // RBinactivop
+            // 
+            this.RBinactivop.AutoSize = true;
+            this.RBinactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBinactivop.Location = new System.Drawing.Point(599, 239);
+            this.RBinactivop.Name = "RBinactivop";
+            this.RBinactivop.Size = new System.Drawing.Size(103, 25);
+            this.RBinactivop.TabIndex = 12;
+            this.RBinactivop.Text = "Inactivo";
+            this.RBinactivop.UseVisualStyleBackColor = true;
+            // 
+            // RBactivop
+            // 
+            this.RBactivop.AutoSize = true;
+            this.RBactivop.Checked = true;
+            this.RBactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBactivop.Location = new System.Drawing.Point(495, 239);
+            this.RBactivop.Name = "RBactivop";
+            this.RBactivop.Size = new System.Drawing.Size(86, 25);
+            this.RBactivop.TabIndex = 11;
+            this.RBactivop.TabStop = true;
+            this.RBactivop.Text = "Activo";
+            this.RBactivop.UseVisualStyleBackColor = true;
+            // 
+            // TBtelefono
+            // 
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Location = new System.Drawing.Point(466, 167);
+            this.TBtelefono.Mask = "(9999)000000";
+            this.TBtelefono.Name = "TBtelefono";
+            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
+            this.TBtelefono.TabIndex = 10;
+            // 
+            // TBcorreo
+            // 
+            this.TBcorreo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBcorreo.Location = new System.Drawing.Point(466, 94);
+            this.TBcorreo.Name = "TBcorreo";
+            this.TBcorreo.Size = new System.Drawing.Size(242, 28);
+            this.TBcorreo.TabIndex = 9;
+            // 
+            // TBdomiciliop
+            // 
+            this.TBdomiciliop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBdomiciliop.Location = new System.Drawing.Point(129, 236);
+            this.TBdomiciliop.Name = "TBdomiciliop";
+            this.TBdomiciliop.Size = new System.Drawing.Size(242, 28);
+            this.TBdomiciliop.TabIndex = 8;
+            // 
+            // TBcuit
+            // 
+            this.TBcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBcuit.Location = new System.Drawing.Point(129, 167);
+            this.TBcuit.Name = "TBcuit";
+            this.TBcuit.Size = new System.Drawing.Size(242, 28);
+            this.TBcuit.TabIndex = 7;
+            this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
+            // 
+            // TBRazonSocial
+            // 
+            this.TBRazonSocial.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBRazonSocial.Location = new System.Drawing.Point(129, 94);
+            this.TBRazonSocial.Name = "TBRazonSocial";
+            this.TBRazonSocial.Size = new System.Drawing.Size(242, 28);
+            this.TBRazonSocial.TabIndex = 6;
+            this.TBRazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
+            // 
+            // Lestadoproveedor
+            // 
+            this.Lestadoproveedor.AutoSize = true;
+            this.Lestadoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lestadoproveedor.Location = new System.Drawing.Point(466, 205);
+            this.Lestadoproveedor.Name = "Lestadoproveedor";
+            this.Lestadoproveedor.Size = new System.Drawing.Size(70, 21);
+            this.Lestadoproveedor.TabIndex = 5;
+            this.Lestadoproveedor.Text = "Estado";
+            // 
+            // Lcorreoproveedor
+            // 
+            this.Lcorreoproveedor.AutoSize = true;
+            this.Lcorreoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcorreoproveedor.Location = new System.Drawing.Point(466, 67);
+            this.Lcorreoproveedor.Name = "Lcorreoproveedor";
+            this.Lcorreoproveedor.Size = new System.Drawing.Size(71, 21);
+            this.Lcorreoproveedor.TabIndex = 4;
+            this.Lcorreoproveedor.Text = "Correo";
+            // 
+            // Ltelefonoproveedor
+            // 
+            this.Ltelefonoproveedor.AutoSize = true;
+            this.Ltelefonoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltelefonoproveedor.Location = new System.Drawing.Point(466, 136);
+            this.Ltelefonoproveedor.Name = "Ltelefonoproveedor";
+            this.Ltelefonoproveedor.Size = new System.Drawing.Size(87, 21);
+            this.Ltelefonoproveedor.TabIndex = 3;
+            this.Ltelefonoproveedor.Text = "Telefono";
+            // 
+            // LdomicilioProveedor
+            // 
+            this.LdomicilioProveedor.AutoSize = true;
+            this.LdomicilioProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LdomicilioProveedor.Location = new System.Drawing.Point(129, 205);
+            this.LdomicilioProveedor.Name = "LdomicilioProveedor";
+            this.LdomicilioProveedor.Size = new System.Drawing.Size(93, 21);
+            this.LdomicilioProveedor.TabIndex = 2;
+            this.LdomicilioProveedor.Text = "Domicilio";
+            // 
+            // Lcuit
+            // 
+            this.Lcuit.AutoSize = true;
+            this.Lcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcuit.Location = new System.Drawing.Point(129, 136);
+            this.Lcuit.Name = "Lcuit";
+            this.Lcuit.Size = new System.Drawing.Size(48, 21);
+            this.Lcuit.TabIndex = 1;
+            this.Lcuit.Text = "Cuit";
+            // 
+            // Lrazonsocial
+            // 
+            this.Lrazonsocial.AutoSize = true;
+            this.Lrazonsocial.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lrazonsocial.Location = new System.Drawing.Point(129, 67);
+            this.Lrazonsocial.Name = "Lrazonsocial";
+            this.Lrazonsocial.Size = new System.Drawing.Size(122, 21);
+            this.Lrazonsocial.TabIndex = 0;
+            this.Lrazonsocial.Text = "Razón Social";
+            // 
+            // LGestionProveedor
+            // 
+            this.LGestionProveedor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LGestionProveedor.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LGestionProveedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.LGestionProveedor.Location = new System.Drawing.Point(0, 0);
+            this.LGestionProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LGestionProveedor.Name = "LGestionProveedor";
+            this.LGestionProveedor.Size = new System.Drawing.Size(310, 56);
+            this.LGestionProveedor.TabIndex = 13;
+            this.LGestionProveedor.Text = "Gestión de Proveedores";
+            this.LGestionProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DGlistaproveedores
+            // 
+            this.DGlistaproveedores.BackgroundColor = System.Drawing.Color.White;
+            this.DGlistaproveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGlistaproveedores.ColumnHeadersHeight = 46;
+            this.DGlistaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_proveedor,
+            this.razonSocial,
+            this.cuitProveedor,
+            this.domicilioProveedor,
+            this.correoProveedor,
+            this.telefonoProveedor,
+            this.estadoProveedor});
+            this.DGlistaproveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGlistaproveedores.GridColor = System.Drawing.SystemColors.Window;
+            this.DGlistaproveedores.Location = new System.Drawing.Point(0, 445);
+            this.DGlistaproveedores.Name = "DGlistaproveedores";
+            this.DGlistaproveedores.RowHeadersWidth = 51;
+            this.DGlistaproveedores.Size = new System.Drawing.Size(1182, 209);
+            this.DGlistaproveedores.TabIndex = 14;
+            // 
+            // id_proveedor
+            // 
+            this.id_proveedor.HeaderText = "ID";
+            this.id_proveedor.MinimumWidth = 6;
+            this.id_proveedor.Name = "id_proveedor";
+            this.id_proveedor.Width = 50;
+            // 
+            // razonSocial
+            // 
+            this.razonSocial.HeaderText = "Razon Social";
+            this.razonSocial.MinimumWidth = 6;
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.Width = 150;
+            // 
+            // cuitProveedor
+            // 
+            this.cuitProveedor.HeaderText = "Cuit";
+            this.cuitProveedor.MinimumWidth = 6;
+            this.cuitProveedor.Name = "cuitProveedor";
+            this.cuitProveedor.Width = 125;
+            // 
+            // domicilioProveedor
+            // 
+            this.domicilioProveedor.HeaderText = "Domicilio";
+            this.domicilioProveedor.MinimumWidth = 6;
+            this.domicilioProveedor.Name = "domicilioProveedor";
+            this.domicilioProveedor.Width = 180;
+            // 
+            // correoProveedor
+            // 
+            this.correoProveedor.HeaderText = "Email";
+            this.correoProveedor.MinimumWidth = 6;
+            this.correoProveedor.Name = "correoProveedor";
+            this.correoProveedor.Width = 180;
+            // 
+            // telefonoProveedor
+            // 
+            this.telefonoProveedor.HeaderText = "Telefono";
+            this.telefonoProveedor.MinimumWidth = 6;
+            this.telefonoProveedor.Name = "telefonoProveedor";
+            this.telefonoProveedor.Width = 130;
+            // 
+            // estadoProveedor
+            // 
+            this.estadoProveedor.HeaderText = "Estado";
+            this.estadoProveedor.MinimumWidth = 6;
+            this.estadoProveedor.Name = "estadoProveedor";
+            this.estadoProveedor.Width = 125;
+            // 
+            // listaProveedores
+            // 
+            this.listaProveedores.AutoSize = true;
+            this.listaProveedores.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaProveedores.Location = new System.Drawing.Point(0, 0);
+            this.listaProveedores.Name = "listaProveedores";
+            this.listaProveedores.Size = new System.Drawing.Size(277, 30);
+            this.listaProveedores.TabIndex = 15;
+            this.listaProveedores.Text = "Lista de Proveedores";
+            // 
+            // contenedorLista
+            // 
+            this.contenedorLista.BackColor = System.Drawing.Color.White;
+            this.contenedorLista.Controls.Add(this.listaProveedores);
+            this.contenedorLista.Controls.Add(this.Lbuscar);
+            this.contenedorLista.Controls.Add(this.CBbuscar);
+            this.contenedorLista.Controls.Add(this.btnBuscar);
+            this.contenedorLista.Controls.Add(this.btnLimpiar);
+            this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.contenedorLista.Location = new System.Drawing.Point(0, 410);
+            this.contenedorLista.Name = "contenedorLista";
+            this.contenedorLista.Size = new System.Drawing.Size(1182, 35);
+            this.contenedorLista.TabIndex = 19;
+            // 
+            // Lbuscar
+            // 
+            this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
+            this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbuscar.Location = new System.Drawing.Point(797, 0);
+            this.Lbuscar.Name = "Lbuscar";
+            this.Lbuscar.Size = new System.Drawing.Size(115, 35);
+            this.Lbuscar.TabIndex = 0;
+            this.Lbuscar.Text = "Buscar por:";
+            this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // CBbuscar
+            // 
+            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBbuscar.ForeColor = System.Drawing.Color.DarkRed;
+            this.CBbuscar.FormattingEnabled = true;
+            this.CBbuscar.IntegralHeight = false;
+            this.CBbuscar.Items.AddRange(new object[] {
+            "Nro ID",
+            "Razon social",
+            "Cuit"});
+            this.CBbuscar.Location = new System.Drawing.Point(912, 0);
+            this.CBbuscar.Name = "CBbuscar";
+            this.CBbuscar.Size = new System.Drawing.Size(156, 27);
+            this.CBbuscar.TabIndex = 1;
+            this.CBbuscar.Text = "Seleccione";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 18;
+            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 35);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // contenedorFotoBotones
+            // 
+            this.contenedorFotoBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorFotoBotones.Controls.Add(this.Beditar);
+            this.contenedorFotoBotones.Controls.Add(this.Bguardar);
+            this.contenedorFotoBotones.Controls.Add(this.Beliminar);
+            this.contenedorFotoBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.contenedorFotoBotones.ForeColor = System.Drawing.Color.Transparent;
+            this.contenedorFotoBotones.Location = new System.Drawing.Point(0, 0);
+            this.contenedorFotoBotones.Name = "contenedorFotoBotones";
+            this.contenedorFotoBotones.Size = new System.Drawing.Size(261, 410);
+            this.contenedorFotoBotones.TabIndex = 20;
+            // 
+            // contenedorGestionUsuarios
+            // 
+            this.contenedorGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorGestionUsuarios.Controls.Add(this.LGestionProveedor);
+            this.contenedorGestionUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorGestionUsuarios.Location = new System.Drawing.Point(261, 0);
+            this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
+            this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 56);
+            this.contenedorGestionUsuarios.TabIndex = 21;
+            // 
+            // GestionProveedores
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.ClientSize = new System.Drawing.Size(1182, 654);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.contenedorGestionUsuarios);
+            this.Controls.Add(this.contenedorFotoBotones);
+            this.Controls.Add(this.contenedorLista);
+            this.Controls.Add(this.DGlistaproveedores);
+            this.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkRed;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "GestionProveedores";
+            this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).EndInit();
+            this.contenedorLista.ResumeLayout(false);
+            this.contenedorLista.PerformLayout();
+            this.contenedorFotoBotones.ResumeLayout(false);
+            this.contenedorGestionUsuarios.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        public FontAwesome.Sharp.IconButton Bguardar;
+        public FontAwesome.Sharp.IconButton Beditar;
+        public FontAwesome.Sharp.IconButton Beliminar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LGestionProveedor;
+        private System.Windows.Forms.Label Lestadoproveedor;
+        private System.Windows.Forms.Label Lcorreoproveedor;
+        private System.Windows.Forms.Label Ltelefonoproveedor;
+        private System.Windows.Forms.Label LdomicilioProveedor;
+        private System.Windows.Forms.Label Lcuit;
+        private System.Windows.Forms.Label Lrazonsocial;
+        private System.Windows.Forms.TextBox TBRazonSocial;
+        private System.Windows.Forms.MaskedTextBox TBtelefono;
+        private System.Windows.Forms.TextBox TBcorreo;
+        private System.Windows.Forms.TextBox TBdomiciliop;
+        private System.Windows.Forms.TextBox TBcuit;
+        private System.Windows.Forms.RadioButton RBinactivop;
+        private System.Windows.Forms.RadioButton RBactivop;
+        private System.Windows.Forms.DataGridView DGlistaproveedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuitProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correoProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoProveedor;
+        private System.Windows.Forms.Label listaProveedores;
+        private System.Windows.Forms.Panel contenedorLista;
+        private System.Windows.Forms.Label Lbuscar;
+        private System.Windows.Forms.ComboBox CBbuscar;
+        public FontAwesome.Sharp.IconButton btnBuscar;
+        public FontAwesome.Sharp.IconButton btnLimpiar;
+        private System.Windows.Forms.Panel contenedorFotoBotones;
+        private System.Windows.Forms.Panel contenedorGestionUsuarios;
+    }
+}
