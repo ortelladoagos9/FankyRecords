@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BdescargarPDF = new FontAwesome.Sharp.IconButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Bgenerar = new FontAwesome.Sharp.IconButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -42,22 +48,16 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BgenerarPDF = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BgenerarPDF);
+            this.panel1.Controls.Add(this.BdescargarPDF);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -66,6 +66,60 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(720, 630);
             this.panel1.TabIndex = 0;
+            // 
+            // BdescargarPDF
+            // 
+            this.BdescargarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BdescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BdescargarPDF.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BdescargarPDF.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.BdescargarPDF.IconColor = System.Drawing.Color.DarkRed;
+            this.BdescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BdescargarPDF.IconSize = 20;
+            this.BdescargarPDF.Location = new System.Drawing.Point(554, 588);
+            this.BdescargarPDF.Name = "BdescargarPDF";
+            this.BdescargarPDF.Size = new System.Drawing.Size(145, 37);
+            this.BdescargarPDF.TabIndex = 4;
+            this.BdescargarPDF.Text = "Descargar PDF";
+            this.BdescargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BdescargarPDF.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.producto,
+            this.precio,
+            this.cantidad,
+            this.SubTotal});
+            this.dataGridView1.Location = new System.Drawing.Point(17, 354);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(683, 228);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.Width = 250;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.Width = 120;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 120;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Width = 150;
             // 
             // groupBox2
             // 
@@ -210,60 +264,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Devoluciones";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.producto,
-            this.precio,
-            this.cantidad,
-            this.SubTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 354);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(683, 228);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.Width = 250;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.Width = 120;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 120;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.Width = 150;
-            // 
-            // BgenerarPDF
-            // 
-            this.BgenerarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BgenerarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BgenerarPDF.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BgenerarPDF.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.BgenerarPDF.IconColor = System.Drawing.Color.DarkRed;
-            this.BgenerarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BgenerarPDF.IconSize = 20;
-            this.BgenerarPDF.Location = new System.Drawing.Point(566, 588);
-            this.BgenerarPDF.Name = "BgenerarPDF";
-            this.BgenerarPDF.Size = new System.Drawing.Size(133, 37);
-            this.BgenerarPDF.TabIndex = 4;
-            this.BgenerarPDF.Text = "Generar PDF";
-            this.BgenerarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BgenerarPDF.UseVisualStyleBackColor = true;
-            // 
             // devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -279,11 +279,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devoluciones";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,6 +309,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private FontAwesome.Sharp.IconButton BgenerarPDF;
+        private FontAwesome.Sharp.IconButton BdescargarPDF;
     }
 }
