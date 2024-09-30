@@ -135,7 +135,7 @@
             this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBtotalPagar.Location = new System.Drawing.Point(29, 491);
             this.TBtotalPagar.Name = "TBtotalPagar";
-            this.TBtotalPagar.Size = new System.Drawing.Size(182, 28);
+            this.TBtotalPagar.Size = new System.Drawing.Size(182, 24);
             this.TBtotalPagar.TabIndex = 2;
             // 
             // LTotalPagar
@@ -185,7 +185,7 @@
             this.listaCompras.Size = new System.Drawing.Size(921, 209);
             this.listaCompras.TabIndex = 2;
             // 
-            // codigoProducto
+            // panel3
             // 
             this.codigoProducto.HeaderText = "Código";
             this.codigoProducto.MinimumWidth = 6;
@@ -261,7 +261,7 @@
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(120, 28);
+            this.cantProd.Size = new System.Drawing.Size(120, 24);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -291,7 +291,7 @@
             // 
             this.TBprecio.Location = new System.Drawing.Point(575, 83);
             this.TBprecio.Name = "TBprecio";
-            this.TBprecio.Size = new System.Drawing.Size(114, 28);
+            this.TBprecio.Size = new System.Drawing.Size(114, 24);
             this.TBprecio.TabIndex = 8;
             this.TBprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -332,7 +332,7 @@
             // 
             this.TBcodProdunto.Location = new System.Drawing.Point(10, 84);
             this.TBcodProdunto.Name = "TBcodProdunto";
-            this.TBcodProdunto.Size = new System.Drawing.Size(135, 28);
+            this.TBcodProdunto.Size = new System.Drawing.Size(135, 24);
             this.TBcodProdunto.TabIndex = 1;
             this.TBcodProdunto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -381,7 +381,7 @@
             this.TBrazonSocial.Location = new System.Drawing.Point(240, 54);
             this.TBrazonSocial.Name = "TBrazonSocial";
             this.TBrazonSocial.ReadOnly = true;
-            this.TBrazonSocial.Size = new System.Drawing.Size(199, 28);
+            this.TBrazonSocial.Size = new System.Drawing.Size(199, 24);
             this.TBrazonSocial.TabIndex = 3;
             this.TBrazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -467,7 +467,7 @@
             // 
             // registroCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
