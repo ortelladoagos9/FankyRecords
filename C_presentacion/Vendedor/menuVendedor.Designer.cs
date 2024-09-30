@@ -109,6 +109,7 @@
             this.SubmenuRegistrarVentasVendedor.Name = "SubmenuRegistrarVentasVendedor";
             this.SubmenuRegistrarVentasVendedor.Size = new System.Drawing.Size(230, 35);
             this.SubmenuRegistrarVentasVendedor.Text = "Registrar ventas";
+            this.SubmenuRegistrarVentasVendedor.Click += new System.EventHandler(this.SubmenuRegistrarVentasVendedor_Click);
             // 
             // SubmenuDetalleVentasVendedor
             // 
@@ -137,6 +138,7 @@
             this.MenuProductoVendedor.Size = new System.Drawing.Size(150, 59);
             this.MenuProductoVendedor.Text = "Productos";
             this.MenuProductoVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuProductoVendedor.Click += new System.EventHandler(this.MenuProductoVendedor_Click);
             // 
             // menuTituloVendedor
             // 

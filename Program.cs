@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FankyRecords.C_presentacion.Administrador
+namespace FankyRecords.C_presentacion
 {
     internal static class Program
     {
@@ -20,8 +20,8 @@ namespace FankyRecords.C_presentacion.Administrador
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMenuAdmin());
-            //Application.Run(new formMenuVendedor());
-            //Application.Run(new formMenuAdministrativo());
+            //Application.Run(new FormMenuVendedor());
+            //Application.Run(new FormMenuAdministrativo());
         }
     }
 }

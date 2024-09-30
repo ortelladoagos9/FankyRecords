@@ -130,6 +130,7 @@
             this.MenuCategoriaAdministrativo.Size = new System.Drawing.Size(100, 59);
             this.MenuCategoriaAdministrativo.Text = "Categorias";
             this.MenuCategoriaAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuCategoriaAdministrativo.Click += new System.EventHandler(this.MenuCategoriaAdministrativo_Click);
             // 
             // MenuProveedorAdministrador
             // 

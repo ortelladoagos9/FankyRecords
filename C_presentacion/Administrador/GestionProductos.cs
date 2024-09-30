@@ -101,6 +101,29 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
             }
         }
+
+        private void Beditar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBcodigo_prod.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBnombre_prod.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdescripcion.Text) ||
+               C_negocio.Validaciones.EstaVacio(CBcategoria.Text))
+            {
+                MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeEditar())
+                {
+                    // limpia campos
+                    TBcodigo_prod.Clear();
+                    TBnombre_prod.Clear();
+                    TBdescripcion.Clear();
+                    TBPrecio_Venta.Clear();
+                    CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+                }
+            }
+        }
     }
 }
 
