@@ -53,7 +53,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 this.contenedorAdministrador.Controls.Clear(); // Limpia el contenedor
             }
-           
+            
             // Configurar el nuevo formulario
             formulario.TopLevel = false; // Indica que el formulario no es de nivel superior
             formulario.FormBorderStyle = FormBorderStyle.None; // Eliminar bordes del formulario

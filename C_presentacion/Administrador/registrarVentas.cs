@@ -35,12 +35,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                // Mensaje de confirmación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas agregar los datos?",
-                                                          "Confirmación",
-                                                          MessageBoxButtons.YesNo,
-                                                          MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
                     decimal subtotal = numCantidad.Value * Convert.ToDecimal(TBPrecio.Text);
                     sumaSubtotal += subtotal;
@@ -62,18 +57,6 @@ namespace FankyRecords.C_presentacion.Administrador
                     cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
 
                     permitirTextChanged = true;
-
-                    MessageBox.Show("Los datos han sido agregados correctamente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("La operación de agregar ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
                 }
             }
         }

@@ -516,6 +516,7 @@
             // 
             this.TBNombreCompleto.Location = new System.Drawing.Point(253, 74);
             this.TBNombreCompleto.Name = "TBNombreCompleto";
+            this.TBNombreCompleto.ReadOnly = true;
             this.TBNombreCompleto.Size = new System.Drawing.Size(164, 28);
             this.TBNombreCompleto.TabIndex = 5;
             this.TBNombreCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);

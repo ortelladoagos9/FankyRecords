@@ -73,5 +73,10 @@ namespace FankyRecords.C_presentacion.Administrativo
         {
             AbrirFormulario((IconMenuItem)sender, new Administrador.gestionProductos());
         }
+
+        private void SubmenuRegistrarComprasAdministrador_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new Administrador.registroCompra());
+        }
     }
 }
