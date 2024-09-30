@@ -75,7 +75,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBrazonSocial.Clear();
                     TBcuit.Clear();
                     cantProd.Value = 1;
-                    
+                    TBtotalPagar.Clear();
 
                     MessageBox.Show("La compra ha sido registrada correctamente.",
                                         "Éxito",

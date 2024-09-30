@@ -31,14 +31,11 @@
             this.contenedorRegistrarCompra = new System.Windows.Forms.Panel();
             this.LRegistrarCompra = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
+            this.btnRegistrarCompra = new FontAwesome.Sharp.IconButton();
             this.TBtotalPagar = new System.Windows.Forms.TextBox();
             this.LTotalPagar = new System.Windows.Forms.Label();
+            this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.listaCompras = new System.Windows.Forms.DataGridView();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.gbInfoProducto = new System.Windows.Forms.GroupBox();
             this.cantProd = new System.Windows.Forms.NumericUpDown();
@@ -47,9 +44,11 @@
             this.TBprecio = new System.Windows.Forms.TextBox();
             this.TBproducto = new System.Windows.Forms.TextBox();
             this.LProducto = new System.Windows.Forms.Label();
+            this.btnBuscarProd = new FontAwesome.Sharp.IconButton();
             this.TBcodProducto = new System.Windows.Forms.TextBox();
             this.LCodProd = new System.Windows.Forms.Label();
             this.gbInfoProveedor = new System.Windows.Forms.GroupBox();
+            this.btnBuscarProveedor = new FontAwesome.Sharp.IconButton();
             this.TBrazonSocial = new System.Windows.Forms.TextBox();
             this.TBcuit = new System.Windows.Forms.TextBox();
             this.LRazonSocial = new System.Windows.Forms.Label();
@@ -59,10 +58,11 @@
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
-            this.btnBuscarProd = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarProveedor = new FontAwesome.Sharp.IconButton();
-            this.btnRegistrarCompra = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
@@ -112,6 +112,24 @@
             this.contenedorBotones.Size = new System.Drawing.Size(261, 592);
             this.contenedorBotones.TabIndex = 1;
             // 
+            // btnRegistrarCompra
+            // 
+            this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.btnRegistrarCompra.IconColor = System.Drawing.Color.DarkRed;
+            this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarCompra.IconSize = 25;
+            this.btnRegistrarCompra.Location = new System.Drawing.Point(69, 528);
+            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(129, 58);
+            this.btnRegistrarCompra.TabIndex = 3;
+            this.btnRegistrarCompra.Text = "Registrar";
+            this.btnRegistrarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRegistrarCompra.UseVisualStyleBackColor = false;
+            this.btnRegistrarCompra.Click += new System.EventHandler(this.registrarCompra_Click);
+            // 
             // TBtotalPagar
             // 
             this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +150,25 @@
             this.LTotalPagar.TabIndex = 1;
             this.LTotalPagar.Text = "Total a Pagar:";
             // 
+            // btnAgregarProd
+            // 
+            this.btnAgregarProd.BackColor = System.Drawing.Color.White;
+            this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregarProd.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProd.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAgregarProd.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
+            this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarProd.IconSize = 25;
+            this.btnAgregarProd.Location = new System.Drawing.Point(69, 203);
+            this.btnAgregarProd.Name = "btnAgregarProd";
+            this.btnAgregarProd.Size = new System.Drawing.Size(129, 58);
+            this.btnAgregarProd.TabIndex = 0;
+            this.btnAgregarProd.Text = "Agregar";
+            this.btnAgregarProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAgregarProd.UseVisualStyleBackColor = false;
+            this.btnAgregarProd.Click += new System.EventHandler(this.BAgregarProd_Click);
+            // 
             // listaCompras
             // 
             this.listaCompras.BackgroundColor = System.Drawing.Color.White;
@@ -148,41 +185,6 @@
             this.listaCompras.RowHeadersWidth = 51;
             this.listaCompras.Size = new System.Drawing.Size(921, 209);
             this.listaCompras.TabIndex = 2;
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Código";
-            this.codigoProducto.MinimumWidth = 6;
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.Width = 130;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.MinimumWidth = 6;
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.Width = 200;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.Width = 150;
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.MinimumWidth = 6;
-            this.cantidadProducto.Name = "cantidadProducto";
-            this.cantidadProducto.Width = 150;
-            // 
-            // subTotalProducto
-            // 
-            this.subTotalProducto.HeaderText = "Subtotal";
-            this.subTotalProducto.MinimumWidth = 6;
-            this.subTotalProducto.Name = "subTotalProducto";
-            this.subTotalProducto.Width = 150;
             // 
             // contenedorDatos
             // 
@@ -236,7 +238,7 @@
             // LCantidad
             // 
             this.LCantidad.AutoSize = true;
-            this.LCantidad.Location = new System.Drawing.Point(712, 53);
+            this.LCantidad.Location = new System.Drawing.Point(712, 56);
             this.LCantidad.Name = "LCantidad";
             this.LCantidad.Size = new System.Drawing.Size(95, 21);
             this.LCantidad.TabIndex = 10;
@@ -245,7 +247,7 @@
             // LPrecio
             // 
             this.LPrecio.AutoSize = true;
-            this.LPrecio.Location = new System.Drawing.Point(539, 53);
+            this.LPrecio.Location = new System.Drawing.Point(539, 56);
             this.LPrecio.Name = "LPrecio";
             this.LPrecio.Size = new System.Drawing.Size(72, 21);
             this.LPrecio.TabIndex = 9;
@@ -270,15 +272,30 @@
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(261, 53);
+            this.LProducto.Location = new System.Drawing.Point(261, 56);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(96, 21);
             this.LProducto.TabIndex = 6;
             this.LProducto.Text = "Producto:";
             // 
+            // btnBuscarProd
+            // 
+            this.btnBuscarProd.BackColor = System.Drawing.Color.White;
+            this.btnBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarProd.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProd.IconSize = 18;
+            this.btnBuscarProd.Location = new System.Drawing.Point(180, 83);
+            this.btnBuscarProd.Name = "btnBuscarProd";
+            this.btnBuscarProd.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProd.TabIndex = 5;
+            this.btnBuscarProd.UseVisualStyleBackColor = false;
+            // 
             // TBcodProducto
             // 
             this.TBcodProducto.Location = new System.Drawing.Point(15, 83);
+            this.TBcodProducto.MaxLength = 5;
             this.TBcodProducto.Name = "TBcodProducto";
             this.TBcodProducto.Size = new System.Drawing.Size(160, 28);
             this.TBcodProducto.TabIndex = 1;
@@ -309,6 +326,20 @@
             this.gbInfoProveedor.TabStop = false;
             this.gbInfoProveedor.Text = "Información Proveedor";
             // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.White;
+            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProveedor.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarProveedor.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProveedor.IconSize = 18;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(185, 74);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProveedor.TabIndex = 4;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            // 
             // TBrazonSocial
             // 
             this.TBrazonSocial.Location = new System.Drawing.Point(253, 74);
@@ -320,6 +351,7 @@
             // TBcuit
             // 
             this.TBcuit.Location = new System.Drawing.Point(20, 74);
+            this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.Size = new System.Drawing.Size(160, 28);
             this.TBcuit.TabIndex = 2;
@@ -397,70 +429,40 @@
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
             // 
-            // btnBuscarProd
+            // codigoProducto
             // 
-            this.btnBuscarProd.BackColor = System.Drawing.Color.White;
-            this.btnBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarProd.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProd.IconSize = 18;
-            this.btnBuscarProd.Location = new System.Drawing.Point(180, 83);
-            this.btnBuscarProd.Name = "btnBuscarProd";
-            this.btnBuscarProd.Size = new System.Drawing.Size(46, 26);
-            this.btnBuscarProd.TabIndex = 5;
-            this.btnBuscarProd.UseVisualStyleBackColor = false;
+            this.codigoProducto.HeaderText = "Código";
+            this.codigoProducto.MinimumWidth = 6;
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.Width = 130;
             // 
-            // btnBuscarProveedor
+            // nombreProducto
             // 
-            this.btnBuscarProveedor.BackColor = System.Drawing.Color.White;
-            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProveedor.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarProveedor.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscarProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProveedor.IconSize = 18;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(185, 74);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
-            this.btnBuscarProveedor.TabIndex = 4;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.nombreProducto.HeaderText = "Producto";
+            this.nombreProducto.MinimumWidth = 6;
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.Width = 160;
             // 
-            // btnRegistrarCompra
+            // precioCompra
             // 
-            this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            this.btnRegistrarCompra.IconColor = System.Drawing.Color.DarkRed;
-            this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegistrarCompra.IconSize = 25;
-            this.btnRegistrarCompra.Location = new System.Drawing.Point(69, 528);
-            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
-            this.btnRegistrarCompra.Size = new System.Drawing.Size(129, 58);
-            this.btnRegistrarCompra.TabIndex = 3;
-            this.btnRegistrarCompra.Text = "Registrar";
-            this.btnRegistrarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnRegistrarCompra.UseVisualStyleBackColor = false;
-            this.btnRegistrarCompra.Click += new System.EventHandler(this.registrarCompra_Click);
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.Width = 150;
             // 
-            // btnAgregarProd
+            // cantidadProducto
             // 
-            this.btnAgregarProd.BackColor = System.Drawing.Color.White;
-            this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAgregarProd.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProd.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnAgregarProd.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
-            this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregarProd.IconSize = 25;
-            this.btnAgregarProd.Location = new System.Drawing.Point(69, 203);
-            this.btnAgregarProd.Name = "btnAgregarProd";
-            this.btnAgregarProd.Size = new System.Drawing.Size(129, 58);
-            this.btnAgregarProd.TabIndex = 0;
-            this.btnAgregarProd.Text = "Agregar";
-            this.btnAgregarProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAgregarProd.UseVisualStyleBackColor = false;
-            this.btnAgregarProd.Click += new System.EventHandler(this.BAgregarProd_Click);
+            this.cantidadProducto.HeaderText = "Cantidad";
+            this.cantidadProducto.MinimumWidth = 6;
+            this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.Width = 150;
+            // 
+            // subTotalProducto
+            // 
+            this.subTotalProducto.HeaderText = "Subtotal";
+            this.subTotalProducto.MinimumWidth = 6;
+            this.subTotalProducto.Name = "subTotalProducto";
+            this.subTotalProducto.Width = 150;
             // 
             // registrarCompra
             // 

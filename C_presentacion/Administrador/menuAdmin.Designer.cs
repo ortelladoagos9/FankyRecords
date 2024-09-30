@@ -88,6 +88,7 @@
             // MenuUsuariosAdministrador
             // 
             this.MenuUsuariosAdministrador.AutoSize = false;
+            this.MenuUsuariosAdministrador.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.MenuUsuariosAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuUsuariosAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuUsuariosAdministrador.IconChar = FontAwesome.Sharp.IconChar.UsersGear;
@@ -448,7 +449,7 @@
             this.contenedorAdministrador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.contenedorAdministrador.Location = new System.Drawing.Point(0, 160);
-            this.contenedorAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contenedorAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorAdministrador.Name = "contenedorAdministrador";
             this.contenedorAdministrador.Size = new System.Drawing.Size(1200, 652);
             this.contenedorAdministrador.TabIndex = 6;
@@ -459,7 +460,7 @@
             this.picFankyRecordsAdministrador.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsAdministrador.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
             this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(12, 12);
-            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.picFankyRecordsAdministrador.Name = "picFankyRecordsAdministrador";
             this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsAdministrador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -483,7 +484,7 @@
             this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrador";

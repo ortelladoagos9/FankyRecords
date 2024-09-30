@@ -13,6 +13,7 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class FormMenuAdmin : Form
     {
+        //private static IconMenuItem menuActivo = null;
         public FormMenuAdmin()
         {
             InitializeComponent();
@@ -49,6 +50,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
+           
             // Limpiar cualquier formulario previamente abierto
             if (this.contenedorAdministrador.Controls.Count > 0)
             {

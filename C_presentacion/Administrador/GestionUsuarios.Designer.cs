@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             this.LGestionUsuarios = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
@@ -73,22 +73,22 @@
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.contenedorFotoBotones = new System.Windows.Forms.Panel();
+            this.picFotoUsuario = new System.Windows.Forms.PictureBox();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.TBBuscador = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.Beditar = new FontAwesome.Sharp.IconButton();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.picFotoUsuario = new System.Windows.Forms.PictureBox();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // LGestionUsuarios
@@ -166,6 +166,7 @@
             this.TBnombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre.Location = new System.Drawing.Point(17, 54);
             this.TBnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
             this.TBnombre.Size = new System.Drawing.Size(242, 28);
             this.TBnombre.TabIndex = 5;
@@ -176,6 +177,7 @@
             this.TBapellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBapellido.Location = new System.Drawing.Point(16, 120);
             this.TBapellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.Size = new System.Drawing.Size(243, 28);
             this.TBapellido.TabIndex = 6;
@@ -229,6 +231,7 @@
             this.TBdireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdireccion.Location = new System.Drawing.Point(296, 54);
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBdireccion.MaxLength = 200;
             this.TBdireccion.Name = "TBdireccion";
             this.TBdireccion.Size = new System.Drawing.Size(242, 28);
             this.TBdireccion.TabIndex = 16;
@@ -249,6 +252,7 @@
             this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBemail.Location = new System.Drawing.Point(297, 120);
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
             this.TBemail.Size = new System.Drawing.Size(241, 28);
             this.TBemail.TabIndex = 18;
@@ -415,14 +419,14 @@
             // 
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_usuario,
@@ -589,6 +593,19 @@
             this.contenedorFotoBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorFotoBotones.TabIndex = 17;
             // 
+            // picFotoUsuario
+            // 
+            this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
+            this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picFotoUsuario.Location = new System.Drawing.Point(46, 57);
+            this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.picFotoUsuario.Name = "picFotoUsuario";
+            this.picFotoUsuario.Size = new System.Drawing.Size(183, 189);
+            this.picFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFotoUsuario.TabIndex = 2;
+            this.picFotoUsuario.TabStop = false;
+            // 
             // contenedorLista
             // 
             this.contenedorLista.BackColor = System.Drawing.Color.White;
@@ -614,6 +631,38 @@
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 32;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 18;
+            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // contenedorGestionUsuarios
             // 
@@ -695,51 +744,6 @@
             this.Bguardar.UseVisualStyleBackColor = false;
             this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
             // 
-            // picFotoUsuario
-            // 
-            this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
-            this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFotoUsuario.Location = new System.Drawing.Point(46, 57);
-            this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.picFotoUsuario.Name = "picFotoUsuario";
-            this.picFotoUsuario.Size = new System.Drawing.Size(183, 189);
-            this.picFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFotoUsuario.TabIndex = 2;
-            this.picFotoUsuario.TabStop = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -764,10 +768,10 @@
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).EndInit();
             this.contenedorFotoBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorGestionUsuarios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }

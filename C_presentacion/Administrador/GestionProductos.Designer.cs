@@ -484,7 +484,7 @@
             this.TBdescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdescripcion.Location = new System.Drawing.Point(134, 225);
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBdescripcion.MaxLength = 8;
+            this.TBdescripcion.MaxLength = 100;
             this.TBdescripcion.Name = "TBdescripcion";
             this.TBdescripcion.Size = new System.Drawing.Size(242, 28);
             this.TBdescripcion.TabIndex = 7;
@@ -494,6 +494,7 @@
             this.TBcodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBcodigo_prod.Location = new System.Drawing.Point(134, 65);
             this.TBcodigo_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TBcodigo_prod.MaxLength = 5;
             this.TBcodigo_prod.Name = "TBcodigo_prod";
             this.TBcodigo_prod.Size = new System.Drawing.Size(242, 28);
             this.TBcodigo_prod.TabIndex = 6;
@@ -504,6 +505,7 @@
             this.TBnombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre_prod.Location = new System.Drawing.Point(134, 145);
             this.TBnombre_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TBnombre_prod.MaxLength = 100;
             this.TBnombre_prod.Name = "TBnombre_prod";
             this.TBnombre_prod.Size = new System.Drawing.Size(242, 28);
             this.TBnombre_prod.TabIndex = 5;

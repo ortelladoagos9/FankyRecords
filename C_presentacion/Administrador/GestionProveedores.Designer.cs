@@ -30,6 +30,7 @@ namespace FankyRecords.C_presentacion.Administrador
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.RBinactivop = new System.Windows.Forms.RadioButton();
@@ -59,13 +60,13 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.TBBuscador = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorBotones = new System.Windows.Forms.Panel();
-            this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.Beditar = new FontAwesome.Sharp.IconButton();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
             this.contenedorLista.SuspendLayout();
@@ -133,6 +134,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.TBcorreo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBcorreo.Location = new System.Drawing.Point(470, 64);
+            this.TBcorreo.MaxLength = 100;
             this.TBcorreo.Name = "TBcorreo";
             this.TBcorreo.Size = new System.Drawing.Size(242, 28);
             this.TBcorreo.TabIndex = 9;
@@ -141,6 +143,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.TBdomiciliop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdomiciliop.Location = new System.Drawing.Point(134, 218);
+            this.TBdomiciliop.MaxLength = 200;
             this.TBdomiciliop.Name = "TBdomiciliop";
             this.TBdomiciliop.Size = new System.Drawing.Size(242, 28);
             this.TBdomiciliop.TabIndex = 8;
@@ -149,6 +152,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.TBcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBcuit.Location = new System.Drawing.Point(134, 141);
+            this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.Size = new System.Drawing.Size(242, 28);
             this.TBcuit.TabIndex = 7;
@@ -241,14 +245,14 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.BackgroundColor = System.Drawing.Color.White;
             this.DGlistaproveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGlistaproveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGlistaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGlistaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGlistaproveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_proveedor,
@@ -263,6 +267,8 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.Location = new System.Drawing.Point(0, 445);
             this.DGlistaproveedores.Name = "DGlistaproveedores";
             this.DGlistaproveedores.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.DGlistaproveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DGlistaproveedores.Size = new System.Drawing.Size(1182, 209);
             this.DGlistaproveedores.TabIndex = 11;
             // 
@@ -382,6 +388,38 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 34;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 18;
+            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // contenedorBotones
             // 
             this.contenedorBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -394,16 +432,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones.Name = "contenedorBotones";
             this.contenedorBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorBotones.TabIndex = 20;
-            // 
-            // contenedorGestionUsuarios
-            // 
-            this.contenedorGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedorGestionUsuarios.Controls.Add(this.LGestionProveedor);
-            this.contenedorGestionUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.contenedorGestionUsuarios.Location = new System.Drawing.Point(261, 0);
-            this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
-            this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 62);
-            this.contenedorGestionUsuarios.TabIndex = 21;
             // 
             // Beditar
             // 
@@ -474,37 +502,15 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Beliminar.UseVisualStyleBackColor = false;
             this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
             // 
-            // btnBuscar
+            // contenedorGestionUsuarios
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.contenedorGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorGestionUsuarios.Controls.Add(this.LGestionProveedor);
+            this.contenedorGestionUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorGestionUsuarios.Location = new System.Drawing.Point(261, 0);
+            this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
+            this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 62);
+            this.contenedorGestionUsuarios.TabIndex = 21;
             // 
             // GestionProveedores
             // 

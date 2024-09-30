@@ -43,10 +43,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
                     int n = listadoVentaProducto.Rows.Add();
 
-                    listadoVentaProducto.Rows[n].Cells[0].Value = TBProducto.Text;
-                    listadoVentaProducto.Rows[n].Cells[1].Value = TBPrecio.Text;
-                    listadoVentaProducto.Rows[n].Cells[2].Value = numCantidad.Text;
-                    listadoVentaProducto.Rows[n].Cells[3].Value = subtotal;
+                    listadoVentaProducto.Rows[n].Cells[0].Value = TBCodProducto.Text;
+                    listadoVentaProducto.Rows[n].Cells[1].Value = TBProducto.Text;
+                    listadoVentaProducto.Rows[n].Cells[2].Value = TBPrecio.Text;
+                    listadoVentaProducto.Rows[n].Cells[3].Value = numCantidad.Text;
+                    listadoVentaProducto.Rows[n].Cells[4].Value = subtotal;
 
                     // limpia campos
                     TBPrecio.Clear();

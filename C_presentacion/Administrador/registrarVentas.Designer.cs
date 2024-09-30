@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoVentaProducto = new System.Windows.Forms.DataGridView();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorRegistrarVenta = new System.Windows.Forms.Panel();
             this.LRegistrarVenta = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -69,6 +65,11 @@
             this.TBNroDocumento = new System.Windows.Forms.TextBox();
             this.LNombreCompleto = new System.Windows.Forms.Label();
             this.LNroDocumento = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVentaProducto)).BeginInit();
             this.contenedorRegistrarVenta.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
@@ -83,16 +84,17 @@
             // 
             this.listadoVentaProducto.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoVentaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
             this.producto,
             this.precio,
             this.cantidad,
@@ -104,37 +106,6 @@
             this.listadoVentaProducto.RowHeadersWidth = 51;
             this.listadoVentaProducto.Size = new System.Drawing.Size(921, 209);
             this.listadoVentaProducto.TabIndex = 12;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.MinimumWidth = 6;
-            this.producto.Name = "producto";
-            this.producto.Width = 140;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.MinimumWidth = 6;
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 140;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 140;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            this.subtotal.Width = 140;
             // 
             // contenedorRegistrarVenta
             // 
@@ -482,6 +453,7 @@
             // 
             this.TBCodProducto.Location = new System.Drawing.Point(15, 83);
             this.TBCodProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.TBCodProducto.MaxLength = 5;
             this.TBCodProducto.Name = "TBCodProducto";
             this.TBCodProducto.Size = new System.Drawing.Size(160, 28);
             this.TBCodProducto.TabIndex = 4;
@@ -555,6 +527,7 @@
             // 
             this.TBNroDocumento.Location = new System.Drawing.Point(20, 74);
             this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.TBNroDocumento.MaxLength = 8;
             this.TBNroDocumento.Name = "TBNroDocumento";
             this.TBNroDocumento.Size = new System.Drawing.Size(160, 28);
             this.TBNroDocumento.TabIndex = 4;
@@ -579,6 +552,44 @@
             this.LNroDocumento.Size = new System.Drawing.Size(191, 21);
             this.LNroDocumento.TabIndex = 2;
             this.LNroDocumento.Text = "Número Documento:";
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 125;
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.MinimumWidth = 6;
+            this.producto.Name = "producto";
+            this.producto.Width = 160;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.MinimumWidth = 6;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 140;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 140;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.MinimumWidth = 6;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Width = 140;
             // 
             // registrarVentas
             // 
@@ -617,10 +628,6 @@
         public System.Windows.Forms.Panel contenedorRegistrarVenta;
         public System.Windows.Forms.Label LRegistrarVenta;
         public System.Windows.Forms.Panel contenedorBotones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.GroupBox gbInformacionVentas;
         private System.Windows.Forms.Panel contenedorInformacion;
         private System.Windows.Forms.Label LTipoDoc;
@@ -653,5 +660,10 @@
         private System.Windows.Forms.TextBox TBRecibe;
         private System.Windows.Forms.Label LCambio;
         private FontAwesome.Sharp.IconButton btnCrearVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }

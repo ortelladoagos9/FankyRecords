@@ -42,6 +42,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -56,12 +57,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C_datos\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="C_datos\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="C_datos\DatosCategorias.cs" />
+    <Compile Include="C_datos\Conexion.cs" />
+    <Compile Include="C_entidad\Categorias.cs" />
+    <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\GestionCategorias.cs">
       <SubType>Form</SubType>
@@ -156,9 +155,6 @@
     </EmbeddedResource>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="C_datos\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -170,6 +166,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Categorias.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

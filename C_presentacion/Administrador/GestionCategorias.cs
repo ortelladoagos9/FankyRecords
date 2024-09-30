@@ -7,21 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FankyRecords.C_datos;
+using FankyRecords.C_entidad;
 using FankyRecords.C_negocio;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class GestionCategorias : Form
     {
-        int contador = 0;
+        private DatosCategorias CD_Categorias;
+        private NegocioCategorias CN_Categorias;
 
         public GestionCategorias()
         {
             InitializeComponent();
             this.CBbuscar.SelectedIndex = 0;
+            CD_Categorias = new DatosCategorias();
+            CN_Categorias = new NegocioCategorias();
         }
 
         private void Bguardar_Click(object sender, EventArgs e)
+        {
+            GuardarCategorias();
+        }
+
+        private void GuardarCategorias()
         {
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
@@ -31,20 +41,21 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
-                    contador += 1;
-                    int n = listadoCategorias.Rows.Add();
+                    Categorias categorias = new Categorias();
+                    categorias.Descripcion = TBdescripcion.Text;
 
-                    listadoCategorias.Rows[n].Cells[0].Value = contador;
-                    listadoCategorias.Rows[n].Cells[1].Value = TBdescripcion.Text;
-                 
                     if (rBactivo.Checked)
                     {
-                        listadoCategorias.Rows[n].Cells[2].Value = "Activo";
+                        categorias.Estado = "Activo";
                     }
                     else
                     {
-                        listadoCategorias.Rows[n].Cells[2].Value = "Inactivo";
+                        categorias.Estado = "Inactivo";
                     }
+
+                    CD_Categorias.AgregarCategoria(categorias);
+
+                    CargarCategorias();
 
                     // limpia campos
                     TBdescripcion.Clear();
@@ -71,7 +82,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar todas las filas del DataGridView
-            listadoCategorias.Rows.Clear();
+            // listadoCategorias.Rows.Clear();
         }
 
         private void Beditar_Click(object sender, EventArgs e)
@@ -84,10 +95,49 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
-                    // limpia campos
-                    TBdescripcion.Clear();
+                        // Limpia los campos después de editar
+                        TBdescripcion.Clear(); 
                 }
             }
         }
+
+        private void GestionCategorias_Load(object sender, EventArgs e)
+        {
+            CargarCategorias();
+        }
+
+        private void CargarCategorias()
+        {
+            List<Categorias> categorias = CN_Categorias.ListarCategorias();
+            listadoCategorias.DataSource = categorias;
+        }
+
+        private void listadoCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
+            {
+                DataGridViewRow row = listadoCategorias.Rows[e.RowIndex];
+
+                // Solo accede a las columnas si el índice es válido y la celda no es nula
+                if (row.Cells["Descripcion"] != null)
+                {
+                    TBdescripcion.Text = row.Cells["Descripcion"].Value.ToString();
+                }
+
+                if (row.Cells["Estado"] != null)
+                {
+                    string estado = row.Cells["Estado"].Value.ToString();
+                    if (estado == "Activo")
+                    {
+                        rBactivo.Checked = true;
+                    }
+                    else
+                    {
+                        rBinactivo.Checked = true;
+                    }
+                }
+            }
+        }
+
     }
 }
