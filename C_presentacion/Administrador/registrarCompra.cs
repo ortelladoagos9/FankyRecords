@@ -17,6 +17,7 @@ namespace FankyRecords.C_presentacion.Administrador
         public registrarCompra()
         {
             InitializeComponent();
+            this.cbTipoDoc.SelectedIndex = 0;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
@@ -96,5 +97,6 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             C_negocio.Validaciones.EsNumero(e);
         }
+        
     } 
 }

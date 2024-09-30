@@ -60,6 +60,7 @@
             this.MenuProductoVendedor});
             this.menuVendedor.Location = new System.Drawing.Point(0, 97);
             this.menuVendedor.Name = "menuVendedor";
+            this.menuVendedor.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
             this.menuVendedor.Size = new System.Drawing.Size(1200, 63);
             this.menuVendedor.TabIndex = 0;
             // 
@@ -121,7 +122,7 @@
             this.SubmenuDetalleVentasVendedor.IconSize = 25;
             this.SubmenuDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleVentasVendedor.Name = "SubmenuDetalleVentasVendedor";
-            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
+            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(226, 32);
             this.SubmenuDetalleVentasVendedor.Text = "Detalle de venta";
             // 
             // MenuProductoVendedor
@@ -151,6 +152,7 @@
             this.IconMinimizarVendedor});
             this.menuTituloVendedor.Location = new System.Drawing.Point(0, 0);
             this.menuTituloVendedor.Name = "menuTituloVendedor";
+            this.menuTituloVendedor.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
             this.menuTituloVendedor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuTituloVendedor.Size = new System.Drawing.Size(1200, 97);
             this.menuTituloVendedor.TabIndex = 1;
@@ -198,6 +200,7 @@
             this.contenedorVendedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorVendedor.Location = new System.Drawing.Point(0, 160);
+            this.contenedorVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contenedorVendedor.Name = "contenedorVendedor";
             this.contenedorVendedor.Size = new System.Drawing.Size(1200, 652);
             this.contenedorVendedor.TabIndex = 7;
@@ -208,7 +211,8 @@
             this.labVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.labVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labVendedor.ForeColor = System.Drawing.Color.Gold;
-            this.labVendedor.Location = new System.Drawing.Point(896, 35);
+            this.labVendedor.Location = new System.Drawing.Point(879, 35);
+            this.labVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labVendedor.Name = "labVendedor";
             this.labVendedor.Size = new System.Drawing.Size(94, 20);
             this.labVendedor.TabIndex = 5;
@@ -220,6 +224,7 @@
             this.picFankyRecordsVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsVendedor.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
             this.picFankyRecordsVendedor.Location = new System.Drawing.Point(12, 12);
+            this.picFankyRecordsVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picFankyRecordsVendedor.Name = "picFankyRecordsVendedor";
             this.picFankyRecordsVendedor.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -233,6 +238,7 @@
             this.labFankyRecordsMenuVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFankyRecordsMenuVendedor.ForeColor = System.Drawing.Color.Gold;
             this.labFankyRecordsMenuVendedor.Location = new System.Drawing.Point(102, 35);
+            this.labFankyRecordsMenuVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labFankyRecordsMenuVendedor.Name = "labFankyRecordsMenuVendedor";
             this.labFankyRecordsMenuVendedor.Size = new System.Drawing.Size(210, 29);
             this.labFankyRecordsMenuVendedor.TabIndex = 2;
@@ -244,7 +250,8 @@
             this.labUsuarioRolVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolVendedor.ForeColor = System.Drawing.Color.Gold;
-            this.labUsuarioRolVendedor.Location = new System.Drawing.Point(804, 35);
+            this.labUsuarioRolVendedor.Location = new System.Drawing.Point(795, 35);
+            this.labUsuarioRolVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labUsuarioRolVendedor.Name = "labUsuarioRolVendedor";
             this.labUsuarioRolVendedor.Size = new System.Drawing.Size(86, 20);
             this.labUsuarioRolVendedor.TabIndex = 4;
@@ -252,7 +259,7 @@
             // 
             // FormMenuVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 812);
             this.Controls.Add(this.labVendedor);
@@ -262,9 +269,11 @@
             this.Controls.Add(this.contenedorVendedor);
             this.Controls.Add(this.menuVendedor);
             this.Controls.Add(this.menuTituloVendedor);
+            this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuVendedor;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMenuVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Vendedor";

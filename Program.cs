@@ -19,7 +19,8 @@ namespace FankyRecords.C_presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuAdmin());
+
+            Application.Run(new Login());
             //Application.Run(new FormMenuVendedor());
             //Application.Run(new FormMenuAdministrativo());
         }

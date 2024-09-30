@@ -21,7 +21,10 @@ namespace FankyRecords.C_presentacion.Administrativo
 
         private void IconSalirAdministrativo_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // volver al login
+            Form login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void IconExpandirAdministrativo_Click(object sender, EventArgs e)

@@ -20,7 +20,10 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void IconSalirVendedor_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // volver al login
+            Form login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void IconExpandirVendedor_Click(object sender, EventArgs e)

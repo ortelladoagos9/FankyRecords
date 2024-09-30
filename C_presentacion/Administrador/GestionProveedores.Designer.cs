@@ -30,10 +30,7 @@ namespace FankyRecords.C_presentacion.Administrador
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.Beditar = new FontAwesome.Sharp.IconButton();
-            this.Beliminar = new FontAwesome.Sharp.IconButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.RBinactivop = new System.Windows.Forms.RadioButton();
             this.RBactivop = new System.Windows.Forms.RadioButton();
@@ -62,85 +59,19 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.TBBuscador = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorBotones = new System.Windows.Forms.Panel();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
+            this.Beditar = new FontAwesome.Sharp.IconButton();
+            this.Bguardar = new FontAwesome.Sharp.IconButton();
+            this.Beliminar = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Bguardar
-            // 
-            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
-            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bguardar.ForeColor = System.Drawing.Color.White;
-            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
-            this.Bguardar.IconColor = System.Drawing.Color.White;
-            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(44, 139);
-            this.Bguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Bguardar.Name = "Bguardar";
-            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Bguardar.Size = new System.Drawing.Size(183, 31);
-            this.Bguardar.TabIndex = 8;
-            this.Bguardar.Text = "Guardar";
-            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bguardar.UseVisualStyleBackColor = false;
-            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
-            // 
-            // Beditar
-            // 
-            this.Beditar.BackColor = System.Drawing.Color.Navy;
-            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beditar.ForeColor = System.Drawing.Color.White;
-            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.Beditar.IconColor = System.Drawing.Color.White;
-            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(44, 192);
-            this.Beditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Beditar.Name = "Beditar";
-            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beditar.Size = new System.Drawing.Size(183, 31);
-            this.Beditar.TabIndex = 10;
-            this.Beditar.Text = "Editar";
-            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beditar.UseVisualStyleBackColor = false;
-            this.Beditar.Click += new System.EventHandler(this.Beditar_Click);
-            // 
-            // Beliminar
-            // 
-            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beliminar.ForeColor = System.Drawing.Color.White;
-            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.Beliminar.IconColor = System.Drawing.Color.White;
-            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(44, 245);
-            this.Beliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Beliminar.Name = "Beliminar";
-            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beliminar.Size = new System.Drawing.Size(183, 31);
-            this.Beliminar.TabIndex = 11;
-            this.Beliminar.Text = "Eliminar";
-            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beliminar.UseVisualStyleBackColor = false;
-            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
             // 
             // contenedorDatos
             // 
@@ -159,10 +90,10 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorDatos.Controls.Add(this.Lrazonsocial);
             this.contenedorDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorDatos.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contenedorDatos.Location = new System.Drawing.Point(261, 56);
+            this.contenedorDatos.Location = new System.Drawing.Point(261, 62);
             this.contenedorDatos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.contenedorDatos.Name = "contenedorDatos";
-            this.contenedorDatos.Size = new System.Drawing.Size(921, 354);
+            this.contenedorDatos.Size = new System.Drawing.Size(921, 355);
             this.contenedorDatos.TabIndex = 12;
             // 
             // RBinactivop
@@ -300,23 +231,24 @@ namespace FankyRecords.C_presentacion.Administrador
             this.LGestionProveedor.Location = new System.Drawing.Point(0, 0);
             this.LGestionProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LGestionProveedor.Name = "LGestionProveedor";
-            this.LGestionProveedor.Size = new System.Drawing.Size(310, 56);
+            this.LGestionProveedor.Size = new System.Drawing.Size(310, 62);
             this.LGestionProveedor.TabIndex = 13;
             this.LGestionProveedor.Text = "Gestión de Proveedores";
-            this.LGestionProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LGestionProveedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // DGlistaproveedores
             // 
             this.DGlistaproveedores.BackgroundColor = System.Drawing.Color.White;
             this.DGlistaproveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGlistaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGlistaproveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGlistaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGlistaproveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_proveedor,
@@ -387,10 +319,10 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.listaProveedores.AutoSize = true;
             this.listaProveedores.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaProveedores.Location = new System.Drawing.Point(0, 0);
             this.listaProveedores.Name = "listaProveedores";
-            this.listaProveedores.Size = new System.Drawing.Size(277, 30);
+            this.listaProveedores.Size = new System.Drawing.Size(227, 25);
             this.listaProveedores.TabIndex = 15;
             this.listaProveedores.Text = "Lista de Proveedores";
             // 
@@ -404,9 +336,9 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorLista.Controls.Add(this.btnBuscar);
             this.contenedorLista.Controls.Add(this.btnLimpiar);
             this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.contenedorLista.Location = new System.Drawing.Point(0, 410);
+            this.contenedorLista.Location = new System.Drawing.Point(0, 417);
             this.contenedorLista.Name = "contenedorLista";
-            this.contenedorLista.Size = new System.Drawing.Size(1182, 35);
+            this.contenedorLista.Size = new System.Drawing.Size(1182, 28);
             this.contenedorLista.TabIndex = 19;
             // 
             // Lbuscar
@@ -414,17 +346,18 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold);
-            this.Lbuscar.Location = new System.Drawing.Point(626, 0);
+            this.Lbuscar.Location = new System.Drawing.Point(611, 0);
             this.Lbuscar.Name = "Lbuscar";
-            this.Lbuscar.Size = new System.Drawing.Size(115, 35);
+            this.Lbuscar.Size = new System.Drawing.Size(115, 28);
             this.Lbuscar.TabIndex = 0;
             this.Lbuscar.Text = "Buscar por:";
-            this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CBbuscar
             // 
             this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold);
             this.CBbuscar.ForeColor = System.Drawing.Color.DarkRed;
             this.CBbuscar.FormattingEnabled = true;
@@ -433,11 +366,10 @@ namespace FankyRecords.C_presentacion.Administrador
             "Nro ID",
             "Razon social",
             "Cuit"});
-            this.CBbuscar.Location = new System.Drawing.Point(741, 0);
+            this.CBbuscar.Location = new System.Drawing.Point(726, 0);
             this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(156, 29);
+            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
             this.CBbuscar.TabIndex = 1;
-            this.CBbuscar.Text = "Seleccione";
             // 
             // TBBuscador
             // 
@@ -450,40 +382,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 34;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(57, 35);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 35);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // contenedorBotones
             // 
             this.contenedorBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -494,7 +392,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones.ForeColor = System.Drawing.Color.Transparent;
             this.contenedorBotones.Location = new System.Drawing.Point(0, 0);
             this.contenedorBotones.Name = "contenedorBotones";
-            this.contenedorBotones.Size = new System.Drawing.Size(261, 410);
+            this.contenedorBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorBotones.TabIndex = 20;
             // 
             // contenedorGestionUsuarios
@@ -504,8 +402,109 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorGestionUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorGestionUsuarios.Location = new System.Drawing.Point(261, 0);
             this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
-            this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 56);
+            this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 62);
             this.contenedorGestionUsuarios.TabIndex = 21;
+            // 
+            // Beditar
+            // 
+            this.Beditar.BackColor = System.Drawing.Color.Navy;
+            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beditar.ForeColor = System.Drawing.Color.White;
+            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.Beditar.IconColor = System.Drawing.Color.White;
+            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beditar.IconSize = 25;
+            this.Beditar.Location = new System.Drawing.Point(44, 192);
+            this.Beditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beditar.Name = "Beditar";
+            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beditar.Size = new System.Drawing.Size(183, 31);
+            this.Beditar.TabIndex = 10;
+            this.Beditar.Text = "Editar";
+            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beditar.UseVisualStyleBackColor = false;
+            this.Beditar.Click += new System.EventHandler(this.Beditar_Click);
+            // 
+            // Bguardar
+            // 
+            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
+            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bguardar.ForeColor = System.Drawing.Color.White;
+            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
+            this.Bguardar.IconColor = System.Drawing.Color.White;
+            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bguardar.IconSize = 25;
+            this.Bguardar.Location = new System.Drawing.Point(44, 139);
+            this.Bguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Bguardar.Name = "Bguardar";
+            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Bguardar.Size = new System.Drawing.Size(183, 31);
+            this.Bguardar.TabIndex = 8;
+            this.Bguardar.Text = "Guardar";
+            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bguardar.UseVisualStyleBackColor = false;
+            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
+            // 
+            // Beliminar
+            // 
+            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beliminar.ForeColor = System.Drawing.Color.White;
+            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.Beliminar.IconColor = System.Drawing.Color.White;
+            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beliminar.IconSize = 21;
+            this.Beliminar.Location = new System.Drawing.Point(44, 245);
+            this.Beliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beliminar.Name = "Beliminar";
+            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beliminar.Size = new System.Drawing.Size(183, 31);
+            this.Beliminar.TabIndex = 11;
+            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beliminar.UseVisualStyleBackColor = false;
+            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 18;
+            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // GestionProveedores
             // 
@@ -523,7 +522,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "GestionProveedores";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).EndInit();

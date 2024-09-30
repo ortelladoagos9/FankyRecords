@@ -16,11 +16,16 @@ namespace FankyRecords.C_presentacion.Administrador
         public FormMenuAdmin()
         {
             InitializeComponent();
+            
+            this.Size = new Size(1200, 820);
         }
 
         private void IconSalirAdministrador_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // volver al login
+            Form login = new Login();
+            login.Show();
+            this.Hide();    
         }
 
         private void IconExpandirAdministrador_Click(object sender, EventArgs e)

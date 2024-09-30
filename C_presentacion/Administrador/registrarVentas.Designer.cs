@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoVentaProducto = new System.Windows.Forms.DataGridView();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,14 +83,14 @@
             // 
             this.listadoVentaProducto.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.listadoVentaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,
@@ -99,6 +99,7 @@
             this.subtotal});
             this.listadoVentaProducto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoVentaProducto.Location = new System.Drawing.Point(0, 445);
+            this.listadoVentaProducto.Margin = new System.Windows.Forms.Padding(4);
             this.listadoVentaProducto.Name = "listadoVentaProducto";
             this.listadoVentaProducto.RowHeadersWidth = 51;
             this.listadoVentaProducto.Size = new System.Drawing.Size(921, 209);
@@ -141,8 +142,9 @@
             this.contenedorRegistrarVenta.Controls.Add(this.LRegistrarVenta);
             this.contenedorRegistrarVenta.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorRegistrarVenta.Location = new System.Drawing.Point(0, 0);
+            this.contenedorRegistrarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorRegistrarVenta.Name = "contenedorRegistrarVenta";
-            this.contenedorRegistrarVenta.Size = new System.Drawing.Size(1182, 56);
+            this.contenedorRegistrarVenta.Size = new System.Drawing.Size(1182, 62);
             this.contenedorRegistrarVenta.TabIndex = 20;
             // 
             // LRegistrarVenta
@@ -152,12 +154,12 @@
             this.LRegistrarVenta.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRegistrarVenta.ForeColor = System.Drawing.Color.DarkRed;
             this.LRegistrarVenta.Location = new System.Drawing.Point(0, 0);
-            this.LRegistrarVenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LRegistrarVenta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LRegistrarVenta.Name = "LRegistrarVenta";
-            this.LRegistrarVenta.Size = new System.Drawing.Size(264, 56);
+            this.LRegistrarVenta.Size = new System.Drawing.Size(330, 62);
             this.LRegistrarVenta.TabIndex = 0;
             this.LRegistrarVenta.Text = "Registrar Venta";
-            this.LRegistrarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LRegistrarVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // contenedorBotones
             // 
@@ -173,9 +175,10 @@
             this.contenedorBotones.Dock = System.Windows.Forms.DockStyle.Right;
             this.contenedorBotones.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contenedorBotones.ForeColor = System.Drawing.Color.Transparent;
-            this.contenedorBotones.Location = new System.Drawing.Point(921, 56);
+            this.contenedorBotones.Location = new System.Drawing.Point(921, 62);
+            this.contenedorBotones.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorBotones.Name = "contenedorBotones";
-            this.contenedorBotones.Size = new System.Drawing.Size(261, 598);
+            this.contenedorBotones.Size = new System.Drawing.Size(261, 592);
             this.contenedorBotones.TabIndex = 21;
             // 
             // btnCrearVenta
@@ -187,6 +190,7 @@
             this.btnCrearVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCrearVenta.IconSize = 25;
             this.btnCrearVenta.Location = new System.Drawing.Point(69, 528);
+            this.btnCrearVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearVenta.Name = "btnCrearVenta";
             this.btnCrearVenta.Size = new System.Drawing.Size(129, 58);
             this.btnCrearVenta.TabIndex = 33;
@@ -197,7 +201,8 @@
             // 
             // TBCambio
             // 
-            this.TBCambio.Location = new System.Drawing.Point(69, 477);
+            this.TBCambio.Location = new System.Drawing.Point(69, 476);
+            this.TBCambio.Margin = new System.Windows.Forms.Padding(4);
             this.TBCambio.Name = "TBCambio";
             this.TBCambio.ReadOnly = true;
             this.TBCambio.Size = new System.Drawing.Size(129, 28);
@@ -205,7 +210,8 @@
             // 
             // TBRecibe
             // 
-            this.TBRecibe.Location = new System.Drawing.Point(69, 402);
+            this.TBRecibe.Location = new System.Drawing.Point(66, 411);
+            this.TBRecibe.Margin = new System.Windows.Forms.Padding(4);
             this.TBRecibe.Name = "TBRecibe";
             this.TBRecibe.Size = new System.Drawing.Size(129, 28);
             this.TBRecibe.TabIndex = 31;
@@ -217,9 +223,10 @@
             this.LCambio.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LCambio.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCambio.ForeColor = System.Drawing.Color.DarkRed;
-            this.LCambio.Location = new System.Drawing.Point(69, 443);
+            this.LCambio.Location = new System.Drawing.Point(69, 447);
+            this.LCambio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCambio.Name = "LCambio";
-            this.LCambio.Size = new System.Drawing.Size(129, 21);
+            this.LCambio.Size = new System.Drawing.Size(132, 21);
             this.LCambio.TabIndex = 30;
             this.LCambio.Text = "Cambio:";
             // 
@@ -228,15 +235,17 @@
             this.LRecibe.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LRecibe.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRecibe.ForeColor = System.Drawing.Color.DarkRed;
-            this.LRecibe.Location = new System.Drawing.Point(69, 368);
+            this.LRecibe.Location = new System.Drawing.Point(66, 382);
+            this.LRecibe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRecibe.Name = "LRecibe";
-            this.LRecibe.Size = new System.Drawing.Size(129, 21);
+            this.LRecibe.Size = new System.Drawing.Size(132, 21);
             this.LRecibe.TabIndex = 29;
             this.LRecibe.Text = "Se recibe:";
             // 
             // TBTotalAPagar
             // 
-            this.TBTotalAPagar.Location = new System.Drawing.Point(69, 327);
+            this.TBTotalAPagar.Location = new System.Drawing.Point(66, 346);
+            this.TBTotalAPagar.Margin = new System.Windows.Forms.Padding(4);
             this.TBTotalAPagar.Name = "TBTotalAPagar";
             this.TBTotalAPagar.ReadOnly = true;
             this.TBTotalAPagar.Size = new System.Drawing.Size(129, 28);
@@ -248,9 +257,10 @@
             this.LTotalAPagar.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LTotalAPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTotalAPagar.ForeColor = System.Drawing.Color.DarkRed;
-            this.LTotalAPagar.Location = new System.Drawing.Point(69, 293);
+            this.LTotalAPagar.Location = new System.Drawing.Point(66, 317);
+            this.LTotalAPagar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTotalAPagar.Name = "LTotalAPagar";
-            this.LTotalAPagar.Size = new System.Drawing.Size(129, 21);
+            this.LTotalAPagar.Size = new System.Drawing.Size(132, 21);
             this.LTotalAPagar.TabIndex = 27;
             this.LTotalAPagar.Text = "Total a pagar:";
             // 
@@ -263,6 +273,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 25;
             this.btnAgregar.Location = new System.Drawing.Point(69, 203);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(129, 58);
             this.btnAgregar.TabIndex = 26;
@@ -281,7 +292,9 @@
             this.gbInformacionVentas.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInformacionVentas.ForeColor = System.Drawing.Color.DarkRed;
             this.gbInformacionVentas.Location = new System.Drawing.Point(24, 34);
+            this.gbInformacionVentas.Margin = new System.Windows.Forms.Padding(4);
             this.gbInformacionVentas.Name = "gbInformacionVentas";
+            this.gbInformacionVentas.Padding = new System.Windows.Forms.Padding(4);
             this.gbInformacionVentas.Size = new System.Drawing.Size(434, 144);
             this.gbInformacionVentas.TabIndex = 22;
             this.gbInformacionVentas.TabStop = false;
@@ -295,7 +308,7 @@
             this.DTFechaVenta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTFechaVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTFechaVenta.Location = new System.Drawing.Point(29, 74);
-            this.DTFechaVenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DTFechaVenta.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.DTFechaVenta.Name = "DTFechaVenta";
             this.DTFechaVenta.Size = new System.Drawing.Size(160, 28);
             this.DTFechaVenta.TabIndex = 23;
@@ -305,6 +318,7 @@
             // 
             this.LTipoDoc.AutoSize = true;
             this.LTipoDoc.Location = new System.Drawing.Point(225, 47);
+            this.LTipoDoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTipoDoc.Name = "LTipoDoc";
             this.LTipoDoc.Size = new System.Drawing.Size(158, 21);
             this.LTipoDoc.TabIndex = 3;
@@ -314,6 +328,7 @@
             // 
             this.LFecha.AutoSize = true;
             this.LFecha.Location = new System.Drawing.Point(29, 47);
+            this.LFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LFecha.Name = "LFecha";
             this.LFecha.Size = new System.Drawing.Size(68, 21);
             this.LFecha.TabIndex = 2;
@@ -328,6 +343,7 @@
             "Boleta",
             "Factura"});
             this.cbTipoDoc.Location = new System.Drawing.Point(225, 73);
+            this.cbTipoDoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(160, 29);
             this.cbTipoDoc.TabIndex = 1;
@@ -340,9 +356,10 @@
             this.contenedorInformacion.Controls.Add(this.gbInformacionVentas);
             this.contenedorInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorInformacion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contenedorInformacion.Location = new System.Drawing.Point(0, 56);
+            this.contenedorInformacion.Location = new System.Drawing.Point(0, 62);
+            this.contenedorInformacion.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorInformacion.Name = "contenedorInformacion";
-            this.contenedorInformacion.Size = new System.Drawing.Size(921, 389);
+            this.contenedorInformacion.Size = new System.Drawing.Size(921, 383);
             this.contenedorInformacion.TabIndex = 23;
             // 
             // gbInformacionProducto
@@ -362,7 +379,9 @@
             this.gbInformacionProducto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInformacionProducto.ForeColor = System.Drawing.Color.DarkRed;
             this.gbInformacionProducto.Location = new System.Drawing.Point(24, 203);
+            this.gbInformacionProducto.Margin = new System.Windows.Forms.Padding(4);
             this.gbInformacionProducto.Name = "gbInformacionProducto";
+            this.gbInformacionProducto.Padding = new System.Windows.Forms.Padding(4);
             this.gbInformacionProducto.Size = new System.Drawing.Size(874, 144);
             this.gbInformacionProducto.TabIndex = 24;
             this.gbInformacionProducto.TabStop = false;
@@ -371,7 +390,8 @@
             // numCantidad
             // 
             this.numCantidad.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numCantidad.Location = new System.Drawing.Point(741, 83);
+            this.numCantidad.Location = new System.Drawing.Point(735, 81);
+            this.numCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.numCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -389,7 +409,8 @@
             // LCantidad
             // 
             this.LCantidad.AutoSize = true;
-            this.LCantidad.Location = new System.Drawing.Point(741, 56);
+            this.LCantidad.Location = new System.Drawing.Point(735, 56);
+            this.LCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCantidad.Name = "LCantidad";
             this.LCantidad.Size = new System.Drawing.Size(95, 21);
             this.LCantidad.TabIndex = 11;
@@ -397,7 +418,8 @@
             // 
             // TBStock
             // 
-            this.TBStock.Location = new System.Drawing.Point(615, 83);
+            this.TBStock.Location = new System.Drawing.Point(608, 81);
+            this.TBStock.Margin = new System.Windows.Forms.Padding(4);
             this.TBStock.Name = "TBStock";
             this.TBStock.ReadOnly = true;
             this.TBStock.Size = new System.Drawing.Size(105, 28);
@@ -406,7 +428,8 @@
             // LStock
             // 
             this.LStock.AutoSize = true;
-            this.LStock.Location = new System.Drawing.Point(615, 56);
+            this.LStock.Location = new System.Drawing.Point(608, 56);
+            this.LStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LStock.Name = "LStock";
             this.LStock.Size = new System.Drawing.Size(63, 21);
             this.LStock.TabIndex = 9;
@@ -414,7 +437,8 @@
             // 
             // TBPrecio
             // 
-            this.TBPrecio.Location = new System.Drawing.Point(493, 83);
+            this.TBPrecio.Location = new System.Drawing.Point(491, 81);
+            this.TBPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(105, 28);
             this.TBPrecio.TabIndex = 8;
@@ -423,7 +447,8 @@
             // LPrecio
             // 
             this.LPrecio.AutoSize = true;
-            this.LPrecio.Location = new System.Drawing.Point(493, 56);
+            this.LPrecio.Location = new System.Drawing.Point(491, 56);
+            this.LPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LPrecio.Name = "LPrecio";
             this.LPrecio.Size = new System.Drawing.Size(72, 21);
             this.LPrecio.TabIndex = 7;
@@ -433,13 +458,12 @@
             // 
             this.btnBuscarProducto.BackColor = System.Drawing.Color.White;
             this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscarProducto.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnBuscarProducto.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarProducto.IconSize = 18;
             this.btnBuscarProducto.Location = new System.Drawing.Point(180, 83);
-            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(46, 26);
             this.btnBuscarProducto.TabIndex = 6;
@@ -447,7 +471,8 @@
             // 
             // TBProducto
             // 
-            this.TBProducto.Location = new System.Drawing.Point(245, 83);
+            this.TBProducto.Location = new System.Drawing.Point(251, 81);
+            this.TBProducto.Margin = new System.Windows.Forms.Padding(4);
             this.TBProducto.Name = "TBProducto";
             this.TBProducto.ReadOnly = true;
             this.TBProducto.Size = new System.Drawing.Size(228, 28);
@@ -456,6 +481,7 @@
             // TBCodProducto
             // 
             this.TBCodProducto.Location = new System.Drawing.Point(15, 83);
+            this.TBCodProducto.Margin = new System.Windows.Forms.Padding(4);
             this.TBCodProducto.Name = "TBCodProducto";
             this.TBCodProducto.Size = new System.Drawing.Size(160, 28);
             this.TBCodProducto.TabIndex = 4;
@@ -464,7 +490,8 @@
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(245, 56);
+            this.LProducto.Location = new System.Drawing.Point(251, 56);
+            this.LProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(96, 21);
             this.LProducto.TabIndex = 3;
@@ -474,6 +501,7 @@
             // 
             this.LCodProducto.AutoSize = true;
             this.LCodProducto.Location = new System.Drawing.Point(15, 56);
+            this.LCodProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LCodProducto.Name = "LCodProducto";
             this.LCodProducto.Size = new System.Drawing.Size(161, 21);
             this.LCodProducto.TabIndex = 2;
@@ -490,7 +518,9 @@
             this.gbInformacionCliente.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInformacionCliente.ForeColor = System.Drawing.Color.DarkRed;
             this.gbInformacionCliente.Location = new System.Drawing.Point(464, 34);
+            this.gbInformacionCliente.Margin = new System.Windows.Forms.Padding(4);
             this.gbInformacionCliente.Name = "gbInformacionCliente";
+            this.gbInformacionCliente.Padding = new System.Windows.Forms.Padding(4);
             this.gbInformacionCliente.Size = new System.Drawing.Size(434, 144);
             this.gbInformacionCliente.TabIndex = 23;
             this.gbInformacionCliente.TabStop = false;
@@ -500,13 +530,12 @@
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.White;
             this.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnBuscarCliente.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarCliente.IconSize = 18;
             this.btnBuscarCliente.Location = new System.Drawing.Point(185, 74);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(46, 26);
             this.btnBuscarCliente.TabIndex = 6;
@@ -514,16 +543,18 @@
             // 
             // TBNombreCompleto
             // 
-            this.TBNombreCompleto.Location = new System.Drawing.Point(253, 74);
+            this.TBNombreCompleto.Location = new System.Drawing.Point(253, 72);
+            this.TBNombreCompleto.Margin = new System.Windows.Forms.Padding(4);
             this.TBNombreCompleto.Name = "TBNombreCompleto";
             this.TBNombreCompleto.ReadOnly = true;
-            this.TBNombreCompleto.Size = new System.Drawing.Size(164, 28);
+            this.TBNombreCompleto.Size = new System.Drawing.Size(160, 28);
             this.TBNombreCompleto.TabIndex = 5;
             this.TBNombreCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // TBNroDocumento
             // 
             this.TBNroDocumento.Location = new System.Drawing.Point(20, 74);
+            this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(4);
             this.TBNroDocumento.Name = "TBNroDocumento";
             this.TBNroDocumento.Size = new System.Drawing.Size(160, 28);
             this.TBNroDocumento.TabIndex = 4;
@@ -533,6 +564,7 @@
             // 
             this.LNombreCompleto.AutoSize = true;
             this.LNombreCompleto.Location = new System.Drawing.Point(253, 47);
+            this.LNombreCompleto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombreCompleto.Name = "LNombreCompleto";
             this.LNombreCompleto.Size = new System.Drawing.Size(172, 21);
             this.LNombreCompleto.TabIndex = 3;
@@ -542,6 +574,7 @@
             // 
             this.LNroDocumento.AutoSize = true;
             this.LNroDocumento.Location = new System.Drawing.Point(20, 47);
+            this.LNroDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNroDocumento.Name = "LNroDocumento";
             this.LNroDocumento.Size = new System.Drawing.Size(191, 21);
             this.LNroDocumento.TabIndex = 2;
@@ -549,15 +582,18 @@
             // 
             // registrarVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorInformacion);
             this.Controls.Add(this.listadoVentaProducto);
             this.Controls.Add(this.contenedorBotones);
             this.Controls.Add(this.contenedorRegistrarVenta);
+            this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "registrarVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registrarVentas";
             ((System.ComponentModel.ISupportInitialize)(this.listadoVentaProducto)).EndInit();
             this.contenedorRegistrarVenta.ResumeLayout(false);

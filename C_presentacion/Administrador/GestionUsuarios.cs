@@ -20,6 +20,8 @@ namespace FankyRecords.C_presentacion.Administrador
         public GestionUsuarios()
         {
             InitializeComponent();
+            this.CBRol.SelectedIndex = 0;
+            this.CBbuscar.SelectedIndex = 0;
         }
 
         private void Bguardar_Click(object sender, EventArgs e)

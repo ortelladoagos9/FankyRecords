@@ -17,6 +17,7 @@ namespace FankyRecords.C_presentacion.Administrador
         public registrarVentas()
         {
             InitializeComponent();
+            this.cbTipoDoc.SelectedIndex = 0;
             // Inicializar el temporizador
             delayTimer = new System.Windows.Forms.Timer();
             delayTimer.Interval = 2000; // Ajusta el intervalo según tus necesidades (en milisegundos)
@@ -27,7 +28,6 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text) ||
                C_negocio.Validaciones.EstaVacio(TBNroDocumento.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBNombreCompleto.Text) ||
                C_negocio.Validaciones.EstaVacio(TBCodProducto.Text) ||
                C_negocio.Validaciones.EstaVacio(TBPrecio.Text))
             {
@@ -157,6 +157,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 TBCambio.Clear();
             }
         }
-        
+
+       
     }
 }
