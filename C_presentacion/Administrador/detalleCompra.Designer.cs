@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Bbuscar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Lusuario = new System.Windows.Forms.Label();
             this.TBUsuario = new System.Windows.Forms.TextBox();
             this.TBtipoDoc = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,22 +62,21 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BdescargarPDF);
             this.panel1.Controls.Add(this.TBmontoTotal);
-            this.panel1.Controls.Add(this.LmontoTotal);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.Bbuscar);
+            this.panel1.Controls.Add(this.LmontoTotal);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Blimpiar);
             this.panel1.Controls.Add(this.TBnumCompra);
             this.panel1.Controls.Add(this.LnumDoc);
             this.panel1.Controls.Add(this.LdetalleCompra);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(214, 26);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(667, 616);
+            this.panel1.Size = new System.Drawing.Size(1182, 504);
             this.panel1.TabIndex = 0;
             // 
             // BdescargarPDF
@@ -90,7 +89,7 @@
             this.BdescargarPDF.IconColor = System.Drawing.Color.DarkRed;
             this.BdescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BdescargarPDF.IconSize = 19;
-            this.BdescargarPDF.Location = new System.Drawing.Point(424, 577);
+            this.BdescargarPDF.Location = new System.Drawing.Point(968, 449);
             this.BdescargarPDF.Name = "BdescargarPDF";
             this.BdescargarPDF.Size = new System.Drawing.Size(174, 31);
             this.BdescargarPDF.TabIndex = 12;
@@ -100,9 +99,9 @@
             // 
             // TBmontoTotal
             // 
-            this.TBmontoTotal.Location = new System.Drawing.Point(127, 579);
+            this.TBmontoTotal.Location = new System.Drawing.Point(781, 449);
             this.TBmontoTotal.Name = "TBmontoTotal";
-            this.TBmontoTotal.Size = new System.Drawing.Size(170, 26);
+            this.TBmontoTotal.Size = new System.Drawing.Size(152, 30);
             this.TBmontoTotal.TabIndex = 11;
             this.TBmontoTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
@@ -110,9 +109,9 @@
             // 
             this.LmontoTotal.AutoSize = true;
             this.LmontoTotal.ForeColor = System.Drawing.Color.DarkRed;
-            this.LmontoTotal.Location = new System.Drawing.Point(15, 582);
+            this.LmontoTotal.Location = new System.Drawing.Point(796, 413);
             this.LmontoTotal.Name = "LmontoTotal";
-            this.LmontoTotal.Size = new System.Drawing.Size(106, 19);
+            this.LmontoTotal.Size = new System.Drawing.Size(137, 23);
             this.LmontoTotal.TabIndex = 10;
             this.LmontoTotal.Text = "Monto Total:";
             // 
@@ -123,9 +122,9 @@
             this.groupBox2.Controls.Add(this.TB);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox2.Location = new System.Drawing.Point(19, 254);
+            this.groupBox2.Location = new System.Drawing.Point(190, 254);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(628, 141);
+            this.groupBox2.Size = new System.Drawing.Size(824, 141);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Proveedor";
@@ -134,7 +133,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(286, 70);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 26);
+            this.textBox1.Size = new System.Drawing.Size(293, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
@@ -143,7 +142,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(282, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.Size = new System.Drawing.Size(139, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Razón Social";
             // 
@@ -151,7 +150,7 @@
             // 
             this.TB.Location = new System.Drawing.Point(21, 70);
             this.TB.Name = "TB";
-            this.TB.Size = new System.Drawing.Size(160, 26);
+            this.TB.Size = new System.Drawing.Size(160, 30);
             this.TB.TabIndex = 1;
             this.TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
@@ -160,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 19);
+            this.label2.Size = new System.Drawing.Size(209, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Numero Documento";
             // 
@@ -191,19 +190,32 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.FechaCopraDetalle);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox1.Location = new System.Drawing.Point(19, 96);
+            this.groupBox1.Location = new System.Drawing.Point(190, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(628, 152);
+            this.groupBox1.Size = new System.Drawing.Size(824, 152);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inormación Compra";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.DarkRed;
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 83);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
             // 
             // Lusuario
             // 
             this.Lusuario.AutoSize = true;
             this.Lusuario.Location = new System.Drawing.Point(424, 52);
             this.Lusuario.Name = "Lusuario";
-            this.Lusuario.Size = new System.Drawing.Size(71, 19);
+            this.Lusuario.Size = new System.Drawing.Size(90, 23);
             this.Lusuario.TabIndex = 5;
             this.Lusuario.Text = "Usuario";
             // 
@@ -211,7 +223,7 @@
             // 
             this.TBUsuario.Location = new System.Drawing.Point(428, 83);
             this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(181, 26);
+            this.TBUsuario.Size = new System.Drawing.Size(181, 30);
             this.TBUsuario.TabIndex = 4;
             this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
@@ -219,7 +231,7 @@
             // 
             this.TBtipoDoc.Location = new System.Drawing.Point(237, 83);
             this.TBtipoDoc.Name = "TBtipoDoc";
-            this.TBtipoDoc.Size = new System.Drawing.Size(162, 26);
+            this.TBtipoDoc.Size = new System.Drawing.Size(162, 30);
             this.TBtipoDoc.TabIndex = 3;
             this.TBtipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
@@ -228,7 +240,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(233, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 19);
+            this.label1.Size = new System.Drawing.Size(175, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tipo Documento";
             // 
@@ -237,7 +249,7 @@
             this.FechaCopraDetalle.AutoSize = true;
             this.FechaCopraDetalle.Location = new System.Drawing.Point(17, 52);
             this.FechaCopraDetalle.Name = "FechaCopraDetalle";
-            this.FechaCopraDetalle.Size = new System.Drawing.Size(56, 19);
+            this.FechaCopraDetalle.Size = new System.Drawing.Size(71, 23);
             this.FechaCopraDetalle.TabIndex = 1;
             this.FechaCopraDetalle.Text = "Fecha";
             this.FechaCopraDetalle.Click += new System.EventHandler(this.FechaCopraDetalle_Click);
@@ -264,7 +276,7 @@
             // 
             this.TBnumCompra.Location = new System.Drawing.Point(327, 53);
             this.TBnumCompra.Name = "TBnumCompra";
-            this.TBnumCompra.Size = new System.Drawing.Size(100, 26);
+            this.TBnumCompra.Size = new System.Drawing.Size(100, 30);
             this.TBnumCompra.TabIndex = 4;
             this.TBnumCompra.TextChanged += new System.EventHandler(this.TBnumCompra_TextChanged);
             this.TBnumCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
@@ -275,7 +287,7 @@
             this.LnumDoc.ForeColor = System.Drawing.Color.DarkRed;
             this.LnumDoc.Location = new System.Drawing.Point(186, 58);
             this.LnumDoc.Name = "LnumDoc";
-            this.LnumDoc.Size = new System.Drawing.Size(142, 19);
+            this.LnumDoc.Size = new System.Drawing.Size(180, 23);
             this.LnumDoc.TabIndex = 3;
             this.LnumDoc.Text = "Número Compra:";
             // 
@@ -286,65 +298,62 @@
             this.LdetalleCompra.ForeColor = System.Drawing.Color.DarkRed;
             this.LdetalleCompra.Location = new System.Drawing.Point(15, 12);
             this.LdetalleCompra.Name = "LdetalleCompra";
-            this.LdetalleCompra.Size = new System.Drawing.Size(167, 23);
+            this.LdetalleCompra.Size = new System.Drawing.Size(209, 30);
             this.LdetalleCompra.TabIndex = 2;
             this.LdetalleCompra.Text = "Detalle Compra";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productoComprado,
             this.precioCompra,
             this.cantidadComprada,
             this.subtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 416);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 504);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(628, 150);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 150);
             this.dataGridView1.TabIndex = 1;
             // 
             // productoComprado
             // 
             this.productoComprado.HeaderText = "Producto";
+            this.productoComprado.MinimumWidth = 6;
             this.productoComprado.Name = "productoComprado";
             this.productoComprado.Width = 250;
             // 
             // precioCompra
             // 
             this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.Width = 150;
             // 
             // cantidadComprada
             // 
             this.cantidadComprada.HeaderText = "Cantidad";
+            this.cantidadComprada.MinimumWidth = 6;
             this.cantidadComprada.Name = "cantidadComprada";
+            this.cantidadComprada.Width = 125;
             // 
             // subtotal
             // 
             this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.MinimumWidth = 6;
             this.subtotal.Name = "subtotal";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkRed;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.DarkRed;
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 83);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 9, 29, 0, 0, 0, 0);
+            this.subtotal.Width = 125;
             // 
             // detalleCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
