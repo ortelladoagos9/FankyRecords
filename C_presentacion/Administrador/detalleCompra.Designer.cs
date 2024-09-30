@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnBuscarNroCompra = new FontAwesome.Sharp.IconButton();
+            this.contenedorDetalleCompra = new System.Windows.Forms.Panel();
+            this.LdetalleCompra = new System.Windows.Forms.Label();
             this.TBmontoTotal = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.LnumDoc = new System.Windows.Forms.Label();
             this.LmontoTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TBFecha = new System.Windows.Forms.TextBox();
             this.Lusuario = new System.Windows.Forms.Label();
             this.TBUsuario = new System.Windows.Forms.TextBox();
             this.TBtipoDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
-            this.LnumDoc = new System.Windows.Forms.Label();
-            this.LdetalleCompra = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.productoComprado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contenedorDetalleCompra = new System.Windows.Forms.Panel();
-            this.btnBuscarNroCompra = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.TBFecha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.contenedorDetalleCompra.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.contenedorDetalleCompra.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,15 +75,70 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 415);
             this.panel1.TabIndex = 0;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(1037, 76);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(46, 26);
+            this.btnLimpiar.TabIndex = 25;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnBuscarNroCompra
+            // 
+            this.btnBuscarNroCompra.BackColor = System.Drawing.Color.White;
+            this.btnBuscarNroCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarNroCompra.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarNroCompra.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarNroCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarNroCompra.IconSize = 18;
+            this.btnBuscarNroCompra.Location = new System.Drawing.Point(975, 76);
+            this.btnBuscarNroCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarNroCompra.Name = "btnBuscarNroCompra";
+            this.btnBuscarNroCompra.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarNroCompra.TabIndex = 24;
+            this.btnBuscarNroCompra.UseVisualStyleBackColor = false;
+            // 
+            // contenedorDetalleCompra
+            // 
+            this.contenedorDetalleCompra.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorDetalleCompra.Controls.Add(this.LdetalleCompra);
+            this.contenedorDetalleCompra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorDetalleCompra.Location = new System.Drawing.Point(0, 0);
+            this.contenedorDetalleCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.contenedorDetalleCompra.Name = "contenedorDetalleCompra";
+            this.contenedorDetalleCompra.Size = new System.Drawing.Size(1182, 56);
+            this.contenedorDetalleCompra.TabIndex = 23;
+            // 
+            // LdetalleCompra
+            // 
+            this.LdetalleCompra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LdetalleCompra.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LdetalleCompra.ForeColor = System.Drawing.Color.DarkRed;
+            this.LdetalleCompra.Location = new System.Drawing.Point(0, 0);
+            this.LdetalleCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LdetalleCompra.Name = "LdetalleCompra";
+            this.LdetalleCompra.Size = new System.Drawing.Size(330, 56);
+            this.LdetalleCompra.TabIndex = 2;
+            this.LdetalleCompra.Text = "Detalle Compra";
+            this.LdetalleCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // TBmontoTotal
             // 
             this.TBmontoTotal.Location = new System.Drawing.Point(1021, 369);
-            this.TBmontoTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBmontoTotal.Margin = new System.Windows.Forms.Padding(2);
             this.TBmontoTotal.Name = "TBmontoTotal";
             this.TBmontoTotal.ReadOnly = true;
             this.TBmontoTotal.Size = new System.Drawing.Size(121, 26);
@@ -99,9 +154,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox2.Location = new System.Drawing.Point(598, 175);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(544, 131);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -110,7 +165,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(280, 69);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(203, 28);
@@ -130,7 +185,7 @@
             // TB
             // 
             this.TB.Location = new System.Drawing.Point(51, 69);
-            this.TB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB.Margin = new System.Windows.Forms.Padding(2);
             this.TB.Name = "TB";
             this.TB.ReadOnly = true;
             this.TB.Size = new System.Drawing.Size(187, 28);
@@ -146,6 +201,18 @@
             this.label2.Size = new System.Drawing.Size(191, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Número Documento:";
+            // 
+            // LnumDoc
+            // 
+            this.LnumDoc.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LnumDoc.ForeColor = System.Drawing.Color.DarkRed;
+            this.LnumDoc.Location = new System.Drawing.Point(594, 76);
+            this.LnumDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LnumDoc.Name = "LnumDoc";
+            this.LnumDoc.Size = new System.Drawing.Size(161, 28);
+            this.LnumDoc.TabIndex = 3;
+            this.LnumDoc.Text = "Número Compra:";
+            this.LnumDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LmontoTotal
             // 
@@ -170,13 +237,22 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Location = new System.Drawing.Point(38, 175);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(544, 131);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Compra";
+            // 
+            // TBFecha
+            // 
+            this.TBFecha.Location = new System.Drawing.Point(16, 69);
+            this.TBFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.TBFecha.Name = "TBFecha";
+            this.TBFecha.ReadOnly = true;
+            this.TBFecha.Size = new System.Drawing.Size(155, 28);
+            this.TBFecha.TabIndex = 7;
             // 
             // Lusuario
             // 
@@ -191,7 +267,7 @@
             // TBUsuario
             // 
             this.TBUsuario.Location = new System.Drawing.Point(369, 69);
-            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.TBUsuario.Name = "TBUsuario";
             this.TBUsuario.ReadOnly = true;
             this.TBUsuario.Size = new System.Drawing.Size(155, 28);
@@ -201,7 +277,7 @@
             // TBtipoDoc
             // 
             this.TBtipoDoc.Location = new System.Drawing.Point(190, 69);
-            this.TBtipoDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBtipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.TBtipoDoc.Name = "TBtipoDoc";
             this.TBtipoDoc.ReadOnly = true;
             this.TBtipoDoc.Size = new System.Drawing.Size(155, 28);
@@ -231,37 +307,14 @@
             // 
             // TBnumCompra
             // 
+            this.TBnumCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnumCompra.Location = new System.Drawing.Point(773, 76);
-            this.TBnumCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBnumCompra.Margin = new System.Windows.Forms.Padding(2);
             this.TBnumCompra.Name = "TBnumCompra";
-            this.TBnumCompra.Size = new System.Drawing.Size(187, 26);
+            this.TBnumCompra.Size = new System.Drawing.Size(187, 28);
             this.TBnumCompra.TabIndex = 4;
             this.TBnumCompra.TextChanged += new System.EventHandler(this.TBnumCompra_TextChanged);
             this.TBnumCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
-            // 
-            // LnumDoc
-            // 
-            this.LnumDoc.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnumDoc.ForeColor = System.Drawing.Color.DarkRed;
-            this.LnumDoc.Location = new System.Drawing.Point(594, 81);
-            this.LnumDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LnumDoc.Name = "LnumDoc";
-            this.LnumDoc.Size = new System.Drawing.Size(161, 21);
-            this.LnumDoc.TabIndex = 3;
-            this.LnumDoc.Text = "Número Compra:";
-            // 
-            // LdetalleCompra
-            // 
-            this.LdetalleCompra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LdetalleCompra.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LdetalleCompra.ForeColor = System.Drawing.Color.DarkRed;
-            this.LdetalleCompra.Location = new System.Drawing.Point(0, 0);
-            this.LdetalleCompra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LdetalleCompra.Name = "LdetalleCompra";
-            this.LdetalleCompra.Size = new System.Drawing.Size(360, 56);
-            this.LdetalleCompra.TabIndex = 2;
-            this.LdetalleCompra.Text = "Detalle Compra";
-            this.LdetalleCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // dataGridView1
             // 
@@ -274,7 +327,7 @@
             this.subtotal});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 415);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1182, 239);
@@ -308,59 +361,6 @@
             this.subtotal.Name = "subtotal";
             this.subtotal.Width = 125;
             // 
-            // contenedorDetalleCompra
-            // 
-            this.contenedorDetalleCompra.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedorDetalleCompra.Controls.Add(this.LdetalleCompra);
-            this.contenedorDetalleCompra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.contenedorDetalleCompra.Location = new System.Drawing.Point(0, 0);
-            this.contenedorDetalleCompra.Margin = new System.Windows.Forms.Padding(4);
-            this.contenedorDetalleCompra.Name = "contenedorDetalleCompra";
-            this.contenedorDetalleCompra.Size = new System.Drawing.Size(1182, 56);
-            this.contenedorDetalleCompra.TabIndex = 23;
-            // 
-            // btnBuscarNroCompra
-            // 
-            this.btnBuscarNroCompra.BackColor = System.Drawing.Color.White;
-            this.btnBuscarNroCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarNroCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarNroCompra.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarNroCompra.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscarNroCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarNroCompra.IconSize = 18;
-            this.btnBuscarNroCompra.Location = new System.Drawing.Point(975, 76);
-            this.btnBuscarNroCompra.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarNroCompra.Name = "btnBuscarNroCompra";
-            this.btnBuscarNroCompra.Size = new System.Drawing.Size(46, 26);
-            this.btnBuscarNroCompra.TabIndex = 24;
-            this.btnBuscarNroCompra.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1037, 76);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(46, 26);
-            this.btnLimpiar.TabIndex = 25;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // TBFecha
-            // 
-            this.TBFecha.Location = new System.Drawing.Point(16, 69);
-            this.TBFecha.Margin = new System.Windows.Forms.Padding(2);
-            this.TBFecha.Name = "TBFecha";
-            this.TBFecha.ReadOnly = true;
-            this.TBFecha.Size = new System.Drawing.Size(155, 28);
-            this.TBFecha.TabIndex = 7;
-            // 
             // detalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -377,12 +377,12 @@
             this.Text = "detalleCompra";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.contenedorDetalleCompra.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.contenedorDetalleCompra.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

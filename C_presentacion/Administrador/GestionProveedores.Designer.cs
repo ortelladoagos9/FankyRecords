@@ -65,9 +65,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorBotones = new System.Windows.Forms.Panel();
-            this.Beditar = new FontAwesome.Sharp.IconButton();
-            this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
@@ -75,6 +72,75 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Bguardar
+            // 
+            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
+            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bguardar.ForeColor = System.Drawing.Color.White;
+            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
+            this.Bguardar.IconColor = System.Drawing.Color.White;
+            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bguardar.IconSize = 25;
+            this.Bguardar.Location = new System.Drawing.Point(44, 139);
+            this.Bguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Bguardar.Name = "Bguardar";
+            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Bguardar.Size = new System.Drawing.Size(183, 31);
+            this.Bguardar.TabIndex = 8;
+            this.Bguardar.Text = "Guardar";
+            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bguardar.UseVisualStyleBackColor = false;
+            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
+            // 
+            // Beditar
+            // 
+            this.Beditar.BackColor = System.Drawing.Color.Navy;
+            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beditar.ForeColor = System.Drawing.Color.White;
+            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.Beditar.IconColor = System.Drawing.Color.White;
+            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beditar.IconSize = 25;
+            this.Beditar.Location = new System.Drawing.Point(44, 192);
+            this.Beditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beditar.Name = "Beditar";
+            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beditar.Size = new System.Drawing.Size(183, 31);
+            this.Beditar.TabIndex = 10;
+            this.Beditar.Text = "Editar";
+            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beditar.UseVisualStyleBackColor = false;
+            this.Beditar.Click += new System.EventHandler(this.Beditar_Click);
+            // 
+            // Beliminar
+            // 
+            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beliminar.ForeColor = System.Drawing.Color.White;
+            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.Beliminar.IconColor = System.Drawing.Color.White;
+            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Beliminar.IconSize = 21;
+            this.Beliminar.Location = new System.Drawing.Point(44, 245);
+            this.Beliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Beliminar.Name = "Beliminar";
+            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Beliminar.Size = new System.Drawing.Size(183, 31);
+            this.Beliminar.TabIndex = 11;
+            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Beliminar.UseVisualStyleBackColor = false;
+            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
             // 
             // contenedorDatos
             // 
@@ -269,8 +335,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.Location = new System.Drawing.Point(0, 445);
             this.DGlistaproveedores.Name = "DGlistaproveedores";
             this.DGlistaproveedores.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.DGlistaproveedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DGlistaproveedores.Size = new System.Drawing.Size(1182, 209);
             this.DGlistaproveedores.TabIndex = 11;
             // 
@@ -434,75 +498,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones.Name = "contenedorBotones";
             this.contenedorBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorBotones.TabIndex = 20;
-            // 
-            // Beditar
-            // 
-            this.Beditar.BackColor = System.Drawing.Color.Navy;
-            this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beditar.ForeColor = System.Drawing.Color.White;
-            this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.Beditar.IconColor = System.Drawing.Color.White;
-            this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(44, 192);
-            this.Beditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Beditar.Name = "Beditar";
-            this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beditar.Size = new System.Drawing.Size(183, 31);
-            this.Beditar.TabIndex = 10;
-            this.Beditar.Text = "Editar";
-            this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beditar.UseVisualStyleBackColor = false;
-            this.Beditar.Click += new System.EventHandler(this.Beditar_Click);
-            // 
-            // Bguardar
-            // 
-            this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
-            this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bguardar.ForeColor = System.Drawing.Color.White;
-            this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
-            this.Bguardar.IconColor = System.Drawing.Color.White;
-            this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(44, 139);
-            this.Bguardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Bguardar.Name = "Bguardar";
-            this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Bguardar.Size = new System.Drawing.Size(183, 31);
-            this.Bguardar.TabIndex = 8;
-            this.Bguardar.Text = "Guardar";
-            this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bguardar.UseVisualStyleBackColor = false;
-            this.Bguardar.Click += new System.EventHandler(this.Bguardar_Click);
-            // 
-            // Beliminar
-            // 
-            this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beliminar.ForeColor = System.Drawing.Color.White;
-            this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.Beliminar.IconColor = System.Drawing.Color.White;
-            this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(44, 245);
-            this.Beliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Beliminar.Name = "Beliminar";
-            this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beliminar.Size = new System.Drawing.Size(183, 31);
-            this.Beliminar.TabIndex = 11;
-            this.Beliminar.Text = "Eliminar";
-            this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Beliminar.UseVisualStyleBackColor = false;
-            this.Beliminar.Click += new System.EventHandler(this.Beliminar_Click);
             // 
             // contenedorGestionUsuarios
             // 
