@@ -1,0 +1,8 @@
+Menu administrador
+dni "101010", contraseña "123"
+
+Menu administrativo
+dni "202020", contraseña "456"
+            
+Menu Vendedor
+dni "303030", contraseña "789"

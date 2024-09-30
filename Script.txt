@@ -1,0 +1,20 @@
+--Ortellado Agostina, Romero Karin
+
+CREATE DATABASE DB_FANKY_RECORDS;
+
+GO
+
+USE DB_FANKY_RECORDS;
+
+GO
+
+CREATE TABLE CATEGORIAS
+(
+	Id_categoria int identity,
+	Descripcion varchar(100) NOT NULL,
+	Estado varchar(10) NOT NULL,
+	FechaRegistro datetime CONSTRAINT DF_categorias_FechaRegistro DEFAULT GETDATE(),
+	CONSTRAINT PK_Categorias PRIMARY KEY (Id_categoria)
+);
+
+select * from CATEGORIAS;
