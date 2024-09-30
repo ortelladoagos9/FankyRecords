@@ -68,7 +68,6 @@
     <Compile Include="C_presentacion\Administrador\GestionCategorias.Designer.cs">
       <DependentUpon>GestionCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\detalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
