@@ -13,6 +13,8 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class GestionProveedores : Form
     {
+        int contador = 0;
+
         public GestionProveedores()
         {
             InitializeComponent();
@@ -30,9 +32,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-
                 //validar correo
-
                 string email = TBcorreo.Text;
 
                 if (!C_negocio.Validaciones.EmailCorrecto(email))
@@ -43,9 +43,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     if (C_negocio.Validaciones.mensajeConfirmacion())
                     {
+                        contador += 1;
                         int n = DGlistaproveedores.Rows.Add();
 
-                        DGlistaproveedores.Rows[n].Cells[0].Value = 0;
+                        DGlistaproveedores.Rows[n].Cells[0].Value = contador;
                         DGlistaproveedores.Rows[n].Cells[1].Value = TBRazonSocial.Text;
                         DGlistaproveedores.Rows[n].Cells[2].Value = TBcuit.Text;
                         DGlistaproveedores.Rows[n].Cells[3].Value = TBdomiciliop.Text;
@@ -83,10 +84,10 @@ namespace FankyRecords.C_presentacion.Administrador
         private void Beliminar_Click(object sender, EventArgs e)
         {
             if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
-                          C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
+                C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -108,6 +109,30 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             // Limpiar todas las filas del DataGridView
             DGlistaproveedores.Rows.Clear();
+        }
+
+        private void Beditar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
+            {
+                MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeEditar())
+                {
+                    // limpia campos
+                    TBRazonSocial.Clear();
+                    TBcuit.Clear();
+                    TBcorreo.Clear();
+                    TBtelefono.Clear();
+                    TBdomiciliop.Clear();
+                }
+            }
         }
     }
 }

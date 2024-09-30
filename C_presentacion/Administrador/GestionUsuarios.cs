@@ -15,7 +15,8 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class GestionUsuarios : Form
     {
-    
+        int contador = 0;
+
         public GestionUsuarios()
         {
             InitializeComponent();
@@ -55,9 +56,10 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                     else 
                     {
+                       contador += 1;
                        int n = listadoUsuarios.Rows.Add();
 
-                       listadoUsuarios.Rows[n].Cells[0].Value = 0;
+                       listadoUsuarios.Rows[n].Cells[0].Value = contador;
                        listadoUsuarios.Rows[n].Cells[1].Value = TBdni.Text;
                        listadoUsuarios.Rows[n].Cells[2].Value = TBapellido.Text;
                        listadoUsuarios.Rows[n].Cells[3].Value = TBnombre.Text;
@@ -185,6 +187,41 @@ namespace FankyRecords.C_presentacion.Administrador
             // Limpiar todas las filas del DataGridView
             listadoUsuarios.Rows.Clear();
 
+        }
+
+        private void Beditar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBdireccion.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBclave.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBconfirmarClave.Text) ||
+               C_negocio.Validaciones.EstaVacio(CBRol.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+               C_negocio.Validaciones.EstaVacio(rutaFoto.Text))
+            {
+                MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeEditar())
+                {
+                    // limpia campos
+                    TBnombre.Clear();
+                    TBapellido.Clear();
+                    rutaFoto.Clear();
+                    TBdireccion.Clear();
+                    TBtelefono.Clear();
+                    TBdni.Clear();
+                    TBemail.Clear();
+                    picFotoUsuario.Image = null;
+                    TBclave.Clear();
+                    TBconfirmarClave.Clear();
+                    CBRol.SelectedIndex = -1;  // Deselect the ComboBox
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,37 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             // Cambia el estado del formulario a minimizado
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void AbrirFormulario(IconMenuItem menu, Form formulario)
+        {
+            // Limpiar cualquier formulario previamente abierto
+            if (this.contenedorVendedor.Controls.Count > 0)
+            {
+                foreach (Form frm in this.contenedorVendedor.Controls.OfType<Form>())
+                {
+                    frm.Close(); // Cierra cualquier formulario abierto
+                }
+                this.contenedorVendedor.Controls.Clear(); // Limpia el contenedor
+            }
+
+            // Configurar el nuevo formulario
+            formulario.TopLevel = false; // Indica que el formulario no es de nivel superior
+            formulario.FormBorderStyle = FormBorderStyle.None; // Eliminar bordes del formulario
+            formulario.Dock = DockStyle.Fill; // Acomoda el formulario para ocupar todo el contenedor
+            this.contenedorVendedor.Controls.Add(formulario); // Agrega el formulario al contenedor
+            this.contenedorVendedor.Tag = formulario; // Asocia el formulario al contenedor
+            formulario.BringToFront(); // Trae el formulario al frente
+            formulario.Show(); // Muestra el formulario
+        }
+        private void MenuProductoVendedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new Administrador.gestionProductos());
+        }
+
+        private void SubmenuRegistrarVentasVendedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new Administrador.registrarVentas());
         }
     }
 }
