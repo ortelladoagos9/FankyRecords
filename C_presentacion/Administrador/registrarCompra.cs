@@ -11,10 +11,10 @@ using FankyRecords.C_negocio;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class registroCompra : Form
+    public partial class registrarCompra : Form
     {
         decimal sumaSubtotal = 0;
-        public registroCompra()
+        public registrarCompra()
         {
             InitializeComponent();
         }

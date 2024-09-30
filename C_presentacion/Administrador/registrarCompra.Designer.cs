@@ -1,6 +1,6 @@
 ﻿namespace FankyRecords.C_presentacion.Administrador
 {
-    partial class registroCompra
+    partial class registrarCompra
     {
         /// <summary>
         /// Required designer variable.
