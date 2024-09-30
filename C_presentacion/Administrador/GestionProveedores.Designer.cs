@@ -31,7 +31,9 @@ namespace FankyRecords.C_presentacion.Administrador
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Bguardar = new FontAwesome.Sharp.IconButton();
+            this.Beditar = new FontAwesome.Sharp.IconButton();
+            this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.RBinactivop = new System.Windows.Forms.RadioButton();
             this.RBactivop = new System.Windows.Forms.RadioButton();
