@@ -120,11 +120,11 @@
             // LApellido
             // 
             this.LApellido.AutoSize = true;
-            this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.Location = new System.Drawing.Point(13, 90);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(82, 21);
+            this.LApellido.Size = new System.Drawing.Size(94, 23);
             this.LApellido.TabIndex = 1;
             this.LApellido.Text = "Apellido";
             // 

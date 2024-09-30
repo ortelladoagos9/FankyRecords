@@ -69,6 +69,12 @@
     <Compile Include="C_presentacion\Administrador\GestionProveedores.Designer.cs">
       <DependentUpon>GestionProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Administrador\registroCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\registroCompra.Designer.cs">
+      <DependentUpon>registroCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrador\gestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\registrarVentas.resx">
       <DependentUpon>registrarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\registroCompra.resx">
+      <DependentUpon>registroCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>
