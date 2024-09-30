@@ -25,8 +25,8 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(tipoDoc.Text)
-                || C_negocio.Validaciones.EstaVacio(TBcuil.Text)
+            if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
+                || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBrazonSocial.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcodProdunto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio.Text))
@@ -40,7 +40,7 @@ namespace FankyRecords.C_presentacion.Administrador
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Information);
                 TBcodProdunto.Clear();
-                TBproduct.Clear();
+                TBproducto.Clear();
                 TBprecio.Clear();
                 cantProd = null;
 
@@ -56,13 +56,13 @@ namespace FankyRecords.C_presentacion.Administrador
                                         MessageBoxIcon.Information);
 
             TBcodProdunto.Clear();
-            TBproduct.Clear();
+            TBproducto.Clear();
             TBprecio.Clear();
             TBrazonSocial.Clear();
-            TBcuil.Clear();
+            TBcuit.Clear();
             cantProd = null;
-            tipoDoc =null;
-            Fecha=null;
+            cbTipoDoc =null;
+            
 
         }
         private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)

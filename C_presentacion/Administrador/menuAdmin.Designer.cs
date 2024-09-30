@@ -221,6 +221,7 @@
             this.SubmenuRegistrarComprasAdministrador.Name = "SubmenuRegistrarComprasAdministrador";
             this.SubmenuRegistrarComprasAdministrador.Size = new System.Drawing.Size(230, 35);
             this.SubmenuRegistrarComprasAdministrador.Text = "Registrar compras";
+            this.SubmenuRegistrarComprasAdministrador.Click += new System.EventHandler(this.SubmenuRegistrarComprasAdministrador_Click);
             // 
             // SubmenuDetalleCompraAdministrador
             // 
