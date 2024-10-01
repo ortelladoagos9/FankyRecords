@@ -114,6 +114,7 @@
             this.Bconecta.Text = "Conecta";
             this.Bconecta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Bconecta.UseVisualStyleBackColor = true;
+            this.Bconecta.Click += new System.EventHandler(this.Bconecta_Click);
             // 
             // Bruta
             // 
@@ -130,6 +131,7 @@
             this.Bruta.Text = "Ruta";
             this.Bruta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Bruta.UseVisualStyleBackColor = true;
+            this.Bruta.Click += new System.EventHandler(this.Bruta_Click);
             // 
             // Bbackup
             // 
@@ -146,6 +148,7 @@
             this.Bbackup.Text = "Backup";
             this.Bbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Bbackup.UseVisualStyleBackColor = true;
+            this.Bbackup.Click += new System.EventHandler(this.Bbackup_Click);
             // 
             // Bcancelar
             // 
@@ -162,6 +165,7 @@
             this.Bcancelar.Text = "Cancelar";
             this.Bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Bcancelar.UseVisualStyleBackColor = true;
+            this.Bcancelar.Click += new System.EventHandler(this.Bcancelar_Click);
             // 
             // backup
             // 
