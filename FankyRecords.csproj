@@ -134,6 +134,12 @@
     <Compile Include="C_presentacion\Administrador\reporteVentas.Designer.cs">
       <DependentUpon>reporteVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Administrador\reporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\reporteVentas.Designer.cs">
+      <DependentUpon>reporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrativo\menuAdministrativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\reporteCompras.resx">
       <DependentUpon>reporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\reporteVentas.resx">
+      <DependentUpon>reporteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\reporteVentas.resx">
       <DependentUpon>reporteVentas.cs</DependentUpon>
