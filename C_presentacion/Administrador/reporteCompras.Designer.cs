@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Ldtinicio = new System.Windows.Forms.Label();
-            this.DTinicio = new System.Windows.Forms.DateTimePicker();
-            this.Ldtfin = new System.Windows.Forms.Label();
-            this.DTfin = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.CBproveedor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DTfin = new System.Windows.Forms.DateTimePicker();
+            this.Ldtfin = new System.Windows.Forms.Label();
+            this.DTinicio = new System.Windows.Forms.DateTimePicker();
+            this.Ldtinicio = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,79 +69,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1386, 89);
+            this.panel1.Size = new System.Drawing.Size(1182, 99);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte Compras";
-            // 
-            // Ldtinicio
-            // 
-            this.Ldtinicio.AutoSize = true;
-            this.Ldtinicio.Location = new System.Drawing.Point(46, 50);
-            this.Ldtinicio.Name = "Ldtinicio";
-            this.Ldtinicio.Size = new System.Drawing.Size(108, 19);
-            this.Ldtinicio.TabIndex = 1;
-            this.Ldtinicio.Text = "Fecha Inicio:";
-            // 
-            // DTinicio
-            // 
-            this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTinicio.Location = new System.Drawing.Point(160, 44);
-            this.DTinicio.MaxDate = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(107, 26);
-            this.DTinicio.TabIndex = 2;
-            this.DTinicio.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            // 
-            // Ldtfin
-            // 
-            this.Ldtfin.AutoSize = true;
-            this.Ldtfin.Location = new System.Drawing.Point(304, 50);
-            this.Ldtfin.Name = "Ldtfin";
-            this.Ldtfin.Size = new System.Drawing.Size(90, 19);
-            this.Ldtfin.TabIndex = 3;
-            this.Ldtfin.Text = "Fecha Fin:";
-            // 
-            // DTfin
-            // 
-            this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTfin.Location = new System.Drawing.Point(400, 44);
-            this.DTfin.MaxDate = new System.DateTime(2024, 9, 30, 21, 8, 24, 0);
-            this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(107, 26);
-            this.DTfin.TabIndex = 3;
-            this.DTfin.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(541, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Proveedor:";
-            // 
-            // CBproveedor
-            // 
-            this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBproveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.CBproveedor.FormattingEnabled = true;
-            this.CBproveedor.Items.AddRange(new object[] {
-            "Proveedor A",
-            "Proveedor B"});
-            this.CBproveedor.Location = new System.Drawing.Point(642, 46);
-            this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(121, 24);
-            this.CBproveedor.TabIndex = 5;
-            this.CBproveedor.Text = "Todos";
             // 
             // iconButton1
             // 
@@ -159,8 +88,80 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
+            // CBproveedor
+            // 
+            this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBproveedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.CBproveedor.FormattingEnabled = true;
+            this.CBproveedor.Items.AddRange(new object[] {
+            "Proveedor A",
+            "Proveedor B"});
+            this.CBproveedor.Location = new System.Drawing.Point(651, 46);
+            this.CBproveedor.Name = "CBproveedor";
+            this.CBproveedor.Size = new System.Drawing.Size(121, 27);
+            this.CBproveedor.TabIndex = 5;
+            this.CBproveedor.Text = "Todos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(541, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Proveedor:";
+            // 
+            // DTfin
+            // 
+            this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTfin.Location = new System.Drawing.Point(428, 44);
+            this.DTfin.MaxDate = new System.DateTime(2024, 9, 30, 21, 8, 24, 0);
+            this.DTfin.Name = "DTfin";
+            this.DTfin.Size = new System.Drawing.Size(107, 30);
+            this.DTfin.TabIndex = 3;
+            this.DTfin.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            // 
+            // Ldtfin
+            // 
+            this.Ldtfin.AutoSize = true;
+            this.Ldtfin.Location = new System.Drawing.Point(304, 50);
+            this.Ldtfin.Name = "Ldtfin";
+            this.Ldtfin.Size = new System.Drawing.Size(115, 23);
+            this.Ldtfin.TabIndex = 3;
+            this.Ldtfin.Text = "Fecha Fin:";
+            // 
+            // DTinicio
+            // 
+            this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTinicio.Location = new System.Drawing.Point(189, 44);
+            this.DTinicio.MaxDate = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            this.DTinicio.Name = "DTinicio";
+            this.DTinicio.Size = new System.Drawing.Size(107, 30);
+            this.DTinicio.TabIndex = 2;
+            this.DTinicio.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            // 
+            // Ldtinicio
+            // 
+            this.Ldtinicio.AutoSize = true;
+            this.Ldtinicio.Location = new System.Drawing.Point(46, 50);
+            this.Ldtinicio.Name = "Ldtinicio";
+            this.Ldtinicio.Size = new System.Drawing.Size(139, 23);
+            this.Ldtinicio.TabIndex = 1;
+            this.Ldtinicio.Text = "Fecha Inicio:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reporte Compras";
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -172,59 +173,75 @@
             this.precioCompra,
             this.cantidad,
             this.montoTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(62, 224);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 271);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1244, 505);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 383);
             this.dataGridView1.TabIndex = 1;
             // 
             // fechaRegistro
             // 
             this.fechaRegistro.HeaderText = "Fecha Registro";
+            this.fechaRegistro.MinimumWidth = 6;
             this.fechaRegistro.Name = "fechaRegistro";
+            this.fechaRegistro.Width = 125;
             // 
             // tipoDoc
             // 
             this.tipoDoc.HeaderText = "Tipo Documento";
+            this.tipoDoc.MinimumWidth = 6;
             this.tipoDoc.Name = "tipoDoc";
+            this.tipoDoc.Width = 125;
             // 
             // razonSocial
             // 
             this.razonSocial.HeaderText = "Razon Social";
+            this.razonSocial.MinimumWidth = 6;
             this.razonSocial.Name = "razonSocial";
             this.razonSocial.Width = 200;
             // 
             // cuitProveedor
             // 
             this.cuitProveedor.HeaderText = "Cuit Proveedor";
+            this.cuitProveedor.MinimumWidth = 6;
             this.cuitProveedor.Name = "cuitProveedor";
             this.cuitProveedor.Width = 150;
             // 
             // codProducto
             // 
             this.codProducto.HeaderText = "Codigo Producto";
+            this.codProducto.MinimumWidth = 6;
             this.codProducto.Name = "codProducto";
             this.codProducto.Width = 150;
             // 
             // nomProducto
             // 
             this.nomProducto.HeaderText = "Nombre Producto";
+            this.nomProducto.MinimumWidth = 6;
             this.nomProducto.Name = "nomProducto";
             this.nomProducto.Width = 200;
             // 
             // precioCompra
             // 
             this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
+            this.precioCompra.Width = 125;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 125;
             // 
             // montoTotal
             // 
             this.montoTotal.HeaderText = "Monto Total ";
+            this.montoTotal.MinimumWidth = 6;
             this.montoTotal.Name = "montoTotal";
+            this.montoTotal.Width = 125;
             // 
             // descargaExel
             // 
@@ -233,9 +250,9 @@
             this.descargaExel.IconColor = System.Drawing.Color.DarkRed;
             this.descargaExel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.descargaExel.IconSize = 20;
-            this.descargaExel.Location = new System.Drawing.Point(108, 144);
+            this.descargaExel.Location = new System.Drawing.Point(50, 215);
             this.descargaExel.Name = "descargaExel";
-            this.descargaExel.Size = new System.Drawing.Size(188, 36);
+            this.descargaExel.Size = new System.Drawing.Size(222, 36);
             this.descargaExel.TabIndex = 2;
             this.descargaExel.Text = "Descargar Excel";
             this.descargaExel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -248,9 +265,9 @@
             this.iconButton2.IconColor = System.Drawing.Color.DarkRed;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(319, 144);
+            this.iconButton2.Location = new System.Drawing.Point(278, 215);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(188, 36);
+            this.iconButton2.Size = new System.Drawing.Size(216, 36);
             this.iconButton2.TabIndex = 3;
             this.iconButton2.Text = "Generar Gráfico";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -259,9 +276,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(849, 161);
+            this.label3.Location = new System.Drawing.Point(825, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 19);
+            this.label3.Size = new System.Drawing.Size(126, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Buscar por:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -281,9 +298,9 @@
             "Razon Social",
             "Cuit Proveedor",
             ""});
-            this.comboBox1.Location = new System.Drawing.Point(964, 153);
+            this.comboBox1.Location = new System.Drawing.Point(957, 160);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 24);
+            this.comboBox1.Size = new System.Drawing.Size(154, 27);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "Fecha Registro";
             // 
@@ -294,7 +311,7 @@
             this.buscar.IconColor = System.Drawing.Color.DarkRed;
             this.buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buscar.IconSize = 20;
-            this.buscar.Location = new System.Drawing.Point(1134, 154);
+            this.buscar.Location = new System.Drawing.Point(1117, 164);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(37, 23);
             this.buscar.TabIndex = 6;
@@ -302,10 +319,10 @@
             // 
             // reporteCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.buscar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
