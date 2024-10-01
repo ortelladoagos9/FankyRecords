@@ -124,6 +124,24 @@ namespace FankyRecords.C_negocio
 
             return true;
         }
+        public static bool mensajeConfirmacionGenerarNC()
+        {
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas generar Nota de Crédito por estos artículos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("La operación ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
+                return false;
+            }
+            MessageBox.Show("Se generó la Nota de Crédito correspondiente.",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+            return true;
+        }
         public static bool mensajeEditar()
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas editar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

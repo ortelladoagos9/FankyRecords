@@ -81,6 +81,13 @@
     <Compile Include="C_presentacion\Administrador\DetalleVenta.Designer.cs">
       <DependentUpon>DetalleVenta.cs</DependentUpon>
     </Compile>
+    
+    <Compile Include="C_presentacion\Administrador\devoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\devoluciones.Designer.cs">
+      <DependentUpon>devoluciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrador\GestionProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\DetalleVenta.resx">
       <DependentUpon>DetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\devoluciones.resx">
+      <DependentUpon>devoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\GestionProveedores.resx">
       <DependentUpon>GestionProveedores.cs</DependentUpon>
