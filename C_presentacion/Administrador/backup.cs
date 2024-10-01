@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FankyRecords.C_negocio;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -42,6 +43,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                C_negocio.Validaciones.mensajeConfirmacionBackup();
             }
         }
 

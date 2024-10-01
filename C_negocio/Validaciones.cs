@@ -140,5 +140,23 @@ namespace FankyRecords.C_negocio
 
             return true;
         }
+        public static bool mensajeConfirmacionBackup()
+        {
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas hacer el backup?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("La operación de ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
+                return false;
+            }
+            MessageBox.Show("El backup se realizó correctamente.",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+            return true;
+        }
     }
 }

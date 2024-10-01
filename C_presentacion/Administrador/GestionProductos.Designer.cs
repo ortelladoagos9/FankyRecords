@@ -117,7 +117,7 @@
             this.CBbuscar.Location = new System.Drawing.Point(726, 0);
             this.CBbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
+            this.CBbuscar.Size = new System.Drawing.Size(171, 25);
             this.CBbuscar.TabIndex = 1;
             // 
             // LListaProductos
@@ -143,7 +143,7 @@
             this.TBBuscador.Location = new System.Drawing.Point(897, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
             this.TBBuscador.TabIndex = 33;
             // 
             // btnBuscar
@@ -405,7 +405,7 @@
             this.CBcategoria.Location = new System.Drawing.Point(470, 145);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBcategoria.Name = "CBcategoria";
-            this.CBcategoria.Size = new System.Drawing.Size(242, 29);
+            this.CBcategoria.Size = new System.Drawing.Size(242, 25);
             this.CBcategoria.TabIndex = 1;
             // 
             // rBinactivo
@@ -415,7 +415,7 @@
             this.rBinactivo.Location = new System.Drawing.Point(608, 228);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
+            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -429,7 +429,7 @@
             this.rBactivo.Location = new System.Drawing.Point(509, 228);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(86, 25);
+            this.rBactivo.Size = new System.Drawing.Size(74, 21);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -442,7 +442,7 @@
             this.TBPrecio_Venta.Margin = new System.Windows.Forms.Padding(4);
             this.TBPrecio_Venta.MaxLength = 10;
             this.TBPrecio_Venta.Name = "TBPrecio_Venta";
-            this.TBPrecio_Venta.Size = new System.Drawing.Size(242, 28);
+            this.TBPrecio_Venta.Size = new System.Drawing.Size(242, 24);
             this.TBPrecio_Venta.TabIndex = 24;
             this.TBPrecio_Venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -453,7 +453,7 @@
             this.LEstado.Location = new System.Drawing.Point(470, 190);
             this.LEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(70, 21);
+            this.LEstado.Size = new System.Drawing.Size(58, 17);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -464,7 +464,7 @@
             this.LCategoria.Location = new System.Drawing.Point(470, 109);
             this.LCategoria.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCategoria.Name = "LCategoria";
-            this.LCategoria.Size = new System.Drawing.Size(95, 21);
+            this.LCategoria.Size = new System.Drawing.Size(81, 17);
             this.LCategoria.TabIndex = 21;
             this.LCategoria.Text = "Categoría";
             // 
@@ -475,7 +475,7 @@
             this.LPrecio_Venta.Location = new System.Drawing.Point(470, 30);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
-            this.LPrecio_Venta.Size = new System.Drawing.Size(124, 21);
+            this.LPrecio_Venta.Size = new System.Drawing.Size(104, 17);
             this.LPrecio_Venta.TabIndex = 19;
             this.LPrecio_Venta.Text = "Precio Venta";
             // 
@@ -486,7 +486,7 @@
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBdescripcion.MaxLength = 100;
             this.TBdescripcion.Name = "TBdescripcion";
-            this.TBdescripcion.Size = new System.Drawing.Size(242, 28);
+            this.TBdescripcion.Size = new System.Drawing.Size(242, 24);
             this.TBdescripcion.TabIndex = 7;
             // 
             // TBcodigo_prod
@@ -496,7 +496,7 @@
             this.TBcodigo_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBcodigo_prod.MaxLength = 5;
             this.TBcodigo_prod.Name = "TBcodigo_prod";
-            this.TBcodigo_prod.Size = new System.Drawing.Size(242, 28);
+            this.TBcodigo_prod.Size = new System.Drawing.Size(242, 24);
             this.TBcodigo_prod.TabIndex = 6;
             this.TBcodigo_prod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -507,7 +507,7 @@
             this.TBnombre_prod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBnombre_prod.MaxLength = 100;
             this.TBnombre_prod.Name = "TBnombre_prod";
-            this.TBnombre_prod.Size = new System.Drawing.Size(242, 28);
+            this.TBnombre_prod.Size = new System.Drawing.Size(242, 24);
             this.TBnombre_prod.TabIndex = 5;
             this.TBnombre_prod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -518,7 +518,7 @@
             this.LDescripcion.Location = new System.Drawing.Point(134, 189);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(114, 21);
+            this.LDescripcion.Size = new System.Drawing.Size(96, 17);
             this.LDescripcion.TabIndex = 2;
             this.LDescripcion.Text = "Descripción";
             // 
@@ -529,7 +529,7 @@
             this.LCodigo_prod.Location = new System.Drawing.Point(134, 29);
             this.LCodigo_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCodigo_prod.Name = "LCodigo_prod";
-            this.LCodigo_prod.Size = new System.Drawing.Size(70, 21);
+            this.LCodigo_prod.Size = new System.Drawing.Size(59, 17);
             this.LCodigo_prod.TabIndex = 1;
             this.LCodigo_prod.Text = "Código";
             // 
@@ -541,13 +541,13 @@
             this.LNombre_prod.Location = new System.Drawing.Point(134, 109);
             this.LNombre_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNombre_prod.Name = "LNombre_prod";
-            this.LNombre_prod.Size = new System.Drawing.Size(80, 21);
+            this.LNombre_prod.Size = new System.Drawing.Size(66, 17);
             this.LNombre_prod.TabIndex = 0;
             this.LNombre_prod.Text = "Nombre";
             // 
             // gestionProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
