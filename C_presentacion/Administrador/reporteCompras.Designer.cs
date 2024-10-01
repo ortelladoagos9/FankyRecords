@@ -237,7 +237,7 @@
             this.descargaExel.Name = "descargaExel";
             this.descargaExel.Size = new System.Drawing.Size(188, 36);
             this.descargaExel.TabIndex = 2;
-            this.descargaExel.Text = "Descargar Exel";
+            this.descargaExel.Text = "Descargar Excel";
             this.descargaExel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.descargaExel.UseVisualStyleBackColor = true;
             // 
