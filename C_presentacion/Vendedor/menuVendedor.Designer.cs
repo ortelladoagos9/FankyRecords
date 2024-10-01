@@ -78,6 +78,7 @@
             this.MenuClientesVendedor.Size = new System.Drawing.Size(150, 59);
             this.MenuClientesVendedor.Text = "Clientes";
             this.MenuClientesVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuClientesVendedor.Click += new System.EventHandler(this.MenuClientesVendedor_Click);
             // 
             // MenuVentasVendedor
             // 

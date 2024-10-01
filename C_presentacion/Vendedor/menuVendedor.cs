@@ -80,5 +80,10 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             AbrirFormulario((IconMenuItem)sender, new Administrador.detalleVenta());
         }
+
+        private void MenuClientesVendedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
