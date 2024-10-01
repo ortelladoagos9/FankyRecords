@@ -68,7 +68,7 @@ namespace FankyRecords.C_presentacion.Vendedor
         }
         private void MenuProductoVendedor_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new Administrador.gestionProductos());
+            AbrirFormulario((IconMenuItem)sender, new BuscarProducto());
         }
 
         private void SubmenuRegistrarVentasVendedor_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void MenuClientesVendedor_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario((IconMenuItem)sender, new GestionClientes());
         }
     }
 }

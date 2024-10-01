@@ -74,7 +74,6 @@
     <Compile Include="C_presentacion\Administrador\detalleCompra.Designer.cs">
       <DependentUpon>detalleCompra.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="C_presentacion\Administrador\DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +135,18 @@
     <Compile Include="C_presentacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Vendedor\BuscarProducto.Designer.cs">
+      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_presentacion\Vendedor\GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Vendedor\GestionClientes.Designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Vendedor\menuVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Vendedor\BuscarProducto.resx">
+      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Vendedor\GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\menuVendedor.resx">
       <DependentUpon>menuVendedor.cs</DependentUpon>
