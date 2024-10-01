@@ -212,6 +212,7 @@
             this.MenuDevolucionAdministrador.Size = new System.Drawing.Size(105, 59);
             this.MenuDevolucionAdministrador.Text = "Devoluciones";
             this.MenuDevolucionAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuDevolucionAdministrador.Click += new System.EventHandler(this.MenuDevolucionAdministrador_Click);
             // 
             // MenuComprasAdministrador
             // 
@@ -308,6 +309,7 @@
             this.SubmenuReporteVentas.Name = "SubmenuReporteVentas";
             this.SubmenuReporteVentas.Size = new System.Drawing.Size(230, 35);
             this.SubmenuReporteVentas.Text = "Reporte Ventas";
+            this.SubmenuReporteVentas.Click += new System.EventHandler(this.SubmenuReporteVentas_Click);
             // 
             // SubmenuReporteCompras
             // 
@@ -322,6 +324,7 @@
             this.SubmenuReporteCompras.Name = "SubmenuReporteCompras";
             this.SubmenuReporteCompras.Size = new System.Drawing.Size(230, 35);
             this.SubmenuReporteCompras.Text = "Reporte Compras";
+            this.SubmenuReporteCompras.Click += new System.EventHandler(this.SubmenuReporteCompras_Click);
             // 
             // MenuGraficosAdministrador
             // 
@@ -353,6 +356,7 @@
             this.MenuBackupAdministrador.Size = new System.Drawing.Size(100, 59);
             this.MenuBackupAdministrador.Text = "Backup";
             this.MenuBackupAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuBackupAdministrador.Click += new System.EventHandler(this.MenuBackupAdministrador_Click);
             // 
             // menuTituloAdministrador
             // 

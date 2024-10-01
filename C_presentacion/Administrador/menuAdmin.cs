@@ -109,5 +109,25 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             AbrirFormulario((IconMenuItem)sender, new detalleVenta());
         }
+
+        private void MenuDevolucionAdministrador_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new devoluciones());
+        }
+
+        private void SubmenuReporteVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SubmenuReporteCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new reporteCompras());
+        }
+
+        private void MenuBackupAdministrador_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new backup());
+        }
     }
 }
