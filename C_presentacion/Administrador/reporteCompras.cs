@@ -16,5 +16,10 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -148,6 +148,9 @@
     <EmbeddedResource Include="C_presentacion\Administrador\registrarCompra.resx">
       <DependentUpon>registrarCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\reporteCompras.resx">
+      <DependentUpon>reporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\reporteVentas.resx">
       <DependentUpon>reporteVentas.cs</DependentUpon>
     </EmbeddedResource>
