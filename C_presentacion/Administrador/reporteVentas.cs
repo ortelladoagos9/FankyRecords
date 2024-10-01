@@ -38,5 +38,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
             }
         }
+
+        
     }
 }
