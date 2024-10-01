@@ -122,8 +122,9 @@
             this.SubmenuDetalleVentasVendedor.IconSize = 25;
             this.SubmenuDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleVentasVendedor.Name = "SubmenuDetalleVentasVendedor";
-            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(226, 32);
+            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
             this.SubmenuDetalleVentasVendedor.Text = "Detalle de venta";
+            this.SubmenuDetalleVentasVendedor.Click += new System.EventHandler(this.SubmenuDetalleVentasVendedor_Click);
             // 
             // MenuProductoVendedor
             // 
@@ -200,7 +201,7 @@
             this.contenedorVendedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorVendedor.Location = new System.Drawing.Point(0, 160);
-            this.contenedorVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contenedorVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorVendedor.Name = "contenedorVendedor";
             this.contenedorVendedor.Size = new System.Drawing.Size(1200, 652);
             this.contenedorVendedor.TabIndex = 7;
@@ -224,7 +225,7 @@
             this.picFankyRecordsVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsVendedor.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
             this.picFankyRecordsVendedor.Location = new System.Drawing.Point(12, 12);
-            this.picFankyRecordsVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFankyRecordsVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.picFankyRecordsVendedor.Name = "picFankyRecordsVendedor";
             this.picFankyRecordsVendedor.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -273,7 +274,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuVendedor;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuVendedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Vendedor";

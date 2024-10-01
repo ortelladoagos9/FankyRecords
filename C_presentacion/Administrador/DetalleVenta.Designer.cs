@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedor = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -127,6 +127,7 @@
             this.TBNroDoc.Name = "TBNroDoc";
             this.TBNroDoc.Size = new System.Drawing.Size(200, 28);
             this.TBNroDoc.TabIndex = 41;
+            this.TBNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // LNroDoc
             // 
@@ -158,7 +159,7 @@
             this.LDetalleVenta.Location = new System.Drawing.Point(0, 0);
             this.LDetalleVenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDetalleVenta.Name = "LDetalleVenta";
-            this.LDetalleVenta.Size = new System.Drawing.Size(264, 56);
+            this.LDetalleVenta.Size = new System.Drawing.Size(330, 56);
             this.LDetalleVenta.TabIndex = 0;
             this.LDetalleVenta.Text = "Detalle Venta";
             this.LDetalleVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -177,6 +178,7 @@
             this.TBRecibe.Name = "TBRecibe";
             this.TBRecibe.Size = new System.Drawing.Size(129, 28);
             this.TBRecibe.TabIndex = 37;
+            this.TBRecibe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // LCambio
             // 
@@ -342,14 +344,14 @@
             // 
             this.listadoVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,

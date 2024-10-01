@@ -18,16 +18,6 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
 
-        private void TBnumCompra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FechaCopraDetalle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TxtPalabra_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsLetra(e);

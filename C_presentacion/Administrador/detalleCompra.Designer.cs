@@ -43,8 +43,6 @@
             this.LmontoTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBFecha = new System.Windows.Forms.TextBox();
-            this.Lusuario = new System.Windows.Forms.Label();
-            this.TBUsuario = new System.Windows.Forms.TextBox();
             this.TBtipoDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
@@ -54,6 +52,8 @@
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBUsuario = new System.Windows.Forms.TextBox();
+            this.Lusuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 415);
+            this.panel1.Size = new System.Drawing.Size(1182, 435);
             this.panel1.TabIndex = 0;
             // 
             // btnLimpiar
@@ -89,7 +89,7 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1037, 76);
+            this.btnLimpiar.Location = new System.Drawing.Point(1099, 137);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(46, 26);
@@ -104,7 +104,7 @@
             this.btnBuscarNroCompra.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarNroCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarNroCompra.IconSize = 18;
-            this.btnBuscarNroCompra.Location = new System.Drawing.Point(975, 76);
+            this.btnBuscarNroCompra.Location = new System.Drawing.Point(1041, 137);
             this.btnBuscarNroCompra.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarNroCompra.Name = "btnBuscarNroCompra";
             this.btnBuscarNroCompra.Size = new System.Drawing.Size(46, 26);
@@ -137,7 +137,7 @@
             // 
             // TBmontoTotal
             // 
-            this.TBmontoTotal.Location = new System.Drawing.Point(1021, 369);
+            this.TBmontoTotal.Location = new System.Drawing.Point(1016, 377);
             this.TBmontoTotal.Margin = new System.Windows.Forms.Padding(2);
             this.TBmontoTotal.Name = "TBmontoTotal";
             this.TBmontoTotal.ReadOnly = true;
@@ -153,18 +153,18 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox2.Location = new System.Drawing.Point(598, 175);
+            this.groupBox2.Location = new System.Drawing.Point(24, 261);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(544, 131);
+            this.groupBox2.Size = new System.Drawing.Size(872, 144);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Proveedor";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 69);
+            this.textBox1.Location = new System.Drawing.Point(517, 66);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -175,7 +175,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 43);
+            this.label3.Location = new System.Drawing.Point(517, 43);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 21);
@@ -184,7 +184,7 @@
             // 
             // TB
             // 
-            this.TB.Location = new System.Drawing.Point(51, 69);
+            this.TB.Location = new System.Drawing.Point(136, 66);
             this.TB.Margin = new System.Windows.Forms.Padding(2);
             this.TB.Name = "TB";
             this.TB.ReadOnly = true;
@@ -195,7 +195,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 43);
+            this.label2.Location = new System.Drawing.Point(136, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 21);
@@ -206,7 +206,7 @@
             // 
             this.LnumDoc.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnumDoc.ForeColor = System.Drawing.Color.DarkRed;
-            this.LnumDoc.Location = new System.Drawing.Point(594, 76);
+            this.LnumDoc.Location = new System.Drawing.Point(949, 73);
             this.LnumDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LnumDoc.Name = "LnumDoc";
             this.LnumDoc.Size = new System.Drawing.Size(161, 28);
@@ -219,7 +219,7 @@
             this.LmontoTotal.AutoSize = true;
             this.LmontoTotal.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LmontoTotal.ForeColor = System.Drawing.Color.DarkRed;
-            this.LmontoTotal.Location = new System.Drawing.Point(1021, 340);
+            this.LmontoTotal.Location = new System.Drawing.Point(1016, 351);
             this.LmontoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LmontoTotal.Name = "LmontoTotal";
             this.LmontoTotal.Size = new System.Drawing.Size(121, 21);
@@ -236,47 +236,27 @@
             this.groupBox1.Controls.Add(this.FechaCopraDetalle);
             this.groupBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox1.Location = new System.Drawing.Point(38, 175);
+            this.groupBox1.Location = new System.Drawing.Point(24, 108);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(544, 131);
+            this.groupBox1.Size = new System.Drawing.Size(872, 144);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Compra";
             // 
             // TBFecha
             // 
-            this.TBFecha.Location = new System.Drawing.Point(16, 69);
+            this.TBFecha.Location = new System.Drawing.Point(86, 68);
             this.TBFecha.Margin = new System.Windows.Forms.Padding(2);
             this.TBFecha.Name = "TBFecha";
             this.TBFecha.ReadOnly = true;
             this.TBFecha.Size = new System.Drawing.Size(155, 28);
             this.TBFecha.TabIndex = 7;
             // 
-            // Lusuario
-            // 
-            this.Lusuario.AutoSize = true;
-            this.Lusuario.Location = new System.Drawing.Point(369, 43);
-            this.Lusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Lusuario.Name = "Lusuario";
-            this.Lusuario.Size = new System.Drawing.Size(85, 21);
-            this.Lusuario.TabIndex = 5;
-            this.Lusuario.Text = "Usuario:";
-            // 
-            // TBUsuario
-            // 
-            this.TBUsuario.Location = new System.Drawing.Point(369, 69);
-            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.ReadOnly = true;
-            this.TBUsuario.Size = new System.Drawing.Size(155, 28);
-            this.TBUsuario.TabIndex = 4;
-            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
-            // 
             // TBtipoDoc
             // 
-            this.TBtipoDoc.Location = new System.Drawing.Point(190, 69);
+            this.TBtipoDoc.Location = new System.Drawing.Point(348, 68);
             this.TBtipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.TBtipoDoc.Name = "TBtipoDoc";
             this.TBtipoDoc.ReadOnly = true;
@@ -287,7 +267,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 43);
+            this.label1.Location = new System.Drawing.Point(348, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 21);
@@ -297,23 +277,21 @@
             // FechaCopraDetalle
             // 
             this.FechaCopraDetalle.AutoSize = true;
-            this.FechaCopraDetalle.Location = new System.Drawing.Point(16, 43);
+            this.FechaCopraDetalle.Location = new System.Drawing.Point(86, 43);
             this.FechaCopraDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaCopraDetalle.Name = "FechaCopraDetalle";
             this.FechaCopraDetalle.Size = new System.Drawing.Size(68, 21);
             this.FechaCopraDetalle.TabIndex = 1;
             this.FechaCopraDetalle.Text = "Fecha:";
-            this.FechaCopraDetalle.Click += new System.EventHandler(this.FechaCopraDetalle_Click);
             // 
             // TBnumCompra
             // 
             this.TBnumCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnumCompra.Location = new System.Drawing.Point(773, 76);
+            this.TBnumCompra.Location = new System.Drawing.Point(949, 102);
             this.TBnumCompra.Margin = new System.Windows.Forms.Padding(2);
             this.TBnumCompra.Name = "TBnumCompra";
-            this.TBnumCompra.Size = new System.Drawing.Size(187, 28);
+            this.TBnumCompra.Size = new System.Drawing.Size(196, 28);
             this.TBnumCompra.TabIndex = 4;
-            this.TBnumCompra.TextChanged += new System.EventHandler(this.TBnumCompra_TextChanged);
             this.TBnumCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // dataGridView1
@@ -326,11 +304,11 @@
             this.cantidadComprada,
             this.subtotal});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 415);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 435);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 219);
             this.dataGridView1.TabIndex = 1;
             // 
             // productoComprado
@@ -338,7 +316,7 @@
             this.productoComprado.HeaderText = "Producto";
             this.productoComprado.MinimumWidth = 6;
             this.productoComprado.Name = "productoComprado";
-            this.productoComprado.Width = 250;
+            this.productoComprado.Width = 200;
             // 
             // precioCompra
             // 
@@ -352,14 +330,34 @@
             this.cantidadComprada.HeaderText = "Cantidad";
             this.cantidadComprada.MinimumWidth = 6;
             this.cantidadComprada.Name = "cantidadComprada";
-            this.cantidadComprada.Width = 125;
+            this.cantidadComprada.Width = 150;
             // 
             // subtotal
             // 
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.MinimumWidth = 6;
             this.subtotal.Name = "subtotal";
-            this.subtotal.Width = 125;
+            this.subtotal.Width = 150;
+            // 
+            // TBUsuario
+            // 
+            this.TBUsuario.Location = new System.Drawing.Point(615, 68);
+            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.TBUsuario.Name = "TBUsuario";
+            this.TBUsuario.ReadOnly = true;
+            this.TBUsuario.Size = new System.Drawing.Size(155, 28);
+            this.TBUsuario.TabIndex = 4;
+            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            // 
+            // Lusuario
+            // 
+            this.Lusuario.AutoSize = true;
+            this.Lusuario.Location = new System.Drawing.Point(615, 43);
+            this.Lusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lusuario.Name = "Lusuario";
+            this.Lusuario.Size = new System.Drawing.Size(85, 21);
+            this.Lusuario.TabIndex = 5;
+            this.Lusuario.Text = "Usuario:";
             // 
             // detalleCompra
             // 
@@ -391,10 +389,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productoComprado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadComprada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.Label LdetalleCompra;
         private System.Windows.Forms.Label LnumDoc;
         private System.Windows.Forms.TextBox TBnumCompra;
@@ -403,8 +397,6 @@
         private System.Windows.Forms.Label FechaCopraDetalle;
         private System.Windows.Forms.TextBox TBtipoDoc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBUsuario;
-        private System.Windows.Forms.Label Lusuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TB;
         private System.Windows.Forms.TextBox textBox1;
@@ -415,5 +407,11 @@
         public FontAwesome.Sharp.IconButton btnBuscarNroCompra;
         public FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.TextBox TBFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productoComprado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadComprada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.Windows.Forms.Label Lusuario;
+        private System.Windows.Forms.TextBox TBUsuario;
     }
 }

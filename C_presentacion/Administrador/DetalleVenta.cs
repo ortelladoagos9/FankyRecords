@@ -17,6 +17,11 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
 
+        private void TxtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            C_negocio.Validaciones.EsNumero(e);
+        }
+
        
     }
 }

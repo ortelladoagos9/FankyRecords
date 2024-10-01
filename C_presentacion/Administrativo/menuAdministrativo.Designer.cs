@@ -142,6 +142,7 @@
             this.SubmenuDetalleCompraAdministrador.Name = "SubmenuDetalleCompraAdministrador";
             this.SubmenuDetalleCompraAdministrador.Size = new System.Drawing.Size(230, 35);
             this.SubmenuDetalleCompraAdministrador.Text = "Detalle de compra";
+            this.SubmenuDetalleCompraAdministrador.Click += new System.EventHandler(this.SubmenuDetalleCompraAdministrador_Click);
             // 
             // menuTituloAdministrativo
             // 
@@ -240,7 +241,7 @@
             this.contenedorAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrativo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrativo.Location = new System.Drawing.Point(0, 160);
-            this.contenedorAdministrativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contenedorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorAdministrativo.Name = "contenedorAdministrativo";
             this.contenedorAdministrativo.Size = new System.Drawing.Size(1200, 652);
             this.contenedorAdministrativo.TabIndex = 6;
@@ -250,7 +251,7 @@
             this.picFankyRecordsAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.picFankyRecordsAdministrativo.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
             this.picFankyRecordsAdministrativo.Location = new System.Drawing.Point(12, 12);
-            this.picFankyRecordsAdministrativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFankyRecordsAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.picFankyRecordsAdministrativo.Name = "picFankyRecordsAdministrativo";
             this.picFankyRecordsAdministrativo.Size = new System.Drawing.Size(72, 72);
             this.picFankyRecordsAdministrativo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,7 +275,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuAdministrativo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuAdministrativo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Administrativo";
