@@ -62,6 +62,12 @@
     <Compile Include="C_entidad\Categorias.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
+    <Compile Include="C_presentacion\Administrador\backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\backup.Designer.cs">
+      <DependentUpon>backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrador\GestionCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +80,6 @@
     <Compile Include="C_presentacion\Administrador\detalleCompra.Designer.cs">
       <DependentUpon>detalleCompra.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="C_presentacion\Administrador\DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +140,9 @@
     <Compile Include="C_presentacion\Vendedor\menuVendedor.Designer.cs">
       <DependentUpon>menuVendedor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="C_presentacion\Administrador\backup.resx">
+      <DependentUpon>backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\detalleCompra.resx">
       <DependentUpon>detalleCompra.cs</DependentUpon>
     </EmbeddedResource>
