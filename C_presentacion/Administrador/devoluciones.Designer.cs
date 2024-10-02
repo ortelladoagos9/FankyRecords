@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Bgenerar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckbDevolverStock = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Bgenerar = new FontAwesome.Sharp.IconButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TBnombreComprador = new System.Windows.Forms.TextBox();
             this.TBnumFactura = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Bgenerar);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.ckbDevolverStock);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
@@ -68,6 +68,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 654);
             this.panel1.TabIndex = 0;
+            // 
+            // Bgenerar
+            // 
+            this.Bgenerar.BackColor = System.Drawing.Color.White;
+            this.Bgenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bgenerar.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
+            this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
+            this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bgenerar.IconSize = 25;
+            this.Bgenerar.Location = new System.Drawing.Point(997, 359);
+            this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
+            this.Bgenerar.Name = "Bgenerar";
+            this.Bgenerar.Size = new System.Drawing.Size(141, 36);
+            this.Bgenerar.TabIndex = 5;
+            this.Bgenerar.Text = "Generar";
+            this.Bgenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bgenerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bgenerar.UseVisualStyleBackColor = false;
+            this.Bgenerar.Click += new System.EventHandler(this.Bgenerar_Click);
             // 
             // dataGridView1
             // 
@@ -115,6 +134,18 @@
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.Width = 150;
             // 
+            // ckbDevolverStock
+            // 
+            this.ckbDevolverStock.AutoSize = true;
+            this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbDevolverStock.Location = new System.Drawing.Point(973, 320);
+            this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbDevolverStock.Name = "ckbDevolverStock";
+            this.ckbDevolverStock.Size = new System.Drawing.Size(177, 25);
+            this.ckbDevolverStock.TabIndex = 4;
+            this.ckbDevolverStock.Text = "Devolver a stock";
+            this.ckbDevolverStock.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
@@ -131,38 +162,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de la Devolución";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // Bgenerar
-            // 
-            this.Bgenerar.BackColor = System.Drawing.Color.White;
-            this.Bgenerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bgenerar.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
-            this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
-            this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(997, 359);
-            this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
-            this.Bgenerar.Name = "Bgenerar";
-            this.Bgenerar.Size = new System.Drawing.Size(141, 36);
-            this.Bgenerar.TabIndex = 5;
-            this.Bgenerar.Text = "Generar";
-            this.Bgenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bgenerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bgenerar.UseVisualStyleBackColor = false;
-            this.Bgenerar.Click += new System.EventHandler(this.Bgenerar_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(973, 320);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(177, 25);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Devolver a stock";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -193,7 +192,6 @@
             this.TBnumFactura.Name = "TBnumFactura";
             this.TBnumFactura.Size = new System.Drawing.Size(154, 28);
             this.TBnumFactura.TabIndex = 1;
-            this.TBnumFactura.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.TBnumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // label4
@@ -258,11 +256,12 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 71);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 9, 30, 13, 25, 37, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 28);
             this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -326,7 +325,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TBnombreComprador;
         private System.Windows.Forms.TextBox TBnumFactura;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbDevolverStock;
         private FontAwesome.Sharp.IconButton Bgenerar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;

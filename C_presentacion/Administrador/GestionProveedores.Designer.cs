@@ -171,7 +171,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBinactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBinactivop.Location = new System.Drawing.Point(604, 221);
             this.RBinactivop.Name = "RBinactivop";
-            this.RBinactivop.Size = new System.Drawing.Size(88, 21);
+            this.RBinactivop.Size = new System.Drawing.Size(103, 25);
             this.RBinactivop.TabIndex = 12;
             this.RBinactivop.Text = "Inactivo";
             this.RBinactivop.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBactivop.Location = new System.Drawing.Point(490, 221);
             this.RBactivop.Name = "RBactivop";
-            this.RBactivop.Size = new System.Drawing.Size(74, 21);
+            this.RBactivop.Size = new System.Drawing.Size(86, 25);
             this.RBactivop.TabIndex = 11;
             this.RBactivop.TabStop = true;
             this.RBactivop.Text = "Activo";
@@ -195,7 +195,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBtelefono.Location = new System.Drawing.Point(470, 141);
             this.TBtelefono.Mask = "(9999)000000";
             this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(242, 24);
+            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
             this.TBtelefono.TabIndex = 10;
             // 
             // TBcorreo
@@ -204,7 +204,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBcorreo.Location = new System.Drawing.Point(470, 64);
             this.TBcorreo.MaxLength = 100;
             this.TBcorreo.Name = "TBcorreo";
-            this.TBcorreo.Size = new System.Drawing.Size(242, 24);
+            this.TBcorreo.Size = new System.Drawing.Size(242, 28);
             this.TBcorreo.TabIndex = 9;
             // 
             // TBdomiciliop
@@ -213,7 +213,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBdomiciliop.Location = new System.Drawing.Point(134, 218);
             this.TBdomiciliop.MaxLength = 200;
             this.TBdomiciliop.Name = "TBdomiciliop";
-            this.TBdomiciliop.Size = new System.Drawing.Size(242, 24);
+            this.TBdomiciliop.Size = new System.Drawing.Size(242, 28);
             this.TBdomiciliop.TabIndex = 8;
             // 
             // TBcuit
@@ -222,7 +222,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBcuit.Location = new System.Drawing.Point(134, 141);
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
-            this.TBcuit.Size = new System.Drawing.Size(242, 24);
+            this.TBcuit.Size = new System.Drawing.Size(242, 28);
             this.TBcuit.TabIndex = 7;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -231,7 +231,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBRazonSocial.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBRazonSocial.Location = new System.Drawing.Point(134, 64);
             this.TBRazonSocial.Name = "TBRazonSocial";
-            this.TBRazonSocial.Size = new System.Drawing.Size(242, 24);
+            this.TBRazonSocial.Size = new System.Drawing.Size(242, 28);
             this.TBRazonSocial.TabIndex = 6;
             this.TBRazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -241,7 +241,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lestadoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestadoproveedor.Location = new System.Drawing.Point(470, 183);
             this.Lestadoproveedor.Name = "Lestadoproveedor";
-            this.Lestadoproveedor.Size = new System.Drawing.Size(58, 17);
+            this.Lestadoproveedor.Size = new System.Drawing.Size(70, 21);
             this.Lestadoproveedor.TabIndex = 5;
             this.Lestadoproveedor.Text = "Estado";
             // 
@@ -251,7 +251,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcorreoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lcorreoproveedor.Location = new System.Drawing.Point(470, 30);
             this.Lcorreoproveedor.Name = "Lcorreoproveedor";
-            this.Lcorreoproveedor.Size = new System.Drawing.Size(59, 17);
+            this.Lcorreoproveedor.Size = new System.Drawing.Size(71, 21);
             this.Lcorreoproveedor.TabIndex = 4;
             this.Lcorreoproveedor.Text = "Correo";
             // 
@@ -261,7 +261,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Ltelefonoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltelefonoproveedor.Location = new System.Drawing.Point(470, 106);
             this.Ltelefonoproveedor.Name = "Ltelefonoproveedor";
-            this.Ltelefonoproveedor.Size = new System.Drawing.Size(72, 17);
+            this.Ltelefonoproveedor.Size = new System.Drawing.Size(87, 21);
             this.Ltelefonoproveedor.TabIndex = 3;
             this.Ltelefonoproveedor.Text = "Telefono";
             // 
@@ -271,7 +271,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.LdomicilioProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LdomicilioProveedor.Location = new System.Drawing.Point(134, 183);
             this.LdomicilioProveedor.Name = "LdomicilioProveedor";
-            this.LdomicilioProveedor.Size = new System.Drawing.Size(79, 17);
+            this.LdomicilioProveedor.Size = new System.Drawing.Size(93, 21);
             this.LdomicilioProveedor.TabIndex = 2;
             this.LdomicilioProveedor.Text = "Domicilio";
             // 
@@ -281,7 +281,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lcuit.Location = new System.Drawing.Point(134, 106);
             this.Lcuit.Name = "Lcuit";
-            this.Lcuit.Size = new System.Drawing.Size(40, 17);
+            this.Lcuit.Size = new System.Drawing.Size(48, 21);
             this.Lcuit.TabIndex = 1;
             this.Lcuit.Text = "Cuit";
             // 
@@ -291,7 +291,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lrazonsocial.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lrazonsocial.Location = new System.Drawing.Point(134, 29);
             this.Lrazonsocial.Name = "Lrazonsocial";
-            this.Lrazonsocial.Size = new System.Drawing.Size(104, 17);
+            this.Lrazonsocial.Size = new System.Drawing.Size(122, 21);
             this.Lrazonsocial.TabIndex = 0;
             this.Lrazonsocial.Text = "Razón Social";
             // 
@@ -394,7 +394,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaProveedores.Location = new System.Drawing.Point(0, 0);
             this.listaProveedores.Name = "listaProveedores";
-            this.listaProveedores.Size = new System.Drawing.Size(186, 19);
+            this.listaProveedores.Size = new System.Drawing.Size(227, 25);
             this.listaProveedores.TabIndex = 15;
             this.listaProveedores.Text = "Lista de Proveedores";
             // 
@@ -440,7 +440,7 @@ namespace FankyRecords.C_presentacion.Administrador
             "Cuit"});
             this.CBbuscar.Location = new System.Drawing.Point(726, 0);
             this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(171, 25);
+            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
             this.CBbuscar.TabIndex = 1;
             // 
             // TBBuscador
@@ -451,7 +451,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBBuscador.Location = new System.Drawing.Point(897, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 34;
             // 
             // btnBuscar
@@ -511,7 +511,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // GestionProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);

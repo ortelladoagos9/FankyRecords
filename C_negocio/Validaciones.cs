@@ -124,6 +124,18 @@ namespace FankyRecords.C_negocio
 
             return true;
         }
+        public static bool mensajeCancelar()
+        {
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cancelar la operación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                return false;
+            }
+            MessageBox.Show("La operación ha sido cancelada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            return true;
+        }
         public static bool mensajeConfirmacionGenerarNC()
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas generar Nota de Crédito por estos artículos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -156,6 +168,24 @@ namespace FankyRecords.C_negocio
             }
             MessageBox.Show("Los datos han sido editados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            return true;
+        }
+        public static bool mensajeBackup()
+        {
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas crear el backup de los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("La operación ha sido cancelada.",
+                                         "Cancelado",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Warning);
+                return false;
+            }
+            MessageBox.Show("El backup se generó correctamente.",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
             return true;
         }
     }

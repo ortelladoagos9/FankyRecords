@@ -42,6 +42,13 @@ namespace FankyRecords.C_presentacion.Administrador
                 C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else
+            {
+                if (C_negocio.Validaciones.mensajeBackup())
+                {
+
+                }
             }
         }
 
@@ -52,6 +59,18 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                if (C_negocio.Validaciones.mensajeCancelar())
+                {
+                    // limpia campos
+                    TBbaseDatos.Clear();
+                    TBrutaGuardar.Clear();
+                }
+            }
         }
+
+       
     }
+
 }
