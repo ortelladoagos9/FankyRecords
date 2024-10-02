@@ -46,22 +46,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.contenedorDevoluciones = new System.Windows.Forms.Panel();
+            this.LDevoluciones = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contenedorDevoluciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.contenedorDevoluciones);
             this.panel1.Controls.Add(this.Bgenerar);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.ckbDevolverStock);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -77,7 +78,7 @@
             this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
             this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(997, 359);
+            this.Bgenerar.Location = new System.Drawing.Point(993, 364);
             this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
             this.Bgenerar.Name = "Bgenerar";
             this.Bgenerar.Size = new System.Drawing.Size(141, 36);
@@ -91,6 +92,7 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,
@@ -99,11 +101,11 @@
             this.SubTotal});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 413);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 415);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1180, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 239);
             this.dataGridView1.TabIndex = 3;
             // 
             // producto
@@ -138,7 +140,7 @@
             // 
             this.ckbDevolverStock.AutoSize = true;
             this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDevolverStock.Location = new System.Drawing.Point(973, 320);
+            this.ckbDevolverStock.Location = new System.Drawing.Point(983, 335);
             this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
             this.ckbDevolverStock.Name = "ckbDevolverStock";
             this.ckbDevolverStock.Size = new System.Drawing.Size(177, 25);
@@ -256,12 +258,12 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 71);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 28);
             this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 10, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -274,17 +276,29 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha";
             // 
-            // label1
+            // contenedorDevoluciones
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1180, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Devoluciones";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.contenedorDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorDevoluciones.Controls.Add(this.LDevoluciones);
+            this.contenedorDevoluciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorDevoluciones.Location = new System.Drawing.Point(0, 0);
+            this.contenedorDevoluciones.Name = "contenedorDevoluciones";
+            this.contenedorDevoluciones.Size = new System.Drawing.Size(1182, 56);
+            this.contenedorDevoluciones.TabIndex = 40;
+            // 
+            // LDevoluciones
+            // 
+            this.LDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.LDevoluciones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDevoluciones.ForeColor = System.Drawing.Color.DarkRed;
+            this.LDevoluciones.Location = new System.Drawing.Point(0, 0);
+            this.LDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LDevoluciones.Name = "LDevoluciones";
+            this.LDevoluciones.Size = new System.Drawing.Size(330, 56);
+            this.LDevoluciones.TabIndex = 0;
+            this.LDevoluciones.Text = "Devoluciones";
+            this.LDevoluciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // devoluciones
             // 
@@ -307,6 +321,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contenedorDevoluciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -317,7 +332,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBtipoNC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -332,5 +346,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        public System.Windows.Forms.Panel contenedorDevoluciones;
+        public System.Windows.Forms.Label LDevoluciones;
     }
 }

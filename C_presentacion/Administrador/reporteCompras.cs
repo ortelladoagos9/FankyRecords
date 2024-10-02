@@ -15,11 +15,35 @@ namespace FankyRecords.C_presentacion.Administrador
         public reporteCompras()
         {
             InitializeComponent();
+            this.cbBuscarVentas.SelectedIndex = 0;
+            this.CBproveedor.SelectedIndex = 0; 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void buscarFecha_Click(object sender, EventArgs e)
         {
+            CompararFechas();
+        }
 
+        private void CompararFechas()
+        {
+            DateTime fecha1 = DTinicio.Value;
+            DateTime fecha2 = DTfin.Value;
+
+            // Comparar las fechas
+            int resultado = DateTime.Compare(fecha1, fecha2);
+
+            // Establecer la condición basada en la comparación
+            if (resultado > 0)
+            {
+                // fecha1 es posterior a fecha2
+                MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
+            }
+            return;
+        }
+
+        private void btnGenerarGrafico_Click(object sender, EventArgs e)
+        {
+            CompararFechas();
         }
     }
 }

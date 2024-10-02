@@ -45,7 +45,6 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Bcancelar);
             this.panel1.Controls.Add(this.Bbackup);
             this.panel1.Controls.Add(this.Bruta);

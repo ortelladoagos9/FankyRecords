@@ -15,11 +15,9 @@ namespace FankyRecords.C_presentacion.Vendedor
         public BuscarProducto()
         {
             InitializeComponent();
+            this.CBbuscarProductos.SelectedIndex = 0;
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

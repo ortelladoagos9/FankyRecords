@@ -31,8 +31,10 @@
             this.contenedorRegistrarCompra = new System.Windows.Forms.Panel();
             this.LRegistrarCompra = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
+            this.btnRegistrarCompra = new FontAwesome.Sharp.IconButton();
             this.TBtotalPagar = new System.Windows.Forms.TextBox();
             this.LTotalPagar = new System.Windows.Forms.Label();
+            this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.listaCompras = new System.Windows.Forms.DataGridView();
             this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +49,11 @@
             this.TBprecio = new System.Windows.Forms.TextBox();
             this.TBproducto = new System.Windows.Forms.TextBox();
             this.LProducto = new System.Windows.Forms.Label();
+            this.btnBuscarProd = new FontAwesome.Sharp.IconButton();
             this.TBcodProducto = new System.Windows.Forms.TextBox();
             this.LCodProd = new System.Windows.Forms.Label();
             this.gbInfoProveedor = new System.Windows.Forms.GroupBox();
+            this.btnBuscarProveedor = new FontAwesome.Sharp.IconButton();
             this.TBrazonSocial = new System.Windows.Forms.TextBox();
             this.TBcuit = new System.Windows.Forms.TextBox();
             this.LRazonSocial = new System.Windows.Forms.Label();
@@ -59,10 +63,6 @@
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
-            this.btnBuscarProd = new FontAwesome.Sharp.IconButton();
-            this.btnBuscarProveedor = new FontAwesome.Sharp.IconButton();
-            this.btnRegistrarCompra = new FontAwesome.Sharp.IconButton();
-            this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
@@ -112,6 +112,24 @@
             this.contenedorBotones.Size = new System.Drawing.Size(261, 592);
             this.contenedorBotones.TabIndex = 1;
             // 
+            // btnRegistrarCompra
+            // 
+            this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.btnRegistrarCompra.IconColor = System.Drawing.Color.DarkRed;
+            this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarCompra.IconSize = 25;
+            this.btnRegistrarCompra.Location = new System.Drawing.Point(69, 528);
+            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(129, 58);
+            this.btnRegistrarCompra.TabIndex = 3;
+            this.btnRegistrarCompra.Text = "Registrar";
+            this.btnRegistrarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRegistrarCompra.UseVisualStyleBackColor = false;
+            this.btnRegistrarCompra.Click += new System.EventHandler(this.registrarCompra_Click);
+            // 
             // TBtotalPagar
             // 
             this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +149,25 @@
             this.LTotalPagar.Size = new System.Drawing.Size(132, 21);
             this.LTotalPagar.TabIndex = 1;
             this.LTotalPagar.Text = "Total a Pagar:";
+            // 
+            // btnAgregarProd
+            // 
+            this.btnAgregarProd.BackColor = System.Drawing.Color.White;
+            this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregarProd.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProd.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAgregarProd.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
+            this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarProd.IconSize = 25;
+            this.btnAgregarProd.Location = new System.Drawing.Point(69, 203);
+            this.btnAgregarProd.Name = "btnAgregarProd";
+            this.btnAgregarProd.Size = new System.Drawing.Size(129, 58);
+            this.btnAgregarProd.TabIndex = 0;
+            this.btnAgregarProd.Text = "Agregar";
+            this.btnAgregarProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAgregarProd.UseVisualStyleBackColor = false;
+            this.btnAgregarProd.Click += new System.EventHandler(this.BAgregarProd_Click);
             // 
             // listaCompras
             // 
@@ -276,6 +313,20 @@
             this.LProducto.TabIndex = 6;
             this.LProducto.Text = "Producto:";
             // 
+            // btnBuscarProd
+            // 
+            this.btnBuscarProd.BackColor = System.Drawing.Color.White;
+            this.btnBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarProd.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProd.IconSize = 18;
+            this.btnBuscarProd.Location = new System.Drawing.Point(180, 83);
+            this.btnBuscarProd.Name = "btnBuscarProd";
+            this.btnBuscarProd.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProd.TabIndex = 5;
+            this.btnBuscarProd.UseVisualStyleBackColor = false;
+            // 
             // TBcodProducto
             // 
             this.TBcodProducto.Location = new System.Drawing.Point(15, 83);
@@ -309,6 +360,20 @@
             this.gbInfoProveedor.TabIndex = 4;
             this.gbInfoProveedor.TabStop = false;
             this.gbInfoProveedor.Text = "Información Proveedor";
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackColor = System.Drawing.Color.White;
+            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarProveedor.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarProveedor.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarProveedor.IconSize = 18;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(185, 74);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProveedor.TabIndex = 4;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
             // 
             // TBrazonSocial
             // 
@@ -364,12 +429,12 @@
             // 
             this.dtFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaCompra.Location = new System.Drawing.Point(29, 74);
-            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            this.dtFechaCompra.MinDate = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.dtFechaCompra.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
             this.dtFechaCompra.Name = "dtFechaCompra";
             this.dtFechaCompra.Size = new System.Drawing.Size(160, 28);
             this.dtFechaCompra.TabIndex = 6;
-            this.dtFechaCompra.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
+            this.dtFechaCompra.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
             // 
             // cbTipoDoc
             // 
@@ -401,71 +466,6 @@
             this.LFechaCompra.Size = new System.Drawing.Size(68, 21);
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
-            // 
-            // btnBuscarProd
-            // 
-            this.btnBuscarProd.BackColor = System.Drawing.Color.White;
-            this.btnBuscarProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProd.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarProd.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProd.IconSize = 18;
-            this.btnBuscarProd.Location = new System.Drawing.Point(180, 83);
-            this.btnBuscarProd.Name = "btnBuscarProd";
-            this.btnBuscarProd.Size = new System.Drawing.Size(46, 26);
-            this.btnBuscarProd.TabIndex = 5;
-            this.btnBuscarProd.UseVisualStyleBackColor = false;
-            // 
-            // btnBuscarProveedor
-            // 
-            this.btnBuscarProveedor.BackColor = System.Drawing.Color.White;
-            this.btnBuscarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarProveedor.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarProveedor.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscarProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarProveedor.IconSize = 18;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(185, 74);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
-            this.btnBuscarProveedor.TabIndex = 4;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = false;
-            // 
-            // btnRegistrarCompra
-            // 
-            this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            this.btnRegistrarCompra.IconColor = System.Drawing.Color.DarkRed;
-            this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegistrarCompra.IconSize = 25;
-            this.btnRegistrarCompra.Location = new System.Drawing.Point(69, 528);
-            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
-            this.btnRegistrarCompra.Size = new System.Drawing.Size(129, 58);
-            this.btnRegistrarCompra.TabIndex = 3;
-            this.btnRegistrarCompra.Text = "Registrar";
-            this.btnRegistrarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnRegistrarCompra.UseVisualStyleBackColor = false;
-            this.btnRegistrarCompra.Click += new System.EventHandler(this.registrarCompra_Click);
-            // 
-            // btnAgregarProd
-            // 
-            this.btnAgregarProd.BackColor = System.Drawing.Color.White;
-            this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAgregarProd.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProd.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnAgregarProd.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
-            this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregarProd.IconSize = 25;
-            this.btnAgregarProd.Location = new System.Drawing.Point(69, 203);
-            this.btnAgregarProd.Name = "btnAgregarProd";
-            this.btnAgregarProd.Size = new System.Drawing.Size(129, 58);
-            this.btnAgregarProd.TabIndex = 0;
-            this.btnAgregarProd.Text = "Agregar";
-            this.btnAgregarProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAgregarProd.UseVisualStyleBackColor = false;
-            this.btnAgregarProd.Click += new System.EventHandler(this.BAgregarProd_Click);
             // 
             // registrarCompra
             // 

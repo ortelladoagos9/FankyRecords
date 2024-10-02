@@ -117,7 +117,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void SubmenuReporteVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new registrarVentas());
+            AbrirFormulario((IconMenuItem)sender, new reporteVentas());
         }
 
         private void SubmenuReporteCompras_Click(object sender, EventArgs e)

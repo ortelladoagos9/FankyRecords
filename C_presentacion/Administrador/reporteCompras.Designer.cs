@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.DTfin = new System.Windows.Forms.DateTimePicker();
-            this.Ldtfin = new System.Windows.Forms.Label();
-            this.DTinicio = new System.Windows.Forms.DateTimePicker();
-            this.Ldtinicio = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,117 +42,68 @@
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descargaExel = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.buscar = new FontAwesome.Sharp.IconButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbBuscarVentas = new System.Windows.Forms.ComboBox();
+            this.buscarReg = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
+            this.descExel = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DTinicio = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DTfin = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.iconButton1);
-            this.panel1.Controls.Add(this.CBproveedor);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.DTfin);
-            this.panel1.Controls.Add(this.Ldtfin);
-            this.panel1.Controls.Add(this.DTinicio);
-            this.panel1.Controls.Add(this.Ldtinicio);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 99);
+            this.panel1.Size = new System.Drawing.Size(1182, 61);
             this.panel1.TabIndex = 0;
             // 
-            // iconButton1
+            // label1
             // 
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton1.IconColor = System.Drawing.Color.DarkRed;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 20;
-            this.iconButton1.Location = new System.Drawing.Point(800, 41);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(104, 28);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Buscar";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 61);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reporte Compras";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // CBproveedor
             // 
+            this.CBproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.CBproveedor.FormattingEnabled = true;
             this.CBproveedor.Items.AddRange(new object[] {
             "Proveedor A",
             "Proveedor B"});
-            this.CBproveedor.Location = new System.Drawing.Point(651, 46);
+            this.CBproveedor.Location = new System.Drawing.Point(765, 54);
             this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(121, 27);
+            this.CBproveedor.Size = new System.Drawing.Size(147, 27);
             this.CBproveedor.TabIndex = 5;
-            this.CBproveedor.Text = "Todos";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(541, 50);
+            this.label2.Location = new System.Drawing.Point(652, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 23);
+            this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Proveedor:";
-            // 
-            // DTfin
-            // 
-            this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTfin.Location = new System.Drawing.Point(428, 44);
-            this.DTfin.MaxDate = new System.DateTime(2024, 9, 30, 21, 8, 24, 0);
-            this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(107, 30);
-            this.DTfin.TabIndex = 3;
-            this.DTfin.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            // 
-            // Ldtfin
-            // 
-            this.Ldtfin.AutoSize = true;
-            this.Ldtfin.Location = new System.Drawing.Point(304, 50);
-            this.Ldtfin.Name = "Ldtfin";
-            this.Ldtfin.Size = new System.Drawing.Size(115, 23);
-            this.Ldtfin.TabIndex = 3;
-            this.Ldtfin.Text = "Fecha Fin:";
-            // 
-            // DTinicio
-            // 
-            this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTinicio.Location = new System.Drawing.Point(189, 44);
-            this.DTinicio.MaxDate = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(107, 30);
-            this.DTinicio.TabIndex = 2;
-            this.DTinicio.Value = new System.DateTime(2024, 9, 30, 0, 0, 0, 0);
-            // 
-            // Ldtinicio
-            // 
-            this.Ldtinicio.AutoSize = true;
-            this.Ldtinicio.Location = new System.Drawing.Point(46, 50);
-            this.Ldtinicio.Name = "Ldtinicio";
-            this.Ldtinicio.Size = new System.Drawing.Size(139, 23);
-            this.Ldtinicio.TabIndex = 1;
-            this.Ldtinicio.Text = "Fecha Inicio:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte Compras";
             // 
             // dataGridView1
             // 
@@ -174,10 +120,10 @@
             this.cantidad,
             this.montoTotal});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 271);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 256);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 383);
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 398);
             this.dataGridView1.TabIndex = 1;
             // 
             // fechaRegistro
@@ -243,95 +189,213 @@
             this.montoTotal.Name = "montoTotal";
             this.montoTotal.Width = 125;
             // 
-            // descargaExel
+            // panel4
             // 
-            this.descargaExel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.descargaExel.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.descargaExel.IconColor = System.Drawing.Color.DarkRed;
-            this.descargaExel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.descargaExel.IconSize = 20;
-            this.descargaExel.Location = new System.Drawing.Point(50, 215);
-            this.descargaExel.Name = "descargaExel";
-            this.descargaExel.Size = new System.Drawing.Size(222, 36);
-            this.descargaExel.TabIndex = 2;
-            this.descargaExel.Text = "Descargar Excel";
-            this.descargaExel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.descargaExel.UseVisualStyleBackColor = true;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.btnGenerarGrafico);
+            this.panel4.Controls.Add(this.descExel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 203);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1182, 53);
+            this.panel4.TabIndex = 8;
             // 
-            // iconButton2
+            // panel5
             // 
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.iconButton2.IconColor = System.Drawing.Color.DarkRed;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(278, 215);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(216, 36);
-            this.iconButton2.TabIndex = 3;
-            this.iconButton2.Text = "Generar Gráfico";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.panel5.Controls.Add(this.cbBuscarVentas);
+            this.panel5.Controls.Add(this.buscarReg);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(781, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(401, 53);
+            this.panel5.TabIndex = 8;
             // 
-            // label3
+            // cbBuscarVentas
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(825, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Buscar por:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nombre Producto",
-            "Nombre Proveedor",
-            "Codigo Producto",
-            "Precio Compra",
+            this.cbBuscarVentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscarVentas.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBuscarVentas.ForeColor = System.Drawing.Color.DarkRed;
+            this.cbBuscarVentas.FormattingEnabled = true;
+            this.cbBuscarVentas.Items.AddRange(new object[] {
             "Fecha Registro",
-            "Tipo Documento",
-            "Razon Social",
-            "Cuit Proveedor",
-            ""});
-            this.comboBox1.Location = new System.Drawing.Point(957, 160);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 27);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Fecha Registro";
+            "Tipo Factura",
+            "Número Factura",
+            "Nombre Cliente",
+            "DNI",
+            "Código Producto",
+            "Nombre Producto",
+            "Categoria ",
+            "Precio Venta"});
+            this.cbBuscarVentas.Location = new System.Drawing.Point(123, 13);
+            this.cbBuscarVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.cbBuscarVentas.Name = "cbBuscarVentas";
+            this.cbBuscarVentas.Size = new System.Drawing.Size(156, 29);
+            this.cbBuscarVentas.TabIndex = 4;
             // 
-            // buscar
+            // buscarReg
             // 
-            this.buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.buscar.IconColor = System.Drawing.Color.DarkRed;
-            this.buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buscar.IconSize = 20;
-            this.buscar.Location = new System.Drawing.Point(1117, 164);
-            this.buscar.Name = "buscar";
-            this.buscar.Size = new System.Drawing.Size(37, 23);
-            this.buscar.TabIndex = 6;
-            this.buscar.UseVisualStyleBackColor = true;
+            this.buscarReg.BackColor = System.Drawing.Color.White;
+            this.buscarReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarReg.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.buscarReg.IconColor = System.Drawing.Color.DarkRed;
+            this.buscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buscarReg.IconSize = 19;
+            this.buscarReg.Location = new System.Drawing.Point(283, 13);
+            this.buscarReg.Margin = new System.Windows.Forms.Padding(2);
+            this.buscarReg.Name = "buscarReg";
+            this.buscarReg.Size = new System.Drawing.Size(71, 29);
+            this.buscarReg.TabIndex = 5;
+            this.buscarReg.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Buscar por:";
+            // 
+            // btnGenerarGrafico
+            // 
+            this.btnGenerarGrafico.BackColor = System.Drawing.Color.White;
+            this.btnGenerarGrafico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarGrafico.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGenerarGrafico.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarGrafico.IconChar = FontAwesome.Sharp.IconChar.PieChart;
+            this.btnGenerarGrafico.IconColor = System.Drawing.Color.DarkRed;
+            this.btnGenerarGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGenerarGrafico.IconSize = 20;
+            this.btnGenerarGrafico.Location = new System.Drawing.Point(191, 0);
+            this.btnGenerarGrafico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerarGrafico.Name = "btnGenerarGrafico";
+            this.btnGenerarGrafico.Size = new System.Drawing.Size(196, 53);
+            this.btnGenerarGrafico.TabIndex = 6;
+            this.btnGenerarGrafico.Text = "Generar Gráfico";
+            this.btnGenerarGrafico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGenerarGrafico.UseVisualStyleBackColor = false;
+            this.btnGenerarGrafico.Click += new System.EventHandler(this.btnGenerarGrafico_Click);
+            // 
+            // descExel
+            // 
+            this.descExel.BackColor = System.Drawing.Color.White;
+            this.descExel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.descExel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.descExel.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descExel.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.descExel.IconColor = System.Drawing.Color.DarkRed;
+            this.descExel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.descExel.IconSize = 20;
+            this.descExel.Location = new System.Drawing.Point(0, 0);
+            this.descExel.Margin = new System.Windows.Forms.Padding(2);
+            this.descExel.Name = "descExel";
+            this.descExel.Size = new System.Drawing.Size(191, 53);
+            this.descExel.TabIndex = 2;
+            this.descExel.Text = "Descargar Excel";
+            this.descExel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.descExel.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.panel3.Controls.Add(this.CBproveedor);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.DTinicio);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.DTfin);
+            this.panel3.Controls.Add(this.btnBuscarFecha);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 61);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1182, 142);
+            this.panel3.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 58);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 24);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Fecha inicio:";
+            // 
+            // DTinicio
+            // 
+            this.DTinicio.CalendarFont = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTinicio.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
+            this.DTinicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DTinicio.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTinicio.Location = new System.Drawing.Point(185, 54);
+            this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
+            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.Name = "DTinicio";
+            this.DTinicio.Size = new System.Drawing.Size(138, 28);
+            this.DTinicio.TabIndex = 2;
+            this.DTinicio.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(354, 58);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 24);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Fecha Fin: ";
+            // 
+            // DTfin
+            // 
+            this.DTfin.CalendarFont = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTfin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DTfin.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTfin.Location = new System.Drawing.Point(468, 54);
+            this.DTfin.Margin = new System.Windows.Forms.Padding(2);
+            this.DTfin.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.Name = "DTfin";
+            this.DTfin.Size = new System.Drawing.Size(147, 28);
+            this.DTfin.TabIndex = 4;
+            this.DTfin.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            // 
+            // btnBuscarFecha
+            // 
+            this.btnBuscarFecha.BackColor = System.Drawing.Color.White;
+            this.btnBuscarFecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarFecha.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarFecha.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscarFecha.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscarFecha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarFecha.IconSize = 20;
+            this.btnBuscarFecha.Location = new System.Drawing.Point(937, 54);
+            this.btnBuscarFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarFecha.Name = "btnBuscarFecha";
+            this.btnBuscarFecha.Size = new System.Drawing.Size(106, 28);
+            this.btnBuscarFecha.TabIndex = 5;
+            this.btnBuscarFecha.Text = "Buscar";
+            this.btnBuscarFecha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarFecha.UseVisualStyleBackColor = false;
+            this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
             // 
             // reporteCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
-            this.Controls.Add(this.buscar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.descargaExel);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -339,10 +403,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporteCompras";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -350,11 +416,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker DTfin;
-        private System.Windows.Forms.Label Ldtfin;
-        private System.Windows.Forms.DateTimePicker DTinicio;
-        private System.Windows.Forms.Label Ldtinicio;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ComboBox CBproveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -367,10 +428,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
-        private FontAwesome.Sharp.IconButton descargaExel;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private FontAwesome.Sharp.IconButton buscar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cbBuscarVentas;
+        private FontAwesome.Sharp.IconButton buscarReg;
+        private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton btnGenerarGrafico;
+        private FontAwesome.Sharp.IconButton descExel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker DTinicio;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker DTfin;
+        private FontAwesome.Sharp.IconButton btnBuscarFecha;
     }
 }

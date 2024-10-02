@@ -34,7 +34,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(CBtipoNC.Text) ||
                C_negocio.Validaciones.EstaVacio(TBnumFactura.Text) ||
                C_negocio.Validaciones.EstaVacio(TBnombreComprador.Text) ||
-               C_negocio.Validaciones.EstaVacio(ckbDevolverStock.Text))
+               !ckbDevolverStock.Checked)
             {
 
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,6 +53,6 @@ namespace FankyRecords.C_presentacion.Administrador
             
         }
 
-    
+       
     }
 }

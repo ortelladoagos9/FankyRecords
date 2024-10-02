@@ -19,9 +19,16 @@ namespace FankyRecords.C_presentacion
         public Login()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+
         }
 
         private void Bingresar_Click(object sender, EventArgs e)
+        {
+            Ingresar();
+        }
+
+        private void Ingresar()
         {
             if (C_negocio.Validaciones.EstaVacio(TBDni.Text) || C_negocio.Validaciones.EstaVacio(TBClave.Text))
             {
@@ -31,14 +38,14 @@ namespace FankyRecords.C_presentacion
             {
                 if (TBDni.Text == "101010" && TBClave.Text == "123")
                 {
-                     // Menu administrador
-                     Form menuAdministrador = new FormMenuAdmin();
+                    // Menu administrador
+                    Form menuAdministrador = new FormMenuAdmin();
 
-                     // Mostrar el formulario
-                     menuAdministrador.Show();
+                    // Mostrar el formulario
+                    menuAdministrador.Show();
 
-                     this.Hide();
-                } 
+                    this.Hide();
+                }
                 else if (TBDni.Text == "202020" && TBClave.Text == "456")
                 {
                     // Menu administrativo
@@ -48,7 +55,8 @@ namespace FankyRecords.C_presentacion
                     menuAdministrativo.Show();
                     this.Hide();
 
-                } else if (TBDni.Text == "303030" && TBClave.Text == "789")
+                }
+                else if (TBDni.Text == "303030" && TBClave.Text == "789")
                 {
                     // Menu Vendedor
                     Form menuVendedor = new FormMenuVendedor();
@@ -56,7 +64,8 @@ namespace FankyRecords.C_presentacion
                     // Mostrar el formulario
                     menuVendedor.Show();
                     this.Hide();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Los datos ingresados no coinciden con ningún usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TBDni.Clear();
@@ -64,7 +73,6 @@ namespace FankyRecords.C_presentacion
                 }
 
             }
-            
         }
         
         private void TBDni_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,6 +92,15 @@ namespace FankyRecords.C_presentacion
                 Application.Exit();
             }
             
+        }
+
+        private void Login_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Ingresar();  // Llama al método Ingresar cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
+            }
         }
     }
 }

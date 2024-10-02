@@ -153,7 +153,7 @@
             this.picFankyRecordsAdministrador.Dock = System.Windows.Forms.DockStyle.Right;
             this.picFankyRecordsAdministrador.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
             this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(715, 0);
-            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.picFankyRecordsAdministrador.Name = "picFankyRecordsAdministrador";
             this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(214, 549);
             this.picFankyRecordsAdministrador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,10 +178,11 @@
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fanky Records";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown_1);
             ((System.ComponentModel.ISupportInitialize)(this.picFankyRecordsAdministrador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

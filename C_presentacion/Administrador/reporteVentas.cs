@@ -15,16 +15,21 @@ namespace FankyRecords.C_presentacion.Administrador
         public reporteVentas()
         {
             InitializeComponent();
-        }
-
-        private void DTfin_ValueChanged(object sender, EventArgs e)
-        {
-            
+            this.cbBuscarVentas.SelectedIndex = 0;
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)
         {
-            
+            CompararFechas();
+        }
+
+        private void btnGenerarGrafico_Click(object sender, EventArgs e)
+        {
+            CompararFechas();
+        }
+
+        private void CompararFechas()
+        {
             DateTime fecha1 = DTinicio.Value;
             DateTime fecha2 = DTfin.Value;
 
@@ -37,8 +42,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 // fecha1 es posterior a fecha2
                 MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
             }
+            return;
         }
-
-        
     }
 }
