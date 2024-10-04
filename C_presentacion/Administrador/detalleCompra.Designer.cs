@@ -44,6 +44,8 @@
             this.LnumDoc = new System.Windows.Forms.Label();
             this.LmontoTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TBNumFactura = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TBFecha = new System.Windows.Forms.TextBox();
             this.Lusuario = new System.Windows.Forms.Label();
             this.TBUsuario = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
             this.listadoCompras = new System.Windows.Forms.DataGridView();
-            this.TBNumFactura = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoComprado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -257,6 +257,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Compra";
             // 
+            // TBNumFactura
+            // 
+            this.TBNumFactura.Location = new System.Drawing.Point(438, 68);
+            this.TBNumFactura.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNumFactura.Name = "TBNumFactura";
+            this.TBNumFactura.ReadOnly = true;
+            this.TBNumFactura.Size = new System.Drawing.Size(155, 28);
+            this.TBNumFactura.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(438, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 21);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Número factura:";
+            // 
             // TBFecha
             // 
             this.TBFecha.Location = new System.Drawing.Point(86, 68);
@@ -366,25 +385,6 @@
             this.listadoCompras.RowHeadersWidth = 51;
             this.listadoCompras.Size = new System.Drawing.Size(1182, 219);
             this.listadoCompras.TabIndex = 1;
-            // 
-            // TBNumFactura
-            // 
-            this.TBNumFactura.Location = new System.Drawing.Point(438, 68);
-            this.TBNumFactura.Margin = new System.Windows.Forms.Padding(2);
-            this.TBNumFactura.Name = "TBNumFactura";
-            this.TBNumFactura.ReadOnly = true;
-            this.TBNumFactura.Size = new System.Drawing.Size(155, 28);
-            this.TBNumFactura.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(438, 43);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 21);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Número factura:";
             // 
             // codigo
             // 

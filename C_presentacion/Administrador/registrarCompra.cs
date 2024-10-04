@@ -26,7 +26,8 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
-                || C_negocio.Validaciones.EstaVacio(TBprecio.Text))
+                || C_negocio.Validaciones.EstaVacio(TBprecio.Text)
+                || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -116,6 +117,11 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar el CUIT del proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void TBNumFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     } 
 }

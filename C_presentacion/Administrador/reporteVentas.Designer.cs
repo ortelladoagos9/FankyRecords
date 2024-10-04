@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
@@ -38,17 +38,6 @@
             this.DTinicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteVentas = new System.Windows.Forms.DataGridView();
-            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facturaNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descExel = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.cbBuscarVentas = new System.Windows.Forms.ComboBox();
@@ -59,6 +48,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TBBuscadorVentas = new System.Windows.Forms.TextBox();
+            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facturaNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomero_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteVentas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -143,7 +144,7 @@
             this.DTinicio.Location = new System.Drawing.Point(309, 58);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTinicio.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.DTinicio.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
             this.DTinicio.Size = new System.Drawing.Size(138, 28);
             this.DTinicio.TabIndex = 2;
@@ -166,14 +167,14 @@
             this.listadoReporteVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -184,17 +185,18 @@
             this.codProducto,
             this.nomProducto,
             this.categoria,
+            this.nomero_venta,
             this.precioVenta,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle4;
             this.listadoReporteVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteVentas.GridColor = System.Drawing.SystemColors.Control;
             this.listadoReporteVentas.Location = new System.Drawing.Point(0, 256);
@@ -203,72 +205,6 @@
             this.listadoReporteVentas.RowHeadersWidth = 51;
             this.listadoReporteVentas.Size = new System.Drawing.Size(1182, 398);
             this.listadoReporteVentas.TabIndex = 1;
-            // 
-            // fechaRegistro
-            // 
-            this.fechaRegistro.HeaderText = "Fecha Registro";
-            this.fechaRegistro.MinimumWidth = 6;
-            this.fechaRegistro.Name = "fechaRegistro";
-            // 
-            // tipoFactura
-            // 
-            this.tipoFactura.HeaderText = "Tipo Factura";
-            this.tipoFactura.MinimumWidth = 6;
-            this.tipoFactura.Name = "tipoFactura";
-            // 
-            // facturaNum
-            // 
-            this.facturaNum.HeaderText = "Número Factura";
-            this.facturaNum.MinimumWidth = 6;
-            this.facturaNum.Name = "facturaNum";
-            // 
-            // nomCliente
-            // 
-            this.nomCliente.HeaderText = "Nombre Cliente";
-            this.nomCliente.MinimumWidth = 6;
-            this.nomCliente.Name = "nomCliente";
-            // 
-            // dniCliente
-            // 
-            this.dniCliente.HeaderText = "DNI";
-            this.dniCliente.MinimumWidth = 6;
-            this.dniCliente.Name = "dniCliente";
-            // 
-            // codProducto
-            // 
-            this.codProducto.HeaderText = "Código Producto";
-            this.codProducto.MinimumWidth = 6;
-            this.codProducto.Name = "codProducto";
-            // 
-            // nomProducto
-            // 
-            this.nomProducto.HeaderText = "Nombre Producto";
-            this.nomProducto.MinimumWidth = 6;
-            this.nomProducto.Name = "nomProducto";
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoría";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.HeaderText = "Precio Venta";
-            this.precioVenta.MinimumWidth = 6;
-            this.precioVenta.Name = "precioVenta";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            // 
-            // montoTotal
-            // 
-            this.montoTotal.HeaderText = "Monto Total";
-            this.montoTotal.MinimumWidth = 6;
-            this.montoTotal.Name = "montoTotal";
             // 
             // descExel
             // 
@@ -415,6 +351,78 @@
             this.TBBuscadorVentas.Size = new System.Drawing.Size(171, 28);
             this.TBBuscadorVentas.TabIndex = 33;
             // 
+            // fechaRegistro
+            // 
+            this.fechaRegistro.HeaderText = "Fecha Registro";
+            this.fechaRegistro.MinimumWidth = 6;
+            this.fechaRegistro.Name = "fechaRegistro";
+            // 
+            // tipoFactura
+            // 
+            this.tipoFactura.HeaderText = "Tipo Factura";
+            this.tipoFactura.MinimumWidth = 6;
+            this.tipoFactura.Name = "tipoFactura";
+            // 
+            // facturaNum
+            // 
+            this.facturaNum.HeaderText = "Número Factura";
+            this.facturaNum.MinimumWidth = 6;
+            this.facturaNum.Name = "facturaNum";
+            // 
+            // nomCliente
+            // 
+            this.nomCliente.HeaderText = "Nombre Cliente";
+            this.nomCliente.MinimumWidth = 6;
+            this.nomCliente.Name = "nomCliente";
+            // 
+            // dniCliente
+            // 
+            this.dniCliente.HeaderText = "DNI";
+            this.dniCliente.MinimumWidth = 6;
+            this.dniCliente.Name = "dniCliente";
+            // 
+            // codProducto
+            // 
+            this.codProducto.HeaderText = "Código Producto";
+            this.codProducto.MinimumWidth = 6;
+            this.codProducto.Name = "codProducto";
+            // 
+            // nomProducto
+            // 
+            this.nomProducto.HeaderText = "Nombre Producto";
+            this.nomProducto.MinimumWidth = 6;
+            this.nomProducto.Name = "nomProducto";
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "Categoría";
+            this.categoria.MinimumWidth = 6;
+            this.categoria.Name = "categoria";
+            // 
+            // nomero_venta
+            // 
+            this.nomero_venta.HeaderText = "Número venta";
+            this.nomero_venta.MinimumWidth = 6;
+            this.nomero_venta.Name = "nomero_venta";
+            // 
+            // precioVenta
+            // 
+            this.precioVenta.HeaderText = "Precio Venta";
+            this.precioVenta.MinimumWidth = 6;
+            this.precioVenta.Name = "precioVenta";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            // 
+            // montoTotal
+            // 
+            this.montoTotal.HeaderText = "Monto Total";
+            this.montoTotal.MinimumWidth = 6;
+            this.montoTotal.Name = "montoTotal";
+            // 
             // reporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -453,17 +461,6 @@
         private System.Windows.Forms.DateTimePicker DTfin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView listadoReporteVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facturaNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
         private FontAwesome.Sharp.IconButton descExel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbBuscarVentas;
@@ -474,5 +471,17 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.TextBox TBBuscadorVentas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facturaNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomero_venta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
     }
 }

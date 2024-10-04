@@ -35,17 +35,9 @@
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
-            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.TBBuscadorCompras = new System.Windows.Forms.TextBox();
             this.cbBuscarVentas = new System.Windows.Forms.ComboBox();
             this.buscarReg = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +49,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DTfin = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
-            this.TBBuscadorCompras = new System.Windows.Forms.TextBox();
+            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
@@ -130,13 +131,14 @@
             this.cuitProveedor,
             this.codProducto,
             this.nomProducto,
+            this.numero_compra,
             this.precioCompra,
             this.cantidad,
             this.montoTotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -148,60 +150,6 @@
             this.listadoReporteCompras.RowHeadersWidth = 51;
             this.listadoReporteCompras.Size = new System.Drawing.Size(1182, 398);
             this.listadoReporteCompras.TabIndex = 1;
-            // 
-            // fechaRegistro
-            // 
-            this.fechaRegistro.HeaderText = "Fecha Registro";
-            this.fechaRegistro.MinimumWidth = 6;
-            this.fechaRegistro.Name = "fechaRegistro";
-            // 
-            // tipoDoc
-            // 
-            this.tipoDoc.HeaderText = "Tipo Documento";
-            this.tipoDoc.MinimumWidth = 6;
-            this.tipoDoc.Name = "tipoDoc";
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.HeaderText = "Razon Social";
-            this.razonSocial.MinimumWidth = 6;
-            this.razonSocial.Name = "razonSocial";
-            // 
-            // cuitProveedor
-            // 
-            this.cuitProveedor.HeaderText = "Cuit Proveedor";
-            this.cuitProveedor.MinimumWidth = 6;
-            this.cuitProveedor.Name = "cuitProveedor";
-            // 
-            // codProducto
-            // 
-            this.codProducto.HeaderText = "Codigo Producto";
-            this.codProducto.MinimumWidth = 6;
-            this.codProducto.Name = "codProducto";
-            // 
-            // nomProducto
-            // 
-            this.nomProducto.HeaderText = "Nombre Producto";
-            this.nomProducto.MinimumWidth = 6;
-            this.nomProducto.Name = "nomProducto";
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            // 
-            // montoTotal
-            // 
-            this.montoTotal.HeaderText = "Monto Total ";
-            this.montoTotal.MinimumWidth = 6;
-            this.montoTotal.Name = "montoTotal";
             // 
             // panel4
             // 
@@ -226,6 +174,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(557, 53);
             this.panel5.TabIndex = 8;
+            // 
+            // TBBuscadorCompras
+            // 
+            this.TBBuscadorCompras.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscadorCompras.ForeColor = System.Drawing.Color.Black;
+            this.TBBuscadorCompras.Location = new System.Drawing.Point(291, 14);
+            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.TBBuscadorCompras.Name = "TBBuscadorCompras";
+            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscadorCompras.TabIndex = 34;
             // 
             // cbBuscarVentas
             // 
@@ -350,7 +308,7 @@
             this.DTinicio.Location = new System.Drawing.Point(185, 54);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTinicio.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.DTinicio.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
             this.DTinicio.Size = new System.Drawing.Size(138, 28);
             this.DTinicio.TabIndex = 2;
@@ -375,7 +333,7 @@
             this.DTfin.Location = new System.Drawing.Point(468, 54);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
             this.DTfin.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.DTfin.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
             this.DTfin.Size = new System.Drawing.Size(147, 28);
             this.DTfin.TabIndex = 4;
@@ -400,15 +358,65 @@
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
             // 
-            // TBBuscadorCompras
+            // fechaRegistro
             // 
-            this.TBBuscadorCompras.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscadorCompras.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscadorCompras.Location = new System.Drawing.Point(291, 14);
-            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.TBBuscadorCompras.Name = "TBBuscadorCompras";
-            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 28);
-            this.TBBuscadorCompras.TabIndex = 34;
+            this.fechaRegistro.HeaderText = "Fecha Registro";
+            this.fechaRegistro.MinimumWidth = 6;
+            this.fechaRegistro.Name = "fechaRegistro";
+            // 
+            // tipoDoc
+            // 
+            this.tipoDoc.HeaderText = "Tipo Documento";
+            this.tipoDoc.MinimumWidth = 6;
+            this.tipoDoc.Name = "tipoDoc";
+            // 
+            // razonSocial
+            // 
+            this.razonSocial.HeaderText = "Razon Social";
+            this.razonSocial.MinimumWidth = 6;
+            this.razonSocial.Name = "razonSocial";
+            // 
+            // cuitProveedor
+            // 
+            this.cuitProveedor.HeaderText = "Cuit Proveedor";
+            this.cuitProveedor.MinimumWidth = 6;
+            this.cuitProveedor.Name = "cuitProveedor";
+            // 
+            // codProducto
+            // 
+            this.codProducto.HeaderText = "Codigo Producto";
+            this.codProducto.MinimumWidth = 6;
+            this.codProducto.Name = "codProducto";
+            // 
+            // nomProducto
+            // 
+            this.nomProducto.HeaderText = "Nombre Producto";
+            this.nomProducto.MinimumWidth = 6;
+            this.nomProducto.Name = "nomProducto";
+            // 
+            // numero_compra
+            // 
+            this.numero_compra.HeaderText = "Número compra";
+            this.numero_compra.MinimumWidth = 6;
+            this.numero_compra.Name = "numero_compra";
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            // 
+            // montoTotal
+            // 
+            this.montoTotal.HeaderText = "Monto Total ";
+            this.montoTotal.MinimumWidth = 6;
+            this.montoTotal.Name = "montoTotal";
             // 
             // reporteCompras
             // 
@@ -446,15 +454,6 @@
         private System.Windows.Forms.ComboBox CBproveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView listadoReporteCompras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuitProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbBuscarVentas;
@@ -469,5 +468,15 @@
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
         public System.Windows.Forms.TextBox TBBuscadorCompras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuitProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero_compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
     }
 }
