@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.contenedorDevoluciones = new System.Windows.Forms.Panel();
+            this.LDevoluciones = new System.Windows.Forms.Label();
             this.Bgenerar = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listadoProductosDevolucion = new System.Windows.Forms.DataGridView();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckbDevolverStock = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -46,21 +52,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.contenedorDevoluciones = new System.Windows.Forms.Panel();
-            this.LDevoluciones = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.contenedorDevoluciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoProductosDevolucion)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.contenedorDevoluciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.contenedorDevoluciones);
-            this.panel1.Controls.Add(this.Bgenerar);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.ckbDevolverStock);
+            this.panel1.Controls.Add(this.listadoProductosDevolucion);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,6 +74,41 @@
             this.panel1.Size = new System.Drawing.Size(1182, 654);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.panel2.Controls.Add(this.Bgenerar);
+            this.panel2.Controls.Add(this.ckbDevolverStock);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(974, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(208, 359);
+            this.panel2.TabIndex = 41;
+            // 
+            // contenedorDevoluciones
+            // 
+            this.contenedorDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorDevoluciones.Controls.Add(this.LDevoluciones);
+            this.contenedorDevoluciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorDevoluciones.Location = new System.Drawing.Point(0, 0);
+            this.contenedorDevoluciones.Name = "contenedorDevoluciones";
+            this.contenedorDevoluciones.Size = new System.Drawing.Size(1182, 56);
+            this.contenedorDevoluciones.TabIndex = 40;
+            // 
+            // LDevoluciones
+            // 
+            this.LDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.LDevoluciones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDevoluciones.ForeColor = System.Drawing.Color.DarkRed;
+            this.LDevoluciones.Location = new System.Drawing.Point(0, 0);
+            this.LDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LDevoluciones.Name = "LDevoluciones";
+            this.LDevoluciones.Size = new System.Drawing.Size(330, 56);
+            this.LDevoluciones.TabIndex = 0;
+            this.LDevoluciones.Text = "Devoluciones";
+            this.LDevoluciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // Bgenerar
             // 
             this.Bgenerar.BackColor = System.Drawing.Color.White;
@@ -78,7 +117,7 @@
             this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
             this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(993, 364);
+            this.Bgenerar.Location = new System.Drawing.Point(20, 166);
             this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
             this.Bgenerar.Name = "Bgenerar";
             this.Bgenerar.Size = new System.Drawing.Size(141, 36);
@@ -89,58 +128,80 @@
             this.Bgenerar.UseVisualStyleBackColor = false;
             this.Bgenerar.Click += new System.EventHandler(this.Bgenerar_Click);
             // 
-            // dataGridView1
+            // listadoProductosDevolucion
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listadoProductosDevolucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoProductosDevolucion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.listadoProductosDevolucion.BackgroundColor = System.Drawing.Color.White;
+            this.listadoProductosDevolucion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listadoProductosDevolucion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductosDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.listadoProductosDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoProductosDevolucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,
             this.precio,
             this.cantidad,
+            this.stock,
             this.SubTotal});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 415);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 239);
-            this.dataGridView1.TabIndex = 3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductosDevolucion.DefaultCellStyle = dataGridViewCellStyle2;
+            this.listadoProductosDevolucion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoProductosDevolucion.GridColor = System.Drawing.Color.White;
+            this.listadoProductosDevolucion.Location = new System.Drawing.Point(0, 415);
+            this.listadoProductosDevolucion.Margin = new System.Windows.Forms.Padding(2);
+            this.listadoProductosDevolucion.Name = "listadoProductosDevolucion";
+            this.listadoProductosDevolucion.RowHeadersWidth = 51;
+            this.listadoProductosDevolucion.Size = new System.Drawing.Size(1182, 239);
+            this.listadoProductosDevolucion.TabIndex = 3;
             // 
             // producto
             // 
             this.producto.HeaderText = "Producto";
             this.producto.MinimumWidth = 6;
             this.producto.Name = "producto";
-            this.producto.Width = 250;
             // 
             // precio
             // 
             this.precio.HeaderText = "Precio";
             this.precio.MinimumWidth = 6;
             this.precio.Name = "precio";
-            this.precio.Width = 120;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 120;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
             // 
             // SubTotal
             // 
             this.SubTotal.HeaderText = "SubTotal";
             this.SubTotal.MinimumWidth = 6;
             this.SubTotal.Name = "SubTotal";
-            this.SubTotal.Width = 150;
             // 
             // ckbDevolverStock
             // 
             this.ckbDevolverStock.AutoSize = true;
             this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDevolverStock.Location = new System.Drawing.Point(983, 335);
+            this.ckbDevolverStock.Location = new System.Drawing.Point(20, 129);
             this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
             this.ckbDevolverStock.Name = "ckbDevolverStock";
             this.ckbDevolverStock.Size = new System.Drawing.Size(177, 25);
@@ -258,7 +319,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 71);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 2, 12, 21, 29, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 28);
@@ -276,30 +337,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha";
             // 
-            // contenedorDevoluciones
-            // 
-            this.contenedorDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedorDevoluciones.Controls.Add(this.LDevoluciones);
-            this.contenedorDevoluciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.contenedorDevoluciones.Location = new System.Drawing.Point(0, 0);
-            this.contenedorDevoluciones.Name = "contenedorDevoluciones";
-            this.contenedorDevoluciones.Size = new System.Drawing.Size(1182, 56);
-            this.contenedorDevoluciones.TabIndex = 40;
-            // 
-            // LDevoluciones
-            // 
-            this.LDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LDevoluciones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDevoluciones.ForeColor = System.Drawing.Color.DarkRed;
-            this.LDevoluciones.Location = new System.Drawing.Point(0, 0);
-            this.LDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LDevoluciones.Name = "LDevoluciones";
-            this.LDevoluciones.Size = new System.Drawing.Size(330, 56);
-            this.LDevoluciones.TabIndex = 0;
-            this.LDevoluciones.Text = "Devoluciones";
-            this.LDevoluciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -315,13 +352,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devoluciones";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.contenedorDevoluciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listadoProductosDevolucion)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contenedorDevoluciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -341,12 +379,14 @@
         private System.Windows.Forms.TextBox TBnumFactura;
         private System.Windows.Forms.CheckBox ckbDevolverStock;
         private FontAwesome.Sharp.IconButton Bgenerar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listadoProductosDevolucion;
+        public System.Windows.Forms.Panel contenedorDevoluciones;
+        public System.Windows.Forms.Label LDevoluciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        public System.Windows.Forms.Panel contenedorDevoluciones;
-        public System.Windows.Forms.Label LDevoluciones;
+        private System.Windows.Forms.Panel panel2;
     }
 }

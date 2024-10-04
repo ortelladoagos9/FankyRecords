@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnBuscarNroCompra = new FontAwesome.Sharp.IconButton();
@@ -43,22 +45,22 @@
             this.LmontoTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBFecha = new System.Windows.Forms.TextBox();
+            this.Lusuario = new System.Windows.Forms.Label();
+            this.TBUsuario = new System.Windows.Forms.TextBox();
             this.TBtipoDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listadoCompras = new System.Windows.Forms.DataGridView();
             this.productoComprado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TBUsuario = new System.Windows.Forms.TextBox();
-            this.Lusuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -254,6 +256,26 @@
             this.TBFecha.Size = new System.Drawing.Size(155, 28);
             this.TBFecha.TabIndex = 7;
             // 
+            // Lusuario
+            // 
+            this.Lusuario.AutoSize = true;
+            this.Lusuario.Location = new System.Drawing.Point(615, 43);
+            this.Lusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lusuario.Name = "Lusuario";
+            this.Lusuario.Size = new System.Drawing.Size(85, 21);
+            this.Lusuario.TabIndex = 5;
+            this.Lusuario.Text = "Usuario:";
+            // 
+            // TBUsuario
+            // 
+            this.TBUsuario.Location = new System.Drawing.Point(615, 68);
+            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.TBUsuario.Name = "TBUsuario";
+            this.TBUsuario.ReadOnly = true;
+            this.TBUsuario.Size = new System.Drawing.Size(155, 28);
+            this.TBUsuario.TabIndex = 4;
+            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            // 
             // TBtipoDoc
             // 
             this.TBtipoDoc.Location = new System.Drawing.Point(348, 68);
@@ -294,70 +316,66 @@
             this.TBnumCompra.TabIndex = 4;
             this.TBnumCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
-            // dataGridView1
+            // listadoCompras
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listadoCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.listadoCompras.BackgroundColor = System.Drawing.Color.White;
+            this.listadoCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listadoCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.listadoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productoComprado,
             this.precioCompra,
             this.cantidadComprada,
             this.subtotal});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 435);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 219);
-            this.dataGridView1.TabIndex = 1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoCompras.DefaultCellStyle = dataGridViewCellStyle2;
+            this.listadoCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoCompras.Location = new System.Drawing.Point(0, 435);
+            this.listadoCompras.Margin = new System.Windows.Forms.Padding(2);
+            this.listadoCompras.Name = "listadoCompras";
+            this.listadoCompras.RowHeadersWidth = 51;
+            this.listadoCompras.Size = new System.Drawing.Size(1182, 219);
+            this.listadoCompras.TabIndex = 1;
             // 
             // productoComprado
             // 
             this.productoComprado.HeaderText = "Producto";
             this.productoComprado.MinimumWidth = 6;
             this.productoComprado.Name = "productoComprado";
-            this.productoComprado.Width = 200;
             // 
             // precioCompra
             // 
             this.precioCompra.HeaderText = "Precio Compra";
             this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
-            this.precioCompra.Width = 150;
             // 
             // cantidadComprada
             // 
             this.cantidadComprada.HeaderText = "Cantidad";
             this.cantidadComprada.MinimumWidth = 6;
             this.cantidadComprada.Name = "cantidadComprada";
-            this.cantidadComprada.Width = 150;
             // 
             // subtotal
             // 
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.MinimumWidth = 6;
             this.subtotal.Name = "subtotal";
-            this.subtotal.Width = 150;
-            // 
-            // TBUsuario
-            // 
-            this.TBUsuario.Location = new System.Drawing.Point(615, 68);
-            this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.ReadOnly = true;
-            this.TBUsuario.Size = new System.Drawing.Size(155, 28);
-            this.TBUsuario.TabIndex = 4;
-            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
-            // 
-            // Lusuario
-            // 
-            this.Lusuario.AutoSize = true;
-            this.Lusuario.Location = new System.Drawing.Point(615, 43);
-            this.Lusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Lusuario.Name = "Lusuario";
-            this.Lusuario.Size = new System.Drawing.Size(85, 21);
-            this.Lusuario.TabIndex = 5;
-            this.Lusuario.Text = "Usuario:";
             // 
             // detalleCompra
             // 
@@ -366,7 +384,7 @@
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listadoCompras);
             this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -380,7 +398,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,7 +406,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listadoCompras;
         private System.Windows.Forms.Label LdetalleCompra;
         private System.Windows.Forms.Label LnumDoc;
         private System.Windows.Forms.TextBox TBnumCompra;

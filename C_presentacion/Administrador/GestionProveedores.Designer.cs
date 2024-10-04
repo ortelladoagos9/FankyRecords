@@ -31,6 +31,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
             this.Beditar = new FontAwesome.Sharp.IconButton();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
@@ -310,9 +311,11 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // DGlistaproveedores
             // 
+            this.DGlistaproveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGlistaproveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGlistaproveedores.BackgroundColor = System.Drawing.Color.White;
             this.DGlistaproveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DGlistaproveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.DGlistaproveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,6 +333,14 @@ namespace FankyRecords.C_presentacion.Administrador
             this.correoProveedor,
             this.telefonoProveedor,
             this.estadoProveedor});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGlistaproveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGlistaproveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGlistaproveedores.GridColor = System.Drawing.SystemColors.Window;
             this.DGlistaproveedores.Location = new System.Drawing.Point(0, 445);
@@ -343,49 +354,42 @@ namespace FankyRecords.C_presentacion.Administrador
             this.id_proveedor.HeaderText = "ID";
             this.id_proveedor.MinimumWidth = 6;
             this.id_proveedor.Name = "id_proveedor";
-            this.id_proveedor.Width = 50;
             // 
             // razonSocial
             // 
             this.razonSocial.HeaderText = "Razon Social";
             this.razonSocial.MinimumWidth = 6;
             this.razonSocial.Name = "razonSocial";
-            this.razonSocial.Width = 150;
             // 
             // cuitProveedor
             // 
             this.cuitProveedor.HeaderText = "Cuit";
             this.cuitProveedor.MinimumWidth = 6;
             this.cuitProveedor.Name = "cuitProveedor";
-            this.cuitProveedor.Width = 125;
             // 
             // domicilioProveedor
             // 
             this.domicilioProveedor.HeaderText = "Domicilio";
             this.domicilioProveedor.MinimumWidth = 6;
             this.domicilioProveedor.Name = "domicilioProveedor";
-            this.domicilioProveedor.Width = 180;
             // 
             // correoProveedor
             // 
             this.correoProveedor.HeaderText = "Email";
             this.correoProveedor.MinimumWidth = 6;
             this.correoProveedor.Name = "correoProveedor";
-            this.correoProveedor.Width = 180;
             // 
             // telefonoProveedor
             // 
             this.telefonoProveedor.HeaderText = "Telefono";
             this.telefonoProveedor.MinimumWidth = 6;
             this.telefonoProveedor.Name = "telefonoProveedor";
-            this.telefonoProveedor.Width = 130;
             // 
             // estadoProveedor
             // 
             this.estadoProveedor.HeaderText = "Estado";
             this.estadoProveedor.MinimumWidth = 6;
             this.estadoProveedor.Name = "estadoProveedor";
-            this.estadoProveedor.Width = 125;
             // 
             // listaProveedores
             // 

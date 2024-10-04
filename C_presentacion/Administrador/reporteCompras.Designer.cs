@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             this.DTfin = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,11 +105,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Proveedor:";
             // 
-            // dataGridView1
+            // listadoReporteCompras
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listadoReporteCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
+            this.listadoReporteCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listadoReporteCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
             this.tipoDoc,
             this.razonSocial,
@@ -119,75 +122,66 @@
             this.precioCompra,
             this.cantidad,
             this.montoTotal});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 398);
-            this.dataGridView1.TabIndex = 1;
+            this.listadoReporteCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoReporteCompras.Location = new System.Drawing.Point(0, 256);
+            this.listadoReporteCompras.Name = "listadoReporteCompras";
+            this.listadoReporteCompras.RowHeadersWidth = 51;
+            this.listadoReporteCompras.Size = new System.Drawing.Size(1182, 398);
+            this.listadoReporteCompras.TabIndex = 1;
             // 
             // fechaRegistro
             // 
             this.fechaRegistro.HeaderText = "Fecha Registro";
             this.fechaRegistro.MinimumWidth = 6;
             this.fechaRegistro.Name = "fechaRegistro";
-            this.fechaRegistro.Width = 125;
             // 
             // tipoDoc
             // 
             this.tipoDoc.HeaderText = "Tipo Documento";
             this.tipoDoc.MinimumWidth = 6;
             this.tipoDoc.Name = "tipoDoc";
-            this.tipoDoc.Width = 125;
             // 
             // razonSocial
             // 
             this.razonSocial.HeaderText = "Razon Social";
             this.razonSocial.MinimumWidth = 6;
             this.razonSocial.Name = "razonSocial";
-            this.razonSocial.Width = 200;
             // 
             // cuitProveedor
             // 
             this.cuitProveedor.HeaderText = "Cuit Proveedor";
             this.cuitProveedor.MinimumWidth = 6;
             this.cuitProveedor.Name = "cuitProveedor";
-            this.cuitProveedor.Width = 150;
             // 
             // codProducto
             // 
             this.codProducto.HeaderText = "Codigo Producto";
             this.codProducto.MinimumWidth = 6;
             this.codProducto.Name = "codProducto";
-            this.codProducto.Width = 150;
             // 
             // nomProducto
             // 
             this.nomProducto.HeaderText = "Nombre Producto";
             this.nomProducto.MinimumWidth = 6;
             this.nomProducto.Name = "nomProducto";
-            this.nomProducto.Width = 200;
             // 
             // precioCompra
             // 
             this.precioCompra.HeaderText = "Precio Compra";
             this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
-            this.precioCompra.Width = 125;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 125;
             // 
             // montoTotal
             // 
             this.montoTotal.HeaderText = "Monto Total ";
             this.montoTotal.MinimumWidth = 6;
             this.montoTotal.Name = "montoTotal";
-            this.montoTotal.Width = 125;
             // 
             // panel4
             // 
@@ -392,7 +386,7 @@
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listadoReporteCompras);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,7 +397,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporteCompras";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -418,7 +412,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBproveedor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listadoReporteCompras;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;

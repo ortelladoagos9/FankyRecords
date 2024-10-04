@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
@@ -182,9 +183,11 @@
             // 
             // listadoProductos
             // 
+            this.listadoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,7 +204,16 @@
             this.categoria,
             this.precio_venta,
             this.Estado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoProductos.GridColor = System.Drawing.Color.White;
             this.listadoProductos.Location = new System.Drawing.Point(0, 445);
             this.listadoProductos.Margin = new System.Windows.Forms.Padding(4);
             this.listadoProductos.Name = "listadoProductos";
@@ -214,7 +226,6 @@
             this.cod_prod.HeaderText = "Codigo";
             this.cod_prod.MinimumWidth = 6;
             this.cod_prod.Name = "cod_prod";
-            this.cod_prod.Width = 115;
             // 
             // nombre_prod
             // 
@@ -222,7 +233,6 @@
             this.nombre_prod.MinimumWidth = 6;
             this.nombre_prod.Name = "nombre_prod";
             this.nombre_prod.ReadOnly = true;
-            this.nombre_prod.Width = 115;
             // 
             // descripcion
             // 
@@ -230,7 +240,6 @@
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 140;
             // 
             // categoria
             // 
@@ -238,7 +247,6 @@
             this.categoria.MinimumWidth = 6;
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
-            this.categoria.Width = 125;
             // 
             // precio_venta
             // 
@@ -246,7 +254,6 @@
             this.precio_venta.MinimumWidth = 6;
             this.precio_venta.Name = "precio_venta";
             this.precio_venta.ReadOnly = true;
-            this.precio_venta.Width = 125;
             // 
             // Estado
             // 
@@ -254,7 +261,6 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 115;
             // 
             // contenedorBotones
             // 

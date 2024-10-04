@@ -28,8 +28,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text) ||
                C_negocio.Validaciones.EstaVacio(TBNroDocumento.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBCodProducto.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBPrecio.Text))
+               C_negocio.Validaciones.EstaVacio(TBCodProducto.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
