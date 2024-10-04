@@ -45,7 +45,8 @@ namespace FankyRecords.C_presentacion.Administrador
                     listaCompras.Rows[n].Cells[1].Value = TBproducto.Text;
                     listaCompras.Rows[n].Cells[2].Value = TBprecio.Text;
                     listaCompras.Rows[n].Cells[3].Value = cantProd.Value;
-                    listaCompras.Rows[n].Cells[4].Value = subtotal;
+                    listaCompras.Rows[n].Cells[4].Value = 001;
+                    listaCompras.Rows[n].Cells[5].Value = subtotal;
 
                     // limpia campos
                     TBCodProd.Clear();

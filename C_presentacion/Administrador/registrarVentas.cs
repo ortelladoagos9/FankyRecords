@@ -47,8 +47,9 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoVentaProducto.Rows[n].Cells[1].Value = TBProducto.Text;
                     listadoVentaProducto.Rows[n].Cells[2].Value = TBPrecio.Text;
                     listadoVentaProducto.Rows[n].Cells[3].Value = TBStock.Text;
-                    listadoVentaProducto.Rows[n].Cells[3].Value = numCantidad.Text;
-                    listadoVentaProducto.Rows[n].Cells[4].Value = " ";
+                    listadoVentaProducto.Rows[n].Cells[4].Value = numCantidad.Text;
+                    listadoVentaProducto.Rows[n].Cells[5].Value = 001;
+                    listadoVentaProducto.Rows[n].Cells[6].Value = " ";
 
                     // limpia campos
                     TBPrecio.Clear();
