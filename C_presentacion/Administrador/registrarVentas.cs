@@ -18,6 +18,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             InitializeComponent();
             this.cbTipoDoc.SelectedIndex = 0;
+            this.cbProductos.SelectedIndex = 0;
             // Inicializar el temporizador
             delayTimer = new System.Windows.Forms.Timer();
             delayTimer.Interval = 2000; // Ajusta el intervalo según tus necesidades (en milisegundos)
@@ -28,7 +29,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text) ||
                C_negocio.Validaciones.EstaVacio(TBNroDocumento.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBCodProducto.Text))
+               C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -42,9 +43,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
                     int n = listadoVentaProducto.Rows.Add();
 
-                    listadoVentaProducto.Rows[n].Cells[0].Value = TBCodProducto.Text;
+                    listadoVentaProducto.Rows[n].Cells[0].Value = " ";
                     listadoVentaProducto.Rows[n].Cells[1].Value = TBProducto.Text;
                     listadoVentaProducto.Rows[n].Cells[2].Value = TBPrecio.Text;
+                    listadoVentaProducto.Rows[n].Cells[3].Value = TBStock.Text;
                     listadoVentaProducto.Rows[n].Cells[3].Value = numCantidad.Text;
                     listadoVentaProducto.Rows[n].Cells[4].Value = subtotal;
 
@@ -52,8 +54,10 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBPrecio.Clear();
                     numCantidad.Value = 1;
                     TBNombreCompleto.Clear();
-                    TBCodProducto.Clear();
+                    TBbuscarProducto.Clear();
                     TBNroDocumento.Clear();
+                    TBStock.Clear();
+                    TBProducto.Clear();
                     cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
 
                     permitirTextChanged = true;
@@ -117,7 +121,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
-        private System.Windows.Forms.Timer delayTimer;
+        private readonly System.Windows.Forms.Timer delayTimer;
         private bool permitirTextChanged = true; // Variable para controlar la ejecución del evento
 
         private void TBRecibe_TextChanged(object sender, EventArgs e)
@@ -158,6 +162,17 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-       
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text))
+            {
+                MessageBox.Show("Debe escribir el código o nombre de un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

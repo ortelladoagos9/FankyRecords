@@ -131,5 +131,13 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             listadoClientes.Rows.Clear();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

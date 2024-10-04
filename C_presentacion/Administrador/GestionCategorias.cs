@@ -15,8 +15,8 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class GestionCategorias : Form
     {
-        private DatosCategorias CD_Categorias;
-        private NegocioCategorias CN_Categorias;
+        private readonly DatosCategorias CD_Categorias;
+        private readonly NegocioCategorias CN_Categorias;
 
         public GestionCategorias()
         {
@@ -82,7 +82,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar todas las filas del DataGridView
-            // listadoCategorias.Rows.Clear();
+            listadoCategorias.Rows.Clear();
         }
 
         private void Beditar_Click(object sender, EventArgs e)

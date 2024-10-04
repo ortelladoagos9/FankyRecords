@@ -22,6 +22,10 @@ namespace FankyRecords.C_presentacion.Administrador
             C_negocio.Validaciones.EsNumero(e);
         }
 
-       
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar todas las filas del DataGridView
+            listadoVentas.Rows.Clear();
+        }
     }
 }

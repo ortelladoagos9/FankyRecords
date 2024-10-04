@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
@@ -58,6 +58,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.TBBuscadorVentas = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteVentas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -165,14 +166,14 @@
             this.listadoReporteVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -186,14 +187,14 @@
             this.precioVenta,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle4;
             this.listadoReporteVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteVentas.GridColor = System.Drawing.SystemColors.Control;
             this.listadoReporteVentas.Location = new System.Drawing.Point(0, 256);
@@ -302,7 +303,7 @@
             // 
             this.cbBuscarVentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscarVentas.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBuscarVentas.ForeColor = System.Drawing.Color.DarkRed;
+            this.cbBuscarVentas.ForeColor = System.Drawing.Color.Black;
             this.cbBuscarVentas.FormattingEnabled = true;
             this.cbBuscarVentas.Items.AddRange(new object[] {
             "Fecha Registro",
@@ -328,12 +329,13 @@
             this.buscarReg.IconColor = System.Drawing.Color.DarkRed;
             this.buscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buscarReg.IconSize = 19;
-            this.buscarReg.Location = new System.Drawing.Point(283, 13);
+            this.buscarReg.Location = new System.Drawing.Point(467, 13);
             this.buscarReg.Margin = new System.Windows.Forms.Padding(2);
             this.buscarReg.Name = "buscarReg";
             this.buscarReg.Size = new System.Drawing.Size(71, 29);
             this.buscarReg.TabIndex = 5;
             this.buscarReg.UseVisualStyleBackColor = false;
+            this.buscarReg.Click += new System.EventHandler(this.buscarReg_Click);
             // 
             // btnGenerarGrafico
             // 
@@ -393,14 +395,25 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.TBBuscadorVentas);
             this.panel5.Controls.Add(this.cbBuscarVentas);
             this.panel5.Controls.Add(this.buscarReg);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(781, 0);
+            this.panel5.Location = new System.Drawing.Point(627, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(401, 53);
+            this.panel5.Size = new System.Drawing.Size(555, 53);
             this.panel5.TabIndex = 8;
+            // 
+            // TBBuscadorVentas
+            // 
+            this.TBBuscadorVentas.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscadorVentas.ForeColor = System.Drawing.Color.Black;
+            this.TBBuscadorVentas.Location = new System.Drawing.Point(291, 14);
+            this.TBBuscadorVentas.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.TBBuscadorVentas.Name = "TBBuscadorVentas";
+            this.TBBuscadorVentas.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscadorVentas.TabIndex = 33;
             // 
             // reporteVentas
             // 
@@ -425,6 +438,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -459,5 +473,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.TextBox TBBuscadorVentas;
     }
 }

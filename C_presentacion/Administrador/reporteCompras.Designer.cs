@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.CBproveedor = new System.Windows.Forms.ComboBox();
@@ -55,6 +57,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DTfin = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
+            this.TBBuscadorCompras = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
@@ -86,7 +89,7 @@
             // 
             this.CBproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBproveedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.CBproveedor.ForeColor = System.Drawing.Color.Black;
             this.CBproveedor.FormattingEnabled = true;
             this.CBproveedor.Items.AddRange(new object[] {
             "Proveedor A",
@@ -108,9 +111,18 @@
             // listadoReporteCompras
             // 
             this.listadoReporteCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoReporteCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -122,7 +134,16 @@
             this.precioCompra,
             this.cantidad,
             this.montoTotal});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteCompras.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoReporteCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoReporteCompras.GridColor = System.Drawing.Color.White;
             this.listadoReporteCompras.Location = new System.Drawing.Point(0, 256);
             this.listadoReporteCompras.Name = "listadoReporteCompras";
             this.listadoReporteCompras.RowHeadersWidth = 51;
@@ -197,20 +218,21 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.TBBuscadorCompras);
             this.panel5.Controls.Add(this.cbBuscarVentas);
             this.panel5.Controls.Add(this.buscarReg);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(781, 0);
+            this.panel5.Location = new System.Drawing.Point(625, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(401, 53);
+            this.panel5.Size = new System.Drawing.Size(557, 53);
             this.panel5.TabIndex = 8;
             // 
             // cbBuscarVentas
             // 
             this.cbBuscarVentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscarVentas.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBuscarVentas.ForeColor = System.Drawing.Color.DarkRed;
+            this.cbBuscarVentas.ForeColor = System.Drawing.Color.Black;
             this.cbBuscarVentas.FormattingEnabled = true;
             this.cbBuscarVentas.Items.AddRange(new object[] {
             "Fecha Registro",
@@ -236,12 +258,13 @@
             this.buscarReg.IconColor = System.Drawing.Color.DarkRed;
             this.buscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buscarReg.IconSize = 19;
-            this.buscarReg.Location = new System.Drawing.Point(283, 13);
+            this.buscarReg.Location = new System.Drawing.Point(467, 13);
             this.buscarReg.Margin = new System.Windows.Forms.Padding(2);
             this.buscarReg.Name = "buscarReg";
             this.buscarReg.Size = new System.Drawing.Size(71, 29);
             this.buscarReg.TabIndex = 5;
             this.buscarReg.UseVisualStyleBackColor = false;
+            this.buscarReg.Click += new System.EventHandler(this.buscarReg_Click);
             // 
             // label4
             // 
@@ -378,6 +401,16 @@
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
             // 
+            // TBBuscadorCompras
+            // 
+            this.TBBuscadorCompras.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscadorCompras.ForeColor = System.Drawing.Color.Black;
+            this.TBBuscadorCompras.Location = new System.Drawing.Point(291, 14);
+            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.TBBuscadorCompras.Name = "TBBuscadorCompras";
+            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscadorCompras.TabIndex = 34;
+            // 
             // reporteCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
@@ -400,6 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -435,5 +469,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
+        public System.Windows.Forms.TextBox TBBuscadorCompras;
     }
 }

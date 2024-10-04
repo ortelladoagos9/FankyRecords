@@ -18,13 +18,14 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             InitializeComponent();
             this.cbTipoDoc.SelectedIndex = 0;
+            this.cbProductos.SelectedIndex = 0;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
-                || C_negocio.Validaciones.EstaVacio(TBcodProducto.Text)
+                || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -39,14 +40,16 @@ namespace FankyRecords.C_presentacion.Administrador
 
                     int n = listaCompras.Rows.Add();
 
-                    listaCompras.Rows[n].Cells[0].Value = TBcodProducto.Text;
-                    listaCompras.Rows[n].Cells[1].Value = " ";
+                    listaCompras.Rows[n].Cells[0].Value = TBCodProd.Text;
+                    listaCompras.Rows[n].Cells[1].Value = TBproducto.Text;
                     listaCompras.Rows[n].Cells[2].Value = TBprecio.Text;
                     listaCompras.Rows[n].Cells[3].Value = cantProd.Value;
                     listaCompras.Rows[n].Cells[4].Value = subtotal;
 
                     // limpia campos
-                    TBcodProducto.Clear();
+                    TBCodProd.Clear();
+                    TBbuscarProducto.Clear();
+                    TBproducto.Clear();
                     cantProd.Value = 1;
                     TBprecio.Clear();
                     TBcuit.Clear();
@@ -69,7 +72,8 @@ namespace FankyRecords.C_presentacion.Administrador
                                                           MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    TBcodProducto.Clear();
+                    TBbuscarProducto.Clear();
+                    TBCodProd.Clear();
                     TBproducto.Clear();
                     TBprecio.Clear();
                     TBrazonSocial.Clear();
@@ -97,6 +101,15 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             C_negocio.Validaciones.EsNumero(e);
         }
-        
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text))
+            {
+                MessageBox.Show("Debe escribir el código o nombre de un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
     } 
 }

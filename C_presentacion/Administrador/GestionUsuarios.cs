@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FankyRecords.C_negocio;
+using FankyRecords.C_presentacion.Vendedor;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -223,6 +224,14 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBconfirmarClave.Clear();
                     CBRol.SelectedIndex = -1;  // Deselect the ComboBox
                 }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

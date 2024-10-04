@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoClientes = new System.Windows.Forms.DataGridView();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,16 +73,19 @@
             // 
             // listadoClientes
             // 
+            this.listadoClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoClientes.BackgroundColor = System.Drawing.Color.White;
             this.listadoClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.listadoClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dni,
@@ -90,7 +94,16 @@
             this.mail,
             this.telefono,
             this.Estado});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoClientes.DefaultCellStyle = dataGridViewCellStyle4;
             this.listadoClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoClientes.GridColor = System.Drawing.Color.White;
             this.listadoClientes.Location = new System.Drawing.Point(0, 445);
             this.listadoClientes.Name = "listadoClientes";
             this.listadoClientes.RowHeadersWidth = 51;
@@ -103,7 +116,6 @@
             this.dni.MinimumWidth = 6;
             this.dni.Name = "dni";
             this.dni.ReadOnly = true;
-            this.dni.Width = 110;
             // 
             // apellido
             // 
@@ -111,7 +123,6 @@
             this.apellido.MinimumWidth = 6;
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
-            this.apellido.Width = 125;
             // 
             // nombre
             // 
@@ -119,7 +130,6 @@
             this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Width = 125;
             // 
             // mail
             // 
@@ -127,7 +137,6 @@
             this.mail.MinimumWidth = 6;
             this.mail.Name = "mail";
             this.mail.ReadOnly = true;
-            this.mail.Width = 125;
             // 
             // telefono
             // 
@@ -135,7 +144,6 @@
             this.telefono.MinimumWidth = 6;
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
-            this.telefono.Width = 120;
             // 
             // Estado
             // 
@@ -143,7 +151,6 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
             // 
             // contenedorGestionClientes
             // 
@@ -203,7 +210,7 @@
             this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBbuscar.ForeColor = System.Drawing.Color.DarkRed;
+            this.CBbuscar.ForeColor = System.Drawing.Color.Black;
             this.CBbuscar.FormattingEnabled = true;
             this.CBbuscar.IntegralHeight = false;
             this.CBbuscar.Items.AddRange(new object[] {
@@ -234,7 +241,7 @@
             // 
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
             this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscador.ForeColor = System.Drawing.Color.DarkRed;
+            this.TBBuscador.ForeColor = System.Drawing.Color.Black;
             this.TBBuscador.Location = new System.Drawing.Point(897, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.TBBuscador.Name = "TBBuscador";
@@ -255,6 +262,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(57, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiar
             // 

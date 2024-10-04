@@ -18,6 +18,18 @@ namespace FankyRecords.C_presentacion.Vendedor
             this.CBbuscarProductos.SelectedIndex = 0;
         }
 
-       
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe escribir el código, nombre, categoria o estado de un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar todas las filas del DataGridView
+            listadoProductos.Rows.Clear();
+        }
     }
 }

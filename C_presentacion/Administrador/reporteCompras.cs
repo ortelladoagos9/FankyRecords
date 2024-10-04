@@ -45,5 +45,14 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             CompararFechas();
         }
+
+        private void buscarReg_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscadorCompras.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato de la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }
