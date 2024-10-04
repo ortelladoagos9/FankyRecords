@@ -231,7 +231,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
-                MessageBox.Show("Debe ingresar un dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

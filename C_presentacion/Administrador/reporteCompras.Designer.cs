@@ -88,7 +88,7 @@
             // CBproveedor
             // 
             this.CBproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBproveedor.ForeColor = System.Drawing.Color.Black;
             this.CBproveedor.FormattingEnabled = true;
             this.CBproveedor.Items.AddRange(new object[] {
@@ -96,7 +96,7 @@
             "Proveedor B"});
             this.CBproveedor.Location = new System.Drawing.Point(765, 54);
             this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(147, 27);
+            this.CBproveedor.Size = new System.Drawing.Size(147, 29);
             this.CBproveedor.TabIndex = 5;
             // 
             // label2
@@ -114,7 +114,6 @@
             this.listadoReporteCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoReporteCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,12 +349,12 @@
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTinicio.Location = new System.Drawing.Point(185, 54);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
-            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
-            this.DTinicio.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
             this.DTinicio.Size = new System.Drawing.Size(138, 28);
             this.DTinicio.TabIndex = 2;
-            this.DTinicio.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -375,12 +374,12 @@
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTfin.Location = new System.Drawing.Point(468, 54);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
-            this.DTfin.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
-            this.DTfin.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTfin.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
             this.DTfin.Size = new System.Drawing.Size(147, 28);
             this.DTfin.TabIndex = 4;
-            this.DTfin.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // btnBuscarFecha
             // 

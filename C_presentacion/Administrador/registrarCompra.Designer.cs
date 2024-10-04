@@ -38,11 +38,6 @@
             this.LTotalPagar = new System.Windows.Forms.Label();
             this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.listaCompras = new System.Windows.Forms.DataGridView();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.gbInfoProducto = new System.Windows.Forms.GroupBox();
             this.TBCodProd = new System.Windows.Forms.TextBox();
@@ -68,6 +63,14 @@
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
@@ -195,6 +198,7 @@
             this.nombreProducto,
             this.precioCompra,
             this.cantidadProducto,
+            this.num_compra,
             this.subTotalProducto});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -211,36 +215,6 @@
             this.listaCompras.RowHeadersWidth = 51;
             this.listaCompras.Size = new System.Drawing.Size(921, 209);
             this.listaCompras.TabIndex = 2;
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Código";
-            this.codigoProducto.MinimumWidth = 6;
-            this.codigoProducto.Name = "codigoProducto";
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Producto";
-            this.nombreProducto.MinimumWidth = 6;
-            this.nombreProducto.Name = "nombreProducto";
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.MinimumWidth = 6;
-            this.cantidadProducto.Name = "cantidadProducto";
-            // 
-            // subTotalProducto
-            // 
-            this.subTotalProducto.HeaderText = "Subtotal";
-            this.subTotalProducto.MinimumWidth = 6;
-            this.subTotalProducto.Name = "subTotalProducto";
             // 
             // contenedorDatos
             // 
@@ -328,7 +302,7 @@
             // 
             this.TBbuscarProducto.Location = new System.Drawing.Point(134, 83);
             this.TBbuscarProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.TBbuscarProducto.MaxLength = 5;
+            this.TBbuscarProducto.MaxLength = 100;
             this.TBbuscarProducto.Name = "TBbuscarProducto";
             this.TBbuscarProducto.Size = new System.Drawing.Size(156, 28);
             this.TBbuscarProducto.TabIndex = 26;
@@ -432,6 +406,7 @@
             this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
             this.btnBuscarProveedor.TabIndex = 4;
             this.btnBuscarProveedor.UseVisualStyleBackColor = false;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
             // 
             // TBrazonSocial
             // 
@@ -470,7 +445,9 @@
             // 
             // gbInfoCompra
             // 
+            this.gbInfoCompra.Controls.Add(this.textBox1);
             this.gbInfoCompra.Controls.Add(this.dtFechaCompra);
+            this.gbInfoCompra.Controls.Add(this.label1);
             this.gbInfoCompra.Controls.Add(this.cbTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LFechaCompra);
@@ -487,12 +464,12 @@
             // 
             this.dtFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaCompra.Location = new System.Drawing.Point(29, 74);
-            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
-            this.dtFechaCompra.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.dtFechaCompra.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.dtFechaCompra.Name = "dtFechaCompra";
             this.dtFechaCompra.Size = new System.Drawing.Size(160, 28);
             this.dtFechaCompra.TabIndex = 6;
-            this.dtFechaCompra.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.dtFechaCompra.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // cbTipoDoc
             // 
@@ -503,7 +480,7 @@
             "Factura A",
             "Factura B",
             "Factura C"});
-            this.cbTipoDoc.Location = new System.Drawing.Point(225, 73);
+            this.cbTipoDoc.Location = new System.Drawing.Point(225, 44);
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(160, 29);
             this.cbTipoDoc.TabIndex = 3;
@@ -511,7 +488,7 @@
             // LTipoDoc
             // 
             this.LTipoDoc.AutoSize = true;
-            this.LTipoDoc.Location = new System.Drawing.Point(225, 47);
+            this.LTipoDoc.Location = new System.Drawing.Point(225, 18);
             this.LTipoDoc.Name = "LTipoDoc";
             this.LTipoDoc.Size = new System.Drawing.Size(158, 21);
             this.LTipoDoc.TabIndex = 1;
@@ -525,6 +502,58 @@
             this.LFechaCompra.Size = new System.Drawing.Size(68, 21);
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
+            // 
+            // codigoProducto
+            // 
+            this.codigoProducto.HeaderText = "Código";
+            this.codigoProducto.MinimumWidth = 6;
+            this.codigoProducto.Name = "codigoProducto";
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.HeaderText = "Producto";
+            this.nombreProducto.MinimumWidth = 6;
+            this.nombreProducto.Name = "nombreProducto";
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            // 
+            // cantidadProducto
+            // 
+            this.cantidadProducto.HeaderText = "Cantidad";
+            this.cantidadProducto.MinimumWidth = 6;
+            this.cantidadProducto.Name = "cantidadProducto";
+            // 
+            // num_compra
+            // 
+            this.num_compra.HeaderText = "Número Compra";
+            this.num_compra.MinimumWidth = 6;
+            this.num_compra.Name = "num_compra";
+            // 
+            // subTotalProducto
+            // 
+            this.subTotalProducto.HeaderText = "Subtotal";
+            this.subTotalProducto.MinimumWidth = 6;
+            this.subTotalProducto.Name = "subTotalProducto";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(225, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 28);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Número Factura:";
             // 
             // registrarCompra
             // 
@@ -585,16 +614,19 @@
         private System.Windows.Forms.TextBox TBproducto;
         private System.Windows.Forms.Label LProducto;
         private System.Windows.Forms.DateTimePicker dtFechaCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalProducto;
         private System.Windows.Forms.ComboBox cbProductos;
         public FontAwesome.Sharp.IconButton btnBuscarProducto;
         private System.Windows.Forms.TextBox TBbuscarProducto;
         private System.Windows.Forms.Label LBuscarProducto;
         private System.Windows.Forms.TextBox TBCodProd;
         private System.Windows.Forms.Label LCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num_compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalProducto;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -32,5 +32,13 @@ namespace FankyRecords.C_presentacion.Administrador
             // Limpiar todas las filas del DataGridView
             listadoCompras.Rows.Clear();
         }
+
+        private void btnBuscarNroCompra_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBnumCompra.Text))
+            {
+                MessageBox.Show("Debe ingresar el numero de compra para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

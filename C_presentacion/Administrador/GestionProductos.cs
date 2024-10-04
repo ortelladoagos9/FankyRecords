@@ -126,6 +126,14 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

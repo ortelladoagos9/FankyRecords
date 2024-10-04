@@ -52,9 +52,15 @@
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
             this.listadoCompras = new System.Windows.Forms.DataGridView();
+            this.TBNumFactura = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoComprado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
@@ -113,6 +119,7 @@
             this.btnBuscarNroCompra.Size = new System.Drawing.Size(46, 26);
             this.btnBuscarNroCompra.TabIndex = 24;
             this.btnBuscarNroCompra.UseVisualStyleBackColor = false;
+            this.btnBuscarNroCompra.Click += new System.EventHandler(this.btnBuscarNroCompra_Click);
             // 
             // contenedorDetalleCompra
             // 
@@ -201,9 +208,9 @@
             this.label2.Location = new System.Drawing.Point(136, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 21);
+            this.label2.Size = new System.Drawing.Size(53, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Número Documento:";
+            this.label2.Text = "Cuit:";
             // 
             // LnumDoc
             // 
@@ -231,6 +238,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TBNumFactura);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TBFecha);
             this.groupBox1.Controls.Add(this.Lusuario);
             this.groupBox1.Controls.Add(this.TBUsuario);
@@ -260,7 +269,7 @@
             // Lusuario
             // 
             this.Lusuario.AutoSize = true;
-            this.Lusuario.Location = new System.Drawing.Point(615, 43);
+            this.Lusuario.Location = new System.Drawing.Point(614, 43);
             this.Lusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lusuario.Name = "Lusuario";
             this.Lusuario.Size = new System.Drawing.Size(85, 21);
@@ -269,7 +278,7 @@
             // 
             // TBUsuario
             // 
-            this.TBUsuario.Location = new System.Drawing.Point(615, 68);
+            this.TBUsuario.Location = new System.Drawing.Point(614, 68);
             this.TBUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.TBUsuario.Name = "TBUsuario";
             this.TBUsuario.ReadOnly = true;
@@ -279,7 +288,7 @@
             // 
             // TBtipoDoc
             // 
-            this.TBtipoDoc.Location = new System.Drawing.Point(348, 68);
+            this.TBtipoDoc.Location = new System.Drawing.Point(262, 68);
             this.TBtipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.TBtipoDoc.Name = "TBtipoDoc";
             this.TBtipoDoc.ReadOnly = true;
@@ -290,7 +299,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(348, 43);
+            this.label1.Location = new System.Drawing.Point(262, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 21);
@@ -334,9 +343,13 @@
             this.listadoCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
             this.productoComprado,
             this.precioCompra,
             this.cantidadComprada,
+            this.proveedor,
+            this.num_factura,
+            this.fecha,
             this.subtotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -353,6 +366,31 @@
             this.listadoCompras.RowHeadersWidth = 51;
             this.listadoCompras.Size = new System.Drawing.Size(1182, 219);
             this.listadoCompras.TabIndex = 1;
+            // 
+            // TBNumFactura
+            // 
+            this.TBNumFactura.Location = new System.Drawing.Point(438, 68);
+            this.TBNumFactura.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNumFactura.Name = "TBNumFactura";
+            this.TBNumFactura.ReadOnly = true;
+            this.TBNumFactura.Size = new System.Drawing.Size(155, 28);
+            this.TBNumFactura.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(438, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 21);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Número factura:";
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
             // 
             // productoComprado
             // 
@@ -371,6 +409,24 @@
             this.cantidadComprada.HeaderText = "Cantidad";
             this.cantidadComprada.MinimumWidth = 6;
             this.cantidadComprada.Name = "cantidadComprada";
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "Proveedor";
+            this.proveedor.MinimumWidth = 6;
+            this.proveedor.Name = "proveedor";
+            // 
+            // num_factura
+            // 
+            this.num_factura.HeaderText = "Número Factura";
+            this.num_factura.MinimumWidth = 6;
+            this.num_factura.Name = "num_factura";
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.MinimumWidth = 6;
+            this.fecha.Name = "fecha";
             // 
             // subtotal
             // 
@@ -426,11 +482,17 @@
         public FontAwesome.Sharp.IconButton btnBuscarNroCompra;
         public FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.TextBox TBFecha;
+        private System.Windows.Forms.Label Lusuario;
+        private System.Windows.Forms.TextBox TBUsuario;
+        private System.Windows.Forms.TextBox TBNumFactura;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn productoComprado;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadComprada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num_factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.Label Lusuario;
-        private System.Windows.Forms.TextBox TBUsuario;
     }
 }

@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoVentaProducto = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorRegistrarVenta = new System.Windows.Forms.Panel();
             this.LRegistrarVenta = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -49,6 +55,7 @@
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.contenedorInformacion = new System.Windows.Forms.Panel();
             this.gbInformacionProducto = new System.Windows.Forms.GroupBox();
+            this.cbProductos = new System.Windows.Forms.ComboBox();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.LCantidad = new System.Windows.Forms.Label();
             this.TBStock = new System.Windows.Forms.TextBox();
@@ -66,13 +73,6 @@
             this.TBNroDocumento = new System.Windows.Forms.TextBox();
             this.LNombreCompleto = new System.Windows.Forms.Label();
             this.LNroDocumento = new System.Windows.Forms.Label();
-            this.cbProductos = new System.Windows.Forms.ComboBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVentaProducto)).BeginInit();
             this.contenedorRegistrarVenta.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
@@ -90,14 +90,14 @@
             this.listadoVentaProducto.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoVentaProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoVentaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -106,14 +106,14 @@
             this.stock,
             this.cantidad,
             this.subtotal});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoVentaProducto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoVentaProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoVentaProducto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoVentaProducto.Location = new System.Drawing.Point(0, 445);
             this.listadoVentaProducto.Margin = new System.Windows.Forms.Padding(4);
@@ -121,6 +121,45 @@
             this.listadoVentaProducto.RowHeadersWidth = 51;
             this.listadoVentaProducto.Size = new System.Drawing.Size(921, 209);
             this.listadoVentaProducto.TabIndex = 12;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.MinimumWidth = 6;
+            this.producto.Name = "producto";
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.MinimumWidth = 6;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.MinimumWidth = 6;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
             // 
             // contenedorRegistrarVenta
             // 
@@ -295,12 +334,12 @@
             this.DTFechaVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTFechaVenta.Location = new System.Drawing.Point(29, 74);
             this.DTFechaVenta.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.DTFechaVenta.MaxDate = new System.DateTime(2024, 10, 3, 0, 0, 0, 0);
-            this.DTFechaVenta.MinDate = new System.DateTime(2024, 10, 3, 0, 0, 0, 0);
+            this.DTFechaVenta.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTFechaVenta.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTFechaVenta.Name = "DTFechaVenta";
             this.DTFechaVenta.Size = new System.Drawing.Size(160, 28);
             this.DTFechaVenta.TabIndex = 23;
-            this.DTFechaVenta.Value = new System.DateTime(2024, 10, 3, 0, 0, 0, 0);
+            this.DTFechaVenta.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // LTipoDoc
             // 
@@ -376,6 +415,20 @@
             this.gbInformacionProducto.TabIndex = 24;
             this.gbInformacionProducto.TabStop = false;
             this.gbInformacionProducto.Text = "Información de Producto";
+            // 
+            // cbProductos
+            // 
+            this.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProductos.ForeColor = System.Drawing.Color.Black;
+            this.cbProductos.FormattingEnabled = true;
+            this.cbProductos.Items.AddRange(new object[] {
+            "Nombre",
+            "Codigo"});
+            this.cbProductos.Location = new System.Drawing.Point(19, 80);
+            this.cbProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.cbProductos.Name = "cbProductos";
+            this.cbProductos.Size = new System.Drawing.Size(107, 29);
+            this.cbProductos.TabIndex = 24;
             // 
             // numCantidad
             // 
@@ -474,11 +527,10 @@
             // 
             this.TBbuscarProducto.Location = new System.Drawing.Point(133, 81);
             this.TBbuscarProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.TBbuscarProducto.MaxLength = 5;
+            this.TBbuscarProducto.MaxLength = 100;
             this.TBbuscarProducto.Name = "TBbuscarProducto";
             this.TBbuscarProducto.Size = new System.Drawing.Size(156, 28);
             this.TBbuscarProducto.TabIndex = 4;
-            this.TBbuscarProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // LProducto
             // 
@@ -574,59 +626,6 @@
             this.LNroDocumento.Size = new System.Drawing.Size(191, 21);
             this.LNroDocumento.TabIndex = 2;
             this.LNroDocumento.Text = "Número Documento:";
-            // 
-            // cbProductos
-            // 
-            this.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductos.ForeColor = System.Drawing.Color.Black;
-            this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Items.AddRange(new object[] {
-            "Nombre",
-            "Codigo"});
-            this.cbProductos.Location = new System.Drawing.Point(19, 80);
-            this.cbProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.cbProductos.Name = "cbProductos";
-            this.cbProductos.Size = new System.Drawing.Size(107, 29);
-            this.cbProductos.TabIndex = 24;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.MinimumWidth = 6;
-            this.producto.Name = "producto";
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.MinimumWidth = 6;
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
             // 
             // registrarVentas
             // 

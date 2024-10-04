@@ -110,6 +110,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-       
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBcuit.Text))
+            {
+                MessageBox.Show("Debe ingresar el CUIT del proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     } 
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
@@ -116,12 +116,12 @@
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTfin.Location = new System.Drawing.Point(616, 58);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
-            this.DTfin.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
-            this.DTfin.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTfin.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
             this.DTfin.Size = new System.Drawing.Size(147, 28);
             this.DTfin.TabIndex = 4;
-            this.DTfin.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTfin.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -142,12 +142,12 @@
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTinicio.Location = new System.Drawing.Point(309, 58);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
-            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
-            this.DTinicio.MinDate = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
             this.DTinicio.Size = new System.Drawing.Size(138, 28);
             this.DTinicio.TabIndex = 2;
-            this.DTinicio.Value = new System.DateTime(2024, 10, 2, 0, 0, 0, 0);
+            this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -166,14 +166,14 @@
             this.listadoReporteVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -187,14 +187,14 @@
             this.precioVenta,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoReporteVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteVentas.GridColor = System.Drawing.SystemColors.Control;
             this.listadoReporteVentas.Location = new System.Drawing.Point(0, 256);

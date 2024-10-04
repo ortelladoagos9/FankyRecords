@@ -37,9 +37,9 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
-                    decimal subtotal = numCantidad.Value * Convert.ToDecimal(TBPrecio.Text);
-                    sumaSubtotal += subtotal;
-                    TBTotalAPagar.Text = sumaSubtotal.ToString();
+                   // decimal subtotal = numCantidad.Value * Convert.ToDecimal(TBPrecio.Text);
+                  //  sumaSubtotal += subtotal;
+                   // TBTotalAPagar.Text = sumaSubtotal.ToString();
 
                     int n = listadoVentaProducto.Rows.Add();
 
@@ -48,7 +48,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoVentaProducto.Rows[n].Cells[2].Value = TBPrecio.Text;
                     listadoVentaProducto.Rows[n].Cells[3].Value = TBStock.Text;
                     listadoVentaProducto.Rows[n].Cells[3].Value = numCantidad.Text;
-                    listadoVentaProducto.Rows[n].Cells[4].Value = subtotal;
+                    listadoVentaProducto.Rows[n].Cells[4].Value = " ";
 
                     // limpia campos
                     TBPrecio.Clear();
@@ -82,7 +82,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnCrearVenta_Click(object sender, EventArgs e)
         {
-            delayTimer.Stop();
+            //delayTimer.Stop();
             
             if (C_negocio.Validaciones.EstaVacio(TBTotalAPagar.Text) ||
                C_negocio.Validaciones.EstaVacio(TBRecibe.Text) ||
@@ -172,7 +172,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-
+            if (C_negocio.Validaciones.EstaVacio(TBNroDocumento.Text))
+            {
+                MessageBox.Show("Debe ingresar el DNI del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

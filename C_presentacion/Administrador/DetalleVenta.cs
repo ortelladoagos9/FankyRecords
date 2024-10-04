@@ -27,5 +27,13 @@ namespace FankyRecords.C_presentacion.Administrador
             // Limpiar todas las filas del DataGridView
             listadoVentas.Rows.Clear();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBNroDoc.Text))
+            {
+                MessageBox.Show("Debe ingresar el numero de documento para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

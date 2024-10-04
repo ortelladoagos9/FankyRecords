@@ -17,24 +17,6 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
 
-        private void Bconecta_Click(object sender, EventArgs e)
-        {
-
-            if (C_negocio.Validaciones.EstaVacio(TBbaseDatos.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void Bruta_Click(object sender, EventArgs e)
-        {
-            if (C_negocio.Validaciones.EstaVacio(TBbaseDatos.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void Bbackup_Click(object sender, EventArgs e)
         {
@@ -47,7 +29,8 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeBackup())
                 {
-
+                    TBrutaGuardar.Clear();
+                    TBbaseDatos.Clear();
                 }
             }
         }
@@ -70,7 +53,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-       
+        private void BtnNavegar_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK) 
+            {  
+                 TBrutaGuardar.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
     }
 
 }
