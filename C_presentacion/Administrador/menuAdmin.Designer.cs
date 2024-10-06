@@ -425,6 +425,7 @@
             // 
             // labUsuarioRolAdministrador
             // 
+            this.labUsuarioRolAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labUsuarioRolAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolAdministrador.ForeColor = System.Drawing.Color.Gold;
@@ -437,6 +438,7 @@
             // 
             // labAdministrador
             // 
+            this.labAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labAdministrador.BackColor = System.Drawing.Color.DarkRed;
             this.labAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAdministrador.ForeColor = System.Drawing.Color.Gold;

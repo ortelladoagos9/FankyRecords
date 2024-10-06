@@ -96,6 +96,7 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLimpiar.BackColor = System.Drawing.Color.White;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -113,6 +114,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
@@ -129,14 +131,17 @@
             // 
             // TBNroDoc
             // 
+            this.TBNroDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBNroDoc.Location = new System.Drawing.Point(945, 102);
             this.TBNroDoc.Name = "TBNroDoc";
+            this.TBNroDoc.ShortcutsEnabled = false;
             this.TBNroDoc.Size = new System.Drawing.Size(200, 28);
             this.TBNroDoc.TabIndex = 41;
             this.TBNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // LNroDoc
             // 
+            this.LNroDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNroDoc.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LNroDoc.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNroDoc.ForeColor = System.Drawing.Color.DarkRed;
@@ -158,8 +163,8 @@
             // 
             // LDetalleVenta
             // 
+            this.LDetalleVenta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LDetalleVenta.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LDetalleVenta.Dock = System.Windows.Forms.DockStyle.Left;
             this.LDetalleVenta.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDetalleVenta.ForeColor = System.Drawing.Color.DarkRed;
             this.LDetalleVenta.Location = new System.Drawing.Point(0, 0);
@@ -172,6 +177,7 @@
             // 
             // TBCambio
             // 
+            this.TBCambio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBCambio.Location = new System.Drawing.Point(1016, 377);
             this.TBCambio.Name = "TBCambio";
             this.TBCambio.ReadOnly = true;
@@ -180,6 +186,7 @@
             // 
             // TBRecibe
             // 
+            this.TBRecibe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBRecibe.Location = new System.Drawing.Point(864, 377);
             this.TBRecibe.Name = "TBRecibe";
             this.TBRecibe.ReadOnly = true;
@@ -189,6 +196,7 @@
             // 
             // LCambio
             // 
+            this.LCambio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LCambio.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LCambio.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCambio.ForeColor = System.Drawing.Color.DarkRed;
@@ -200,6 +208,7 @@
             // 
             // LRecibe
             // 
+            this.LRecibe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LRecibe.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LRecibe.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRecibe.ForeColor = System.Drawing.Color.DarkRed;
@@ -211,6 +220,7 @@
             // 
             // TBTotalAPagar
             // 
+            this.TBTotalAPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBTotalAPagar.Location = new System.Drawing.Point(715, 377);
             this.TBTotalAPagar.Name = "TBTotalAPagar";
             this.TBTotalAPagar.ReadOnly = true;
@@ -219,6 +229,7 @@
             // 
             // LTotalAPagar
             // 
+            this.LTotalAPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTotalAPagar.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LTotalAPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTotalAPagar.ForeColor = System.Drawing.Color.DarkRed;
@@ -230,6 +241,7 @@
             // 
             // gbInformacionCliente
             // 
+            this.gbInformacionCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInformacionCliente.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.gbInformacionCliente.Controls.Add(this.TBNombreCompleto);
             this.gbInformacionCliente.Controls.Add(this.TBNroDocumento);
@@ -280,6 +292,7 @@
             // 
             // gbInformacionVentas
             // 
+            this.gbInformacionVentas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInformacionVentas.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.gbInformacionVentas.Controls.Add(this.LUsuario);
             this.gbInformacionVentas.Controls.Add(this.TBUsuario);
@@ -353,12 +366,12 @@
             this.listadoVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -373,9 +386,9 @@
             this.subtotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listadoVentas.DefaultCellStyle = dataGridViewCellStyle2;

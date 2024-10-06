@@ -123,7 +123,7 @@
             this.SubmenuDetalleVentasVendedor.IconSize = 25;
             this.SubmenuDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleVentasVendedor.Name = "SubmenuDetalleVentasVendedor";
-            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(229, 32);
+            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(226, 32);
             this.SubmenuDetalleVentasVendedor.Text = "Detalle de venta";
             this.SubmenuDetalleVentasVendedor.Click += new System.EventHandler(this.SubmenuDetalleVentasVendedor_Click);
             // 
@@ -209,11 +209,12 @@
             // 
             // labVendedor
             // 
+            this.labVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labVendedor.AutoSize = true;
             this.labVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.labVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labVendedor.ForeColor = System.Drawing.Color.Gold;
-            this.labVendedor.Location = new System.Drawing.Point(879, 35);
+            this.labVendedor.Location = new System.Drawing.Point(941, 35);
             this.labVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labVendedor.Name = "labVendedor";
             this.labVendedor.Size = new System.Drawing.Size(94, 20);
@@ -248,11 +249,12 @@
             // 
             // labUsuarioRolVendedor
             // 
+            this.labUsuarioRolVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labUsuarioRolVendedor.AutoSize = true;
             this.labUsuarioRolVendedor.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolVendedor.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolVendedor.ForeColor = System.Drawing.Color.Gold;
-            this.labUsuarioRolVendedor.Location = new System.Drawing.Point(795, 35);
+            this.labUsuarioRolVendedor.Location = new System.Drawing.Point(857, 35);
             this.labUsuarioRolVendedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labUsuarioRolVendedor.Name = "labUsuarioRolVendedor";
             this.labUsuarioRolVendedor.Size = new System.Drawing.Size(86, 20);

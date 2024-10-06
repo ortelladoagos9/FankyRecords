@@ -31,14 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
-            this.contenedorLista = new System.Windows.Forms.Panel();
-            this.Lbuscar = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.TBBuscador = new System.Windows.Forms.TextBox();
-            this.CBbuscarProductos = new System.Windows.Forms.ComboBox();
-            this.LListaProductos = new System.Windows.Forms.Label();
             this.cod_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +39,14 @@
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contenedorLista = new System.Windows.Forms.Panel();
+            this.Lbuscar = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.TBBuscador = new System.Windows.Forms.TextBox();
+            this.CBbuscarProductos = new System.Windows.Forms.ComboBox();
+            this.LListaProductos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,12 +58,12 @@
             this.listadoProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -81,18 +81,71 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listadoProductos.GridColor = System.Drawing.Color.White;
             this.listadoProductos.Location = new System.Drawing.Point(0, 90);
             this.listadoProductos.Margin = new System.Windows.Forms.Padding(4);
             this.listadoProductos.Name = "listadoProductos";
             this.listadoProductos.RowHeadersWidth = 51;
             this.listadoProductos.Size = new System.Drawing.Size(1182, 564);
             this.listadoProductos.TabIndex = 21;
+            // 
+            // cod_prod
+            // 
+            this.cod_prod.HeaderText = "Codigo";
+            this.cod_prod.MinimumWidth = 6;
+            this.cod_prod.Name = "cod_prod";
+            // 
+            // nombre_prod
+            // 
+            this.nombre_prod.HeaderText = "Nombre";
+            this.nombre_prod.MinimumWidth = 6;
+            this.nombre_prod.Name = "nombre_prod";
+            this.nombre_prod.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.MinimumWidth = 6;
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            // 
+            // precio_venta
+            // 
+            this.precio_venta.HeaderText = "Precio Venta";
+            this.precio_venta.MinimumWidth = 6;
+            this.precio_venta.Name = "precio_venta";
+            this.precio_venta.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Visible = false;
             // 
             // contenedorLista
             // 
@@ -210,60 +263,6 @@
             this.LListaProductos.TabIndex = 12;
             this.LListaProductos.Text = "Lista de Productos";
             this.LListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cod_prod
-            // 
-            this.cod_prod.HeaderText = "Codigo";
-            this.cod_prod.MinimumWidth = 6;
-            this.cod_prod.Name = "cod_prod";
-            // 
-            // nombre_prod
-            // 
-            this.nombre_prod.HeaderText = "Nombre";
-            this.nombre_prod.MinimumWidth = 6;
-            this.nombre_prod.Name = "nombre_prod";
-            this.nombre_prod.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.HeaderText = "Precio Venta";
-            this.precio_venta.MinimumWidth = 6;
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Visible = false;
             // 
             // BuscarProducto
             // 

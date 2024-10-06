@@ -237,6 +237,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\FankyRecords.exe.config" />
     <None Include="packages.config" />
     <None Include="packages\FontAwesome.Sharp.6.6.0\.signature.p7s" />
     <None Include="packages\FontAwesome.Sharp.6.6.0\FontAwesome.Sharp.6.6.0.nupkg" />
@@ -264,12 +265,18 @@
     <None Include="Resources\fondoFanky2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\FankyRecords.exe" />
+    <Content Include="bin\Debug\FankyRecords.pdb" />
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net6.0-windows7.0\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net7.0-windows7.0\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net8.0-windows7.0\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\netcoreapp3.1\FontAwesome.Sharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

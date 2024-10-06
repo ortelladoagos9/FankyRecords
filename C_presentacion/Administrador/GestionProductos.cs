@@ -52,33 +52,21 @@ namespace FankyRecords.C_presentacion.Administrador
                         listadoProductos.Rows[n].Cells[5].Value = "Inactivo";
                     }
 
-                    // limpia campos
-                    TBcodigo_prod.Clear();
-                    TBnombre_prod.Clear();
-                    TBdescripcion.Clear();
-                    TBPrecio_Venta.Clear();
-                    CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+                    Limpiar();
 
                 }
             }
         }
 
-        private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            C_negocio.Validaciones.EsLetra(e);
-        }
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsNumero(e);
-        }
-
-        
+        } 
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar todas las filas del DataGridView
             listadoProductos.Rows.Clear();
-
         }
 
         private void Beliminar_Click(object sender, EventArgs e)
@@ -94,12 +82,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
-                    // limpia campos
-                    TBcodigo_prod.Clear();
-                    TBnombre_prod.Clear();
-                    TBdescripcion.Clear();
-                    TBPrecio_Venta.Clear();
-                    CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+                    Limpiar();
                 }
             }
         }
@@ -117,12 +100,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
-                    // limpia campos
-                    TBcodigo_prod.Clear();
-                    TBnombre_prod.Clear();
-                    TBdescripcion.Clear();
-                    TBPrecio_Venta.Clear();
-                    CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+                    Limpiar();
                 }
             }
         }
@@ -133,6 +111,15 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Limpiar()
+        {
+            TBcodigo_prod.Clear();
+            TBnombre_prod.Clear();
+            TBdescripcion.Clear();
+            TBPrecio_Venta.Clear();
+            CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
         }
     }
 }

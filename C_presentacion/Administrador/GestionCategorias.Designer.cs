@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.rBinactivo = new System.Windows.Forms.RadioButton();
@@ -51,12 +53,12 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.listadoCategorias = new System.Windows.Forms.DataGridView();
-            this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             this.contenedorGestionCategorias.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
@@ -86,7 +88,9 @@
             // 
             // rBinactivo
             // 
+            this.rBinactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBinactivo.AutoSize = true;
+            this.rBinactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBinactivo.Location = new System.Drawing.Point(592, 160);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(5);
@@ -99,8 +103,10 @@
             // 
             // rBactivo
             // 
+            this.rBactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBactivo.AutoSize = true;
             this.rBactivo.Checked = true;
+            this.rBactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBactivo.Location = new System.Drawing.Point(488, 160);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(5);
@@ -113,6 +119,7 @@
             // 
             // LEstado
             // 
+            this.LEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEstado.AutoSize = true;
             this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEstado.Location = new System.Drawing.Point(463, 124);
@@ -124,6 +131,7 @@
             // 
             // TBdescripcion
             // 
+            this.TBdescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBdescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdescripcion.Location = new System.Drawing.Point(162, 157);
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -134,6 +142,7 @@
             // 
             // LDescripcion
             // 
+            this.LDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDescripcion.AutoSize = true;
             this.LDescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDescripcion.Location = new System.Drawing.Point(162, 124);
@@ -156,8 +165,8 @@
             // 
             // LGestionCategorias
             // 
+            this.LGestionCategorias.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LGestionCategorias.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LGestionCategorias.Dock = System.Windows.Forms.DockStyle.Left;
             this.LGestionCategorias.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LGestionCategorias.ForeColor = System.Drawing.Color.DarkRed;
             this.LGestionCategorias.Location = new System.Drawing.Point(0, 0);
@@ -184,6 +193,7 @@
             // 
             // Beliminar
             // 
+            this.Beliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
             this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -207,6 +217,7 @@
             // 
             // Beditar
             // 
+            this.Beditar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Beditar.BackColor = System.Drawing.Color.Navy;
             this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -230,6 +241,7 @@
             // 
             // Bguardar
             // 
+            this.Bguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
             this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -366,13 +378,13 @@
             this.listadoCategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoCategorias.BackgroundColor = System.Drawing.Color.White;
             this.listadoCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -381,26 +393,48 @@
             this.Descripcion,
             this.Estado});
             this.listadoCategorias.DataSource = this.categoriasBindingSource2;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoCategorias.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoCategorias.DefaultCellStyle = dataGridViewCellStyle3;
             this.listadoCategorias.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoCategorias.Location = new System.Drawing.Point(0, 445);
             this.listadoCategorias.Margin = new System.Windows.Forms.Padding(5);
             this.listadoCategorias.Name = "listadoCategorias";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listadoCategorias.RowHeadersWidth = 51;
             this.listadoCategorias.Size = new System.Drawing.Size(1182, 209);
             this.listadoCategorias.TabIndex = 25;
             this.listadoCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCategorias_CellClick);
             // 
+            // categoriasBindingSource2
+            // 
+            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
+            // categoriasBindingSource1
+            // 
+            this.categoriasBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
             // Id_categoria
             // 
             this.Id_categoria.DataPropertyName = "Id_categoria";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Id_categoria.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id_categoria.HeaderText = "Id_categoria";
             this.Id_categoria.MinimumWidth = 6;
             this.Id_categoria.Name = "Id_categoria";
@@ -418,18 +452,6 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
-            // 
-            // categoriasBindingSource2
-            // 
-            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
-            // categoriasBindingSource1
-            // 
-            this.categoriasBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // GestionCategorias
             // 

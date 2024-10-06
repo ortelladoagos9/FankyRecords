@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnNavegar = new System.Windows.Forms.Button();
             this.Bcancelar = new FontAwesome.Sharp.IconButton();
             this.Bbackup = new FontAwesome.Sharp.IconButton();
             this.TBrutaGuardar = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedorDetalleCompra = new System.Windows.Forms.Panel();
-            this.BtnNavegar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.SuspendLayout();
@@ -57,8 +57,21 @@
             this.panel1.Size = new System.Drawing.Size(1182, 654);
             this.panel1.TabIndex = 0;
             // 
+            // BtnNavegar
+            // 
+            this.BtnNavegar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnNavegar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNavegar.Location = new System.Drawing.Point(712, 257);
+            this.BtnNavegar.Name = "BtnNavegar";
+            this.BtnNavegar.Size = new System.Drawing.Size(128, 30);
+            this.BtnNavegar.TabIndex = 8;
+            this.BtnNavegar.Text = "Navegar";
+            this.BtnNavegar.UseVisualStyleBackColor = true;
+            this.BtnNavegar.Click += new System.EventHandler(this.BtnNavegar_Click);
+            // 
             // Bcancelar
             // 
+            this.Bcancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bcancelar.BackColor = System.Drawing.Color.White;
             this.Bcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bcancelar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,6 +91,7 @@
             // 
             // Bbackup
             // 
+            this.Bbackup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bbackup.BackColor = System.Drawing.Color.White;
             this.Bbackup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bbackup.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,6 +111,7 @@
             // 
             // TBrutaGuardar
             // 
+            this.TBrutaGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBrutaGuardar.Location = new System.Drawing.Point(487, 257);
             this.TBrutaGuardar.Name = "TBrutaGuardar";
             this.TBrutaGuardar.Size = new System.Drawing.Size(210, 30);
@@ -104,6 +119,7 @@
             // 
             // TBbaseDatos
             // 
+            this.TBbaseDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBbaseDatos.Location = new System.Drawing.Point(487, 315);
             this.TBbaseDatos.Name = "TBbaseDatos";
             this.TBbaseDatos.Size = new System.Drawing.Size(210, 30);
@@ -111,6 +127,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(283, 266);
@@ -121,6 +138,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(242, 324);
@@ -131,7 +149,7 @@
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -150,17 +168,6 @@
             this.contenedorDetalleCompra.Name = "contenedorDetalleCompra";
             this.contenedorDetalleCompra.Size = new System.Drawing.Size(1182, 74);
             this.contenedorDetalleCompra.TabIndex = 24;
-            // 
-            // BtnNavegar
-            // 
-            this.BtnNavegar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNavegar.Location = new System.Drawing.Point(712, 257);
-            this.BtnNavegar.Name = "BtnNavegar";
-            this.BtnNavegar.Size = new System.Drawing.Size(128, 30);
-            this.BtnNavegar.TabIndex = 8;
-            this.BtnNavegar.Text = "Navegar";
-            this.BtnNavegar.UseVisualStyleBackColor = true;
-            this.BtnNavegar.Click += new System.EventHandler(this.BtnNavegar_Click);
             // 
             // backup
             // 

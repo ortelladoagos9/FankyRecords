@@ -94,8 +94,8 @@
             // 
             // LGestionUsuarios
             // 
+            this.LGestionUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LGestionUsuarios.Dock = System.Windows.Forms.DockStyle.Left;
             this.LGestionUsuarios.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LGestionUsuarios.ForeColor = System.Drawing.Color.DarkRed;
             this.LGestionUsuarios.Location = new System.Drawing.Point(0, 0);
@@ -108,10 +108,11 @@
             // 
             // LNombre
             // 
+            this.LNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNombre.AutoSize = true;
             this.LNombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.DarkRed;
-            this.LNombre.Location = new System.Drawing.Point(14, 25);
+            this.LNombre.Location = new System.Drawing.Point(59, 48);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
             this.LNombre.Size = new System.Drawing.Size(80, 21);
@@ -120,9 +121,10 @@
             // 
             // LApellido
             // 
+            this.LApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LApellido.AutoSize = true;
             this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LApellido.Location = new System.Drawing.Point(13, 90);
+            this.LApellido.Location = new System.Drawing.Point(59, 113);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(82, 21);
@@ -131,9 +133,10 @@
             // 
             // LDni
             // 
+            this.LDni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDni.AutoSize = true;
             this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDni.Location = new System.Drawing.Point(13, 155);
+            this.LDni.Location = new System.Drawing.Point(59, 178);
             this.LDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDni.Name = "LDni";
             this.LDni.Size = new System.Drawing.Size(46, 21);
@@ -142,9 +145,10 @@
             // 
             // LFechaNac
             // 
+            this.LFechaNac.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LFechaNac.AutoSize = true;
             this.LFechaNac.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaNac.Location = new System.Drawing.Point(14, 220);
+            this.LFechaNac.Location = new System.Drawing.Point(59, 243);
             this.LFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LFechaNac.Name = "LFechaNac";
             this.LFechaNac.Size = new System.Drawing.Size(194, 21);
@@ -153,9 +157,10 @@
             // 
             // LTelefono
             // 
+            this.LTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTelefono.AutoSize = true;
             this.LTelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTelefono.Location = new System.Drawing.Point(571, 25);
+            this.LTelefono.Location = new System.Drawing.Point(614, 48);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
             this.LTelefono.Size = new System.Drawing.Size(87, 21);
@@ -164,42 +169,49 @@
             // 
             // TBnombre
             // 
+            this.TBnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBnombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombre.Location = new System.Drawing.Point(17, 54);
+            this.TBnombre.Location = new System.Drawing.Point(59, 77);
             this.TBnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
+            this.TBnombre.ShortcutsEnabled = false;
             this.TBnombre.Size = new System.Drawing.Size(242, 28);
             this.TBnombre.TabIndex = 5;
             this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // TBapellido
             // 
+            this.TBapellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBapellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBapellido.Location = new System.Drawing.Point(16, 120);
+            this.TBapellido.Location = new System.Drawing.Point(59, 143);
             this.TBapellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
+            this.TBapellido.ShortcutsEnabled = false;
             this.TBapellido.Size = new System.Drawing.Size(243, 28);
             this.TBapellido.TabIndex = 6;
             this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // TBdni
             // 
+            this.TBdni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBdni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdni.Location = new System.Drawing.Point(16, 184);
+            this.TBdni.Location = new System.Drawing.Point(59, 207);
             this.TBdni.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
+            this.TBdni.ShortcutsEnabled = false;
             this.TBdni.Size = new System.Drawing.Size(242, 28);
             this.TBdni.TabIndex = 7;
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // LDireccion
             // 
+            this.LDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDireccion.AutoSize = true;
             this.LDireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDireccion.Location = new System.Drawing.Point(293, 25);
+            this.LDireccion.Location = new System.Drawing.Point(336, 48);
             this.LDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDireccion.Name = "LDireccion";
             this.LDireccion.Size = new System.Drawing.Size(95, 21);
@@ -208,8 +220,9 @@
             // 
             // TBtelefono
             // 
+            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(574, 54);
+            this.TBtelefono.Location = new System.Drawing.Point(614, 77);
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBtelefono.Mask = "(000)0000000";
             this.TBtelefono.Name = "TBtelefono";
@@ -218,9 +231,10 @@
             // 
             // DTFechanac
             // 
+            this.DTFechanac.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DTFechanac.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechanac.Location = new System.Drawing.Point(17, 249);
+            this.DTFechanac.Location = new System.Drawing.Point(59, 272);
             this.DTFechanac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTFechanac.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             this.DTFechanac.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
@@ -231,8 +245,9 @@
             // 
             // TBdireccion
             // 
+            this.TBdireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBdireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdireccion.Location = new System.Drawing.Point(296, 54);
+            this.TBdireccion.Location = new System.Drawing.Point(336, 77);
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdireccion.MaxLength = 200;
             this.TBdireccion.Name = "TBdireccion";
@@ -241,9 +256,10 @@
             // 
             // LEmail
             // 
+            this.LEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEmail.AutoSize = true;
             this.LEmail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmail.Location = new System.Drawing.Point(293, 90);
+            this.LEmail.Location = new System.Drawing.Point(336, 113);
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
             this.LEmail.Size = new System.Drawing.Size(61, 21);
@@ -252,8 +268,9 @@
             // 
             // TBemail
             // 
+            this.TBemail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBemail.Location = new System.Drawing.Point(297, 120);
+            this.TBemail.Location = new System.Drawing.Point(336, 143);
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
@@ -262,9 +279,10 @@
             // 
             // LContraseña
             // 
+            this.LContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LContraseña.AutoSize = true;
             this.LContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LContraseña.Location = new System.Drawing.Point(293, 156);
+            this.LContraseña.Location = new System.Drawing.Point(336, 179);
             this.LContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LContraseña.Name = "LContraseña";
             this.LContraseña.Size = new System.Drawing.Size(112, 21);
@@ -273,9 +291,10 @@
             // 
             // LConfirmarContraseña
             // 
+            this.LConfirmarContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LConfirmarContraseña.AutoSize = true;
             this.LConfirmarContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LConfirmarContraseña.Location = new System.Drawing.Point(293, 220);
+            this.LConfirmarContraseña.Location = new System.Drawing.Point(336, 243);
             this.LConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LConfirmarContraseña.Name = "LConfirmarContraseña";
             this.LConfirmarContraseña.Size = new System.Drawing.Size(209, 21);
@@ -284,9 +303,10 @@
             // 
             // LRol
             // 
+            this.LRol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LRol.AutoSize = true;
             this.LRol.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LRol.Location = new System.Drawing.Point(571, 90);
+            this.LRol.Location = new System.Drawing.Point(614, 113);
             this.LRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRol.Name = "LRol";
             this.LRol.Size = new System.Drawing.Size(40, 21);
@@ -295,9 +315,10 @@
             // 
             // LEstado
             // 
+            this.LEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEstado.AutoSize = true;
             this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEstado.Location = new System.Drawing.Point(571, 220);
+            this.LEstado.Location = new System.Drawing.Point(614, 243);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
             this.LEstado.Size = new System.Drawing.Size(70, 21);
@@ -306,19 +327,23 @@
             // 
             // TBclave
             // 
+            this.TBclave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBclave.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBclave.Location = new System.Drawing.Point(296, 184);
+            this.TBclave.Location = new System.Drawing.Point(336, 207);
             this.TBclave.MaxLength = 10;
             this.TBclave.Name = "TBclave";
+            this.TBclave.ShortcutsEnabled = false;
             this.TBclave.Size = new System.Drawing.Size(242, 28);
             this.TBclave.TabIndex = 23;
             // 
             // TBconfirmarClave
             // 
+            this.TBconfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBconfirmarClave.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBconfirmarClave.Location = new System.Drawing.Point(296, 249);
+            this.TBconfirmarClave.Location = new System.Drawing.Point(336, 272);
             this.TBconfirmarClave.MaxLength = 10;
             this.TBconfirmarClave.Name = "TBconfirmarClave";
+            this.TBconfirmarClave.ShortcutsEnabled = false;
             this.TBconfirmarClave.Size = new System.Drawing.Size(242, 28);
             this.TBconfirmarClave.TabIndex = 24;
             // 
@@ -360,16 +385,18 @@
             // 
             // rutaFoto
             // 
+            this.rutaFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rutaFoto.Location = new System.Drawing.Point(670, 173);
+            this.rutaFoto.Location = new System.Drawing.Point(713, 196);
             this.rutaFoto.Name = "rutaFoto";
             this.rutaFoto.Size = new System.Drawing.Size(146, 28);
             this.rutaFoto.TabIndex = 31;
             // 
             // Bfoto
             // 
+            this.Bfoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bfoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bfoto.Location = new System.Drawing.Point(575, 172);
+            this.Bfoto.Location = new System.Drawing.Point(614, 195);
             this.Bfoto.Name = "Bfoto";
             this.Bfoto.Size = new System.Drawing.Size(89, 28);
             this.Bfoto.TabIndex = 30;
@@ -379,6 +406,7 @@
             // 
             // CBRol
             // 
+            this.CBRol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBRol.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -388,16 +416,18 @@
             "Administrativo",
             "Vendedor",
             "Administrador"});
-            this.CBRol.Location = new System.Drawing.Point(574, 120);
+            this.CBRol.Location = new System.Drawing.Point(614, 143);
             this.CBRol.Name = "CBRol";
             this.CBRol.Size = new System.Drawing.Size(242, 29);
             this.CBRol.TabIndex = 29;
             // 
             // rBinactivo
             // 
+            this.rBinactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBinactivo.AutoSize = true;
+            this.rBinactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBinactivo.Location = new System.Drawing.Point(713, 253);
+            this.rBinactivo.Location = new System.Drawing.Point(756, 276);
             this.rBinactivo.Name = "rBinactivo";
             this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 27;
@@ -407,10 +437,12 @@
             // 
             // rBactivo
             // 
+            this.rBactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBactivo.AutoSize = true;
             this.rBactivo.Checked = true;
+            this.rBactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBactivo.Location = new System.Drawing.Point(615, 253);
+            this.rBactivo.Location = new System.Drawing.Point(658, 276);
             this.rBactivo.Name = "rBactivo";
             this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 26;
@@ -424,7 +456,7 @@
             this.listadoUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -450,12 +482,11 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listadoUsuarios.GridColor = System.Drawing.Color.White;
             this.listadoUsuarios.Location = new System.Drawing.Point(0, 445);
             this.listadoUsuarios.Name = "listadoUsuarios";
             this.listadoUsuarios.RowHeadersWidth = 51;
@@ -591,6 +622,9 @@
             // 
             this.contenedorFotoBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.contenedorFotoBotones.Controls.Add(this.picFotoUsuario);
+            this.contenedorFotoBotones.Controls.Add(this.Bguardar);
+            this.contenedorFotoBotones.Controls.Add(this.Beliminar);
+            this.contenedorFotoBotones.Controls.Add(this.Beditar);
             this.contenedorFotoBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.contenedorFotoBotones.ForeColor = System.Drawing.Color.Transparent;
             this.contenedorFotoBotones.Location = new System.Drawing.Point(0, 0);
@@ -600,13 +634,14 @@
             // 
             // picFotoUsuario
             // 
+            this.picFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
             this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
             this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFotoUsuario.Location = new System.Drawing.Point(46, 57);
+            this.picFotoUsuario.Location = new System.Drawing.Point(38, 45);
             this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picFotoUsuario.Name = "picFotoUsuario";
-            this.picFotoUsuario.Size = new System.Drawing.Size(183, 189);
+            this.picFotoUsuario.Size = new System.Drawing.Size(183, 192);
             this.picFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFotoUsuario.TabIndex = 2;
             this.picFotoUsuario.TabStop = false;
@@ -686,6 +721,7 @@
             // 
             // Beliminar
             // 
+            this.Beliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Beliminar.BackColor = System.Drawing.Color.DarkRed;
             this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -695,7 +731,7 @@
             this.Beliminar.IconColor = System.Drawing.Color.White;
             this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(46, 336);
+            this.Beliminar.Location = new System.Drawing.Point(38, 360);
             this.Beliminar.Name = "Beliminar";
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(183, 31);
@@ -708,6 +744,7 @@
             // 
             // Beditar
             // 
+            this.Beditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Beditar.BackColor = System.Drawing.Color.Navy;
             this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -717,7 +754,7 @@
             this.Beditar.IconColor = System.Drawing.Color.White;
             this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(46, 300);
+            this.Beditar.Location = new System.Drawing.Point(38, 313);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beditar.Size = new System.Drawing.Size(183, 31);
@@ -730,6 +767,7 @@
             // 
             // Bguardar
             // 
+            this.Bguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Bguardar.BackColor = System.Drawing.Color.DarkGreen;
             this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -739,7 +777,7 @@
             this.Bguardar.IconColor = System.Drawing.Color.White;
             this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(46, 264);
+            this.Bguardar.Location = new System.Drawing.Point(38, 266);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Bguardar.Size = new System.Drawing.Size(183, 31);
@@ -758,9 +796,6 @@
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
             this.Controls.Add(this.contenedorGestionUsuarios);
-            this.Controls.Add(this.Beliminar);
-            this.Controls.Add(this.Beditar);
-            this.Controls.Add(this.Bguardar);
             this.Controls.Add(this.contenedorFotoBotones);
             this.Controls.Add(this.contenedorLista);
             this.Controls.Add(this.listadoUsuarios);

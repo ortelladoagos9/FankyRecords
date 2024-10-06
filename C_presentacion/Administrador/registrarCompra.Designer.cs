@@ -94,7 +94,7 @@
             // 
             // LRegistrarCompra
             // 
-            this.LRegistrarCompra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LRegistrarCompra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
             this.LRegistrarCompra.Location = new System.Drawing.Point(0, 0);
@@ -122,6 +122,7 @@
             // 
             // btnRegistrarCompra
             // 
+            this.btnRegistrarCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
             this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
@@ -140,6 +141,7 @@
             // 
             // TBtotalPagar
             // 
+            this.TBtotalPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBtotalPagar.Location = new System.Drawing.Point(68, 365);
             this.TBtotalPagar.Name = "TBtotalPagar";
@@ -149,6 +151,7 @@
             // 
             // LTotalPagar
             // 
+            this.LTotalPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTotalPagar.AutoSize = true;
             this.LTotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTotalPagar.ForeColor = System.Drawing.Color.DarkRed;
@@ -160,6 +163,7 @@
             // 
             // btnAgregarProd
             // 
+            this.btnAgregarProd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarProd.BackColor = System.Drawing.Color.White;
             this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAgregarProd.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,7 +172,7 @@
             this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
             this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarProd.IconSize = 25;
-            this.btnAgregarProd.Location = new System.Drawing.Point(68, 91);
+            this.btnAgregarProd.Location = new System.Drawing.Point(68, 203);
             this.btnAgregarProd.Name = "btnAgregarProd";
             this.btnAgregarProd.Size = new System.Drawing.Size(129, 58);
             this.btnAgregarProd.TabIndex = 0;
@@ -183,12 +187,12 @@
             this.listaCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listaCompras.BackgroundColor = System.Drawing.Color.White;
             this.listaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listaCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listaCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -204,12 +208,11 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listaCompras.DefaultCellStyle = dataGridViewCellStyle2;
             this.listaCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listaCompras.GridColor = System.Drawing.Color.White;
             this.listaCompras.Location = new System.Drawing.Point(0, 445);
             this.listaCompras.Name = "listaCompras";
             this.listaCompras.RowHeadersWidth = 51;
@@ -266,6 +269,7 @@
             // 
             // gbInfoProducto
             // 
+            this.gbInfoProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInfoProducto.Controls.Add(this.TBCodProd);
             this.gbInfoProducto.Controls.Add(this.LCodigo);
             this.gbInfoProducto.Controls.Add(this.cbProductos);
@@ -392,6 +396,7 @@
             // 
             this.TBprecio.Location = new System.Drawing.Point(592, 83);
             this.TBprecio.Name = "TBprecio";
+            this.TBprecio.ShortcutsEnabled = false;
             this.TBprecio.Size = new System.Drawing.Size(141, 28);
             this.TBprecio.TabIndex = 8;
             this.TBprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
@@ -415,6 +420,7 @@
             // 
             // gbInfoProveedor
             // 
+            this.gbInfoProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInfoProveedor.Controls.Add(this.btnBuscarProveedor);
             this.gbInfoProveedor.Controls.Add(this.TBrazonSocial);
             this.gbInfoProveedor.Controls.Add(this.TBcuit);
@@ -457,6 +463,7 @@
             this.TBcuit.Location = new System.Drawing.Point(20, 74);
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
+            this.TBcuit.ShortcutsEnabled = false;
             this.TBcuit.Size = new System.Drawing.Size(160, 28);
             this.TBcuit.TabIndex = 2;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
@@ -481,6 +488,7 @@
             // 
             // gbInfoCompra
             // 
+            this.gbInfoCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInfoCompra.Controls.Add(this.TBNumFactura);
             this.gbInfoCompra.Controls.Add(this.dtFechaCompra);
             this.gbInfoCompra.Controls.Add(this.label1);
@@ -500,6 +508,7 @@
             // 
             this.TBNumFactura.Location = new System.Drawing.Point(225, 107);
             this.TBNumFactura.Name = "TBNumFactura";
+            this.TBNumFactura.ShortcutsEnabled = false;
             this.TBNumFactura.Size = new System.Drawing.Size(164, 28);
             this.TBNumFactura.TabIndex = 6;
             this.TBNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);

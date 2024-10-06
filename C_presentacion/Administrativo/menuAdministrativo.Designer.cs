@@ -211,6 +211,7 @@
             // 
             // labUsuarioRolAdministrativo
             // 
+            this.labUsuarioRolAdministrativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labUsuarioRolAdministrativo.AutoSize = true;
             this.labUsuarioRolAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.labUsuarioRolAdministrativo.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,6 +225,7 @@
             // 
             // labAdministrativo
             // 
+            this.labAdministrativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labAdministrativo.AutoSize = true;
             this.labAdministrativo.BackColor = System.Drawing.Color.DarkRed;
             this.labAdministrativo.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

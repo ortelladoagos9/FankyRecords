@@ -90,6 +90,7 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLimpiar.BackColor = System.Drawing.Color.White;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -107,6 +108,7 @@
             // 
             // btnBuscarNroCompra
             // 
+            this.btnBuscarNroCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscarNroCompra.BackColor = System.Drawing.Color.White;
             this.btnBuscarNroCompra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarNroCompra.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
@@ -134,7 +136,7 @@
             // 
             // LdetalleCompra
             // 
-            this.LdetalleCompra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LdetalleCompra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LdetalleCompra.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LdetalleCompra.ForeColor = System.Drawing.Color.DarkRed;
             this.LdetalleCompra.Location = new System.Drawing.Point(0, 0);
@@ -147,6 +149,7 @@
             // 
             // TBmontoTotal
             // 
+            this.TBmontoTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBmontoTotal.Location = new System.Drawing.Point(1016, 377);
             this.TBmontoTotal.Margin = new System.Windows.Forms.Padding(2);
             this.TBmontoTotal.Name = "TBmontoTotal";
@@ -157,6 +160,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.TB);
@@ -214,6 +218,7 @@
             // 
             // LnumDoc
             // 
+            this.LnumDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LnumDoc.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnumDoc.ForeColor = System.Drawing.Color.DarkRed;
             this.LnumDoc.Location = new System.Drawing.Point(949, 73);
@@ -226,6 +231,7 @@
             // 
             // LmontoTotal
             // 
+            this.LmontoTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LmontoTotal.AutoSize = true;
             this.LmontoTotal.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LmontoTotal.ForeColor = System.Drawing.Color.DarkRed;
@@ -238,6 +244,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.TBNumFactura);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TBFecha);
@@ -337,10 +344,12 @@
             // 
             // TBnumCompra
             // 
+            this.TBnumCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBnumCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnumCompra.Location = new System.Drawing.Point(949, 102);
             this.TBnumCompra.Margin = new System.Windows.Forms.Padding(2);
             this.TBnumCompra.Name = "TBnumCompra";
+            this.TBnumCompra.ShortcutsEnabled = false;
             this.TBnumCompra.Size = new System.Drawing.Size(196, 28);
             this.TBnumCompra.TabIndex = 4;
             this.TBnumCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
@@ -351,12 +360,12 @@
             this.listadoCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoCompras.BackgroundColor = System.Drawing.Color.White;
             this.listadoCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.listadoCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -374,7 +383,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listadoCompras.DefaultCellStyle = dataGridViewCellStyle2;
