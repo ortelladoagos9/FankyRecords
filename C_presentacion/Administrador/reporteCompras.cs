@@ -21,10 +21,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void buscarFecha_Click(object sender, EventArgs e)
         {
-            CompararFechas();
-           
-
-                
+            CompararFechas();              
         }
 
         private void CompararFechas()

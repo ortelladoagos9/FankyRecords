@@ -62,12 +62,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             DGlistaproveedores.Rows[n].Cells[6].Value = "Inactivo";
                         }
 
-                        // limpia campos
-                        TBRazonSocial.Clear();
-                        TBcuit.Clear();
-                        TBcorreo.Clear();
-                        TBtelefono.Clear();
-                        TBdomiciliop.Clear();
+                        Limpiar();
                     }
                 }
             }
@@ -96,12 +91,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
-                    // limpia campos
-                    TBRazonSocial.Clear();
-                    TBcuit.Clear();
-                    TBcorreo.Clear();
-                    TBtelefono.Clear();
-                    TBdomiciliop.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -126,12 +116,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
-                    // limpia campos
-                    TBRazonSocial.Clear();
-                    TBcuit.Clear();
-                    TBcorreo.Clear();
-                    TBtelefono.Clear();
-                    TBdomiciliop.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -142,6 +127,15 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Limpiar()
+        {
+            TBRazonSocial.Clear();
+            TBcuit.Clear();
+            TBcorreo.Clear();
+            TBtelefono.Clear();
+            TBdomiciliop.Clear();
         }
     }
 }

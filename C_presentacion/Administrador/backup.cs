@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FankyRecords.C_presentacion.Vendedor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,8 +30,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeBackup())
                 {
-                    TBrutaGuardar.Clear();
-                    TBbaseDatos.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -46,9 +46,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeCancelar())
                 {
-                    // limpia campos
-                    TBbaseDatos.Clear();
-                    TBrutaGuardar.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -60,6 +58,12 @@ namespace FankyRecords.C_presentacion.Administrador
             {  
                  TBrutaGuardar.Text = folderBrowserDialog.SelectedPath;
             }
+        }
+
+        private void Limpiar()
+        {
+            TBbaseDatos.Clear();
+            TBrutaGuardar.Clear();
         }
     }
 

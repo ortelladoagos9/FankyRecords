@@ -53,12 +53,11 @@ namespace FankyRecords.C_presentacion.Administrador
                         categorias.Estado = "Inactivo";
                     }
 
-                    CD_Categorias.AgregarCategoria(categorias);
+                    CN_Categorias.GuardarCategoria(categorias);
 
                     CargarCategorias();
 
-                    // limpia campos
-                    TBdescripcion.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -73,8 +72,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
-                    // limpia campos
-                    TBdescripcion.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -95,8 +93,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
-                        // Limpia los campos después de editar
-                        TBdescripcion.Clear(); 
+                    Limpiar();
                 }
             }
         }
@@ -145,6 +142,11 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Limpiar()
+        {
+            TBdescripcion.Clear();
         }
     }
 }

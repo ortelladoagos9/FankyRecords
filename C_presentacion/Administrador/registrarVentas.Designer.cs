@@ -602,7 +602,7 @@
             this.btnBuscarCliente.Location = new System.Drawing.Point(185, 74);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(46, 28);
             this.btnBuscarCliente.TabIndex = 6;
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);

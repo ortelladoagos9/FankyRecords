@@ -42,16 +42,16 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if(C_negocio.Validaciones.mensajeConfirmacionGenerarNC())
                 {
-                    // limpia campos
-                    TBnumFactura.Clear();
-                    TBnombreComprador.Clear();
+                    Limpiar();
 
                 }
-
             }
-            
         }
 
-        
+        private void Limpiar()
+        {
+            TBnumFactura.Clear();
+            TBnombreComprador.Clear();
+        }
     }
 }

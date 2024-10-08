@@ -13,7 +13,7 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class registrarVentas : Form
     {
-        decimal sumaSubtotal = 0;
+        //decimal  sumaSubtotal = 0;
         public registrarVentas()
         {
             InitializeComponent();
@@ -51,15 +51,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoVentaProducto.Rows[n].Cells[5].Value = 001;
                     listadoVentaProducto.Rows[n].Cells[6].Value = " ";
 
-                    // limpia campos
-                    TBPrecio.Clear();
-                    numCantidad.Value = 1;
-                    TBNombreCompleto.Clear();
-                    TBbuscarProducto.Clear();
-                    TBNroDocumento.Clear();
-                    TBStock.Clear();
-                    TBProducto.Clear();
-                    cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
+                    Limpiar();
 
                     permitirTextChanged = true;
                 }
@@ -177,6 +169,19 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar el DNI del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Limpiar()
+        {
+            // limpia campos
+            TBPrecio.Clear();
+            numCantidad.Value = 1;
+            TBNombreCompleto.Clear();
+            TBbuscarProducto.Clear();
+            TBNroDocumento.Clear();
+            TBStock.Clear();
+            TBProducto.Clear();
+            cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
         }
     }
 }

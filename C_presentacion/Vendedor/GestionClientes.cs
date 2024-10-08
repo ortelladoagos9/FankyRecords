@@ -21,6 +21,7 @@ namespace FankyRecords.C_presentacion.Vendedor
         {
             C_negocio.Validaciones.EsLetra(e);
         }
+
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsNumero(e);
@@ -67,12 +68,7 @@ namespace FankyRecords.C_presentacion.Vendedor
                             listadoClientes.Rows[n].Cells[5].Value = "Inactivo";
                         }
 
-                        // limpia campos
-                        TBnombre.Clear();
-                        TBapellido.Clear();
-                        TBtelefono.Clear();
-                        TBdni.Clear();
-                        TBemail.Clear();
+                        Limpiar();
 
                     }
                 }
@@ -93,12 +89,7 @@ namespace FankyRecords.C_presentacion.Vendedor
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
-                    // limpia campos
-                    TBnombre.Clear();
-                    TBapellido.Clear();
-                    TBtelefono.Clear();
-                    TBdni.Clear();
-                    TBemail.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -117,12 +108,7 @@ namespace FankyRecords.C_presentacion.Vendedor
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
-                    // limpia campos
-                    TBnombre.Clear();
-                    TBapellido.Clear();
-                    TBtelefono.Clear();
-                    TBdni.Clear();
-                    TBemail.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -138,6 +124,15 @@ namespace FankyRecords.C_presentacion.Vendedor
             {
                 MessageBox.Show("Debe ingresar un dato del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Limpiar()
+        {
+            TBnombre.Clear();
+            TBapellido.Clear();
+            TBtelefono.Clear();
+            TBdni.Clear();
+            TBemail.Clear();
         }
     }
 }

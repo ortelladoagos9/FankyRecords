@@ -48,13 +48,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     listaCompras.Rows[n].Cells[4].Value = 001;
                     listaCompras.Rows[n].Cells[5].Value = subtotal;
 
-                    // limpia campos
-                    TBCodProd.Clear();
-                    TBbuscarProducto.Clear();
-                    TBproducto.Clear();
-                    cantProd.Value = 1;
-                    TBprecio.Clear();
-                    TBcuit.Clear();
+                    Limpiar();
                 }
             }
         }
@@ -74,13 +68,7 @@ namespace FankyRecords.C_presentacion.Administrador
                                                           MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    TBbuscarProducto.Clear();
-                    TBCodProd.Clear();
-                    TBproducto.Clear();
-                    TBprecio.Clear();
-                    TBrazonSocial.Clear();
-                    TBcuit.Clear();
-                    cantProd.Value = 1;
+                    Limpiar();
                     TBtotalPagar.Clear();
 
                     MessageBox.Show("La compra ha sido registrada correctamente.",
@@ -120,9 +108,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void TBNumFactura_KeyPress(object sender, KeyPressEventArgs e)
+        private void Limpiar()
         {
-
+            TBbuscarProducto.Clear();
+            TBCodProd.Clear();
+            TBproducto.Clear();
+            TBprecio.Clear();
+            TBcuit.Clear();
+            cantProd.Value = 1;
         }
     } 
 }
