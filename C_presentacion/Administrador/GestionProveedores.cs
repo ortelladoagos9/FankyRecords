@@ -68,10 +68,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            C_negocio.Validaciones.EsLetra(e);
-        }
+      
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsNumero(e);

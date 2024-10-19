@@ -121,6 +121,8 @@ namespace FankyRecords.C_presentacion.Administrador
             TBPrecio_Venta.Clear();
             CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
         }
+
+        
     }
 }
 

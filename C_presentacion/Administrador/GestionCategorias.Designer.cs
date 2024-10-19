@@ -137,6 +137,7 @@
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.TBdescripcion.MaxLength = 100;
             this.TBdescripcion.Name = "TBdescripcion";
+            this.TBdescripcion.ShortcutsEnabled = false;
             this.TBdescripcion.Size = new System.Drawing.Size(242, 28);
             this.TBdescripcion.TabIndex = 7;
             // 

@@ -97,7 +97,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(20, 210);
+            this.iconButton1.Location = new System.Drawing.Point(23, 211);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(141, 50);
@@ -115,7 +115,7 @@
             this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
             this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(20, 166);
+            this.Bgenerar.Location = new System.Drawing.Point(23, 159);
             this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
             this.Bgenerar.Name = "Bgenerar";
             this.Bgenerar.Size = new System.Drawing.Size(141, 36);
@@ -131,7 +131,7 @@
             this.ckbDevolverStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ckbDevolverStock.AutoSize = true;
             this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDevolverStock.Location = new System.Drawing.Point(20, 129);
+            this.ckbDevolverStock.Location = new System.Drawing.Point(23, 114);
             this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
             this.ckbDevolverStock.Name = "ckbDevolverStock";
             this.ckbDevolverStock.Size = new System.Drawing.Size(177, 25);
@@ -188,7 +188,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;

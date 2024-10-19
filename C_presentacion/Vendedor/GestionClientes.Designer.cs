@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoClientes = new System.Windows.Forms.DataGridView();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,14 +78,14 @@
             this.listadoClientes.BackgroundColor = System.Drawing.Color.White;
             this.listadoClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.listadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dni,
@@ -94,14 +94,14 @@
             this.mail,
             this.telefono,
             this.Estado});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoClientes.DefaultCellStyle = dataGridViewCellStyle8;
             this.listadoClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoClientes.Location = new System.Drawing.Point(0, 445);
             this.listadoClientes.Name = "listadoClientes";
@@ -395,7 +395,7 @@
             this.rBinactivo.AutoSize = true;
             this.rBinactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBinactivo.Location = new System.Drawing.Point(619, 235);
+            this.rBinactivo.Location = new System.Drawing.Point(583, 230);
             this.rBinactivo.Name = "rBinactivo";
             this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 27;
@@ -410,7 +410,7 @@
             this.rBactivo.Checked = true;
             this.rBactivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBactivo.Location = new System.Drawing.Point(521, 235);
+            this.rBactivo.Location = new System.Drawing.Point(485, 230);
             this.rBactivo.Name = "rBactivo";
             this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 26;
@@ -423,7 +423,7 @@
             this.LEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEstado.AutoSize = true;
             this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEstado.Location = new System.Drawing.Point(488, 204);
+            this.LEstado.Location = new System.Drawing.Point(452, 191);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
             this.LEstado.Size = new System.Drawing.Size(70, 21);
@@ -434,10 +434,11 @@
             // 
             this.TBemail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBemail.Location = new System.Drawing.Point(488, 106);
+            this.TBemail.Location = new System.Drawing.Point(452, 69);
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
+            this.TBemail.ShortcutsEnabled = false;
             this.TBemail.Size = new System.Drawing.Size(241, 28);
             this.TBemail.TabIndex = 18;
             // 
@@ -446,7 +447,7 @@
             this.LEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEmail.AutoSize = true;
             this.LEmail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmail.Location = new System.Drawing.Point(488, 78);
+            this.LEmail.Location = new System.Drawing.Point(452, 33);
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
             this.LEmail.Size = new System.Drawing.Size(61, 21);
@@ -457,10 +458,11 @@
             // 
             this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(488, 169);
+            this.TBtelefono.Location = new System.Drawing.Point(452, 148);
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBtelefono.Mask = "(000)0000000";
             this.TBtelefono.Name = "TBtelefono";
+            this.TBtelefono.ShortcutsEnabled = false;
             this.TBtelefono.Size = new System.Drawing.Size(242, 28);
             this.TBtelefono.TabIndex = 11;
             // 
@@ -468,7 +470,7 @@
             // 
             this.TBdni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBdni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdni.Location = new System.Drawing.Point(156, 232);
+            this.TBdni.Location = new System.Drawing.Point(134, 227);
             this.TBdni.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
@@ -481,7 +483,7 @@
             // 
             this.TBapellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBapellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBapellido.Location = new System.Drawing.Point(156, 169);
+            this.TBapellido.Location = new System.Drawing.Point(134, 148);
             this.TBapellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
@@ -494,7 +496,7 @@
             // 
             this.TBnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBnombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombre.Location = new System.Drawing.Point(156, 106);
+            this.TBnombre.Location = new System.Drawing.Point(134, 69);
             this.TBnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
@@ -508,7 +510,7 @@
             this.LTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTelefono.AutoSize = true;
             this.LTelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTelefono.Location = new System.Drawing.Point(488, 141);
+            this.LTelefono.Location = new System.Drawing.Point(452, 112);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
             this.LTelefono.Size = new System.Drawing.Size(87, 21);
@@ -520,7 +522,7 @@
             this.LDni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDni.AutoSize = true;
             this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDni.Location = new System.Drawing.Point(156, 204);
+            this.LDni.Location = new System.Drawing.Point(134, 191);
             this.LDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDni.Name = "LDni";
             this.LDni.Size = new System.Drawing.Size(46, 21);
@@ -532,7 +534,7 @@
             this.LApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LApellido.AutoSize = true;
             this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LApellido.Location = new System.Drawing.Point(156, 141);
+            this.LApellido.Location = new System.Drawing.Point(134, 112);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(82, 21);
@@ -545,7 +547,7 @@
             this.LNombre.AutoSize = true;
             this.LNombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.DarkRed;
-            this.LNombre.Location = new System.Drawing.Point(156, 78);
+            this.LNombre.Location = new System.Drawing.Point(134, 33);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
             this.LNombre.Size = new System.Drawing.Size(80, 21);

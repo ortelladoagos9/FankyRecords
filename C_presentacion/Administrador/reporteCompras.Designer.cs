@@ -152,7 +152,7 @@
             this.listadoReporteCompras.Name = "listadoReporteCompras";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -380,7 +380,7 @@
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTinicio.Location = new System.Drawing.Point(185, 54);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
-            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.MaxDate = new System.DateTime(2024, 10, 9, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
             this.DTinicio.Size = new System.Drawing.Size(138, 28);

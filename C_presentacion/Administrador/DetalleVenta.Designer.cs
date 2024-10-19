@@ -251,14 +251,14 @@
             this.gbInformacionCliente.ForeColor = System.Drawing.Color.DarkRed;
             this.gbInformacionCliente.Location = new System.Drawing.Point(24, 261);
             this.gbInformacionCliente.Name = "gbInformacionCliente";
-            this.gbInformacionCliente.Size = new System.Drawing.Size(639, 144);
+            this.gbInformacionCliente.Size = new System.Drawing.Size(664, 144);
             this.gbInformacionCliente.TabIndex = 24;
             this.gbInformacionCliente.TabStop = false;
             this.gbInformacionCliente.Text = "Información Cliente";
             // 
             // TBNombreCompleto
             // 
-            this.TBNombreCompleto.Location = new System.Drawing.Point(341, 83);
+            this.TBNombreCompleto.Location = new System.Drawing.Point(361, 83);
             this.TBNombreCompleto.Name = "TBNombreCompleto";
             this.TBNombreCompleto.ReadOnly = true;
             this.TBNombreCompleto.Size = new System.Drawing.Size(204, 28);
@@ -275,7 +275,7 @@
             // LNombreCompleto
             // 
             this.LNombreCompleto.AutoSize = true;
-            this.LNombreCompleto.Location = new System.Drawing.Point(341, 55);
+            this.LNombreCompleto.Location = new System.Drawing.Point(361, 55);
             this.LNombreCompleto.Name = "LNombreCompleto";
             this.LNombreCompleto.Size = new System.Drawing.Size(154, 21);
             this.LNombreCompleto.TabIndex = 3;
