@@ -64,6 +64,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
+            EliminarCategorias();
+        }
+
+        private void EliminarCategorias()
+        {
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,6 +77,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
+
                     Limpiar();
                 }
             }
@@ -85,6 +91,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beditar_Click(object sender, EventArgs e)
         {
+            EditarCategorias();
+        }
+
+        private void EditarCategorias()
+        {
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +104,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
+
                     Limpiar();
                 }
             }
