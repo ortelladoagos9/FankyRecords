@@ -37,10 +37,7 @@ namespace FankyRecords.C_datos
 
                 throw;
             }   
-            finally
-            {
-                conexion.Close();
-            }
+            finally { conexion.Close(); }
         }
 
         public List<Categorias> ListarCategorias() {
@@ -72,10 +69,8 @@ namespace FankyRecords.C_datos
 
                 throw;
             }
-            finally
-            {
-                conexion.Close();
-            }
+            finally { conexion.Close(); }
+
             return lista;
         }
 
