@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,11 @@ namespace FankyRecords.C_presentacion.Administrador
     {
         private readonly DatosCategorias CD_Categorias;
         private readonly NegocioCategorias CN_Categorias;
+        private int categoriaIdSeleccionada; // Variable para almacenar el Id de la categoría seleccionada
 
         public GestionCategorias()
         {
             InitializeComponent();
-            this.CBbuscar.SelectedIndex = 0;
             CD_Categorias = new DatosCategorias();
             CN_Categorias = new NegocioCategorias();
         }
@@ -33,34 +34,40 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void GuardarCategorias()
         {
-            if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+                // Verificar que todos los campos requeridos estén completos
+                if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validación previa de duplicados en la base de datos
+                if (CN_Categorias.ExisteCategoria(TBdescripcion.Text))
+                {
+                    MessageBox.Show("La categoría ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
+                    return;
+                }
+
+                // Confirmación del usuario para continuar
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
-                    Categorias categorias = new Categorias();
-                    categorias.Descripcion = TBdescripcion.Text;
-
-                    if (rBactivo.Checked)
+                    // Crear objeto categoría
+                    Categorias categorias = new Categorias
                     {
-                        categorias.Estado = "Activo";
-                    }
-                    else
-                    {
-                        categorias.Estado = "Inactivo";
-                    }
+                        Descripcion = TBdescripcion.Text,
+                        Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+                    };
 
+                    // Intentar guardar la categoría en la base de datos
                     CN_Categorias.GuardarCategoria(categorias);
 
+                    // Recargar datos y limpiar formulario
                     CargarCategorias();
-
                     Limpiar();
                 }
-            }
         }
+
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
@@ -77,22 +84,25 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
+                    CN_Categorias.EliminarCategoria(categoriaIdSeleccionada);
 
+                    // Recargar datos y limpiar formulario
+                    CargarCategorias();
                     Limpiar();
                 }
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            // Limpiar todas las filas del DataGridView
-            listadoCategorias.Rows.Clear();
+        { 
+            Limpiar();
         }
 
         private void Beditar_Click(object sender, EventArgs e)
         {
             EditarCategorias();
         }
+
 
         private void EditarCategorias()
         {
@@ -102,11 +112,23 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                if (C_negocio.Validaciones.mensajeEditar())
-                {
+                    if (C_negocio.Validaciones.mensajeEditar())
+                    {
+                         // Crear objeto categoría
+                         Categorias categorias = new Categorias
+                         {
+                             Id_categoria = categoriaIdSeleccionada, // Asignar el ID de la categoría seleccionada
+                             Descripcion = TBdescripcion.Text,
+                             Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+                         };
 
-                    Limpiar();
-                }
+                         // Llamar al método de negocio para guardar/editar la categoría
+                         CN_Categorias.GuardarCategoria(categorias);
+
+                        // Recargar la lista de categorías
+                        CargarCategorias();
+                        Limpiar();
+                    }
             }
         }
 
@@ -127,7 +149,13 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 DataGridViewRow row = listadoCategorias.Rows[e.RowIndex];
 
-                // Solo accede a las columnas si el índice es válido y la celda no es nula
+                // Accede al Id_categoria si existe en el DataGridView
+                if (row.Cells["Id_categoria"] != null)
+                {
+                    categoriaIdSeleccionada = Convert.ToInt32(row.Cells["Id_categoria"].Value);
+                }
+
+                // Rellenar otros campos de la categoría seleccionada
                 if (row.Cells["Descripcion"] != null)
                 {
                     TBdescripcion.Text = row.Cells["Descripcion"].Value.ToString();
@@ -136,14 +164,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 if (row.Cells["Estado"] != null)
                 {
                     string estado = row.Cells["Estado"].Value.ToString();
-                    if (estado == "Activo")
-                    {
-                        rBactivo.Checked = true;
-                    }
-                    else
-                    {
-                        rBinactivo.Checked = true;
-                    }
+                    rBactivo.Checked = estado == "Activo";
+                    rBinactivo.Checked = estado == "Inactivo";
                 }
             }
         }
@@ -160,5 +182,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             TBdescripcion.Clear();
         }
+
+      
     }
 }

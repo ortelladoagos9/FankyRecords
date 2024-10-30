@@ -10,27 +10,39 @@ namespace FankyRecords.C_negocio
 {
     public class NegocioCategorias
     {
-        private DatosCategorias CD_Categorias;
+        private readonly DatosCategorias CD_Categorias;
 
         public NegocioCategorias()
         {
             CD_Categorias = new DatosCategorias();
         }
 
-        public Categorias GuardarCategoria(Categorias categoria) 
-        { 
-            if (categoria.Id_categoria == 0 )
+        public Categorias GuardarCategoria(Categorias categoria)
+        {
+            if (categoria.Id_categoria == 0)
             {
-                CD_Categorias.AgregarCategoria(categoria);
+                CD_Categorias.AgregarCategoria(categoria); // Si el ID es 0, es una nueva categoría
             }
-         
+            else
+            {
+                CD_Categorias.EditarCategoria(categoria); // Si el ID es distinto de 0, es una actualización
+            }
             return categoria;
+        }
+
+        public bool ExisteCategoria(string descripcion)
+        {
+            return CD_Categorias.ExisteCategoria(descripcion);
         }
 
         public List<Categorias> ListarCategorias()
         {
             return CD_Categorias.ListarCategorias();
         }
-        
+
+        public void EliminarCategoria(int id_categoria)
+        {
+            CD_Categorias.EliminarCategoria(id_categoria);
+        }
     }
 }
