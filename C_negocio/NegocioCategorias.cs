@@ -23,6 +23,7 @@ namespace FankyRecords.C_negocio
             {
                 CD_Categorias.AgregarCategoria(categoria);
             }
+           
          
             return categoria;
         }
