@@ -191,6 +191,7 @@
             this.contenedorBotones.Name = "contenedorBotones";
             this.contenedorBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorBotones.TabIndex = 26;
+            this.contenedorBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedorBotones_Paint);
             // 
             // Beliminar
             // 

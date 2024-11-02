@@ -50,21 +50,24 @@ namespace FankyRecords.C_datos
 
         public List<Proveedores> ListarProveedores()
         {
-
             List<Proveedores> lista = new List<Proveedores>();
-
             try
             {
                 conexion.Open();
-
-                string query = @"
-                        select ID_proveedor,RazonSocial,Correo,Telefono,Estado,Cuit,Domicilio from Proveedores";
-
+                string query = @"select ID_proveedor, RazonSocial, Correo, Telefono, Estado, Cuit, Domicilio from Proveedores";
                 SqlCommand cmd = new SqlCommand(query, conexion);
-
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    // Imprimir los nombres de las columnas para depuración
+                    Console.WriteLine(reader["ID_proveedor"].ToString());
+                    Console.WriteLine(reader["RazonSocial"].ToString());
+                    Console.WriteLine(reader["Correo"].ToString());
+                    Console.WriteLine(reader["Telefono"].ToString());
+                    Console.WriteLine(reader["Estado"].ToString());
+                    Console.WriteLine(reader["Cuit"].ToString());
+                    Console.WriteLine(reader["Domicilio"].ToString());
+
                     lista.Add(new Proveedores
                     {
                         ID_proveedor = int.Parse(reader["ID_proveedor"].ToString()),
@@ -79,13 +82,15 @@ namespace FankyRecords.C_datos
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Ocurrio un error: "+ ex.Message, ex);
+                throw new Exception("Ocurrio un error: " + ex.Message, ex);
             }
-            finally { conexion.Close(); }
-
+            finally
+            {
+                conexion.Close();
+            }
             return lista;
         }
+
         public void EditarProveedor(Proveedores proveedor)
         {
             try
@@ -98,7 +103,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.AddWithValue("@RazonSocial", proveedor.RazonSocial);
                 cmd.Parameters.AddWithValue("@Correo", proveedor.Correo);
                 cmd.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
-                cmd.Parameters.AddWithValue("@Estado", proveedor.Estado == "Activo" ? 1 : 0); // Convertir "Activo"/"Inactivo" a bit
+                cmd.Parameters.AddWithValue("@Estado", proveedor.Estado); // Convertir "Activo"/"Inactivo" a bit
                 cmd.Parameters.AddWithValue("@Cuit", proveedor.Cuit);
                 cmd.Parameters.AddWithValue("@Domicilio", proveedor.Domicilio);
                 cmd.Parameters.AddWithValue("@ID_proveedor", proveedor.ID_proveedor);
@@ -110,6 +115,121 @@ namespace FankyRecords.C_datos
             {
 
                 throw;
+            }
+            finally { conexion.Close(); }
+        }
+
+        public bool ExisteCuit(string cuit)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Proveedores WHERE Cuit = @Cuit";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Cuit", cuit);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteTelefono(string telefono)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Proveedores WHERE Telefono = @Telefono";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Telefono", telefono);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteCorreo(string correo)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Proveedores WHERE Correo = @Correo";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteRazonSocial(string razonSocial)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Proveedores WHERE RazonSocial = @RazonSocial";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@RazonSocial", razonSocial);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public void EliminarProveedor(int ID_proveedor)
+        {
+            try
+            {
+                conexion.Open();
+                string query = @"DELETE FROM Proveedores WHERE ID_proveedor = @ID_proveedor";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.Add(new SqlParameter("@ID_proveedor", ID_proveedor));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
             finally { conexion.Close(); }
         }

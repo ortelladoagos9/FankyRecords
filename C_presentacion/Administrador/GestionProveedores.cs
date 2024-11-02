@@ -44,6 +44,33 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            // Validación previa de duplicados en la base de datos
+            if (CN_Proveedores.ExisteCuit(TBcuit.Text))
+            {
+                MessageBox.Show("El cuit ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                return;
+            }
+            if (CN_Proveedores.ExisteTelefono(TBtelefono.Text))
+            {
+                MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                return;
+            }
+            if (CN_Proveedores.ExisteCorreo(TBcorreo.Text))
+            {
+                MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                return;
+            }
+
+            if (CN_Proveedores.ExisteRazonSocial(TBRazonSocial.Text))
+            {
+                MessageBox.Show("El Razon Social ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
             else
             {
                 //validar correo
@@ -76,6 +103,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
+
+        private void GestionProveedores_Load(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
+
         private void CargarProveedores()
         {
             List<Proveedores> proveedores = CN_Proveedores.ListarProveedores();
@@ -83,15 +116,16 @@ namespace FankyRecords.C_presentacion.Administrador
         }
 
         private void listadoProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
+        { 
+
+                if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
             {
                 DataGridViewRow row = DGlistaproveedores.Rows[e.RowIndex];
 
                 // Solo accede a las columnas si el índice es válido y la celda no es nula
                 if (row.Cells["ID_proveedor"] != null)
                 {
-                    proveedorSeleccionado = Convert.ToInt32(row.Cells["ID_proveedor"].Value);
+                   proveedorSeleccionado = Convert.ToInt32(row.Cells["ID_proveedor"].Value);
                 }
                 if (row.Cells["RazonSocial"] != null)
                 {
@@ -105,9 +139,9 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     TBdomiciliop.Text = row.Cells["Domicilio"].Value.ToString();
                 }
-                if (row.Cells["Email"] != null)
+                if (row.Cells["Correo"] != null)
                 {
-                    TBcorreo.Text = row.Cells["Email"].Value.ToString();
+                    TBcorreo.Text = row.Cells["Correo"].Value.ToString();
                 }
                 if (row.Cells["Telefono"] != null)
                 {
@@ -130,6 +164,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
+            EliminarProveedores();
+        }
+
+        private void EliminarProveedores()
+        {
             if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
@@ -142,6 +181,10 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
+                    CN_Proveedores.EliminarProveedor(proveedorSeleccionado);
+
+                    // Recargar datos y limpiar formulario
+                    CargarProveedores();
                     Limpiar();
                 }
             }
@@ -155,9 +198,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Beditar_Click(object sender, EventArgs e)
         {
-            EditarCategorias();
+            EditarProveedores();
         }
-        private void EditarCategorias()
+        private void EditarProveedores()
         {
             if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
             C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||

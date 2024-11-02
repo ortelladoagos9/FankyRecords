@@ -148,5 +148,10 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             TBdescripcion.Clear();
         }
+
+        private void contenedorBotones_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
