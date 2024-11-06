@@ -556,6 +556,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "GestionProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "+";
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).EndInit();

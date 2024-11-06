@@ -105,10 +105,9 @@ namespace FankyRecords.C_datos
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
             finally { conexion.Close(); }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorLista = new System.Windows.Forms.Panel();
@@ -56,6 +57,7 @@
             this.TBStock_min = new System.Windows.Forms.TextBox();
             this.LStock_min = new System.Windows.Forms.Label();
             this.CBcategoria = new System.Windows.Forms.ComboBox();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.TBPrecio_Venta = new System.Windows.Forms.TextBox();
@@ -73,6 +75,7 @@
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionProductos.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contenedorLista
@@ -444,21 +447,20 @@
             // 
             this.CBcategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBcategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBcategoria.DisplayMember = "Pop";
+            this.CBcategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriasBindingSource, "Id_categoria", true));
             this.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBcategoria.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBcategoria.ForeColor = System.Drawing.Color.Black;
             this.CBcategoria.FormattingEnabled = true;
-            this.CBcategoria.Items.AddRange(new object[] {
-            "Rock Nacional",
-            "Rock and Roll",
-            "Pop",
-            "Indie/Alternative"});
             this.CBcategoria.Location = new System.Drawing.Point(362, 154);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(242, 29);
             this.CBcategoria.TabIndex = 1;
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // rBinactivo
             // 
@@ -631,6 +633,7 @@
             this.Name = "gestionProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "gestionProductos";
+            this.Load += new System.EventHandler(this.gestionProductos_Load);
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).EndInit();
@@ -638,6 +641,7 @@
             this.contenedorGestionProductos.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -682,5 +686,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock_min;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
     }
 }

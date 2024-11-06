@@ -416,6 +416,7 @@
             this.listadoCategorias.Location = new System.Drawing.Point(0, 445);
             this.listadoCategorias.Margin = new System.Windows.Forms.Padding(5);
             this.listadoCategorias.Name = "listadoCategorias";
+            this.listadoCategorias.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -437,6 +438,7 @@
             this.Id_categoria.HeaderText = "Id_categoria";
             this.Id_categoria.MinimumWidth = 6;
             this.Id_categoria.Name = "Id_categoria";
+            this.Id_categoria.ReadOnly = true;
             // 
             // Descripcion
             // 
@@ -444,6 +446,7 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
             // Estado
             // 
@@ -451,6 +454,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // categoriasBindingSource
             // 
