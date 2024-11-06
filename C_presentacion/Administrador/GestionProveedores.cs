@@ -253,15 +253,5 @@ namespace FankyRecords.C_presentacion.Administrador
             TBtelefono.Clear();
             TBdomiciliop.Clear();
         }
-
-        private void TBtelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void DGlistaproveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
