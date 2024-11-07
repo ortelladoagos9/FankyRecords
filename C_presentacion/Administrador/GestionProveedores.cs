@@ -24,7 +24,6 @@ namespace FankyRecords.C_presentacion.Administrador
         public GestionProveedores()
         {
             InitializeComponent();
-            this.CBbuscar.SelectedIndex = 0;
             CD_Proveedores = new DatosProveedores();
             CN_Proveedores = new NegocioProveedores();
         }
