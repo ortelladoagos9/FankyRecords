@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
@@ -48,7 +48,6 @@
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
-            this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.categoriasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.LListaCategorias = new System.Windows.Forms.Label();
             this.TBBuscador = new System.Windows.Forms.TextBox();
@@ -292,7 +291,6 @@
             // 
             this.contenedorLista.BackColor = System.Drawing.Color.White;
             this.contenedorLista.Controls.Add(this.Lbuscar);
-            this.contenedorLista.Controls.Add(this.CBbuscar);
             this.contenedorLista.Controls.Add(this.LListaCategorias);
             this.contenedorLista.Controls.Add(this.TBBuscador);
             this.contenedorLista.Controls.Add(this.btnBuscar);
@@ -309,32 +307,13 @@
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lbuscar.Location = new System.Drawing.Point(668, 0);
+            this.Lbuscar.Location = new System.Drawing.Point(868, 0);
             this.Lbuscar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbuscar.Name = "Lbuscar";
-            this.Lbuscar.Size = new System.Drawing.Size(115, 28);
+            this.Lbuscar.Size = new System.Drawing.Size(86, 28);
             this.Lbuscar.TabIndex = 0;
-            this.Lbuscar.Text = "Buscar por:";
+            this.Lbuscar.Text = "Buscar:";
             this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CBbuscar
-            // 
-            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBbuscar.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriasBindingSource2, "Id_categoria", true));
-            this.CBbuscar.DataSource = this.categoriasBindingSource2;
-            this.CBbuscar.DisplayMember = "Descripcion";
-            this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBbuscar.ForeColor = System.Drawing.Color.Black;
-            this.CBbuscar.FormattingEnabled = true;
-            this.CBbuscar.IntegralHeight = false;
-            this.CBbuscar.Location = new System.Drawing.Point(783, 0);
-            this.CBbuscar.Margin = new System.Windows.Forms.Padding(5);
-            this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
-            this.CBbuscar.TabIndex = 1;
-            this.CBbuscar.ValueMember = "Id_categoria";
             // 
             // categoriasBindingSource2
             // 
@@ -390,40 +369,40 @@
             this.listadoCategorias.BackgroundColor = System.Drawing.Color.White;
             this.listadoCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listadoCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_categoria,
             this.Descripcion,
             this.Estado});
             this.listadoCategorias.DataSource = this.categoriasBindingSource2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoCategorias.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoCategorias.DefaultCellStyle = dataGridViewCellStyle7;
             this.listadoCategorias.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoCategorias.Location = new System.Drawing.Point(0, 445);
             this.listadoCategorias.Margin = new System.Windows.Forms.Padding(5);
             this.listadoCategorias.Name = "listadoCategorias";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.listadoCategorias.RowHeadersWidth = 51;
             this.listadoCategorias.Size = new System.Drawing.Size(1182, 209);
             this.listadoCategorias.TabIndex = 25;
@@ -432,8 +411,8 @@
             // Id_categoria
             // 
             this.Id_categoria.DataPropertyName = "Id_categoria";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Id_categoria.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.Id_categoria.DefaultCellStyle = dataGridViewCellStyle6;
             this.Id_categoria.HeaderText = "Id_categoria";
             this.Id_categoria.MinimumWidth = 6;
             this.Id_categoria.Name = "Id_categoria";
@@ -503,7 +482,6 @@
         public FontAwesome.Sharp.IconButton Bguardar;
         public System.Windows.Forms.Panel contenedorLista;
         public System.Windows.Forms.Label Lbuscar;
-        public System.Windows.Forms.ComboBox CBbuscar;
         public System.Windows.Forms.Label LListaCategorias;
         public System.Windows.Forms.TextBox TBBuscador;
         public FontAwesome.Sharp.IconButton btnBuscar;
