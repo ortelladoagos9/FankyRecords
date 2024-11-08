@@ -34,6 +34,8 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void GuardarCategorias()
         {
+            try
+            {
                 // Verificar que todos los campos requeridos estén completos
                 if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
                 {
@@ -48,7 +50,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     Limpiar();
                     return;
                 }
-
+                
                 // Confirmación del usuario para continuar
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
@@ -66,6 +68,11 @@ namespace FankyRecords.C_presentacion.Administrador
                     CargarCategorias();
                     Limpiar();
                 }
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -181,6 +188,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void Limpiar()
         {
             TBdescripcion.Clear();
+            rBactivo.Checked = true;
         }
 
       

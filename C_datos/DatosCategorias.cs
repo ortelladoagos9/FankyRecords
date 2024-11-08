@@ -34,16 +34,13 @@ namespace FankyRecords.C_datos
             }
             catch (SqlException ex)
             {
-                switch (ex.Number)
+                if (ex.Message.Contains("UQ_CATEGORIAS_Descripcion"))
                 {
-                    case 2627: //unique
-                        throw new Exception("Error: El valor de 'Descripcion' ya existe. No se permiten duplicados.", ex);
-                    case 547: //clave foranea o check
-                        throw new Exception("Error: Violación de restricción de clave foránea o de otro tipo. Revisa los valores relacionados.", ex);
-                    case 515: //null
-                        throw new Exception("Error: No se permite el valor NULL en uno de los campos obligatorios.", ex);
-                    default:
-                        throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
+                    throw new Exception("El valor de 'Descripcion' ya existe. No se permiten duplicados.", ex);
+                }
+                else
+                {
+                    throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
                 }
             }
             catch (Exception ex)
@@ -105,10 +102,9 @@ namespace FankyRecords.C_datos
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
             finally { conexion.Close(); }
 

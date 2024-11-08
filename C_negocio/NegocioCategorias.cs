@@ -2,6 +2,7 @@
 using FankyRecords.C_entidad;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,23 @@ namespace FankyRecords.C_negocio
 
         public Categorias GuardarCategoria(Categorias categoria)
         {
-            if (categoria.Id_categoria == 0)
+            try
             {
-                CD_Categorias.AgregarCategoria(categoria); // Si el ID es 0, es una nueva categoría
+                if (categoria.Id_categoria == 0)
+                {
+                    CD_Categorias.AgregarCategoria(categoria); // Si el ID es 0, es una nueva categoría
+                }
+                else
+                {
+                    CD_Categorias.EditarCategoria(categoria); // Si el ID es distinto de 0, es una actualización
+                }
+                
             }
-            else
+            catch (SqlException ex) 
             {
-                CD_Categorias.EditarCategoria(categoria); // Si el ID es distinto de 0, es una actualización
+                throw new Exception(ex.Message);
             }
+
             return categoria;
         }
 
