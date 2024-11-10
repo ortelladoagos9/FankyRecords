@@ -59,8 +59,11 @@
   <ItemGroup>
     <Compile Include="C_datos\Conexion.cs" />
     <Compile Include="C_datos\DatosCategorias.cs" />
+    <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
+    <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
+    <Compile Include="C_negocio\NegocioClientes.cs" />
     <Compile Include="C_negocio\NegocioUsuarios.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\backup.cs">
