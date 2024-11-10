@@ -51,7 +51,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 if (CN_Proveedores.ExisteProveedor(TBRazonSocial.Text))
                 {
                     MessageBox.Show("El proveedor ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
                     return;
                 }
                     //validar correo
@@ -69,7 +68,11 @@ namespace FankyRecords.C_presentacion.Administrador
                           Proveedores proveedores = new Proveedores
                           {
                              RazonSocial = TBRazonSocial.Text,
-                             Estado = RBactivop.Checked ? "Activo" : "Inactivo"
+                              Correo = TBcorreo.Text,
+                              Cuit = TBcuit.Text,
+                              Domicilio = TBdomiciliop.Text,
+                              Telefono = TBtelefono.Text,
+                              Estado = RBactivop.Checked ? "Activo" : "Inactivo"
                           };
 
                           // Intentar guardar la categoría en la base de datos
@@ -77,7 +80,6 @@ namespace FankyRecords.C_presentacion.Administrador
 
                           // Recargar datos y limpiar formulario
                           CargarProveedores();
-
                           Limpiar();
                      }
                     

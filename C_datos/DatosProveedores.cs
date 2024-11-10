@@ -1,7 +1,6 @@
 ﻿using FankyRecords.C_entidad;
 using System.Data;
 using System.Data.SqlClient;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +60,10 @@ namespace FankyRecords.C_datos
                 {
                     throw new Exception("Error, vuelva a intentarlo", ex);
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
             finally
             {
