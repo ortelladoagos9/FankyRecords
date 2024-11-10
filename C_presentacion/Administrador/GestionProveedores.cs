@@ -47,19 +47,19 @@ namespace FankyRecords.C_presentacion.Administrador
             if (CN_Proveedores.ExisteCuit(TBcuit.Text))
             {
                 MessageBox.Show("El cuit ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return;
             }
             if (CN_Proveedores.ExisteTelefono(TBtelefono.Text))
             {
                 MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return;
             }
             if (CN_Proveedores.ExisteCorreo(TBcorreo.Text))
             {
                 MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return;
             }
 
@@ -115,16 +115,16 @@ namespace FankyRecords.C_presentacion.Administrador
         }
 
         private void listadoProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
 
-                if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
+            if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
             {
                 DataGridViewRow row = DGlistaproveedores.Rows[e.RowIndex];
 
                 // Solo accede a las columnas si el índice es válido y la celda no es nula
                 if (row.Cells["ID_proveedor"] != null)
                 {
-                   proveedorSeleccionado = Convert.ToInt32(row.Cells["ID_proveedor"].Value);
+                    proveedorSeleccionado = Convert.ToInt32(row.Cells["ID_proveedor"].Value);
                 }
                 if (row.Cells["RazonSocial"] != null)
                 {
@@ -233,7 +233,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     Limpiar();
                 }
             }
-        
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -242,6 +242,29 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                string terminoBusqueda = TBBuscador.Text;
+                BuscarDatos(terminoBusqueda);
+            }
+        }
+
+        //Metodo para buscar datos en el datagrid
+        private void BuscarDatos(string termino)
+        {
+            foreach (DataGridViewRow row in DGlistaproveedores.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().Contains(termino))
+                    {
+                        row.Selected = true;
+                        DGlistaproveedores.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
+                }
+            }
+            MessageBox.Show("No se encontraron coincidencias.");
         }
 
         private void Limpiar()
@@ -252,5 +275,23 @@ namespace FankyRecords.C_presentacion.Administrador
             TBtelefono.Clear();
             TBdomiciliop.Clear();
         }
+
+        /*private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string terminoBusqueda = txtBuscar.Text;
+            BuscarDatos(terminoBusqueda);
+
+        }
+        private void BuscarDatos(string termino)
+        {
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+            if(dt != null)
+            {
+                DataView dv = new DataView(dt);
+                dv.RowFilter = string.Format("tu_columna LIKE '%{0}%'", termino);
+                dataGridView1.DataSource = dv;
+            }
+        }*/
+
     }
 }
