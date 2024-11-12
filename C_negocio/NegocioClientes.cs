@@ -53,6 +53,12 @@ namespace FankyRecords.C_negocio
             CD_Clientes.EliminarCliente(ID_cliente);
         }
 
+        public Clientes ObtenerClientePorID(int ID_cliente)
+        {
+            // Llamar al método que consulta la base de datos y devolver el resultado
+            return CD_Clientes.ObtenerClientePorID(ID_cliente);
+        }
+
 
     }
 }

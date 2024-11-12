@@ -58,22 +58,20 @@
             this.LDni = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.iD_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).BeginInit();
             this.contenedorGestionClientes.SuspendLayout();
             this.contenedorLista.SuspendLayout();
             this.contenedorFotoBotones.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoClientes
@@ -94,14 +92,14 @@
             this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iD_cliente,
-            this.documento,
-            this.nombre,
+            this.ID_cliente,
+            this.Documento,
+            this.Nombre,
             this.Apellido,
-            this.correo,
-            this.telefono,
-            this.estado});
-            this.listadoClientes.DataSource = this.clientesBindingSource1;
+            this.Correo,
+            this.Telefono,
+            this.Estado});
+            this.listadoClientes.DataSource = this.clientesBindingSource3;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,11 +111,12 @@
             this.listadoClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoClientes.Location = new System.Drawing.Point(0, 445);
             this.listadoClientes.Name = "listadoClientes";
+            this.listadoClientes.ReadOnly = true;
             this.listadoClientes.RowHeadersWidth = 51;
             this.listadoClientes.Size = new System.Drawing.Size(1182, 209);
             this.listadoClientes.TabIndex = 12;
             this.listadoClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellClick);
-            this.listadoClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellContentClick);
+            this.listadoClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellDoubleClick);
             // 
             // contenedorGestionClientes
             // 
@@ -192,8 +191,9 @@
             this.TBBuscador.Location = new System.Drawing.Point(945, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 32;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
             // btnBuscar
             // 
@@ -354,7 +354,7 @@
             this.TBtelefono.MaxLength = 10;
             this.TBtelefono.Name = "TBtelefono";
             this.TBtelefono.ShortcutsEnabled = false;
-            this.TBtelefono.Size = new System.Drawing.Size(241, 24);
+            this.TBtelefono.Size = new System.Drawing.Size(241, 28);
             this.TBtelefono.TabIndex = 28;
             this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -366,7 +366,7 @@
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBinactivo.Location = new System.Drawing.Point(583, 230);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
+            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -381,7 +381,7 @@
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBactivo.Location = new System.Drawing.Point(485, 230);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(74, 21);
+            this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -395,7 +395,7 @@
             this.LEstado.Location = new System.Drawing.Point(452, 191);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(58, 17);
+            this.LEstado.Size = new System.Drawing.Size(70, 21);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -408,7 +408,7 @@
             this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
             this.TBemail.ShortcutsEnabled = false;
-            this.TBemail.Size = new System.Drawing.Size(241, 24);
+            this.TBemail.Size = new System.Drawing.Size(241, 28);
             this.TBemail.TabIndex = 18;
             // 
             // LEmail
@@ -419,7 +419,7 @@
             this.LEmail.Location = new System.Drawing.Point(452, 33);
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
-            this.LEmail.Size = new System.Drawing.Size(51, 17);
+            this.LEmail.Size = new System.Drawing.Size(61, 21);
             this.LEmail.TabIndex = 17;
             this.LEmail.Text = "Email";
             // 
@@ -432,7 +432,7 @@
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
             this.TBdni.ShortcutsEnabled = false;
-            this.TBdni.Size = new System.Drawing.Size(242, 24);
+            this.TBdni.Size = new System.Drawing.Size(242, 28);
             this.TBdni.TabIndex = 7;
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -445,7 +445,7 @@
             this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.ShortcutsEnabled = false;
-            this.TBapellido.Size = new System.Drawing.Size(243, 24);
+            this.TBapellido.Size = new System.Drawing.Size(243, 28);
             this.TBapellido.TabIndex = 6;
             this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -458,7 +458,7 @@
             this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
             this.TBnombre.ShortcutsEnabled = false;
-            this.TBnombre.Size = new System.Drawing.Size(242, 24);
+            this.TBnombre.Size = new System.Drawing.Size(242, 28);
             this.TBnombre.TabIndex = 5;
             this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -470,7 +470,7 @@
             this.LTelefono.Location = new System.Drawing.Point(452, 112);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
-            this.LTelefono.Size = new System.Drawing.Size(72, 17);
+            this.LTelefono.Size = new System.Drawing.Size(87, 21);
             this.LTelefono.TabIndex = 4;
             this.LTelefono.Text = "Teléfono";
             // 
@@ -482,7 +482,7 @@
             this.LDni.Location = new System.Drawing.Point(134, 191);
             this.LDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(38, 17);
+            this.LDni.Size = new System.Drawing.Size(46, 21);
             this.LDni.TabIndex = 2;
             this.LDni.Text = "DNI";
             // 
@@ -494,7 +494,7 @@
             this.LApellido.Location = new System.Drawing.Point(134, 112);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(68, 17);
+            this.LApellido.Size = new System.Drawing.Size(82, 21);
             this.LApellido.TabIndex = 1;
             this.LApellido.Text = "Apellido";
             // 
@@ -507,63 +507,73 @@
             this.LNombre.Location = new System.Drawing.Point(134, 33);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(66, 17);
+            this.LNombre.Size = new System.Drawing.Size(80, 21);
             this.LNombre.TabIndex = 0;
             this.LNombre.Text = "Nombre";
             // 
-            // clientesBindingSource
+            // ID_cliente
             // 
-            this.clientesBindingSource.DataSource = typeof(FankyRecords.C_entidad.Clientes);
+            this.ID_cliente.DataPropertyName = "ID_cliente";
+            this.ID_cliente.HeaderText = "ID_cliente";
+            this.ID_cliente.MinimumWidth = 6;
+            this.ID_cliente.Name = "ID_cliente";
+            this.ID_cliente.ReadOnly = true;
             // 
-            // clientesBindingSource1
+            // Documento
             // 
-            this.clientesBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Clientes);
+            this.Documento.DataPropertyName = "Documento";
+            this.Documento.HeaderText = "Documento";
+            this.Documento.MinimumWidth = 6;
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
             // 
-            // iD_cliente
+            // Nombre
             // 
-            this.iD_cliente.DataPropertyName = "ID_cliente";
-            this.iD_cliente.HeaderText = "ID_cliente";
-            this.iD_cliente.Name = "iD_cliente";
-            // 
-            // documento
-            // 
-            this.documento.DataPropertyName = "documento";
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
             this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             // 
-            // correo
+            // Correo
             // 
-            this.correo.DataPropertyName = "Correo";
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
-            // telefono
+            // Telefono
             // 
-            this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             // 
-            // estado
+            // Estado
             // 
-            this.estado.DataPropertyName = "Estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // clientesBindingSource3
+            // 
+            this.clientesBindingSource3.DataSource = typeof(FankyRecords.C_entidad.Clientes);
             // 
             // GestionClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
@@ -585,8 +595,7 @@
             this.contenedorFotoBotones.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,14 +629,14 @@
         public FontAwesome.Sharp.IconButton Beliminar;
         public FontAwesome.Sharp.IconButton Blimpiar;
         public System.Windows.Forms.TextBox TBtelefono;
-        private System.Windows.Forms.BindingSource clientesBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iD_cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+       
+        private System.Windows.Forms.BindingSource clientesBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

@@ -127,9 +127,9 @@ namespace FankyRecords.C_presentacion.Vendedor
                 DataGridViewRow row = listadoClientes.Rows[e.RowIndex];
 
                 // Solo accede a las columnas si el índice es válido y la celda no es nula
-                if (row.Cells["iD_cliente"] != null)
+                if (row.Cells["ID_cliente"] != null)
                 {
-                    clienteSeleccionado = Convert.ToInt32(row.Cells["iD_cliente"].Value);
+                    clienteSeleccionado = Convert.ToInt32(row.Cells["ID_cliente"].Value);
                 }
                 if (row.Cells["Documento"] != null)
                 {
@@ -176,11 +176,19 @@ namespace FankyRecords.C_presentacion.Vendedor
                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
             {
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            // Verificar si el cliente existe en la base de datos
+            Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
+            if (clienteExistente == null)
             {
-                if (C_negocio.Validaciones.mensajeEditar())
-                {
+                MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+
+            if (C_negocio.Validaciones.mensajeEditar())
+            {
                     // Crear objeto proveedor
                     Clientes clientes= new Clientes
                     {
@@ -199,8 +207,8 @@ namespace FankyRecords.C_presentacion.Vendedor
                     // Recargar la lista de proveedores
                     CargarClientes();
                     Limpiar();
-                }
             }
+            
         }
 
         private void Beliminar_Click(object sender, EventArgs e)
@@ -216,23 +224,25 @@ namespace FankyRecords.C_presentacion.Vendedor
                C_negocio.Validaciones.EstaVacio(TBemail.Text))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            // Verificar si el cliente existe en la base de datos
+            Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
+            if (clienteExistente == null)
             {
-                if (C_negocio.Validaciones.mensajeEliminar())
-                {
-                    CN_Clientes.EliminarCliente(clienteSeleccionado);
-
-                    // Recargar datos y limpiar formulario
-                    CargarClientes();
-                    Limpiar();
-                }
+                MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
             }
-        }
+            if (C_negocio.Validaciones.mensajeEliminar())
+            {
+                CN_Clientes.EliminarCliente(clienteSeleccionado);
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
+                // Recargar datos y limpiar formulario
+                CargarClientes();
+                Limpiar();
+            }
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -247,23 +257,49 @@ namespace FankyRecords.C_presentacion.Vendedor
                 BuscarDatos(terminoBusqueda);
             }
         }
+
         //Metodo para buscar datos en el datagrid
         private void BuscarDatos(string termino)
         {
+            bool encontrado = false;
+
+            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            listadoClientes.ClearSelection();
+
+            // Iterar sobre todas las filas del DataGridView
             foreach (DataGridViewRow row in listadoClientes.Rows)
             {
+                bool filaVisible = false;
+
+                // Iterar sobre todas las celdas de la fila
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().Contains(termino))
+                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
                     {
-                        row.Selected = true;
-                        listadoClientes.FirstDisplayedScrollingRowIndex = row.Index;
-                        return;
+                        filaVisible = true;
+                        encontrado = true;
+                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
                     }
                 }
+
+                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
+                if (!filaVisible && listadoClientes.CurrentRow == row)
+                {
+                    listadoClientes.CurrentCell = null; // Deseleccionar la celda actual
+                }
+
+                // Mostrar u ocultar la fila según si hubo coincidencia
+                row.Visible = filaVisible;
             }
-            MessageBox.Show("No se encontraron coincidencias.");
+
+            // Mostrar mensaje si no se encontraron coincidencias
+            if (!encontrado)
+            {
+                MessageBox.Show("No se encontraron coincidencias.");
+            }
         }
+
+
 
 
         private void Limpiar()
@@ -273,17 +309,37 @@ namespace FankyRecords.C_presentacion.Vendedor
             TBtelefono.Clear();
             TBdni.Clear();
             TBemail.Clear();
-
-        }
-
-        private void listadoClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            rBactivo.Checked = true;
 
         }
 
         private void Blimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void listadoClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que el índice de fila es válido y que no es un encabezado (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
+            {
+                // Deselecciona la fila actual en el DataGridView
+                listadoClientes.ClearSelection();
+
+                // Limpia los controles de entrada
+                Limpiar();
+
+                // Resetea el ID del cliente seleccionado
+                clienteSeleccionado = -1; // Puedes usar -1 o cualquier valor que indique "ningún cliente seleccionado".
+            }
+        }
+
+        private void TBBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (TBBuscador.Text == "")
+            {
+                CargarClientes();
+            }
         }
     }
 }

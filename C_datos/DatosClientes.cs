@@ -127,10 +127,9 @@ namespace FankyRecords.C_datos
                 cmd.ExecuteNonQuery();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Ocurrio un error: " + ex.Message, ex);
             }
             finally { conexion.Close(); }
         }
@@ -226,6 +225,39 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
         }
 
+        public Clientes ObtenerClientePorID(int ID_cliente)
+        {
+            Clientes cliente = null;
+            try 
+            {
+                conexion.Open();
+                string query = "SELECT * FROM Clientes WHERE ID_cliente = @ID_cliente";
 
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@ID_cliente", ID_cliente);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cliente = new Clientes
+                    {
+                        ID_cliente = Convert.ToInt32(reader["ID_cliente"]),
+                        Documento = reader["Documento"].ToString(),
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        Correo = reader["Correo"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),
+                        Estado = reader["Estado"].ToString()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return cliente;
+        }
     }
 }
