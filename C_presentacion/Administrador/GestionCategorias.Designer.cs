@@ -94,7 +94,7 @@
             this.rBinactivo.Location = new System.Drawing.Point(592, 160);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(5);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
+            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
             this.rBinactivo.TabIndex = 32;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -110,7 +110,7 @@
             this.rBactivo.Location = new System.Drawing.Point(488, 160);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(5);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(86, 25);
+            this.rBactivo.Size = new System.Drawing.Size(74, 21);
             this.rBactivo.TabIndex = 31;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -124,7 +124,7 @@
             this.LEstado.Location = new System.Drawing.Point(463, 124);
             this.LEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(70, 21);
+            this.LEstado.Size = new System.Drawing.Size(58, 17);
             this.LEstado.TabIndex = 30;
             this.LEstado.Text = "Estado";
             // 
@@ -137,7 +137,7 @@
             this.TBdescripcion.MaxLength = 100;
             this.TBdescripcion.Name = "TBdescripcion";
             this.TBdescripcion.ShortcutsEnabled = false;
-            this.TBdescripcion.Size = new System.Drawing.Size(242, 28);
+            this.TBdescripcion.Size = new System.Drawing.Size(242, 24);
             this.TBdescripcion.TabIndex = 7;
             // 
             // LDescripcion
@@ -148,7 +148,7 @@
             this.LDescripcion.Location = new System.Drawing.Point(162, 124);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(114, 21);
+            this.LDescripcion.Size = new System.Drawing.Size(96, 17);
             this.LDescripcion.TabIndex = 2;
             this.LDescripcion.Text = "Descripción";
             // 
@@ -315,6 +315,25 @@
             this.Lbuscar.Text = "Buscar:";
             this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CBbuscar
+            // 
+            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBbuscar.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriasBindingSource2, "Id_categoria", true));
+            this.CBbuscar.DataSource = this.categoriasBindingSource2;
+            this.CBbuscar.DisplayMember = "Descripcion";
+            this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBbuscar.ForeColor = System.Drawing.Color.Black;
+            this.CBbuscar.FormattingEnabled = true;
+            this.CBbuscar.IntegralHeight = false;
+            this.CBbuscar.Location = new System.Drawing.Point(783, 0);
+            this.CBbuscar.Margin = new System.Windows.Forms.Padding(5);
+            this.CBbuscar.Name = "CBbuscar";
+            this.CBbuscar.Size = new System.Drawing.Size(171, 25);
+            this.CBbuscar.TabIndex = 1;
+            this.CBbuscar.ValueMember = "Id_categoria";
+            // 
             // categoriasBindingSource2
             // 
             this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
@@ -341,7 +360,7 @@
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
             this.TBBuscador.TabIndex = 33;
             // 
             // btnBuscar
@@ -441,7 +460,7 @@
             // 
             // GestionCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
