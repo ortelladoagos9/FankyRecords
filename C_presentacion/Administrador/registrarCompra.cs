@@ -7,21 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FankyRecords.C_datos;
+using FankyRecords.C_entidad;
 using FankyRecords.C_negocio;
+using FankyRecords.C_presentacion.Modales;
+using FankyRecords.C_presentacion.Utilidades;
+using FankyRecords.C_presentacion.Vendedor;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class registrarCompra : Form
     {
+        
+        private readonly NegocioProductos CN_Productos;
+        private readonly DatosProductos CD_Productos;
         decimal sumaSubtotal = 0;
         public registrarCompra()
         {
             InitializeComponent();
-            this.cbTipoDoc.SelectedIndex = 0;
+            
+            CN_Productos = new NegocioProductos();
+            CD_Productos = new DatosProductos();
+
+
+            /*this.cbTipoDoc.SelectedIndex = 0*/
+            ;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
+            AgregarProducti();
+        }
+
+        private void AgregarProducti()
+        {
+            //Verificamos que todos los campos estésn completos.
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
@@ -34,25 +54,65 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
+                    bool prodExiste = false;
                     decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
                     sumaSubtotal += subtotal;
                     TBtotalPagar.Text = sumaSubtotal.ToString();
 
-                    int n = listaCompras.Rows.Add();
+                    foreach (DataGridViewRow fila in listaCompras.Rows)
+                    {
+                        if (fila.Cells["codigoProducto"].Value.ToString() == TBCodProd.Text)
+                        {
+                            prodExiste = true;
+                            break;
+                        }
+                    }
+                    if (!prodExiste)
+                    {
+                        Productos productos = new Productos
+                        {
+                            Codigo = TBCodProd.Text,
+                            Correo = TBcorreo.Text,
+                            Cuit = TBcuit.Text,
+                            Domicilio = TBdomiciliop.Text,
+                            Telefono = TBtelefono.Text,
+                            Estado = RBactivop.Checked ? "Activo" : "Inactivo"
+                        };
+                        try
+                        {
+                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    listaCompras.Rows[n].Cells[0].Value = TBCodProd.Text;
-                    listaCompras.Rows[n].Cells[1].Value = TBproducto.Text;
-                    listaCompras.Rows[n].Cells[2].Value = TBprecio_compra.Text;
-                    listaCompras.Rows[n].Cells[3].Value = cantProd.Value;
-                    listaCompras.Rows[n].Cells[4].Value = 001;
-                    listaCompras.Rows[n].Cells[5].Value = subtotal;
+                            if (ask == DialogResult.Yes)
+                            {
+                                // Intentar guardar la categoría en la base de datos
+                                CN_Proveedores.GuardarProveedor(proveedores);
 
+                                MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Recargar datos y limpiar formulario
+                                CargarProveedores();
+                                Limpiar();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Limpiar();
+                        }
+
+                    }
+
+                    
                     Limpiar();
                 }
             }
         }
 
         private void registrarCompra_Click(object sender, EventArgs e)
+        {
+            RegistrarCompra();
+        }
+
+        private void RegistrarCompra()
         {
             if (C_negocio.Validaciones.EstaVacio(TBtotalPagar.Text))
             {
@@ -93,17 +153,40 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text))
+            using (var modal = new MDProducto())
             {
-                MessageBox.Show("Debe escribir el código o nombre de un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    TBCodProd.Text = modal.Productomd.Codigo.ToString();
+                    TBproducto.Text = modal.Productomd.Nombre.ToString();
+                    TBPrecio_Venta.Text = modal.Productomd.PrecioVenta.ToString();
+                    
+                }
+                else
+                {
+                    TBbuscarProducto.Select();
+                }
             }
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBcuit.Text))
+            using (var modal = new MDProveedor())
             {
-                MessageBox.Show("Debe ingresar el CUIT del proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    TBrazonSocial.Text = modal.Proveedormd.RazonSocial.ToString();
+                    TBcuit.Text = modal.Proveedormd.Cuit.ToString();
+
+                }
+                else
+                {
+                    TBrazonSocial.Select();
+                }
             }
         }
 
@@ -132,7 +215,51 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void registrarCompra_Load(object sender, EventArgs e)
         {
-            
+            cbTipoDoc.Items.Add(new OpcionCombo() { Valor = "Factura A", Texto = "Factura A" });
+            cbTipoDoc.Items.Add(new OpcionCombo() { Valor = "Remito", Texto = "Remito" });
+            cbTipoDoc.DisplayMember = "Texto";
+            cbTipoDoc.ValueMember = "Valor";
+
+
+        }
+
+        private void LRegistrarCompra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBbuscarProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBCodProd_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+       
+        private void TBbuscarProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+           /* if (e.KeyData == Keys.Enter)
+            {
+                Productos oProducto = CN_Productos.ListarProductos().Where(p => p.Codigo == TBCodProd.Text).FirstOrDefoult();  /*&& p.Estado == true
+                if (oProducto != null)
+                {
+                    TBCodProd.BackColor = Color.GreenYellow;
+                    TBproducto.Text = oProducto.Nombre;
+                    TBprecio_compra.Select();
+
+                }
+                else
+                {
+                    TBCodProd.BackColor = Color.MistyRose;
+                    oProducto.ID_producto = 0;
+                    TBproducto.Text = "";
+                }
+
+
+            }*/
         }
     } 
 }

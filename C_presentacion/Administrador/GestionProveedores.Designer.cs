@@ -182,7 +182,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBtelefono.MaxLength = 15;
             this.TBtelefono.Name = "TBtelefono";
             this.TBtelefono.ShortcutsEnabled = false;
-            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
+            this.TBtelefono.Size = new System.Drawing.Size(242, 24);
             this.TBtelefono.TabIndex = 13;
             this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -195,7 +195,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBinactivop.ForeColor = System.Drawing.Color.DarkRed;
             this.RBinactivop.Location = new System.Drawing.Point(604, 221);
             this.RBinactivop.Name = "RBinactivop";
-            this.RBinactivop.Size = new System.Drawing.Size(103, 25);
+            this.RBinactivop.Size = new System.Drawing.Size(88, 21);
             this.RBinactivop.TabIndex = 12;
             this.RBinactivop.Text = "Inactivo";
             this.RBinactivop.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBactivop.ForeColor = System.Drawing.Color.DarkRed;
             this.RBactivop.Location = new System.Drawing.Point(490, 221);
             this.RBactivop.Name = "RBactivop";
-            this.RBactivop.Size = new System.Drawing.Size(86, 25);
+            this.RBactivop.Size = new System.Drawing.Size(74, 21);
             this.RBactivop.TabIndex = 11;
             this.RBactivop.TabStop = true;
             this.RBactivop.Text = "Activo";
@@ -224,7 +224,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBcorreo.MaxLength = 100;
             this.TBcorreo.Name = "TBcorreo";
             this.TBcorreo.ShortcutsEnabled = false;
-            this.TBcorreo.Size = new System.Drawing.Size(242, 28);
+            this.TBcorreo.Size = new System.Drawing.Size(242, 24);
             this.TBcorreo.TabIndex = 9;
             // 
             // TBdomiciliop
@@ -235,7 +235,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBdomiciliop.MaxLength = 200;
             this.TBdomiciliop.Name = "TBdomiciliop";
             this.TBdomiciliop.ShortcutsEnabled = false;
-            this.TBdomiciliop.Size = new System.Drawing.Size(242, 28);
+            this.TBdomiciliop.Size = new System.Drawing.Size(242, 24);
             this.TBdomiciliop.TabIndex = 8;
             // 
             // TBcuit
@@ -246,7 +246,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.ShortcutsEnabled = false;
-            this.TBcuit.Size = new System.Drawing.Size(242, 28);
+            this.TBcuit.Size = new System.Drawing.Size(242, 24);
             this.TBcuit.TabIndex = 7;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -258,7 +258,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBRazonSocial.MaxLength = 200;
             this.TBRazonSocial.Name = "TBRazonSocial";
             this.TBRazonSocial.ShortcutsEnabled = false;
-            this.TBRazonSocial.Size = new System.Drawing.Size(242, 28);
+            this.TBRazonSocial.Size = new System.Drawing.Size(242, 24);
             this.TBRazonSocial.TabIndex = 6;
             // 
             // Lestadoproveedor
@@ -269,7 +269,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lestadoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Lestadoproveedor.Location = new System.Drawing.Point(470, 183);
             this.Lestadoproveedor.Name = "Lestadoproveedor";
-            this.Lestadoproveedor.Size = new System.Drawing.Size(70, 21);
+            this.Lestadoproveedor.Size = new System.Drawing.Size(58, 17);
             this.Lestadoproveedor.TabIndex = 5;
             this.Lestadoproveedor.Text = "Estado";
             // 
@@ -281,7 +281,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcorreoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Lcorreoproveedor.Location = new System.Drawing.Point(470, 30);
             this.Lcorreoproveedor.Name = "Lcorreoproveedor";
-            this.Lcorreoproveedor.Size = new System.Drawing.Size(71, 21);
+            this.Lcorreoproveedor.Size = new System.Drawing.Size(59, 17);
             this.Lcorreoproveedor.TabIndex = 4;
             this.Lcorreoproveedor.Text = "Correo";
             // 
@@ -293,7 +293,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Ltelefonoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Ltelefonoproveedor.Location = new System.Drawing.Point(470, 106);
             this.Ltelefonoproveedor.Name = "Ltelefonoproveedor";
-            this.Ltelefonoproveedor.Size = new System.Drawing.Size(87, 21);
+            this.Ltelefonoproveedor.Size = new System.Drawing.Size(72, 17);
             this.Ltelefonoproveedor.TabIndex = 3;
             this.Ltelefonoproveedor.Text = "Teléfono";
             // 
@@ -305,7 +305,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.LdomicilioProveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.LdomicilioProveedor.Location = new System.Drawing.Point(134, 183);
             this.LdomicilioProveedor.Name = "LdomicilioProveedor";
-            this.LdomicilioProveedor.Size = new System.Drawing.Size(93, 21);
+            this.LdomicilioProveedor.Size = new System.Drawing.Size(79, 17);
             this.LdomicilioProveedor.TabIndex = 2;
             this.LdomicilioProveedor.Text = "Domicilio";
             // 
@@ -317,7 +317,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcuit.ForeColor = System.Drawing.Color.DarkRed;
             this.Lcuit.Location = new System.Drawing.Point(134, 106);
             this.Lcuit.Name = "Lcuit";
-            this.Lcuit.Size = new System.Drawing.Size(48, 21);
+            this.Lcuit.Size = new System.Drawing.Size(40, 17);
             this.Lcuit.TabIndex = 1;
             this.Lcuit.Text = "Cuit";
             // 
@@ -329,7 +329,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lrazonsocial.ForeColor = System.Drawing.Color.DarkRed;
             this.Lrazonsocial.Location = new System.Drawing.Point(134, 29);
             this.Lrazonsocial.Name = "Lrazonsocial";
-            this.Lrazonsocial.Size = new System.Drawing.Size(122, 21);
+            this.Lrazonsocial.Size = new System.Drawing.Size(104, 17);
             this.Lrazonsocial.TabIndex = 0;
             this.Lrazonsocial.Text = "Razón Social";
             // 
@@ -458,7 +458,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.listaProveedores.ForeColor = System.Drawing.Color.DarkRed;
             this.listaProveedores.Location = new System.Drawing.Point(0, 0);
             this.listaProveedores.Name = "listaProveedores";
-            this.listaProveedores.Size = new System.Drawing.Size(227, 25);
+            this.listaProveedores.Size = new System.Drawing.Size(186, 19);
             this.listaProveedores.TabIndex = 15;
             this.listaProveedores.Text = "Lista de Proveedores";
             // 
@@ -496,7 +496,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
             this.TBBuscador.TabIndex = 34;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -567,7 +567,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // GestionProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
