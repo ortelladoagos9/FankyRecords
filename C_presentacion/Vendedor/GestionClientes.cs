@@ -44,67 +44,65 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void GuardarCliente()
         {
-            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
-             C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
-             C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
-             C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-             C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
-
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+                if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+                    C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
+                    C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
+                    C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+                    C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // Validación previa de duplicados en la base de datos
                 if (CN_Clientes.ExisteDocumento(TBdni.Text))
                 {
-                    MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
+                   MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   return;
                 }
                 if (CN_Clientes.ExisteTelefono(TBtelefono.Text))
                 {
-                    MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
+                   MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   return;
                 }
                 if (CN_Clientes.ExisteCorreo(TBemail.Text))
                 {
-                    MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
+                   MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   return;
                 }
-                else
+
+                string email = TBemail.Text;
+
+                if (!C_negocio.Validaciones.EmailCorrecto(email))
                 {
-
-
-                    string email = TBemail.Text;
-
-                    if (!C_negocio.Validaciones.EmailCorrecto(email))
-                    {
-                        MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        if (C_negocio.Validaciones.mensajeConfirmacion())
-                        {
-                            Clientes clientes = new Clientes();
-                            clientes.Documento = TBdni.Text;
-                            clientes.Nombre = TBnombre.Text;
-                            clientes.Apellido = TBapellido.Text;
-                            clientes.Correo = TBemail.Text;
-                            clientes.Telefono = TBtelefono.Text;
-                            clientes.Estado = rBactivo.Checked ? "Activo" : "Inactivo";
-
-
-                            CN_Clientes.GuardarCliente(clientes);
-
-                            CargarClientes();
-
-                            Limpiar();
-                        }
-                    }
+                    MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+            Clientes clientes = new Clientes();
+            clientes.Documento = TBdni.Text;
+            clientes.Nombre = TBnombre.Text;
+            clientes.Apellido = TBapellido.Text;
+            clientes.Correo = TBemail.Text;
+            clientes.Telefono = TBtelefono.Text;
+            clientes.Estado = rBactivo.Checked ? "Activo" : "Inactivo";
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo cliente?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Yes)
+                {
+                    // Intentar guardar la categoría en la base de datos
+                    CN_Clientes.GuardarCliente(clientes);
+
+                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarClientes();
+                    Limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
         }
 
@@ -169,46 +167,53 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void EditarCliente()
         {
-            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+                if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
                C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
                C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
                C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
-            {
-                MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            // Verificar si el cliente existe en la base de datos
-            Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
-            if (clienteExistente == null)
-            {
-                MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpiar();
-                return;
-            }
-
-            if (C_negocio.Validaciones.mensajeEditar())
-            {
-                    // Crear objeto proveedor
-                    Clientes clientes= new Clientes
-                    {
-                        ID_cliente= clienteSeleccionado, // Asignar el ID del proveedor seleccionado
-                        Documento = TBdni.Text,
-                        Nombre = TBnombre.Text,
-                        Apellido = TBapellido.Text,
-                        Correo = TBemail.Text,
-                        Telefono = TBtelefono.Text,
-                        Estado = rBactivo.Checked ? "Activo" : "Inactivo"
-                    };
-
-                    // Llamar al método de negocio para guardar/editar el proveedor
-                    CN_Clientes.GuardarCliente(clientes);
-
-                    // Recargar la lista de proveedores
-                    CargarClientes();
+                {
+                    MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                // Verificar si el cliente existe en la base de datos
+                Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
+                if (clienteExistente == null)
+                {
+                    MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Limpiar();
-            }
-            
+                    return;
+                }
+                // Crear objeto clientes
+                Clientes clientes = new Clientes
+                {
+                    ID_cliente = clienteSeleccionado, // Asignar el ID del proveedor seleccionado
+                    Documento = TBdni.Text,
+                    Nombre = TBnombre.Text,
+                    Apellido = TBapellido.Text,
+                    Correo = TBemail.Text,
+                    Telefono = TBtelefono.Text,
+                    Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+                };
+                try
+                {
+                    DialogResult ask = MessageBox.Show("¿Seguro que desea editar cliente?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (ask == DialogResult.Yes)
+                    {
+                        // Llamar al método de negocio para guardar/editar el proveedor
+                        CN_Clientes.GuardarCliente(clientes);
+
+                        MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Recargar datos y limpiar formulario
+                        CargarClientes();
+                        Limpiar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
 
         private void Beliminar_Click(object sender, EventArgs e)
@@ -299,9 +304,6 @@ namespace FankyRecords.C_presentacion.Vendedor
             }
         }
 
-
-
-
         private void Limpiar()
         {
             TBnombre.Clear();
@@ -330,7 +332,7 @@ namespace FankyRecords.C_presentacion.Vendedor
                 Limpiar();
 
                 // Resetea el ID del cliente seleccionado
-                clienteSeleccionado = -1; // Puedes usar -1 o cualquier valor que indique "ningún cliente seleccionado".
+                clienteSeleccionado = -1; 
             }
         }
 

@@ -154,5 +154,36 @@ namespace FankyRecords.C_datos
             }
             finally { conexion.Close(); }
         }
+
+        public Categorias ObtenerCategoriaPorID(int Id_categoria)
+        {
+            Categorias categorias = null;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT * FROM CATEGORIAS WHERE Id_categoria = @Id_categoria";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id_categoria", Id_categoria);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    categorias = new Categorias
+                    {
+                        Id_categoria = int.Parse(reader["Id_categoria"].ToString()),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        Estado = reader["Estado"].ToString()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return categorias;
+        }
     }
 }

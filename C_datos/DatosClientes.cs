@@ -40,20 +40,25 @@ namespace FankyRecords.C_datos
 
                 cmd.ExecuteNonQuery();
             }
-            /*    catch (SqlException ex)
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("UQ_Clientes_Documento"))
                 {
-                    switch (ex.Number)
-                    {
-                        case 2627: //unique
-                            throw new Exception("Error: El valor de 'Descripcion' ya existe. No se permiten duplicados.", ex);
-                        case 547: //clave foranea o check
-                            throw new Exception("Error: Violación de restricción de clave foránea o de otro tipo. Revisa los valores relacionados.", ex);
-                        case 515: //null
-                            throw new Exception("Error: No se permite el valor NULL en uno de los campos obligatorios.", ex);
-                        default:
-                            throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
-                    }
-                }*/
+                    throw new Exception("El valor de 'Documento' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Clientes_Telefono"))
+                {
+                    throw new Exception("El valor de 'Telefono' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Clientes_Correo"))
+                {
+                    throw new Exception("El valor de 'Correo' ya existe. No se permiten duplicados.", ex);
+                }
+                else
+                {
+                    throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
+                }
+            }
             catch (Exception ex)
             {
                 throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
@@ -126,6 +131,25 @@ namespace FankyRecords.C_datos
 
                 cmd.ExecuteNonQuery();
 
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("UQ_Clientes_Documento"))
+                {
+                    throw new Exception("El valor de 'Documento' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Clientes_Telefono"))
+                {
+                    throw new Exception("El valor de 'Telefono' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Clientes_Correo"))
+                {
+                    throw new Exception("El valor de 'Correo' ya existe. No se permiten duplicados.", ex);
+                }
+                else
+                {
+                    throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
+                }
             }
             catch (Exception ex)
             {

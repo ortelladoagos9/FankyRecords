@@ -2,6 +2,7 @@
 using FankyRecords.C_entidad;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,22 @@ namespace FankyRecords.C_negocio
 
         public Clientes GuardarCliente(Clientes cliente)
         {
-            if (cliente.ID_cliente == 0)
+            try
             {
-                CD_Clientes.AgregarCliente(cliente);
+                if (cliente.ID_cliente == 0)
+                {
+                    CD_Clientes.AgregarCliente(cliente);
+                }
+                else
+                {
+                    CD_Clientes.EditarCliente(cliente);
+                }
             }
-            else
+            catch (SqlException ex)
             {
-                CD_Clientes.EditarCliente(cliente);
+                throw new Exception(ex.Message);
             }
+            
             return cliente;
         }
 

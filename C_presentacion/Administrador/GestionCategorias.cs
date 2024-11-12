@@ -34,8 +34,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void GuardarCategorias()
         {
-            try
-            {
+           
                 // Verificar que todos los campos requeridos estén completos
                 if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
                 {
@@ -51,28 +50,34 @@ namespace FankyRecords.C_presentacion.Administrador
                     return;
                 }
                 
-                // Confirmación del usuario para continuar
-                if (C_negocio.Validaciones.mensajeConfirmacion())
-                {
-                    // Crear objeto categoría
-                    Categorias categorias = new Categorias
-                    {
-                        Descripcion = TBdescripcion.Text,
-                        Estado = rBactivo.Checked ? "Activo" : "Inactivo"
-                    };
+                
+            // Crear objeto categoría
+            Categorias categorias = new Categorias
+            {
+                Descripcion = TBdescripcion.Text,
+                Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+            };
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar una nueva categoria?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (ask == DialogResult.Yes)
+                {
                     // Intentar guardar la categoría en la base de datos
                     CN_Categorias.GuardarCategoria(categorias);
 
+                    MessageBox.Show("La categoria: " + this.TBdescripcion.Text + " se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarCategorias();
                     Limpiar();
                 }
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
+
         }
 
 
@@ -86,18 +91,25 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            // Verificar si la categoria existe en la base de datos
+            Categorias categoriaExistente = CN_Categorias.ObtenerCategoriaPorID(categoriaIdSeleccionada);
+            if (categoriaExistente == null)
             {
-                if (C_negocio.Validaciones.mensajeEliminar())
-                {
+                MessageBox.Show("La categoria seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (C_negocio.Validaciones.mensajeEliminar())
+            {
                     CN_Categorias.EliminarCategoria(categoriaIdSeleccionada);
 
                     // Recargar datos y limpiar formulario
                     CargarCategorias();
                     Limpiar();
-                }
             }
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -110,33 +122,47 @@ namespace FankyRecords.C_presentacion.Administrador
             EditarCategorias();
         }
 
-
         private void EditarCategorias()
         {
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            // Verificar si la categoria existe en la base de datos
+            Categorias categoriaExistente = CN_Categorias.ObtenerCategoriaPorID(categoriaIdSeleccionada);
+            if (categoriaExistente == null)
             {
-                    if (C_negocio.Validaciones.mensajeEditar())
-                    {
-                         // Crear objeto categoría
-                         Categorias categorias = new Categorias
-                         {
-                             Id_categoria = categoriaIdSeleccionada, // Asignar el ID de la categoría seleccionada
-                             Descripcion = TBdescripcion.Text,
-                             Estado = rBactivo.Checked ? "Activo" : "Inactivo"
-                         };
-
-                         // Llamar al método de negocio para guardar/editar la categoría
-                         CN_Categorias.GuardarCategoria(categorias);
-
-                        // Recargar la lista de categorías
-                        CargarCategorias();
-                        Limpiar();
-                    }
+                MessageBox.Show("La categoria seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
             }
+            // Crear objeto categoría
+            Categorias categorias = new Categorias
+            {
+                Id_categoria = categoriaIdSeleccionada, // Asignar el ID de la categoría seleccionada
+                Descripcion = TBdescripcion.Text,
+                Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+            };
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar categoria?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Yes)
+                {
+                    // Llamar al método de negocio para guardar/editar la categoría
+                    CN_Categorias.GuardarCategoria(categorias);
+
+                    MessageBox.Show("La categoria: " + this.TBdescripcion.Text + " se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarCategorias();
+                    Limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void GestionCategorias_Load(object sender, EventArgs e)
@@ -183,6 +209,51 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                string terminoBusqueda = TBBuscador.Text;
+                BuscarDatos(terminoBusqueda);
+            }
+        }
+
+        private void BuscarDatos(string termino)
+        {
+            bool encontrado = false;
+
+            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            listadoCategorias.ClearSelection();
+
+            // Iterar sobre todas las filas del DataGridView
+            foreach (DataGridViewRow row in listadoCategorias.Rows)
+            {
+                bool filaVisible = false;
+
+                // Iterar sobre todas las celdas de la fila
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    {
+                        filaVisible = true;
+                        encontrado = true;
+                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                    }
+                }
+
+                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
+                if (!filaVisible && listadoCategorias.CurrentRow == row)
+                {
+                    listadoCategorias.CurrentCell = null; // Deseleccionar la celda actual
+                }
+
+                // Mostrar u ocultar la fila según si hubo coincidencia
+                row.Visible = filaVisible;
+            }
+
+            // Mostrar mensaje si no se encontraron coincidencias
+            if (!encontrado)
+            {
+                MessageBox.Show("No se encontraron coincidencias.");
+            }
         }
 
         private void Limpiar()
@@ -191,6 +262,28 @@ namespace FankyRecords.C_presentacion.Administrador
             rBactivo.Checked = true;
         }
 
-      
+        private void listadoCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que el índice de fila es válido y que no es un encabezado (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
+            {
+                // Deselecciona la fila actual en el DataGridView
+                listadoCategorias.ClearSelection();
+
+                // Limpia los controles de entrada
+                Limpiar();
+
+                // Resetea el ID del cliente seleccionado
+                categoriaIdSeleccionada = -1; 
+            }
+        }
+
+        private void TBBuscador_TextChanged_1(object sender, EventArgs e)
+        {
+            if (TBBuscador.Text == "")
+            {
+                CargarCategorias();
+            }
+        }
     }
 }
