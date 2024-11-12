@@ -59,8 +59,14 @@
   <ItemGroup>
     <Compile Include="C_datos\Conexion.cs" />
     <Compile Include="C_datos\DatosCategorias.cs" />
+    <Compile Include="C_datos\DatosProveedores.cs" />
+    <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
+    <Compile Include="C_entidad\Proveedores.cs" />
+    <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
+    <Compile Include="C_negocio\NegocioProveedores.cs" />
+    <Compile Include="C_negocio\NegocioClientes.cs" />
     <Compile Include="C_negocio\NegocioUsuarios.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\backup.cs">
@@ -243,6 +249,9 @@
     <None Include="packages\FontAwesome.Sharp.6.6.0\.signature.p7s" />
     <None Include="packages\FontAwesome.Sharp.6.6.0\FontAwesome.Sharp.6.6.0.nupkg" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Categorias.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Proveedores.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

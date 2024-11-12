@@ -54,5 +54,10 @@ namespace FankyRecords.C_negocio
         {
             CD_Categorias.EliminarCategoria(id_categoria);
         }
+
+        public Categorias ObtenerCategoriaPorID(int Id_categoria)
+        {
+            return CD_Categorias.ObtenerCategoriaPorID(Id_categoria);
+        }
     }
 }

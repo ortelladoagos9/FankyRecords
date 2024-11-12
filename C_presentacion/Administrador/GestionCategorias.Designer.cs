@@ -56,14 +56,15 @@
             this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorDatos.SuspendLayout();
             this.contenedorGestionCategorias.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             this.contenedorLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -339,6 +340,7 @@
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(171, 24);
             this.TBBuscador.TabIndex = 33;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged_1);
             // 
             // btnBuscar
             // 
@@ -407,6 +409,7 @@
             this.listadoCategorias.Size = new System.Drawing.Size(1182, 209);
             this.listadoCategorias.TabIndex = 25;
             this.listadoCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCategorias_CellClick);
+            this.listadoCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCategorias_CellDoubleClick);
             // 
             // Id_categoria
             // 
@@ -430,6 +433,10 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            // 
+            // categoriasBindingSource2
+            // 
+            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // categoriasBindingSource
             // 
@@ -462,8 +469,8 @@
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource1)).EndInit();
             this.ResumeLayout(false);

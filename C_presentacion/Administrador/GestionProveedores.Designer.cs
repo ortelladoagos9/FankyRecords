@@ -30,15 +30,16 @@ namespace FankyRecords.C_presentacion.Administrador
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
             this.Beditar = new FontAwesome.Sharp.IconButton();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
             this.contenedorDatos = new System.Windows.Forms.Panel();
+            this.TBtelefono = new System.Windows.Forms.TextBox();
             this.RBinactivop = new System.Windows.Forms.RadioButton();
             this.RBactivop = new System.Windows.Forms.RadioButton();
-            this.TBtelefono = new System.Windows.Forms.MaskedTextBox();
             this.TBcorreo = new System.Windows.Forms.TextBox();
             this.TBdomiciliop = new System.Windows.Forms.TextBox();
             this.TBcuit = new System.Windows.Forms.TextBox();
@@ -51,27 +52,28 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lrazonsocial = new System.Windows.Forms.Label();
             this.LGestionProveedor = new System.Windows.Forms.Label();
             this.DGlistaproveedores = new System.Windows.Forms.DataGridView();
-            this.id_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilioProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listaProveedores = new System.Windows.Forms.Label();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
-            this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorBotones = new System.Windows.Forms.Panel();
+            this.TBlimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
+            this.ID_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Bguardar
@@ -151,9 +153,9 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // contenedorDatos
             // 
+            this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.RBinactivop);
             this.contenedorDatos.Controls.Add(this.RBactivop);
-            this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.TBcorreo);
             this.contenedorDatos.Controls.Add(this.TBdomiciliop);
             this.contenedorDatos.Controls.Add(this.TBcuit);
@@ -172,12 +174,25 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorDatos.Size = new System.Drawing.Size(921, 355);
             this.contenedorDatos.TabIndex = 12;
             // 
+            // TBtelefono
+            // 
+            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Location = new System.Drawing.Point(473, 141);
+            this.TBtelefono.MaxLength = 15;
+            this.TBtelefono.Name = "TBtelefono";
+            this.TBtelefono.ShortcutsEnabled = false;
+            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
+            this.TBtelefono.TabIndex = 13;
+            this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
+            // 
             // RBinactivop
             // 
             this.RBinactivop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RBinactivop.AutoSize = true;
             this.RBinactivop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBinactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBinactivop.ForeColor = System.Drawing.Color.DarkRed;
             this.RBinactivop.Location = new System.Drawing.Point(604, 221);
             this.RBinactivop.Name = "RBinactivop";
             this.RBinactivop.Size = new System.Drawing.Size(103, 25);
@@ -192,6 +207,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBactivop.Checked = true;
             this.RBactivop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBactivop.ForeColor = System.Drawing.Color.DarkRed;
             this.RBactivop.Location = new System.Drawing.Point(490, 221);
             this.RBactivop.Name = "RBactivop";
             this.RBactivop.Size = new System.Drawing.Size(86, 25);
@@ -199,17 +215,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBactivop.TabStop = true;
             this.RBactivop.Text = "Activo";
             this.RBactivop.UseVisualStyleBackColor = true;
-            // 
-            // TBtelefono
-            // 
-            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(470, 141);
-            this.TBtelefono.Mask = "(9999)000000";
-            this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.ShortcutsEnabled = false;
-            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
-            this.TBtelefono.TabIndex = 10;
             // 
             // TBcorreo
             // 
@@ -232,6 +237,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBdomiciliop.ShortcutsEnabled = false;
             this.TBdomiciliop.Size = new System.Drawing.Size(242, 28);
             this.TBdomiciliop.TabIndex = 8;
+            this.TBdomiciliop.TextChanged += new System.EventHandler(this.TBdomiciliop_TextChanged);
             // 
             // TBcuit
             // 
@@ -261,6 +267,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lestadoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lestadoproveedor.AutoSize = true;
             this.Lestadoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lestadoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Lestadoproveedor.Location = new System.Drawing.Point(470, 183);
             this.Lestadoproveedor.Name = "Lestadoproveedor";
             this.Lestadoproveedor.Size = new System.Drawing.Size(70, 21);
@@ -272,6 +279,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcorreoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lcorreoproveedor.AutoSize = true;
             this.Lcorreoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcorreoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Lcorreoproveedor.Location = new System.Drawing.Point(470, 30);
             this.Lcorreoproveedor.Name = "Lcorreoproveedor";
             this.Lcorreoproveedor.Size = new System.Drawing.Size(71, 21);
@@ -283,6 +291,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Ltelefonoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Ltelefonoproveedor.AutoSize = true;
             this.Ltelefonoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltelefonoproveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.Ltelefonoproveedor.Location = new System.Drawing.Point(470, 106);
             this.Ltelefonoproveedor.Name = "Ltelefonoproveedor";
             this.Ltelefonoproveedor.Size = new System.Drawing.Size(87, 21);
@@ -294,6 +303,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.LdomicilioProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LdomicilioProveedor.AutoSize = true;
             this.LdomicilioProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LdomicilioProveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.LdomicilioProveedor.Location = new System.Drawing.Point(134, 183);
             this.LdomicilioProveedor.Name = "LdomicilioProveedor";
             this.LdomicilioProveedor.Size = new System.Drawing.Size(93, 21);
@@ -305,6 +315,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lcuit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lcuit.AutoSize = true;
             this.Lcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcuit.ForeColor = System.Drawing.Color.DarkRed;
             this.Lcuit.Location = new System.Drawing.Point(134, 106);
             this.Lcuit.Name = "Lcuit";
             this.Lcuit.Size = new System.Drawing.Size(48, 21);
@@ -316,6 +327,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lrazonsocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lrazonsocial.AutoSize = true;
             this.Lrazonsocial.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lrazonsocial.ForeColor = System.Drawing.Color.DarkRed;
             this.Lrazonsocial.Location = new System.Drawing.Point(134, 29);
             this.Lrazonsocial.Name = "Lrazonsocial";
             this.Lrazonsocial.Size = new System.Drawing.Size(122, 21);
@@ -337,6 +349,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // DGlistaproveedores
             // 
+            this.DGlistaproveedores.AutoGenerateColumns = false;
             this.DGlistaproveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGlistaproveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGlistaproveedores.BackgroundColor = System.Drawing.Color.White;
@@ -352,17 +365,18 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGlistaproveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGlistaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_proveedor,
-            this.razonSocial,
-            this.cuitProveedor,
-            this.domicilioProveedor,
-            this.correoProveedor,
-            this.telefonoProveedor,
-            this.estadoProveedor});
+            this.ID_proveedor,
+            this.RazonSocial,
+            this.Correo,
+            this.Telefono,
+            this.Estado,
+            this.Cuit,
+            this.Domicilio});
+            this.DGlistaproveedores.DataSource = this.proveedoresBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -370,57 +384,18 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGlistaproveedores.Location = new System.Drawing.Point(0, 445);
             this.DGlistaproveedores.Name = "DGlistaproveedores";
+            this.DGlistaproveedores.ReadOnly = true;
             this.DGlistaproveedores.RowHeadersWidth = 51;
             this.DGlistaproveedores.Size = new System.Drawing.Size(1182, 209);
             this.DGlistaproveedores.TabIndex = 11;
-            // 
-            // id_proveedor
-            // 
-            this.id_proveedor.HeaderText = "ID";
-            this.id_proveedor.MinimumWidth = 6;
-            this.id_proveedor.Name = "id_proveedor";
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.HeaderText = "Razon Social";
-            this.razonSocial.MinimumWidth = 6;
-            this.razonSocial.Name = "razonSocial";
-            // 
-            // cuitProveedor
-            // 
-            this.cuitProveedor.HeaderText = "Cuit";
-            this.cuitProveedor.MinimumWidth = 6;
-            this.cuitProveedor.Name = "cuitProveedor";
-            // 
-            // domicilioProveedor
-            // 
-            this.domicilioProveedor.HeaderText = "Domicilio";
-            this.domicilioProveedor.MinimumWidth = 6;
-            this.domicilioProveedor.Name = "domicilioProveedor";
-            // 
-            // correoProveedor
-            // 
-            this.correoProveedor.HeaderText = "Email";
-            this.correoProveedor.MinimumWidth = 6;
-            this.correoProveedor.Name = "correoProveedor";
-            // 
-            // telefonoProveedor
-            // 
-            this.telefonoProveedor.HeaderText = "Telefono";
-            this.telefonoProveedor.MinimumWidth = 6;
-            this.telefonoProveedor.Name = "telefonoProveedor";
-            // 
-            // estadoProveedor
-            // 
-            this.estadoProveedor.HeaderText = "Estado";
-            this.estadoProveedor.MinimumWidth = 6;
-            this.estadoProveedor.Name = "estadoProveedor";
+            this.DGlistaproveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProveedores_CellClick);
             // 
             // listaProveedores
             // 
             this.listaProveedores.AutoSize = true;
             this.listaProveedores.Dock = System.Windows.Forms.DockStyle.Left;
             this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaProveedores.ForeColor = System.Drawing.Color.DarkRed;
             this.listaProveedores.Location = new System.Drawing.Point(0, 0);
             this.listaProveedores.Name = "listaProveedores";
             this.listaProveedores.Size = new System.Drawing.Size(227, 25);
@@ -431,11 +406,9 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.contenedorLista.BackColor = System.Drawing.Color.White;
             this.contenedorLista.Controls.Add(this.Lbuscar);
-            this.contenedorLista.Controls.Add(this.CBbuscar);
             this.contenedorLista.Controls.Add(this.TBBuscador);
             this.contenedorLista.Controls.Add(this.listaProveedores);
             this.contenedorLista.Controls.Add(this.btnBuscar);
-            this.contenedorLista.Controls.Add(this.btnLimpiar);
             this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.contenedorLista.Location = new System.Drawing.Point(0, 417);
             this.contenedorLista.Name = "contenedorLista";
@@ -447,37 +420,20 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold);
-            this.Lbuscar.Location = new System.Drawing.Point(611, 0);
+            this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
+            this.Lbuscar.Location = new System.Drawing.Point(839, 0);
             this.Lbuscar.Name = "Lbuscar";
             this.Lbuscar.Size = new System.Drawing.Size(115, 28);
             this.Lbuscar.TabIndex = 0;
-            this.Lbuscar.Text = "Buscar por:";
+            this.Lbuscar.Text = "Buscar:";
             this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CBbuscar
-            // 
-            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold);
-            this.CBbuscar.ForeColor = System.Drawing.Color.Black;
-            this.CBbuscar.FormattingEnabled = true;
-            this.CBbuscar.IntegralHeight = false;
-            this.CBbuscar.Items.AddRange(new object[] {
-            "Nro ID",
-            "Razon social",
-            "Cuit"});
-            this.CBbuscar.Location = new System.Drawing.Point(726, 0);
-            this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
-            this.CBbuscar.TabIndex = 1;
             // 
             // TBBuscador
             // 
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
             this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscador.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscador.Location = new System.Drawing.Point(897, 0);
+            this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
@@ -492,33 +448,17 @@ namespace FankyRecords.C_presentacion.Administrador
             this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(1125, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(57, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // contenedorBotones
             // 
             this.contenedorBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorBotones.Controls.Add(this.TBlimpiar);
             this.contenedorBotones.Controls.Add(this.Beditar);
             this.contenedorBotones.Controls.Add(this.Bguardar);
             this.contenedorBotones.Controls.Add(this.Beliminar);
@@ -529,6 +469,31 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorBotones.TabIndex = 20;
             // 
+            // TBlimpiar
+            // 
+            this.TBlimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBlimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.TBlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TBlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.TBlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBlimpiar.ForeColor = System.Drawing.Color.White;
+            this.TBlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.TBlimpiar.IconColor = System.Drawing.Color.White;
+            this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TBlimpiar.IconSize = 21;
+            this.TBlimpiar.Location = new System.Drawing.Point(44, 303);
+            this.TBlimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBlimpiar.Name = "TBlimpiar";
+            this.TBlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TBlimpiar.Size = new System.Drawing.Size(183, 31);
+            this.TBlimpiar.TabIndex = 12;
+            this.TBlimpiar.Text = "Limpiar";
+            this.TBlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TBlimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TBlimpiar.UseVisualStyleBackColor = false;
+            this.TBlimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // contenedorGestionUsuarios
             // 
             this.contenedorGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -538,6 +503,66 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
             this.contenedorGestionUsuarios.Size = new System.Drawing.Size(921, 62);
             this.contenedorGestionUsuarios.TabIndex = 21;
+            // 
+            // ID_proveedor
+            // 
+            this.ID_proveedor.DataPropertyName = "ID_proveedor";
+            this.ID_proveedor.HeaderText = "ID_proveedor";
+            this.ID_proveedor.MinimumWidth = 6;
+            this.ID_proveedor.Name = "ID_proveedor";
+            this.ID_proveedor.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.DataPropertyName = "RazonSocial";
+            this.RazonSocial.HeaderText = "RazonSocial";
+            this.RazonSocial.MinimumWidth = 6;
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cuit
+            // 
+            this.Cuit.DataPropertyName = "Cuit";
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.MinimumWidth = 6;
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.MinimumWidth = 6;
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
+            // proveedoresBindingSource1
+            // 
+            this.proveedoresBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
             // 
             // GestionProveedores
             // 
@@ -551,11 +576,13 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Controls.Add(this.contenedorLista);
             this.Controls.Add(this.DGlistaproveedores);
             this.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.DarkRed;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "GestionProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GestionProveedores";
+            this.Load += new System.EventHandler(this.GestionProveedores_Load);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).EndInit();
@@ -563,6 +590,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorLista.PerformLayout();
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorGestionUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -580,29 +608,29 @@ namespace FankyRecords.C_presentacion.Administrador
         private System.Windows.Forms.Label LdomicilioProveedor;
         private System.Windows.Forms.Label Lcuit;
         private System.Windows.Forms.Label Lrazonsocial;
-        private System.Windows.Forms.TextBox TBRazonSocial;
-        private System.Windows.Forms.MaskedTextBox TBtelefono;
-        private System.Windows.Forms.TextBox TBcorreo;
-        private System.Windows.Forms.TextBox TBdomiciliop;
-        private System.Windows.Forms.TextBox TBcuit;
         private System.Windows.Forms.RadioButton RBinactivop;
         private System.Windows.Forms.RadioButton RBactivop;
-        private System.Windows.Forms.DataGridView DGlistaproveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuitProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoProveedor;
         private System.Windows.Forms.Label listaProveedores;
         private System.Windows.Forms.Panel contenedorLista;
         private System.Windows.Forms.Label Lbuscar;
-        private System.Windows.Forms.ComboBox CBbuscar;
         public FontAwesome.Sharp.IconButton btnBuscar;
-        public FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.Panel contenedorBotones;
         private System.Windows.Forms.Panel contenedorGestionUsuarios;
         public System.Windows.Forms.TextBox TBBuscador;
+        public FontAwesome.Sharp.IconButton TBlimpiar;
+        public DataGridView DGlistaproveedores;
+        public TextBox TBcuit;
+        public TextBox TBRazonSocial;
+        public TextBox TBcorreo;
+        public TextBox TBdomiciliop;
+        public TextBox TBtelefono;
+        private BindingSource proveedoresBindingSource1;
+        private DataGridViewTextBoxColumn ID_proveedor;
+        private DataGridViewTextBoxColumn RazonSocial;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Cuit;
+        private DataGridViewTextBoxColumn Domicilio;
     }
 }
