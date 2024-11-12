@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoClientes = new System.Windows.Forms.DataGridView();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorGestionClientes = new System.Windows.Forms.Panel();
             this.LGestionClientes = new System.Windows.Forms.Label();
             this.contenedorLista = new System.Windows.Forms.Panel();
@@ -65,13 +66,12 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.contenedorGestionClientes.SuspendLayout();
             this.contenedorLista.SuspendLayout();
             this.contenedorFotoBotones.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoClientes
@@ -99,7 +99,7 @@
             this.Correo,
             this.Telefono,
             this.Estado});
-            this.listadoClientes.DataSource = this.clientesBindingSource3;
+            this.listadoClientes.DataSource = this.clientesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,6 +117,10 @@
             this.listadoClientes.TabIndex = 12;
             this.listadoClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellClick);
             this.listadoClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellDoubleClick);
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataSource = typeof(FankyRecords.C_entidad.Clientes);
             // 
             // contenedorGestionClientes
             // 
@@ -567,10 +571,6 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // clientesBindingSource3
-            // 
-            this.clientesBindingSource3.DataSource = typeof(FankyRecords.C_entidad.Clientes);
-            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -589,13 +589,13 @@
             this.Text = "GestionClientes";
             this.Load += new System.EventHandler(this.GestionClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.contenedorGestionClientes.ResumeLayout(false);
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorFotoBotones.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -629,8 +629,7 @@
         public FontAwesome.Sharp.IconButton Beliminar;
         public FontAwesome.Sharp.IconButton Blimpiar;
         public System.Windows.Forms.TextBox TBtelefono;
-       
-        private System.Windows.Forms.BindingSource clientesBindingSource3;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

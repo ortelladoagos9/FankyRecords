@@ -51,7 +51,6 @@
             this.LListaCategorias = new System.Windows.Forms.Label();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.categoriasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.listadoCategorias = new System.Windows.Forms.DataGridView();
             this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,7 +94,7 @@
             this.rBinactivo.Location = new System.Drawing.Point(592, 160);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(5);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
+            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 32;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -111,7 +110,7 @@
             this.rBactivo.Location = new System.Drawing.Point(488, 160);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(5);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(74, 21);
+            this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 31;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -125,7 +124,7 @@
             this.LEstado.Location = new System.Drawing.Point(463, 124);
             this.LEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(58, 17);
+            this.LEstado.Size = new System.Drawing.Size(70, 21);
             this.LEstado.TabIndex = 30;
             this.LEstado.Text = "Estado";
             // 
@@ -138,7 +137,7 @@
             this.TBdescripcion.MaxLength = 100;
             this.TBdescripcion.Name = "TBdescripcion";
             this.TBdescripcion.ShortcutsEnabled = false;
-            this.TBdescripcion.Size = new System.Drawing.Size(242, 24);
+            this.TBdescripcion.Size = new System.Drawing.Size(242, 28);
             this.TBdescripcion.TabIndex = 7;
             // 
             // LDescripcion
@@ -149,7 +148,7 @@
             this.LDescripcion.Location = new System.Drawing.Point(162, 124);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(96, 17);
+            this.LDescripcion.Size = new System.Drawing.Size(114, 21);
             this.LDescripcion.TabIndex = 2;
             this.LDescripcion.Text = "Descripción";
             // 
@@ -338,7 +337,7 @@
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 33;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged_1);
             // 
@@ -358,10 +357,6 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // categoriasBindingSource2
-            // 
-            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // listadoCategorias
             // 
@@ -397,6 +392,7 @@
             this.listadoCategorias.Location = new System.Drawing.Point(0, 445);
             this.listadoCategorias.Margin = new System.Windows.Forms.Padding(5);
             this.listadoCategorias.Name = "listadoCategorias";
+            this.listadoCategorias.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,6 +415,7 @@
             this.Id_categoria.HeaderText = "Id_categoria";
             this.Id_categoria.MinimumWidth = 6;
             this.Id_categoria.Name = "Id_categoria";
+            this.Id_categoria.ReadOnly = true;
             // 
             // Descripcion
             // 
@@ -426,6 +423,7 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
             // Estado
             // 
@@ -433,6 +431,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // categoriasBindingSource2
             // 
@@ -448,7 +447,7 @@
             // 
             // GestionCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
