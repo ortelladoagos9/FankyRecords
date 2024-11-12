@@ -61,12 +61,15 @@
     <Compile Include="C_datos\DatosCategorias.cs" />
     <Compile Include="C_datos\DatosProveedores.cs" />
     <Compile Include="C_datos\DatosClientes.cs" />
+    <Compile Include="C_datos\DatosProductos.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
     <Compile Include="C_entidad\Proveedores.cs" />
     <Compile Include="C_entidad\Clientes.cs" />
+    <Compile Include="C_entidad\Productos.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\NegocioProveedores.cs" />
     <Compile Include="C_negocio\NegocioClientes.cs" />
+    <Compile Include="C_negocio\NegocioProductos.cs" />
     <Compile Include="C_negocio\NegocioUsuarios.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\backup.cs">
@@ -159,6 +162,7 @@
     <Compile Include="C_presentacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\OpcionCombo.cs" />
     <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +256,7 @@
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Proveedores.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Productos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

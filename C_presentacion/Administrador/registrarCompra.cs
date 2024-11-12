@@ -18,7 +18,6 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             InitializeComponent();
             this.cbTipoDoc.SelectedIndex = 0;
-            this.cbProductos.SelectedIndex = 0;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
-                || C_negocio.Validaciones.EstaVacio(TBprecio.Text)
+                || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
                 || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +34,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
-                    decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio.Text);
+                    decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
                     sumaSubtotal += subtotal;
                     TBtotalPagar.Text = sumaSubtotal.ToString();
 
@@ -43,7 +42,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
                     listaCompras.Rows[n].Cells[0].Value = TBCodProd.Text;
                     listaCompras.Rows[n].Cells[1].Value = TBproducto.Text;
-                    listaCompras.Rows[n].Cells[2].Value = TBprecio.Text;
+                    listaCompras.Rows[n].Cells[2].Value = TBprecio_compra.Text;
                     listaCompras.Rows[n].Cells[3].Value = cantProd.Value;
                     listaCompras.Rows[n].Cells[4].Value = 001;
                     listaCompras.Rows[n].Cells[5].Value = subtotal;
@@ -113,9 +112,27 @@ namespace FankyRecords.C_presentacion.Administrador
             TBbuscarProducto.Clear();
             TBCodProd.Clear();
             TBproducto.Clear();
-            TBprecio.Clear();
+            TBprecio_compra.Clear();
             TBcuit.Clear();
             cantProd.Value = 1;
+        }
+
+        private void TBprecio_compra_TextChanged(object sender, EventArgs e)
+        {
+            if (TBprecio_compra.Text == "")
+            {
+                TBPrecio_Venta.Text = "";
+            }
+            else
+            {
+                decimal precioVenta = (Convert.ToDecimal(0.2) * Convert.ToDecimal(TBprecio_compra.Text)) + Convert.ToDecimal(TBprecio_compra.Text);
+                TBPrecio_Venta.Text = precioVenta.ToString();
+            }   
+        }
+
+        private void registrarCompra_Load(object sender, EventArgs e)
+        {
+            
         }
     } 
 }
