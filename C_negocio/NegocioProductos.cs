@@ -2,6 +2,7 @@
 using FankyRecords.C_entidad;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,20 +20,39 @@ namespace FankyRecords.C_negocio
 
         public Productos GuardarProductos(Productos productos)
         {
-            if (productos.ID_producto == 0)
+            try
             {
-                CD_Productos.AgregarProducto(productos); // Si el ID es 0, es un nuevo producto
+                if (productos.ID_producto == 0)
+                {
+                    CD_Productos.AgregarProducto(productos); // Si el ID es 0, es un nuevo producto
+                }
+                else
+                {
+                    CD_Productos.EditarProductos(productos); // Si el ID es distinto de 0, es una actualización
+                }
+                return productos;
             }
-            else
+            catch (SqlException ex)
             {
-                //CD_Categorias.EditarCategoria(categoria); // Si el ID es distinto de 0, es una actualización
+                throw new Exception(ex.Message);
             }
-            return productos;
         }
 
-        /*public List<Categorias> ListarCategorias()
+        public List<Productos> ListarProductos()
         {
-            //return CD_Categorias.ListarCategorias();
-        }*/
+            return CD_Productos.ListarProductos();
+        }
+
+        public void EliminarProductos(int ID_producto)
+        {
+            try
+            {
+                CD_Productos.EliminarProductos(ID_producto);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

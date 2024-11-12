@@ -20,45 +20,62 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Productos(Codigo, Nombre, Descripcion, Stock, PrecioVenta, PrecioCompra, Estado, Stock_min, Obj_categoria) 
-                VALUES (@Codigo, @Nombre, @Descripcion, @Stock, @PrecioVenta, @PrecioCompra, @Estado, @Stock_min, @Obj_categoria)";
+                INSERT INTO Productos(Codigo, Nombre, Descripcion, Estado, Stock_min, Id_categoria) 
+                VALUES (@Codigo, @Nombre, @Descripcion, @Estado, @Stock_min, @Id_categoria)";
 
                 SqlParameter Codigo = new SqlParameter("@Codigo", producto.Codigo);
                 SqlParameter Nombre = new SqlParameter("@Nombre", producto.Nombre);
                 SqlParameter Descripcion = new SqlParameter("@Descripcion", producto.Descripcion);
-                SqlParameter Stock = new SqlParameter("@Stock", producto.Stock);
-                SqlParameter PrecioVenta = new SqlParameter("@PrecioVenta", producto.PrecioVenta);
-                SqlParameter PrecioCompra = new SqlParameter("@PrecioCompra", producto.PrecioCompra);
+                //SqlParameter Stock = new SqlParameter("@Stock", producto.Stock);
+                //SqlParameter PrecioVenta = new SqlParameter("@PrecioVenta", producto.PrecioVenta);
+               // SqlParameter PrecioCompra = new SqlParameter("@PrecioCompra", producto.PrecioCompra);
                 SqlParameter Estado = new SqlParameter("@Estado", producto.Estado);
                 SqlParameter Stock_min = new SqlParameter("@Stock_min", producto.Stock_min);
-                SqlParameter Obj_categoria = new SqlParameter("@Obj_categoria", producto.Obj_categoria);
+                SqlParameter Id_categoria = new SqlParameter("@Id_categoria", producto.Obj_categoria.Id_categoria);
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(Codigo);
                 cmd.Parameters.Add(Nombre);
                 cmd.Parameters.Add(Descripcion);
-                cmd.Parameters.Add(Stock);
-                cmd.Parameters.Add(PrecioVenta);
-                cmd.Parameters.Add(PrecioCompra);
+               // cmd.Parameters.Add(Stock);
+               // cmd.Parameters.Add(PrecioVenta);
+               // cmd.Parameters.Add(PrecioCompra);
                 cmd.Parameters.Add(Estado);
                 cmd.Parameters.Add(Stock_min);
-                cmd.Parameters.Add(Obj_categoria);
+                cmd.Parameters.Add(Id_categoria);
 
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
-
-                switch (ex.Number)
+                if (ex.Message.Contains("UQ_Productos_codigo"))
                 {
-                    case 2627: //unique
-                        throw new Exception("Error: El valor de 'Codigo' ya existe. No se permiten duplicados.", ex);
-                    case 547: //clave foranea o check
-                        throw new Exception("Error: Violación de restricción de clave foránea o de otro tipo. Revisa los valores relacionados.", ex);
-                    case 515: //null
-                        throw new Exception("Error: No se permite el valor NULL en uno de los campos obligatorios.", ex);
-                    default:
-                        throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
+                    throw new Exception("El código ya existe. No se permite duplicados", ex);
+                }
+                else if (ex.Message.Contains("CK_Productos_stock"))
+                {
+                    throw new Exception("El stock debe ser mayor a 0", ex);
+                }
+                else if (ex.Message.Contains("CK_Productos_stock_min"))
+                {
+                    throw new Exception("El stock minimo debe ser mayor a 0", ex);
+                }
+                else if (ex.Message.Contains("CK_Productos_stock_mayor_stock_min"))
+                {
+                    throw new Exception("El stock minimo debe ser menor al stock", ex);
+                }
+                else if (ex.Message.Contains("CK_Productos_precioVenta"))
+                {
+                    throw new Exception("El precio de venta debe ser mayor a 0", ex);
+                }
+                else if (ex.Message.Contains("CK_Productos_precioCompra"))
+                {
+                    throw new Exception("El precio de compra debe ser mayor a 0", ex);
+                }
+                
+                else
+                {
+                    throw new Exception("Error vuelva a intentarlo", ex);
                 }
             }
             catch (Exception ex)
@@ -81,9 +98,9 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                        select ID_producto, Codigo, Nombre, Descripcion, Stock, PrecioVenta, PrecioCompra, Estado, Stock_min, Obj_categoria
-                        from Productos";
-
+                        select p.ID_producto, p.Codigo,p.Nombre,p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria
+                        from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria";
+                
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -91,16 +108,20 @@ namespace FankyRecords.C_datos
                 {
                     listaProductos.Add(new Productos
                     {
-                        ID_producto = int.Parse(reader["ID_producto"].ToString()),
-                        Codigo = int.Parse(reader["Codigo"].ToString()),
+                        ID_producto = Convert.ToInt32(reader["ID_producto"]),
+                        Codigo = Convert.ToInt32(reader["Codigo"]),
                         Nombre = reader["Nombre"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
-                        Stock = int.Parse(reader["Stock"].ToString()),
-                        PrecioVenta = decimal.Parse(reader["PrecioVenta"].ToString()),
-                        PrecioCompra = decimal.Parse(reader["PrecioCompra"].ToString()),
+                        Stock = reader["Stock"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Stock"]),
+                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioVenta"]),
+                        PrecioCompra = reader["PrecioCompra"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioCompra"]),
                         Estado = reader["Estado"].ToString(),
-                        Stock_min = int.Parse(reader["Stock_min"].ToString()),
-                        //Obj_categoria = Categorias(reader["Obj_categoria"].ToString())
+                        Stock_min = Convert.ToInt32(reader["Stock_min"]),
+                        Obj_categoria = new Categorias
+                        {
+                            Id_categoria = Convert.ToInt32(reader["Id_categoria"]),
+                            Descripcion = reader["Categoria"].ToString()
+                        }
                     });
                 }
             }
@@ -111,6 +132,76 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
 
             return listaProductos;
+        }
+
+        public void EditarProductos(Productos producto)
+        {
+            try
+            {
+                conexion.Open();
+
+                // Actualizar la tabla Productos
+                string queryProducto = @"
+                 UPDATE Productos
+                 SET 
+                 Codigo = @NuevoCodigo,
+                 Nombre = @NuevoNombre,
+                 Descripcion = @NuevaDescripcion,
+                 Stock_min = @NuevoStockMin,
+                 Estado = @NuevoEstado
+                 WHERE ID_producto = @IDProducto";
+
+                SqlCommand cmdProducto = new SqlCommand(queryProducto, conexion);
+                cmdProducto.Parameters.AddWithValue("@NuevoCodigo", producto.Codigo);
+                cmdProducto.Parameters.AddWithValue("@NuevoNombre", producto.Nombre);
+                cmdProducto.Parameters.AddWithValue("@NuevaDescripcion", producto.Descripcion);
+                cmdProducto.Parameters.AddWithValue("@NuevoStockMin", producto.Stock_min);
+                cmdProducto.Parameters.AddWithValue("@NuevoEstado", producto.Estado);
+                cmdProducto.Parameters.AddWithValue("@IDProducto", producto.ID_producto);
+
+                cmdProducto.ExecuteNonQuery();
+
+                // Actualizar la tabla Categorias
+                string queryCategoria = @"
+                  UPDATE Categorias
+                  SET 
+                  Descripcion = @NuevaDescripcionCategoria
+                  WHERE Id_categoria = @IdCategoria";
+
+                SqlCommand cmdCategoria = new SqlCommand(queryCategoria, conexion);
+                cmdCategoria.Parameters.AddWithValue("@NuevaDescripcionCategoria", producto.Obj_categoria.Descripcion);
+                cmdCategoria.Parameters.AddWithValue("@IdCategoria", producto.Obj_categoria.Id_categoria);
+
+                cmdCategoria.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar el producto y la categoría", ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
+        public void EliminarProductos(int ID_producto)
+        {
+            try
+            {
+                conexion.Open();
+                string query = @"DELETE FROM Productos WHERE ID_producto = @ID_producto";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.Add(new SqlParameter("@ID_producto", ID_producto));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
         }
 
     }

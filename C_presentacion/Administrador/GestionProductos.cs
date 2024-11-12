@@ -15,16 +15,17 @@ using FankyRecords.C_negocio;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    public partial class gestionProductos : Form
+    public partial class GestionProductos : Form
     {
-        private readonly DatosProductos CD_Productos;
         private readonly NegocioProductos CN_Productos;
         private readonly NegocioCategorias CN_Categorias;
         private int productoIdSeleccionado;
 
-        public gestionProductos()
+        public GestionProductos()
         {
-            InitializeComponent();    
+            InitializeComponent();
+            CN_Productos = new NegocioProductos();
+            CN_Categorias = new NegocioCategorias();
         }
 
         private List<string> ListaCampos()
@@ -53,59 +54,59 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Validación previa de duplicados en la base de datos
-           /* if (CN_Productos.ExisteCategoria(TBdescripcion.Text))
+            // Crear un objeto Categorias basado en el valor del ComboBox
+            Categorias categoriaSeleccionada = new Categorias
             {
-                MessageBox.Show("El producto ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpiar();
-                return; 
-            }*/
-
-            if (C_negocio.Validaciones.mensajeConfirmacion())
+                Id_categoria = Convert.ToInt32(CBcategoria.SelectedValue),
+                Descripcion = CBcategoria.Text,
+                Estado = "Activo"
+            };
+            // Crear objeto productos
+            Productos producto = new Productos
             {
-                /*List<Categorias> listaCategorias = CN_Categorias.ListarCategorias();
-
-                // Filtrar las categorías activas
-                var categoriasActivas = listaCategorias.Where(c => c.Estado == "Activo").ToList();
-
-                // Asignar la lista filtrada al ComboBox
-                CBcategoria.DataSource = categoriasActivas;*/
-
-                // Crear un objeto Categorias basado en el valor del ComboBox
-                Categorias categoriaSeleccionada = new Categorias
-                {
-                    Id_categoria = Convert.ToInt32(CBcategoria.SelectedValue), // Suponiendo que SelectedValue tiene el Id
-                    Descripcion = CBcategoria.Text,  // Suponiendo que el Text tiene la descripción de la categoría
-                    Estado = "Activo"  // Solo categorías activas están en el ComboBox
-                };
-
-                // Crear objeto productos
-                Productos producto = new Productos
-                {
-                    Codigo = Convert.ToInt32(TBcodigo_prod.Text),
-                    Nombre = TBnombre_prod.Text,
-                    Descripcion = TBdescripcion.Text,
-                    PrecioVenta = Convert.ToDecimal(TBPrecio_Venta.Text),
-                    Stock_min = Convert.ToInt32(TBStock_min.Text),
-                    Estado = rBactivo.Checked ? "Activo" : "Inactivo",
-                    Obj_categoria = categoriaSeleccionada  // Asigna el objeto de categoría
-                };
-
-                // Intentar guardar la categoría en la base de datos
-                CN_Productos.GuardarProductos(producto);
-
-                // Recargar datos y limpiar formulario
-               // CargarProductos();
-                Limpiar();
+                Codigo = Convert.ToInt32(TBcodigo_prod.Text),
+                Nombre = TBnombre_prod.Text,
+                Descripcion = TBdescripcion.Text,
+                Stock_min = Convert.ToInt32(TBStock_min.Text),
+                Estado = rBactivo.Checked ? "Activo" : "Inactivo",
+                Obj_categoria = categoriaSeleccionada  // Asigna el objeto de categoría
+            };
+            producto.Obj_categoria = categoriaSeleccionada;
+            if (CBcategoria.SelectedItem is OpcionCombo opcionSeleccionada)
+            {
+                producto.Obj_categoria.Id_categoria = (int)opcionSeleccionada.Valor;
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una categoría válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Yes)
+                {
+                    // Intentar guardar la categoría en la base de datos
+                    CN_Productos.GuardarProductos(producto);
+
+                    MessageBox.Show("El Producto: " + this.TBnombre_prod.Text + " " + this.TBdescripcion.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarProductos();
+                    Limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+            }           
         }
         private void CargarProductos()
         {
-            //List<Categorias> categorias = CN_Categorias.ListarCategorias();
-           // listadoProductos.DataSource = categorias;
+            List<Productos> productos = CN_Productos.ListarProductos();
+            listadoProductos.DataSource = productos;
         }
-
 
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -129,13 +130,22 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            try
             {
                 if (C_negocio.Validaciones.mensajeEliminar())
                 {
+                    CN_Productos.EliminarProductos(productoIdSeleccionado);
+
+                    // Recargar datos y limpiar formulario
+                    CargarProductos();
                     Limpiar();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+            }    
         }
 
         private void Beditar_Click(object sender, EventArgs e)
@@ -153,6 +163,39 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 if (C_negocio.Validaciones.mensajeEditar())
                 {
+                    // Crear un objeto Categorias basado en el valor del ComboBox
+                    Categorias categoriaSeleccionada = new Categorias
+                    {
+                        Id_categoria = Convert.ToInt32(CBcategoria.SelectedValue),
+                        Descripcion = CBcategoria.Text,
+                        Estado = "Activo"
+                    };
+                    // Crear objeto productos
+                    Productos productos = new Productos
+                    {
+                        ID_producto = productoIdSeleccionado,
+                        Codigo = Convert.ToInt32(TBcodigo_prod.Text),
+                        Nombre = TBnombre_prod.Text,
+                        Descripcion = TBdescripcion.Text,
+                        Stock_min = Convert.ToInt32(TBStock_min.Text),
+                        Estado = rBactivo.Checked ? "Activo" : "Inactivo",
+                        Obj_categoria = categoriaSeleccionada  // Asigna el objeto de producto  
+                    };
+                    productos.Obj_categoria = categoriaSeleccionada;
+                    if (CBcategoria.SelectedItem is OpcionCombo opcionSeleccionada)
+                    {
+                        productos.Obj_categoria.Id_categoria = (int)opcionSeleccionada.Valor;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una categoría válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    // Llamar al método de negocio para guardar/editar el producto
+                    CN_Productos.GuardarProductos(productos);
+
+                    // Recargar la lista de productos
+                    CargarProductos();
                     Limpiar();
                 }
             }
@@ -171,11 +214,18 @@ namespace FankyRecords.C_presentacion.Administrador
             TBcodigo_prod.Clear();
             TBnombre_prod.Clear();
             TBdescripcion.Clear();
-            TBPrecio_Venta.Clear();
-            CBcategoria.SelectedIndex = -1;  // Deselect the ComboBox
+            TBStock_min.Clear();
+            CBcategoria.SelectedIndex = 0;  // Deselect the ComboBox
+            rBactivo.Checked = true;
         }
 
         private void gestionProductos_Load(object sender, EventArgs e)
+        {
+            CargarCombo();
+            CargarProductos();
+        }
+
+        private void CargarCombo()
         {
             // Obtener todas las categorías
             List<Categorias> listaCategoria = new NegocioCategorias().ListarCategorias();
@@ -183,8 +233,9 @@ namespace FankyRecords.C_presentacion.Administrador
             // Filtrar las categorías activas
             var categoriasActivas = listaCategoria.Where(c => c.Estado == "Activo").ToList();
 
-            // Limpiar items previos en el ComboBox (si es necesario)
-            CBcategoria.Items.Clear();
+            // Configurar propiedades del ComboBox
+            CBcategoria.DisplayMember = "Texto";
+            CBcategoria.ValueMember = "Valor";
 
             // Agregar solo las categorías activas al ComboBox
             foreach (Categorias item in categoriasActivas)
@@ -192,16 +243,64 @@ namespace FankyRecords.C_presentacion.Administrador
                 CBcategoria.Items.Add(new OpcionCombo() { Valor = item.Id_categoria, Texto = item.Descripcion });
             }
 
-            // Configurar propiedades del ComboBox
-            CBcategoria.DisplayMember = "Texto";
-            CBcategoria.ValueMember = "Valor";
-
             // Seleccionar el primer elemento si hay categorías activas
             if (CBcategoria.Items.Count > 0)
             {
                 CBcategoria.SelectedIndex = 0;
             }
         }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void listadoProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
+            {
+                DataGridViewRow row = listadoProductos.Rows[e.RowIndex];
+
+                // Accede al ID_producto si existe en el DataGridView
+                if (row.Cells["ID_producto"] != null && row.Cells["ID_producto"].Value != DBNull.Value)
+                {
+                    productoIdSeleccionado = Convert.ToInt32(row.Cells["ID_producto"].Value);
+                }
+
+                // Rellenar otros campos del producto seleccionado
+                if (row.Cells["codigo"] != null && row.Cells["codigo"].Value != DBNull.Value)
+                {
+                    TBcodigo_prod.Text = row.Cells["codigo"].Value.ToString();
+                }
+                if (row.Cells["Nombre"] != null && row.Cells["Nombre"].Value != DBNull.Value)
+                {
+                    TBnombre_prod.Text = row.Cells["Nombre"].Value.ToString();
+                }
+                if (row.Cells["Descripcion"] != null && row.Cells["Descripcion"].Value != DBNull.Value)
+                {
+                    TBdescripcion.Text = row.Cells["Descripcion"].Value.ToString();
+                }
+               
+                if (row.Cells["Estado"] != null && row.Cells["Estado"].Value != DBNull.Value)
+                {
+                    string estado = row.Cells["Estado"].Value.ToString();
+                    rBactivo.Checked = estado == "Activo";
+                    rBinactivo.Checked = estado == "Inactivo";
+                }
+                if (row.Cells["stockmin"] != null && row.Cells["stockmin"].Value != DBNull.Value)
+                {
+                    TBStock_min.Text = row.Cells["stockmin"].Value.ToString(); // Asumiendo que TBStock_min es un TextBox
+                }
+                if (row.Cells["objcategoria"] != null && row.Cells["objcategoria"].Value is FankyRecords.C_entidad.Categorias categoria)
+                {
+                    // Asigna la descripción de la categoría al ComboBox
+                    CBcategoria.Text = categoria.Descripcion;
+                }
+
+
+            }
+        }
+
     }
 }
 

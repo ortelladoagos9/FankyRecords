@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorRegistrarCompra = new System.Windows.Forms.Panel();
             this.LRegistrarCompra = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -46,16 +46,17 @@
             this.subTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.gbInfoProducto = new System.Windows.Forms.GroupBox();
+            this.TBPrecio_Venta = new System.Windows.Forms.TextBox();
+            this.LPrecio_Venta = new System.Windows.Forms.Label();
             this.TBCodProd = new System.Windows.Forms.TextBox();
             this.LCodigo = new System.Windows.Forms.Label();
-            this.cbProductos = new System.Windows.Forms.ComboBox();
             this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
             this.TBbuscarProducto = new System.Windows.Forms.TextBox();
             this.LBuscarProducto = new System.Windows.Forms.Label();
             this.cantProd = new System.Windows.Forms.NumericUpDown();
             this.LCantidad = new System.Windows.Forms.Label();
             this.LPrecioCompra = new System.Windows.Forms.Label();
-            this.TBprecio = new System.Windows.Forms.TextBox();
+            this.TBprecio_compra = new System.Windows.Forms.TextBox();
             this.TBproducto = new System.Windows.Forms.TextBox();
             this.LProducto = new System.Windows.Forms.Label();
             this.gbInfoProveedor = new System.Windows.Forms.GroupBox();
@@ -67,7 +68,7 @@
             this.gbInfoCompra = new System.Windows.Forms.GroupBox();
             this.TBNumFactura = new System.Windows.Forms.TextBox();
             this.dtFechaCompra = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LNum_factura = new System.Windows.Forms.Label();
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
@@ -187,14 +188,14 @@
             this.listaCompras.BackgroundColor = System.Drawing.Color.White;
             this.listaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoProducto,
@@ -203,14 +204,14 @@
             this.cantidadProducto,
             this.num_compra,
             this.subTotalProducto});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaCompras.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaCompras.DefaultCellStyle = dataGridViewCellStyle6;
             this.listaCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaCompras.Location = new System.Drawing.Point(0, 445);
             this.listaCompras.Name = "listaCompras";
@@ -269,9 +270,10 @@
             // gbInfoProducto
             // 
             this.gbInfoProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbInfoProducto.Controls.Add(this.TBPrecio_Venta);
+            this.gbInfoProducto.Controls.Add(this.LPrecio_Venta);
             this.gbInfoProducto.Controls.Add(this.TBCodProd);
             this.gbInfoProducto.Controls.Add(this.LCodigo);
-            this.gbInfoProducto.Controls.Add(this.cbProductos);
             this.gbInfoProducto.Controls.Add(this.btnAgregarProd);
             this.gbInfoProducto.Controls.Add(this.btnBuscarProducto);
             this.gbInfoProducto.Controls.Add(this.TBbuscarProducto);
@@ -279,7 +281,7 @@
             this.gbInfoProducto.Controls.Add(this.cantProd);
             this.gbInfoProducto.Controls.Add(this.LCantidad);
             this.gbInfoProducto.Controls.Add(this.LPrecioCompra);
-            this.gbInfoProducto.Controls.Add(this.TBprecio);
+            this.gbInfoProducto.Controls.Add(this.TBprecio_compra);
             this.gbInfoProducto.Controls.Add(this.TBproducto);
             this.gbInfoProducto.Controls.Add(this.LProducto);
             this.gbInfoProducto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,9 +293,34 @@
             this.gbInfoProducto.TabStop = false;
             this.gbInfoProducto.Text = "Información de Producto";
             // 
+            // TBPrecio_Venta
+            // 
+            this.TBPrecio_Venta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPrecio_Venta.Location = new System.Drawing.Point(450, 83);
+            this.TBPrecio_Venta.Margin = new System.Windows.Forms.Padding(4);
+            this.TBPrecio_Venta.MaxLength = 6;
+            this.TBPrecio_Venta.Name = "TBPrecio_Venta";
+            this.TBPrecio_Venta.ReadOnly = true;
+            this.TBPrecio_Venta.ShortcutsEnabled = false;
+            this.TBPrecio_Venta.Size = new System.Drawing.Size(138, 28);
+            this.TBPrecio_Venta.TabIndex = 32;
+            // 
+            // LPrecio_Venta
+            // 
+            this.LPrecio_Venta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LPrecio_Venta.AutoSize = true;
+            this.LPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LPrecio_Venta.Location = new System.Drawing.Point(450, 57);
+            this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LPrecio_Venta.Name = "LPrecio_Venta";
+            this.LPrecio_Venta.Size = new System.Drawing.Size(129, 21);
+            this.LPrecio_Venta.TabIndex = 31;
+            this.LPrecio_Venta.Text = "Precio Venta:";
+            // 
             // TBCodProd
             // 
-            this.TBCodProd.Location = new System.Drawing.Point(511, 83);
+            this.TBCodProd.Location = new System.Drawing.Point(369, 83);
             this.TBCodProd.Name = "TBCodProd";
             this.TBCodProd.ReadOnly = true;
             this.TBCodProd.Size = new System.Drawing.Size(75, 28);
@@ -302,25 +329,11 @@
             // LCodigo
             // 
             this.LCodigo.AutoSize = true;
-            this.LCodigo.Location = new System.Drawing.Point(511, 57);
+            this.LCodigo.Location = new System.Drawing.Point(369, 57);
             this.LCodigo.Name = "LCodigo";
             this.LCodigo.Size = new System.Drawing.Size(75, 21);
             this.LCodigo.TabIndex = 29;
             this.LCodigo.Text = "Código:";
-            // 
-            // cbProductos
-            // 
-            this.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductos.ForeColor = System.Drawing.Color.Black;
-            this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Items.AddRange(new object[] {
-            "Nombre",
-            "Codigo"});
-            this.cbProductos.Location = new System.Drawing.Point(20, 82);
-            this.cbProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.cbProductos.Name = "cbProductos";
-            this.cbProductos.Size = new System.Drawing.Size(107, 29);
-            this.cbProductos.TabIndex = 28;
             // 
             // btnBuscarProducto
             // 
@@ -330,7 +343,7 @@
             this.btnBuscarProducto.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarProducto.IconSize = 18;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(298, 85);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(154, 85);
             this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(46, 26);
@@ -340,12 +353,12 @@
             // 
             // TBbuscarProducto
             // 
-            this.TBbuscarProducto.Location = new System.Drawing.Point(134, 83);
+            this.TBbuscarProducto.Location = new System.Drawing.Point(20, 83);
             this.TBbuscarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.TBbuscarProducto.MaxLength = 100;
             this.TBbuscarProducto.Name = "TBbuscarProducto";
             this.TBbuscarProducto.ShortcutsEnabled = false;
-            this.TBbuscarProducto.Size = new System.Drawing.Size(156, 28);
+            this.TBbuscarProducto.Size = new System.Drawing.Size(130, 28);
             this.TBbuscarProducto.TabIndex = 26;
             // 
             // LBuscarProducto
@@ -354,20 +367,20 @@
             this.LBuscarProducto.Location = new System.Drawing.Point(20, 57);
             this.LBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBuscarProducto.Name = "LBuscarProducto";
-            this.LBuscarProducto.Size = new System.Drawing.Size(111, 21);
+            this.LBuscarProducto.Size = new System.Drawing.Size(77, 21);
             this.LBuscarProducto.TabIndex = 25;
-            this.LBuscarProducto.Text = "Buscar por:";
+            this.LBuscarProducto.Text = "Buscar:";
             // 
             // cantProd
             // 
-            this.cantProd.Location = new System.Drawing.Point(739, 83);
+            this.cantProd.Location = new System.Drawing.Point(744, 83);
             this.cantProd.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(95, 28);
+            this.cantProd.Size = new System.Drawing.Size(83, 28);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -387,24 +400,25 @@
             // LPrecioCompra
             // 
             this.LPrecioCompra.AutoSize = true;
-            this.LPrecioCompra.Location = new System.Drawing.Point(592, 57);
+            this.LPrecioCompra.Location = new System.Drawing.Point(593, 57);
             this.LPrecioCompra.Name = "LPrecioCompra";
-            this.LPrecioCompra.Size = new System.Drawing.Size(141, 21);
+            this.LPrecioCompra.Size = new System.Drawing.Size(145, 21);
             this.LPrecioCompra.TabIndex = 9;
-            this.LPrecioCompra.Text = "Precio compra:";
+            this.LPrecioCompra.Text = "Precio Compra:";
             // 
-            // TBprecio
+            // TBprecio_compra
             // 
-            this.TBprecio.Location = new System.Drawing.Point(592, 83);
-            this.TBprecio.Name = "TBprecio";
-            this.TBprecio.ShortcutsEnabled = false;
-            this.TBprecio.Size = new System.Drawing.Size(141, 28);
-            this.TBprecio.TabIndex = 8;
-            this.TBprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
+            this.TBprecio_compra.Location = new System.Drawing.Point(593, 83);
+            this.TBprecio_compra.Name = "TBprecio_compra";
+            this.TBprecio_compra.ShortcutsEnabled = false;
+            this.TBprecio_compra.Size = new System.Drawing.Size(145, 28);
+            this.TBprecio_compra.TabIndex = 8;
+            this.TBprecio_compra.TextChanged += new System.EventHandler(this.TBprecio_compra_TextChanged);
+            this.TBprecio_compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // TBproducto
             // 
-            this.TBproducto.Location = new System.Drawing.Point(352, 83);
+            this.TBproducto.Location = new System.Drawing.Point(209, 83);
             this.TBproducto.Name = "TBproducto";
             this.TBproducto.ReadOnly = true;
             this.TBproducto.Size = new System.Drawing.Size(153, 28);
@@ -413,7 +427,7 @@
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(352, 57);
+            this.LProducto.Location = new System.Drawing.Point(209, 57);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(96, 21);
             this.LProducto.TabIndex = 6;
@@ -492,7 +506,7 @@
             this.gbInfoCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbInfoCompra.Controls.Add(this.TBNumFactura);
             this.gbInfoCompra.Controls.Add(this.dtFechaCompra);
-            this.gbInfoCompra.Controls.Add(this.label1);
+            this.gbInfoCompra.Controls.Add(this.LNum_factura);
             this.gbInfoCompra.Controls.Add(this.cbTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LFechaCompra);
@@ -525,14 +539,14 @@
             this.dtFechaCompra.TabIndex = 6;
             this.dtFechaCompra.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
-            // label1
+            // LNum_factura
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Número Factura:";
+            this.LNum_factura.AutoSize = true;
+            this.LNum_factura.Location = new System.Drawing.Point(225, 80);
+            this.LNum_factura.Name = "LNum_factura";
+            this.LNum_factura.Size = new System.Drawing.Size(160, 21);
+            this.LNum_factura.TabIndex = 5;
+            this.LNum_factura.Text = "Número Factura:";
             // 
             // cbTipoDoc
             // 
@@ -580,6 +594,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "registrarCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.registrarCompra_Load);
             this.contenedorRegistrarCompra.ResumeLayout(false);
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorBotones.PerformLayout();
@@ -621,11 +636,10 @@
         private System.Windows.Forms.NumericUpDown cantProd;
         private System.Windows.Forms.Label LCantidad;
         private System.Windows.Forms.Label LPrecioCompra;
-        private System.Windows.Forms.TextBox TBprecio;
+        private System.Windows.Forms.TextBox TBprecio_compra;
         private System.Windows.Forms.TextBox TBproducto;
         private System.Windows.Forms.Label LProducto;
         private System.Windows.Forms.DateTimePicker dtFechaCompra;
-        private System.Windows.Forms.ComboBox cbProductos;
         public FontAwesome.Sharp.IconButton btnBuscarProducto;
         private System.Windows.Forms.TextBox TBbuscarProducto;
         private System.Windows.Forms.Label LBuscarProducto;
@@ -638,6 +652,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn num_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalProducto;
         private System.Windows.Forms.TextBox TBNumFactura;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LNum_factura;
+        public System.Windows.Forms.TextBox TBPrecio_Venta;
+        public System.Windows.Forms.Label LPrecio_Venta;
     }
 }

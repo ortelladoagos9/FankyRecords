@@ -12,5 +12,10 @@ namespace FankyRecords.C_entidad
         public string Descripcion { get; set; }
         public string Estado { get; set; }
 
+        // Sobrescribe el método ToString para devolver la descripción
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

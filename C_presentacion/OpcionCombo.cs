@@ -10,5 +10,10 @@ namespace FankyRecords.C_presentacion
     {
         public string Texto {  get; set; }
         public object Valor { get; set; }
+
+        public override string ToString()
+        {
+            return Texto; // Muestra la propiedad Texto al usar el ComboBox
+        }
     }
 }
