@@ -74,8 +74,9 @@ namespace FankyRecords.C_presentacion.Vendedor
 
                     return;
                 }
-                if (C_negocio.Validaciones.mensajeConfirmacion())
+                else
                 {
+
 
                     string email = TBemail.Text;
 
@@ -126,9 +127,9 @@ namespace FankyRecords.C_presentacion.Vendedor
                 DataGridViewRow row = listadoClientes.Rows[e.RowIndex];
 
                 // Solo accede a las columnas si el índice es válido y la celda no es nula
-                if (row.Cells["ID_cliente"] != null)
+                if (row.Cells["iD_cliente"] != null)
                 {
-                    clienteSeleccionado = Convert.ToInt32(row.Cells["ID_cliente"].Value);
+                    clienteSeleccionado = Convert.ToInt32(row.Cells["iD_cliente"].Value);
                 }
                 if (row.Cells["Documento"] != null)
                 {

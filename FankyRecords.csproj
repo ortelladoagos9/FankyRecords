@@ -246,6 +246,8 @@
     <None Include="packages\FontAwesome.Sharp.6.6.0\.signature.p7s" />
     <None Include="packages\FontAwesome.Sharp.6.6.0\FontAwesome.Sharp.6.6.0.nupkg" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Categorias.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

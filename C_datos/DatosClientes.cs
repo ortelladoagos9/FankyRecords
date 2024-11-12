@@ -20,7 +20,7 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Clientes(Documento, Nombre, Apellido, Correo, Telefono, Estado) 
+                INSERT INTO Clientes (Documento, Nombre, Apellido, Correo, Telefono, Estado) 
                 VALUES (@Documento, @Nombre, @Apellido, @Correo, @Telefono, @Estado)";
 
                 SqlParameter documentoParam = new SqlParameter("@Documento", cliente.Documento);
@@ -122,7 +122,6 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.AddWithValue("@Correo", cliente.Correo);
                 cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
                 cmd.Parameters.AddWithValue("@Estado", cliente.Estado); // Convertir "Activo"/"Inactivo" a bit
-                
                 cmd.Parameters.AddWithValue("@ID_cliente", cliente.ID_cliente);
 
                 cmd.ExecuteNonQuery();
