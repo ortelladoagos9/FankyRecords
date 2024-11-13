@@ -54,5 +54,11 @@ namespace FankyRecords.C_negocio
                 throw new Exception(ex.Message);
             }
         }
+
+        public Productos ObtenerProductosPorID(int ID_producto)
+        {
+            // Llamar al método que consulta la base de datos y devolver el resultado
+            return CD_Productos.ObtenerProductosPorID(ID_producto);
+        }
     }
 }

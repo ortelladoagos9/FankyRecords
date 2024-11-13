@@ -192,5 +192,49 @@ namespace FankyRecords.C_datos
             }
             finally { conexion.Close(); }
         }
+
+        public Productos ObtenerProductosPorID(int ID_producto)
+        {
+            Productos productos = null;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT * FROM Productos WHERE ID_producto = @ID_producto";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@ID_producto", ID_producto);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    productos = new Productos
+                    {
+                        ID_producto = Convert.ToInt32(reader["ID_producto"]),
+                        Codigo = Convert.ToInt32(reader["Codigo"]),
+                        Nombre = reader["Nombre"].ToString(),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        Stock = reader["Stock"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Stock"]),
+                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioVenta"]),
+                        PrecioCompra = reader["PrecioCompra"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioCompra"]),
+                        Estado = reader["Estado"].ToString(),
+                        Stock_min = Convert.ToInt32(reader["Stock_min"]),
+                        Obj_categoria = new Categorias
+                        {
+                            Id_categoria = Convert.ToInt32(reader["Id_categoria"]),
+                            Descripcion = reader["Categoria"].ToString()
+                        }  
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return productos;
+        }
+
+
     }
 }

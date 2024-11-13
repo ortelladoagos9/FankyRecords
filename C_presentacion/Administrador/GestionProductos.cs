@@ -124,23 +124,26 @@ namespace FankyRecords.C_presentacion.Administrador
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            try
+            // Verificar si el producto existe en la base de datos
+            Productos productoExistente = CN_Productos.ObtenerProductosPorID(productoIdSeleccionado);
+            if (productoExistente == null)
             {
-                if (C_negocio.Validaciones.mensajeEliminar())
-                {
+                MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+        
+            if (C_negocio.Validaciones.mensajeEliminar())
+            {
                     CN_Productos.EliminarProductos(productoIdSeleccionado);
 
                     // Recargar datos y limpiar formulario
                     CargarProductos();
                     Limpiar();
-                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpiar();
-            }    
+            
         }
 
         private void Beditar_Click(object sender, EventArgs e)
@@ -153,47 +156,63 @@ namespace FankyRecords.C_presentacion.Administrador
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Verificar si el producto existe en la base de datos
+            Productos productoExistente = CN_Productos.ObtenerProductosPorID(productoIdSeleccionado);
+            if (productoExistente == null)
+            {
+                MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            // Crear un objeto Categorias basado en el valor del ComboBox
+            Categorias categoriaSeleccionada = new Categorias
+            {
+                Id_categoria = Convert.ToInt32(CBcategoria.SelectedValue),
+                Descripcion = CBcategoria.Text,
+                Estado = "Activo"
+            };
+            // Crear objeto productos
+            Productos productos = new Productos
+            {
+                ID_producto = productoIdSeleccionado,
+                Codigo = Convert.ToInt32(TBcodigo_prod.Text),
+                Nombre = TBnombre_prod.Text,
+                Descripcion = TBdescripcion.Text,
+                Stock_min = Convert.ToInt32(TBStock_min.Text),
+                Estado = rBactivo.Checked ? "Activo" : "Inactivo",
+                Obj_categoria = categoriaSeleccionada  // Asigna el objeto de producto  
+            };
+            productos.Obj_categoria = categoriaSeleccionada;
+            if (CBcategoria.SelectedItem is OpcionCombo opcionSeleccionada)
+            {
+                productos.Obj_categoria.Id_categoria = (int)opcionSeleccionada.Valor;
             }
             else
             {
-                if (C_negocio.Validaciones.mensajeEditar())
+                MessageBox.Show("Debe seleccionar una categoría válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar producto?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Yes)
                 {
-                    // Crear un objeto Categorias basado en el valor del ComboBox
-                    Categorias categoriaSeleccionada = new Categorias
-                    {
-                        Id_categoria = Convert.ToInt32(CBcategoria.SelectedValue),
-                        Descripcion = CBcategoria.Text,
-                        Estado = "Activo"
-                    };
-                    // Crear objeto productos
-                    Productos productos = new Productos
-                    {
-                        ID_producto = productoIdSeleccionado,
-                        Codigo = Convert.ToInt32(TBcodigo_prod.Text),
-                        Nombre = TBnombre_prod.Text,
-                        Descripcion = TBdescripcion.Text,
-                        Stock_min = Convert.ToInt32(TBStock_min.Text),
-                        Estado = rBactivo.Checked ? "Activo" : "Inactivo",
-                        Obj_categoria = categoriaSeleccionada  // Asigna el objeto de producto  
-                    };
-                    productos.Obj_categoria = categoriaSeleccionada;
-                    if (CBcategoria.SelectedItem is OpcionCombo opcionSeleccionada)
-                    {
-                        productos.Obj_categoria.Id_categoria = (int)opcionSeleccionada.Valor;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar una categoría válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
                     // Llamar al método de negocio para guardar/editar el producto
                     CN_Productos.GuardarProductos(productos);
 
+                    MessageBox.Show("El producto: " + this.TBnombre_prod.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar la lista de productos
                     CargarProductos();
                     Limpiar();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
