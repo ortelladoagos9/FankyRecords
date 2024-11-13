@@ -1,0 +1,216 @@
+--Ortellado Agostina, Romero Karin
+
+CREATE DATABASE DB_FANKY_RECORDS;
+
+GO
+
+USE DB_FANKY_RECORDS;
+
+GO
+
+CREATE TABLE CATEGORIAS
+(
+	Id_categoria int identity,
+	Descripcion varchar(100) NOT NULL,
+	Estado varchar(10) NOT NULL,
+	FechaRegistro datetime CONSTRAINT DF_categorias_FechaRegistro DEFAULT GETDATE(),
+	CONSTRAINT PK_Categorias PRIMARY KEY (Id_categoria)
+);
+
+select * from CATEGORIAS;
+
+CREATE TABLE Productos
+(
+  ID_producto INT identity,
+  Codigo INT NOT NULL,
+  Nombre VARCHAR(100) NOT NULL,
+  Descripcion VARCHAR(200) NOT NULL,
+  Stock INT,
+  PrecioVenta FLOAT NOT NULL,
+  PrecioCompra FLOAT,
+  Estado varchar(10) NOT NULL,
+  FechaCreacion DATETIME CONSTRAINT DF_Productos_FechaCreacion DEFAULT GETDATE(),
+  Stock_min INT NOT NULL,
+  Id_categoria INT NOT NULL,
+  CONSTRAINT PK_Productos PRIMARY KEY (ID_producto),
+  CONSTRAINT FK_Productos_Categorias FOREIGN KEY (Id_categoria) REFERENCES CATEGORIAS(Id_categoria),
+  CONSTRAINT UQ_Productos_codigo UNIQUE (Codigo),
+  CONSTRAINT CK_Productos_stock CHECK (Stock > 0),
+  CONSTRAINT CK_Productos_stock_min CHECK (Stock_min > 0),
+  CONSTRAINT CK_Productos_precioVenta CHECK (PrecioVenta > 0),
+  CONSTRAINT CK_Productos_precioCompra CHECK (PrecioCompra > 0)
+);
+
+select * from Productos;
+
+CREATE TABLE Rol
+(
+  ID_rol INT identity,
+  Descripcion VARCHAR(100) NOT NULL,
+  FechaCreacion DATETIME CONSTRAINT DF_Rol_FechaCreacion DEFAULT GETDATE(),
+  CONSTRAINT PK_Rol PRIMARY KEY (ID_rol)
+);
+
+
+CREATE TABLE Clientes
+(
+  ID_cliente INT identity,
+  Documento VARCHAR(8) NOT NULL,
+  Nombre VARCHAR(100) NOT NULL,
+  Apellido VARCHAR(100) NOT NULL,
+  Correo VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(10) NOT NULL,
+  Estado VARCHAR(10) NOT NULL,
+  FechaCreacion DATETIME CONSTRAINT DF_Clientes_FechaCreacion DEFAULT GETDATE(),
+  CONSTRAINT PK_Clientes PRIMARY KEY (ID_cliente),
+  CONSTRAINT UQ_Clientes_Documento UNIQUE (Documento),
+  CONSTRAINT UQ_Clientes_Telefono UNIQUE (Telefono),
+  CONSTRAINT UQ_Clientes_Correo UNIQUE (Correo)
+);
+
+CREATE TABLE Proveedores
+(
+  ID_proveedor INT identity,
+  RazonSocial VARCHAR(200) NOT NULL,
+  Correo VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(10) NOT NULL,
+  Estado VARCHAR(10) NOT NULL,
+  Cuit VARCHAR(11) NOT NULL,
+  Domicilio VARCHAR(200) NOT NULL,
+  FechaCreacion DATETIME CONSTRAINT DF_Proveedores_FechaCreacion DEFAULT GETDATE(),
+  CONSTRAINT PK_Proveedores PRIMARY KEY (ID_proveedor),
+  CONSTRAINT UQ_Proveedores_Correo UNIQUE (Correo),
+  CONSTRAINT UQ_Proveedores_Telefono UNIQUE (Telefono),
+  CONSTRAINT UQ_Proveedores_Cuit UNIQUE (Cuit)
+);
+
+CREATE TABLE Tipo_documento
+(
+  ID_Tipo_Doc INT identity,
+  Descripcion VARCHAR(100) NOT NULL,
+  CONSTRAINT PK_Tipo_documento PRIMARY KEY (ID_Tipo_Doc)
+);
+
+CREATE TABLE Tipo_Nota_Credito
+(
+  ID_Tipo_Nota_Cred INT identity,
+  Descripcion VARCHAR(100) NOT NULL,
+  CONSTRAINT PK_Tipo_Nota_Credito PRIMARY KEY (ID_Tipo_Nota_Cred)
+);
+
+CREATE TABLE Usuarios
+(
+  ID_usuarios INT IDENTITY,
+  Dni VARCHAR(8) NOT NULL,
+  Nombre VARCHAR(100) NOT NULL,
+  Apellido VARCHAR(100) NOT NULL,
+  Correo VARCHAR(100) NOT NULL,
+  Clave VARCHAR(10) NOT NULL,
+  FechaCreacion DATETIME CONSTRAINT DF_Usuarios_FechaCreacion DEFAULT GETDATE(),
+  Direccion VARCHAR(200) NOT NULL,
+  Telefono VARCHAR(10) NOT NULL,
+  FechaNacimiento DATE NOT NULL,
+  Estado VARCHAR(10) NOT NULL,
+  ID_rol INT NOT NULL,
+  CONSTRAINT PK_Usuarios PRIMARY KEY (ID_usuarios),
+  CONSTRAINT FK_Usuarios_Rol FOREIGN KEY (ID_rol) REFERENCES Rol(ID_rol),
+  CONSTRAINT CK_Usuarios_Edad CHECK (DATEDIFF(YEAR, FechaNacimiento, GETDATE()) >= 18),
+  CONSTRAINT UQ_Usuarios_dni UNIQUE (Dni),
+  CONSTRAINT UQ_Usuarios_correo UNIQUE (Correo),
+  CONSTRAINT CK_Usuarios_claveMin CHECK (LEN(Clave) BETWEEN 4 AND 10)
+);
+
+CREATE TABLE Ventas
+(
+  ID_ventas INT identity,
+  NumeroFactura INT NOT NULL,
+  MontoTotal FLOAT NOT NULL,
+  FechaVenta DATETIME CONSTRAINT DF_Ventas_FechaVenta DEFAULT GETDATE(),
+  ID_usuarios INT NOT NULL,
+  ID_cliente INT NOT NULL,
+  ID_Tipo_Doc INT NOT NULL,
+  CONSTRAINT PK_Ventas PRIMARY KEY (ID_ventas),
+  CONSTRAINT FK_Ventas_Usuarios FOREIGN KEY (ID_usuarios) REFERENCES Usuarios(ID_usuarios),
+  CONSTRAINT FK_Ventas_Clientes FOREIGN KEY (ID_cliente) REFERENCES Clientes(ID_cliente),
+  CONSTRAINT FK_Ventas_Tipo_documento FOREIGN KEY (ID_Tipo_Doc) REFERENCES Tipo_documento(ID_Tipo_Doc),
+  CONSTRAINT UQ_Ventas_numeroFactura UNIQUE (numeroFactura)
+);
+
+CREATE TABLE Compras
+(
+  ID_compras INT identity,
+  NumeroCompra INT NOT NULL,
+  MontoTotal FLOAT NOT NULL,
+  NumeroFactura INT NOT NULL,
+  FechaCompra DATETIME CONSTRAINT DF_Compras_FechaCompra DEFAULT GETDATE(),
+  ID_proveedor INT NOT NULL,
+  ID_usuarios INT NOT NULL,
+  ID_Tipo_Doc INT NOT NULL,
+  CONSTRAINT PK_Compras PRIMARY KEY (ID_compras),
+  CONSTRAINT FK_Compras_Proveedores FOREIGN KEY (ID_proveedor) REFERENCES Proveedores(ID_proveedor),
+  CONSTRAINT FK_Compras_Usuarios FOREIGN KEY (ID_usuarios) REFERENCES Usuarios(ID_usuarios),
+  CONSTRAINT FK_Compras_Tipo_documento FOREIGN KEY (ID_Tipo_Doc) REFERENCES Tipo_documento(ID_Tipo_Doc),
+  CONSTRAINT UQ_Compras_numeroCompra UNIQUE (NumeroCompra)
+);
+
+CREATE TABLE Detalle_Compras
+(
+  ID_detalleCompra INT identity,
+  PrecioCompra FLOAT NOT NULL,
+  Cantidad INT NOT NULL,
+  SubTotal FLOAT NOT NULL,
+  ID_producto INT NOT NULL,
+  ID_compras INT NOT NULL,
+  CONSTRAINT PK_Detalle_Compras PRIMARY KEY (ID_detalleCompra, ID_producto, ID_compras),
+  CONSTRAINT FK_Detalle_Compras_Productos FOREIGN KEY (ID_producto) REFERENCES Productos(ID_producto),
+  CONSTRAINT FK_Detalle_Compras_Compras FOREIGN KEY (ID_compras) REFERENCES Compras(ID_compras),
+  CONSTRAINT CK_Detalle_Compras_precioCompra CHECK (PrecioCompra > 0),
+  CONSTRAINT CK_Detalle_Compras_cantidad CHECK (Cantidad > 0)
+);
+
+CREATE TABLE Detalle_Ventas
+(
+  ID_detalleVenta INT identity,
+  PrecioVenta FLOAT NOT NULL,
+  Cantidad INT NOT NULL,
+  SubTotal FLOAT NOT NULL,
+  ID_producto INT NOT NULL,
+  ID_ventas INT NOT NULL,
+  CONSTRAINT PK_Detalle_Ventas PRIMARY KEY (ID_detalleVenta, ID_producto, ID_ventas),
+  CONSTRAINT FK_Detalle_Ventas_Productos FOREIGN KEY (ID_producto) REFERENCES Productos(ID_producto),
+  CONSTRAINT FK_Detalle_Ventas_Ventas FOREIGN KEY (ID_ventas) REFERENCES Ventas(ID_ventas),
+  CONSTRAINT CK_Detalle_Ventas_precioVenta CHECK (PrecioVenta > 0),
+  CONSTRAINT CK_Detalle_Ventas_canntidad CHECK (Cantidad > 0)
+);
+
+CREATE TABLE Devoluciones
+(
+  ID_devoluciones INT identity,
+  NumeroNotaCredito INT NOT NULL,
+  FechaDevolucion DATETIME CONSTRAINT DF_Devoluciones_FechaDevolucion DEFAULT GETDATE(),
+  ID_detalleVenta INT NOT NULL,
+  ID_producto INT NOT NULL,
+  ID_ventas INT NOT NULL,
+  ID_Tipo_Nota_Credito INT NOT NULL,
+  CONSTRAINT PK_Devoluciones PRIMARY KEY (ID_devoluciones),
+  CONSTRAINT FK_Devoluciones_Detalle_Ventas FOREIGN KEY (ID_detalleVenta, ID_producto, ID_ventas) REFERENCES Detalle_Ventas(ID_detalleVenta, ID_producto, ID_ventas),
+  CONSTRAINT FK_Devoluciones_Tipo_Nota_Credito FOREIGN KEY (ID_Tipo_Nota_Credito) REFERENCES Tipo_Nota_Credito(ID_Tipo_Nota_Cred),
+  CONSTRAINT UQ_Devoluciones_NumeroNotaCredito UNIQUE (NumeroNotaCredito)
+);
+
+ALTER TABLE CATEGORIAS
+ADD CONSTRAINT UQ_CATEGORIAS_Descripcion UNIQUE (Descripcion);
+
+select * from Proveedores
+
+ALTER TABLE Proveedores
+ADD CONSTRAINT UQ_Proveedores_RazonSocial UNIQUE (RazonSocial);
+
+alter table Proveedores
+ALTER COLUMN Telefono VARCHAR(15) NOT NULL;
+
+--delete from CATEGORIAS
+--where Id_categoria = 10
+DBCC CHECKIDENT (categorias, RESEED, 5); 
+
+
