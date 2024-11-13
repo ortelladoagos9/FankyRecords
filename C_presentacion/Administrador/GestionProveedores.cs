@@ -33,7 +33,6 @@ namespace FankyRecords.C_presentacion.Administrador
             GuardarProveedores();
         }
 
-
         private void GuardarProveedores()
         {
                 //Verificamos que todos los campos estésn completos.
@@ -318,10 +317,10 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBdomiciliop.Text = row.Cells["Domicilio"].Value.ToString();
                 }
 
-                /*  if (row.Cells["Telefono"] != null)
-                  {
+                if (row.Cells["Telefono"] != null)
+                {
                       TBtelefono.Text = row.Cells["Telefono"].Value.ToString();
-                  }*/
+                }
 
                 if (row.Cells["Estado"] != null)
                 {
