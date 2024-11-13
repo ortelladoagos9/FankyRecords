@@ -64,6 +64,7 @@
     <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_datos\DatosProductos.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
+    <Compile Include="C_entidad\DetalleCompra.cs" />
     <Compile Include="C_entidad\Proveedores.cs" />
     <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_entidad\Productos.cs" />
