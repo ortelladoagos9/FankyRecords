@@ -113,11 +113,6 @@ namespace FankyRecords.C_presentacion.Administrador
             C_negocio.Validaciones.EsNumero(e);
         } 
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            // Limpiar todas las filas del DataGridView
-            listadoProductos.Rows.Clear();
-        }
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
@@ -206,6 +201,52 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string terminoBusqueda = TBBuscador.Text;
+                BuscarDatos(terminoBusqueda);
+            }
+        }
+
+        //Metodo para buscar datos en el datagrid
+        private void BuscarDatos(string termino)
+        {
+            bool encontrado = false;
+
+            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            listadoProductos.ClearSelection();
+
+            // Iterar sobre todas las filas del DataGridView
+            foreach (DataGridViewRow row in listadoProductos.Rows)
+            {
+                bool filaVisible = false;
+
+                // Iterar sobre todas las celdas de la fila
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    {
+                        filaVisible = true;
+                        encontrado = true;
+                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                    }
+                }
+
+                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
+                if (!filaVisible && listadoProductos.CurrentRow == row)
+                {
+                    listadoProductos.CurrentCell = null; // Deseleccionar la celda actual
+                }
+
+                // Mostrar u ocultar la fila según si hubo coincidencia
+                row.Visible = filaVisible;
+            }
+
+            // Mostrar mensaje si no se encontraron coincidencias
+            if (!encontrado)
+            {
+                MessageBox.Show("No se encontraron coincidencias.");
             }
         }
 
@@ -301,6 +342,29 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
+        private void listadoProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que el índice de fila es válido y que no es un encabezado (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
+            {
+                // Deselecciona la fila actual en el DataGridView
+                listadoProductos.ClearSelection();
+
+                // Limpia los controles de entrada
+                Limpiar();
+
+                // Resetea el ID del cliente seleccionado
+                productoIdSeleccionado = -1;
+            }
+        }
+
+        private void TBBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (TBBuscador.Text == "")
+            {
+                CargarProductos();
+            }
+        }
     }
 }
 

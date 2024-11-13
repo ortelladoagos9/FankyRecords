@@ -29,25 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.LListaProductos = new System.Windows.Forms.Label();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
-            this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.objcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorBotones = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
@@ -59,7 +48,6 @@
             this.TBStock_min = new System.Windows.Forms.TextBox();
             this.LStock_min = new System.Windows.Forms.Label();
             this.CBcategoria = new System.Windows.Forms.ComboBox();
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.LEstado = new System.Windows.Forms.Label();
@@ -70,13 +58,25 @@
             this.LDescripcion = new System.Windows.Forms.Label();
             this.LCodigo_prod = new System.Windows.Forms.Label();
             this.LNombre_prod = new System.Windows.Forms.Label();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionProductos.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contenedorLista
@@ -132,6 +132,7 @@
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 33;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
             // btnBuscar
             // 
@@ -158,14 +159,14 @@
             this.listadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_producto,
@@ -179,14 +180,14 @@
             this.estado,
             this.objcategoria});
             this.listadoProductos.DataSource = this.productosBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle4;
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoProductos.Location = new System.Drawing.Point(0, 445);
             this.listadoProductos.Margin = new System.Windows.Forms.Padding(4);
@@ -196,95 +197,7 @@
             this.listadoProductos.Size = new System.Drawing.Size(1182, 209);
             this.listadoProductos.TabIndex = 20;
             this.listadoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellClick);
-            // 
-            // ID_producto
-            // 
-            this.ID_producto.DataPropertyName = "ID_producto";
-            this.ID_producto.HeaderText = "ID_producto";
-            this.ID_producto.MinimumWidth = 6;
-            this.ID_producto.Name = "ID_producto";
-            this.ID_producto.ReadOnly = true;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "Codigo";
-            this.codigo.FillWeight = 95F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.DataPropertyName = "Stock";
-            this.stock.FillWeight = 85F;
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.DataPropertyName = "PrecioVenta";
-            this.precioVenta.HeaderText = "PrecioVenta";
-            this.precioVenta.MinimumWidth = 6;
-            this.precioVenta.Name = "precioVenta";
-            this.precioVenta.ReadOnly = true;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.DataPropertyName = "PrecioCompra";
-            this.precioCompra.HeaderText = "PrecioCompra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
-            // 
-            // stockmin
-            // 
-            this.stockmin.DataPropertyName = "Stock_min";
-            this.stockmin.FillWeight = 85F;
-            this.stockmin.HeaderText = "Stock_min";
-            this.stockmin.MinimumWidth = 6;
-            this.stockmin.Name = "stockmin";
-            this.stockmin.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "Estado";
-            this.estado.FillWeight = 95F;
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // objcategoria
-            // 
-            this.objcategoria.DataPropertyName = "Obj_categoria";
-            this.objcategoria.FillWeight = 95F;
-            this.objcategoria.HeaderText = "Categoria";
-            this.objcategoria.MinimumWidth = 6;
-            this.objcategoria.Name = "objcategoria";
-            this.objcategoria.ReadOnly = true;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            this.listadoProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellDoubleClick);
             // 
             // contenedorBotones
             // 
@@ -483,10 +396,6 @@
             this.CBcategoria.Size = new System.Drawing.Size(242, 29);
             this.CBcategoria.TabIndex = 1;
             // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
             // rBinactivo
             // 
             this.rBinactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -617,6 +526,99 @@
             this.LNombre_prod.TabIndex = 0;
             this.LNombre_prod.Text = "Nombre";
             // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
+            // ID_producto
+            // 
+            this.ID_producto.DataPropertyName = "ID_producto";
+            this.ID_producto.HeaderText = "ID_producto";
+            this.ID_producto.MinimumWidth = 6;
+            this.ID_producto.Name = "ID_producto";
+            this.ID_producto.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Codigo";
+            this.codigo.FillWeight = 95F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.DataPropertyName = "Stock";
+            this.stock.FillWeight = 85F;
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
+            // precioVenta
+            // 
+            this.precioVenta.DataPropertyName = "PrecioVenta";
+            this.precioVenta.HeaderText = "PrecioVenta";
+            this.precioVenta.MinimumWidth = 6;
+            this.precioVenta.Name = "precioVenta";
+            this.precioVenta.ReadOnly = true;
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.DataPropertyName = "PrecioCompra";
+            this.precioCompra.HeaderText = "PrecioCompra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.ReadOnly = true;
+            // 
+            // stockmin
+            // 
+            this.stockmin.DataPropertyName = "Stock_min";
+            this.stockmin.FillWeight = 85F;
+            this.stockmin.HeaderText = "Stock_min";
+            this.stockmin.MinimumWidth = 6;
+            this.stockmin.Name = "stockmin";
+            this.stockmin.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "Estado";
+            this.estado.FillWeight = 95F;
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // objcategoria
+            // 
+            this.objcategoria.DataPropertyName = "Obj_categoria";
+            this.objcategoria.FillWeight = 95F;
+            this.objcategoria.HeaderText = "Categoria";
+            this.objcategoria.MinimumWidth = 6;
+            this.objcategoria.Name = "objcategoria";
+            this.objcategoria.ReadOnly = true;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            // 
             // GestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -637,12 +639,12 @@
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorGestionProductos.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

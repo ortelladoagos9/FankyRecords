@@ -72,6 +72,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 61);
             this.panel1.TabIndex = 0;
@@ -81,6 +82,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 61);
             this.label1.TabIndex = 0;
@@ -97,7 +99,8 @@
             this.CBproveedor.Items.AddRange(new object[] {
             "Proveedor A",
             "Proveedor B"});
-            this.CBproveedor.Location = new System.Drawing.Point(765, 54);
+            this.CBproveedor.Location = new System.Drawing.Point(766, 54);
+            this.CBproveedor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CBproveedor.Name = "CBproveedor";
             this.CBproveedor.Size = new System.Drawing.Size(147, 29);
             this.CBproveedor.TabIndex = 5;
@@ -106,7 +109,8 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(652, 58);
+            this.label2.Location = new System.Drawing.Point(652, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 4;
@@ -141,15 +145,17 @@
             this.montoTotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.listadoReporteCompras.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoReporteCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteCompras.Location = new System.Drawing.Point(0, 256);
+            this.listadoReporteCompras.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listadoReporteCompras.Name = "listadoReporteCompras";
+            this.listadoReporteCompras.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,60 +173,70 @@
             this.fechaRegistro.HeaderText = "Fecha Registro";
             this.fechaRegistro.MinimumWidth = 6;
             this.fechaRegistro.Name = "fechaRegistro";
+            this.fechaRegistro.ReadOnly = true;
             // 
             // tipoDoc
             // 
             this.tipoDoc.HeaderText = "Tipo Documento";
             this.tipoDoc.MinimumWidth = 6;
             this.tipoDoc.Name = "tipoDoc";
+            this.tipoDoc.ReadOnly = true;
             // 
             // razonSocial
             // 
             this.razonSocial.HeaderText = "Razon Social";
             this.razonSocial.MinimumWidth = 6;
             this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
             // 
             // cuitProveedor
             // 
             this.cuitProveedor.HeaderText = "Cuit Proveedor";
             this.cuitProveedor.MinimumWidth = 6;
             this.cuitProveedor.Name = "cuitProveedor";
+            this.cuitProveedor.ReadOnly = true;
             // 
             // codProducto
             // 
             this.codProducto.HeaderText = "Codigo Producto";
             this.codProducto.MinimumWidth = 6;
             this.codProducto.Name = "codProducto";
+            this.codProducto.ReadOnly = true;
             // 
             // nomProducto
             // 
             this.nomProducto.HeaderText = "Nombre Producto";
             this.nomProducto.MinimumWidth = 6;
             this.nomProducto.Name = "nomProducto";
+            this.nomProducto.ReadOnly = true;
             // 
             // numero_compra
             // 
             this.numero_compra.HeaderText = "Número compra";
             this.numero_compra.MinimumWidth = 6;
             this.numero_compra.Name = "numero_compra";
+            this.numero_compra.ReadOnly = true;
             // 
             // precioCompra
             // 
             this.precioCompra.HeaderText = "Precio Compra";
             this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
+            this.precioCompra.ReadOnly = true;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
             // montoTotal
             // 
             this.montoTotal.HeaderText = "Monto Total ";
             this.montoTotal.MinimumWidth = 6;
             this.montoTotal.Name = "montoTotal";
+            this.montoTotal.ReadOnly = true;
             // 
             // panel4
             // 
@@ -230,6 +246,7 @@
             this.panel4.Controls.Add(this.descExel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 203);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1182, 53);
             this.panel4.TabIndex = 8;
@@ -242,6 +259,7 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(625, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(557, 53);
             this.panel5.TabIndex = 8;
@@ -250,8 +268,8 @@
             // 
             this.TBBuscadorCompras.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscadorCompras.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscadorCompras.Location = new System.Drawing.Point(291, 14);
-            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.TBBuscadorCompras.Location = new System.Drawing.Point(290, 14);
+            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(10, 3, 2, 3);
             this.TBBuscadorCompras.Name = "TBBuscadorCompras";
             this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 28);
             this.TBBuscadorCompras.TabIndex = 34;
@@ -272,7 +290,7 @@
             "Nombre Producto",
             "Categoria ",
             "Precio Venta"});
-            this.cbBuscarVentas.Location = new System.Drawing.Point(123, 13);
+            this.cbBuscarVentas.Location = new System.Drawing.Point(122, 13);
             this.cbBuscarVentas.Margin = new System.Windows.Forms.Padding(2);
             this.cbBuscarVentas.Name = "cbBuscarVentas";
             this.cbBuscarVentas.Size = new System.Drawing.Size(156, 29);
@@ -297,10 +315,10 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 16);
+            this.label4.Location = new System.Drawing.Point(2, 15);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 26);
+            this.label4.Size = new System.Drawing.Size(116, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "Buscar por:";
             // 
@@ -355,6 +373,7 @@
             this.panel3.Controls.Add(this.btnBuscarFecha);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 61);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1182, 142);
             this.panel3.TabIndex = 9;
@@ -363,10 +382,10 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 58);
+            this.label5.Location = new System.Drawing.Point(52, 57);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 24);
+            this.label5.Size = new System.Drawing.Size(130, 24);
             this.label5.TabIndex = 1;
             this.label5.Text = "Fecha inicio:";
             // 
@@ -391,7 +410,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(354, 58);
+            this.label6.Location = new System.Drawing.Point(354, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 24);

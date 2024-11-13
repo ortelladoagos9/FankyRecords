@@ -148,7 +148,8 @@ namespace FankyRecords.C_datos
                  Nombre = @NuevoNombre,
                  Descripcion = @NuevaDescripcion,
                  Stock_min = @NuevoStockMin,
-                 Estado = @NuevoEstado
+                 Estado = @NuevoEstado,
+                 Id_categoria = @IdCategoria
                  WHERE ID_producto = @IDProducto";
 
                 SqlCommand cmdProducto = new SqlCommand(queryProducto, conexion);
@@ -158,21 +159,9 @@ namespace FankyRecords.C_datos
                 cmdProducto.Parameters.AddWithValue("@NuevoStockMin", producto.Stock_min);
                 cmdProducto.Parameters.AddWithValue("@NuevoEstado", producto.Estado);
                 cmdProducto.Parameters.AddWithValue("@IDProducto", producto.ID_producto);
+                cmdProducto.Parameters.AddWithValue("@IdCategoria", producto.Obj_categoria.Id_categoria);
 
                 cmdProducto.ExecuteNonQuery();
-
-                // Actualizar la tabla Categorias
-                string queryCategoria = @"
-                  UPDATE Categorias
-                  SET 
-                  Descripcion = @NuevaDescripcionCategoria
-                  WHERE Id_categoria = @IdCategoria";
-
-                SqlCommand cmdCategoria = new SqlCommand(queryCategoria, conexion);
-                cmdCategoria.Parameters.AddWithValue("@NuevaDescripcionCategoria", producto.Obj_categoria.Descripcion);
-                cmdCategoria.Parameters.AddWithValue("@IdCategoria", producto.Obj_categoria.Id_categoria);
-
-                cmdCategoria.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -203,6 +192,5 @@ namespace FankyRecords.C_datos
             }
             finally { conexion.Close(); }
         }
-
     }
 }
