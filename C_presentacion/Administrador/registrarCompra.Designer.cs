@@ -144,7 +144,7 @@
             this.TBtotalPagar.Location = new System.Drawing.Point(33, 203);
             this.TBtotalPagar.Name = "TBtotalPagar";
             this.TBtotalPagar.ReadOnly = true;
-            this.TBtotalPagar.Size = new System.Drawing.Size(129, 24);
+            this.TBtotalPagar.Size = new System.Drawing.Size(129, 28);
             this.TBtotalPagar.TabIndex = 2;
             // 
             // LTotalPagar
@@ -155,7 +155,7 @@
             this.LTotalPagar.ForeColor = System.Drawing.Color.DarkRed;
             this.LTotalPagar.Location = new System.Drawing.Point(33, 169);
             this.LTotalPagar.Name = "LTotalPagar";
-            this.LTotalPagar.Size = new System.Drawing.Size(113, 17);
+            this.LTotalPagar.Size = new System.Drawing.Size(132, 21);
             this.LTotalPagar.TabIndex = 1;
             this.LTotalPagar.Text = "Total a Pagar:";
             // 
@@ -186,6 +186,7 @@
             this.listaCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaCompras.Location = new System.Drawing.Point(0, 445);
             this.listaCompras.Name = "listaCompras";
+            this.listaCompras.ReadOnly = true;
             this.listaCompras.RowHeadersWidth = 51;
             this.listaCompras.Size = new System.Drawing.Size(986, 209);
             this.listaCompras.TabIndex = 2;
@@ -238,7 +239,7 @@
             this.TBPrecio_Venta.Name = "TBPrecio_Venta";
             this.TBPrecio_Venta.ReadOnly = true;
             this.TBPrecio_Venta.ShortcutsEnabled = false;
-            this.TBPrecio_Venta.Size = new System.Drawing.Size(138, 24);
+            this.TBPrecio_Venta.Size = new System.Drawing.Size(138, 28);
             this.TBPrecio_Venta.TabIndex = 32;
             // 
             // LPrecio_Venta
@@ -249,7 +250,7 @@
             this.LPrecio_Venta.Location = new System.Drawing.Point(450, 57);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
-            this.LPrecio_Venta.Size = new System.Drawing.Size(108, 17);
+            this.LPrecio_Venta.Size = new System.Drawing.Size(129, 21);
             this.LPrecio_Venta.TabIndex = 31;
             this.LPrecio_Venta.Text = "Precio Venta:";
             // 
@@ -258,7 +259,7 @@
             this.TBCodProd.Location = new System.Drawing.Point(372, 83);
             this.TBCodProd.Name = "TBCodProd";
             this.TBCodProd.ReadOnly = true;
-            this.TBCodProd.Size = new System.Drawing.Size(75, 24);
+            this.TBCodProd.Size = new System.Drawing.Size(75, 28);
             this.TBCodProd.TabIndex = 30;
             this.TBCodProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBCodProd_KeyDown);
             // 
@@ -267,7 +268,7 @@
             this.LCodigo.AutoSize = true;
             this.LCodigo.Location = new System.Drawing.Point(369, 57);
             this.LCodigo.Name = "LCodigo";
-            this.LCodigo.Size = new System.Drawing.Size(63, 17);
+            this.LCodigo.Size = new System.Drawing.Size(75, 21);
             this.LCodigo.TabIndex = 29;
             this.LCodigo.Text = "Código:";
             // 
@@ -314,7 +315,7 @@
             this.TBbuscarProducto.MaxLength = 100;
             this.TBbuscarProducto.Name = "TBbuscarProducto";
             this.TBbuscarProducto.ShortcutsEnabled = false;
-            this.TBbuscarProducto.Size = new System.Drawing.Size(130, 24);
+            this.TBbuscarProducto.Size = new System.Drawing.Size(130, 28);
             this.TBbuscarProducto.TabIndex = 26;
             this.TBbuscarProducto.TextChanged += new System.EventHandler(this.TBbuscarProducto_TextChanged);
             this.TBbuscarProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBbuscarProducto_KeyDown);
@@ -326,7 +327,7 @@
             this.LBuscarProducto.Location = new System.Drawing.Point(20, 57);
             this.LBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBuscarProducto.Name = "LBuscarProducto";
-            this.LBuscarProducto.Size = new System.Drawing.Size(64, 17);
+            this.LBuscarProducto.Size = new System.Drawing.Size(77, 21);
             this.LBuscarProducto.TabIndex = 25;
             this.LBuscarProducto.Text = "Buscar:";
             // 
@@ -339,7 +340,7 @@
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(83, 24);
+            this.cantProd.Size = new System.Drawing.Size(83, 28);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -352,7 +353,7 @@
             this.LCantidad.AutoSize = true;
             this.LCantidad.Location = new System.Drawing.Point(739, 57);
             this.LCantidad.Name = "LCantidad";
-            this.LCantidad.Size = new System.Drawing.Size(78, 17);
+            this.LCantidad.Size = new System.Drawing.Size(95, 21);
             this.LCantidad.TabIndex = 10;
             this.LCantidad.Text = "Cantidad:";
             // 
@@ -361,7 +362,7 @@
             this.LPrecioCompra.AutoSize = true;
             this.LPrecioCompra.Location = new System.Drawing.Point(593, 57);
             this.LPrecioCompra.Name = "LPrecioCompra";
-            this.LPrecioCompra.Size = new System.Drawing.Size(122, 17);
+            this.LPrecioCompra.Size = new System.Drawing.Size(145, 21);
             this.LPrecioCompra.TabIndex = 9;
             this.LPrecioCompra.Text = "Precio Compra:";
             // 
@@ -370,7 +371,7 @@
             this.TBprecio_compra.Location = new System.Drawing.Point(593, 83);
             this.TBprecio_compra.Name = "TBprecio_compra";
             this.TBprecio_compra.ShortcutsEnabled = false;
-            this.TBprecio_compra.Size = new System.Drawing.Size(145, 24);
+            this.TBprecio_compra.Size = new System.Drawing.Size(145, 28);
             this.TBprecio_compra.TabIndex = 8;
             this.TBprecio_compra.TextChanged += new System.EventHandler(this.TBprecio_compra_TextChanged);
             this.TBprecio_compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
@@ -380,7 +381,7 @@
             this.TBproducto.Location = new System.Drawing.Point(209, 83);
             this.TBproducto.Name = "TBproducto";
             this.TBproducto.ReadOnly = true;
-            this.TBproducto.Size = new System.Drawing.Size(153, 24);
+            this.TBproducto.Size = new System.Drawing.Size(153, 28);
             this.TBproducto.TabIndex = 7;
             // 
             // LProducto
@@ -388,7 +389,7 @@
             this.LProducto.AutoSize = true;
             this.LProducto.Location = new System.Drawing.Point(209, 57);
             this.LProducto.Name = "LProducto";
-            this.LProducto.Size = new System.Drawing.Size(80, 17);
+            this.LProducto.Size = new System.Drawing.Size(96, 21);
             this.LProducto.TabIndex = 6;
             this.LProducto.Text = "Producto:";
             // 
@@ -429,7 +430,7 @@
             this.TBrazonSocial.Location = new System.Drawing.Point(253, 74);
             this.TBrazonSocial.Name = "TBrazonSocial";
             this.TBrazonSocial.ReadOnly = true;
-            this.TBrazonSocial.Size = new System.Drawing.Size(164, 24);
+            this.TBrazonSocial.Size = new System.Drawing.Size(164, 28);
             this.TBrazonSocial.TabIndex = 3;
             // 
             // TBcuit
@@ -438,7 +439,7 @@
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.ShortcutsEnabled = false;
-            this.TBcuit.Size = new System.Drawing.Size(160, 24);
+            this.TBcuit.Size = new System.Drawing.Size(160, 28);
             this.TBcuit.TabIndex = 2;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -447,7 +448,7 @@
             this.LRazonSocial.AutoSize = true;
             this.LRazonSocial.Location = new System.Drawing.Point(253, 47);
             this.LRazonSocial.Name = "LRazonSocial";
-            this.LRazonSocial.Size = new System.Drawing.Size(108, 17);
+            this.LRazonSocial.Size = new System.Drawing.Size(127, 21);
             this.LRazonSocial.TabIndex = 1;
             this.LRazonSocial.Text = "Razón Social:";
             // 
@@ -456,7 +457,7 @@
             this.LCuit.AutoSize = true;
             this.LCuit.Location = new System.Drawing.Point(20, 47);
             this.LCuit.Name = "LCuit";
-            this.LCuit.Size = new System.Drawing.Size(44, 17);
+            this.LCuit.Size = new System.Drawing.Size(53, 21);
             this.LCuit.TabIndex = 0;
             this.LCuit.Text = "Cuit:";
             // 
@@ -483,7 +484,7 @@
             this.TBNumFactura.Location = new System.Drawing.Point(225, 107);
             this.TBNumFactura.Name = "TBNumFactura";
             this.TBNumFactura.ShortcutsEnabled = false;
-            this.TBNumFactura.Size = new System.Drawing.Size(164, 24);
+            this.TBNumFactura.Size = new System.Drawing.Size(164, 28);
             this.TBNumFactura.TabIndex = 6;
             this.TBNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -494,7 +495,7 @@
             this.dtFechaCompra.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.dtFechaCompra.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.dtFechaCompra.Name = "dtFechaCompra";
-            this.dtFechaCompra.Size = new System.Drawing.Size(160, 24);
+            this.dtFechaCompra.Size = new System.Drawing.Size(160, 28);
             this.dtFechaCompra.TabIndex = 6;
             this.dtFechaCompra.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
@@ -503,7 +504,7 @@
             this.LNum_factura.AutoSize = true;
             this.LNum_factura.Location = new System.Drawing.Point(225, 80);
             this.LNum_factura.Name = "LNum_factura";
-            this.LNum_factura.Size = new System.Drawing.Size(134, 17);
+            this.LNum_factura.Size = new System.Drawing.Size(160, 21);
             this.LNum_factura.TabIndex = 5;
             this.LNum_factura.Text = "Número Factura:";
             // 
@@ -512,11 +513,11 @@
             this.cbTipoDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDoc.FormattingEnabled = true;
-            this.cbTipoDoc.ItemHeight = 17;
+            this.cbTipoDoc.ItemHeight = 21;
             this.cbTipoDoc.Location = new System.Drawing.Point(225, 44);
             this.cbTipoDoc.MaxLength = 100;
             this.cbTipoDoc.Name = "cbTipoDoc";
-            this.cbTipoDoc.Size = new System.Drawing.Size(160, 25);
+            this.cbTipoDoc.Size = new System.Drawing.Size(160, 29);
             this.cbTipoDoc.TabIndex = 3;
             this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.registrarCompra_Load);
             // 
@@ -525,7 +526,7 @@
             this.LTipoDoc.AutoSize = true;
             this.LTipoDoc.Location = new System.Drawing.Point(225, 18);
             this.LTipoDoc.Name = "LTipoDoc";
-            this.LTipoDoc.Size = new System.Drawing.Size(134, 17);
+            this.LTipoDoc.Size = new System.Drawing.Size(158, 21);
             this.LTipoDoc.TabIndex = 1;
             this.LTipoDoc.Text = "Tipo Documento:";
             // 
@@ -534,7 +535,7 @@
             this.LFechaCompra.AutoSize = true;
             this.LFechaCompra.Location = new System.Drawing.Point(29, 47);
             this.LFechaCompra.Name = "LFechaCompra";
-            this.LFechaCompra.Size = new System.Drawing.Size(57, 17);
+            this.LFechaCompra.Size = new System.Drawing.Size(68, 21);
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
             // 
@@ -544,7 +545,7 @@
             // 
             // registrarCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);

@@ -30,16 +30,16 @@ namespace FankyRecords.C_presentacion.Administrador
             CD_Productos = new DatosProductos();
 
 
-            /*this.cbTipoDoc.SelectedIndex = 0*/
+           
             ;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
-            AgregarProducti();
+            AgregarProducto();
         }
 
-        private void AgregarProducti()
+        private void AgregarProducto()
         {
             //Verificamos que todos los campos estésn completos.
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
