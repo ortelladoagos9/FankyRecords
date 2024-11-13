@@ -36,15 +36,14 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
-            AgregarProducti();
+            AgregarProducto();
         }
 
-        private void AgregarProducti()
+        private void AgregarProducto()
         {
             //Verificamos que todos los campos estésn completos.
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
-                || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
                 || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
             {
@@ -71,12 +70,9 @@ namespace FankyRecords.C_presentacion.Administrador
                     {
                         Productos productos = new Productos
                         {
-                            Codigo = TBCodProd.Text,
-                            Correo = TBcorreo.Text,
-                            Cuit = TBcuit.Text,
-                            Domicilio = TBdomiciliop.Text,
-                            Telefono = TBtelefono.Text,
-                            Estado = RBactivop.Checked ? "Activo" : "Inactivo"
+                            Codigo = Convert.ToInt32(TBCodProd.Text),
+
+                          
                         };
                         try
                         {
@@ -85,11 +81,11 @@ namespace FankyRecords.C_presentacion.Administrador
                             if (ask == DialogResult.Yes)
                             {
                                 // Intentar guardar la categoría en la base de datos
-                                CN_Proveedores.GuardarProveedor(proveedores);
+                                CN_Productos.GuardarProductos(productos);
 
-                                MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("El producto: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // Recargar datos y limpiar formulario
-                                CargarProveedores();
+                                AgregarProducto();
                                 Limpiar();
                             }
                         }
@@ -166,7 +162,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 else
                 {
-                    TBbuscarProducto.Select();
+                   
                 }
             }
         }
@@ -192,7 +188,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
-            TBbuscarProducto.Clear();
+          
             TBCodProd.Clear();
             TBproducto.Clear();
             TBprecio_compra.Clear();
@@ -223,43 +219,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
-        private void LRegistrarCompra_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void TBbuscarProducto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBCodProd_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
        
-        private void TBbuscarProducto_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-           /* if (e.KeyData == Keys.Enter)
-            {
-                Productos oProducto = CN_Productos.ListarProductos().Where(p => p.Codigo == TBCodProd.Text).FirstOrDefoult();  /*&& p.Estado == true
-                if (oProducto != null)
-                {
-                    TBCodProd.BackColor = Color.GreenYellow;
-                    TBproducto.Text = oProducto.Nombre;
-                    TBprecio_compra.Select();
 
-                }
-                else
-                {
-                    TBCodProd.BackColor = Color.MistyRose;
-                    oProducto.ID_producto = 0;
-                    TBproducto.Text = "";
-                }
-
-
-            }*/
-        }
     } 
 }

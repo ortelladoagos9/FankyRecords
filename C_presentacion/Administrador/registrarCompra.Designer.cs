@@ -46,8 +46,6 @@
             this.LCodigo = new System.Windows.Forms.Label();
             this.btnAgregarProd = new FontAwesome.Sharp.IconButton();
             this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
-            this.TBbuscarProducto = new System.Windows.Forms.TextBox();
-            this.LBuscarProducto = new System.Windows.Forms.Label();
             this.cantProd = new System.Windows.Forms.NumericUpDown();
             this.LCantidad = new System.Windows.Forms.Label();
             this.LPrecioCompra = new System.Windows.Forms.Label();
@@ -68,6 +66,7 @@
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
             this.registrarCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
@@ -77,6 +76,7 @@
             this.gbInfoProveedor.SuspendLayout();
             this.gbInfoCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registrarCompraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contenedorRegistrarCompra
@@ -102,7 +102,6 @@
             this.LRegistrarCompra.TabIndex = 0;
             this.LRegistrarCompra.Text = "Registrar Compra";
             this.LRegistrarCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.LRegistrarCompra.Click += new System.EventHandler(this.LRegistrarCompra_Click);
             // 
             // contenedorBotones
             // 
@@ -211,8 +210,6 @@
             this.gbInfoProducto.Controls.Add(this.LCodigo);
             this.gbInfoProducto.Controls.Add(this.btnAgregarProd);
             this.gbInfoProducto.Controls.Add(this.btnBuscarProducto);
-            this.gbInfoProducto.Controls.Add(this.TBbuscarProducto);
-            this.gbInfoProducto.Controls.Add(this.LBuscarProducto);
             this.gbInfoProducto.Controls.Add(this.cantProd);
             this.gbInfoProducto.Controls.Add(this.LCantidad);
             this.gbInfoProducto.Controls.Add(this.LPrecioCompra);
@@ -232,7 +229,7 @@
             // 
             this.TBPrecio_Venta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio_Venta.Location = new System.Drawing.Point(450, 83);
+            this.TBPrecio_Venta.Location = new System.Drawing.Point(425, 87);
             this.TBPrecio_Venta.Margin = new System.Windows.Forms.Padding(4);
             this.TBPrecio_Venta.MaxLength = 6;
             this.TBPrecio_Venta.Name = "TBPrecio_Venta";
@@ -246,7 +243,7 @@
             this.LPrecio_Venta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LPrecio_Venta.AutoSize = true;
             this.LPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio_Venta.Location = new System.Drawing.Point(450, 57);
+            this.LPrecio_Venta.Location = new System.Drawing.Point(422, 57);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
             this.LPrecio_Venta.Size = new System.Drawing.Size(108, 17);
@@ -255,17 +252,16 @@
             // 
             // TBCodProd
             // 
-            this.TBCodProd.Location = new System.Drawing.Point(372, 83);
+            this.TBCodProd.Location = new System.Drawing.Point(284, 87);
             this.TBCodProd.Name = "TBCodProd";
             this.TBCodProd.ReadOnly = true;
-            this.TBCodProd.Size = new System.Drawing.Size(75, 24);
+            this.TBCodProd.Size = new System.Drawing.Size(120, 24);
             this.TBCodProd.TabIndex = 30;
-            this.TBCodProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBCodProd_KeyDown);
             // 
             // LCodigo
             // 
             this.LCodigo.AutoSize = true;
-            this.LCodigo.Location = new System.Drawing.Point(369, 57);
+            this.LCodigo.Location = new System.Drawing.Point(281, 57);
             this.LCodigo.Name = "LCodigo";
             this.LCodigo.Size = new System.Drawing.Size(63, 17);
             this.LCodigo.TabIndex = 29;
@@ -299,36 +295,13 @@
             this.btnBuscarProducto.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarProducto.IconSize = 18;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(154, 85);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(212, 87);
             this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(46, 26);
             this.btnBuscarProducto.TabIndex = 27;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
             this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
-            // 
-            // TBbuscarProducto
-            // 
-            this.TBbuscarProducto.Location = new System.Drawing.Point(20, 83);
-            this.TBbuscarProducto.Margin = new System.Windows.Forms.Padding(4);
-            this.TBbuscarProducto.MaxLength = 100;
-            this.TBbuscarProducto.Name = "TBbuscarProducto";
-            this.TBbuscarProducto.ShortcutsEnabled = false;
-            this.TBbuscarProducto.Size = new System.Drawing.Size(130, 24);
-            this.TBbuscarProducto.TabIndex = 26;
-            this.TBbuscarProducto.TextChanged += new System.EventHandler(this.TBbuscarProducto_TextChanged);
-            this.TBbuscarProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBbuscarProducto_KeyDown);
-            this.TBbuscarProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
-            // 
-            // LBuscarProducto
-            // 
-            this.LBuscarProducto.AutoSize = true;
-            this.LBuscarProducto.Location = new System.Drawing.Point(20, 57);
-            this.LBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBuscarProducto.Name = "LBuscarProducto";
-            this.LBuscarProducto.Size = new System.Drawing.Size(64, 17);
-            this.LBuscarProducto.TabIndex = 25;
-            this.LBuscarProducto.Text = "Buscar:";
             // 
             // cantProd
             // 
@@ -359,7 +332,7 @@
             // LPrecioCompra
             // 
             this.LPrecioCompra.AutoSize = true;
-            this.LPrecioCompra.Location = new System.Drawing.Point(593, 57);
+            this.LPrecioCompra.Location = new System.Drawing.Point(582, 57);
             this.LPrecioCompra.Name = "LPrecioCompra";
             this.LPrecioCompra.Size = new System.Drawing.Size(122, 17);
             this.LPrecioCompra.TabIndex = 9;
@@ -367,7 +340,7 @@
             // 
             // TBprecio_compra
             // 
-            this.TBprecio_compra.Location = new System.Drawing.Point(593, 83);
+            this.TBprecio_compra.Location = new System.Drawing.Point(585, 87);
             this.TBprecio_compra.Name = "TBprecio_compra";
             this.TBprecio_compra.ShortcutsEnabled = false;
             this.TBprecio_compra.Size = new System.Drawing.Size(145, 24);
@@ -377,16 +350,16 @@
             // 
             // TBproducto
             // 
-            this.TBproducto.Location = new System.Drawing.Point(209, 83);
+            this.TBproducto.Location = new System.Drawing.Point(29, 87);
             this.TBproducto.Name = "TBproducto";
             this.TBproducto.ReadOnly = true;
-            this.TBproducto.Size = new System.Drawing.Size(153, 24);
+            this.TBproducto.Size = new System.Drawing.Size(160, 24);
             this.TBproducto.TabIndex = 7;
             // 
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(209, 57);
+            this.LProducto.Location = new System.Drawing.Point(29, 57);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(80, 17);
             this.LProducto.TabIndex = 6;
@@ -437,6 +410,7 @@
             this.TBcuit.Location = new System.Drawing.Point(20, 74);
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
+            this.TBcuit.ReadOnly = true;
             this.TBcuit.ShortcutsEnabled = false;
             this.TBcuit.Size = new System.Drawing.Size(160, 24);
             this.TBcuit.TabIndex = 2;
@@ -542,6 +516,10 @@
             // 
             this.registrarCompraBindingSource.DataSource = typeof(FankyRecords.C_presentacion.Administrador.registrarCompra);
             // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            // 
             // registrarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -570,6 +548,7 @@
             this.gbInfoCompra.ResumeLayout(false);
             this.gbInfoCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registrarCompraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -604,8 +583,6 @@
         private System.Windows.Forms.Label LProducto;
         private System.Windows.Forms.DateTimePicker dtFechaCompra;
         public FontAwesome.Sharp.IconButton btnBuscarProducto;
-        private System.Windows.Forms.TextBox TBbuscarProducto;
-        private System.Windows.Forms.Label LBuscarProducto;
         private System.Windows.Forms.TextBox TBCodProd;
         private System.Windows.Forms.Label LCodigo;
         private System.Windows.Forms.TextBox TBNumFactura;
@@ -613,5 +590,6 @@
         public System.Windows.Forms.TextBox TBPrecio_Venta;
         public System.Windows.Forms.Label LPrecio_Venta;
         private System.Windows.Forms.BindingSource registrarCompraBindingSource;
+        private System.Windows.Forms.BindingSource productosBindingSource;
     }
 }

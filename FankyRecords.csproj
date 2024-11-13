@@ -68,6 +68,9 @@
     <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_entidad\Productos.cs" />
     <Compile Include="C_entidad\RegistrarCompra.cs" />
+    <Compile Include="C_entidad\Rol.cs" />
+    <Compile Include="C_entidad\TipoDoc.cs" />
+    <Compile Include="C_entidad\Usuarios.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\NegocioCompras.cs" />
     <Compile Include="C_negocio\NegocioProveedores.cs" />
