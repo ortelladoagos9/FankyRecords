@@ -30,7 +30,7 @@ namespace FankyRecords.C_presentacion.Administrador
             CD_Productos = new DatosProductos();
 
 
-            /*this.cbTipoDoc.SelectedIndex = 0*/
+           
             ;
         }
 
