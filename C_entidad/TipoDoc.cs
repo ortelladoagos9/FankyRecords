@@ -9,7 +9,7 @@ namespace FankyRecords.C_entidad
     public class TipoDoc
     {
         public int ID_Tipo_Doc { get; set; }
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
     }
 }

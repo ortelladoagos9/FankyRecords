@@ -37,9 +37,6 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(Codigo);
                 cmd.Parameters.Add(Nombre);
                 cmd.Parameters.Add(Descripcion);
-               // cmd.Parameters.Add(Stock);
-               // cmd.Parameters.Add(PrecioVenta);
-               // cmd.Parameters.Add(PrecioCompra);
                 cmd.Parameters.Add(Estado);
                 cmd.Parameters.Add(Stock_min);
                 cmd.Parameters.Add(Id_categoria);

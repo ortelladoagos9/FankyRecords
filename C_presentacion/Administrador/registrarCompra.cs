@@ -67,9 +67,9 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                     if (!prodExiste)
                     {
-                        DetalleCompra DetCompra = new DetCompra
+                        RegistrarCompra registrarCompra = new RegistrarCompra
                         {
-                            Codigo = Convert.ToInt32(TBCodProd.Text),
+                            MontoTotal = Convert.ToInt32(TBCodProd.Text),
 
                         };
                         try
@@ -79,11 +79,11 @@ namespace FankyRecords.C_presentacion.Administrador
                             if (ask == DialogResult.Yes)
                             {
                                 // Intentar guardar la categoría en la base de datos
-                                CN_Productos.GuardarProductos(productos);
+                                CN_Compras.GuardarCompra(registrarCompra);
 
-                                MessageBox.Show("El producto: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // Recargar datos y limpiar formulario
-                                AgregarProducto();
+                                CargarCompra();
                                 Limpiar();
                             }
                         }
