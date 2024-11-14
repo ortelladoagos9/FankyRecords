@@ -19,15 +19,16 @@ namespace FankyRecords.C_presentacion.Administrador
     public partial class registrarCompra : Form
     {
         
-        private readonly NegocioProductos CN_Productos;
-        private readonly DatosProductos CD_Productos;
+        private readonly NegocioCompras CN_Compras;
+        private readonly DatosCompra CD_Compras;
+        
         decimal sumaSubtotal = 0;
         public registrarCompra()
         {
             InitializeComponent();
 
-            CN_Productos = new NegocioProductos();
-            CD_Productos = new DatosProductos();
+            CN_Compras = new NegocioCompras();
+            CD_Compras = new DatosCompra();
 
         }
 
@@ -42,6 +43,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
+                || C_negocio.Validaciones.EstaVacio(TBproducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,14 +67,14 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                     if (!prodExiste)
                     {
-                        Productos productos = new Productos
+                        DetalleCompra DetCompra = new DetCompra
                         {
                             Codigo = Convert.ToInt32(TBCodProd.Text),
 
                         };
                         try
                         {
-                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                             if (ask == DialogResult.Yes)
                             {

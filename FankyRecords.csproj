@@ -60,6 +60,7 @@
     <Compile Include="C_datos\Conexion.cs" />
     <Compile Include="C_datos\DatosCategorias.cs" />
     <Compile Include="C_datos\DatosCompra.cs" />
+    <Compile Include="C_datos\DatosDetalleCompra.cs" />
     <Compile Include="C_datos\DatosProveedores.cs" />
     <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_datos\DatosProductos.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="C_entidad\Usuarios.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\NegocioCompras.cs" />
+    <Compile Include="C_negocio\NegocioDetalleCompra.cs" />
     <Compile Include="C_negocio\NegocioProveedores.cs" />
     <Compile Include="C_negocio\NegocioClientes.cs" />
     <Compile Include="C_negocio\NegocioProductos.cs" />
