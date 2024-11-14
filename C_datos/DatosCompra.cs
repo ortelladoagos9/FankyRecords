@@ -18,15 +18,15 @@ namespace FankyRecords.C_datos
                 conexion.Open(); 
 
                 string query = @"
-                INSERT INTO Compras (NumeroCompra,  MontoTotal, NumeroFactura, FechaCompra, ID_proveedor, ID_usuarios,ID_Tipo_Doc) 
-                VALUES (@NumeroCompra, @MontoTotal, @NumeroFactura, @FechaCompra, @ID_proveedor, @ID_usuarios, @ID_Tipo_Doc)";
+                INSERT INTO Compras (NumeroCompra,  MontoTotal, NumeroFactura, FechaCompra, Obj_proveedor, Obj_usuarios,ID_Tipo_Doc) 
+                VALUES (@NumeroCompra, @MontoTotal, @NumeroFactura, @FechaCompra, @Obj_proveedor, @Obj_usuarios, @ID_Tipo_Doc)";
 
                 SqlParameter NumeroCompraParam = new SqlParameter("@NumeroCompra", compra.NumeroCompra);
                 SqlParameter MontoTotalParam = new SqlParameter("@MontoTotal", compra.MontoTotal);
                 SqlParameter NumeroFacturaParam = new SqlParameter("@NumeroFactura", compra.NumeroFactura);
                 SqlParameter FechaCompraParam = new SqlParameter("@FechaCompra", compra.FechaCompra);
-                SqlParameter ID_proveedorParam = new SqlParameter("@ID_proveedor", compra.ID_proveedor);
-                SqlParameter ID_usuariosParam = new SqlParameter("@ID_usuarios", compra.ID_usuarios);
+                SqlParameter Obj_proveedorParam = new SqlParameter("@Obj_proveedor", compra.Obj_proveedor);
+                SqlParameter Obj_usuariosParam = new SqlParameter("@Obj_usuarios", compra.Obj_usuarios);
                 SqlParameter ID_Tipo_DocParam = new SqlParameter("@ID_Tipo_Doc", compra.ID_Tipo_Doc);
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -34,8 +34,8 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(MontoTotalParam);
                 cmd.Parameters.Add(NumeroFacturaParam);
                 cmd.Parameters.Add(FechaCompraParam);
-                cmd.Parameters.Add(ID_proveedorParam);
-                cmd.Parameters.Add(ID_usuariosParam);
+                cmd.Parameters.Add(Obj_proveedorParam);
+                cmd.Parameters.Add(Obj_usuariosParam);
                 cmd.Parameters.Add(ID_Tipo_DocParam);
 
                 cmd.ExecuteNonQuery();
@@ -86,8 +86,8 @@ namespace FankyRecords.C_datos
                     Console.WriteLine(reader["MontoTotal"].ToString());
                     Console.WriteLine(reader["NumeroFactura"].ToString());
                     Console.WriteLine(reader["FechaCompra"].ToString());
-                    Console.WriteLine(reader["ID_proveedor"].ToString());
-                    Console.WriteLine(reader["ID_usuarios"].ToString());
+                    Console.WriteLine(reader["Obj_proveedor"].ToString());
+                    Console.WriteLine(reader["Obj_usuarios"].ToString());
                     Console.WriteLine(reader["ID_Tipo_Doc"].ToString());
 
                     lista.Add(new RegistrarCompra
@@ -97,9 +97,9 @@ namespace FankyRecords.C_datos
                         MontoTotal = int.Parse(reader["MontoTotal"].ToString()),
                         NumeroFactura = int.Parse(reader["NumeroFactura"].ToString()),
                         FechaCompra = reader["FechaCompra"].ToString(),
-                        ID_proveedor = int.Parse(reader["ID_proveedor"].ToString()),
-                        ID_usuarios = int.Parse(reader["ID_usuarios"].ToString()),
-                        ID_Tipo_Doc = int.Parse(reader["ID_Tipo_Doc"].ToString()),
+                        Obj_proveedor = reader["Obj_proveedor"],
+                        Obj_usuarios = int.Parse(reader["Obj_usuarios"].ToString()),
+                        Obj_ID_Tipo_Doc = int.Parse(reader["Obj_ID_Tipo_Doc"].ToString()),
                     });
                 }
             }
@@ -119,7 +119,7 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = "UPDATE Compras SET  NumeroCompra = @NumeroCompra, MontoTotal = @MontoTotal, NumeroFactura = @NumeroFactura, FechaCompra = @FechaCompra, ID_proveedor = @ID_proveedor,  ID_usuarios = @ID_usuarios, ID_Tipo_Doc = @ID_Tipo_Doc WHERE ID_compra = @ID_compra";
+                string query = "UPDATE Compras SET  NumeroCompra = @NumeroCompra, MontoTotal = @MontoTotal, NumeroFactura = @NumeroFactura, FechaCompra = @FechaCompra, ID_proveedor = @ID_proveedor,  ID_usuarios = @ID_usuarios, Obj_ID_Tipo_Doc = @Obj_ID_Tipo_Doc WHERE ID_compra = @ID_compra";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
@@ -127,9 +127,9 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.AddWithValue("@MontoTotal", compra.MontoTotal);
                 cmd.Parameters.AddWithValue("@NumeroFactura", compra.NumeroFactura);
                 cmd.Parameters.AddWithValue("@FechaCompra", compra.FechaCompra);
-                cmd.Parameters.AddWithValue("@ID_proveedor", compra.ID_proveedor);
-                cmd.Parameters.AddWithValue("@ID_usuarios", compra.ID_usuarios); // Convertir "Activo"/"Inactivo" a bit
-                cmd.Parameters.AddWithValue("@ID_Tipo_Doc", compra.ID_Tipo_Doc); // Convertir "Activo"/"Inactivo" a bit
+                cmd.Parameters.AddWithValue("@Obj_proveedor", compra.Obj_proveedor);
+                cmd.Parameters.AddWithValue("@Obj_usuarios", compra.Obj_usuarios); // Convertir "Activo"/"Inactivo" a bit
+                cmd.Parameters.AddWithValue("@Obj_ID_Tipo_Doc", compra.Obj_ID_Tipo_Doc); // Convertir "Activo"/"Inactivo" a bit
                 cmd.Parameters.AddWithValue("@ID_compra", compra.ID_compra);
 
                 cmd.ExecuteNonQuery();
@@ -180,9 +180,9 @@ namespace FankyRecords.C_datos
                         NumeroCompra = Convert.ToInt32(reader["NumeroCompra"]),
                         MontoTotal = Convert.ToInt32(reader["MontoTotal"]),
                         NumeroFactura = Convert.ToInt32(reader["NumeroFactura"]),
-                        ID_proveedor = Convert.ToInt32(reader["ID_proveedor"]),
-                        ID_usuarios = Convert.ToInt32(reader["ID_usuarios"]),
-                        ID_Tipo_Doc = Convert.ToInt32(reader["ID_Tipo_Doc"].ToString()),
+                        Obj_proveedor = Convert.ToInt32(reader["Obj_proveedor"]),
+                        Obj_usuarios = Convert.ToInt32(reader["Obj_usuarios"]),
+                        Obj_ID_Tipo_Doc = Convert.ToInt32(reader["Obj_ID_Tipo_Doc"].ToString()),
                         FechaCompra = reader["FechaCompra"].ToString(),
                       
                     };

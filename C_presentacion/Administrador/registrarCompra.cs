@@ -25,13 +25,10 @@ namespace FankyRecords.C_presentacion.Administrador
         public registrarCompra()
         {
             InitializeComponent();
-            
+
             CN_Productos = new NegocioProductos();
             CD_Productos = new DatosProductos();
 
-
-           
-            ;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
@@ -72,7 +69,6 @@ namespace FankyRecords.C_presentacion.Administrador
                         {
                             Codigo = Convert.ToInt32(TBCodProd.Text),
 
-                          
                         };
                         try
                         {
@@ -96,7 +92,6 @@ namespace FankyRecords.C_presentacion.Administrador
                         }
 
                     }
-
                     
                     Limpiar();
                 }
