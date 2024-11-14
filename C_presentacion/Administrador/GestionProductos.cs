@@ -134,7 +134,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 Limpiar();
                 return;
             }
-        
+
             if (C_negocio.Validaciones.mensajeEliminar())
             {
                     CN_Productos.EliminarProductos(productoIdSeleccionado);
@@ -158,14 +158,23 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             // Verificar si el producto existe en la base de datos
-            Productos productoExistente = CN_Productos.ObtenerProductosPorID(productoIdSeleccionado);
-            if (productoExistente == null)
+            try
             {
-                MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpiar();
-                return;
+                Productos productoExistente = CN_Productos.ObtenerProductosPorID(productoIdSeleccionado);
+                if (productoExistente == null)
+                {
+                    MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
+                    return;
+                } 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             // Crear un objeto Categorias basado en el valor del ComboBox
             Categorias categoriaSeleccionada = new Categorias
             {

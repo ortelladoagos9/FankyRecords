@@ -30,12 +30,12 @@ namespace FankyRecords.C_negocio
                 {
                     CD_Productos.EditarProductos(productos); // Si el ID es distinto de 0, es una actualización
                 }
-                return productos;
             }
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message);
             }
+            return productos;
         }
 
         public List<Productos> ListarProductos()

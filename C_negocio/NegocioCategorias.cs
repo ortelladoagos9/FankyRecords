@@ -52,7 +52,14 @@ namespace FankyRecords.C_negocio
 
         public void EliminarCategoria(int id_categoria)
         {
-            CD_Categorias.EliminarCategoria(id_categoria);
+            try
+            {
+                CD_Categorias.EliminarCategoria(id_categoria);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Categorias ObtenerCategoriaPorID(int Id_categoria)

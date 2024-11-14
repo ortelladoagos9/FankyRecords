@@ -51,7 +51,14 @@ namespace FankyRecords.C_negocio
 
         public void EliminarProveedor(int id_proveedor)
         {
-            CD_Proveedores.EliminarProveedor(id_proveedor);
+            try
+            {
+                CD_Proveedores.EliminarProveedor(id_proveedor);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Proveedores ObtenerProveedoresPorID(int ID_proveedor)

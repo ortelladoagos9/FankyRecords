@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -199,7 +200,9 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = "SELECT * FROM Productos WHERE ID_producto = @ID_producto";
+                string query = @"
+                    select p.ID_producto, p.Codigo,p.Nombre,p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria" +
+                    "from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria WHERE ID_producto = @ID_producto";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@ID_producto", ID_producto);
@@ -209,18 +212,18 @@ namespace FankyRecords.C_datos
                 {
                     productos = new Productos
                     {
-                        ID_producto = Convert.ToInt32(reader["ID_producto"]),
-                        Codigo = Convert.ToInt32(reader["Codigo"]),
+                        ID_producto = int.Parse(reader["ID_producto"].ToString()),
+                        Codigo = int.Parse(reader["Codigo"].ToString()),
                         Nombre = reader["Nombre"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
-                        Stock = reader["Stock"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Stock"]),
-                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioVenta"]),
-                        PrecioCompra = reader["PrecioCompra"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioCompra"]),
+                        Stock = reader["Stock"] == DBNull.Value ? 0 : int.Parse(reader["Stock"].ToString()),
+                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 : decimal.Parse(reader["PrecioVenta"].ToString()),
+                        PrecioCompra = reader["PrecioCompra"] == DBNull.Value ? 0 : decimal.Parse(reader["PrecioCompra"].ToString()),
                         Estado = reader["Estado"].ToString(),
-                        Stock_min = Convert.ToInt32(reader["Stock_min"]),
+                        Stock_min = int.Parse(reader["Stock_min"].ToString()),
                         Obj_categoria = new Categorias
                         {
-                            Id_categoria = Convert.ToInt32(reader["Id_categoria"]),
+                            Id_categoria = int.Parse(reader["Id_categoria"].ToString()),
                             Descripcion = reader["Categoria"].ToString()
                         }  
                     };
