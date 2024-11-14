@@ -26,9 +26,6 @@ namespace FankyRecords.C_datos
                 SqlParameter Codigo = new SqlParameter("@Codigo", producto.Codigo);
                 SqlParameter Nombre = new SqlParameter("@Nombre", producto.Nombre);
                 SqlParameter Descripcion = new SqlParameter("@Descripcion", producto.Descripcion);
-                //SqlParameter Stock = new SqlParameter("@Stock", producto.Stock);
-                //SqlParameter PrecioVenta = new SqlParameter("@PrecioVenta", producto.PrecioVenta);
-               // SqlParameter PrecioCompra = new SqlParameter("@PrecioCompra", producto.PrecioCompra);
                 SqlParameter Estado = new SqlParameter("@Estado", producto.Estado);
                 SqlParameter Stock_min = new SqlParameter("@Stock_min", producto.Stock_min);
                 SqlParameter Id_categoria = new SqlParameter("@Id_categoria", producto.Obj_categoria.Id_categoria);

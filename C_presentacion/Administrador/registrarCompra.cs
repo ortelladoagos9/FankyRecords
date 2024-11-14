@@ -83,7 +83,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
                                 MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // Recargar datos y limpiar formulario
-                                CargarCompra();
+                               
                                 Limpiar();
                             }
                         }
@@ -99,6 +99,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
             }
         }
+
+
 
         private void registrarCompra_Click(object sender, EventArgs e)
         {
@@ -159,7 +161,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 else
                 {
-                   
+                    TBproducto.Select();
                 }
             }
         }
