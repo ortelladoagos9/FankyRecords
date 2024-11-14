@@ -32,6 +32,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
+
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
             AgregarProducto();
@@ -83,7 +84,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
                                 MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // Recargar datos y limpiar formulario
-                               
+                                CargarCompra();
                                 Limpiar();
                             }
                         }
@@ -100,6 +101,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
+
+        private void CargarCompra()
+        {
+            List<RegistrarCompra> registrarCompra = CN_Compras.ListarCompras();
+            listaCompras.DataSource = registrarCompra;
+        }
 
 
         private void registrarCompra_Click(object sender, EventArgs e)

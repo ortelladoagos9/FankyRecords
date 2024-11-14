@@ -281,6 +281,7 @@
     <None Include="packages\FontAwesome.Sharp.6.6.0\.signature.p7s" />
     <None Include="packages\FontAwesome.Sharp.6.6.0\FontAwesome.Sharp.6.6.0.nupkg" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Categorias.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.DetalleCompra.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Proveedores.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />
