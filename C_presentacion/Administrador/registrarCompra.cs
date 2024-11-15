@@ -22,7 +22,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private readonly NegocioCompras CN_Compras;
         private readonly DatosCompra CD_Compras;
         
-        decimal sumaSubtotal = 0;
+        decimal sumaTotal = 0;
         public registrarCompra()
         {
             InitializeComponent();
@@ -45,7 +45,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
                 || C_negocio.Validaciones.EstaVacio(TBproducto.Text)
-                || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
+                || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text)
+                || C_negocio.Validaciones.EstaVacio(TBCodProd.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -54,13 +55,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 if (C_negocio.Validaciones.mensajeConfirmacion())
                 {
                     bool prodExiste = false;
-                    decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
-                    sumaSubtotal += subtotal;
-                    TBtotalPagar.Text = sumaSubtotal.ToString();
 
                     foreach (DataGridViewRow fila in listaCompras.Rows)
                     {
-                        if (fila.Cells["codigoProducto"].Value.ToString() == TBCodProd.Text)
+                        if (fila.Cells["Codigo"].Value.ToString() == TBCodProd.Text)
                         {
                             prodExiste = true;
                             break;
@@ -68,7 +66,22 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                     if (!prodExiste)
                     {
-                        RegistrarCompra registrarCompra = new RegistrarCompra
+                        decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
+                        sumaTotal += subtotal;
+                        TBtotalPagar.Text = sumaTotal.ToString();
+
+                        listaCompras.Rows.Add(new object[]
+                        {
+                            TBCodProd.Text,
+                            TBproducto.Text,    
+                            TBprecio_compra.ToString("0.00"),
+                            TBPrecio_Venta.ToString("0.00"),
+                            cantProd.Value.ToString(),
+                            subtotal
+                        });
+                        
+
+                        /*RegistrarCompra registrarCompra = new RegistrarCompra
                         {
                             MontoTotal = Convert.ToInt32(TBCodProd.Text),
 
@@ -92,7 +105,7 @@ namespace FankyRecords.C_presentacion.Administrador
                         {
                             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             Limpiar();
-                        }
+                        }*/
 
                     }
                     
@@ -194,7 +207,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
-          
+            TBrazonSocial.Clear();
+            cbTipoDoc.SelectedIndex = 0;
+            TBNumFactura.Clear();
             TBCodProd.Clear();
             TBproducto.Clear();
             TBprecio_compra.Clear();
