@@ -17,58 +17,11 @@ namespace FankyRecords.C_negocio
         {
             CD_Rol = new DatosRol();
         }
-        public Rol GuardarRol(Rol rol)
-        {
-            try
-            {
-                if (rol.ID_rol == 0)
-                {
-                    CD_Rol.AgregarRol(rol); // Si el ID es 0, es una nueva categoría
-                }
-                else
-                {
-                    CD_Rol.EditarRol(rol); // Si el ID es distinto de 0, es una actualización
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-            return rol;
-        }
-
-        public bool ExisteRol(string descripcion)
-        {
-            return CD_Rol.ExisteRol(descripcion);
-        }
 
         public List<Rol> ListarRol()
         {
             return CD_Rol.ListarRol();
         }
-
-        public void EliminarRol(int id_rol)
-        {
-            try
-            {
-                CD_Rol.EliminarRol(id_rol);
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public Rol ObtenerRolPorID(int Id_rol)
-        {
-            return CD_Rol.ObtenerRolPorID(Id_rol);
-        }
-
-
-
-
 
     }
 }

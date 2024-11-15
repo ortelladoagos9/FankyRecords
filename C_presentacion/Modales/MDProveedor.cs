@@ -21,7 +21,7 @@ namespace FankyRecords.C_presentacion.Modales
 
         private readonly DatosProveedores CD_Proveedores;
         private readonly NegocioProveedores CN_Proveedores;
-        private int proveedorIdSeleccionado; // Variable para almacenar el Id del proveedor seleccionado
+
         public MDProveedor()
         {
             InitializeComponent();

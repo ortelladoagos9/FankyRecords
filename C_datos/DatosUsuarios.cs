@@ -31,7 +31,7 @@ namespace FankyRecords.C_datos
                 SqlParameter Telefono = new SqlParameter("@Telefono", usuario.Telefono);
                 SqlParameter FechaNacimiento = new SqlParameter("@FechaNacimiento", usuario.FechaNacimiento);
                 SqlParameter Estado = new SqlParameter("@Estado", usuario.Estado);
-                SqlParameter ID_rol = new SqlParameter("@Id_categoria", usuario.Obj_rol.ID_rol);
+                SqlParameter ID_rol = new SqlParameter("@ID_rol", usuario.Obj_rol.ID_rol);
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(Dni);
@@ -159,8 +159,8 @@ namespace FankyRecords.C_datos
                 cmdUsuario.Parameters.AddWithValue("@NuevoTelefono", usuario.Telefono);
                 cmdUsuario.Parameters.AddWithValue("@NuevoFechaNacimiento", usuario.FechaNacimiento);
                 cmdUsuario.Parameters.AddWithValue("@NuevoEstado", usuario.Estado);
-                cmdUsuario.Parameters.AddWithValue("@IDProducto", usuario.ID_usuarios);
-                cmdUsuario.Parameters.AddWithValue("@IdCategoria", usuario.Obj_rol.ID_rol);
+                cmdUsuario.Parameters.AddWithValue("@ID_usuarios", usuario.ID_usuarios);
+                cmdUsuario.Parameters.AddWithValue("@ID_rol", usuario.Obj_rol.ID_rol);
 
                 cmdUsuario.ExecuteNonQuery();
             }
@@ -202,7 +202,7 @@ namespace FankyRecords.C_datos
                 conexion.Open();
                 string query = @"
                          select u.ID_usuarios, u.Dni, u.Nombre, u.Apellido, u.Correo, u.Clave, u.Direccion, u.Telefono, u.FechaNacimiento, u.Estado, r.ID_rol, r.Descripcion as Rol 
-                         from Usuarios u inner join Rol r on u.ID_rol= r.ID_rol WHERE u.ID_usuario= @ID_usuario";
+                         from Usuarios u inner join Rol r on u.ID_rol= r.ID_rol WHERE u.ID_usuarios = @ID_usuarios";
 
 
                 SqlCommand cmd = new SqlCommand(query, conexion);

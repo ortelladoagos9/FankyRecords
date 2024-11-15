@@ -20,13 +20,10 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class GestionUsuarios : Form
     {
-        int contador = 0;
         readonly System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
         private readonly NegocioUsuarios CN_Usuarios;
         private readonly NegocioRol CN_Rol;
         private int usuarioIdSeleccionado;
-
-
 
         public GestionUsuarios()
         {
@@ -34,9 +31,6 @@ namespace FankyRecords.C_presentacion.Administrador
             CN_Usuarios = new NegocioUsuarios();
             CN_Rol = new NegocioRol();
         }
-
-
-
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
@@ -100,6 +94,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionada = new Rol
@@ -116,6 +111,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 FechaNacimiento = Convert.ToDateTime(DTFechanac.Text),
                 Direccion = TBdireccion.Text,
                 Correo = TBemail.Text,
+                Clave = TBclave.Text,
                 Telefono = TBtelefono.Text,
                 Estado = rBactivo.Checked ? "Activo" : "Inactivo",
                 Obj_rol = rolSeleccionada  // Asigna el objeto de categoría
@@ -138,10 +134,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
                 if (ask == DialogResult.Yes)
                 {
-                    // Intentar guardar la categoría en la base de datos
                     CN_Usuarios.GuardarUsuarios(usuario);
 
-                    MessageBox.Show("El Producto: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El usuario: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarUsuarios();
                     Limpiar();
@@ -159,8 +154,6 @@ namespace FankyRecords.C_presentacion.Administrador
             List<Usuarios> usuarios = CN_Usuarios.ListarUsuarios();
             listadoUsuarios.DataSource = usuarios;
         }
-
-
 
         private void Txtpalabras_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -216,6 +209,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
                 MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             // Verificar si el usuario existe en la base de datos
             Usuarios usuarioExistente = CN_Usuarios.ObtenerUsuariosPorID(usuarioIdSeleccionado);
@@ -236,11 +230,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-            private void btnLimpiar_Click(object sender, EventArgs e)
-            {
-                // Limpiar todas las filas del DataGridView
-                listadoUsuarios.Rows.Clear();
-            }
 
             private void Beditar_Click(object sender, EventArgs e)
             {
@@ -253,6 +242,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
                 {
                     MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 // Verificar si el usuario existe en la base de datos
             try
@@ -260,7 +250,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 Usuarios usuarioExistente = CN_Usuarios.ObtenerUsuariosPorID(usuarioIdSeleccionado);
                 if (usuarioExistente == null)
                 {
-                    MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El usuario seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Limpiar();
                     return;
                 } 
@@ -298,7 +288,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un rol válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -310,7 +300,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     // Llamar al método de negocio para guardar/editar el producto
                     CN_Usuarios.GuardarUsuarios(usuario);
 
-                    MessageBox.Show("El usuario: " + this.TBnombre.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El usuario: " + this.TBnombre.Text + " " + this.TBapellido.Text + " se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar la lista de productos
                     CargarUsuarios();
                     Limpiar();
@@ -319,6 +309,7 @@ namespace FankyRecords.C_presentacion.Administrador
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
             }
 
@@ -466,8 +457,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-
-
         private void Limpiar()
         {
                 TBnombre.Clear();
@@ -481,13 +470,13 @@ namespace FankyRecords.C_presentacion.Administrador
                 picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
                 TBclave.Clear();
                 TBconfirmarClave.Clear();
-                CBRol.SelectedIndex = -1;  // Deselect the ComboBox
+                CBRol.SelectedIndex = 0; 
 
         }
 
-        private void CBRol_SelectedIndexChanged(object sender, EventArgs e)
+        private void TBlimpiar_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
     } 
 }

@@ -19,7 +19,6 @@ namespace FankyRecords.C_presentacion.Modales
 
         private readonly DatosProductos CD_Productos;
         private readonly NegocioProductos CN_Productos;
-        private int productoIdSeleccionado; // Variable para almacenar el Id del proveedor seleccionado
 
         public MDProducto()
         {

@@ -56,16 +56,13 @@ namespace FankyRecords.C_negocio
             }
         }
 
-        public Usuarios ObtenerUsuariosPorID(int ID_usuario)
+        public Usuarios ObtenerUsuariosPorID(int ID_usuarios)
         {
             // Llamar al método que consulta la base de datos y devolver el resultado
-            return CD_Usuarios.ObtenerUsuariosPorID(ID_usuario);
+            return CD_Usuarios.ObtenerUsuariosPorID(ID_usuarios);
         }
 
-
-
     }
-
 
 }
 
