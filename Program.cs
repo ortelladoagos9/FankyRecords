@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FankyRecords.C_presentacion
 {
     internal static class Program
@@ -17,6 +18,7 @@ namespace FankyRecords.C_presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            
         }
     }
 }
