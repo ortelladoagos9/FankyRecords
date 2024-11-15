@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using FankyRecords.C_negocio;
 using FankyRecords.C_presentacion.Vendedor;
+using FankyRecords.C_datos;
+using FankyRecords.C_entidad;
 using FankyRecords.Properties;
 
 namespace FankyRecords.C_presentacion.Administrador
@@ -19,6 +21,11 @@ namespace FankyRecords.C_presentacion.Administrador
     {
         int contador = 0;
         readonly System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
+        private readonly NegocioUsuarios CN_Usuarios;
+        private readonly NegocioRol CN_Rol;
+        private int productoIdSeleccionado;
+
+
 
         public GestionUsuarios()
         {
