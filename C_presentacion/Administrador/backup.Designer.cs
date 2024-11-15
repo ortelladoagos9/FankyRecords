@@ -114,15 +114,16 @@
             this.TBrutaGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBrutaGuardar.Location = new System.Drawing.Point(487, 257);
             this.TBrutaGuardar.Name = "TBrutaGuardar";
-            this.TBrutaGuardar.Size = new System.Drawing.Size(210, 30);
+            this.TBrutaGuardar.Size = new System.Drawing.Size(210, 26);
             this.TBrutaGuardar.TabIndex = 3;
+            this.TBrutaGuardar.TextChanged += new System.EventHandler(this.TBrutaGuardar_TextChanged);
             // 
             // TBbaseDatos
             // 
             this.TBbaseDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBbaseDatos.Location = new System.Drawing.Point(487, 315);
             this.TBbaseDatos.Name = "TBbaseDatos";
-            this.TBbaseDatos.Size = new System.Drawing.Size(210, 30);
+            this.TBbaseDatos.Size = new System.Drawing.Size(210, 26);
             this.TBbaseDatos.TabIndex = 2;
             // 
             // label3
@@ -132,7 +133,7 @@
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(283, 266);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 21);
+            this.label3.Size = new System.Drawing.Size(158, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Ruta donde guardar:";
             // 
@@ -143,7 +144,7 @@
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(242, 324);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 21);
+            this.label2.Size = new System.Drawing.Size(190, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre de base de datos:";
             // 
@@ -171,7 +172,7 @@
             // 
             // backup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);

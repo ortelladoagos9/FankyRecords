@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C_datos\Conexion.cs" />
+    <Compile Include="C_datos\DatosBackup.cs" />
     <Compile Include="C_datos\DatosCategorias.cs" />
     <Compile Include="C_datos\DatosCompra.cs" />
     <Compile Include="C_datos\DatosDetalleCompra.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="C_entidad\Rol.cs" />
     <Compile Include="C_entidad\TipoDoc.cs" />
     <Compile Include="C_entidad\Usuarios.cs" />
+    <Compile Include="C_negocio\NegocioBackup.cs" />
     <Compile Include="C_negocio\NegocioCategorias.cs" />
     <Compile Include="C_negocio\NegocioCompras.cs" />
     <Compile Include="C_negocio\NegocioDetalleCompra.cs" />
