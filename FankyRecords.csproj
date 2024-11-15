@@ -289,6 +289,7 @@
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Productos.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Usuarios.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_presentacion.Administrador.registrarCompra.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

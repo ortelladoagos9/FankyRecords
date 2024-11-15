@@ -93,7 +93,7 @@ namespace FankyRecords.C_datos
                         NumeroCompra = int.Parse(reader["NumeroCompra"].ToString()),
                         MontoTotal = int.Parse(reader["MontoTotal"].ToString()),
                         NumeroFactura = int.Parse(reader["NumeroFactura"].ToString()),
-                        FechaCompra = reader["FechaCompra"].ToString(),
+                        FechaCompra = Convert.ToDateTime(reader["FechaCompra"].ToString()),
                         Obj_proveedor =  new  Proveedores 
                         {
                             ID_proveedor = Convert.ToInt32(reader["ID_proveedor"]),

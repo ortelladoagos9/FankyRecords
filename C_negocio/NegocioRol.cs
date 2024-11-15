@@ -17,7 +17,7 @@ namespace FankyRecords.C_negocio
         {
             CD_Rol = new DatosRol();
         }
-        public Categorias GuardarRol(Rol rol)
+        public Rol GuardarRol(Rol rol)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace FankyRecords.C_negocio
                 }
                 else
                 {
-                    CD_Rol.EditarCategoria(rol); // Si el ID es distinto de 0, es una actualización
+                    CD_Rol.EditarRol(rol); // Si el ID es distinto de 0, es una actualización
                 }
 
             }
@@ -46,7 +46,7 @@ namespace FankyRecords.C_negocio
 
         public List<Rol> ListarRol()
         {
-            return CD_Rol.ListarCRol();
+            return CD_Rol.ListarRol();
         }
 
         public void EliminarRol(int id_rol)

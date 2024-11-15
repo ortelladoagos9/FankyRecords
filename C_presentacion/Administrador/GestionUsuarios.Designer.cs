@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,17 +61,6 @@
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.listadoUsuarios = new System.Windows.Forms.DataGridView();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LListaUsuarios = new System.Windows.Forms.Label();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.CBbuscar = new System.Windows.Forms.ComboBox();
@@ -85,12 +75,25 @@
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDusuariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objrolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LGestionUsuarios
@@ -453,6 +456,7 @@
             // 
             // listadoUsuarios
             // 
+            this.listadoUsuarios.AutoGenerateColumns = false;
             this.listadoUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
@@ -468,17 +472,18 @@
             this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_usuario,
+            this.iDusuariosDataGridViewTextBoxColumn,
             this.dni,
-            this.apellido,
             this.nombre,
-            this.FechaNac,
-            this.direccion,
-            this.mail,
-            this.telefono,
+            this.apellido,
+            this.correo,
             this.clave,
-            this.rol,
-            this.Estado});
+            this.direccion,
+            this.telefono,
+            this.fechaNacimiento,
+            this.estado,
+            this.objrolDataGridViewTextBoxColumn});
+            this.listadoUsuarios.DataSource = this.usuariosBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -501,83 +506,9 @@
             this.listadoUsuarios.RowHeadersWidth = 51;
             this.listadoUsuarios.Size = new System.Drawing.Size(1182, 209);
             this.listadoUsuarios.TabIndex = 11;
-            // 
-            // id_usuario
-            // 
-            this.id_usuario.HeaderText = "ID ";
-            this.id_usuario.MinimumWidth = 6;
-            this.id_usuario.Name = "id_usuario";
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "DNI";
-            this.dni.MinimumWidth = 6;
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "Fecha Nacimiento";
-            this.FechaNac.MinimumWidth = 6;
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.MinimumWidth = 6;
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // mail
-            // 
-            this.mail.HeaderText = "Email";
-            this.mail.MinimumWidth = 6;
-            this.mail.Name = "mail";
-            this.mail.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.MinimumWidth = 6;
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // clave
-            // 
-            this.clave.HeaderText = "Contraseña";
-            this.clave.MinimumWidth = 6;
-            this.clave.Name = "clave";
-            this.clave.ReadOnly = true;
-            this.clave.Visible = false;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.listadoUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
+            this.listadoUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
+            this.listadoUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellDoubleClick);
             // 
             // LListaUsuarios
             // 
@@ -797,6 +728,78 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
+            // 
+            // iDusuariosDataGridViewTextBoxColumn
+            // 
+            this.iDusuariosDataGridViewTextBoxColumn.DataPropertyName = "ID_usuarios";
+            this.iDusuariosDataGridViewTextBoxColumn.HeaderText = "ID_usuarios";
+            this.iDusuariosDataGridViewTextBoxColumn.Name = "iDusuariosDataGridViewTextBoxColumn";
+            this.iDusuariosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "Dni";
+            this.dni.HeaderText = "Dni";
+            this.dni.Name = "dni";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "Apellido";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "Correo";
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            // 
+            // clave
+            // 
+            this.clave.DataPropertyName = "Clave";
+            this.clave.HeaderText = "Clave";
+            this.clave.Name = "clave";
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "Telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimiento.HeaderText = "FechaNacimiento";
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "Estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            // 
+            // objrolDataGridViewTextBoxColumn
+            // 
+            this.objrolDataGridViewTextBoxColumn.DataPropertyName = "Obj_rol";
+            this.objrolDataGridViewTextBoxColumn.HeaderText = "Obj_rol";
+            this.objrolDataGridViewTextBoxColumn.Name = "objrolDataGridViewTextBoxColumn";
+            this.objrolDataGridViewTextBoxColumn.Visible = false;
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -823,6 +826,7 @@
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorGestionUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -869,17 +873,18 @@
         public System.Windows.Forms.TextBox rutaFoto;
         public System.Windows.Forms.Button Bfoto;
         public System.Windows.Forms.TextBox TBBuscador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDusuariosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objrolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
     }
 }
