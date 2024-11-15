@@ -201,8 +201,9 @@ namespace FankyRecords.C_datos
             {
                 conexion.Open();
                 string query = @"
-                    select p.ID_producto, p.Codigo,p.Nombre,p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria" +
-                    "from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria WHERE ID_producto = @ID_producto";
+                         select p.ID_producto, p.Codigo, p.Nombre, p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria 
+                         from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria WHERE p.ID_producto = @ID_producto";
+
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@ID_producto", ID_producto);
