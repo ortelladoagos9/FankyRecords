@@ -41,7 +41,34 @@ namespace FankyRecords.C_presentacion.Administrador
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
             CargarUsuarios();
+            CargarCombo();
         }
+
+        private void CargarCombo()
+        {
+            // Obtener todas los roles
+            List<Rol> listaRol= new NegocioRol().ListarRol();
+
+            // Filtrar los roles activos
+           // var rolActiva = listaCategoria.Where(c => c.Estado == "Activo").ToList();
+
+            // Configurar propiedades del ComboBox
+            CBRol.DisplayMember = "Texto";
+            CBRol.ValueMember = "Valor";
+
+            // Agregar los roles al ComboBox
+            foreach (Rol item in listaRol)
+            {
+                CBRol.Items.Add(new OpcionCombo() { Valor = item.ID_rol, Texto = item.Descripcion });
+            }
+
+            // Seleccionar el primer elemento si hay categorías activas
+            if (CBRol.Items.Count > 0)
+            {
+                CBRol.SelectedIndex = 0;
+            }
+        }
+
 
         private List<string> ListaCampos()
         {
@@ -458,9 +485,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
+        private void CBRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     } 
 }
 

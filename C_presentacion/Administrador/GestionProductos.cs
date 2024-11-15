@@ -393,6 +393,11 @@ namespace FankyRecords.C_presentacion.Administrador
                 CargarProductos();
             }
         }
+
+        private void CBcategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
