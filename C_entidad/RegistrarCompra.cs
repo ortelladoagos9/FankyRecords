@@ -14,7 +14,7 @@ namespace FankyRecords.C_entidad
         public float MontoTotal {  get; set; }
         public int NumeroFactura {  get; set; }
         public string FechaCompra {  get; set; }
-        public int ID_proveedor {  get; set; }
+        public Proveedores ID_proveedor {  get; set; }
         public int  ID_usuarios {  get; set; }
         public int ID_Tipo_Doc {  get; set; }
 
