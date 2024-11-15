@@ -19,20 +19,19 @@ namespace FankyRecords.C_presentacion.Administrador
     public partial class registrarCompra : Form
     {
         
-        private readonly NegocioProductos CN_Productos;
-        private readonly DatosProductos CD_Productos;
+        private readonly NegocioCompras CN_Compras;
+        private readonly DatosCompra CD_Compras;
+        
         decimal sumaSubtotal = 0;
         public registrarCompra()
         {
             InitializeComponent();
-            
-            CN_Productos = new NegocioProductos();
-            CD_Productos = new DatosProductos();
 
+            CN_Compras = new NegocioCompras();
+            CD_Compras = new DatosCompra();
 
-           
-            ;
         }
+
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
@@ -44,8 +43,8 @@ namespace FankyRecords.C_presentacion.Administrador
             //Verificamos que todos los campos estésn completos.
             if (C_negocio.Validaciones.EstaVacio(cbTipoDoc.Text)
                 || C_negocio.Validaciones.EstaVacio(TBcuit.Text)
-                || C_negocio.Validaciones.EstaVacio(TBbuscarProducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
+                || C_negocio.Validaciones.EstaVacio(TBproducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,27 +68,23 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                     if (!prodExiste)
                     {
-                        Productos productos = new Productos
+                        RegistrarCompra registrarCompra = new RegistrarCompra
                         {
-                            Codigo = TBCodProd.Text,
-                            Correo = TBcorreo.Text,
-                            Cuit = TBcuit.Text,
-                            Domicilio = TBdomiciliop.Text,
-                            Telefono = TBtelefono.Text,
-                            Estado = RBactivop.Checked ? "Activo" : "Inactivo"
+                            MontoTotal = Convert.ToInt32(TBCodProd.Text),
+
                         };
                         try
                         {
-                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                             if (ask == DialogResult.Yes)
                             {
                                 // Intentar guardar la categoría en la base de datos
-                                CN_Proveedores.GuardarProveedor(proveedores);
+                                CN_Compras.GuardarCompra(registrarCompra);
 
-                                MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 // Recargar datos y limpiar formulario
-                                CargarProveedores();
+                                CargarCompra();
                                 Limpiar();
                             }
                         }
@@ -100,12 +95,19 @@ namespace FankyRecords.C_presentacion.Administrador
                         }
 
                     }
-
                     
                     Limpiar();
                 }
             }
         }
+
+
+        private void CargarCompra()
+        {
+            List<RegistrarCompra> registrarCompra = CN_Compras.ListarCompras();
+            listaCompras.DataSource = registrarCompra;
+        }
+
 
         private void registrarCompra_Click(object sender, EventArgs e)
         {
@@ -166,7 +168,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 else
                 {
-                    TBbuscarProducto.Select();
+                    TBproducto.Select();
                 }
             }
         }
@@ -192,7 +194,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
-            TBbuscarProducto.Clear();
+          
             TBCodProd.Clear();
             TBproducto.Clear();
             TBprecio_compra.Clear();
@@ -223,43 +225,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         }
 
-        private void LRegistrarCompra_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void TBbuscarProducto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBCodProd_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
        
-        private void TBbuscarProducto_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-           /* if (e.KeyData == Keys.Enter)
-            {
-                Productos oProducto = CN_Productos.ListarProductos().Where(p => p.Codigo == TBCodProd.Text).FirstOrDefoult();  /*&& p.Estado == true
-                if (oProducto != null)
-                {
-                    TBCodProd.BackColor = Color.GreenYellow;
-                    TBproducto.Text = oProducto.Nombre;
-                    TBprecio_compra.Select();
 
-                }
-                else
-                {
-                    TBCodProd.BackColor = Color.MistyRose;
-                    oProducto.ID_producto = 0;
-                    TBproducto.Text = "";
-                }
-
-
-            }*/
-        }
     } 
 }

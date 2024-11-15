@@ -37,5 +37,11 @@ namespace FankyRecords.C_negocio
 
             return compra;
         }
+
+        public List<RegistrarCompra> ListarCompras()
+        {
+            return CD_Compras.ListarCompras();
+        }
+
     }
 }
