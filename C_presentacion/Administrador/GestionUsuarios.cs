@@ -376,7 +376,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
             {
                 DataGridViewRow row = listadoUsuarios.Rows[e.RowIndex];
-
+                
                 // Accede al ID_usuario si existe en el DataGridView
                 if (row.Cells["ID_usuario"] != null && row.Cells["ID_usuario"].Value != DBNull.Value)
                 {
@@ -388,31 +388,31 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     TBdni.Text = row.Cells["dni"].Value.ToString();
                 }
-                if (row.Cells["Nombre"] != null && row.Cells["Nombre"].Value != DBNull.Value)
+                if (row.Cells["nombre"] != null && row.Cells["nombre"].Value != DBNull.Value)
                 {
-                    TBnombre.Text = row.Cells["Nombre"].Value.ToString();
+                    TBnombre.Text = row.Cells["nombre"].Value.ToString();
                 }
-                if (row.Cells["Apellido"] != null && row.Cells["Apellido"].Value != DBNull.Value)
+                if (row.Cells["apellido"] != null && row.Cells["apellido"].Value != DBNull.Value)
                 {
-                    TBapellido.Text = row.Cells["Apellido"].Value.ToString();
+                    TBapellido.Text = row.Cells["apellido"].Value.ToString();
                 }
-                if (row.Cells["Direccion"] != null && row.Cells["Direccion"].Value != DBNull.Value)
+                if (row.Cells["direccion"] != null && row.Cells["direccion"].Value != DBNull.Value)
                 {
-                    TBdireccion.Text = row.Cells["Direccion"].Value.ToString();
+                    TBdireccion.Text = row.Cells["direccion"].Value.ToString();
                 }
-                if (row.Cells["Corro"] != null && row.Cells["Correo"].Value != DBNull.Value)
+                if (row.Cells["correo"] != null && row.Cells["correo"].Value != DBNull.Value)
                 {
-                    TBemail.Text = row.Cells["Correo"].Value.ToString();
+                    TBemail.Text = row.Cells["correo"].Value.ToString();
                 }
-                if (row.Cells["Telefono"] != null && row.Cells["Telefono"].Value != DBNull.Value)
+                if (row.Cells["telefono"] != null && row.Cells["telefono"].Value != DBNull.Value)
                 {
-                    TBtelefono.Text = row.Cells["Telefono"].Value.ToString();
+                    TBtelefono.Text = row.Cells["telefono"].Value.ToString();
                 }
-                if (row.Cells["Clave"] != null && row.Cells["Clave"].Value != DBNull.Value)
+                if (row.Cells["clave"] != null && row.Cells["clave"].Value != DBNull.Value)
                 {
-                    TBclave.Text = row.Cells["Clave"].Value.ToString();
+                    TBclave.Text = row.Cells["clave"].Value.ToString();
                 }
-                if (row.Cells["FechaNac"] != null && row.Cells["FechaNAc"].Value != DBNull.Value)
+                if (row.Cells["FechaNac"] != null && row.Cells["FechaNac"].Value != DBNull.Value)
                 {
                     DTFechanac.Text = row.Cells["FechaNac"].Value.ToString();
                 }
@@ -422,7 +422,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     rBactivo.Checked = estado == "Activo";
                     rBinactivo.Checked = estado == "Inactivo";
                 }
-                if (row.Cells["objrol"] != null && row.Cells["objrol"].Value is FankyRecords.C_entidad.Rol rol)
+                if (row.Cells["obj_rol"] != null && row.Cells["obj_rol"].Value is FankyRecords.C_entidad.Rol rol)
                 {
                     // Asigna la descripción de la categoría al ComboBox
                     CBRol.Text = rol.Descripcion;

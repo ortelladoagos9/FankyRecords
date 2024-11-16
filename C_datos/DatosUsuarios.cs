@@ -14,19 +14,21 @@ namespace FankyRecords.C_datos
 
         public void AgregarUsuario(Usuarios usuario)
         {
+            DateTime fechaActual = DateTime.Now;
             try
             {
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
-                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
+                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, FechaCreacion,Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
+                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @FechaCreacion,@Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
 
                 SqlParameter Dni = new SqlParameter("@Dni", usuario.Dni);
                 SqlParameter Nombre = new SqlParameter("@Nombre", usuario.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", usuario.Apellido);
                 SqlParameter Correo = new SqlParameter("@Correo", usuario.Correo);
                 SqlParameter Clave = new SqlParameter("@Clave", usuario.Clave);
+                SqlParameter FechaCreacion = new SqlParameter("@FechaCreacion", fechaActual);
                 SqlParameter Direccion = new SqlParameter("@Direccion", usuario.Direccion);
                 SqlParameter Telefono = new SqlParameter("@Telefono", usuario.Telefono);
                 SqlParameter FechaNacimiento = new SqlParameter("@FechaNacimiento", usuario.FechaNacimiento);
@@ -39,6 +41,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(Apellido);
                 cmd.Parameters.Add(Correo);
                 cmd.Parameters.Add(Clave);
+                cmd.Parameters.Add(FechaCreacion);
                 cmd.Parameters.Add(Direccion);
                 cmd.Parameters.Add(Telefono);
                 cmd.Parameters.Add(FechaNacimiento);
@@ -46,7 +49,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(ID_rol);
 
                 cmd.ExecuteNonQuery();
-            }
+            }/*
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("UQ_Usuarios_dni"))
@@ -69,7 +72,7 @@ namespace FankyRecords.C_datos
                 {
                     throw new Exception("Error vuelva a intentarlo", ex);
                 }
-            }
+            }*/
             catch (Exception ex)
             {
                 throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
