@@ -62,6 +62,19 @@ namespace FankyRecords.C_negocio
             return CD_Usuarios.ObtenerUsuariosPorID(ID_usuarios);
         }
 
+        public bool ExisteDocumento(string dni)
+        {
+            return CD_Usuarios.ExisteDocumento(dni);
+        }
+
+        public bool ExisteTelefono(string telefono)
+        {
+            return CD_Usuarios.ExisteTelefono(telefono);
+        }
+        public bool ExisteCorreo(string correo)
+        {
+            return CD_Usuarios.ExisteCorreo(correo);
+        }
     }
 
 }

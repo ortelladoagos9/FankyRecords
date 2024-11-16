@@ -54,6 +54,8 @@
             this.TBclave = new System.Windows.Forms.TextBox();
             this.TBconfirmarClave = new System.Windows.Forms.TextBox();
             this.contenedorDatos = new System.Windows.Forms.Panel();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.TBtelefono = new System.Windows.Forms.TextBox();
             this.rutaFoto = new System.Windows.Forms.TextBox();
             this.Bfoto = new System.Windows.Forms.Button();
             this.CBRol = new System.Windows.Forms.ComboBox();
@@ -73,8 +75,6 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.TBtelefono = new System.Windows.Forms.TextBox();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +86,7 @@
             this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obj_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
@@ -338,10 +339,12 @@
             this.TBconfirmarClave.ShortcutsEnabled = false;
             this.TBconfirmarClave.Size = new System.Drawing.Size(242, 24);
             this.TBconfirmarClave.TabIndex = 24;
+            this.TBconfirmarClave.TextChanged += new System.EventHandler(this.TBconfirmarClave_TextChanged);
             // 
             // contenedorDatos
             // 
             this.contenedorDatos.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorDatos.Controls.Add(this.lblMessage);
             this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.rutaFoto);
             this.contenedorDatos.Controls.Add(this.Bfoto);
@@ -374,6 +377,26 @@
             this.contenedorDatos.Name = "contenedorDatos";
             this.contenedorDatos.Size = new System.Drawing.Size(921, 355);
             this.contenedorDatos.TabIndex = 1;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(343, 299);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 15);
+            this.lblMessage.TabIndex = 33;
+            // 
+            // TBtelefono
+            // 
+            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Location = new System.Drawing.Point(614, 77);
+            this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBtelefono.MaxLength = 10;
+            this.TBtelefono.Name = "TBtelefono";
+            this.TBtelefono.Size = new System.Drawing.Size(241, 24);
+            this.TBtelefono.TabIndex = 32;
+            this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // rutaFoto
             // 
@@ -551,7 +574,7 @@
             this.TBlimpiar.IconColor = System.Drawing.Color.White;
             this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TBlimpiar.IconSize = 21;
-            this.TBlimpiar.Location = new System.Drawing.Point(38, 347);
+            this.TBlimpiar.Location = new System.Drawing.Point(39, 361);
             this.TBlimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBlimpiar.Name = "TBlimpiar";
             this.TBlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -589,7 +612,7 @@
             this.Bguardar.IconColor = System.Drawing.Color.White;
             this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(38, 230);
+            this.Bguardar.Location = new System.Drawing.Point(39, 242);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Bguardar.Size = new System.Drawing.Size(183, 31);
@@ -612,7 +635,7 @@
             this.Beliminar.IconColor = System.Drawing.Color.White;
             this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(38, 308);
+            this.Beliminar.Location = new System.Drawing.Point(39, 320);
             this.Beliminar.Name = "Beliminar";
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(183, 31);
@@ -635,7 +658,7 @@
             this.Beditar.IconColor = System.Drawing.Color.White;
             this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(38, 269);
+            this.Beditar.Location = new System.Drawing.Point(39, 281);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beditar.Size = new System.Drawing.Size(183, 31);
@@ -700,22 +723,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // TBtelefono
-            // 
-            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(614, 77);
-            this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TBtelefono.MaxLength = 10;
-            this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(241, 24);
-            this.TBtelefono.TabIndex = 32;
-            this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
             // 
             // ID_usuario
             // 
@@ -811,6 +818,10 @@
             this.obj_rol.ReadOnly = true;
             this.obj_rol.Visible = false;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -897,5 +908,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn obj_rol;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

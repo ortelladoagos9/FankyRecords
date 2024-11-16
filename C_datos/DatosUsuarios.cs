@@ -49,7 +49,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(ID_rol);
 
                 cmd.ExecuteNonQuery();
-            }/*
+            }
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("UQ_Usuarios_dni"))
@@ -72,7 +72,7 @@ namespace FankyRecords.C_datos
                 {
                     throw new Exception("Error vuelva a intentarlo", ex);
                 }
-            }*/
+            }
             catch (Exception ex)
             {
                 throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
@@ -183,7 +183,7 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Usuarios WHERE ID_usuario = @ID_usuario";
+                string query = @"DELETE FROM Usuarios WHERE ID_usuarios = @ID_usuarios";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_usuarios", ID_usuarios));
@@ -241,6 +241,78 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
 
             return usuarios;
+        }
+
+        public bool ExisteDocumento(string Dni)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Dni = @Dni";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Dni", Dni);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteTelefono(string telefono)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Telefono = @Telefono";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Telefono", telefono);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteCorreo(string correo)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Correo = @Correo";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
         }
 
 
