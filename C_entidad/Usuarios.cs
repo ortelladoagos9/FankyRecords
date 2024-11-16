@@ -17,6 +17,7 @@ namespace FankyRecords.C_entidad
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public DateTime FechaCreacion { get; set; }
         public  string Estado { get; set; }
         public Rol Obj_rol { get; set; }
 

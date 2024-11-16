@@ -14,19 +14,21 @@ namespace FankyRecords.C_datos
 
         public void AgregarUsuario(Usuarios usuario)
         {
+            DateTime fechaActual = DateTime.Now;
             try
             {
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
-                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
+                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, FechaCreacion,Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
+                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @FechaCreacion,@Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
 
                 SqlParameter Dni = new SqlParameter("@Dni", usuario.Dni);
                 SqlParameter Nombre = new SqlParameter("@Nombre", usuario.Nombre);
                 SqlParameter Apellido = new SqlParameter("@Apellido", usuario.Apellido);
                 SqlParameter Correo = new SqlParameter("@Correo", usuario.Correo);
                 SqlParameter Clave = new SqlParameter("@Clave", usuario.Clave);
+                SqlParameter FechaCreacion = new SqlParameter("@FechaCreacion", fechaActual);
                 SqlParameter Direccion = new SqlParameter("@Direccion", usuario.Direccion);
                 SqlParameter Telefono = new SqlParameter("@Telefono", usuario.Telefono);
                 SqlParameter FechaNacimiento = new SqlParameter("@FechaNacimiento", usuario.FechaNacimiento);
@@ -39,6 +41,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(Apellido);
                 cmd.Parameters.Add(Correo);
                 cmd.Parameters.Add(Clave);
+                cmd.Parameters.Add(FechaCreacion);
                 cmd.Parameters.Add(Direccion);
                 cmd.Parameters.Add(Telefono);
                 cmd.Parameters.Add(FechaNacimiento);
@@ -180,7 +183,7 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Usuarios WHERE ID_usuario = @ID_usuario";
+                string query = @"DELETE FROM Usuarios WHERE ID_usuarios = @ID_usuarios";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_usuarios", ID_usuarios));
@@ -238,6 +241,78 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
 
             return usuarios;
+        }
+
+        public bool ExisteDocumento(string Dni)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Dni = @Dni";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Dni", Dni);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteTelefono(string telefono)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Telefono = @Telefono";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Telefono", telefono);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
+        }
+
+        public bool ExisteCorreo(string correo)
+        {
+            bool existe = false;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(1) FROM Usuarios WHERE Correo = @Correo";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                existe = count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return existe;
         }
 
 
