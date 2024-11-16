@@ -404,6 +404,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (!encontrado)
             {
                 MessageBox.Show("No se encontraron coincidencias.");
+                TBBuscador.Clear();
             }
         }
 
