@@ -11,27 +11,26 @@ using FankyRecords.C_datos;
 using FankyRecords.C_entidad;
 using FankyRecords.C_negocio;
 using FankyRecords.C_presentacion.Modales;
-using FankyRecords.C_presentacion.Utilidades;
-using FankyRecords.C_presentacion.Vendedor;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class registrarCompra : Form
     {
-        
         private readonly NegocioCompras CN_Compras;
-        private readonly DatosCompra CD_Compras;
-        
-        decimal sumaTotal = 0;
+        private readonly NegocioTipoDOc CN_TipoDoc;
+
         public registrarCompra()
         {
             InitializeComponent();
-
             CN_Compras = new NegocioCompras();
-            CD_Compras = new DatosCompra();
-
+            CN_TipoDoc = new NegocioTipoDOc();
         }
 
+        private void registrarCompra_Load(object sender, EventArgs e)
+        {
+            CargarCombo();
+            dtFechaCompra.Text = DateTime.Now.ToString("d/MM/yyyy");
+        }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
@@ -49,69 +48,115 @@ namespace FankyRecords.C_presentacion.Administrador
                 || C_negocio.Validaciones.EstaVacio(TBCodProd.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+
+            try
             {
-                if (C_negocio.Validaciones.mensajeConfirmacion())
+                // Mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas agregar el producto: " + TBproducto.Text + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
                     bool prodExiste = false;
+                    decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
+                    decimal sumaTotal = 0; // Calcular la suma total al final
+                    decimal cantidadTotal = 0;
+                    decimal sumaPrecioCompra = 0;
+                    decimal sumaPrecioVenta = 0;
 
                     foreach (DataGridViewRow fila in listaCompras.Rows)
                     {
-                        if (fila.Cells["Codigo"].Value.ToString() == TBCodProd.Text)
+                        if (fila.Cells["Codigo"].Value != null && fila.Cells["Codigo"].Value.ToString() == TBCodProd.Text)
                         {
+                            // El producto ya existe, actualizar cantidad y subtotal
                             prodExiste = true;
-                            break;
+                            decimal cantidadExistente = Convert.ToDecimal(fila.Cells["Cantidad"].Value);
+                            cantidadTotal = cantidadExistente + cantProd.Value;
+
+                            decimal precioCompraExistente = Convert.ToDecimal(fila.Cells["Precio_Compra"].Value);
+                            sumaPrecioCompra = precioCompraExistente + Convert.ToDecimal(TBprecio_compra.Text);
+
+                            decimal precioVentaExistente = Convert.ToDecimal(fila.Cells["Precio_Venta"].Value);
+                            sumaPrecioVenta = precioVentaExistente + Convert.ToDecimal(TBPrecio_Venta.Text);
+
+                            // Actualizar la celda de cantidad
+                            fila.Cells["Cantidad"].Value = cantidadTotal;
+                            // Actualizar la celda de subtotal
+                            fila.Cells["Subtotal"].Value = cantidadTotal * sumaPrecioCompra;
+                            // Actualizar la celda de Precio_Compra
+                            fila.Cells["Precio_Compra"].Value = sumaPrecioCompra;
+                            // Actualizar la celda de Precio_Venta
+                            fila.Cells["Precio_Venta"].Value = sumaPrecioVenta;
+
+                            // Calcular de nuevo el total
+                            foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
+                            {
+                                sumaTotal += Convert.ToDecimal(filaCalculada.Cells["Subtotal"].Value);
+                            }
+
+                            TBtotalPagar.Text = sumaTotal.ToString("N2");
+                            MessageBox.Show("La cantidad del producto " + TBproducto.Text + " se actualizó correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                            return;
                         }
                     }
+
                     if (!prodExiste)
                     {
-                        decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
-                        sumaTotal += subtotal;
-                        TBtotalPagar.Text = sumaTotal.ToString();
-
                         listaCompras.Rows.Add(new object[]
                         {
                             TBCodProd.Text,
-                            TBproducto.Text,    
-                            TBprecio_compra.ToString("0.00"),
-                            TBPrecio_Venta.ToString("0.00"),
+                            TBproducto.Text,
+                            Convert.ToDecimal(TBprecio_compra.Text).ToString("N2"),
+                            Convert.ToDecimal(TBPrecio_Venta.Text).ToString("N2"),
                             cantProd.Value.ToString(),
-                            subtotal
+                            dtFechaCompra.Text,
+                            subtotal.ToString("N2")
                         });
-                        
 
-                        /*RegistrarCompra registrarCompra = new RegistrarCompra
+                        // Calcular de nuevo la suma total
+                        foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
                         {
-                            MontoTotal = Convert.ToInt32(TBCodProd.Text),
-
-                        };
-                        try
-                        {
-                            DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                            if (ask == DialogResult.Yes)
-                            {
-                                // Intentar guardar la categoría en la base de datos
-                                CN_Compras.GuardarCompra(registrarCompra);
-
-                                MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                // Recargar datos y limpiar formulario
-                                CargarCompra();
-                                Limpiar();
-                            }
+                            sumaTotal += Convert.ToDecimal(filaCalculada.Cells["Subtotal"].Value);
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Limpiar();
-                        }*/
 
+                        TBtotalPagar.Text = sumaTotal.ToString("N2");
+                        MessageBox.Show("El producto: " + TBproducto.Text + " se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
                     Limpiar();
                 }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+            }
+                    /*RegistrarCompra registrarCompra = new RegistrarCompra
+                    {
+                        MontoTotal = Convert.ToInt32(TBCodProd.Text),
+
+                    };
+                    try
+                    {
+                        DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (ask == DialogResult.Yes)
+                        {
+                            // Intentar guardar la categoría en la base de datos
+                            CN_Compras.GuardarCompra(registrarCompra);
+
+                            MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Recargar datos y limpiar formulario
+                            CargarCompra();
+                            Limpiar();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Limpiar();
+                    }*/    
         }
 
 
@@ -133,34 +178,18 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+
+            // Mensaje de confirmación
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                // Mensaje de confirmación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?",
-                                                          "Confirmación",
-                                                          MessageBoxButtons.YesNo,
-                                                          MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    Limpiar();
-                    TBtotalPagar.Clear();
+                Limpiar();
+                TBtotalPagar.Clear();
 
-                    MessageBox.Show("La compra ha sido registrada correctamente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("La operación de registrar compra ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
-                }
-
+                MessageBox.Show("La compra ha sido registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
+
         private void Txtnumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
             C_negocio.Validaciones.EsNumero(e);
@@ -176,8 +205,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     TBCodProd.Text = modal.Productomd.Codigo.ToString();
                     TBproducto.Text = modal.Productomd.Nombre.ToString();
-                    TBPrecio_Venta.Text = modal.Productomd.PrecioVenta.ToString();
-                    
                 }
                 else
                 {
@@ -196,11 +223,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     TBrazonSocial.Text = modal.Proveedormd.RazonSocial.ToString();
                     TBcuit.Text = modal.Proveedormd.Cuit.ToString();
-
                 }
                 else
                 {
-                    TBrazonSocial.Select();
+                    TBcuit.Select();
                 }
             }
         }
@@ -227,22 +253,34 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 decimal precioVenta = (Convert.ToDecimal(0.2) * Convert.ToDecimal(TBprecio_compra.Text)) + Convert.ToDecimal(TBprecio_compra.Text);
                 TBPrecio_Venta.Text = precioVenta.ToString();
-            }   
+            }
         }
 
-        private void registrarCompra_Load(object sender, EventArgs e)
+        private void CargarCombo()
         {
-            cbTipoDoc.Items.Add(new OpcionCombo() { Valor = "Factura A", Texto = "Factura A" });
-            cbTipoDoc.Items.Add(new OpcionCombo() { Valor = "Remito", Texto = "Remito" });
+            cbTipoDoc.Items.Clear();
+
+            // Obtener todas las categorías
+            List<TipoDoc> listaTipoDOc = CN_TipoDoc.ListarTipoDoc();
+
+            // Filtrar 
+            var tipoDocumentos = listaTipoDOc.Where(c => c.Descripcion != null).ToList();
+
+            // Configurar propiedades del ComboBox
             cbTipoDoc.DisplayMember = "Texto";
             cbTipoDoc.ValueMember = "Valor";
 
+            foreach (TipoDoc item in tipoDocumentos)
+            {
+                cbTipoDoc.Items.Add(new OpcionCombo() { Valor = item.ID_Tipo_Doc, Texto = item.Descripcion });
+            }
 
+            if (cbTipoDoc.Items.Count > 0)
+            {
+                cbTipoDoc.SelectedIndex = 0;
+            }
         }
 
-      
 
-       
-
-    } 
+    }
 }

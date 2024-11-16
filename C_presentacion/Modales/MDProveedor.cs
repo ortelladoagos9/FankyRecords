@@ -18,54 +18,45 @@ namespace FankyRecords.C_presentacion.Modales
     public partial class MDProveedor : Form
     {
         public Proveedores Proveedormd { get; set; }
-
-        private readonly DatosProveedores CD_Proveedores;
         private readonly NegocioProveedores CN_Proveedores;
-        private int proveedorIdSeleccionado; // Variable para almacenar el Id del proveedor seleccionado
+
         public MDProveedor()
         {
             InitializeComponent();
-            CD_Proveedores = new DatosProveedores();
+            this.KeyPreview = true;
             CN_Proveedores = new NegocioProveedores();
         }
 
         private void MDProveedor_Load(object sender, EventArgs e)
         {
+            CargarProveedor();
+        }
+
+        private void CargarProveedor()
+        {
             List<Proveedores> proveedores = CN_Proveedores.ListarProveedores();
-            listaproveedores.DataSource = proveedores;
+            var proveedoresActivos = proveedores.Where(c => c.Estado == "Activo").ToList();
+            listaproveedores.DataSource = proveedoresActivos;
         }
 
         private void DGlistaproveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        { /* creo dos variables para recorrer el datagrid*/
+        { 
+            //creo dos variables para recorrer el datagrid
             int iRow = e.RowIndex;
             int iCol = e.ColumnIndex;
             //recorro el datgrid
-            if(iRow > 0 && iCol >0)
-            {   //creo objeto proveedor y le asigno los datos del proveedor seleccionado en el datagrid
+            if(iRow >= 0 && iCol >= 0)
+            {   
+                //creo objeto proveedor y le asigno los datos del proveedor seleccionado en el datagrid
                 Proveedormd = new Proveedores()
                 {
                     //solo necesito esos datos
-                    RazonSocial = listaproveedores.Rows[iRow].Cells["razonSocialDataGridViewTextBoxColumn"].Value.ToString(),
-                    Cuit = listaproveedores.Rows[iRow].Cells["cuitDataGridViewTextBoxColumn"].Value.ToString(),
-
+                    RazonSocial = listaproveedores.Rows[iRow].Cells["razonSocial"].Value.ToString(),
+                    Cuit = listaproveedores.Rows[iRow].Cells["cuit"].Value.ToString(),
                 };
                 // devuelve OK y cierra form
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
-            {
-                MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                string terminoBusqueda = TBBuscador.Text;
-                BuscarDatos(terminoBusqueda);
             }
         }
 
@@ -106,8 +97,43 @@ namespace FankyRecords.C_presentacion.Modales
             if (!encontrado)
             {
                 MessageBox.Show("No se encontraron coincidencias.");
+                TBBuscador.Clear();
             }
         }
-    }
-    
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            ValidarYBuscar();
+        }
+
+        private void ValidarYBuscar()
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string terminoBusqueda = TBBuscador.Text;
+                BuscarDatos(terminoBusqueda);
+            }
+        }
+
+        private void TBBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (TBBuscador.Text == "")
+            {
+                CargarProveedor();
+            }
+        }
+
+        private void MDProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
+            }
+        }
+    }  
 }

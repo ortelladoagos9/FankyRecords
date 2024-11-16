@@ -296,8 +296,6 @@ namespace FankyRecords.C_presentacion.Administrador
                     // Asigna la descripción de la categoría al ComboBox
                     CBcategoria.Text = categoria.Descripcion;
                 }
-
-
             }
         }
 

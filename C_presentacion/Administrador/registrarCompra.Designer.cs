@@ -38,7 +38,6 @@
             this.TBtotalPagar = new System.Windows.Forms.TextBox();
             this.LTotalPagar = new System.Windows.Forms.Label();
             this.listaCompras = new System.Windows.Forms.DataGridView();
-            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.gbInfoProducto = new System.Windows.Forms.GroupBox();
             this.TBPrecio_Venta = new System.Windows.Forms.TextBox();
@@ -66,9 +65,6 @@
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.LTipoDoc = new System.Windows.Forms.Label();
             this.LFechaCompra = new System.Windows.Forms.Label();
-            this.registrarCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,12 +72,12 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.registrarCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
             this.contenedorDatos.SuspendLayout();
             this.gbInfoProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cantProd)).BeginInit();
@@ -187,7 +183,6 @@
             this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Producto,
             this.Codigo,
             this.Productos,
             this.Precio_Compra,
@@ -195,7 +190,6 @@
             this.Cantidad,
             this.Fecha_compra,
             this.Subtotal,
-            this.Editar,
             this.Borrar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -210,6 +204,7 @@
             this.listaCompras.Name = "listaCompras";
             this.listaCompras.ReadOnly = true;
             this.listaCompras.RowHeadersWidth = 51;
+            this.listaCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaCompras.Size = new System.Drawing.Size(986, 209);
             this.listaCompras.TabIndex = 2;
             // 
@@ -267,7 +262,7 @@
             this.LPrecio_Venta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LPrecio_Venta.AutoSize = true;
             this.LPrecio_Venta.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio_Venta.Location = new System.Drawing.Point(422, 57);
+            this.LPrecio_Venta.Location = new System.Drawing.Point(425, 57);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
             this.LPrecio_Venta.Size = new System.Drawing.Size(129, 21);
@@ -276,7 +271,7 @@
             // 
             // TBCodProd
             // 
-            this.TBCodProd.Location = new System.Drawing.Point(284, 87);
+            this.TBCodProd.Location = new System.Drawing.Point(45, 87);
             this.TBCodProd.Name = "TBCodProd";
             this.TBCodProd.ReadOnly = true;
             this.TBCodProd.Size = new System.Drawing.Size(120, 28);
@@ -285,7 +280,7 @@
             // LCodigo
             // 
             this.LCodigo.AutoSize = true;
-            this.LCodigo.Location = new System.Drawing.Point(281, 57);
+            this.LCodigo.Location = new System.Drawing.Point(45, 57);
             this.LCodigo.Name = "LCodigo";
             this.LCodigo.Size = new System.Drawing.Size(75, 21);
             this.LCodigo.TabIndex = 29;
@@ -302,7 +297,7 @@
             this.btnAgregarProd.IconColor = System.Drawing.Color.DarkRed;
             this.btnAgregarProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarProd.IconSize = 25;
-            this.btnAgregarProd.Location = new System.Drawing.Point(855, 53);
+            this.btnAgregarProd.Location = new System.Drawing.Point(855, 57);
             this.btnAgregarProd.Name = "btnAgregarProd";
             this.btnAgregarProd.Size = new System.Drawing.Size(94, 58);
             this.btnAgregarProd.TabIndex = 0;
@@ -319,24 +314,24 @@
             this.btnBuscarProducto.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarProducto.IconSize = 18;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(213, 87);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(170, 87);
             this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(46, 28);
             this.btnBuscarProducto.TabIndex = 27;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
             this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // cantProd
             // 
-            this.cantProd.Location = new System.Drawing.Point(744, 83);
+            this.cantProd.Location = new System.Drawing.Point(744, 87);
             this.cantProd.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(83, 28);
+            this.cantProd.Size = new System.Drawing.Size(95, 28);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -347,7 +342,7 @@
             // LCantidad
             // 
             this.LCantidad.AutoSize = true;
-            this.LCantidad.Location = new System.Drawing.Point(739, 57);
+            this.LCantidad.Location = new System.Drawing.Point(744, 57);
             this.LCantidad.Name = "LCantidad";
             this.LCantidad.Size = new System.Drawing.Size(95, 21);
             this.LCantidad.TabIndex = 10;
@@ -356,7 +351,7 @@
             // LPrecioCompra
             // 
             this.LPrecioCompra.AutoSize = true;
-            this.LPrecioCompra.Location = new System.Drawing.Point(582, 57);
+            this.LPrecioCompra.Location = new System.Drawing.Point(585, 57);
             this.LPrecioCompra.Name = "LPrecioCompra";
             this.LPrecioCompra.Size = new System.Drawing.Size(145, 21);
             this.LPrecioCompra.TabIndex = 9;
@@ -374,7 +369,7 @@
             // 
             // TBproducto
             // 
-            this.TBproducto.Location = new System.Drawing.Point(29, 87);
+            this.TBproducto.Location = new System.Drawing.Point(231, 87);
             this.TBproducto.Name = "TBproducto";
             this.TBproducto.ReadOnly = true;
             this.TBproducto.Size = new System.Drawing.Size(178, 28);
@@ -383,7 +378,7 @@
             // LProducto
             // 
             this.LProducto.AutoSize = true;
-            this.LProducto.Location = new System.Drawing.Point(29, 57);
+            this.LProducto.Location = new System.Drawing.Point(231, 57);
             this.LProducto.Name = "LProducto";
             this.LProducto.Size = new System.Drawing.Size(96, 21);
             this.LProducto.TabIndex = 6;
@@ -416,7 +411,7 @@
             this.btnBuscarProveedor.IconSize = 18;
             this.btnBuscarProveedor.Location = new System.Drawing.Point(185, 74);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 26);
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(46, 28);
             this.btnBuscarProveedor.TabIndex = 4;
             this.btnBuscarProveedor.UseVisualStyleBackColor = false;
             this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
@@ -489,12 +484,12 @@
             // 
             this.dtFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaCompra.Location = new System.Drawing.Point(29, 74);
-            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.dtFechaCompra.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.dtFechaCompra.MaxDate = new System.DateTime(2024, 11, 16, 0, 0, 0, 0);
+            this.dtFechaCompra.MinDate = new System.DateTime(2024, 11, 16, 0, 0, 0, 0);
             this.dtFechaCompra.Name = "dtFechaCompra";
             this.dtFechaCompra.Size = new System.Drawing.Size(160, 28);
             this.dtFechaCompra.TabIndex = 6;
-            this.dtFechaCompra.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.dtFechaCompra.Value = new System.DateTime(2024, 11, 16, 0, 0, 0, 0);
             // 
             // LNum_factura
             // 
@@ -516,7 +511,6 @@
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(160, 29);
             this.cbTipoDoc.TabIndex = 3;
-            this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.registrarCompra_Load);
             // 
             // LTipoDoc
             // 
@@ -535,22 +529,6 @@
             this.LFechaCompra.Size = new System.Drawing.Size(68, 21);
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
-            // 
-            // registrarCompraBindingSource
-            // 
-            this.registrarCompraBindingSource.DataSource = typeof(FankyRecords.C_presentacion.Administrador.registrarCompra);
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
-            // 
-            // ID_Producto
-            // 
-            this.ID_Producto.HeaderText = "ID_Producto";
-            this.ID_Producto.MinimumWidth = 6;
-            this.ID_Producto.Name = "ID_Producto";
-            this.ID_Producto.ReadOnly = true;
-            this.ID_Producto.Visible = false;
             // 
             // Codigo
             // 
@@ -601,19 +579,22 @@
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.ReadOnly = true;
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
             // Borrar
             // 
             this.Borrar.HeaderText = "";
             this.Borrar.MinimumWidth = 6;
             this.Borrar.Name = "Borrar";
             this.Borrar.ReadOnly = true;
+            this.Borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // registrarCompraBindingSource
+            // 
+            this.registrarCompraBindingSource.DataSource = typeof(FankyRecords.C_presentacion.Administrador.registrarCompra);
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
             // 
             // registrarCompra
             // 
@@ -634,7 +615,6 @@
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorBotones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
             this.contenedorDatos.ResumeLayout(false);
             this.gbInfoProducto.ResumeLayout(false);
             this.gbInfoProducto.PerformLayout();
@@ -687,14 +667,6 @@
         public System.Windows.Forms.Label LPrecio_Venta;
         private System.Windows.Forms.BindingSource registrarCompraBindingSource;
         private System.Windows.Forms.BindingSource productosBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDdetalleCompraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn objproductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn objregistrarCompraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource detalleCompraBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio_Compra;
@@ -702,7 +674,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrar;
+        private System.Windows.Forms.DataGridViewButtonColumn Borrar;
     }
 }
