@@ -41,7 +41,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void CargarCombo()
         {
             // Obtener todas los roles
-            List<Rol> listaRol= new NegocioRol().ListarRol();
+            List<Rol> listaRol= CN_Rol.ListarRol();
 
             // Filtrar los roles activos
            // var rolActiva = listaCategoria.Where(c => c.Estado == "Activo").ToList();
