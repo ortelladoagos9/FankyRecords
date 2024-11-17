@@ -11,15 +11,25 @@ using System.Windows.Forms;
 using FankyRecords.C_negocio;
 using FankyRecords.C_presentacion.Administrativo;
 using FankyRecords.C_presentacion.Vendedor;
+using FankyRecords.C_entidad;
+using FankyRecords.C_negocio;
+
+
 
 namespace FankyRecords.C_presentacion
 {
     public partial class Login : Form
     {
+        private readonly NegocioUsuarios CN_Usuarios;
+        private readonly NegocioRol CN_Rol;
+
         public Login()
         {
             InitializeComponent();
             this.KeyPreview = true;
+            
+            CN_Rol = new NegocioRol();
+            CN_Usuarios = new NegocioUsuarios();
 
         }
 
@@ -28,8 +38,20 @@ namespace FankyRecords.C_presentacion
             Ingresar();
         }
 
+        /*  // Obtener todas las categorías
+            List<TipoDoc> listaTipoDOc = CN_TipoDoc.ListarTipoDoc();
+
+            // Filtrar 
+            var tipoDocumentos = listaTipoDOc.Where(c => c.Descripcion != null).ToList();*/
+
         private void Ingresar()
         {
+            List<Usuarios> ListaUsuario = CN_Usuarios.ListarUsuarios();
+            var ousuario = ListaUsuario.Where(u => u.Dni == TBDni.Text && u.Clave == TBClave.Text).FirstOrDefault();
+
+          
+
+
             if (C_negocio.Validaciones.EstaVacio(TBDni.Text) || C_negocio.Validaciones.EstaVacio(TBClave.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
