@@ -11,6 +11,7 @@ namespace FankyRecords.C_datos
     public class DatosCompra
     {
         SqlConnection conexion = new SqlConnection(Conexion.cadena);
+        
         public void AgregarCompra(RegistrarCompra compra)
         {
             try
@@ -18,19 +19,17 @@ namespace FankyRecords.C_datos
                 conexion.Open(); 
 
                 string query = @"
-                INSERT INTO Compras (NumeroCompra,  MontoTotal, NumeroFactura, FechaCompra, Obj_proveedor, Obj_usuarios,ID_Tipo_Doc) 
-                VALUES (@NumeroCompra, @MontoTotal, @NumeroFactura, @FechaCompra, @Obj_proveedor, @Obj_usuarios, @ID_Tipo_Doc)";
+                INSERT INTO Compras (NumeroCompra,  MontoTotal, NumeroFactura, FechaCompra, ID_proveedor, ID_usuarios, ID_Tipo_Doc) 
+                VALUES (@NumeroCompra, @MontoTotal, @NumeroFactura, @FechaCompra, @ID_proveedor, @ID_usuarios, @ID_Tipo_Doc)";
 
                 SqlParameter NumeroCompraParam = new SqlParameter("@NumeroCompra", compra.NumeroCompra);
                 SqlParameter MontoTotalParam = new SqlParameter("@MontoTotal", compra.MontoTotal);
                 SqlParameter NumeroFacturaParam = new SqlParameter("@NumeroFactura", compra.NumeroFactura);
                 SqlParameter FechaCompraParam = new SqlParameter("@FechaCompra", compra.FechaCompra);
                 SqlParameter ID_proveedor = new SqlParameter("@ID_proveedor", compra.Obj_proveedor.ID_proveedor);
-                SqlParameter ID_usuarios = new SqlParameter("@Obj_usuarios", compra.Obj_usuarios.ID_usuarios);
-                SqlParameter ID_Tipo_Doc = new SqlParameter("@Obj_ID_Tipo_Doc", compra.Obj_ID_Tipo_Doc.ID_Tipo_Doc);
-
-                
-
+                SqlParameter ID_usuarios = new SqlParameter("@ID_usuarios", compra.Obj_usuarios.ID_usuarios);
+                SqlParameter ID_Tipo_Doc = new SqlParameter("@ID_Tipo_Doc", compra.Obj_ID_Tipo_Doc.ID_Tipo_Doc);
+         
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(NumeroCompraParam);
                 cmd.Parameters.Add(MontoTotalParam);
@@ -42,25 +41,17 @@ namespace FankyRecords.C_datos
 
                 cmd.ExecuteNonQuery();
             }
-            /*         catch (SqlException ex)
-          {
-              if (ex.Message.Contains("UQ_Clientes_Documento"))
-              {
-                  throw new Exception("El valor de 'Documento' ya existe. No se permiten duplicados.", ex);
-              }
-              else if (ex.Message.Contains("UQ_Clientes_Telefono"))
-              {
-                  throw new Exception("El valor de 'Telefono' ya existe. No se permiten duplicados.", ex);
-              }
-              else if (ex.Message.Contains("UQ_Clientes_Correo"))
-              {
-                  throw new Exception("El valor de 'Correo' ya existe. No se permiten duplicados.", ex);
-              }
-              else
-              {
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("UQ_Compras_numeroCompra"))
+                {
+                  throw new Exception("El valor de 'Numero Compra' ya existe. No se permiten duplicados.", ex);
+                }
+                else
+                {
                   throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
-              }
-          }*/
+                }
+            }
             catch (Exception ex)
             {
                 throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
@@ -73,27 +64,33 @@ namespace FankyRecords.C_datos
 
         public List<RegistrarCompra> ListarCompras()
         {
-            List<RegistrarCompra> lista = new List<RegistrarCompra>();
+            List<RegistrarCompra> listaCompra = new List<RegistrarCompra>();
             try
             {
                 conexion.Open();
-                string query = @"p.select ID_compras, p.NumeroCompra,  p.MontoTotal, p.NumeroFactura, p.FechaCompra, c.ID_proveedor, u.ID_usuarios, d.ID_Tipo_Doc, 
-                                 c.RazonSocial as Proveedor , u.Nombre as Usuario, u.Apellido as Usuario, d.Descripcion as TipoDoc
-                                 from Compras p inner join Proveedores c on  p.ID_proveedor =  c.ID_proveedor inner join Usuarios u on p.ID_usuarios = u.ID_usuarios 
-                                 inner join TipoDoc  d on p.ID_Tipo_Doc = d.ID_Tipo_Doc";
+                string query = @"
+                       select c.ID_compras, c.NumeroCompra,  c.MontoTotal, c.NumeroFactura, c.FechaCompra, p.ID_proveedor, u.ID_usuarios, td.ID_Tipo_Doc, 
+                       p.RazonSocial as Proveedor, CONCAT_WS(' ', u.Nombre, u.Apellido) as Usuario, td.Descripcion as Tipo_documento
+                       from Compras c 
+                       inner join Proveedores p 
+                       on  c.ID_proveedor =  p.ID_proveedor 
+                       inner join Usuarios u 
+                       on u.ID_usuarios = c.ID_usuarios 
+                       inner join Tipo_documento td 
+                       on td.ID_Tipo_Doc = c.ID_Tipo_Doc";
+                
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataReader reader = cmd.ExecuteReader();
-                /* select p.ID_producto, p.Codigo,p.Nombre,p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria
-                        from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria";*/
+                
                 while (reader.Read())
                 {
-                    lista.Add(new RegistrarCompra
+                    listaCompra.Add(new RegistrarCompra 
                     {
                         ID_compra = int.Parse(reader["ID_compra"].ToString()),
                         NumeroCompra = int.Parse(reader["NumeroCompra"].ToString()),
-                        MontoTotal = int.Parse(reader["MontoTotal"].ToString()),
+                        MontoTotal = decimal.Parse(reader["MontoTotal"].ToString()),
                         NumeroFactura = int.Parse(reader["NumeroFactura"].ToString()),
-                        FechaCompra = Convert.ToDateTime(reader["FechaCompra"].ToString()),
+                        FechaCompra = DateTime.Parse(reader["FechaCompra"].ToString()),
                         Obj_proveedor =  new  Proveedores 
                         {
                             ID_proveedor = Convert.ToInt32(reader["ID_proveedor"]),
@@ -112,11 +109,7 @@ namespace FankyRecords.C_datos
                             Descripcion = reader["TipoDoc"].ToString()
                         }
  ,
-                    });/*Obj_categoria = new Categorias
-                        {
-                            Id_categoria = Convert.ToInt32(reader["Id_categoria"]),
-                            Descripcion = reader["Categoria"].ToString()
-                        }*/
+                    });
                 }
             }
             catch (Exception ex)
@@ -124,10 +117,9 @@ namespace FankyRecords.C_datos
                 throw new Exception("Ocurrio un error: " + ex.Message, ex);
             }
             finally
-            {
-                conexion.Close();
-            }
-            return lista;
+            { conexion.Close(); }
+            
+            return listaCompra;
         }
 
         public void EditarCompra(RegistrarCompra compra)

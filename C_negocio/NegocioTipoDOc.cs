@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 
 namespace FankyRecords.C_negocio
 {
-    public class NegocioDetalleCompra
+    public class NegocioTipoDOc
     {
-        private readonly DatosDetalleCompra CD_DetalleCompra;
-        public NegocioDetalleCompra()
+        private readonly DatosTipoDoc CD_TipoDoc;
+
+        public NegocioTipoDOc()
         {
-            CD_DetalleCompra = new DatosDetalleCompra();
+            CD_TipoDoc = new DatosTipoDoc();
         }
 
+        public List<TipoDoc> ListarTipoDoc()
+        {
+            return CD_TipoDoc.ListarTipoDoc();
+        }
     }
 }
