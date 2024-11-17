@@ -34,17 +34,14 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
-            CargarUsuarios();
             CargarCombo();
+            CargarUsuarios();
         }
 
         private void CargarCombo()
         {
             // Obtener todas los roles
             List<Rol> listaRol= CN_Rol.ListarRol();
-
-            // Filtrar los roles activos
-           // var rolActiva = listaCategoria.Where(c => c.Estado == "Activo").ToList();
 
             // Configurar propiedades del ComboBox
             CBRol.DisplayMember = "Texto";
@@ -95,7 +92,8 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }  // Validación previa de duplicados en la base de datos
+            }  
+            // Validación previa de duplicados en la base de datos
             if (CN_Usuarios.ExisteDocumento(TBdni.Text))
             {
                 MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,15 +109,22 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string email = TBemail.Text;
 
+            string email = TBemail.Text;
             if (!C_negocio.Validaciones.EmailCorrecto(email))
             {
                 MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            string clave = TBclave.Text;
+            string confirmarClave = TBconfirmarClave.Text;
+            if (!(clave == confirmarClave))
+            {
+                MessageBox.Show("La clave es incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
+            }
 
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionada = new Rol
@@ -142,29 +147,19 @@ namespace FankyRecords.C_presentacion.Administrador
                 Obj_rol = rolSeleccionada  // Asigna el objeto de categoría
             };
 
-
             usuario.Obj_rol = rolSeleccionada;
-
-            string clave = TBclave.Text;
-            string confirmarClave = TBconfirmarClave.Text;
-            if (!(clave == confirmarClave))
+            if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
             {
-                MessageBox.Show("La clave no es la correcta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                usuario.Obj_rol.ID_rol = (int)opcionSeleccionada.Valor;
             }
             else
             {
-                if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
-                {
-                    usuario.Obj_rol.ID_rol = (int)opcionSeleccionada.Valor;
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                try
-                {
+                MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
                     DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo usuario?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (ask == DialogResult.Yes)
@@ -176,12 +171,11 @@ namespace FankyRecords.C_presentacion.Administrador
                         CargarUsuarios();
                         Limpiar();
                     }
-                }
-                catch (Exception ex)
-                {
+            }
+            catch (Exception ex)
+            {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    // Limpiar();
-                }
+                    Limpiar();
             }
         }
 
@@ -277,7 +271,7 @@ namespace FankyRecords.C_presentacion.Administrador
                // Verificar si algún campo está vacío
               if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
               {
-                    MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe completar todos los campos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
               }
                 // Verificar si el usuario existe en la base de datos
@@ -295,13 +289,21 @@ namespace FankyRecords.C_presentacion.Administrador
              {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
              }
-            
-               // Crear un objeto Rol basado en el valor del ComboBox
-             Rol rolSeleccionada = new Rol
-             {
+
+            string clave = TBclave.Text;
+            string confirmarClave = TBconfirmarClave.Text;
+            if (!(clave == confirmarClave))
+            {
+                MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            // Crear un objeto Rol basado en el valor del ComboBox
+            Rol rolSeleccionada = new Rol
+            {
                  ID_rol = Convert.ToInt32(CBRol.SelectedValue),
                  Descripcion = CBRol.Text
-             };
+            };
                // Crear objeto usuarios
              Usuarios usuario= new Usuarios
              {
@@ -329,7 +331,7 @@ namespace FankyRecords.C_presentacion.Administrador
                  MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                  return;
              }
-             try
+            try
              {
                 DialogResult ask = MessageBox.Show("¿Seguro que desea editar usuario?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -483,7 +485,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 // Limpia los controles de entrada
                 Limpiar();
 
-                // Resetea el ID del cliente seleccionado
+                // Resetea el ID del usuario seleccionado
                 usuarioIdSeleccionado = -1;
             }
         }
@@ -498,32 +500,25 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
-                TBnombre.Clear();
-                TBapellido.Clear();
-                rutaFoto.Clear();
-                TBdireccion.Clear();
-                TBtelefono.Clear();
-                TBdni.Clear();
-                TBemail.Clear();
-                picFotoUsuario.Image = null;
-                picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
-                TBclave.Clear();
-                TBconfirmarClave.Clear();
-                CBRol.SelectedIndex = 0; 
-
+            TBnombre.Clear();
+            TBapellido.Clear();
+            rutaFoto.Clear();
+            TBdireccion.Clear();
+            TBtelefono.Clear();
+            TBdni.Clear();
+            TBemail.Clear();
+            DTFechanac.Value = DTFechanac.MaxDate;
+            picFotoUsuario.Image = null;
+            picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
+            TBclave.Clear();
+            TBconfirmarClave.Clear();
+            CBRol.SelectedIndex = 0; 
         }
 
         private void TBlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-        }
-
-        private void TBconfirmarClave_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-   
+        }  
     } 
 }
 

@@ -37,28 +37,6 @@
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
-            this.contenedorBotones = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.Beliminar = new FontAwesome.Sharp.IconButton();
-            this.Beditar = new FontAwesome.Sharp.IconButton();
-            this.Bguardar = new FontAwesome.Sharp.IconButton();
-            this.contenedorGestionProductos = new System.Windows.Forms.Panel();
-            this.LGestionProductos = new System.Windows.Forms.Label();
-            this.contenedorDatos = new System.Windows.Forms.Panel();
-            this.TBStock_min = new System.Windows.Forms.TextBox();
-            this.LStock_min = new System.Windows.Forms.Label();
-            this.CBcategoria = new System.Windows.Forms.ComboBox();
-            this.rBinactivo = new System.Windows.Forms.RadioButton();
-            this.rBactivo = new System.Windows.Forms.RadioButton();
-            this.LEstado = new System.Windows.Forms.Label();
-            this.LCategoria = new System.Windows.Forms.Label();
-            this.TBdescripcion = new System.Windows.Forms.TextBox();
-            this.TBcodigo_prod = new System.Windows.Forms.TextBox();
-            this.TBnombre_prod = new System.Windows.Forms.TextBox();
-            this.LDescripcion = new System.Windows.Forms.Label();
-            this.LCodigo_prod = new System.Windows.Forms.Label();
-            this.LNombre_prod = new System.Windows.Forms.Label();
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,13 +48,35 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contenedorBotones = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.Beliminar = new FontAwesome.Sharp.IconButton();
+            this.Beditar = new FontAwesome.Sharp.IconButton();
+            this.Bguardar = new FontAwesome.Sharp.IconButton();
+            this.contenedorGestionProductos = new System.Windows.Forms.Panel();
+            this.LGestionProductos = new System.Windows.Forms.Label();
+            this.contenedorDatos = new System.Windows.Forms.Panel();
+            this.TBStock_min = new System.Windows.Forms.TextBox();
+            this.LStock_min = new System.Windows.Forms.Label();
+            this.CBcategoria = new System.Windows.Forms.ComboBox();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rBinactivo = new System.Windows.Forms.RadioButton();
+            this.rBactivo = new System.Windows.Forms.RadioButton();
+            this.LEstado = new System.Windows.Forms.Label();
+            this.LCategoria = new System.Windows.Forms.Label();
+            this.TBdescripcion = new System.Windows.Forms.TextBox();
+            this.TBcodigo_prod = new System.Windows.Forms.TextBox();
+            this.TBnombre_prod = new System.Windows.Forms.TextBox();
+            this.LDescripcion = new System.Windows.Forms.Label();
+            this.LCodigo_prod = new System.Windows.Forms.Label();
+            this.LNombre_prod = new System.Windows.Forms.Label();
             this.contenedorLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.contenedorBotones.SuspendLayout();
             this.contenedorGestionProductos.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contenedorLista
@@ -130,7 +130,7 @@
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 33;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -198,6 +198,95 @@
             this.listadoProductos.TabIndex = 20;
             this.listadoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellClick);
             this.listadoProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellDoubleClick);
+            // 
+            // ID_producto
+            // 
+            this.ID_producto.DataPropertyName = "ID_producto";
+            this.ID_producto.HeaderText = "ID_producto";
+            this.ID_producto.MinimumWidth = 6;
+            this.ID_producto.Name = "ID_producto";
+            this.ID_producto.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Codigo";
+            this.codigo.FillWeight = 95F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.DataPropertyName = "Stock";
+            this.stock.FillWeight = 85F;
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
+            // precioVenta
+            // 
+            this.precioVenta.DataPropertyName = "PrecioVenta";
+            this.precioVenta.HeaderText = "PrecioVenta";
+            this.precioVenta.MinimumWidth = 6;
+            this.precioVenta.Name = "precioVenta";
+            this.precioVenta.ReadOnly = true;
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.DataPropertyName = "PrecioCompra";
+            this.precioCompra.HeaderText = "PrecioCompra";
+            this.precioCompra.MinimumWidth = 6;
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.ReadOnly = true;
+            // 
+            // stockmin
+            // 
+            this.stockmin.DataPropertyName = "Stock_min";
+            this.stockmin.FillWeight = 85F;
+            this.stockmin.HeaderText = "Stock_min";
+            this.stockmin.MinimumWidth = 6;
+            this.stockmin.Name = "stockmin";
+            this.stockmin.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "Estado";
+            this.estado.FillWeight = 95F;
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // objcategoria
+            // 
+            this.objcategoria.DataPropertyName = "Obj_categoria";
+            this.objcategoria.FillWeight = 95F;
+            this.objcategoria.HeaderText = "Categoria";
+            this.objcategoria.MinimumWidth = 6;
+            this.objcategoria.Name = "objcategoria";
+            this.objcategoria.ReadOnly = true;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
             // 
             // contenedorBotones
             // 
@@ -366,7 +455,7 @@
             this.TBStock_min.Location = new System.Drawing.Point(441, 159);
             this.TBStock_min.MaxLength = 6;
             this.TBStock_min.Name = "TBStock_min";
-            this.TBStock_min.Size = new System.Drawing.Size(242, 24);
+            this.TBStock_min.Size = new System.Drawing.Size(242, 28);
             this.TBStock_min.TabIndex = 29;
             this.TBStock_min.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -377,7 +466,7 @@
             this.LStock_min.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LStock_min.Location = new System.Drawing.Point(441, 123);
             this.LStock_min.Name = "LStock_min";
-            this.LStock_min.Size = new System.Drawing.Size(109, 17);
+            this.LStock_min.Size = new System.Drawing.Size(130, 21);
             this.LStock_min.TabIndex = 28;
             this.LStock_min.Text = "Stock Mínimo";
             // 
@@ -393,9 +482,13 @@
             this.CBcategoria.Location = new System.Drawing.Point(441, 78);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBcategoria.Name = "CBcategoria";
-            this.CBcategoria.Size = new System.Drawing.Size(242, 25);
+            this.CBcategoria.Size = new System.Drawing.Size(242, 29);
             this.CBcategoria.TabIndex = 1;
             this.CBcategoria.SelectedIndexChanged += new System.EventHandler(this.CBcategoria_SelectedIndexChanged);
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // rBinactivo
             // 
@@ -406,7 +499,7 @@
             this.rBinactivo.Location = new System.Drawing.Point(580, 239);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
+            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -422,7 +515,7 @@
             this.rBactivo.Location = new System.Drawing.Point(481, 239);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(4);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(74, 21);
+            this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -436,7 +529,7 @@
             this.LEstado.Location = new System.Drawing.Point(442, 203);
             this.LEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(58, 17);
+            this.LEstado.Size = new System.Drawing.Size(70, 21);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -448,7 +541,7 @@
             this.LCategoria.Location = new System.Drawing.Point(441, 43);
             this.LCategoria.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCategoria.Name = "LCategoria";
-            this.LCategoria.Size = new System.Drawing.Size(81, 17);
+            this.LCategoria.Size = new System.Drawing.Size(95, 21);
             this.LCategoria.TabIndex = 21;
             this.LCategoria.Text = "Categoría";
             // 
@@ -474,7 +567,7 @@
             this.TBcodigo_prod.MaxLength = 5;
             this.TBcodigo_prod.Name = "TBcodigo_prod";
             this.TBcodigo_prod.ShortcutsEnabled = false;
-            this.TBcodigo_prod.Size = new System.Drawing.Size(242, 24);
+            this.TBcodigo_prod.Size = new System.Drawing.Size(242, 28);
             this.TBcodigo_prod.TabIndex = 6;
             this.TBcodigo_prod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -487,7 +580,7 @@
             this.TBnombre_prod.MaxLength = 100;
             this.TBnombre_prod.Name = "TBnombre_prod";
             this.TBnombre_prod.ShortcutsEnabled = false;
-            this.TBnombre_prod.Size = new System.Drawing.Size(242, 24);
+            this.TBnombre_prod.Size = new System.Drawing.Size(242, 28);
             this.TBnombre_prod.TabIndex = 5;
             // 
             // LDescripcion
@@ -498,7 +591,7 @@
             this.LDescripcion.Location = new System.Drawing.Point(151, 203);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(96, 17);
+            this.LDescripcion.Size = new System.Drawing.Size(114, 21);
             this.LDescripcion.TabIndex = 2;
             this.LDescripcion.Text = "Descripción";
             // 
@@ -510,7 +603,7 @@
             this.LCodigo_prod.Location = new System.Drawing.Point(151, 43);
             this.LCodigo_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LCodigo_prod.Name = "LCodigo_prod";
-            this.LCodigo_prod.Size = new System.Drawing.Size(59, 17);
+            this.LCodigo_prod.Size = new System.Drawing.Size(70, 21);
             this.LCodigo_prod.TabIndex = 1;
             this.LCodigo_prod.Text = "Código";
             // 
@@ -523,106 +616,13 @@
             this.LNombre_prod.Location = new System.Drawing.Point(151, 123);
             this.LNombre_prod.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNombre_prod.Name = "LNombre_prod";
-            this.LNombre_prod.Size = new System.Drawing.Size(66, 17);
+            this.LNombre_prod.Size = new System.Drawing.Size(80, 21);
             this.LNombre_prod.TabIndex = 0;
             this.LNombre_prod.Text = "Nombre";
             // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
-            // ID_producto
-            // 
-            this.ID_producto.DataPropertyName = "ID_producto";
-            this.ID_producto.HeaderText = "ID_producto";
-            this.ID_producto.MinimumWidth = 6;
-            this.ID_producto.Name = "ID_producto";
-            this.ID_producto.ReadOnly = true;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "Codigo";
-            this.codigo.FillWeight = 95F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "Nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.DataPropertyName = "Stock";
-            this.stock.FillWeight = 85F;
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.DataPropertyName = "PrecioVenta";
-            this.precioVenta.HeaderText = "PrecioVenta";
-            this.precioVenta.MinimumWidth = 6;
-            this.precioVenta.Name = "precioVenta";
-            this.precioVenta.ReadOnly = true;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.DataPropertyName = "PrecioCompra";
-            this.precioCompra.HeaderText = "PrecioCompra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
-            // 
-            // stockmin
-            // 
-            this.stockmin.DataPropertyName = "Stock_min";
-            this.stockmin.FillWeight = 85F;
-            this.stockmin.HeaderText = "Stock_min";
-            this.stockmin.MinimumWidth = 6;
-            this.stockmin.Name = "stockmin";
-            this.stockmin.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "Estado";
-            this.estado.FillWeight = 95F;
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // objcategoria
-            // 
-            this.objcategoria.DataPropertyName = "Obj_categoria";
-            this.objcategoria.FillWeight = 95F;
-            this.objcategoria.HeaderText = "Categoria";
-            this.objcategoria.MinimumWidth = 6;
-            this.objcategoria.Name = "objcategoria";
-            this.objcategoria.ReadOnly = true;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
-            // 
             // GestionProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);
@@ -640,12 +640,12 @@
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.contenedorBotones.ResumeLayout(false);
             this.contenedorGestionProductos.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

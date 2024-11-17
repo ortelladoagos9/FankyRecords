@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             this.LGestionUsuarios = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +87,6 @@
             this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obj_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
@@ -119,7 +119,7 @@
             this.LNombre.Location = new System.Drawing.Point(59, 48);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(66, 17);
+            this.LNombre.Size = new System.Drawing.Size(80, 21);
             this.LNombre.TabIndex = 0;
             this.LNombre.Text = "Nombre";
             // 
@@ -131,7 +131,7 @@
             this.LApellido.Location = new System.Drawing.Point(59, 113);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(68, 17);
+            this.LApellido.Size = new System.Drawing.Size(82, 21);
             this.LApellido.TabIndex = 1;
             this.LApellido.Text = "Apellido";
             // 
@@ -143,7 +143,7 @@
             this.LDni.Location = new System.Drawing.Point(59, 178);
             this.LDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(38, 17);
+            this.LDni.Size = new System.Drawing.Size(46, 21);
             this.LDni.TabIndex = 2;
             this.LDni.Text = "DNI";
             // 
@@ -155,7 +155,7 @@
             this.LFechaNac.Location = new System.Drawing.Point(59, 243);
             this.LFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LFechaNac.Name = "LFechaNac";
-            this.LFechaNac.Size = new System.Drawing.Size(162, 17);
+            this.LFechaNac.Size = new System.Drawing.Size(194, 21);
             this.LFechaNac.TabIndex = 3;
             this.LFechaNac.Text = "Fecha de Nacimiento";
             // 
@@ -167,7 +167,7 @@
             this.LTelefono.Location = new System.Drawing.Point(614, 48);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
-            this.LTelefono.Size = new System.Drawing.Size(72, 17);
+            this.LTelefono.Size = new System.Drawing.Size(87, 21);
             this.LTelefono.TabIndex = 4;
             this.LTelefono.Text = "Teléfono";
             // 
@@ -180,7 +180,7 @@
             this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
             this.TBnombre.ShortcutsEnabled = false;
-            this.TBnombre.Size = new System.Drawing.Size(242, 24);
+            this.TBnombre.Size = new System.Drawing.Size(242, 28);
             this.TBnombre.TabIndex = 5;
             this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -193,7 +193,7 @@
             this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.ShortcutsEnabled = false;
-            this.TBapellido.Size = new System.Drawing.Size(243, 24);
+            this.TBapellido.Size = new System.Drawing.Size(243, 28);
             this.TBapellido.TabIndex = 6;
             this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
@@ -206,7 +206,7 @@
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
             this.TBdni.ShortcutsEnabled = false;
-            this.TBdni.Size = new System.Drawing.Size(242, 24);
+            this.TBdni.Size = new System.Drawing.Size(242, 28);
             this.TBdni.TabIndex = 7;
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -218,7 +218,7 @@
             this.LDireccion.Location = new System.Drawing.Point(336, 48);
             this.LDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDireccion.Name = "LDireccion";
-            this.LDireccion.Size = new System.Drawing.Size(80, 17);
+            this.LDireccion.Size = new System.Drawing.Size(95, 21);
             this.LDireccion.TabIndex = 10;
             this.LDireccion.Text = "Dirección";
             // 
@@ -230,9 +230,9 @@
             this.DTFechanac.Location = new System.Drawing.Point(59, 272);
             this.DTFechanac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTFechanac.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
-            this.DTFechanac.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.DTFechanac.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.DTFechanac.Name = "DTFechanac";
-            this.DTFechanac.Size = new System.Drawing.Size(242, 24);
+            this.DTFechanac.Size = new System.Drawing.Size(242, 28);
             this.DTFechanac.TabIndex = 15;
             this.DTFechanac.Value = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             // 
@@ -244,7 +244,7 @@
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdireccion.MaxLength = 200;
             this.TBdireccion.Name = "TBdireccion";
-            this.TBdireccion.Size = new System.Drawing.Size(242, 24);
+            this.TBdireccion.Size = new System.Drawing.Size(242, 28);
             this.TBdireccion.TabIndex = 16;
             // 
             // LEmail
@@ -255,7 +255,7 @@
             this.LEmail.Location = new System.Drawing.Point(336, 113);
             this.LEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEmail.Name = "LEmail";
-            this.LEmail.Size = new System.Drawing.Size(51, 17);
+            this.LEmail.Size = new System.Drawing.Size(61, 21);
             this.LEmail.TabIndex = 17;
             this.LEmail.Text = "Email";
             // 
@@ -267,7 +267,7 @@
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
-            this.TBemail.Size = new System.Drawing.Size(241, 24);
+            this.TBemail.Size = new System.Drawing.Size(241, 28);
             this.TBemail.TabIndex = 18;
             // 
             // LContraseña
@@ -278,7 +278,7 @@
             this.LContraseña.Location = new System.Drawing.Point(336, 179);
             this.LContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LContraseña.Name = "LContraseña";
-            this.LContraseña.Size = new System.Drawing.Size(94, 17);
+            this.LContraseña.Size = new System.Drawing.Size(112, 21);
             this.LContraseña.TabIndex = 19;
             this.LContraseña.Text = "Contraseña";
             // 
@@ -290,7 +290,7 @@
             this.LConfirmarContraseña.Location = new System.Drawing.Point(336, 243);
             this.LConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LConfirmarContraseña.Name = "LConfirmarContraseña";
-            this.LConfirmarContraseña.Size = new System.Drawing.Size(174, 17);
+            this.LConfirmarContraseña.Size = new System.Drawing.Size(209, 21);
             this.LConfirmarContraseña.TabIndex = 20;
             this.LConfirmarContraseña.Text = "Confirmar Contraseña";
             // 
@@ -302,7 +302,7 @@
             this.LRol.Location = new System.Drawing.Point(614, 113);
             this.LRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRol.Name = "LRol";
-            this.LRol.Size = new System.Drawing.Size(33, 17);
+            this.LRol.Size = new System.Drawing.Size(40, 21);
             this.LRol.TabIndex = 21;
             this.LRol.Text = "Rol";
             // 
@@ -314,7 +314,7 @@
             this.LEstado.Location = new System.Drawing.Point(614, 243);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(58, 17);
+            this.LEstado.Size = new System.Drawing.Size(70, 21);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -326,7 +326,7 @@
             this.TBclave.MaxLength = 10;
             this.TBclave.Name = "TBclave";
             this.TBclave.ShortcutsEnabled = false;
-            this.TBclave.Size = new System.Drawing.Size(242, 24);
+            this.TBclave.Size = new System.Drawing.Size(242, 28);
             this.TBclave.TabIndex = 23;
             // 
             // TBconfirmarClave
@@ -337,9 +337,8 @@
             this.TBconfirmarClave.MaxLength = 10;
             this.TBconfirmarClave.Name = "TBconfirmarClave";
             this.TBconfirmarClave.ShortcutsEnabled = false;
-            this.TBconfirmarClave.Size = new System.Drawing.Size(242, 24);
+            this.TBconfirmarClave.Size = new System.Drawing.Size(242, 28);
             this.TBconfirmarClave.TabIndex = 24;
-            this.TBconfirmarClave.TextChanged += new System.EventHandler(this.TBconfirmarClave_TextChanged);
             // 
             // contenedorDatos
             // 
@@ -383,7 +382,7 @@
             this.lblMessage.AutoSize = true;
             this.lblMessage.Location = new System.Drawing.Point(343, 299);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 15);
+            this.lblMessage.Size = new System.Drawing.Size(0, 19);
             this.lblMessage.TabIndex = 33;
             // 
             // TBtelefono
@@ -394,7 +393,7 @@
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBtelefono.MaxLength = 10;
             this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(241, 24);
+            this.TBtelefono.Size = new System.Drawing.Size(241, 28);
             this.TBtelefono.TabIndex = 32;
             this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -404,7 +403,7 @@
             this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutaFoto.Location = new System.Drawing.Point(713, 196);
             this.rutaFoto.Name = "rutaFoto";
-            this.rutaFoto.Size = new System.Drawing.Size(146, 24);
+            this.rutaFoto.Size = new System.Drawing.Size(146, 28);
             this.rutaFoto.TabIndex = 31;
             // 
             // Bfoto
@@ -429,7 +428,7 @@
             this.CBRol.FormattingEnabled = true;
             this.CBRol.Location = new System.Drawing.Point(614, 143);
             this.CBRol.Name = "CBRol";
-            this.CBRol.Size = new System.Drawing.Size(242, 25);
+            this.CBRol.Size = new System.Drawing.Size(242, 29);
             this.CBRol.TabIndex = 29;
             // 
             // rBinactivo
@@ -440,7 +439,7 @@
             this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBinactivo.Location = new System.Drawing.Point(756, 276);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(88, 21);
+            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -455,7 +454,7 @@
             this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBactivo.Location = new System.Drawing.Point(658, 276);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(74, 21);
+            this.rBactivo.Size = new System.Drawing.Size(86, 25);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -469,14 +468,14 @@
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_usuario,
@@ -491,27 +490,28 @@
             this.estado,
             this.obj_rol});
             this.listadoUsuarios.DataSource = this.usuariosBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
             this.listadoUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoUsuarios.Location = new System.Drawing.Point(0, 445);
             this.listadoUsuarios.Name = "listadoUsuarios";
             this.listadoUsuarios.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.listadoUsuarios.RowHeadersWidth = 51;
+            this.listadoUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoUsuarios.Size = new System.Drawing.Size(1182, 209);
             this.listadoUsuarios.TabIndex = 11;
             this.listadoUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
@@ -563,7 +563,7 @@
             // 
             // TBlimpiar
             // 
-            this.TBlimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBlimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TBlimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.TBlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TBlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
@@ -574,7 +574,7 @@
             this.TBlimpiar.IconColor = System.Drawing.Color.White;
             this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TBlimpiar.IconSize = 21;
-            this.TBlimpiar.Location = new System.Drawing.Point(39, 361);
+            this.TBlimpiar.Location = new System.Drawing.Point(39, 369);
             this.TBlimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBlimpiar.Name = "TBlimpiar";
             this.TBlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -612,7 +612,7 @@
             this.Bguardar.IconColor = System.Drawing.Color.White;
             this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(39, 242);
+            this.Bguardar.Location = new System.Drawing.Point(39, 226);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Bguardar.Size = new System.Drawing.Size(183, 31);
@@ -658,7 +658,7 @@
             this.Beditar.IconColor = System.Drawing.Color.White;
             this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(39, 281);
+            this.Beditar.Location = new System.Drawing.Point(39, 273);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beditar.Size = new System.Drawing.Size(183, 31);
@@ -690,7 +690,7 @@
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 24);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 32;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -724,9 +724,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
+            // 
             // ID_usuario
             // 
             this.ID_usuario.DataPropertyName = "ID_usuarios";
+            this.ID_usuario.FillWeight = 90F;
             this.ID_usuario.HeaderText = "ID_usuarios";
             this.ID_usuario.MinimumWidth = 6;
             this.ID_usuario.Name = "ID_usuario";
@@ -736,7 +741,7 @@
             // dni
             // 
             this.dni.DataPropertyName = "Dni";
-            this.dni.FillWeight = 90F;
+            this.dni.FillWeight = 31.87192F;
             this.dni.HeaderText = "Dni";
             this.dni.MinimumWidth = 6;
             this.dni.Name = "dni";
@@ -745,6 +750,7 @@
             // nombre
             // 
             this.nombre.DataPropertyName = "Nombre";
+            this.nombre.FillWeight = 34.1193F;
             this.nombre.HeaderText = "Nombre";
             this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
@@ -753,6 +759,7 @@
             // apellido
             // 
             this.apellido.DataPropertyName = "Apellido";
+            this.apellido.FillWeight = 34.1193F;
             this.apellido.HeaderText = "Apellido";
             this.apellido.MinimumWidth = 6;
             this.apellido.Name = "apellido";
@@ -761,6 +768,7 @@
             // correo
             // 
             this.correo.DataPropertyName = "Correo";
+            this.correo.FillWeight = 34.1193F;
             this.correo.HeaderText = "Correo";
             this.correo.MinimumWidth = 6;
             this.correo.Name = "correo";
@@ -778,7 +786,8 @@
             // direccion
             // 
             this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
+            this.direccion.FillWeight = 34.1193F;
+            this.direccion.HeaderText = "Dirección";
             this.direccion.MinimumWidth = 6;
             this.direccion.Name = "direccion";
             this.direccion.ReadOnly = true;
@@ -786,8 +795,8 @@
             // telefono
             // 
             this.telefono.DataPropertyName = "Telefono";
-            this.telefono.FillWeight = 90F;
-            this.telefono.HeaderText = "Telefono";
+            this.telefono.FillWeight = 30.70737F;
+            this.telefono.HeaderText = "Teléfono";
             this.telefono.MinimumWidth = 6;
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
@@ -795,6 +804,7 @@
             // fechaNac
             // 
             this.fechaNac.DataPropertyName = "FechaNacimiento";
+            this.fechaNac.FillWeight = 40F;
             this.fechaNac.HeaderText = "FechaNacimiento";
             this.fechaNac.MinimumWidth = 6;
             this.fechaNac.Name = "fechaNac";
@@ -803,7 +813,7 @@
             // estado
             // 
             this.estado.DataPropertyName = "Estado";
-            this.estado.FillWeight = 90F;
+            this.estado.FillWeight = 32.01138F;
             this.estado.HeaderText = "Estado";
             this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
@@ -812,19 +822,15 @@
             // obj_rol
             // 
             this.obj_rol.DataPropertyName = "Obj_rol";
-            this.obj_rol.HeaderText = "Obj_rol";
+            this.obj_rol.FillWeight = 40F;
+            this.obj_rol.HeaderText = "Rol";
             this.obj_rol.MinimumWidth = 6;
             this.obj_rol.Name = "obj_rol";
             this.obj_rol.ReadOnly = true;
-            this.obj_rol.Visible = false;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
             // 
             // GestionUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
@@ -896,7 +902,7 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         public FontAwesome.Sharp.IconButton TBlimpiar;
         public System.Windows.Forms.TextBox TBtelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_usuarios;
+        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -908,6 +914,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn obj_rol;
-        private System.Windows.Forms.Label lblMessage;
     }
 }
