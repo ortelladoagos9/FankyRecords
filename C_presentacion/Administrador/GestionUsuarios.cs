@@ -500,6 +500,8 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
+            // Deselecciona la fila actual en el DataGridView
+            listadoUsuarios.ClearSelection();
             TBnombre.Clear();
             TBapellido.Clear();
             rutaFoto.Clear();
