@@ -68,11 +68,11 @@
     <Compile Include="C_datos\DatosRol.cs" />
     <Compile Include="C_datos\DatosUsuarios.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
+    <Compile Include="C_entidad\Compra.cs" />
     <Compile Include="C_entidad\DetalleCompra.cs" />
     <Compile Include="C_entidad\Proveedores.cs" />
     <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_entidad\Productos.cs" />
-    <Compile Include="C_entidad\RegistrarCompra.cs" />
     <Compile Include="C_entidad\Rol.cs" />
     <Compile Include="C_entidad\TipoDoc.cs" />
     <Compile Include="C_entidad\Usuarios.cs" />
@@ -189,7 +189,6 @@
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="C_presentacion\OpcionCombo.cs" />
-    <Compile Include="C_presentacion\Utilidades\OpcionCombo.cs" />
     <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>

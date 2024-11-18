@@ -17,7 +17,7 @@ namespace FankyRecords.C_negocio
             CD_Compras = new DatosCompra();
         }
 
-        public RegistrarCompra GuardarCompra(RegistrarCompra compra)
+        public Compra GuardarCompra(Compra compra)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace FankyRecords.C_negocio
             return compra;
         }
 
-        public List<RegistrarCompra> ListarCompras()
+        public List<Compra> ListarCompras()
         {
             return CD_Compras.ListarCompras();
         }

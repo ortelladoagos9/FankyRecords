@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FankyRecords.C_entidad
 {
-    public class RegistrarCompra
+    public class Compra
     {
         public int ID_compra { get; set; }
         public int NumeroCompra { get; set; }
@@ -16,7 +16,7 @@ namespace FankyRecords.C_entidad
         public DateTime FechaCompra { get; set; }
         public Proveedores Obj_proveedor { get; set; }
         public Usuarios Obj_usuarios { get; set; }
-        public TipoDoc Obj_ID_Tipo_Doc { get; set; }
+        public TipoDoc Obj_Tipo_Doc { get; set; }
 
     }
   

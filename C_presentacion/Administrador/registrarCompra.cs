@@ -69,8 +69,8 @@ namespace FankyRecords.C_presentacion.Administrador
                     decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
                     decimal sumaTotal = 0; // Calcular la suma total al final
                     decimal cantidadTotal = 0;
-                    decimal sumaPrecioCompra = 0;
-                    decimal sumaPrecioVenta = 0;
+                    decimal precioCompraActual = 0;
+                    decimal precioVentaActual = 0;
 
                     foreach (DataGridViewRow fila in listaCompras.Rows)
                     {
@@ -81,20 +81,20 @@ namespace FankyRecords.C_presentacion.Administrador
                             decimal cantidadExistente = Convert.ToDecimal(fila.Cells["Cantidad"].Value);
                             cantidadTotal = cantidadExistente + cantProd.Value;
 
-                            decimal precioCompraExistente = Convert.ToDecimal(fila.Cells["Precio_Compra"].Value);
-                            sumaPrecioCompra = precioCompraExistente + Convert.ToDecimal(TBprecio_compra.Text);
+                           // decimal precioCompraExistente = Convert.ToDecimal(fila.Cells["Precio_Compra"].Value);
+                            precioCompraActual = Convert.ToDecimal(TBprecio_compra.Text);
 
-                            decimal precioVentaExistente = Convert.ToDecimal(fila.Cells["Precio_Venta"].Value);
-                            sumaPrecioVenta = precioVentaExistente + Convert.ToDecimal(TBPrecio_Venta.Text);
+                            //decimal precioVentaExistente = Convert.ToDecimal(fila.Cells["Precio_Venta"].Value);
+                            precioVentaActual = Convert.ToDecimal(TBPrecio_Venta.Text);
 
                             // Actualizar la celda de cantidad
                             fila.Cells["Cantidad"].Value = cantidadTotal;
                             // Actualizar la celda de subtotal
-                            fila.Cells["Subtotal"].Value = cantidadTotal * sumaPrecioCompra;
+                            fila.Cells["Subtotal"].Value = cantidadTotal * precioCompraActual;
                             // Actualizar la celda de Precio_Compra
-                            fila.Cells["Precio_Compra"].Value = sumaPrecioCompra;
+                            fila.Cells["Precio_Compra"].Value = precioCompraActual;
                             // Actualizar la celda de Precio_Venta
-                            fila.Cells["Precio_Venta"].Value = sumaPrecioVenta;
+                            fila.Cells["Precio_Venta"].Value = precioVentaActual;
 
                             // Calcular de nuevo el total
                             foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
@@ -140,40 +140,13 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
             }
-                    /*RegistrarCompra registrarCompra = new RegistrarCompra
-                    {
-                        MontoTotal = Convert.ToInt32(TBCodProd.Text),
-
-                    };
-                    try
-                    {
-                        DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (ask == DialogResult.Yes)
-                        {
-                            // Intentar guardar la categoría en la base de datos
-                            CN_Compras.GuardarCompra(registrarCompra);
-
-                            MessageBox.Show("La Compra: " + this.TBCodProd.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Recargar datos y limpiar formulario
-                            CargarCompra();
-                            Limpiar();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Limpiar();
-                    }*/    
         }
-
 
         private void CargarCompra()
         {
-            List<RegistrarCompra> registrarCompra = CN_Compras.ListarCompras();
+            List<Compra> registrarCompra = CN_Compras.ListarCompras();
             listaCompras.DataSource = registrarCompra;
         }
-
 
         private void registrarCompra_Click(object sender, EventArgs e)
         {
@@ -185,16 +158,60 @@ namespace FankyRecords.C_presentacion.Administrador
             if (C_negocio.Validaciones.EstaVacio(TBtotalPagar.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-
-            // Mensaje de confirmación
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            Proveedores proveedorSeleccionado = new Proveedores
             {
-                Limpiar();
-                TBtotalPagar.Clear();
+                ID_proveedor = Convert.ToInt32(TBtotalPagar.Text),
 
-                MessageBox.Show("La compra ha sido registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            };
+            Usuarios usuariosSeleccionados = new Usuarios
+            {
+                ID_usuarios = Convert.ToInt32(TBtotalPagar.Text),
+
+            };
+            TipoDoc tipoDocSeleccionado = new TipoDoc
+            {
+                ID_Tipo_Doc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                Descripcion = cbTipoDoc.Text
+            };
+            // Crear objeto productos
+            Productos producto = new Productos
+            {
+                PrecioVenta = Convert.ToDecimal(TBPrecio_Venta.Text),
+                PrecioCompra = Convert.ToDecimal(TBprecio_compra.Text),
+                Stock = Convert.ToInt32(cantProd.Text)
+            };
+
+            //crear objeto compras
+            Compra registrarCompra = new Compra
+            {
+                MontoTotal = Convert.ToInt32(TBtotalPagar.Text),
+                NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
+                FechaCompra = Convert.ToDateTime(dtFechaCompra.Text),
+                Obj_proveedor = proveedorSeleccionado,
+                Obj_usuarios = usuariosSeleccionados,
+                Obj_Tipo_Doc = tipoDocSeleccionado
+            };
+          
+            try
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    CN_Compras.GuardarCompra(registrarCompra);
+
+                    MessageBox.Show("La compra del producto: " + this.TBCodProd.Text + " " + this.TBproducto + " se registró correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarCompra();
+                    Limpiar();
+                    TBtotalPagar.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
         }
 
@@ -288,7 +305,5 @@ namespace FankyRecords.C_presentacion.Administrador
                 cbTipoDoc.SelectedIndex = 0;
             }
         }
-
-
     }
 }

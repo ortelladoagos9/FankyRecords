@@ -12,7 +12,7 @@ namespace FankyRecords.C_datos
     {
         SqlConnection conexion = new SqlConnection(Conexion.cadena);
         
-        public void AgregarCompra(RegistrarCompra compra)
+        public void AgregarCompra(Compra compra)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace FankyRecords.C_datos
                 SqlParameter FechaCompraParam = new SqlParameter("@FechaCompra", compra.FechaCompra);
                 SqlParameter ID_proveedor = new SqlParameter("@ID_proveedor", compra.Obj_proveedor.ID_proveedor);
                 SqlParameter ID_usuarios = new SqlParameter("@ID_usuarios", compra.Obj_usuarios.ID_usuarios);
-                SqlParameter ID_Tipo_Doc = new SqlParameter("@ID_Tipo_Doc", compra.Obj_ID_Tipo_Doc.ID_Tipo_Doc);
+                SqlParameter ID_Tipo_Doc = new SqlParameter("@ID_Tipo_Doc", compra.Obj_Tipo_Doc.ID_Tipo_Doc);
          
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(NumeroCompraParam);
@@ -62,9 +62,9 @@ namespace FankyRecords.C_datos
             }
         }
 
-        public List<RegistrarCompra> ListarCompras()
+        public List<Compra> ListarCompras()
         {
-            List<RegistrarCompra> listaCompra = new List<RegistrarCompra>();
+            List<Compra> listaCompra = new List<Compra>();
             try
             {
                 conexion.Open();
@@ -84,7 +84,7 @@ namespace FankyRecords.C_datos
                 
                 while (reader.Read())
                 {
-                    listaCompra.Add(new RegistrarCompra 
+                    listaCompra.Add(new Compra 
                     {
                         ID_compra = int.Parse(reader["ID_compra"].ToString()),
                         NumeroCompra = int.Parse(reader["NumeroCompra"].ToString()),
@@ -103,7 +103,7 @@ namespace FankyRecords.C_datos
                             Apellido = reader["Usuario"].ToString()
 
                         },
-                        Obj_ID_Tipo_Doc = new TipoDoc
+                        Obj_Tipo_Doc = new TipoDoc
                         {
                             ID_Tipo_Doc = Convert.ToInt32(reader["ID_Tipo_Doc"]),
                             Descripcion = reader["TipoDoc"].ToString()
@@ -122,7 +122,7 @@ namespace FankyRecords.C_datos
             return listaCompra;
         }
 
-        public void EditarCompra(RegistrarCompra compra)
+        public void EditarCompra(Compra compra)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.AddWithValue("@FechaCompra", compra.FechaCompra);
                 cmd.Parameters.AddWithValue("@Obj_proveedor", compra.Obj_proveedor);
                 cmd.Parameters.AddWithValue("@Obj_usuarios", compra.Obj_usuarios); // Convertir "Activo"/"Inactivo" a bit
-                cmd.Parameters.AddWithValue("@Obj_ID_Tipo_Doc", compra.Obj_ID_Tipo_Doc); // Convertir "Activo"/"Inactivo" a bit
+                cmd.Parameters.AddWithValue("@Obj_ID_Tipo_Doc", compra.Obj_Tipo_Doc); // Convertir "Activo"/"Inactivo" a bit
                 cmd.Parameters.AddWithValue("@ID_compra", compra.ID_compra);
 
                 cmd.ExecuteNonQuery();
@@ -168,13 +168,13 @@ namespace FankyRecords.C_datos
             }
             finally { conexion.Close(); }
         }
-        /*public RegistrarCompra ObtenerCompraPorID(int ID_compra)
+        /*public Compra ObtenerCompraPorID(int ID_compra)
         {
-            RegistrarCompra compra = null;
+            Compra compra = null;
             try
             {
                 conexion.Open();
-                string query = "SELECT * FROM RegistrarCompra WHERE ID_compra = @ID_compra";
+                string query = "SELECT * FROM Compra WHERE ID_compra = @ID_compra";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@ID_compra", ID_compra);
@@ -182,7 +182,7 @@ namespace FankyRecords.C_datos
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    compra = new RegistrarCompra
+                    compra = new Compra
                     {
                         ID_compra = Convert.ToInt32(reader["ID_compra"]),
                         NumeroCompra = Convert.ToInt32(reader["NumeroCompra"]),
