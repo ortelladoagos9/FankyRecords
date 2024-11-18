@@ -58,7 +58,7 @@ namespace FankyRecords.C_presentacion
             }
             else
             {
-                if (TBDni.Text == "101010" && TBClave.Text == "123")
+                if (ousuario.Obj_rol.Descripcion == "Administrador")
                 {
                     // Menu administrador
                     Form menuAdministrador = new FormMenuAdmin();
@@ -68,7 +68,7 @@ namespace FankyRecords.C_presentacion
 
                     this.Hide();
                 }
-                else if (TBDni.Text == "202020" && TBClave.Text == "456")
+                else if (ousuario.Obj_rol.Descripcion == "Administrativo")
                 {
                     // Menu administrativo
                     Form menuAdministrativo = new FormMenuAdministrativo();
@@ -78,7 +78,7 @@ namespace FankyRecords.C_presentacion
                     this.Hide();
 
                 }
-                else if (TBDni.Text == "303030" && TBClave.Text == "789")
+                else if (ousuario.Obj_rol.Descripcion == "Vendedor")
                 {
                     // Menu Vendedor
                     Form menuVendedor = new FormMenuVendedor();

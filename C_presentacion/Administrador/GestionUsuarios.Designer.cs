@@ -228,7 +228,7 @@
             this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBtelefono.Location = new System.Drawing.Point(614, 77);
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TBtelefono.Mask = "(000)0000000";
+           
             this.TBtelefono.Name = "TBtelefono";
             this.TBtelefono.Size = new System.Drawing.Size(242, 28);
             this.TBtelefono.TabIndex = 11;
@@ -559,7 +559,7 @@
             // 
             // CBbuscar
             // 
-            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+          /*  this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -575,7 +575,7 @@
             this.CBbuscar.Location = new System.Drawing.Point(726, 0);
             this.CBbuscar.Name = "CBbuscar";
             this.CBbuscar.Size = new System.Drawing.Size(171, 29);
-            this.CBbuscar.TabIndex = 1;
+            this.CBbuscar.TabIndex = 1;*/
             // 
             // contenedorFotoBotones
             // 
