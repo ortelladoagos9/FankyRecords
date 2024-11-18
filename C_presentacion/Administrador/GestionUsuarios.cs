@@ -464,13 +464,13 @@ namespace FankyRecords.C_presentacion.Administrador
                     rBactivo.Checked = estado == "Activo";
                     rBinactivo.Checked = estado == "Inactivo";
                 }
-                if (row.Cells["Obj_rol"] != null && row.Cells["Obj_rol"].Value is FankyRecords.C_entidad.Rol rol)
+                
+                if (row.Cells["RolDescripcion"] != null && row.Cells["RolDescripcion"].Value != DBNull.Value)
                 {
-                    // Asigna la descripción de la categoría al ComboBox
-                    CBRol.Text = rol.Descripcion;
+                    // Si tienes una columna separada para la descripción del rol
+                    CBRol.Text = row.Cells["RolDescripcion"].Value.ToString();
                 }
-
-
+                
             }
         }
 
@@ -517,7 +517,8 @@ namespace FankyRecords.C_presentacion.Administrador
             picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
             TBclave.Clear();
             TBconfirmarClave.Clear();
-            CBRol.SelectedIndex = 0; 
+            CBRol.SelectedIndex = 0;
+            rBactivo.Checked = true;
         }
 
         private void TBlimpiar_Click(object sender, EventArgs e)

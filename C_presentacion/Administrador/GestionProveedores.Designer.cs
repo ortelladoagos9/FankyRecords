@@ -385,6 +385,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.Name = "DGlistaproveedores";
             this.DGlistaproveedores.ReadOnly = true;
             this.DGlistaproveedores.RowHeadersWidth = 51;
+            this.DGlistaproveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGlistaproveedores.Size = new System.Drawing.Size(1182, 209);
             this.DGlistaproveedores.TabIndex = 11;
             this.DGlistaproveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistaproveedores_CellClick);

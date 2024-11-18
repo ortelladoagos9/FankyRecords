@@ -226,6 +226,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ValidarYBuscar();
+        }
+
+        private void ValidarYBuscar()
+        {
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -390,12 +395,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 CargarProductos();
             }
-        }
-
-        private void CBcategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
     }
 }
 

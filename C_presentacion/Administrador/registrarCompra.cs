@@ -29,7 +29,15 @@ namespace FankyRecords.C_presentacion.Administrador
         private void registrarCompra_Load(object sender, EventArgs e)
         {
             CargarCombo();
-            dtFechaCompra.Text = DateTime.Now.ToString("d/MM/yyyy");
+            // Obtén la fecha actual del sistema
+            DateTime fechaActual = DateTime.Now.Date;
+
+            // Configura la propiedad Text del DateTimePicker a la fecha actual
+            dtFechaCompra.Value = fechaActual;
+
+            // Configura el MinDate y MaxDate para que sean la fecha actual
+            dtFechaCompra.MinDate = fechaActual;
+            dtFechaCompra.MaxDate = fechaActual;
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)

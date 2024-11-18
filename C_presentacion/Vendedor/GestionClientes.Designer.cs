@@ -113,6 +113,7 @@
             this.listadoClientes.Name = "listadoClientes";
             this.listadoClientes.ReadOnly = true;
             this.listadoClientes.RowHeadersWidth = 51;
+            this.listadoClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoClientes.Size = new System.Drawing.Size(1182, 209);
             this.listadoClientes.TabIndex = 12;
             this.listadoClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellClick);
@@ -522,6 +523,7 @@
             this.ID_cliente.MinimumWidth = 6;
             this.ID_cliente.Name = "ID_cliente";
             this.ID_cliente.ReadOnly = true;
+            this.ID_cliente.Visible = false;
             // 
             // Documento
             // 

@@ -15,7 +15,6 @@ namespace FankyRecords.C_presentacion.Administrador
         public reporteVentas()
         {
             InitializeComponent();
-            this.cbBuscarVentas.SelectedIndex = 0;
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)

@@ -31,14 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
-            this.contenedorLista = new System.Windows.Forms.Panel();
-            this.Lbuscar = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.TBBuscador = new System.Windows.Forms.TextBox();
-            this.CBbuscarProductos = new System.Windows.Forms.ComboBox();
-            this.LListaProductos = new System.Windows.Forms.Label();
             this.cod_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +40,13 @@
             this.stock_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contenedorLista = new System.Windows.Forms.Panel();
+            this.Lbuscar = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.TBBuscador = new System.Windows.Forms.TextBox();
+            this.LListaProductos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,132 +90,18 @@
             this.listadoProductos.Location = new System.Drawing.Point(0, 90);
             this.listadoProductos.Margin = new System.Windows.Forms.Padding(4);
             this.listadoProductos.Name = "listadoProductos";
+            this.listadoProductos.ReadOnly = true;
             this.listadoProductos.RowHeadersWidth = 51;
+            this.listadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoProductos.Size = new System.Drawing.Size(1182, 564);
             this.listadoProductos.TabIndex = 21;
-            // 
-            // contenedorLista
-            // 
-            this.contenedorLista.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.contenedorLista.Controls.Add(this.Lbuscar);
-            this.contenedorLista.Controls.Add(this.panel1);
-            this.contenedorLista.Controls.Add(this.LListaProductos);
-            this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.contenedorLista.Location = new System.Drawing.Point(0, 0);
-            this.contenedorLista.Margin = new System.Windows.Forms.Padding(4);
-            this.contenedorLista.Name = "contenedorLista";
-            this.contenedorLista.Size = new System.Drawing.Size(1182, 90);
-            this.contenedorLista.TabIndex = 22;
-            // 
-            // Lbuscar
-            // 
-            this.Lbuscar.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lbuscar.Location = new System.Drawing.Point(547, 0);
-            this.Lbuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbuscar.Name = "Lbuscar";
-            this.Lbuscar.Size = new System.Drawing.Size(116, 90);
-            this.Lbuscar.TabIndex = 0;
-            this.Lbuscar.Text = "Buscar por:";
-            this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.panel1.Controls.Add(this.btnLimpiar);
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.TBBuscador);
-            this.panel1.Controls.Add(this.CBbuscarProductos);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(663, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 90);
-            this.panel1.TabIndex = 34;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 20;
-            this.btnLimpiar.Location = new System.Drawing.Point(444, 33);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 20;
-            this.btnBuscar.Location = new System.Drawing.Point(379, 33);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // TBBuscador
-            // 
-            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscador.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscador.Location = new System.Drawing.Point(187, 33);
-            this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
-            this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(184, 28);
-            this.TBBuscador.TabIndex = 33;
-            // 
-            // CBbuscarProductos
-            // 
-            this.CBbuscarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBbuscarProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBbuscarProductos.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBbuscarProductos.ForeColor = System.Drawing.Color.Black;
-            this.CBbuscarProductos.FormattingEnabled = true;
-            this.CBbuscarProductos.IntegralHeight = false;
-            this.CBbuscarProductos.Items.AddRange(new object[] {
-            "Codigo",
-            "Nombre",
-            "Categoria",
-            "Estado"});
-            this.CBbuscarProductos.Location = new System.Drawing.Point(8, 32);
-            this.CBbuscarProductos.Margin = new System.Windows.Forms.Padding(4);
-            this.CBbuscarProductos.Name = "CBbuscarProductos";
-            this.CBbuscarProductos.Size = new System.Drawing.Size(171, 29);
-            this.CBbuscarProductos.TabIndex = 1;
-            // 
-            // LListaProductos
-            // 
-            this.LListaProductos.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LListaProductos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LListaProductos.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LListaProductos.ForeColor = System.Drawing.Color.DarkRed;
-            this.LListaProductos.Location = new System.Drawing.Point(0, 0);
-            this.LListaProductos.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LListaProductos.Name = "LListaProductos";
-            this.LListaProductos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.LListaProductos.Size = new System.Drawing.Size(326, 90);
-            this.LListaProductos.TabIndex = 12;
-            this.LListaProductos.Text = "Lista de Productos";
-            this.LListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cod_prod
             // 
             this.cod_prod.HeaderText = "Codigo";
             this.cod_prod.MinimumWidth = 6;
             this.cod_prod.Name = "cod_prod";
+            this.cod_prod.ReadOnly = true;
             // 
             // nombre_prod
             // 
@@ -251,12 +136,14 @@
             this.stock.HeaderText = "Stock";
             this.stock.MinimumWidth = 6;
             this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
             // 
             // stock_min
             // 
             this.stock_min.HeaderText = "Stock mínimo";
             this.stock_min.MinimumWidth = 6;
             this.stock_min.Name = "stock_min";
+            this.stock_min.ReadOnly = true;
             // 
             // Estado
             // 
@@ -270,7 +157,105 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             this.Eliminar.Visible = false;
+            // 
+            // contenedorLista
+            // 
+            this.contenedorLista.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorLista.Controls.Add(this.Lbuscar);
+            this.contenedorLista.Controls.Add(this.panel1);
+            this.contenedorLista.Controls.Add(this.LListaProductos);
+            this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contenedorLista.Location = new System.Drawing.Point(0, 0);
+            this.contenedorLista.Margin = new System.Windows.Forms.Padding(4);
+            this.contenedorLista.Name = "contenedorLista";
+            this.contenedorLista.Size = new System.Drawing.Size(1182, 90);
+            this.contenedorLista.TabIndex = 22;
+            // 
+            // Lbuscar
+            // 
+            this.Lbuscar.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
+            this.Lbuscar.Location = new System.Drawing.Point(768, 0);
+            this.Lbuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbuscar.Name = "Lbuscar";
+            this.Lbuscar.Size = new System.Drawing.Size(79, 90);
+            this.Lbuscar.TabIndex = 0;
+            this.Lbuscar.Text = "Buscar:";
+            this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.panel1.Controls.Add(this.btnLimpiar);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.TBBuscador);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(847, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 90);
+            this.panel1.TabIndex = 34;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 20;
+            this.btnLimpiar.Location = new System.Drawing.Point(259, 33);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 20;
+            this.btnBuscar.Location = new System.Drawing.Point(194, 33);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(57, 28);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // TBBuscador
+            // 
+            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscador.ForeColor = System.Drawing.Color.Black;
+            this.TBBuscador.Location = new System.Drawing.Point(2, 33);
+            this.TBBuscador.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
+            this.TBBuscador.Name = "TBBuscador";
+            this.TBBuscador.Size = new System.Drawing.Size(184, 28);
+            this.TBBuscador.TabIndex = 33;
+            // 
+            // LListaProductos
+            // 
+            this.LListaProductos.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.LListaProductos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LListaProductos.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LListaProductos.ForeColor = System.Drawing.Color.DarkRed;
+            this.LListaProductos.Location = new System.Drawing.Point(0, 0);
+            this.LListaProductos.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LListaProductos.Name = "LListaProductos";
+            this.LListaProductos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.LListaProductos.Size = new System.Drawing.Size(326, 90);
+            this.LListaProductos.TabIndex = 12;
+            this.LListaProductos.Text = "Lista de Productos";
+            this.LListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BuscarProducto
             // 
@@ -298,7 +283,6 @@
         public System.Windows.Forms.DataGridView listadoProductos;
         public System.Windows.Forms.Panel contenedorLista;
         public System.Windows.Forms.Label Lbuscar;
-        public System.Windows.Forms.ComboBox CBbuscarProductos;
         public System.Windows.Forms.Label LListaProductos;
         public System.Windows.Forms.TextBox TBBuscador;
         public FontAwesome.Sharp.IconButton btnBuscar;

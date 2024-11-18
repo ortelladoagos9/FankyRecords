@@ -194,6 +194,7 @@
             this.listadoProductos.Name = "listadoProductos";
             this.listadoProductos.ReadOnly = true;
             this.listadoProductos.RowHeadersWidth = 51;
+            this.listadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoProductos.Size = new System.Drawing.Size(1182, 209);
             this.listadoProductos.TabIndex = 20;
             this.listadoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellClick);
@@ -206,12 +207,13 @@
             this.ID_producto.MinimumWidth = 6;
             this.ID_producto.Name = "ID_producto";
             this.ID_producto.ReadOnly = true;
+            this.ID_producto.Visible = false;
             // 
             // codigo
             // 
             this.codigo.DataPropertyName = "Codigo";
             this.codigo.FillWeight = 95F;
-            this.codigo.HeaderText = "Codigo";
+            this.codigo.HeaderText = "Código";
             this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -227,7 +229,7 @@
             // descripcion
             // 
             this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.HeaderText = "Descripción";
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
@@ -244,7 +246,7 @@
             // precioVenta
             // 
             this.precioVenta.DataPropertyName = "PrecioVenta";
-            this.precioVenta.HeaderText = "PrecioVenta";
+            this.precioVenta.HeaderText = "Precio Venta";
             this.precioVenta.MinimumWidth = 6;
             this.precioVenta.Name = "precioVenta";
             this.precioVenta.ReadOnly = true;
@@ -252,7 +254,7 @@
             // precioCompra
             // 
             this.precioCompra.DataPropertyName = "PrecioCompra";
-            this.precioCompra.HeaderText = "PrecioCompra";
+            this.precioCompra.HeaderText = "Precio Compra";
             this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.ReadOnly = true;
@@ -261,7 +263,7 @@
             // 
             this.stockmin.DataPropertyName = "Stock_min";
             this.stockmin.FillWeight = 85F;
-            this.stockmin.HeaderText = "Stock_min";
+            this.stockmin.HeaderText = "Stock mínimo";
             this.stockmin.MinimumWidth = 6;
             this.stockmin.Name = "stockmin";
             this.stockmin.ReadOnly = true;
@@ -484,7 +486,6 @@
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(242, 29);
             this.CBcategoria.TabIndex = 1;
-            this.CBcategoria.SelectedIndexChanged += new System.EventHandler(this.CBcategoria_SelectedIndexChanged);
             // 
             // categoriasBindingSource
             // 

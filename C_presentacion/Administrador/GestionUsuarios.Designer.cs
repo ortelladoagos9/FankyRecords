@@ -62,6 +62,7 @@
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.listadoUsuarios = new System.Windows.Forms.DataGridView();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.LListaUsuarios = new System.Windows.Forms.Label();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.contenedorFotoBotones = new System.Windows.Forms.Panel();
@@ -75,7 +76,6 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,14 +88,14 @@
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obj_rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -492,7 +492,7 @@
             this.FechaNacimiento,
             this.FechaCreacion,
             this.Estado,
-            this.Obj_rol});
+            this.RolDescripcion});
             this.listadoUsuarios.DataSource = this.usuariosBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -521,6 +521,10 @@
             this.listadoUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
             this.listadoUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
             this.listadoUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellDoubleClick);
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
             // 
             // LListaUsuarios
             // 
@@ -728,10 +732,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
@@ -827,13 +827,13 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // Obj_rol
+            // RolDescripcion
             // 
-            this.Obj_rol.DataPropertyName = "RolDescripcion";
-            this.Obj_rol.HeaderText = "Rol";
-            this.Obj_rol.MinimumWidth = 6;
-            this.Obj_rol.Name = "Obj_rol";
-            this.Obj_rol.ReadOnly = true;
+            this.RolDescripcion.DataPropertyName = "RolDescripcion";
+            this.RolDescripcion.HeaderText = "Rol";
+            this.RolDescripcion.MinimumWidth = 6;
+            this.RolDescripcion.Name = "RolDescripcion";
+            this.RolDescripcion.ReadOnly = true;
             // 
             // GestionUsuarios
             // 
@@ -856,12 +856,12 @@
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             this.contenedorFotoBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorGestionUsuarios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -924,6 +924,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Obj_rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RolDescripcion;
     }
 }
