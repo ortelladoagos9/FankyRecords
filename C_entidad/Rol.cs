@@ -10,6 +10,5 @@ namespace FankyRecords.C_entidad
     {
         public int ID_rol { get; set; }
         public string Descripcion { get; set; }
-
     }
 }

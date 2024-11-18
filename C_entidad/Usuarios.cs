@@ -21,5 +21,6 @@ namespace FankyRecords.C_entidad
         public  string Estado { get; set; }
         public Rol Obj_rol { get; set; }
 
+        public string RolDescripcion => Obj_rol?.Descripcion;
     }
 }

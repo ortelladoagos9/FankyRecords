@@ -20,8 +20,8 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, FechaCreacion,Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
-                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @FechaCreacion,@Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
+                INSERT INTO Usuarios(Dni, Nombre, Apellido, Correo, Clave, FechaCreacion, Direccion, Telefono, FechaNacimiento, Estado,  ID_rol) 
+                VALUES (@Dni, @Nombre, @Apellido, @Correo, @Clave, @FechaCreacion, @Direccion, @Telefono, @FechaNacimiento, @Estado, @ID_rol)";
 
                 SqlParameter Dni = new SqlParameter("@Dni", usuario.Dni);
                 SqlParameter Nombre = new SqlParameter("@Nombre", usuario.Nombre);

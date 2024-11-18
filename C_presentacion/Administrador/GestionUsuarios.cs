@@ -127,10 +127,11 @@ namespace FankyRecords.C_presentacion.Administrador
             }
 
             // Crear un objeto Rol basado en el valor del ComboBox
-            Rol rolSeleccionada = new Rol
+            Rol rolSeleccionado = new Rol
             {
                 ID_rol = Convert.ToInt32(CBRol.SelectedValue),
                 Descripcion = CBRol.Text
+               
             };
             // Crear objeto usuarios
             Usuarios usuario = new Usuarios
@@ -144,10 +145,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 Clave = TBclave.Text,
                 Telefono = TBtelefono.Text,
                 Estado = rBactivo.Checked ? "Activo" : "Inactivo",
-                Obj_rol = rolSeleccionada  // Asigna el objeto de categoría
+                Obj_rol = rolSeleccionado  // Asigna el objeto de categoría
             };
 
-            usuario.Obj_rol = rolSeleccionada;
+            usuario.Obj_rol = rolSeleccionado;
             if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
             {
                 usuario.Obj_rol.ID_rol = (int)opcionSeleccionada.Valor;
@@ -299,7 +300,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
             }
             // Crear un objeto Rol basado en el valor del ComboBox
-            Rol rolSeleccionada = new Rol
+            Rol rolSeleccionado = new Rol
             {
                  ID_rol = Convert.ToInt32(CBRol.SelectedValue),
                  Descripcion = CBRol.Text
@@ -317,10 +318,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 Telefono = TBtelefono.Text,
                 FechaNacimiento = Convert.ToDateTime(DTFechanac.Text),
                 Estado = rBactivo.Checked ? "Activo" : "Inactivo",
-                Obj_rol = rolSeleccionada  // Asigna el objeto de producto  
+                Obj_rol = rolSeleccionado  // Asigna el objeto de producto  
              };
 
-             usuario.Obj_rol= rolSeleccionada;
+             usuario.Obj_rol= rolSeleccionado;
             
              if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
              {
@@ -419,43 +420,43 @@ namespace FankyRecords.C_presentacion.Administrador
                 DataGridViewRow row = listadoUsuarios.Rows[e.RowIndex];
                 
                 // Accede al ID_usuario si existe en el DataGridView
-                if (row.Cells["ID_usuario"] != null && row.Cells["ID_usuario"].Value != DBNull.Value)
+                if (row.Cells["ID_usuarios"] != null && row.Cells["ID_usuarios"].Value != DBNull.Value)
                 {
-                   usuarioIdSeleccionado = Convert.ToInt32(row.Cells["ID_usuario"].Value);
+                   usuarioIdSeleccionado = Convert.ToInt32(row.Cells["ID_usuarios"].Value);
                 }
 
                 // Rellenar otros campos del usuario seleccionado
-                if (row.Cells["dni"] != null && row.Cells["dni"].Value != DBNull.Value)
+                if (row.Cells["Dni"] != null && row.Cells["Dni"].Value != DBNull.Value)
                 {
-                    TBdni.Text = row.Cells["dni"].Value.ToString();
+                    TBdni.Text = row.Cells["Dni"].Value.ToString();
                 }
-                if (row.Cells["nombre"] != null && row.Cells["nombre"].Value != DBNull.Value)
+                if (row.Cells["Nombre"] != null && row.Cells["Nombre"].Value != DBNull.Value)
                 {
-                    TBnombre.Text = row.Cells["nombre"].Value.ToString();
+                    TBnombre.Text = row.Cells["Nombre"].Value.ToString();
                 }
-                if (row.Cells["apellido"] != null && row.Cells["apellido"].Value != DBNull.Value)
+                if (row.Cells["Apellido"] != null && row.Cells["Apellido"].Value != DBNull.Value)
                 {
-                    TBapellido.Text = row.Cells["apellido"].Value.ToString();
+                    TBapellido.Text = row.Cells["Apellido"].Value.ToString();
                 }
-                if (row.Cells["direccion"] != null && row.Cells["direccion"].Value != DBNull.Value)
+                if (row.Cells["Direccion"] != null && row.Cells["Direccion"].Value != DBNull.Value)
                 {
-                    TBdireccion.Text = row.Cells["direccion"].Value.ToString();
+                    TBdireccion.Text = row.Cells["Direccion"].Value.ToString();
                 }
-                if (row.Cells["correo"] != null && row.Cells["correo"].Value != DBNull.Value)
+                if (row.Cells["Correo"] != null && row.Cells["Correo"].Value != DBNull.Value)
                 {
-                    TBemail.Text = row.Cells["correo"].Value.ToString();
+                    TBemail.Text = row.Cells["Correo"].Value.ToString();
                 }
-                if (row.Cells["telefono"] != null && row.Cells["telefono"].Value != DBNull.Value)
+                if (row.Cells["Telefono"] != null && row.Cells["Telefono"].Value != DBNull.Value)
                 {
-                    TBtelefono.Text = row.Cells["telefono"].Value.ToString();
+                    TBtelefono.Text = row.Cells["Telefono"].Value.ToString();
                 }
-                if (row.Cells["clave"] != null && row.Cells["clave"].Value != DBNull.Value)
+                if (row.Cells["Clave"] != null && row.Cells["Clave"].Value != DBNull.Value)
                 {
-                    TBclave.Text = row.Cells["clave"].Value.ToString();
+                    TBclave.Text = row.Cells["Clave"].Value.ToString();
                 }
-                if (row.Cells["FechaNac"] != null && row.Cells["FechaNac"].Value != DBNull.Value)
+                if (row.Cells["FechaNacimiento"] != null && row.Cells["FechaNacimiento"].Value != DBNull.Value)
                 {
-                    DTFechanac.Text = row.Cells["FechaNac"].Value.ToString();
+                    DTFechanac.Text = row.Cells["FechaNacimiento"].Value.ToString();
                 }
                 if (row.Cells["Estado"] != null && row.Cells["Estado"].Value != DBNull.Value)
                 {
@@ -463,7 +464,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     rBactivo.Checked = estado == "Activo";
                     rBinactivo.Checked = estado == "Inactivo";
                 }
-                if (row.Cells["obj_rol"] != null && row.Cells["obj_rol"].Value is FankyRecords.C_entidad.Rol rol)
+                if (row.Cells["Obj_rol"] != null && row.Cells["Obj_rol"].Value is FankyRecords.C_entidad.Rol rol)
                 {
                     // Asigna la descripción de la categoría al ComboBox
                     CBRol.Text = rol.Descripcion;
@@ -502,6 +503,8 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             // Deselecciona la fila actual en el DataGridView
             listadoUsuarios.ClearSelection();
+            // Resetea el ID del usuario seleccionado
+            usuarioIdSeleccionado = -1;    
             TBnombre.Clear();
             TBapellido.Clear();
             rutaFoto.Clear();
