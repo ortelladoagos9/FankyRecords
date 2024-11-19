@@ -1,54 +1,64 @@
-﻿using FankyRecords.C_presentacion.Vendedor;
+﻿using FankyRecords.C_datos;
+using FankyRecords.C_presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class backup : Form
     {
+        SqlConnection conexion = new SqlConnection(Conexion.cadena);
+
+        string backupPath;
+        string nombreBd;
+
         public backup()
         {
             InitializeComponent();
         }
-
-
         private void Bbackup_Click(object sender, EventArgs e)
-        {
-            if (C_negocio.Validaciones.EstaVacio(TBbaseDatos.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
+        { 
+            //Se debe crear una carpeta en el disco local para poder realizar el backup, de lo contrario se genera un error
+            this.backupPath = TBrutaGuardar.Text.ToString() + @"\Fanky_Records_BD " + DateTime.Now.ToString("dd-MM-yyyy HH.mm") ;
+
+            try
             {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
-            else
+                // Abre la conexión con la base de datos
+                conexion.Open();
+
+                // Construir la consulta SQL para realizar el backup
+                string query = $"BACKUP DATABASE [DB_FANKY_RECORDS] TO DISK = '{backupPath}.bak' WITH FORMAT, INIT;";
+
+                // Ejecutamos el comando SQL para hacer el backup
+                SqlCommand command = new SqlCommand(query, conexion);
+                
+                // Ejecutar la consulta
+                command.ExecuteNonQuery();
+                MessageBox.Show("Backup realizado con éxito.");
+            }
+            catch (Exception ex)
             {
-                if (C_negocio.Validaciones.mensajeBackup())
-                {
-                    Limpiar();
-                }
+                MessageBox.Show("Ocurrió un error inesperado:" + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
 
         private void Bcancelar_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBbaseDatos.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (C_negocio.Validaciones.mensajeCancelar())
-                {
-                    Limpiar();
-                }
-            }
+            MessageBox.Show("Operación cancelada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Limpiar();
         }
 
         private void BtnNavegar_Click(object sender, EventArgs e)
@@ -58,6 +68,8 @@ namespace FankyRecords.C_presentacion.Administrador
             {  
                  TBrutaGuardar.Text = folderBrowserDialog.SelectedPath;
             }
+            this.nombreBd = "Fanky_Records_BD " + DateTime.Now.ToString("dd-MM-yyyy HH.mm");
+            TBbaseDatos.Text = this.nombreBd;
         }
 
         private void Limpiar()
