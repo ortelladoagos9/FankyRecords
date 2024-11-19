@@ -39,6 +39,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // Configura el MinDate y MaxDate para que sean la fecha actual
             dtFechaCompra.MinDate = fechaActual;
             dtFechaCompra.MaxDate = fechaActual;
+
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
@@ -68,7 +69,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     bool prodExiste = false;
                     decimal subtotal = cantProd.Value * Convert.ToDecimal(TBprecio_compra.Text);
-                    decimal sumaTotal = 0; // Calcular la suma total al final
                     decimal cantidadTotal = 0;
                     decimal precioCompraActual = 0;
                     decimal precioVentaActual = 0;
@@ -95,13 +95,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             // Actualizar la celda de Precio_Venta
                             fila.Cells["Precio_Venta"].Value = precioVentaActual.ToString("N2");
 
-                            // Calcular de nuevo el total
-                            foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
-                            {
-                                sumaTotal += Convert.ToDecimal(filaCalculada.Cells["Subtotal"].Value);
-                            }
-
-                            TBtotalPagar.Text = sumaTotal.ToString("N2");
+                            CalcularTotal();
                             MessageBox.Show("La cantidad del producto " + TBproducto.Text + " se actualizó correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
                             return;
@@ -121,13 +115,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             subtotal.ToString("N2")
                         });
 
-                        // Calcular de nuevo la suma total
-                        foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
-                        {
-                            sumaTotal += Convert.ToDecimal(filaCalculada.Cells["Subtotal"].Value);
-                        }
-
-                        TBtotalPagar.Text = sumaTotal.ToString("N2");
+                        CalcularTotal();
                         MessageBox.Show("El producto: " + TBproducto.Text + " se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     Limpiar();
@@ -139,6 +127,19 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
             }
+        }
+
+        private void CalcularTotal()
+        {
+            decimal sumaTotal = 0; // Calcular la suma total al final
+
+            // Calcular de nuevo el total
+            foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
+            {
+                sumaTotal += Convert.ToDecimal(filaCalculada.Cells["Subtotal"].Value);
+            }
+
+            TBtotalPagar.Text = sumaTotal.ToString("N2");
         }
 
         private void CargarCompra()
@@ -176,13 +177,13 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("Debe seleccionar un proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // Crear objeto usuario
+
             Usuarios usuarioSeleccionado = new Usuarios
             {
-                ID_usuarios = usuarioActual.ID_usuarios, // Asume que tienes una variable que contiene al usuario actual
-                Nombre = usuarioActual.Nombre,
-                Apellido = usuarioActual.Apellido,
-                Obj_rol = usuarioActual.Obj_rol // Rol actual
+                ID_usuarios = SesionUsuario.UsuarioActual.ID_usuarios,
+                Nombre = SesionUsuario.UsuarioActual.Nombre,
+                Apellido = SesionUsuario.UsuarioActual.Apellido,
+                Obj_rol = SesionUsuario.UsuarioActual.Obj_rol
             };
 
             // Asignar el usuario al objeto compra
@@ -192,7 +193,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
                 FechaCompra = Convert.ToDateTime(dtFechaCompra.Text),
                 Obj_proveedor = proveedorSeleccionado,
-                Obj_usuarios = usuarioSeleccionado, // Asignar el usuario aquí
+                Obj_usuarios = usuarioSeleccionado, 
                 Obj_Tipo_Doc = tipoDocSeleccionado
             };
 
@@ -319,6 +320,43 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 cbTipoDoc.SelectedIndex = 0;
             }
+        }
+
+        private void listaCompras_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if(e.ColumnIndex == 7)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.basura.Width;
+                var h = Properties.Resources.basura.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.basura, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void listaCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (listaCompras.Columns[e.ColumnIndex].Name == "BtnEliminar")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0 && listaCompras.Rows[indice].Cells["Codigo"].Value != null)
+                {
+                    listaCompras.Rows.RemoveAt(indice);
+                    CalcularTotal();
+                }
+                else
+                {
+                    MessageBox.Show("Debe agregar un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }       
         }
     }
 }

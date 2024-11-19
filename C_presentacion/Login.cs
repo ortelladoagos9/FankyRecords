@@ -12,9 +12,6 @@ using FankyRecords.C_negocio;
 using FankyRecords.C_presentacion.Administrativo;
 using FankyRecords.C_presentacion.Vendedor;
 using FankyRecords.C_entidad;
-using FankyRecords.C_negocio;
-
-
 
 namespace FankyRecords.C_presentacion
 {
@@ -26,11 +23,9 @@ namespace FankyRecords.C_presentacion
         public Login()
         {
             InitializeComponent();
-            this.KeyPreview = true;
-            
+            this.KeyPreview = true;         
             CN_Rol = new NegocioRol();
             CN_Usuarios = new NegocioUsuarios();
-
         }
 
         private void Bingresar_Click(object sender, EventArgs e)
@@ -38,19 +33,10 @@ namespace FankyRecords.C_presentacion
             Ingresar();
         }
 
-        /*  // Obtener todas las categorías
-            List<TipoDoc> listaTipoDOc = CN_TipoDoc.ListarTipoDoc();
-
-            // Filtrar 
-            var tipoDocumentos = listaTipoDOc.Where(c => c.Descripcion != null).ToList();*/
-
         private void Ingresar()
         {
             List<Usuarios> ListaUsuario = CN_Usuarios.ListarUsuarios();
             var ousuario = ListaUsuario.Where(u => u.Dni == TBDni.Text && u.Clave == TBClave.Text).FirstOrDefault();
-
-          
-
 
             if (C_negocio.Validaciones.EstaVacio(TBDni.Text) || C_negocio.Validaciones.EstaVacio(TBClave.Text))
             {
@@ -58,6 +44,9 @@ namespace FankyRecords.C_presentacion
             }
             else
             {
+                // Asignar el usuario autenticado a la clase estática
+                SesionUsuario.UsuarioActual = ousuario;
+
                 if (ousuario.Obj_rol.Descripcion == "Administrador")
                 {
                     // Menu administrador
@@ -93,7 +82,6 @@ namespace FankyRecords.C_presentacion
                     TBDni.Clear();
                     TBClave.Clear();
                 }
-
             }
         }
         
@@ -105,15 +93,11 @@ namespace FankyRecords.C_presentacion
         private void Bsalir_Click(object sender, EventArgs e)
         {
             // Mensaje de confirmación
-            DialogResult result = MessageBox.Show("¿Desea cerrar la aplicación?",
-                                                      "Confirmación",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Desea cerrar la aplicación?","Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
-            
         }
 
         private void Login_KeyDown_1(object sender, KeyEventArgs e)

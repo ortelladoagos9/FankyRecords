@@ -25,10 +25,6 @@ namespace FankyRecords.C_negocio
                 {
                     CD_Compras.AgregarCompra(compra);
                 }
-                else
-                {
-                    CD_Compras.EditarCompra(compra);
-                }
             }
             catch (SqlException ex)
             {

@@ -189,6 +189,7 @@
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="C_presentacion\OpcionCombo.cs" />
+    <Compile Include="C_presentacion\SesionUsuario.cs" />
     <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +325,7 @@
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net7.0-windows7.0\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\net8.0-windows7.0\FontAwesome.Sharp.dll" />
     <Content Include="packages\FontAwesome.Sharp.6.6.0\lib\netcoreapp3.1\FontAwesome.Sharp.dll" />
+    <None Include="Resources\basura.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
