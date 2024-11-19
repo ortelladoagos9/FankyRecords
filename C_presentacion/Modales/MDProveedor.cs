@@ -18,7 +18,7 @@ namespace FankyRecords.C_presentacion.Modales
     public partial class MDProveedor : Form
     {
         public Proveedores Proveedormd { get; set; }
-        private readonly NegocioProveedores CN_Proveedores;
+        private readonly NegocioProveedores CN_Proveedores;     
 
         public MDProveedor()
         {
@@ -46,14 +46,15 @@ namespace FankyRecords.C_presentacion.Modales
             int iCol = e.ColumnIndex;
             //recorro el datgrid
             if(iRow >= 0 && iCol >= 0)
-            {   
+            {
                 //creo objeto proveedor y le asigno los datos del proveedor seleccionado en el datagrid
                 Proveedormd = new Proveedores()
-                {
+                { 
                     //solo necesito esos datos
                     RazonSocial = listaproveedores.Rows[iRow].Cells["razonSocial"].Value.ToString(),
                     Cuit = listaproveedores.Rows[iRow].Cells["cuit"].Value.ToString(),
                 };
+                
                 // devuelve OK y cierra form
                 this.DialogResult = DialogResult.OK;
                 this.Close();

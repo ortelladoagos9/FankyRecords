@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
-            this.cod_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,45 +39,60 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.LListaProductos = new System.Windows.Forms.Label();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obj_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoProductos
             // 
+            this.listadoProductos.AutoGenerateColumns = false;
             this.listadoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.listadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cod_prod,
-            this.nombre_prod,
-            this.descripcion,
-            this.categoria,
-            this.precio_venta,
-            this.stock,
-            this.stock_min,
+            this.ID_producto,
+            this.Codigo,
+            this.Nombre,
+            this.Descripcion,
+            this.Stock,
+            this.PrecioVenta,
+            this.PrecioCompra,
+            this.Stock_min,
             this.Estado,
-            this.Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Obj_categoria});
+            this.listadoProductos.DataSource = this.productosBindingSource;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle8;
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listadoProductos.Location = new System.Drawing.Point(0, 90);
             this.listadoProductos.Margin = new System.Windows.Forms.Padding(4);
@@ -95,70 +102,6 @@
             this.listadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoProductos.Size = new System.Drawing.Size(1182, 564);
             this.listadoProductos.TabIndex = 21;
-            // 
-            // cod_prod
-            // 
-            this.cod_prod.HeaderText = "Codigo";
-            this.cod_prod.MinimumWidth = 6;
-            this.cod_prod.Name = "cod_prod";
-            this.cod_prod.ReadOnly = true;
-            // 
-            // nombre_prod
-            // 
-            this.nombre_prod.HeaderText = "Nombre";
-            this.nombre_prod.MinimumWidth = 6;
-            this.nombre_prod.Name = "nombre_prod";
-            this.nombre_prod.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // precio_venta
-            // 
-            this.precio_venta.HeaderText = "Precio Venta";
-            this.precio_venta.MinimumWidth = 6;
-            this.precio_venta.Name = "precio_venta";
-            this.precio_venta.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            // 
-            // stock_min
-            // 
-            this.stock_min.HeaderText = "Stock mínimo";
-            this.stock_min.MinimumWidth = 6;
-            this.stock_min.Name = "stock_min";
-            this.stock_min.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Visible = false;
             // 
             // contenedorLista
             // 
@@ -241,6 +184,7 @@
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(184, 28);
             this.TBBuscador.TabIndex = 33;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
             // LListaProductos
             // 
@@ -257,6 +201,90 @@
             this.LListaProductos.Text = "Lista de Productos";
             this.LListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            // 
+            // ID_producto
+            // 
+            this.ID_producto.DataPropertyName = "ID_producto";
+            this.ID_producto.HeaderText = "ID_producto";
+            this.ID_producto.MinimumWidth = 6;
+            this.ID_producto.Name = "ID_producto";
+            this.ID_producto.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.MinimumWidth = 6;
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.DataPropertyName = "PrecioVenta";
+            this.PrecioVenta.HeaderText = "Precio Venta";
+            this.PrecioVenta.MinimumWidth = 6;
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
+            // PrecioCompra
+            // 
+            this.PrecioCompra.DataPropertyName = "PrecioCompra";
+            this.PrecioCompra.HeaderText = "Precio Compra";
+            this.PrecioCompra.MinimumWidth = 6;
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            // 
+            // Stock_min
+            // 
+            this.Stock_min.DataPropertyName = "Stock_min";
+            this.Stock_min.HeaderText = "Stock mínimo";
+            this.Stock_min.MinimumWidth = 6;
+            this.Stock_min.Name = "Stock_min";
+            this.Stock_min.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Obj_categoria
+            // 
+            this.Obj_categoria.DataPropertyName = "Obj_categoria";
+            this.Obj_categoria.HeaderText = "Categoría";
+            this.Obj_categoria.MinimumWidth = 6;
+            this.Obj_categoria.Name = "Obj_categoria";
+            this.Obj_categoria.ReadOnly = true;
+            // 
             // BuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -270,10 +298,13 @@
             this.Name = "BuscarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuscarProducto";
+            this.Load += new System.EventHandler(this.BuscarProducto_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarProducto_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,14 +319,16 @@
         public FontAwesome.Sharp.IconButton btnBuscar;
         public FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_venta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock_min;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_min;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Obj_categoria;
+        private System.Windows.Forms.BindingSource productosBindingSource;
     }
 }

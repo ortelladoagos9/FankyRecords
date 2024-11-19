@@ -285,6 +285,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
+            // Deselecciona la fila actual en el DataGridView
+            listadoProductos.ClearSelection();
+            // Resetea el ID del usuario seleccionado
+            productoIdSeleccionado = -1;
             TBcodigo_prod.Clear();
             TBnombre_prod.Clear();
             TBdescripcion.Clear();
@@ -384,7 +388,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 // Limpia los controles de entrada
                 Limpiar();
 
-                // Resetea el ID del cliente seleccionado
+                // Resetea el ID del producto seleccionado
                 productoIdSeleccionado = -1;
             }
         }

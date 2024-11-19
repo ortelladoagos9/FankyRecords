@@ -18,6 +18,7 @@ namespace FankyRecords.C_presentacion.Administrador
     {
         private readonly NegocioCompras CN_Compras;
         private readonly NegocioTipoDOc CN_TipoDoc;
+        private Proveedores proveedorSeleccionado;
 
         public registrarCompra()
         {
@@ -81,20 +82,18 @@ namespace FankyRecords.C_presentacion.Administrador
                             decimal cantidadExistente = Convert.ToDecimal(fila.Cells["Cantidad"].Value);
                             cantidadTotal = cantidadExistente + cantProd.Value;
 
-                           // decimal precioCompraExistente = Convert.ToDecimal(fila.Cells["Precio_Compra"].Value);
                             precioCompraActual = Convert.ToDecimal(TBprecio_compra.Text);
 
-                            //decimal precioVentaExistente = Convert.ToDecimal(fila.Cells["Precio_Venta"].Value);
                             precioVentaActual = Convert.ToDecimal(TBPrecio_Venta.Text);
 
                             // Actualizar la celda de cantidad
-                            fila.Cells["Cantidad"].Value = cantidadTotal;
+                            fila.Cells["Cantidad"].Value = cantidadTotal.ToString("N2");
                             // Actualizar la celda de subtotal
                             fila.Cells["Subtotal"].Value = cantidadTotal * precioCompraActual;
                             // Actualizar la celda de Precio_Compra
-                            fila.Cells["Precio_Compra"].Value = precioCompraActual;
+                            fila.Cells["Precio_Compra"].Value = precioCompraActual.ToString("N2");
                             // Actualizar la celda de Precio_Venta
-                            fila.Cells["Precio_Venta"].Value = precioVentaActual;
+                            fila.Cells["Precio_Venta"].Value = precioVentaActual.ToString("N2");
 
                             // Calcular de nuevo el total
                             foreach (DataGridViewRow filaCalculada in listaCompras.Rows)
@@ -160,40 +159,54 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Proveedores proveedorSeleccionado = new Proveedores
-            {
-                ID_proveedor = Convert.ToInt32(TBtotalPagar.Text),
-
-            };
-            Usuarios usuariosSeleccionados = new Usuarios
-            {
-                ID_usuarios = Convert.ToInt32(TBtotalPagar.Text),
-
-            };
             TipoDoc tipoDocSeleccionado = new TipoDoc
             {
                 ID_Tipo_Doc = Convert.ToInt32(cbTipoDoc.SelectedValue),
                 Descripcion = cbTipoDoc.Text
             };
             // Crear objeto productos
-            Productos producto = new Productos
+            /*Productos producto = new Productos
             {
                 PrecioVenta = Convert.ToDecimal(TBPrecio_Venta.Text),
                 PrecioCompra = Convert.ToDecimal(TBprecio_compra.Text),
                 Stock = Convert.ToInt32(cantProd.Text)
+            };*/
+            if (proveedorSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Crear objeto usuario
+            Usuarios usuarioSeleccionado = new Usuarios
+            {
+                ID_usuarios = usuarioActual.ID_usuarios, // Asume que tienes una variable que contiene al usuario actual
+                Nombre = usuarioActual.Nombre,
+                Apellido = usuarioActual.Apellido,
+                Obj_rol = usuarioActual.Obj_rol // Rol actual
             };
 
-            //crear objeto compras
+            // Asignar el usuario al objeto compra
             Compra registrarCompra = new Compra
             {
-                MontoTotal = Convert.ToInt32(TBtotalPagar.Text),
+                MontoTotal = Convert.ToDecimal(TBtotalPagar.Text),
                 NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
                 FechaCompra = Convert.ToDateTime(dtFechaCompra.Text),
                 Obj_proveedor = proveedorSeleccionado,
-                Obj_usuarios = usuariosSeleccionados,
+                Obj_usuarios = usuarioSeleccionado, // Asignar el usuario aquí
                 Obj_Tipo_Doc = tipoDocSeleccionado
             };
-          
+
+            registrarCompra.Obj_Tipo_Doc = tipoDocSeleccionado;
+            if (cbTipoDoc.SelectedItem is OpcionCombo opcionSeleccionada)
+            {
+                registrarCompra.Obj_Tipo_Doc.ID_Tipo_Doc = (int)opcionSeleccionada.Valor;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un tipo de documento válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -233,11 +246,12 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 else
                 {
-                    TBproducto.Select();
+                    TBCodProd.Select();
                 }
             }
         }
 
+        
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
             using (var modal = new MDProveedor())
@@ -246,6 +260,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
                 if (result == DialogResult.OK)
                 {
+                    proveedorSeleccionado = modal.Proveedormd; // Captura el proveedor seleccionado
                     TBrazonSocial.Text = modal.Proveedormd.RazonSocial.ToString();
                     TBcuit.Text = modal.Proveedormd.Cuit.ToString();
                 }

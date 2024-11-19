@@ -260,6 +260,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
+            // Deselecciona la fila actual en el DataGridView
+            DGlistaproveedores.ClearSelection();
+            // Resetea el ID del cliente seleccionado
+            proveedorIdSeleccionado = -1;
             TBRazonSocial.Clear();
             TBcuit.Clear();
             TBcorreo.Clear();
