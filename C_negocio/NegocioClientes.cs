@@ -67,7 +67,5 @@ namespace FankyRecords.C_negocio
             // Llamar al método que consulta la base de datos y devolver el resultado
             return CD_Clientes.ObtenerClientePorID(ID_cliente);
         }
-
-
     }
 }

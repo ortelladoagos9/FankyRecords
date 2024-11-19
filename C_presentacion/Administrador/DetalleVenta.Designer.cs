@@ -396,7 +396,9 @@
             this.listadoVentas.Location = new System.Drawing.Point(0, 435);
             this.listadoVentas.Margin = new System.Windows.Forms.Padding(4);
             this.listadoVentas.Name = "listadoVentas";
+            this.listadoVentas.ReadOnly = true;
             this.listadoVentas.RowHeadersWidth = 51;
+            this.listadoVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoVentas.Size = new System.Drawing.Size(1182, 219);
             this.listadoVentas.TabIndex = 21;
             // 
@@ -405,42 +407,49 @@
             this.codigo.HeaderText = "Código";
             this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
             // 
             // producto
             // 
             this.producto.HeaderText = "Producto";
             this.producto.MinimumWidth = 6;
             this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
             // 
             // precio
             // 
             this.precio.HeaderText = "Precio Venta";
             this.precio.MinimumWidth = 6;
             this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
             // nombre_cliente
             // 
             this.nombre_cliente.HeaderText = "Nombre Cliente";
             this.nombre_cliente.MinimumWidth = 6;
             this.nombre_cliente.Name = "nombre_cliente";
+            this.nombre_cliente.ReadOnly = true;
             // 
             // fecha
             // 
             this.fecha.HeaderText = "Fecha";
             this.fecha.MinimumWidth = 6;
             this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
             // 
             // subtotal
             // 
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.MinimumWidth = 6;
             this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
             // 
             // detalleVenta
             // 

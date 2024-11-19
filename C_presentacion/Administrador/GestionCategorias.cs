@@ -260,6 +260,10 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             TBdescripcion.Clear();
             rBactivo.Checked = true;
+            // Deselecciona la fila actual en el DataGridView
+            listadoCategorias.ClearSelection();
+            // Resetea el ID del usuario seleccionado
+            categoriaIdSeleccionada = -1;
         }
 
         private void listadoCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

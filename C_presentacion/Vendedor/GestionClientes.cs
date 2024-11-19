@@ -306,13 +306,16 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void Limpiar()
         {
+            // Deselecciona la fila actual en el DataGridView
+            listadoClientes.ClearSelection();
+            // Resetea el ID del cliente seleccionado
+            clienteSeleccionado = -1;
             TBnombre.Clear();
             TBapellido.Clear();
             TBtelefono.Clear();
             TBdni.Clear();
             TBemail.Clear();
             rBactivo.Checked = true;
-
         }
 
         private void Blimpiar_Click(object sender, EventArgs e)

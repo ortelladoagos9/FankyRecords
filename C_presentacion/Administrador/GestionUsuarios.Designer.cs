@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,7 +43,6 @@
             this.TBapellido = new System.Windows.Forms.TextBox();
             this.TBdni = new System.Windows.Forms.TextBox();
             this.LDireccion = new System.Windows.Forms.Label();
-            this.TBtelefono = new System.Windows.Forms.MaskedTextBox();
             this.DTFechanac = new System.Windows.Forms.DateTimePicker();
             this.TBdireccion = new System.Windows.Forms.TextBox();
             this.LEmail = new System.Windows.Forms.Label();
@@ -54,27 +54,19 @@
             this.TBclave = new System.Windows.Forms.TextBox();
             this.TBconfirmarClave = new System.Windows.Forms.TextBox();
             this.contenedorDatos = new System.Windows.Forms.Panel();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.TBtelefono = new System.Windows.Forms.TextBox();
             this.rutaFoto = new System.Windows.Forms.TextBox();
             this.Bfoto = new System.Windows.Forms.Button();
             this.CBRol = new System.Windows.Forms.ComboBox();
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.listadoUsuarios = new System.Windows.Forms.DataGridView();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.LListaUsuarios = new System.Windows.Forms.Label();
             this.Lbuscar = new System.Windows.Forms.Label();
-            this.CBbuscar = new System.Windows.Forms.ComboBox();
             this.contenedorFotoBotones = new System.Windows.Forms.Panel();
+            this.TBlimpiar = new FontAwesome.Sharp.IconButton();
             this.picFotoUsuario = new System.Windows.Forms.PictureBox();
             this.Bguardar = new FontAwesome.Sharp.IconButton();
             this.Beliminar = new FontAwesome.Sharp.IconButton();
@@ -82,15 +74,29 @@
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             this.contenedorFotoBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.contenedorGestionUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LGestionUsuarios
@@ -219,17 +225,6 @@
             this.LDireccion.TabIndex = 10;
             this.LDireccion.Text = "Dirección";
             // 
-            // TBtelefono
-            // 
-            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(614, 77);
-            this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TBtelefono.Mask = "(000)0000000";
-            this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(242, 28);
-            this.TBtelefono.TabIndex = 11;
-            // 
             // DTFechanac
             // 
             this.DTFechanac.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -238,7 +233,7 @@
             this.DTFechanac.Location = new System.Drawing.Point(59, 272);
             this.DTFechanac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTFechanac.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
-            this.DTFechanac.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.DTFechanac.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.DTFechanac.Name = "DTFechanac";
             this.DTFechanac.Size = new System.Drawing.Size(242, 28);
             this.DTFechanac.TabIndex = 15;
@@ -351,6 +346,8 @@
             // contenedorDatos
             // 
             this.contenedorDatos.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorDatos.Controls.Add(this.lblMessage);
+            this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.rutaFoto);
             this.contenedorDatos.Controls.Add(this.Bfoto);
             this.contenedorDatos.Controls.Add(this.CBRol);
@@ -366,7 +363,6 @@
             this.contenedorDatos.Controls.Add(this.LEmail);
             this.contenedorDatos.Controls.Add(this.TBdireccion);
             this.contenedorDatos.Controls.Add(this.DTFechanac);
-            this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.LDireccion);
             this.contenedorDatos.Controls.Add(this.TBdni);
             this.contenedorDatos.Controls.Add(this.TBapellido);
@@ -383,6 +379,26 @@
             this.contenedorDatos.Name = "contenedorDatos";
             this.contenedorDatos.Size = new System.Drawing.Size(921, 355);
             this.contenedorDatos.TabIndex = 1;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(343, 299);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 19);
+            this.lblMessage.TabIndex = 33;
+            // 
+            // TBtelefono
+            // 
+            this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Location = new System.Drawing.Point(614, 77);
+            this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBtelefono.MaxLength = 10;
+            this.TBtelefono.Name = "TBtelefono";
+            this.TBtelefono.Size = new System.Drawing.Size(241, 28);
+            this.TBtelefono.TabIndex = 32;
+            this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // rutaFoto
             // 
@@ -413,10 +429,6 @@
             this.CBRol.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBRol.ForeColor = System.Drawing.Color.Black;
             this.CBRol.FormattingEnabled = true;
-            this.CBRol.Items.AddRange(new object[] {
-            "Administrativo",
-            "Vendedor",
-            "Administrador"});
             this.CBRol.Location = new System.Drawing.Point(614, 143);
             this.CBRol.Name = "CBRol";
             this.CBRol.Size = new System.Drawing.Size(242, 29);
@@ -453,6 +465,7 @@
             // 
             // listadoUsuarios
             // 
+            this.listadoUsuarios.AutoGenerateColumns = false;
             this.listadoUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
@@ -468,17 +481,19 @@
             this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_usuario,
-            this.dni,
-            this.apellido,
-            this.nombre,
-            this.FechaNac,
-            this.direccion,
-            this.mail,
-            this.telefono,
-            this.clave,
-            this.rol,
-            this.Estado});
+            this.ID_usuarios,
+            this.Dni,
+            this.Nombre,
+            this.Apellido,
+            this.Correo,
+            this.Clave,
+            this.Direccion,
+            this.Telefono,
+            this.FechaNacimiento,
+            this.FechaCreacion,
+            this.Estado,
+            this.RolDescripcion});
+            this.listadoUsuarios.DataSource = this.usuariosBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -490,6 +505,7 @@
             this.listadoUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoUsuarios.Location = new System.Drawing.Point(0, 445);
             this.listadoUsuarios.Name = "listadoUsuarios";
+            this.listadoUsuarios.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,85 +515,16 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoUsuarios.RowHeadersWidth = 51;
+            this.listadoUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoUsuarios.Size = new System.Drawing.Size(1182, 209);
             this.listadoUsuarios.TabIndex = 11;
+            this.listadoUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
+            this.listadoUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
+            this.listadoUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellDoubleClick);
             // 
-            // id_usuario
+            // usuariosBindingSource1
             // 
-            this.id_usuario.HeaderText = "ID ";
-            this.id_usuario.MinimumWidth = 6;
-            this.id_usuario.Name = "id_usuario";
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "DNI";
-            this.dni.MinimumWidth = 6;
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "Fecha Nacimiento";
-            this.FechaNac.MinimumWidth = 6;
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.MinimumWidth = 6;
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // mail
-            // 
-            this.mail.HeaderText = "Email";
-            this.mail.MinimumWidth = 6;
-            this.mail.Name = "mail";
-            this.mail.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.MinimumWidth = 6;
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // clave
-            // 
-            this.clave.HeaderText = "Contraseña";
-            this.clave.MinimumWidth = 6;
-            this.clave.Name = "clave";
-            this.clave.ReadOnly = true;
-            this.clave.Visible = false;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.usuariosBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
             // 
             // LListaUsuarios
             // 
@@ -600,36 +547,17 @@
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lbuscar.Location = new System.Drawing.Point(611, 0);
+            this.Lbuscar.Location = new System.Drawing.Point(839, 0);
             this.Lbuscar.Name = "Lbuscar";
             this.Lbuscar.Size = new System.Drawing.Size(115, 28);
             this.Lbuscar.TabIndex = 0;
-            this.Lbuscar.Text = "Buscar por:";
+            this.Lbuscar.Text = "Buscar:";
             this.Lbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // CBbuscar
-            // 
-            this.CBbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CBbuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBbuscar.ForeColor = System.Drawing.Color.Black;
-            this.CBbuscar.FormattingEnabled = true;
-            this.CBbuscar.IntegralHeight = false;
-            this.CBbuscar.Items.AddRange(new object[] {
-            "Nro DNI",
-            "Nro ID",
-            "Apellido",
-            "Nombre",
-            "Email"});
-            this.CBbuscar.Location = new System.Drawing.Point(726, 0);
-            this.CBbuscar.Name = "CBbuscar";
-            this.CBbuscar.Size = new System.Drawing.Size(171, 29);
-            this.CBbuscar.TabIndex = 1;
             // 
             // contenedorFotoBotones
             // 
             this.contenedorFotoBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorFotoBotones.Controls.Add(this.TBlimpiar);
             this.contenedorFotoBotones.Controls.Add(this.picFotoUsuario);
             this.contenedorFotoBotones.Controls.Add(this.Bguardar);
             this.contenedorFotoBotones.Controls.Add(this.Beliminar);
@@ -641,13 +569,38 @@
             this.contenedorFotoBotones.Size = new System.Drawing.Size(261, 417);
             this.contenedorFotoBotones.TabIndex = 17;
             // 
+            // TBlimpiar
+            // 
+            this.TBlimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBlimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.TBlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TBlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.TBlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBlimpiar.ForeColor = System.Drawing.Color.White;
+            this.TBlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.TBlimpiar.IconColor = System.Drawing.Color.White;
+            this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TBlimpiar.IconSize = 21;
+            this.TBlimpiar.Location = new System.Drawing.Point(39, 369);
+            this.TBlimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TBlimpiar.Name = "TBlimpiar";
+            this.TBlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TBlimpiar.Size = new System.Drawing.Size(183, 31);
+            this.TBlimpiar.TabIndex = 33;
+            this.TBlimpiar.Text = "Limpiar";
+            this.TBlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TBlimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.TBlimpiar.UseVisualStyleBackColor = false;
+            this.TBlimpiar.Click += new System.EventHandler(this.TBlimpiar_Click);
+            // 
             // picFotoUsuario
             // 
             this.picFotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picFotoUsuario.BackColor = System.Drawing.Color.Transparent;
             this.picFotoUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFotoUsuario.BackgroundImage")));
             this.picFotoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFotoUsuario.Location = new System.Drawing.Point(38, 45);
+            this.picFotoUsuario.Location = new System.Drawing.Point(38, 23);
             this.picFotoUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picFotoUsuario.Name = "picFotoUsuario";
             this.picFotoUsuario.Size = new System.Drawing.Size(183, 192);
@@ -667,7 +620,7 @@
             this.Bguardar.IconColor = System.Drawing.Color.White;
             this.Bguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bguardar.IconSize = 25;
-            this.Bguardar.Location = new System.Drawing.Point(38, 266);
+            this.Bguardar.Location = new System.Drawing.Point(39, 226);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Bguardar.Size = new System.Drawing.Size(183, 31);
@@ -690,7 +643,7 @@
             this.Beliminar.IconColor = System.Drawing.Color.White;
             this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(38, 360);
+            this.Beliminar.Location = new System.Drawing.Point(39, 320);
             this.Beliminar.Name = "Beliminar";
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(183, 31);
@@ -713,7 +666,7 @@
             this.Beditar.IconColor = System.Drawing.Color.White;
             this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(38, 313);
+            this.Beditar.Location = new System.Drawing.Point(39, 273);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beditar.Size = new System.Drawing.Size(183, 31);
@@ -728,11 +681,9 @@
             // 
             this.contenedorLista.BackColor = System.Drawing.Color.White;
             this.contenedorLista.Controls.Add(this.Lbuscar);
-            this.contenedorLista.Controls.Add(this.CBbuscar);
             this.contenedorLista.Controls.Add(this.LListaUsuarios);
             this.contenedorLista.Controls.Add(this.TBBuscador);
             this.contenedorLista.Controls.Add(this.btnBuscar);
-            this.contenedorLista.Controls.Add(this.btnLimpiar);
             this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.contenedorLista.Location = new System.Drawing.Point(0, 417);
             this.contenedorLista.Name = "contenedorLista";
@@ -744,11 +695,12 @@
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
             this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscador.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscador.Location = new System.Drawing.Point(897, 0);
+            this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(171, 28);
             this.TBBuscador.TabIndex = 32;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
             // btnBuscar
             // 
@@ -759,29 +711,12 @@
             this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1068, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(1125, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(57, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1125, 0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(57, 28);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // contenedorGestionUsuarios
             // 
@@ -796,6 +731,109 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
+            // 
+            // ID_usuarios
+            // 
+            this.ID_usuarios.DataPropertyName = "ID_usuarios";
+            this.ID_usuarios.HeaderText = "ID_usuarios";
+            this.ID_usuarios.MinimumWidth = 6;
+            this.ID_usuarios.Name = "ID_usuarios";
+            this.ID_usuarios.ReadOnly = true;
+            this.ID_usuarios.Visible = false;
+            // 
+            // Dni
+            // 
+            this.Dni.DataPropertyName = "Dni";
+            this.Dni.HeaderText = "Dni";
+            this.Dni.MinimumWidth = 6;
+            this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Clave
+            // 
+            this.Clave.DataPropertyName = "Clave";
+            this.Clave.HeaderText = "Clave";
+            this.Clave.MinimumWidth = 6;
+            this.Clave.Name = "Clave";
+            this.Clave.ReadOnly = true;
+            this.Clave.Visible = false;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.MinimumWidth = 6;
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "FechaCreacion";
+            this.FechaCreacion.MinimumWidth = 6;
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            this.FechaCreacion.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // RolDescripcion
+            // 
+            this.RolDescripcion.DataPropertyName = "RolDescripcion";
+            this.RolDescripcion.HeaderText = "Rol";
+            this.RolDescripcion.MinimumWidth = 6;
+            this.RolDescripcion.Name = "RolDescripcion";
+            this.RolDescripcion.ReadOnly = true;
             // 
             // GestionUsuarios
             // 
@@ -818,11 +856,13 @@
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             this.contenedorFotoBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFotoUsuario)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorGestionUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -832,14 +872,12 @@
         public FontAwesome.Sharp.IconButton Bguardar;
         public FontAwesome.Sharp.IconButton Beditar;
         public FontAwesome.Sharp.IconButton Beliminar;
-        public FontAwesome.Sharp.IconButton btnLimpiar;
         public FontAwesome.Sharp.IconButton btnBuscar;
         public System.Windows.Forms.Panel contenedorFotoBotones;
         public System.Windows.Forms.Panel contenedorGestionUsuarios;
         public System.Windows.Forms.DataGridView listadoUsuarios;
         public System.Windows.Forms.Panel contenedorLista;
         public System.Windows.Forms.Label Lbuscar;
-        public System.Windows.Forms.ComboBox CBbuscar;
         public System.Windows.Forms.Panel contenedorDatos;
         public System.Windows.Forms.Label LListaUsuarios;
         public System.Windows.Forms.Label LGestionUsuarios;
@@ -852,7 +890,6 @@
         public System.Windows.Forms.TextBox TBapellido;
         public System.Windows.Forms.TextBox TBdni;
         public System.Windows.Forms.Label LDireccion;
-        public System.Windows.Forms.MaskedTextBox TBtelefono;
         public System.Windows.Forms.DateTimePicker DTFechanac;
         public System.Windows.Forms.TextBox TBdireccion;
         public System.Windows.Forms.Label LEmail;
@@ -869,17 +906,24 @@
         public System.Windows.Forms.TextBox rutaFoto;
         public System.Windows.Forms.Button Bfoto;
         public System.Windows.Forms.TextBox TBBuscador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
+        public FontAwesome.Sharp.IconButton TBlimpiar;
+        public System.Windows.Forms.TextBox TBtelefono;
+        private System.Windows.Forms.Label lblMessage;
+      
+        private System.Windows.Forms.BindingSource usuariosBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_usuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RolDescripcion;
     }
 }

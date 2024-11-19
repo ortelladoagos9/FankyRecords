@@ -15,7 +15,6 @@ namespace FankyRecords.C_presentacion.Administrador
         public reporteCompras()
         {
             InitializeComponent();
-            this.cbBuscarVentas.SelectedIndex = 0;
             this.CBproveedor.SelectedIndex = 0; 
         }
 

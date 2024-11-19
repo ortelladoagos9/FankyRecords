@@ -18,7 +18,6 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             InitializeComponent();
             this.cbTipoDoc.SelectedIndex = 0;
-            this.cbProductos.SelectedIndex = 0;
             // Inicializar el temporizador
             delayTimer = new System.Windows.Forms.Timer();
             delayTimer.Interval = 2000; // Ajusta el intervalo según tus necesidades (en milisegundos)
@@ -182,6 +181,19 @@ namespace FankyRecords.C_presentacion.Administrador
             TBStock.Clear();
             TBProducto.Clear();
             cbTipoDoc.SelectedIndex = -1;  // Deselect the ComboBox
+        }
+
+        private void registrarVentas_Load(object sender, EventArgs e)
+        {
+            // Obtén la fecha actual del sistema
+            DateTime fechaActual = DateTime.Now.Date;
+
+            // Configura la propiedad Text del DateTimePicker a la fecha actual
+            DTFechaVenta.Value = fechaActual;
+
+            // Configura el MinDate y MaxDate para que sean la fecha actual
+            DTFechaVenta.MinDate = fechaActual;
+            DTFechaVenta.MaxDate = fechaActual;
         }
     }
 }

@@ -133,6 +133,25 @@ namespace FankyRecords.C_datos
                 cmd.ExecuteNonQuery();
 
             }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("UQ_Proveedores_Correo"))
+                {
+                    throw new Exception("El valor 'Correo' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Proveedores_Telefono"))
+                {
+                    throw new Exception("El valor 'Telefono' ya existe. No se permiten duplicados.", ex);
+                }
+                else if (ex.Message.Contains("UQ_Proveedores_Cuit"))
+                {
+                    throw new Exception("El valor 'Cuit' ya existe. No se permiten duplicados.", ex);
+                }
+                else
+                {
+                    throw new Exception("Error, vuelva a intentarlo", ex);
+                }
+            }
             catch (Exception ex)
             {
                 throw new Exception("Error al editar el proveedor", ex);
@@ -181,6 +200,41 @@ namespace FankyRecords.C_datos
                 conexion.Close();
             }
             return existe;
+        }
+
+        public Proveedores ObtenerProveedoresPorID(int ID_proveedor)
+        {
+            Proveedores proveedores = null;
+            try
+            {
+                conexion.Open();
+                string query = "SELECT * FROM Proveedores WHERE ID_proveedor = @ID_proveedor";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@ID_proveedor", ID_proveedor);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    proveedores = new Proveedores
+                    {
+                        ID_proveedor = int.Parse(reader["ID_proveedor"].ToString()),
+                        RazonSocial = reader["RazonSocial"].ToString(),
+                        Correo = reader["Correo"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),
+                        Estado = reader["Estado"].ToString(),
+                        Cuit = reader["Cuit"].ToString(),
+                        Domicilio = reader["Domicilio"].ToString()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return proveedores;
         }
     }
 }
