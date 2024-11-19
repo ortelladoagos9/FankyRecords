@@ -39,7 +39,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // Configura el MinDate y MaxDate para que sean la fecha actual
             dtFechaCompra.MinDate = fechaActual;
             dtFechaCompra.MaxDate = fechaActual;
-
+            TBNumFactura.Select();
         }
 
         private void BAgregarProd_Click(object sender, EventArgs e)
@@ -274,13 +274,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Limpiar()
         {
-            TBrazonSocial.Clear();
-            cbTipoDoc.SelectedIndex = 0;
-            TBNumFactura.Clear();
             TBCodProd.Clear();
             TBproducto.Clear();
             TBprecio_compra.Clear();
-            TBcuit.Clear();
             cantProd.Value = 1;
         }
 
