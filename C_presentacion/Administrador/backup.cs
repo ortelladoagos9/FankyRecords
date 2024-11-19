@@ -26,7 +26,8 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
         private void Bbackup_Click(object sender, EventArgs e)
-        { //Se debe crear una carpeta en el disco local para poder realizar el backup, de lo contrario se genera un error
+        { 
+            //Se debe crear una carpeta en el disco local para poder realizar el backup, de lo contrario se genera un error
             this.backupPath = TBrutaGuardar.Text.ToString() + @"\Fanky_Records_BD " + DateTime.Now.ToString("dd-MM-yyyy HH.mm") ;
 
             try
@@ -43,12 +44,9 @@ namespace FankyRecords.C_presentacion.Administrador
                 // Ejecutar la consulta
                 command.ExecuteNonQuery();
                 MessageBox.Show("Backup realizado con éxito.");
-
-                   
             }
             catch (Exception ex)
             {
-                
                 MessageBox.Show("Ocurrió un error inesperado:" + ex.Message);
             }
             finally
@@ -59,7 +57,6 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Bcancelar_Click(object sender, EventArgs e)
         {
-            
             MessageBox.Show("Operación cancelada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Limpiar();
         }
