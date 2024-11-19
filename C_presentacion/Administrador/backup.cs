@@ -57,18 +57,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Bcancelar_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBbaseDatos.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBrutaGuardar.Text))
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
                 if (C_negocio.Validaciones.mensajeCancelar())
                 {
                     Limpiar();
                 }
-            }
         }
 
         private void BtnNavegar_Click(object sender, EventArgs e)
