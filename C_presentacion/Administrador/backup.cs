@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class backup : Form
@@ -25,8 +26,8 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
         }
         private void Bbackup_Click(object sender, EventArgs e)
-        {
-            this.backupPath = TBrutaGuardar.Text.ToString() + this.nombreBd;
+        { //Se debe crear una carpeta en el disco local para poder realizar el backup, de lo contrario se genera un error
+            this.backupPath = TBrutaGuardar.Text.ToString() + @"\Fanky_Records_BD " + DateTime.Now.ToString("dd-MM-yyyy HH.mm") ;
 
             try
             {
@@ -34,14 +35,15 @@ namespace FankyRecords.C_presentacion.Administrador
                 conexion.Open();
 
                 // Construir la consulta SQL para realizar el backup
-                string query = $"BACKUP DATABASE [DB_FANKY_RECORDS] TO DISK = '{backupPath}'";
+                string query = $"BACKUP DATABASE [DB_FANKY_RECORDS] TO DISK = '{backupPath}.bak' WITH FORMAT, INIT;";
 
                 // Ejecutamos el comando SQL para hacer el backup
                 SqlCommand command = new SqlCommand(query, conexion);
                 
-                        // Ejecutar la consulta
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Backup realizado con éxito.");
+                // Ejecutar la consulta
+                command.ExecuteNonQuery();
+                MessageBox.Show("Backup realizado con éxito.");
+
                    
             }
             catch (Exception ex)
@@ -57,10 +59,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void Bcancelar_Click(object sender, EventArgs e)
         {
-                if (C_negocio.Validaciones.mensajeCancelar())
-                {
-                    Limpiar();
-                }
+            
+            MessageBox.Show("Operación cancelada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Limpiar();
         }
 
         private void BtnNavegar_Click(object sender, EventArgs e)
