@@ -14,6 +14,6 @@ namespace FankyRecords.C_entidad
         public decimal SubTotal { get; set; }
         public Productos Obj_producto { get; set; }
         public Compra Obj_registrarCompra { get; set; }
-
+        public decimal PrecioVenta { get; set; }
     }
 }

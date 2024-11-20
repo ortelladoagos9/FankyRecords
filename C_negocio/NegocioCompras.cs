@@ -28,9 +28,16 @@ namespace FankyRecords.C_negocio
             return CD_Compras.RegistrarCompra(compra,detalleCompra,out Mensaje);
         }
 
-        public List<Compra> ListarCompras()
+        public Compra ObtenerCompra(string numero)
         {
-            return CD_Compras.ListarCompras();
+            Compra compra = CD_Compras.ObtenerCompra(numero);
+
+            if (compra.ID_compra != 0)
+            {
+                List<DetalleCompra> detalleCompras = CD_Compras.ObtenerDetalleCompra(compra.ID_compra);
+                compra.Obj_DetalleCompra = detalleCompras;
+            }
+            return compra;
         }
 
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,9 +38,9 @@
             this.LdetalleCompra = new System.Windows.Forms.Label();
             this.TBmontoTotal = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBrazonSocial = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TB = new System.Windows.Forms.TextBox();
+            this.TBcuit = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LnumDoc = new System.Windows.Forms.Label();
             this.LmontoTotal = new System.Windows.Forms.Label();
@@ -54,23 +55,27 @@
             this.FechaCopraDetalle = new System.Windows.Forms.Label();
             this.TBnumCompra = new System.Windows.Forms.TextBox();
             this.listadoCompras = new System.Windows.Forms.DataGridView();
+            this.TBNumeroCompra = new System.Windows.Forms.TextBox();
+            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoComprado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadComprada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDdetalleCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objregistrarCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TBNumeroCompra);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnBuscarNroCompra);
             this.panel1.Controls.Add(this.contenedorDetalleCompra);
@@ -161,9 +166,9 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TBrazonSocial);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.TB);
+            this.groupBox2.Controls.Add(this.TBcuit);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
@@ -176,15 +181,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Proveedor";
             // 
-            // textBox1
+            // TBrazonSocial
             // 
-            this.textBox1.Location = new System.Drawing.Point(517, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(203, 28);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
+            this.TBrazonSocial.Location = new System.Drawing.Point(517, 66);
+            this.TBrazonSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.TBrazonSocial.Name = "TBrazonSocial";
+            this.TBrazonSocial.ReadOnly = true;
+            this.TBrazonSocial.Size = new System.Drawing.Size(203, 28);
+            this.TBrazonSocial.TabIndex = 3;
+            this.TBrazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
             // label3
             // 
@@ -196,15 +201,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Razón Social:";
             // 
-            // TB
+            // TBcuit
             // 
-            this.TB.Location = new System.Drawing.Point(136, 66);
-            this.TB.Margin = new System.Windows.Forms.Padding(2);
-            this.TB.Name = "TB";
-            this.TB.ReadOnly = true;
-            this.TB.Size = new System.Drawing.Size(187, 28);
-            this.TB.TabIndex = 1;
-            this.TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
+            this.TBcuit.Location = new System.Drawing.Point(136, 66);
+            this.TBcuit.Margin = new System.Windows.Forms.Padding(2);
+            this.TBcuit.Name = "TBcuit";
+            this.TBcuit.ReadOnly = true;
+            this.TBcuit.Size = new System.Drawing.Size(187, 28);
+            this.TBcuit.TabIndex = 1;
+            this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // label2
             // 
@@ -357,6 +362,7 @@
             // listadoCompras
             // 
             this.listadoCompras.AllowUserToAddRows = false;
+            this.listadoCompras.AutoGenerateColumns = false;
             this.listadoCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoCompras.BackgroundColor = System.Drawing.Color.White;
@@ -372,14 +378,15 @@
             this.listadoCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PrecioCompra,
+            this.Cantidad,
+            this.SubTotal,
             this.codigo,
             this.productoComprado,
-            this.precioCompra,
-            this.cantidadComprada,
-            this.proveedor,
-            this.num_factura,
-            this.fecha,
-            this.subtotal});
+            this.iDdetalleCompraDataGridViewTextBoxColumn,
+            this.objregistrarCompraDataGridViewTextBoxColumn,
+            this.precioVentaDataGridViewTextBoxColumn});
+            this.listadoCompras.DataSource = this.detalleCompraBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -392,57 +399,91 @@
             this.listadoCompras.Location = new System.Drawing.Point(0, 435);
             this.listadoCompras.Margin = new System.Windows.Forms.Padding(2);
             this.listadoCompras.Name = "listadoCompras";
+            this.listadoCompras.ReadOnly = true;
             this.listadoCompras.RowHeadersWidth = 51;
             this.listadoCompras.Size = new System.Drawing.Size(1182, 219);
             this.listadoCompras.TabIndex = 1;
+            // 
+            // TBNumeroCompra
+            // 
+            this.TBNumeroCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBNumeroCompra.Location = new System.Drawing.Point(1024, 191);
+            this.TBNumeroCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNumeroCompra.Name = "TBNumeroCompra";
+            this.TBNumeroCompra.ReadOnly = true;
+            this.TBNumeroCompra.Size = new System.Drawing.Size(121, 26);
+            this.TBNumeroCompra.TabIndex = 26;
+            // 
+            // detalleCompraBindingSource
+            // 
+            this.detalleCompraBindingSource.DataSource = typeof(FankyRecords.C_entidad.DetalleCompra);
+            // 
+            // PrecioCompra
+            // 
+            this.PrecioCompra.DataPropertyName = "PrecioCompra";
+            this.PrecioCompra.HeaderText = "PrecioCompra";
+            this.PrecioCompra.MinimumWidth = 6;
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.DataPropertyName = "SubTotal";
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
             // 
             // codigo
             // 
             this.codigo.HeaderText = "Código";
             this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
             // 
             // productoComprado
             // 
             this.productoComprado.HeaderText = "Producto";
             this.productoComprado.MinimumWidth = 6;
             this.productoComprado.Name = "productoComprado";
+            this.productoComprado.ReadOnly = true;
+            this.productoComprado.Visible = false;
             // 
-            // precioCompra
+            // iDdetalleCompraDataGridViewTextBoxColumn
             // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.MinimumWidth = 6;
-            this.precioCompra.Name = "precioCompra";
+            this.iDdetalleCompraDataGridViewTextBoxColumn.DataPropertyName = "ID_detalleCompra";
+            this.iDdetalleCompraDataGridViewTextBoxColumn.HeaderText = "ID_detalleCompra";
+            this.iDdetalleCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDdetalleCompraDataGridViewTextBoxColumn.Name = "iDdetalleCompraDataGridViewTextBoxColumn";
+            this.iDdetalleCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDdetalleCompraDataGridViewTextBoxColumn.Visible = false;
             // 
-            // cantidadComprada
+            // objregistrarCompraDataGridViewTextBoxColumn
             // 
-            this.cantidadComprada.HeaderText = "Cantidad";
-            this.cantidadComprada.MinimumWidth = 6;
-            this.cantidadComprada.Name = "cantidadComprada";
+            this.objregistrarCompraDataGridViewTextBoxColumn.DataPropertyName = "Obj_registrarCompra";
+            this.objregistrarCompraDataGridViewTextBoxColumn.HeaderText = "Obj_registrarCompra";
+            this.objregistrarCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.objregistrarCompraDataGridViewTextBoxColumn.Name = "objregistrarCompraDataGridViewTextBoxColumn";
+            this.objregistrarCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.objregistrarCompraDataGridViewTextBoxColumn.Visible = false;
             // 
-            // proveedor
+            // precioVentaDataGridViewTextBoxColumn
             // 
-            this.proveedor.HeaderText = "Proveedor";
-            this.proveedor.MinimumWidth = 6;
-            this.proveedor.Name = "proveedor";
-            // 
-            // num_factura
-            // 
-            this.num_factura.HeaderText = "Número Factura";
-            this.num_factura.MinimumWidth = 6;
-            this.num_factura.Name = "num_factura";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.MinimumWidth = 6;
-            this.fecha.Name = "fecha";
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
+            this.precioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precioVentaDataGridViewTextBoxColumn.Name = "precioVentaDataGridViewTextBoxColumn";
+            this.precioVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioVentaDataGridViewTextBoxColumn.Visible = false;
             // 
             // detalleCompra
             // 
@@ -466,6 +507,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,8 +525,8 @@
         private System.Windows.Forms.TextBox TBtipoDoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBcuit;
+        private System.Windows.Forms.TextBox TBrazonSocial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LmontoTotal;
         private System.Windows.Forms.TextBox TBmontoTotal;
@@ -496,13 +538,15 @@
         private System.Windows.Forms.TextBox TBUsuario;
         private System.Windows.Forms.TextBox TBNumFactura;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TBNumeroCompra;
+        private System.Windows.Forms.BindingSource detalleCompraBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn productoComprado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadComprada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn num_factura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDdetalleCompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objregistrarCompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioVentaDataGridViewTextBoxColumn;
     }
 }
