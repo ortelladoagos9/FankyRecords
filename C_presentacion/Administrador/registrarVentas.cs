@@ -299,7 +299,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 if (result == DialogResult.OK)
                 {
                     clienteSeleccionado = modal.Clientemd; // Captura el proveedor seleccionado
-                    TBNombreCompleto.Text = modal.Clientemd.Nombre.ToString()+""+ modal.Clientemd.Apellido.ToString();
+                    TBNombreCompleto.Text = modal.Clientemd.Nombre.ToString()+" "+ modal.Clientemd.Apellido.ToString();
                     TBNroDocumento.Text = modal.Clientemd.Documento.ToString();
                 }
                 else
