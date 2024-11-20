@@ -42,6 +42,7 @@
             this.Stock_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obj_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
@@ -50,12 +51,13 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.LListaProductos = new System.Windows.Forms.Label();
-            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoProductos
@@ -86,7 +88,7 @@
             this.Stock_min,
             this.Estado,
             this.Obj_categoria});
-            this.listadoProductos.DataSource = this.productosBindingSource1;
+            this.listadoProductos.DataSource = this.productosBindingSource2;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +186,10 @@
             this.Obj_categoria.MinimumWidth = 6;
             this.Obj_categoria.Name = "Obj_categoria";
             this.Obj_categoria.ReadOnly = true;
+            // 
+            // productosBindingSource1
+            // 
+            this.productosBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Productos);
             // 
             // productosBindingSource
             // 
@@ -287,9 +293,9 @@
             this.LListaProductos.Text = "Lista de Productos";
             this.LListaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // productosBindingSource1
+            // productosBindingSource2
             // 
-            this.productosBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            this.productosBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Productos);
             // 
             // BuscarProducto
             // 
@@ -307,11 +313,12 @@
             this.Load += new System.EventHandler(this.BuscarProducto_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarProducto_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Obj_categoria;
         private System.Windows.Forms.BindingSource productosBindingSource;
         private System.Windows.Forms.BindingSource productosBindingSource1;
+        private System.Windows.Forms.BindingSource productosBindingSource2;
     }
 }
