@@ -209,8 +209,82 @@ ADD CONSTRAINT UQ_Proveedores_RazonSocial UNIQUE (RazonSocial);
 alter table Proveedores
 ALTER COLUMN Telefono VARCHAR(15) NOT NULL;
 
---delete from CATEGORIAS
---where Id_categoria = 10
-DBCC CHECKIDENT (categorias, RESEED, 5); 
+alter table Detalle_Compras
+add PrecioVenta float not null;
 
+--DBCC CHECKIDENT (categorias, RESEED, 5); 
+
+INSERT INTO Rol(Descripcion) 
+VALUES ('Administrador'),('Administrativo'),('Vendedor')
+select * from Rol;
+
+INSERT INTO Tipo_documento(Descripcion) 
+VALUES ('Factura A'),('Factura B'),('Factura C')
+select * from Tipo_documento;
+
+INSERT INTO Tipo_Nota_Credito(Descripcion) 
+VALUES ('Nota de Crédito A'),('Nota de Crédito B'),('Nota de Crédito C')
+select * from Tipo_Nota_Credito;
+
+--proceso para registrar una compra
+
+create type [dbo].[Detalle_Compras] as table (
+		[PrecioCompra] decimal(10,2) not null,
+		[Cantidad] int not null,
+		[SubTotal] decimal(10,2) not null,
+		[ID_producto] int not null,
+        [PrecioVenta] decimal(10,2) not null
+)
+
+GO
+
+--drop procedure sp_RegistarCompra;
+
+CREATE PROCEDURE sp_RegistrarCompra(
+	@NumeroCompra int,
+    @MontoTotal decimal(10,2),
+    @NumeroFactura int,
+    @FechaCompra datetime,
+    @ID_proveedor int,
+    @ID_usuarios int,
+    @ID_Tipo_Doc int,
+    @DetalleCompra [Detalle_Compras] READONLY,
+    @Resultado bit OUTPUT,
+    @Mensaje varchar(200) OUTPUT
+)
+AS
+BEGIN
+    BEGIN TRY
+        DECLARE @ID_compras int = 0;
+        SET @Resultado = 1;
+        SET @Mensaje = '';
+
+        BEGIN TRANSACTION registro;
+
+        INSERT INTO Compras (NumeroCompra,MontoTotal, NumeroFactura, FechaCompra, ID_proveedor, ID_usuarios, ID_Tipo_Doc)
+        VALUES (@NumeroCompra,@MontoTotal, @NumeroFactura, @FechaCompra, @ID_proveedor, @ID_usuarios, @ID_Tipo_Doc);
+        SET @ID_compras = SCOPE_IDENTITY();
+
+        INSERT INTO Detalle_Compras (PrecioCompra, Cantidad, SubTotal, ID_producto, ID_compras, PrecioVenta)
+        SELECT PrecioCompra, Cantidad, SubTotal, ID_producto, @ID_compras, PrecioVenta FROM @DetalleCompra;
+
+        UPDATE p
+        SET p.Stock = p.Stock + dc.Cantidad,
+            p.PrecioCompra = dc.PrecioCompra,
+            p.PrecioVenta = dc.PrecioVenta
+        FROM Productos p
+        INNER JOIN @DetalleCompra dc ON dc.ID_producto = p.ID_producto;
+
+        COMMIT TRANSACTION registro;
+
+    END TRY
+    BEGIN CATCH
+		set @Resultado = 0
+		set @Mensaje = ERROR_MESSAGE()
+        ROLLBACK TRANSACTION registro;       
+    END CATCH
+END;
+GO
+
+select count(*)+1 from Compras
 
