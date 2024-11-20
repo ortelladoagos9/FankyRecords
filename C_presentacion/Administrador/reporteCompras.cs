@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FankyRecords.C_entidad;
+using FankyRecords.C_negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class reporteCompras : Form
     {
+        private readonly NegocioReporte CN_Reporte;
+
         public reporteCompras()
         {
             InitializeComponent();
+            CN_Reporte = new NegocioReporte();
             this.CBproveedor.SelectedIndex = 0; 
         }
 
@@ -53,5 +58,22 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reporteCompras_Load(object sender, EventArgs e)
+        {
+            CargarReporteCompra();
+        }
+
+        private void CargarReporteCompra()
+        {
+            List<ReporteCompras> reporteCompra = CN_Reporte.Compra(DTinicio.Text, DTfin.Text, int.Parse(CBproveedor.Text));
+            listadoReporteCompras.DataSource = reporteCompra;
+        }
+
     }
 }

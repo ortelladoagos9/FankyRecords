@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.CBproveedor = new System.Windows.Forms.ComboBox();
@@ -75,6 +75,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 61);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -101,7 +102,7 @@
             this.CBproveedor.Location = new System.Drawing.Point(752, 55);
             this.CBproveedor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(123, 29);
+            this.CBproveedor.Size = new System.Drawing.Size(123, 25);
             this.CBproveedor.TabIndex = 5;
             // 
             // label2
@@ -112,7 +113,7 @@
             this.label2.Location = new System.Drawing.Point(642, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 21);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Proveedor:";
             // 
@@ -123,14 +124,14 @@
             this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaRegistro,
@@ -143,27 +144,27 @@
             this.precioCompra,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteCompras.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteCompras.DefaultCellStyle = dataGridViewCellStyle5;
             this.listadoReporteCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteCompras.Location = new System.Drawing.Point(0, 256);
             this.listadoReporteCompras.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listadoReporteCompras.Name = "listadoReporteCompras";
             this.listadoReporteCompras.ReadOnly = true;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.listadoReporteCompras.RowHeadersWidth = 51;
             this.listadoReporteCompras.Size = new System.Drawing.Size(1182, 398);
             this.listadoReporteCompras.TabIndex = 1;
@@ -270,7 +271,7 @@
             this.TBBuscadorCompras.Location = new System.Drawing.Point(94, 13);
             this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(8, 3, 2, 3);
             this.TBBuscadorCompras.Name = "TBBuscadorCompras";
-            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 24);
             this.TBBuscadorCompras.TabIndex = 34;
             // 
             // buscarReg
@@ -381,7 +382,7 @@
             this.DTinicio.MaxDate = new System.DateTime(2024, 10, 9, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(116, 28);
+            this.DTinicio.Size = new System.Drawing.Size(116, 24);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
@@ -408,7 +409,7 @@
             this.DTfin.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(123, 28);
+            this.DTfin.Size = new System.Drawing.Size(123, 24);
             this.DTfin.TabIndex = 4;
             this.DTfin.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
@@ -434,7 +435,7 @@
             // 
             // reporteCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
@@ -446,10 +447,11 @@
             this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "reporteCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporteCompras";
+            this.Load += new System.EventHandler(this.reporteCompras_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel4.ResumeLayout(false);
