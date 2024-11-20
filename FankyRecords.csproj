@@ -65,6 +65,7 @@
     <Compile Include="C_datos\DatosProveedores.cs" />
     <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_datos\DatosProductos.cs" />
+    <Compile Include="C_datos\DatosReporte.cs" />
     <Compile Include="C_datos\DatosTipoDoc.cs" />
     <Compile Include="C_datos\DatosRol.cs" />
     <Compile Include="C_datos\DatosUsuarios.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="C_entidad\Proveedores.cs" />
     <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_entidad\Productos.cs" />
+    <Compile Include="C_entidad\ReporteCompras.cs" />
+    <Compile Include="C_entidad\ReporteVentas.cs" />
     <Compile Include="C_entidad\Rol.cs" />
     <Compile Include="C_entidad\TipoDoc.cs" />
     <Compile Include="C_entidad\Usuarios.cs" />
@@ -84,6 +87,7 @@
     <Compile Include="C_negocio\NegocioProveedores.cs" />
     <Compile Include="C_negocio\NegocioClientes.cs" />
     <Compile Include="C_negocio\NegocioProductos.cs" />
+    <Compile Include="C_negocio\NegocioReporte.cs" />
     <Compile Include="C_negocio\NegocioTipoDOc.cs" />
     <Compile Include="C_negocio\NegocioRol.cs" />
     <Compile Include="C_negocio\NegocioUsuarios.cs" />
