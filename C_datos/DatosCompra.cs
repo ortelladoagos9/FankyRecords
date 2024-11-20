@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FankyRecords.C_entidad;
 using System.Data.SqlClient;
+using System.Data;
+using FankyRecords.C_presentacion.Modales;
+using System.Windows.Forms;
 
 namespace FankyRecords.C_datos
 {
@@ -12,52 +15,77 @@ namespace FankyRecords.C_datos
     {
         SqlConnection conexion = new SqlConnection(Conexion.cadena);
         
-        public void AgregarCompra(Compra compra)
+        public int ObtenerCorrelativo()
         {
+            int idcorrelativo = 0;
+
             try
             {
-                conexion.Open(); 
+                conexion.Open();
+                StringBuilder query = new StringBuilder();
+                query.AppendLine("select count(*) + 1 from Compras");
+                SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                //cmd.CommandType = CommandType.Text;
 
-                string query = @"
-                INSERT INTO Compras (MontoTotal, NumeroFactura, FechaCompra, ID_proveedor, ID_usuarios, ID_Tipo_Doc) 
-                VALUES (@MontoTotal, @NumeroFactura, @FechaCompra, @ID_proveedor, @ID_usuarios, @ID_Tipo_Doc)";
+                object resultado = cmd.ExecuteScalar();
+                if (resultado != null)
+                {
+                    idcorrelativo = Convert.ToInt32(resultado);
+                }
 
-                SqlParameter MontoTotalParam = new SqlParameter("@MontoTotal", compra.MontoTotal);
-                SqlParameter NumeroFacturaParam = new SqlParameter("@NumeroFactura", compra.NumeroFactura);
-                SqlParameter FechaCompraParam = new SqlParameter("@FechaCompra", compra.FechaCompra);
-                SqlParameter ID_proveedor = new SqlParameter("@ID_proveedor", compra.Obj_proveedor.ID_proveedor);
-                SqlParameter ID_usuarios = new SqlParameter("@ID_usuarios", compra.Obj_usuarios.ID_usuarios);
-                SqlParameter ID_Tipo_Doc = new SqlParameter("@ID_Tipo_Doc", compra.Obj_Tipo_Doc.ID_Tipo_Doc);
-         
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.Add(MontoTotalParam);
-                cmd.Parameters.Add(NumeroFacturaParam);
-                cmd.Parameters.Add(FechaCompraParam);
-                cmd.Parameters.Add(ID_proveedor);
-                cmd.Parameters.Add(ID_usuarios);
-                cmd.Parameters.Add(ID_Tipo_Doc);
-
-                cmd.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                if (ex.Message.Contains("UQ_Compras_numeroCompra"))
-                {
-                  throw new Exception("El valor de 'Numero Compra' ya existe. No se permiten duplicados.", ex);
-                }
-                else
-                {
-                  throw new Exception("Error de base de datos desconocido: " + ex.Message, ex);
-                }
+                MessageBox.Show("Error de SQL: " + sqlEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+                MessageBox.Show("Error al obtener el correlativo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 conexion.Close();
             }
+            return idcorrelativo;
+        }
+
+        public bool RegistrarCompra(Compra compra, DataTable detalleCompra, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                conexion.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_RegistrarCompra", conexion);
+                cmd.Parameters.AddWithValue("NumeroCompra", compra.NumeroCompra);
+                cmd.Parameters.AddWithValue("MontoTotal", compra.MontoTotal);
+                cmd.Parameters.AddWithValue("NumeroFactura", compra.NumeroFactura);
+                cmd.Parameters.AddWithValue("FechaCompra", compra.FechaCompra);
+                cmd.Parameters.AddWithValue("ID_proveedor", compra.Obj_proveedor.ID_proveedor);
+                cmd.Parameters.AddWithValue("ID_usuarios", compra.Obj_usuarios.ID_usuarios);
+                cmd.Parameters.AddWithValue("ID_Tipo_Doc", compra.Obj_Tipo_Doc.ID_Tipo_Doc);
+                cmd.Parameters.AddWithValue("DetalleCompra", detalleCompra);
+                cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.ExecuteNonQuery();
+
+                respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
         }
 
         public List<Compra> ListarCompras()

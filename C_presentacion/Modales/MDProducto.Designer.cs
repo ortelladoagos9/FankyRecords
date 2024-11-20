@@ -133,6 +133,7 @@
             // 
             // listadoProductos
             // 
+            this.listadoProductos.AllowUserToAddRows = false;
             this.listadoProductos.AutoGenerateColumns = false;
             this.listadoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;

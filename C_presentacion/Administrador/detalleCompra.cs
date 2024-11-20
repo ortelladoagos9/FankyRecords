@@ -39,6 +39,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show("Debe ingresar el numero de compra para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }

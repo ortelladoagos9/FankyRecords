@@ -360,6 +360,7 @@
             // 
             // listadoCategorias
             // 
+            this.listadoCategorias.AllowUserToAddRows = false;
             this.listadoCategorias.AutoGenerateColumns = false;
             this.listadoCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoCategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;

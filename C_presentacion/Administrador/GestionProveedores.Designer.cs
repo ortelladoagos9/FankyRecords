@@ -348,6 +348,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             // DGlistaproveedores
             // 
+            this.DGlistaproveedores.AllowUserToAddRows = false;
             this.DGlistaproveedores.AutoGenerateColumns = false;
             this.DGlistaproveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGlistaproveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;

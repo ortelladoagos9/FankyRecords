@@ -49,6 +49,7 @@ namespace FankyRecords.C_presentacion.Modales
             {   
                 Productomd = new Productos()
                 {
+                    ID_producto = Convert.ToInt32(listadoProductos.Rows[iRow].Cells["ID_producto"].Value.ToString()),
                     Codigo = Convert.ToInt32(listadoProductos.Rows[iRow].Cells["codigo"].Value.ToString()),
                     Nombre = listadoProductos.Rows[iRow].Cells["nombre"].Value.ToString(),
                 };

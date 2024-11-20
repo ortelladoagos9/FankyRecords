@@ -38,11 +38,11 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.listaproveedores = new System.Windows.Forms.DataGridView();
-            this.iDproveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaproveedores)).BeginInit();
@@ -131,6 +131,7 @@
             // 
             // listaproveedores
             // 
+            this.listaproveedores.AllowUserToAddRows = false;
             this.listaproveedores.AutoGenerateColumns = false;
             this.listaproveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaproveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -147,10 +148,10 @@
             this.listaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listaproveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDproveedorDataGridViewTextBoxColumn,
+            this.ID_proveedor,
             this.cuit,
             this.razonSocial,
-            this.estadoDataGridViewTextBoxColumn});
+            this.Estado});
             this.listaproveedores.DataSource = this.proveedoresBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -174,14 +175,18 @@
             this.listaproveedores.TabIndex = 21;
             this.listaproveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistaproveedores_CellDoubleClick);
             // 
-            // iDproveedorDataGridViewTextBoxColumn
+            // proveedoresBindingSource
             // 
-            this.iDproveedorDataGridViewTextBoxColumn.DataPropertyName = "ID_proveedor";
-            this.iDproveedorDataGridViewTextBoxColumn.HeaderText = "ID_proveedor";
-            this.iDproveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDproveedorDataGridViewTextBoxColumn.Name = "iDproveedorDataGridViewTextBoxColumn";
-            this.iDproveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDproveedorDataGridViewTextBoxColumn.Visible = false;
+            this.proveedoresBindingSource.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
+            // 
+            // ID_proveedor
+            // 
+            this.ID_proveedor.DataPropertyName = "ID_proveedor";
+            this.ID_proveedor.HeaderText = "ID_proveedor";
+            this.ID_proveedor.MinimumWidth = 6;
+            this.ID_proveedor.Name = "ID_proveedor";
+            this.ID_proveedor.ReadOnly = true;
+            this.ID_proveedor.Visible = false;
             // 
             // cuit
             // 
@@ -199,18 +204,14 @@
             this.razonSocial.Name = "razonSocial";
             this.razonSocial.ReadOnly = true;
             // 
-            // estadoDataGridViewTextBoxColumn
+            // Estado
             // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
             // 
             // MDProveedor
             // 
@@ -245,9 +246,9 @@
         public FontAwesome.Sharp.IconButton btnBuscar;
         public System.Windows.Forms.TextBox TBBuscador;
         public System.Windows.Forms.Label LListaProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDproveedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

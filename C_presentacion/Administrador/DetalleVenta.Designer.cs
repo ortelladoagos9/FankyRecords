@@ -362,6 +362,7 @@
             // 
             // listadoVentas
             // 
+            this.listadoVentas.AllowUserToAddRows = false;
             this.listadoVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoVentas.BackgroundColor = System.Drawing.Color.White;

@@ -49,8 +49,9 @@ namespace FankyRecords.C_presentacion.Modales
             {
                 //creo objeto proveedor y le asigno los datos del proveedor seleccionado en el datagrid
                 Proveedormd = new Proveedores()
-                { 
+                {
                     //solo necesito esos datos
+                    ID_proveedor = Convert.ToInt32(listaproveedores.Rows[iRow].Cells["ID_proveedor"].Value.ToString()),
                     RazonSocial = listaproveedores.Rows[iRow].Cells["razonSocial"].Value.ToString(),
                     Cuit = listaproveedores.Rows[iRow].Cells["cuit"].Value.ToString(),
                 };

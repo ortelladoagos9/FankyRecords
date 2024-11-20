@@ -62,6 +62,18 @@
             this.rBinactivo = new System.Windows.Forms.RadioButton();
             this.rBactivo = new System.Windows.Forms.RadioButton();
             this.listadoUsuarios = new System.Windows.Forms.DataGridView();
+            this.ID_usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.LListaUsuarios = new System.Windows.Forms.Label();
             this.Lbuscar = new System.Windows.Forms.Label();
@@ -77,18 +89,6 @@
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID_usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
@@ -465,6 +465,7 @@
             // 
             // listadoUsuarios
             // 
+            this.listadoUsuarios.AllowUserToAddRows = false;
             this.listadoUsuarios.AutoGenerateColumns = false;
             this.listadoUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -521,6 +522,105 @@
             this.listadoUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
             this.listadoUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellClick);
             this.listadoUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoUsuarios_CellDoubleClick);
+            // 
+            // ID_usuarios
+            // 
+            this.ID_usuarios.DataPropertyName = "ID_usuarios";
+            this.ID_usuarios.HeaderText = "ID_usuarios";
+            this.ID_usuarios.MinimumWidth = 6;
+            this.ID_usuarios.Name = "ID_usuarios";
+            this.ID_usuarios.ReadOnly = true;
+            this.ID_usuarios.Visible = false;
+            // 
+            // Dni
+            // 
+            this.Dni.DataPropertyName = "Dni";
+            this.Dni.HeaderText = "Dni";
+            this.Dni.MinimumWidth = 6;
+            this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Clave
+            // 
+            this.Clave.DataPropertyName = "Clave";
+            this.Clave.HeaderText = "Clave";
+            this.Clave.MinimumWidth = 6;
+            this.Clave.Name = "Clave";
+            this.Clave.ReadOnly = true;
+            this.Clave.Visible = false;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.MinimumWidth = 6;
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "FechaCreacion";
+            this.FechaCreacion.MinimumWidth = 6;
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            this.FechaCreacion.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // RolDescripcion
+            // 
+            this.RolDescripcion.DataPropertyName = "RolDescripcion";
+            this.RolDescripcion.HeaderText = "Rol";
+            this.RolDescripcion.MinimumWidth = 6;
+            this.RolDescripcion.Name = "RolDescripcion";
+            this.RolDescripcion.ReadOnly = true;
             // 
             // usuariosBindingSource1
             // 
@@ -735,105 +835,6 @@
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Usuarios);
-            // 
-            // ID_usuarios
-            // 
-            this.ID_usuarios.DataPropertyName = "ID_usuarios";
-            this.ID_usuarios.HeaderText = "ID_usuarios";
-            this.ID_usuarios.MinimumWidth = 6;
-            this.ID_usuarios.Name = "ID_usuarios";
-            this.ID_usuarios.ReadOnly = true;
-            this.ID_usuarios.Visible = false;
-            // 
-            // Dni
-            // 
-            this.Dni.DataPropertyName = "Dni";
-            this.Dni.HeaderText = "Dni";
-            this.Dni.MinimumWidth = 6;
-            this.Dni.Name = "Dni";
-            this.Dni.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Clave
-            // 
-            this.Clave.DataPropertyName = "Clave";
-            this.Clave.HeaderText = "Clave";
-            this.Clave.MinimumWidth = 6;
-            this.Clave.Name = "Clave";
-            this.Clave.ReadOnly = true;
-            this.Clave.Visible = false;
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.MinimumWidth = 6;
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
-            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
-            this.FechaNacimiento.MinimumWidth = 6;
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            // 
-            // FechaCreacion
-            // 
-            this.FechaCreacion.DataPropertyName = "FechaCreacion";
-            this.FechaCreacion.HeaderText = "FechaCreacion";
-            this.FechaCreacion.MinimumWidth = 6;
-            this.FechaCreacion.Name = "FechaCreacion";
-            this.FechaCreacion.ReadOnly = true;
-            this.FechaCreacion.Visible = false;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // RolDescripcion
-            // 
-            this.RolDescripcion.DataPropertyName = "RolDescripcion";
-            this.RolDescripcion.HeaderText = "Rol";
-            this.RolDescripcion.MinimumWidth = 6;
-            this.RolDescripcion.Name = "RolDescripcion";
-            this.RolDescripcion.ReadOnly = true;
             // 
             // GestionUsuarios
             // 

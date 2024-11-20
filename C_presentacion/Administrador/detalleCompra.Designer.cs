@@ -356,6 +356,7 @@
             // 
             // listadoCompras
             // 
+            this.listadoCompras.AllowUserToAddRows = false;
             this.listadoCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoCompras.BackgroundColor = System.Drawing.Color.White;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FankyRecords.C_datos;
 using FankyRecords.C_entidad;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace FankyRecords.C_negocio
 {
@@ -17,21 +18,14 @@ namespace FankyRecords.C_negocio
             CD_Compras = new DatosCompra();
         }
 
-        public Compra GuardarCompra(Compra compra)
+        public int ObtenerCorrelativo()
         {
-            try
-            {
-                if (compra.ID_compra == 0)
-                {
-                    CD_Compras.AgregarCompra(compra);
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            return CD_Compras.ObtenerCorrelativo();
+        }
 
-            return compra;
+        public bool RegistrarCompra(Compra compra, DataTable detalleCompra, out string Mensaje)
+        {
+            return CD_Compras.RegistrarCompra(compra,detalleCompra,out Mensaje);
         }
 
         public List<Compra> ListarCompras()
