@@ -354,5 +354,10 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
             }       
         }
+
+        private void cbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             DateTime fecha1 = DTinicio.Value;
             DateTime fecha2 = DTfin.Value;
-            int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
+            int ID_proveedor = Convert.ToInt32(CBproveedor.SelectedValue);
+           // int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
 
             // Comparar las fechas
@@ -54,7 +55,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 lista = CN_Reporte.Compra(
                     DTinicio.Value.ToString(),
                     DTfin.Value.ToString(),
-                    idProveedor
+                    ID_proveedor
                     );
 
                 listadoReporteCompras.Rows.Clear();
@@ -69,7 +70,6 @@ namespace FankyRecords.C_presentacion.Administrador
                         rc.CuitProveedor,
                         rc.CodigoProducto,
                         rc.NombreProducto,
-                        rc.NumeroCompra,
                         rc.PrecioCompra,
                         rc.Cantidad,
                         rc.MontoTotal
