@@ -48,9 +48,6 @@
             this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.TBBuscadorCompras = new System.Windows.Forms.TextBox();
-            this.buscarReg = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
             this.descargarExcel = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,7 +59,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -254,53 +250,12 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.TBBuscadorCompras);
-            this.panel5.Controls.Add(this.buscarReg);
-            this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(823, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(359, 53);
             this.panel5.TabIndex = 8;
-            // 
-            // TBBuscadorCompras
-            // 
-            this.TBBuscadorCompras.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBuscadorCompras.ForeColor = System.Drawing.Color.Black;
-            this.TBBuscadorCompras.Location = new System.Drawing.Point(94, 13);
-            this.TBBuscadorCompras.Margin = new System.Windows.Forms.Padding(8, 3, 2, 3);
-            this.TBBuscadorCompras.Name = "TBBuscadorCompras";
-            this.TBBuscadorCompras.Size = new System.Drawing.Size(171, 24);
-            this.TBBuscadorCompras.TabIndex = 34;
-            // 
-            // buscarReg
-            // 
-            this.buscarReg.BackColor = System.Drawing.Color.White;
-            this.buscarReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarReg.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.buscarReg.IconColor = System.Drawing.Color.DarkRed;
-            this.buscarReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buscarReg.IconSize = 20;
-            this.buscarReg.Location = new System.Drawing.Point(271, 13);
-            this.buscarReg.Margin = new System.Windows.Forms.Padding(2);
-            this.buscarReg.Name = "buscarReg";
-            this.buscarReg.Size = new System.Drawing.Size(71, 29);
-            this.buscarReg.TabIndex = 5;
-            this.buscarReg.UseVisualStyleBackColor = false;
-            this.buscarReg.Click += new System.EventHandler(this.buscarReg_Click);
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 53);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Buscar:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnGenerarGrafico
             // 
@@ -340,6 +295,7 @@
             this.descargarExcel.Text = "Descargar Excel";
             this.descargarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.descargarExcel.UseVisualStyleBackColor = false;
+            this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click);
             // 
             // panel3
             // 
@@ -455,8 +411,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -472,8 +426,6 @@
         private System.Windows.Forms.DataGridView listadoReporteCompras;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private FontAwesome.Sharp.IconButton buscarReg;
-        private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btnGenerarGrafico;
         private FontAwesome.Sharp.IconButton descargarExcel;
         private System.Windows.Forms.Panel panel3;
@@ -482,7 +434,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
-        public System.Windows.Forms.TextBox TBBuscadorCompras;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;

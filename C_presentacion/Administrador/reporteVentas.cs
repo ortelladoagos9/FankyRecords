@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FankyRecords.C_entidad;
+using FankyRecords.C_negocio;
+using FankyRecords.C_presentacion.Modales;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class reporteVentas : Form
     {
+
+        private readonly NegocioReporte CN_Reporte;
+
         public reporteVentas()
         {
             InitializeComponent();
+            CN_Reporte = new NegocioReporte();
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)
@@ -40,16 +47,43 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 // fecha1 es posterior a fecha2
                 MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
+                return;
             }
-            return;
+            else
+            {
+                List<ReporteVentas> lista = new List<ReporteVentas>();
+
+                lista = CN_Reporte.Venta(
+                    DTinicio.Value.ToString(),
+                    DTfin.Value.ToString()
+                    );
+
+                listadoReporteVentas.Rows.Clear();
+
+                foreach (ReporteVentas rv in lista)
+                {
+                    listadoReporteVentas.Rows.Add(new object[]
+                    {
+                        rv.FechaVenta,
+                        rv.ID_Tipo_Doc,
+                        rv.NumeroFactura,
+                        rv.ID_cliente,
+                        rv.CodigoProducto,
+                        rv.NombreProducto,
+                        rv.Categoria,
+                        rv.Precioventa,
+                        rv.Cantidad,
+                        rv.MontoTotal
+                    });
+                }
+            }
+       
         }
 
-        private void buscarReg_Click(object sender, EventArgs e)
+       
+        private void reporteVentas_Load(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBBuscadorVentas.Text))
-            {
-                MessageBox.Show("Debe ingresar un dato de la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
     }
 }

@@ -15,11 +15,13 @@ namespace FankyRecords.C_presentacion.Administrador
     public partial class reporteCompras : Form
     {
         private readonly NegocioReporte CN_Reporte;
+        private readonly NegocioProveedores CN_Proveedor;
 
         public reporteCompras()
         {
             InitializeComponent();
             CN_Reporte = new NegocioReporte();
+            CN_Proveedor = new NegocioProveedores();
             this.CBproveedor.SelectedIndex = 0; 
         }
 
@@ -32,6 +34,8 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             DateTime fecha1 = DTinicio.Value;
             DateTime fecha2 = DTfin.Value;
+            int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
+
 
             // Comparar las fechas
             int resultado = DateTime.Compare(fecha1, fecha2);
@@ -41,8 +45,40 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 // fecha1 es posterior a fecha2
                 MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
+                return;
             }
-            return;
+            else 
+            {
+                List<ReporteCompras> lista = new List<ReporteCompras>();
+
+                lista = CN_Reporte.Compra(
+                    DTinicio.Value.ToString(),
+                    DTfin.Value.ToString(),
+                    idProveedor
+                    );
+
+                listadoReporteCompras.Rows.Clear();
+
+                foreach(ReporteCompras rc in lista)
+                {
+                    listadoReporteCompras.Rows.Add(new object[]
+                    {
+                        rc.FechaCompra,
+                        rc.ID_Tipo_Doc,
+                        rc.RazonSocial,
+                        rc.CuitProveedor,
+                        rc.CodigoProducto,
+                        rc.NombreProducto,
+                        rc.NumeroCompra,
+                        rc.PrecioCompra,
+                        rc.Cantidad,
+                        rc.MontoTotal
+                    });
+                }
+
+
+            }
+           
         }
 
         private void btnGenerarGrafico_Click(object sender, EventArgs e)
@@ -50,14 +86,7 @@ namespace FankyRecords.C_presentacion.Administrador
             CompararFechas();
         }
 
-        private void buscarReg_Click(object sender, EventArgs e)
-        {
-            if (C_negocio.Validaciones.EstaVacio(TBBuscadorCompras.Text))
-            {
-                MessageBox.Show("Debe ingresar un dato de la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
+     
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -66,14 +95,33 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void reporteCompras_Load(object sender, EventArgs e)
         {
-            CargarReporteCompra();
+            
+            List<Proveedores> lista =  CN_Proveedor.ListarProveedores();
+
+            CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
+            foreach (Proveedores item in lista)
+            {
+                CBproveedor.Items.Add(new OpcionCombo() { Valor = item.ID_proveedor, Texto = item.RazonSocial});
+            }
+
+            CBproveedor.DisplayMember = "Texto";
+            CBproveedor.ValueMember = "Valor";
+            CBproveedor.SelectedIndex = 0;
+
+
+
         }
 
-        private void CargarReporteCompra()
+        private void descargarExcel_Click(object sender, EventArgs e)
         {
-            List<ReporteCompras> reporteCompra = CN_Reporte.Compra(DTinicio.Text, DTfin.Text, int.Parse(CBproveedor.Text));
-            listadoReporteCompras.DataSource = reporteCompra;
-        }
+            if(listadoReporteCompras.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
 
+            }
+        }
     }
 }
