@@ -47,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DTfin = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
+            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +62,6 @@
             this.precioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
@@ -332,6 +332,10 @@
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
             // 
+            // reporteComprasBindingSource
+            // 
+            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
+            // 
             // fechaCompra
             // 
             this.fechaCompra.DataPropertyName = "FechaCompra";
@@ -418,6 +422,7 @@
             this.precioventa.HeaderText = "Precioventa";
             this.precioventa.Name = "precioventa";
             this.precioventa.ReadOnly = true;
+            this.precioventa.Visible = false;
             // 
             // cantidad
             // 
@@ -433,10 +438,6 @@
             this.subTotal.Name = "subTotal";
             this.subTotal.ReadOnly = true;
             this.subTotal.Visible = false;
-            // 
-            // reporteComprasBindingSource
-            // 
-            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
             // 
             // reporteCompras
             // 
