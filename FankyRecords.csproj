@@ -61,12 +61,14 @@
     <Compile Include="C_datos\DatosCategorias.cs" />
     <Compile Include="C_datos\DatosCompra.cs" />
     <Compile Include="C_datos\DatosDetalleCompra.cs" />
+    <Compile Include="C_datos\DatosDetalleVenta.cs" />
     <Compile Include="C_datos\DatosProveedores.cs" />
     <Compile Include="C_datos\DatosClientes.cs" />
     <Compile Include="C_datos\DatosProductos.cs" />
     <Compile Include="C_datos\DatosTipoDoc.cs" />
     <Compile Include="C_datos\DatosRol.cs" />
     <Compile Include="C_datos\DatosUsuarios.cs" />
+    <Compile Include="C_datos\DatosVentas.cs" />
     <Compile Include="C_entidad\Categorias.cs" />
     <Compile Include="C_entidad\Compra.cs" />
     <Compile Include="C_entidad\DetalleCompra.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="C_negocio\NegocioTipoDOc.cs" />
     <Compile Include="C_negocio\NegocioRol.cs" />
     <Compile Include="C_negocio\NegocioUsuarios.cs" />
+    <Compile Include="C_negocio\NegocioVentas.cs" />
     <Compile Include="C_negocio\Validaciones.cs" />
     <Compile Include="C_presentacion\Administrador\backup.cs">
       <SubType>Form</SubType>
@@ -178,6 +181,12 @@
     <Compile Include="C_presentacion\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Modales\MDCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Modales\MDCliente.Designer.cs">
+      <DependentUpon>MDCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Modales\MDProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +255,9 @@
     <EmbeddedResource Include="C_presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Modales\MDCliente.resx">
+      <DependentUpon>MDCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDProducto.resx">
       <DependentUpon>MDProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +301,7 @@
     <None Include="packages\FontAwesome.Sharp.6.6.0\FontAwesome.Sharp.6.6.0.nupkg" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Categorias.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.DetalleCompra.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.DetalleVenta.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Proveedores.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Clientes.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.GestionClientes.datasource" />

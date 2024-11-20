@@ -17,6 +17,5 @@ namespace FankyRecords.C_entidad
         public Clientes Obj_clientes { get; set; }
         public TipoDoc Obj_Tipo_Doc { get; set; }
 
-      
     }
 }
