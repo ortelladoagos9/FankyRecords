@@ -490,7 +490,7 @@
             this.CBcategoria.Location = new System.Drawing.Point(462, 78);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBcategoria.Name = "CBcategoria";
-            this.CBcategoria.Size = new System.Drawing.Size(242, 29);
+            this.CBcategoria.Size = new System.Drawing.Size(242, 25);
             this.CBcategoria.TabIndex = 1;
             // 
             // categoriasBindingSource
@@ -629,7 +629,7 @@
             // 
             // GestionProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);

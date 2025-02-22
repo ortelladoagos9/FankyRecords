@@ -33,7 +33,8 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             DateTime fecha1 = DTinicio.Value;
             DateTime fecha2 = DTfin.Value;
-            int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
+            int ID_proveedor = Convert.ToInt32(CBproveedor.SelectedValue);
+           // int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
 
             // Comparar las fechas
@@ -53,9 +54,15 @@ namespace FankyRecords.C_presentacion.Administrador
                 lista = CN_Reporte.Compra(
                     DTinicio.Value.ToString(),
                     DTfin.Value.ToString(),
-                    idProveedor
+                    ID_proveedor
                     );
 
+                // Verificar si la lista tiene datos
+                if (lista == null || lista.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron datos para el rango de fechas y proveedor seleccionados.");
+                    return;
+                }
                 listadoReporteCompras.Rows.Clear();
 
                 foreach(ReporteCompras rc in lista)
@@ -64,14 +71,14 @@ namespace FankyRecords.C_presentacion.Administrador
                     {
                         rc.FechaCompra,
                         rc.ID_Tipo_Doc,
-                        rc.RazonSocial,
+                         rc.MontoTotal,
                         rc.CuitProveedor,
+                        rc.RazonSocial,
                         rc.CodigoProducto,
                         rc.NombreProducto,
-                        rc.NumeroCompra,
                         rc.PrecioCompra,
                         rc.Cantidad,
-                        rc.MontoTotal
+                       
                     });
                 }
 

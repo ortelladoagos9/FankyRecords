@@ -44,6 +44,15 @@ namespace FankyRecords.C_presentacion
             }
             else
             {
+                // Verificar que el usuario exista
+                if (ousuario == null)
+                {
+                    MessageBox.Show("Los datos ingresados no coinciden con ningún usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TBDni.Clear();
+                    TBClave.Clear();
+                    return;
+                }
+
                 // Asignar el usuario autenticado a la clase estática
                 SesionUsuario.UsuarioActual = ousuario;
 

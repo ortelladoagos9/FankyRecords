@@ -337,7 +337,7 @@
             this.TBPrecio_Venta.Name = "TBPrecio_Venta";
             this.TBPrecio_Venta.ReadOnly = true;
             this.TBPrecio_Venta.ShortcutsEnabled = false;
-            this.TBPrecio_Venta.Size = new System.Drawing.Size(138, 28);
+            this.TBPrecio_Venta.Size = new System.Drawing.Size(138, 24);
             this.TBPrecio_Venta.TabIndex = 32;
             // 
             // LPrecio_Venta
@@ -348,7 +348,7 @@
             this.LPrecio_Venta.Location = new System.Drawing.Point(402, 57);
             this.LPrecio_Venta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LPrecio_Venta.Name = "LPrecio_Venta";
-            this.LPrecio_Venta.Size = new System.Drawing.Size(129, 21);
+            this.LPrecio_Venta.Size = new System.Drawing.Size(108, 17);
             this.LPrecio_Venta.TabIndex = 31;
             this.LPrecio_Venta.Text = "Precio Venta:";
             // 
@@ -598,12 +598,13 @@
             this.cbTipoDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDoc.FormattingEnabled = true;
-            this.cbTipoDoc.ItemHeight = 21;
+            this.cbTipoDoc.ItemHeight = 17;
             this.cbTipoDoc.Location = new System.Drawing.Point(225, 44);
             this.cbTipoDoc.MaxLength = 100;
             this.cbTipoDoc.Name = "cbTipoDoc";
-            this.cbTipoDoc.Size = new System.Drawing.Size(160, 29);
+            this.cbTipoDoc.Size = new System.Drawing.Size(160, 25);
             this.cbTipoDoc.TabIndex = 3;
+            this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cbTipoDoc_SelectedIndexChanged);
             // 
             // LTipoDoc
             // 
@@ -633,7 +634,7 @@
             // 
             // registrarCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 654);
             this.Controls.Add(this.contenedorDatos);

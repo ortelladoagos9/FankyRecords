@@ -24,7 +24,7 @@ namespace FankyRecords.C_datos
                     SqlCommand cmd = new SqlCommand("sp_ReporteCompras", conexion);
                     cmd.Parameters.AddWithValue("fechaInicio", fechaInicio);
                     cmd.Parameters.AddWithValue("fechaFin", fechaFin);
-                    cmd.Parameters.AddWithValue("ID_proveedor", ID_proveedor);
+                    cmd.Parameters.AddWithValue("IdProveedor", ID_proveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     conexion.Open();

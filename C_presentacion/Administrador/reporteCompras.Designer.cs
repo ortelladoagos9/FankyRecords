@@ -67,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -475,6 +476,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
