@@ -15,5 +15,9 @@ namespace FankyRecords.C_entidad
         public Productos Obj_producto { get; set; }
         public Compra Obj_registrarCompra { get; set; }
         public decimal PrecioVenta { get; set; }
+
+        public string ProductoNombre => Obj_producto?.Nombre;
+        public string ProductoCodigo => Obj_producto?.Codigo.ToString();
     }
 }
+

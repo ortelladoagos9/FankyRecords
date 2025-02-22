@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -92,15 +92,16 @@
             this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconButton1.BackColor = System.Drawing.Color.White;
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
             this.iconButton1.IconColor = System.Drawing.Color.DarkRed;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(23, 211);
+            this.iconButton1.Location = new System.Drawing.Point(29, 211);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(141, 50);
+            this.iconButton1.Size = new System.Drawing.Size(141, 65);
             this.iconButton1.TabIndex = 6;
             this.iconButton1.Text = "Descargar PDF";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -111,11 +112,12 @@
             this.Bgenerar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bgenerar.BackColor = System.Drawing.Color.White;
             this.Bgenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bgenerar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bgenerar.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
             this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
             this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(23, 159);
+            this.Bgenerar.Location = new System.Drawing.Point(29, 159);
             this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
             this.Bgenerar.Name = "Bgenerar";
             this.Bgenerar.Size = new System.Drawing.Size(141, 36);
@@ -130,11 +132,11 @@
             // 
             this.ckbDevolverStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ckbDevolverStock.AutoSize = true;
-            this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDevolverStock.Location = new System.Drawing.Point(23, 114);
+            this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbDevolverStock.Location = new System.Drawing.Point(29, 114);
             this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
             this.ckbDevolverStock.Name = "ckbDevolverStock";
-            this.ckbDevolverStock.Size = new System.Drawing.Size(177, 25);
+            this.ckbDevolverStock.Size = new System.Drawing.Size(186, 25);
             this.ckbDevolverStock.TabIndex = 4;
             this.ckbDevolverStock.Text = "Devolver a stock";
             this.ckbDevolverStock.UseVisualStyleBackColor = true;
@@ -153,12 +155,12 @@
             // 
             this.LDevoluciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDevoluciones.ForeColor = System.Drawing.Color.DarkRed;
             this.LDevoluciones.Location = new System.Drawing.Point(0, 0);
             this.LDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDevoluciones.Name = "LDevoluciones";
-            this.LDevoluciones.Size = new System.Drawing.Size(330, 56);
+            this.LDevoluciones.Size = new System.Drawing.Size(253, 56);
             this.LDevoluciones.TabIndex = 0;
             this.LDevoluciones.Text = "Devoluciones";
             this.LDevoluciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -171,14 +173,14 @@
             this.listadoProductosDevolucion.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductosDevolucion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoProductosDevolucion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoProductosDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductosDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listadoProductosDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoProductosDevolucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,
@@ -186,14 +188,14 @@
             this.cantidad,
             this.stock,
             this.SubTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoProductosDevolucion.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductosDevolucion.DefaultCellStyle = dataGridViewCellStyle6;
             this.listadoProductosDevolucion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoProductosDevolucion.Location = new System.Drawing.Point(0, 415);
             this.listadoProductosDevolucion.Margin = new System.Windows.Forms.Padding(2);
@@ -246,9 +248,9 @@
             this.groupBox2.Controls.Add(this.TBnombreComprador);
             this.groupBox2.Controls.Add(this.TBnumFactura);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox2.Location = new System.Drawing.Point(133, 235);
+            this.groupBox2.Location = new System.Drawing.Point(96, 245);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -308,9 +310,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox1.Location = new System.Drawing.Point(133, 75);
+            this.groupBox1.Location = new System.Drawing.Point(96, 85);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -353,12 +355,12 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 71);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 28);
             this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
             // 
             // label2
             // 

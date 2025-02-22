@@ -65,22 +65,22 @@
             // LDni
             // 
             this.LDni.AutoSize = true;
-            this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDni.Location = new System.Drawing.Point(217, 144);
             this.LDni.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(46, 21);
+            this.LDni.Size = new System.Drawing.Size(48, 21);
             this.LDni.TabIndex = 10;
             this.LDni.Text = "DNI";
             // 
             // LClave
             // 
             this.LClave.AutoSize = true;
-            this.LClave.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LClave.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LClave.Location = new System.Drawing.Point(217, 249);
             this.LClave.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.LClave.Name = "LClave";
-            this.LClave.Size = new System.Drawing.Size(112, 21);
+            this.LClave.Size = new System.Drawing.Size(117, 21);
             this.LClave.TabIndex = 11;
             this.LClave.Text = "Contraseña";
             // 
@@ -88,7 +88,7 @@
             // 
             this.LIniciarSesion.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LIniciarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LIniciarSesion.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LIniciarSesion.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LIniciarSesion.ForeColor = System.Drawing.Color.DarkRed;
             this.LIniciarSesion.Location = new System.Drawing.Point(0, 0);
             this.LIniciarSesion.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
@@ -104,7 +104,7 @@
             this.Bsalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bsalir.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bsalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bsalir.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
+            this.Bsalir.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bsalir.ForeColor = System.Drawing.Color.White;
             this.Bsalir.IconChar = FontAwesome.Sharp.IconChar.CircleXmark;
             this.Bsalir.IconColor = System.Drawing.Color.White;
@@ -128,7 +128,7 @@
             this.Bingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bingresar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bingresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bingresar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bingresar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bingresar.ForeColor = System.Drawing.Color.White;
             this.Bingresar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bingresar.IconColor = System.Drawing.Color.White;

@@ -52,8 +52,14 @@ namespace FankyRecords.C_presentacion.Administrador
                 return; 
             }
             Compra compra = CD_Compras.ObtenerCompra(TBnumCompra.Text);
+            DetalleCompra detalleCompra = new DetalleCompra();
+            if (compra == null)
+            {
+                MessageBox.Show("No se encontró ninguna compra con ese número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if(compra.ID_compra != 0)
+            if (compra.ID_compra != 0)
             {
                 TBNumeroCompra.Text = compra.NumeroCompra.ToString();
                 TBFecha.Text = compra.FechaCompra.ToString();
@@ -65,13 +71,27 @@ namespace FankyRecords.C_presentacion.Administrador
                 TBmontoTotal.Text = compra.MontoTotal.ToString();
 
                 listadoCompras.Rows.Clear();
-                if (compra.Obj_DetalleCompra != null && compra.Obj_DetalleCompra.Count > 0)
+                if (detalleCompra.Obj_registrarCompra != null && compra.Obj_DetalleCompra.Count > 0)
                 {
-                    foreach (DetalleCompra dc in compra.Obj_DetalleCompra)
+                    try
                     {
-                        listadoCompras.Rows.Add(
-                            new object[] { dc.Obj_producto.Nombre, dc.PrecioCompra, dc.Cantidad, dc.SubTotal });
+                        foreach (DetalleCompra dc in compra.Obj_DetalleCompra)
+                        {
+                            if (dc.Obj_producto != null)
+                            {
+                                listadoCompras.Rows.Add(
+                                    new object[] { dc.Obj_producto.Codigo, dc.Obj_producto.Nombre, dc.PrecioCompra, dc.Cantidad, dc.SubTotal });
+                            }
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al cargar el detalle: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay detalles de compra para mostrar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 TBmontoTotal.Text = compra.MontoTotal.ToString("0.00");

@@ -128,15 +128,20 @@ namespace FankyRecords.C_datos
                         FechaCompra = Convert.ToDateTime(reader["FechaCompra"].ToString()),
                         NumeroFactura = Convert.ToInt32(reader["NumeroFactura"].ToString())
                     };
-                } 
+                }
+                // Obtener los detalles de la compra y asignarlos al objeto
+                if (obj.ID_compra > 0)
+                {
+                    obj.Obj_DetalleCompra = ObtenerDetalleCompra(obj.ID_compra);
+                }
             }
             catch (Exception ex)
             {
-                obj = new Compra();
+                obj = new Compra(); // Devuelve un objeto vacío en caso de error
             }
             finally
             { conexion.Close(); }
-
+            
             return obj;
         }
 

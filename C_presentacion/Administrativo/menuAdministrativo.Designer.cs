@@ -67,12 +67,12 @@
             // MenuProductosAdministrativo
             // 
             this.MenuProductosAdministrativo.AutoSize = false;
-            this.MenuProductosAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProductosAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuProductosAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuProductosAdministrativo.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
             this.MenuProductosAdministrativo.IconColor = System.Drawing.Color.DarkRed;
             this.MenuProductosAdministrativo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuProductosAdministrativo.IconSize = 45;
+            this.MenuProductosAdministrativo.IconSize = 43;
             this.MenuProductosAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuProductosAdministrativo.Name = "MenuProductosAdministrativo";
             this.MenuProductosAdministrativo.Size = new System.Drawing.Size(150, 59);
@@ -83,7 +83,7 @@
             // MenuCategoriaAdministrativo
             // 
             this.MenuCategoriaAdministrativo.AutoSize = false;
-            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuCategoriaAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuCategoriaAdministrativo.IconChar = FontAwesome.Sharp.IconChar.List;
             this.MenuCategoriaAdministrativo.IconColor = System.Drawing.Color.DarkRed;
@@ -102,7 +102,7 @@
             this.MenuComprasAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuRegistrarComprasAdministrador,
             this.SubmenuDetalleCompraAdministrador});
-            this.MenuComprasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuComprasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuComprasAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuComprasAdministrador.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.MenuComprasAdministrador.IconColor = System.Drawing.Color.DarkRed;

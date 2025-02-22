@@ -22,7 +22,6 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
             CN_Reporte = new NegocioReporte();
             CN_Proveedor = new NegocioProveedores();
-            this.CBproveedor.SelectedIndex = 0; 
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)
@@ -98,7 +97,7 @@ namespace FankyRecords.C_presentacion.Administrador
             
             List<Proveedores> lista =  CN_Proveedor.ListarProveedores();
 
-            CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
+            //CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
             foreach (Proveedores item in lista)
             {
                 CBproveedor.Items.Add(new OpcionCombo() { Valor = item.ID_proveedor, Texto = item.RazonSocial});

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             this.LGestionUsuarios = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
@@ -103,12 +103,12 @@
             // 
             this.LGestionUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LGestionUsuarios.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LGestionUsuarios.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LGestionUsuarios.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LGestionUsuarios.ForeColor = System.Drawing.Color.DarkRed;
             this.LGestionUsuarios.Location = new System.Drawing.Point(0, 0);
             this.LGestionUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LGestionUsuarios.Name = "LGestionUsuarios";
-            this.LGestionUsuarios.Size = new System.Drawing.Size(264, 62);
+            this.LGestionUsuarios.Size = new System.Drawing.Size(318, 62);
             this.LGestionUsuarios.TabIndex = 0;
             this.LGestionUsuarios.Text = "Gestión de Usuarios";
             this.LGestionUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -117,12 +117,12 @@
             // 
             this.LNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNombre.AutoSize = true;
-            this.LNombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LNombre.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre.ForeColor = System.Drawing.Color.DarkRed;
             this.LNombre.Location = new System.Drawing.Point(59, 48);
             this.LNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(80, 21);
+            this.LNombre.Size = new System.Drawing.Size(84, 21);
             this.LNombre.TabIndex = 0;
             this.LNombre.Text = "Nombre";
             // 
@@ -130,11 +130,11 @@
             // 
             this.LApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LApellido.AutoSize = true;
-            this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LApellido.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.Location = new System.Drawing.Point(59, 113);
             this.LApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(82, 21);
+            this.LApellido.Size = new System.Drawing.Size(88, 21);
             this.LApellido.TabIndex = 1;
             this.LApellido.Text = "Apellido";
             // 
@@ -154,11 +154,11 @@
             // 
             this.LFechaNac.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LFechaNac.AutoSize = true;
-            this.LFechaNac.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFechaNac.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaNac.Location = new System.Drawing.Point(59, 243);
             this.LFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LFechaNac.Name = "LFechaNac";
-            this.LFechaNac.Size = new System.Drawing.Size(194, 21);
+            this.LFechaNac.Size = new System.Drawing.Size(206, 21);
             this.LFechaNac.TabIndex = 3;
             this.LFechaNac.Text = "Fecha de Nacimiento";
             // 
@@ -166,50 +166,50 @@
             // 
             this.LTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTelefono.AutoSize = true;
-            this.LTelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTelefono.Location = new System.Drawing.Point(614, 48);
             this.LTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LTelefono.Name = "LTelefono";
-            this.LTelefono.Size = new System.Drawing.Size(87, 21);
+            this.LTelefono.Size = new System.Drawing.Size(90, 21);
             this.LTelefono.TabIndex = 4;
             this.LTelefono.Text = "Teléfono";
             // 
             // TBnombre
             // 
             this.TBnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBnombre.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBnombre.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre.Location = new System.Drawing.Point(59, 77);
             this.TBnombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBnombre.MaxLength = 100;
             this.TBnombre.Name = "TBnombre";
             this.TBnombre.ShortcutsEnabled = false;
-            this.TBnombre.Size = new System.Drawing.Size(242, 28);
+            this.TBnombre.Size = new System.Drawing.Size(242, 29);
             this.TBnombre.TabIndex = 5;
             this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // TBapellido
             // 
             this.TBapellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBapellido.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBapellido.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBapellido.Location = new System.Drawing.Point(59, 143);
             this.TBapellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBapellido.MaxLength = 100;
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.ShortcutsEnabled = false;
-            this.TBapellido.Size = new System.Drawing.Size(243, 28);
+            this.TBapellido.Size = new System.Drawing.Size(243, 29);
             this.TBapellido.TabIndex = 6;
             this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtpalabras_KeyPress);
             // 
             // TBdni
             // 
             this.TBdni.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBdni.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBdni.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdni.Location = new System.Drawing.Point(59, 207);
             this.TBdni.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdni.MaxLength = 8;
             this.TBdni.Name = "TBdni";
             this.TBdni.ShortcutsEnabled = false;
-            this.TBdni.Size = new System.Drawing.Size(242, 28);
+            this.TBdni.Size = new System.Drawing.Size(242, 29);
             this.TBdni.TabIndex = 7;
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -217,37 +217,37 @@
             // 
             this.LDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDireccion.AutoSize = true;
-            this.LDireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDireccion.Location = new System.Drawing.Point(336, 48);
             this.LDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDireccion.Name = "LDireccion";
-            this.LDireccion.Size = new System.Drawing.Size(95, 21);
+            this.LDireccion.Size = new System.Drawing.Size(101, 21);
             this.LDireccion.TabIndex = 10;
             this.LDireccion.Text = "Dirección";
             // 
             // DTFechanac
             // 
             this.DTFechanac.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DTFechanac.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechanac.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTFechanac.Location = new System.Drawing.Point(59, 272);
             this.DTFechanac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTFechanac.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             this.DTFechanac.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.DTFechanac.Name = "DTFechanac";
-            this.DTFechanac.Size = new System.Drawing.Size(242, 28);
+            this.DTFechanac.Size = new System.Drawing.Size(242, 29);
             this.DTFechanac.TabIndex = 15;
             this.DTFechanac.Value = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             // 
             // TBdireccion
             // 
             this.TBdireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBdireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBdireccion.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdireccion.Location = new System.Drawing.Point(336, 77);
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBdireccion.MaxLength = 200;
             this.TBdireccion.Name = "TBdireccion";
-            this.TBdireccion.Size = new System.Drawing.Size(242, 28);
+            this.TBdireccion.Size = new System.Drawing.Size(242, 29);
             this.TBdireccion.TabIndex = 16;
             // 
             // LEmail
@@ -265,23 +265,23 @@
             // TBemail
             // 
             this.TBemail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBemail.Location = new System.Drawing.Point(336, 143);
             this.TBemail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBemail.MaxLength = 100;
             this.TBemail.Name = "TBemail";
-            this.TBemail.Size = new System.Drawing.Size(241, 28);
+            this.TBemail.Size = new System.Drawing.Size(241, 29);
             this.TBemail.TabIndex = 18;
             // 
             // LContraseña
             // 
             this.LContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LContraseña.AutoSize = true;
-            this.LContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LContraseña.Location = new System.Drawing.Point(336, 179);
             this.LContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LContraseña.Name = "LContraseña";
-            this.LContraseña.Size = new System.Drawing.Size(112, 21);
+            this.LContraseña.Size = new System.Drawing.Size(117, 21);
             this.LContraseña.TabIndex = 19;
             this.LContraseña.Text = "Contraseña";
             // 
@@ -289,11 +289,11 @@
             // 
             this.LConfirmarContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LConfirmarContraseña.AutoSize = true;
-            this.LConfirmarContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LConfirmarContraseña.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LConfirmarContraseña.Location = new System.Drawing.Point(336, 243);
             this.LConfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LConfirmarContraseña.Name = "LConfirmarContraseña";
-            this.LConfirmarContraseña.Size = new System.Drawing.Size(209, 21);
+            this.LConfirmarContraseña.Size = new System.Drawing.Size(219, 21);
             this.LConfirmarContraseña.TabIndex = 20;
             this.LConfirmarContraseña.Text = "Confirmar Contraseña";
             // 
@@ -301,11 +301,11 @@
             // 
             this.LRol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LRol.AutoSize = true;
-            this.LRol.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LRol.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRol.Location = new System.Drawing.Point(614, 113);
             this.LRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRol.Name = "LRol";
-            this.LRol.Size = new System.Drawing.Size(40, 21);
+            this.LRol.Size = new System.Drawing.Size(42, 21);
             this.LRol.TabIndex = 21;
             this.LRol.Text = "Rol";
             // 
@@ -313,34 +313,34 @@
             // 
             this.LEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEstado.AutoSize = true;
-            this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEstado.Location = new System.Drawing.Point(614, 243);
             this.LEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(70, 21);
+            this.LEstado.Size = new System.Drawing.Size(75, 21);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
             // TBclave
             // 
             this.TBclave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBclave.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBclave.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBclave.Location = new System.Drawing.Point(336, 207);
             this.TBclave.MaxLength = 10;
             this.TBclave.Name = "TBclave";
             this.TBclave.ShortcutsEnabled = false;
-            this.TBclave.Size = new System.Drawing.Size(242, 28);
+            this.TBclave.Size = new System.Drawing.Size(242, 29);
             this.TBclave.TabIndex = 23;
             // 
             // TBconfirmarClave
             // 
             this.TBconfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBconfirmarClave.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBconfirmarClave.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBconfirmarClave.Location = new System.Drawing.Point(336, 272);
             this.TBconfirmarClave.MaxLength = 10;
             this.TBconfirmarClave.Name = "TBconfirmarClave";
             this.TBconfirmarClave.ShortcutsEnabled = false;
-            this.TBconfirmarClave.Size = new System.Drawing.Size(242, 28);
+            this.TBconfirmarClave.Size = new System.Drawing.Size(242, 29);
             this.TBconfirmarClave.TabIndex = 24;
             // 
             // contenedorDatos
@@ -391,28 +391,28 @@
             // TBtelefono
             // 
             this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBtelefono.Location = new System.Drawing.Point(614, 77);
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBtelefono.MaxLength = 10;
             this.TBtelefono.Name = "TBtelefono";
-            this.TBtelefono.Size = new System.Drawing.Size(241, 28);
+            this.TBtelefono.Size = new System.Drawing.Size(241, 29);
             this.TBtelefono.TabIndex = 32;
             this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // rutaFoto
             // 
             this.rutaFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rutaFoto.Location = new System.Drawing.Point(713, 196);
             this.rutaFoto.Name = "rutaFoto";
-            this.rutaFoto.Size = new System.Drawing.Size(146, 28);
+            this.rutaFoto.Size = new System.Drawing.Size(146, 29);
             this.rutaFoto.TabIndex = 31;
             // 
             // Bfoto
             // 
             this.Bfoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Bfoto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bfoto.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bfoto.Location = new System.Drawing.Point(614, 195);
             this.Bfoto.Name = "Bfoto";
             this.Bfoto.Size = new System.Drawing.Size(89, 28);
@@ -426,7 +426,7 @@
             this.CBRol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBRol.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBRol.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBRol.ForeColor = System.Drawing.Color.Black;
             this.CBRol.FormattingEnabled = true;
             this.CBRol.Location = new System.Drawing.Point(614, 143);
@@ -439,10 +439,10 @@
             this.rBinactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBinactivo.AutoSize = true;
             this.rBinactivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBinactivo.Location = new System.Drawing.Point(756, 276);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(103, 25);
+            this.rBinactivo.Size = new System.Drawing.Size(109, 25);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -454,10 +454,10 @@
             this.rBactivo.AutoSize = true;
             this.rBactivo.Checked = true;
             this.rBactivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rBactivo.Location = new System.Drawing.Point(658, 276);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(86, 25);
+            this.rBactivo.Size = new System.Drawing.Size(92, 25);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -472,14 +472,14 @@
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_usuarios,
@@ -495,26 +495,26 @@
             this.Estado,
             this.RolDescripcion});
             this.listadoUsuarios.DataSource = this.usuariosBindingSource1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
             this.listadoUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoUsuarios.Location = new System.Drawing.Point(0, 445);
             this.listadoUsuarios.Name = "listadoUsuarios";
             this.listadoUsuarios.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.listadoUsuarios.RowHeadersWidth = 51;
             this.listadoUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoUsuarios.Size = new System.Drawing.Size(1182, 209);
@@ -630,7 +630,7 @@
             // 
             this.LListaUsuarios.BackColor = System.Drawing.SystemColors.Window;
             this.LListaUsuarios.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LListaUsuarios.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LListaUsuarios.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LListaUsuarios.ForeColor = System.Drawing.Color.DarkRed;
             this.LListaUsuarios.Location = new System.Drawing.Point(0, 0);
             this.LListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -645,7 +645,7 @@
             // 
             this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
             this.Lbuscar.Location = new System.Drawing.Point(839, 0);
             this.Lbuscar.Name = "Lbuscar";
@@ -676,7 +676,7 @@
             this.TBlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TBlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.TBlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBlimpiar.ForeColor = System.Drawing.Color.White;
             this.TBlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.TBlimpiar.IconColor = System.Drawing.Color.White;
@@ -715,6 +715,7 @@
             this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Bguardar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bguardar.ForeColor = System.Drawing.Color.White;
             this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bguardar.IconColor = System.Drawing.Color.White;
@@ -738,6 +739,7 @@
             this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beliminar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beliminar.ForeColor = System.Drawing.Color.White;
             this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.Beliminar.IconColor = System.Drawing.Color.White;
@@ -761,6 +763,7 @@
             this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Beditar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beditar.ForeColor = System.Drawing.Color.White;
             this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.Beditar.IconColor = System.Drawing.Color.White;
@@ -793,12 +796,12 @@
             // TBBuscador
             // 
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscador.ForeColor = System.Drawing.Color.Black;
             this.TBBuscador.Location = new System.Drawing.Point(954, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(171, 28);
+            this.TBBuscador.Size = new System.Drawing.Size(171, 29);
             this.TBBuscador.TabIndex = 32;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -807,10 +810,11 @@
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
+            this.btnBuscar.IconSize = 20;
             this.btnBuscar.Location = new System.Drawing.Point(1125, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(57, 28);

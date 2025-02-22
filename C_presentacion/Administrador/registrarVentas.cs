@@ -188,12 +188,13 @@ namespace FankyRecords.C_presentacion.Administrador
             // Obtén la fecha actual del sistema
             DateTime fechaActual = DateTime.Now.Date;
 
-            // Configura la propiedad Text del DateTimePicker a la fecha actual
-            DTFechaVenta.Value = fechaActual;
-
             // Configura el MinDate y MaxDate para que sean la fecha actual
             DTFechaVenta.MinDate = fechaActual;
             DTFechaVenta.MaxDate = fechaActual;
+
+            // Configura la propiedad Text del DateTimePicker a la fecha actual
+            
+            DTFechaVenta.Value = fechaActual;   
         }
     }
 }

@@ -67,7 +67,7 @@
             // MenuClientesVendedor
             // 
             this.MenuClientesVendedor.AutoSize = false;
-            this.MenuClientesVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuClientesVendedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuClientesVendedor.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuClientesVendedor.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
             this.MenuClientesVendedor.IconColor = System.Drawing.Color.DarkRed;
@@ -86,12 +86,12 @@
             this.MenuVentasVendedor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuRegistrarVentasVendedor,
             this.SubmenuDetalleVentasVendedor});
-            this.MenuVentasVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuVentasVendedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuVentasVendedor.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuVentasVendedor.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.MenuVentasVendedor.IconColor = System.Drawing.Color.DarkRed;
             this.MenuVentasVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuVentasVendedor.IconSize = 45;
+            this.MenuVentasVendedor.IconSize = 43;
             this.MenuVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuVentasVendedor.Name = "MenuVentasVendedor";
             this.MenuVentasVendedor.Size = new System.Drawing.Size(152, 59);
@@ -123,19 +123,19 @@
             this.SubmenuDetalleVentasVendedor.IconSize = 25;
             this.SubmenuDetalleVentasVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleVentasVendedor.Name = "SubmenuDetalleVentasVendedor";
-            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(226, 32);
+            this.SubmenuDetalleVentasVendedor.Size = new System.Drawing.Size(246, 32);
             this.SubmenuDetalleVentasVendedor.Text = "Detalle de venta";
             this.SubmenuDetalleVentasVendedor.Click += new System.EventHandler(this.SubmenuDetalleVentasVendedor_Click);
             // 
             // MenuProductoVendedor
             // 
             this.MenuProductoVendedor.AutoSize = false;
-            this.MenuProductoVendedor.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProductoVendedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuProductoVendedor.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuProductoVendedor.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
             this.MenuProductoVendedor.IconColor = System.Drawing.Color.DarkRed;
             this.MenuProductoVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuProductoVendedor.IconSize = 45;
+            this.MenuProductoVendedor.IconSize = 43;
             this.MenuProductoVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuProductoVendedor.Name = "MenuProductoVendedor";
             this.MenuProductoVendedor.Size = new System.Drawing.Size(150, 59);

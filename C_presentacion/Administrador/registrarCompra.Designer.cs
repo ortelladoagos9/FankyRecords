@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorRegistrarCompra = new System.Windows.Forms.Panel();
             this.LRegistrarCompra = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -104,15 +104,15 @@
             // LRegistrarCompra
             // 
             this.LRegistrarCompra.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
             this.LRegistrarCompra.Location = new System.Drawing.Point(0, 0);
             this.LRegistrarCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LRegistrarCompra.Name = "LRegistrarCompra";
-            this.LRegistrarCompra.Size = new System.Drawing.Size(330, 62);
+            this.LRegistrarCompra.Size = new System.Drawing.Size(297, 62);
             this.LRegistrarCompra.TabIndex = 0;
             this.LRegistrarCompra.Text = "Registrar Compra";
-            this.LRegistrarCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LRegistrarCompra.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // contenedorBotones
             // 
@@ -122,23 +122,23 @@
             this.contenedorBotones.Controls.Add(this.LTotalPagar);
             this.contenedorBotones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.contenedorBotones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.contenedorBotones.Location = new System.Drawing.Point(986, 62);
+            this.contenedorBotones.Location = new System.Drawing.Point(988, 62);
             this.contenedorBotones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.contenedorBotones.Name = "contenedorBotones";
-            this.contenedorBotones.Size = new System.Drawing.Size(196, 592);
+            this.contenedorBotones.Size = new System.Drawing.Size(194, 592);
             this.contenedorBotones.TabIndex = 1;
             // 
             // btnRegistrarCompra
             // 
             this.btnRegistrarCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegistrarCompra.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarCompra.ForeColor = System.Drawing.Color.DarkRed;
             this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
             this.btnRegistrarCompra.IconColor = System.Drawing.Color.DarkRed;
             this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarCompra.IconSize = 25;
-            this.btnRegistrarCompra.Location = new System.Drawing.Point(33, 325);
+            this.btnRegistrarCompra.Location = new System.Drawing.Point(32, 325);
             this.btnRegistrarCompra.Name = "btnRegistrarCompra";
             this.btnRegistrarCompra.Size = new System.Drawing.Size(129, 58);
             this.btnRegistrarCompra.TabIndex = 3;
@@ -150,22 +150,22 @@
             // TBtotalPagar
             // 
             this.TBtotalPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtotalPagar.Location = new System.Drawing.Point(33, 203);
+            this.TBtotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtotalPagar.Location = new System.Drawing.Point(32, 203);
             this.TBtotalPagar.Name = "TBtotalPagar";
             this.TBtotalPagar.ReadOnly = true;
-            this.TBtotalPagar.Size = new System.Drawing.Size(129, 28);
+            this.TBtotalPagar.Size = new System.Drawing.Size(129, 29);
             this.TBtotalPagar.TabIndex = 2;
             // 
             // LTotalPagar
             // 
             this.LTotalPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTotalPagar.AutoSize = true;
-            this.LTotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTotalPagar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTotalPagar.ForeColor = System.Drawing.Color.DarkRed;
-            this.LTotalPagar.Location = new System.Drawing.Point(33, 169);
+            this.LTotalPagar.Location = new System.Drawing.Point(32, 169);
             this.LTotalPagar.Name = "LTotalPagar";
-            this.LTotalPagar.Size = new System.Drawing.Size(132, 21);
+            this.LTotalPagar.Size = new System.Drawing.Size(141, 21);
             this.LTotalPagar.TabIndex = 1;
             this.LTotalPagar.Text = "Total a Pagar:";
             // 
@@ -177,14 +177,14 @@
             this.listaCompras.BackgroundColor = System.Drawing.Color.White;
             this.listaCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listaCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_producto,
@@ -196,14 +196,14 @@
             this.Fecha_compra,
             this.Subtotal,
             this.BtnEliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaCompras.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaCompras.DefaultCellStyle = dataGridViewCellStyle4;
             this.listaCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaCompras.Location = new System.Drawing.Point(0, 445);
             this.listaCompras.Name = "listaCompras";
@@ -211,7 +211,7 @@
             this.listaCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.listaCompras.RowHeadersWidth = 51;
             this.listaCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaCompras.Size = new System.Drawing.Size(986, 209);
+            this.listaCompras.Size = new System.Drawing.Size(988, 209);
             this.listaCompras.TabIndex = 2;
             this.listaCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaCompras_CellContentClick);
             this.listaCompras.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.listaCompras_CellPainting);
@@ -290,7 +290,7 @@
             this.contenedorDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorDatos.Location = new System.Drawing.Point(0, 62);
             this.contenedorDatos.Name = "contenedorDatos";
-            this.contenedorDatos.Size = new System.Drawing.Size(986, 383);
+            this.contenedorDatos.Size = new System.Drawing.Size(988, 383);
             this.contenedorDatos.TabIndex = 3;
             // 
             // gbInfoProducto
@@ -309,9 +309,9 @@
             this.gbInfoProducto.Controls.Add(this.TBprecio_compra);
             this.gbInfoProducto.Controls.Add(this.TBproducto);
             this.gbInfoProducto.Controls.Add(this.LProducto);
-            this.gbInfoProducto.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoProducto.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInfoProducto.ForeColor = System.Drawing.Color.DarkRed;
-            this.gbInfoProducto.Location = new System.Drawing.Point(16, 203);
+            this.gbInfoProducto.Location = new System.Drawing.Point(17, 203);
             this.gbInfoProducto.Name = "gbInfoProducto";
             this.gbInfoProducto.Size = new System.Drawing.Size(963, 144);
             this.gbInfoProducto.TabIndex = 5;
@@ -323,7 +323,7 @@
             this.TBIdProducto.Location = new System.Drawing.Point(109, 50);
             this.TBIdProducto.Name = "TBIdProducto";
             this.TBIdProducto.ReadOnly = true;
-            this.TBIdProducto.Size = new System.Drawing.Size(38, 28);
+            this.TBIdProducto.Size = new System.Drawing.Size(38, 29);
             this.TBIdProducto.TabIndex = 33;
             this.TBIdProducto.Visible = false;
             // 
@@ -357,7 +357,7 @@
             this.TBCodProd.Location = new System.Drawing.Point(27, 87);
             this.TBCodProd.Name = "TBCodProd";
             this.TBCodProd.ReadOnly = true;
-            this.TBCodProd.Size = new System.Drawing.Size(120, 28);
+            this.TBCodProd.Size = new System.Drawing.Size(120, 29);
             this.TBCodProd.TabIndex = 30;
             // 
             // LCodigo
@@ -365,7 +365,7 @@
             this.LCodigo.AutoSize = true;
             this.LCodigo.Location = new System.Drawing.Point(27, 57);
             this.LCodigo.Name = "LCodigo";
-            this.LCodigo.Size = new System.Drawing.Size(75, 21);
+            this.LCodigo.Size = new System.Drawing.Size(81, 21);
             this.LCodigo.TabIndex = 29;
             this.LCodigo.Text = "Código:";
             // 
@@ -414,7 +414,7 @@
             0,
             0});
             this.cantProd.Name = "cantProd";
-            this.cantProd.Size = new System.Drawing.Size(95, 28);
+            this.cantProd.Size = new System.Drawing.Size(95, 29);
             this.cantProd.TabIndex = 11;
             this.cantProd.Value = new decimal(new int[] {
             1,
@@ -427,7 +427,7 @@
             this.LCantidad.AutoSize = true;
             this.LCantidad.Location = new System.Drawing.Point(716, 57);
             this.LCantidad.Name = "LCantidad";
-            this.LCantidad.Size = new System.Drawing.Size(95, 21);
+            this.LCantidad.Size = new System.Drawing.Size(102, 21);
             this.LCantidad.TabIndex = 10;
             this.LCantidad.Text = "Cantidad:";
             // 
@@ -436,7 +436,7 @@
             this.LPrecioCompra.AutoSize = true;
             this.LPrecioCompra.Location = new System.Drawing.Point(556, 57);
             this.LPrecioCompra.Name = "LPrecioCompra";
-            this.LPrecioCompra.Size = new System.Drawing.Size(145, 21);
+            this.LPrecioCompra.Size = new System.Drawing.Size(155, 21);
             this.LPrecioCompra.TabIndex = 9;
             this.LPrecioCompra.Text = "Precio Compra:";
             // 
@@ -445,7 +445,7 @@
             this.TBprecio_compra.Location = new System.Drawing.Point(556, 87);
             this.TBprecio_compra.Name = "TBprecio_compra";
             this.TBprecio_compra.ShortcutsEnabled = false;
-            this.TBprecio_compra.Size = new System.Drawing.Size(145, 28);
+            this.TBprecio_compra.Size = new System.Drawing.Size(145, 29);
             this.TBprecio_compra.TabIndex = 8;
             this.TBprecio_compra.TextChanged += new System.EventHandler(this.TBprecio_compra_TextChanged);
             this.TBprecio_compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
@@ -455,7 +455,7 @@
             this.TBproducto.Location = new System.Drawing.Point(212, 87);
             this.TBproducto.Name = "TBproducto";
             this.TBproducto.ReadOnly = true;
-            this.TBproducto.Size = new System.Drawing.Size(178, 28);
+            this.TBproducto.Size = new System.Drawing.Size(178, 29);
             this.TBproducto.TabIndex = 7;
             // 
             // LProducto
@@ -463,7 +463,7 @@
             this.LProducto.AutoSize = true;
             this.LProducto.Location = new System.Drawing.Point(212, 57);
             this.LProducto.Name = "LProducto";
-            this.LProducto.Size = new System.Drawing.Size(96, 21);
+            this.LProducto.Size = new System.Drawing.Size(102, 21);
             this.LProducto.TabIndex = 6;
             this.LProducto.Text = "Producto:";
             // 
@@ -476,9 +476,9 @@
             this.gbInfoProveedor.Controls.Add(this.TBcuit);
             this.gbInfoProveedor.Controls.Add(this.LRazonSocial);
             this.gbInfoProveedor.Controls.Add(this.LCuit);
-            this.gbInfoProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInfoProveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.gbInfoProveedor.Location = new System.Drawing.Point(515, 34);
+            this.gbInfoProveedor.Location = new System.Drawing.Point(516, 34);
             this.gbInfoProveedor.Name = "gbInfoProveedor";
             this.gbInfoProveedor.Size = new System.Drawing.Size(464, 144);
             this.gbInfoProveedor.TabIndex = 4;
@@ -490,7 +490,7 @@
             this.TBIdProveedor.Location = new System.Drawing.Point(142, 40);
             this.TBIdProveedor.Name = "TBIdProveedor";
             this.TBIdProveedor.ReadOnly = true;
-            this.TBIdProveedor.Size = new System.Drawing.Size(38, 28);
+            this.TBIdProveedor.Size = new System.Drawing.Size(38, 29);
             this.TBIdProveedor.TabIndex = 34;
             this.TBIdProveedor.Visible = false;
             // 
@@ -514,7 +514,7 @@
             this.TBrazonSocial.Location = new System.Drawing.Point(253, 74);
             this.TBrazonSocial.Name = "TBrazonSocial";
             this.TBrazonSocial.ReadOnly = true;
-            this.TBrazonSocial.Size = new System.Drawing.Size(164, 28);
+            this.TBrazonSocial.Size = new System.Drawing.Size(164, 29);
             this.TBrazonSocial.TabIndex = 3;
             // 
             // TBcuit
@@ -524,7 +524,7 @@
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.ReadOnly = true;
             this.TBcuit.ShortcutsEnabled = false;
-            this.TBcuit.Size = new System.Drawing.Size(160, 28);
+            this.TBcuit.Size = new System.Drawing.Size(160, 29);
             this.TBcuit.TabIndex = 2;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -533,7 +533,7 @@
             this.LRazonSocial.AutoSize = true;
             this.LRazonSocial.Location = new System.Drawing.Point(253, 47);
             this.LRazonSocial.Name = "LRazonSocial";
-            this.LRazonSocial.Size = new System.Drawing.Size(127, 21);
+            this.LRazonSocial.Size = new System.Drawing.Size(136, 21);
             this.LRazonSocial.TabIndex = 1;
             this.LRazonSocial.Text = "Razón Social:";
             // 
@@ -542,7 +542,7 @@
             this.LCuit.AutoSize = true;
             this.LCuit.Location = new System.Drawing.Point(20, 47);
             this.LCuit.Name = "LCuit";
-            this.LCuit.Size = new System.Drawing.Size(53, 21);
+            this.LCuit.Size = new System.Drawing.Size(56, 21);
             this.LCuit.TabIndex = 0;
             this.LCuit.Text = "Cuit:";
             // 
@@ -555,9 +555,9 @@
             this.gbInfoCompra.Controls.Add(this.cbTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LTipoDoc);
             this.gbInfoCompra.Controls.Add(this.LFechaCompra);
-            this.gbInfoCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoCompra.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInfoCompra.ForeColor = System.Drawing.Color.DarkRed;
-            this.gbInfoCompra.Location = new System.Drawing.Point(16, 34);
+            this.gbInfoCompra.Location = new System.Drawing.Point(17, 34);
             this.gbInfoCompra.Name = "gbInfoCompra";
             this.gbInfoCompra.Size = new System.Drawing.Size(464, 144);
             this.gbInfoCompra.TabIndex = 3;
@@ -569,7 +569,7 @@
             this.TBNumFactura.Location = new System.Drawing.Point(225, 107);
             this.TBNumFactura.Name = "TBNumFactura";
             this.TBNumFactura.ShortcutsEnabled = false;
-            this.TBNumFactura.Size = new System.Drawing.Size(164, 28);
+            this.TBNumFactura.Size = new System.Drawing.Size(164, 29);
             this.TBNumFactura.TabIndex = 6;
             this.TBNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -578,18 +578,18 @@
             this.dtFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaCompra.Location = new System.Drawing.Point(29, 74);
             this.dtFechaCompra.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
-            this.dtFechaCompra.MinDate = new System.DateTime(2024, 11, 20, 0, 0, 0, 0);
+            this.dtFechaCompra.MinDate = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
             this.dtFechaCompra.Name = "dtFechaCompra";
-            this.dtFechaCompra.Size = new System.Drawing.Size(160, 28);
+            this.dtFechaCompra.Size = new System.Drawing.Size(160, 29);
             this.dtFechaCompra.TabIndex = 6;
-            this.dtFechaCompra.Value = new System.DateTime(2024, 11, 20, 0, 0, 0, 0);
+            this.dtFechaCompra.Value = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
             // 
             // LNum_factura
             // 
             this.LNum_factura.AutoSize = true;
             this.LNum_factura.Location = new System.Drawing.Point(225, 80);
             this.LNum_factura.Name = "LNum_factura";
-            this.LNum_factura.Size = new System.Drawing.Size(160, 21);
+            this.LNum_factura.Size = new System.Drawing.Size(168, 21);
             this.LNum_factura.TabIndex = 5;
             this.LNum_factura.Text = "Número Factura:";
             // 
@@ -610,7 +610,7 @@
             this.LTipoDoc.AutoSize = true;
             this.LTipoDoc.Location = new System.Drawing.Point(225, 18);
             this.LTipoDoc.Name = "LTipoDoc";
-            this.LTipoDoc.Size = new System.Drawing.Size(158, 21);
+            this.LTipoDoc.Size = new System.Drawing.Size(169, 21);
             this.LTipoDoc.TabIndex = 1;
             this.LTipoDoc.Text = "Tipo Documento:";
             // 
@@ -619,7 +619,7 @@
             this.LFechaCompra.AutoSize = true;
             this.LFechaCompra.Location = new System.Drawing.Point(29, 47);
             this.LFechaCompra.Name = "LFechaCompra";
-            this.LFechaCompra.Size = new System.Drawing.Size(68, 21);
+            this.LFechaCompra.Size = new System.Drawing.Size(71, 21);
             this.LFechaCompra.TabIndex = 0;
             this.LFechaCompra.Text = "Fecha:";
             // 
