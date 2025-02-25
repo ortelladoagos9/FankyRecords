@@ -46,12 +46,12 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscarNroCompra_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBnumCompra.Text))
+            if (C_negocio.Validaciones.EstaVacio(TBNumeroCompra.Text))
             {
                 MessageBox.Show("Debe ingresar el numero de compra para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
-            Compra compra = CD_Compras.ObtenerCompra(TBnumCompra.Text);
+            Compra compra = CD_Compras.ObtenerCompra(TBNumeroCompra.Text);
             DetalleCompra detalleCompra = new DetalleCompra();
             if (compra == null)
             {
@@ -97,5 +97,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 TBmontoTotal.Text = compra.MontoTotal.ToString("0.00");
             }
         }
+
+    
     }
 }

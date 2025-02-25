@@ -77,6 +77,7 @@ namespace FankyRecords.C_presentacion.Administrador
             TBbaseDatos.Clear();
             TBrutaGuardar.Clear();
         }
+
     }
 
 }

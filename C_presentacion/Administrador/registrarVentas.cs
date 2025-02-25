@@ -185,16 +185,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void registrarVentas_Load(object sender, EventArgs e)
         {
-            // Obtén la fecha actual del sistema
-            DateTime fechaActual = DateTime.Now.Date;
-
-            // Configura el MinDate y MaxDate para que sean la fecha actual
-            DTFechaVenta.MinDate = fechaActual;
-            DTFechaVenta.MaxDate = fechaActual;
-
-            // Configura la propiedad Text del DateTimePicker a la fecha actual
-            
-            DTFechaVenta.Value = fechaActual;   
+            DTFechaVenta.MaxDate = DateTime.Now.Date;
+            DTFechaVenta.MinDate = DateTime.Now.Date;
+            DTFechaVenta.Value = DateTime.Now.Date;
+            DTFechaVenta.Format = DateTimePickerFormat.Short;
         }
     }
 }

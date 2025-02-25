@@ -71,7 +71,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     {
                         rc.FechaCompra,
                         rc.ID_Tipo_Doc,
-                         rc.MontoTotal,
+                        rc.MontoTotal,
                         rc.CuitProveedor,
                         rc.RazonSocial,
                         rc.CodigoProducto,
@@ -81,22 +81,12 @@ namespace FankyRecords.C_presentacion.Administrador
                        
                     });
                 }
-
-
             }
-           
         }
 
         private void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
             CompararFechas();
-        }
-
-     
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void reporteCompras_Load(object sender, EventArgs e)
@@ -114,8 +104,13 @@ namespace FankyRecords.C_presentacion.Administrador
             CBproveedor.ValueMember = "Valor";
             CBproveedor.SelectedIndex = 0;
 
+            DTinicio.MaxDate = DateTime.Now.Date;
+            DTinicio.Value = DateTime.Now.Date;
+            DTinicio.Format = DateTimePickerFormat.Short;
 
-
+            DTfin.MaxDate = DateTime.Now.Date;
+            DTfin.Value = DateTime.Now.Date;
+            DTfin.Format = DateTimePickerFormat.Short;
         }
 
         private void descargarExcel_Click(object sender, EventArgs e)

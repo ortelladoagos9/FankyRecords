@@ -54,16 +54,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 654);
+            this.panel1.Size = new System.Drawing.Size(1418, 739);
             this.panel1.TabIndex = 0;
             // 
             // BtnNavegar
             // 
             this.BtnNavegar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnNavegar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNavegar.Location = new System.Drawing.Point(831, 257);
+            this.BtnNavegar.Location = new System.Drawing.Point(968, 291);
             this.BtnNavegar.Name = "BtnNavegar";
-            this.BtnNavegar.Size = new System.Drawing.Size(128, 30);
+            this.BtnNavegar.Size = new System.Drawing.Size(152, 30);
             this.BtnNavegar.TabIndex = 8;
             this.BtnNavegar.Text = "Navegar";
             this.BtnNavegar.UseVisualStyleBackColor = true;
@@ -79,10 +79,10 @@
             this.Bcancelar.IconColor = System.Drawing.Color.DarkRed;
             this.Bcancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bcancelar.IconSize = 25;
-            this.Bcancelar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.Bcancelar.Location = new System.Drawing.Point(831, 374);
+            this.Bcancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.Bcancelar.Location = new System.Drawing.Point(968, 428);
             this.Bcancelar.Name = "Bcancelar";
-            this.Bcancelar.Size = new System.Drawing.Size(128, 30);
+            this.Bcancelar.Size = new System.Drawing.Size(152, 34);
             this.Bcancelar.TabIndex = 7;
             this.Bcancelar.Text = "Cancelar";
             this.Bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -100,9 +100,9 @@
             this.Bbackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bbackup.IconSize = 25;
             this.Bbackup.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Bbackup.Location = new System.Drawing.Point(831, 315);
+            this.Bbackup.Location = new System.Drawing.Point(968, 364);
             this.Bbackup.Name = "Bbackup";
-            this.Bbackup.Size = new System.Drawing.Size(128, 30);
+            this.Bbackup.Size = new System.Drawing.Size(152, 29);
             this.Bbackup.TabIndex = 6;
             this.Bbackup.Text = "Backup";
             this.Bbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -113,20 +113,20 @@
             // 
             this.TBrutaGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBrutaGuardar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBrutaGuardar.Location = new System.Drawing.Point(429, 257);
+            this.TBrutaGuardar.Location = new System.Drawing.Point(531, 291);
             this.TBrutaGuardar.Name = "TBrutaGuardar";
             this.TBrutaGuardar.ReadOnly = true;
-            this.TBrutaGuardar.Size = new System.Drawing.Size(392, 29);
+            this.TBrutaGuardar.Size = new System.Drawing.Size(425, 29);
             this.TBrutaGuardar.TabIndex = 3;
             // 
             // TBbaseDatos
             // 
             this.TBbaseDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBbaseDatos.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBbaseDatos.Location = new System.Drawing.Point(429, 315);
+            this.TBbaseDatos.Location = new System.Drawing.Point(531, 364);
             this.TBbaseDatos.Name = "TBbaseDatos";
             this.TBbaseDatos.ReadOnly = true;
-            this.TBbaseDatos.Size = new System.Drawing.Size(392, 29);
+            this.TBbaseDatos.Size = new System.Drawing.Size(425, 29);
             this.TBbaseDatos.TabIndex = 2;
             // 
             // label3
@@ -134,7 +134,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(226, 262);
+            this.label3.Location = new System.Drawing.Point(315, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(203, 21);
             this.label3.TabIndex = 1;
@@ -145,7 +145,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(185, 320);
+            this.label2.Location = new System.Drawing.Point(272, 367);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(246, 21);
             this.label2.TabIndex = 0;
@@ -153,35 +153,35 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 74);
+            this.label1.Size = new System.Drawing.Size(1414, 68);
             this.label1.TabIndex = 1;
             this.label1.Text = "Backup";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // contenedorDetalleCompra
             // 
+            this.contenedorDetalleCompra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.contenedorDetalleCompra.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.contenedorDetalleCompra.Controls.Add(this.label1);
-            this.contenedorDetalleCompra.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorDetalleCompra.Location = new System.Drawing.Point(0, 0);
             this.contenedorDetalleCompra.Margin = new System.Windows.Forms.Padding(4);
             this.contenedorDetalleCompra.Name = "contenedorDetalleCompra";
-            this.contenedorDetalleCompra.Size = new System.Drawing.Size(1182, 74);
+            this.contenedorDetalleCompra.Size = new System.Drawing.Size(1414, 68);
             this.contenedorDetalleCompra.TabIndex = 24;
             // 
             // backup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1182, 654);
+            this.ClientSize = new System.Drawing.Size(1418, 739);
             this.Controls.Add(this.contenedorDetalleCompra);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);

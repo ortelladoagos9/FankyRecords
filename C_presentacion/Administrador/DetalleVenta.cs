@@ -35,5 +35,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("Debe ingresar el numero de documento para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

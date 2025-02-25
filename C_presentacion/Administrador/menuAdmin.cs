@@ -17,8 +17,6 @@ namespace FankyRecords.C_presentacion.Administrador
         public FormMenuAdmin()
         {
             InitializeComponent();
-            
-            this.Size = new Size(1200, 820);
         }
 
         private void IconSalirAdministrador_Click(object sender, EventArgs e)

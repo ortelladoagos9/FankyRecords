@@ -399,7 +399,12 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 CargarProductos();
             }
-        }      
+        }
+
+        private void contenedorDatos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

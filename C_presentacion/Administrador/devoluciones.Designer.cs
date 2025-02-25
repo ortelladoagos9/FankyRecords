@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -51,7 +51,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CBtipoNC = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTFechaDevolucion = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,7 +72,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 654);
+            this.panel1.Size = new System.Drawing.Size(1418, 739);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -82,14 +82,15 @@
             this.panel2.Controls.Add(this.Bgenerar);
             this.panel2.Controls.Add(this.ckbDevolverStock);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(921, 56);
+            this.panel2.Location = new System.Drawing.Point(1042, 62);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 359);
+            this.panel2.Size = new System.Drawing.Size(376, 446);
             this.panel2.TabIndex = 41;
             // 
             // iconButton1
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.iconButton1.BackColor = System.Drawing.Color.White;
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,10 +99,10 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(29, 211);
+            this.iconButton1.Location = new System.Drawing.Point(89, 228);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(141, 65);
+            this.iconButton1.Size = new System.Drawing.Size(186, 54);
             this.iconButton1.TabIndex = 6;
             this.iconButton1.Text = "Descargar PDF";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -109,7 +110,7 @@
             // 
             // Bgenerar
             // 
-            this.Bgenerar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Bgenerar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Bgenerar.BackColor = System.Drawing.Color.White;
             this.Bgenerar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bgenerar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,10 +118,10 @@
             this.Bgenerar.IconColor = System.Drawing.Color.DarkRed;
             this.Bgenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bgenerar.IconSize = 25;
-            this.Bgenerar.Location = new System.Drawing.Point(29, 159);
+            this.Bgenerar.Location = new System.Drawing.Point(89, 174);
             this.Bgenerar.Margin = new System.Windows.Forms.Padding(2);
             this.Bgenerar.Name = "Bgenerar";
-            this.Bgenerar.Size = new System.Drawing.Size(141, 36);
+            this.Bgenerar.Size = new System.Drawing.Size(186, 39);
             this.Bgenerar.TabIndex = 5;
             this.Bgenerar.Text = "Guardar";
             this.Bgenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -130,10 +131,10 @@
             // 
             // ckbDevolverStock
             // 
-            this.ckbDevolverStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbDevolverStock.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ckbDevolverStock.AutoSize = true;
             this.ckbDevolverStock.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDevolverStock.Location = new System.Drawing.Point(29, 114);
+            this.ckbDevolverStock.Location = new System.Drawing.Point(89, 127);
             this.ckbDevolverStock.Margin = new System.Windows.Forms.Padding(2);
             this.ckbDevolverStock.Name = "ckbDevolverStock";
             this.ckbDevolverStock.Size = new System.Drawing.Size(186, 25);
@@ -147,20 +148,21 @@
             this.contenedorDevoluciones.Controls.Add(this.LDevoluciones);
             this.contenedorDevoluciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorDevoluciones.Location = new System.Drawing.Point(0, 0);
+            this.contenedorDevoluciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.contenedorDevoluciones.Name = "contenedorDevoluciones";
-            this.contenedorDevoluciones.Size = new System.Drawing.Size(1182, 56);
+            this.contenedorDevoluciones.Size = new System.Drawing.Size(1418, 62);
             this.contenedorDevoluciones.TabIndex = 40;
             // 
             // LDevoluciones
             // 
-            this.LDevoluciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LDevoluciones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.LDevoluciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LDevoluciones.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDevoluciones.ForeColor = System.Drawing.Color.DarkRed;
             this.LDevoluciones.Location = new System.Drawing.Point(0, 0);
-            this.LDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LDevoluciones.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LDevoluciones.Name = "LDevoluciones";
-            this.LDevoluciones.Size = new System.Drawing.Size(253, 56);
+            this.LDevoluciones.Size = new System.Drawing.Size(1418, 62);
             this.LDevoluciones.TabIndex = 0;
             this.LDevoluciones.Text = "Devoluciones";
             this.LDevoluciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -173,14 +175,14 @@
             this.listadoProductosDevolucion.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductosDevolucion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoProductosDevolucion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoProductosDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductosDevolucion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.listadoProductosDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoProductosDevolucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.producto,
@@ -188,22 +190,22 @@
             this.cantidad,
             this.stock,
             this.SubTotal});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoProductosDevolucion.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductosDevolucion.DefaultCellStyle = dataGridViewCellStyle12;
             this.listadoProductosDevolucion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listadoProductosDevolucion.Location = new System.Drawing.Point(0, 415);
+            this.listadoProductosDevolucion.Location = new System.Drawing.Point(0, 508);
             this.listadoProductosDevolucion.Margin = new System.Windows.Forms.Padding(2);
             this.listadoProductosDevolucion.Name = "listadoProductosDevolucion";
             this.listadoProductosDevolucion.ReadOnly = true;
             this.listadoProductosDevolucion.RowHeadersWidth = 51;
             this.listadoProductosDevolucion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listadoProductosDevolucion.Size = new System.Drawing.Size(1182, 239);
+            this.listadoProductosDevolucion.Size = new System.Drawing.Size(1418, 231);
             this.listadoProductosDevolucion.TabIndex = 3;
             // 
             // producto
@@ -243,27 +245,28 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.TBnombreComprador);
             this.groupBox2.Controls.Add(this.TBnumFactura);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox2.Location = new System.Drawing.Point(96, 245);
+            this.groupBox2.Location = new System.Drawing.Point(28, 291);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(768, 135);
+            this.groupBox2.Size = new System.Drawing.Size(985, 190);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de la Devolución";
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(386, 46);
+            this.label5.Location = new System.Drawing.Point(512, 73);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 21);
@@ -272,31 +275,34 @@
             // 
             // TBnombreComprador
             // 
+            this.TBnombreComprador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBnombreComprador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombreComprador.Location = new System.Drawing.Point(390, 69);
+            this.TBnombreComprador.Location = new System.Drawing.Point(512, 98);
             this.TBnombreComprador.Margin = new System.Windows.Forms.Padding(2);
             this.TBnombreComprador.Name = "TBnombreComprador";
             this.TBnombreComprador.ShortcutsEnabled = false;
-            this.TBnombreComprador.Size = new System.Drawing.Size(205, 28);
+            this.TBnombreComprador.Size = new System.Drawing.Size(238, 28);
             this.TBnombreComprador.TabIndex = 2;
             this.TBnombreComprador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
             // TBnumFactura
             // 
+            this.TBnumFactura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBnumFactura.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnumFactura.Location = new System.Drawing.Point(146, 69);
+            this.TBnumFactura.Location = new System.Drawing.Point(212, 98);
             this.TBnumFactura.Margin = new System.Windows.Forms.Padding(2);
             this.TBnumFactura.Name = "TBnumFactura";
             this.TBnumFactura.ShortcutsEnabled = false;
-            this.TBnumFactura.Size = new System.Drawing.Size(154, 28);
+            this.TBnumFactura.Size = new System.Drawing.Size(238, 28);
             this.TBnumFactura.TabIndex = 1;
             this.TBnumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(146, 46);
+            this.label4.Location = new System.Drawing.Point(212, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 21);
@@ -305,88 +311,93 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.CBtipoNC);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.DTFechaDevolucion);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.groupBox1.Location = new System.Drawing.Point(96, 85);
+            this.groupBox1.Location = new System.Drawing.Point(28, 85);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(768, 135);
+            this.groupBox1.Size = new System.Drawing.Size(985, 190);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de la Devolución";
             // 
             // CBtipoNC
             // 
+            this.CBtipoNC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBtipoNC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBtipoNC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBtipoNC.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBtipoNC.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBtipoNC.FormattingEnabled = true;
             this.CBtipoNC.Items.AddRange(new object[] {
             "Nota de crédito A",
             "Nota de crédito B",
             "Nota de crédito C"});
-            this.CBtipoNC.Location = new System.Drawing.Point(390, 70);
+            this.CBtipoNC.Location = new System.Drawing.Point(512, 100);
             this.CBtipoNC.Margin = new System.Windows.Forms.Padding(2);
             this.CBtipoNC.Name = "CBtipoNC";
-            this.CBtipoNC.Size = new System.Drawing.Size(206, 29);
+            this.CBtipoNC.Size = new System.Drawing.Size(238, 33);
             this.CBtipoNC.TabIndex = 3;
             this.CBtipoNC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPalabra_KeyPress);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(386, 41);
+            this.label3.Location = new System.Drawing.Point(512, 68);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 42);
+            this.label3.Size = new System.Drawing.Size(239, 30);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tipo Nota de Crédito\r:\n";
+            this.label3.Text = "Tipo Nota de Crédito\r\n:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateTimePicker1
+            // DTFechaDevolucion
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 71);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 28);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 2, 22, 0, 0, 0, 0);
+            this.DTFechaDevolucion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DTFechaDevolucion.CalendarFont = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaDevolucion.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaDevolucion.Location = new System.Drawing.Point(212, 101);
+            this.DTFechaDevolucion.Margin = new System.Windows.Forms.Padding(2);
+            this.DTFechaDevolucion.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
+            this.DTFechaDevolucion.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
+            this.DTFechaDevolucion.Name = "DTFechaDevolucion";
+            this.DTFechaDevolucion.Size = new System.Drawing.Size(238, 32);
+            this.DTFechaDevolucion.TabIndex = 1;
+            this.DTFechaDevolucion.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 41);
+            this.label2.Location = new System.Drawing.Point(212, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.Size = new System.Drawing.Size(82, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha:";
             // 
             // devoluciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1182, 654);
+            this.ClientSize = new System.Drawing.Size(1418, 739);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "devoluciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devoluciones";
+            this.Load += new System.EventHandler(this.devoluciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -395,7 +406,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,7 +418,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CBtipoNC;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTFechaDevolucion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TBnombreComprador;

@@ -53,5 +53,12 @@ namespace FankyRecords.C_presentacion.Administrador
             TBnumFactura.Clear();
             TBnombreComprador.Clear();
         }
+
+        private void devoluciones_Load(object sender, EventArgs e)
+        {
+            DTFechaDevolucion.MaxDate = DateTime.Now;
+            DTFechaDevolucion.Value = DateTime.Now;
+            DTFechaDevolucion.Format = DateTimePickerFormat.Short;
+        }
     }
 }

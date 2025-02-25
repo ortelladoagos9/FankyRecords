@@ -77,13 +77,17 @@ namespace FankyRecords.C_presentacion.Administrador
                     });
                 }
             }
-       
         }
-
-       
+  
         private void reporteVentas_Load(object sender, EventArgs e)
         {
+            DTinicio.MaxDate = DateTime.Now.Date;
+            DTinicio.Value = DateTime.Now.Date;
+            DTinicio.Format = DateTimePickerFormat.Short;
 
+            DTfin.MaxDate = DateTime.Now.Date;
+            DTfin.Value = DateTime.Now.Date;
+            DTfin.Format = DateTimePickerFormat.Short;
         }
     }
 }

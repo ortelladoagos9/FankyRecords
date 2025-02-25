@@ -31,15 +31,12 @@ namespace FankyRecords.C_presentacion.Administrador
         private void registrarCompra_Load(object sender, EventArgs e)
         {
             CargarCombo();
-            // Obtén la fecha actual del sistema
-            DateTime fechaActual = DateTime.Now.Date;
 
-            // Configura la propiedad Text del DateTimePicker a la fecha actual
-            dtFechaCompra.Value = fechaActual;
-
-            // Configura el MinDate y MaxDate para que sean la fecha actual
-            dtFechaCompra.MinDate = fechaActual;
-            dtFechaCompra.MaxDate = fechaActual;
+            dtFechaCompra.MaxDate = DateTime.Now.Date;
+            dtFechaCompra.MinDate = DateTime.Now.Date;
+            dtFechaCompra.Value = DateTime.Now.Date;
+            dtFechaCompra.Format = DateTimePickerFormat.Short;
+  
             TBNumFactura.Select();
         }
 
@@ -375,11 +372,6 @@ namespace FankyRecords.C_presentacion.Administrador
                     MessageBox.Show("Debe agregar un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }       
-        }
-
-        private void cbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

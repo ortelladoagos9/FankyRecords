@@ -289,5 +289,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 CargarCategorias();
             }
         }
+
+       
     }
 }

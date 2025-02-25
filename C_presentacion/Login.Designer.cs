@@ -42,45 +42,57 @@
             // 
             // TBClave
             // 
-            this.TBClave.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBClave.Location = new System.Drawing.Point(217, 298);
+            this.TBClave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBClave.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBClave.Location = new System.Drawing.Point(414, 474);
             this.TBClave.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
             this.TBClave.MaxLength = 8;
             this.TBClave.Name = "TBClave";
             this.TBClave.PasswordChar = '*';
-            this.TBClave.Size = new System.Drawing.Size(272, 29);
+            this.TBClave.Size = new System.Drawing.Size(272, 35);
             this.TBClave.TabIndex = 1;
             // 
             // TBDni
             // 
-            this.TBDni.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDni.Location = new System.Drawing.Point(217, 193);
+            this.TBDni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBDni.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDni.Location = new System.Drawing.Point(414, 369);
             this.TBDni.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
             this.TBDni.MaxLength = 8;
             this.TBDni.Name = "TBDni";
-            this.TBDni.Size = new System.Drawing.Size(272, 29);
+            this.TBDni.Size = new System.Drawing.Size(272, 35);
             this.TBDni.TabIndex = 0;
             this.TBDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDni_KeyPress);
             // 
             // LDni
             // 
+            this.LDni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LDni.AutoSize = true;
-            this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDni.Location = new System.Drawing.Point(217, 144);
+            this.LDni.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDni.Location = new System.Drawing.Point(414, 320);
             this.LDni.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(48, 21);
+            this.LDni.Size = new System.Drawing.Size(55, 25);
             this.LDni.TabIndex = 10;
             this.LDni.Text = "DNI";
             // 
             // LClave
             // 
+            this.LClave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LClave.AutoSize = true;
-            this.LClave.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LClave.Location = new System.Drawing.Point(217, 249);
+            this.LClave.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LClave.Location = new System.Drawing.Point(414, 425);
             this.LClave.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.LClave.Name = "LClave";
-            this.LClave.Size = new System.Drawing.Size(117, 21);
+            this.LClave.Size = new System.Drawing.Size(132, 25);
             this.LClave.TabIndex = 11;
             this.LClave.Text = "Contraseña";
             // 
@@ -88,29 +100,32 @@
             // 
             this.LIniciarSesion.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LIniciarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LIniciarSesion.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LIniciarSesion.Font = new System.Drawing.Font("Century Schoolbook", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LIniciarSesion.ForeColor = System.Drawing.Color.DarkRed;
             this.LIniciarSesion.Location = new System.Drawing.Point(0, 0);
             this.LIniciarSesion.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.LIniciarSesion.Name = "LIniciarSesion";
-            this.LIniciarSesion.Size = new System.Drawing.Size(715, 131);
+            this.LIniciarSesion.Size = new System.Drawing.Size(1103, 320);
             this.LIniciarSesion.TabIndex = 15;
             this.LIniciarSesion.Text = "Iniciar Sesión";
             this.LIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Bsalir
             // 
+            this.Bsalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Bsalir.BackColor = System.Drawing.Color.DarkRed;
             this.Bsalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bsalir.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bsalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bsalir.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bsalir.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bsalir.ForeColor = System.Drawing.Color.White;
             this.Bsalir.IconChar = FontAwesome.Sharp.IconChar.CircleXmark;
             this.Bsalir.IconColor = System.Drawing.Color.White;
             this.Bsalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bsalir.IconSize = 25;
-            this.Bsalir.Location = new System.Drawing.Point(377, 404);
+            this.Bsalir.Location = new System.Drawing.Point(574, 580);
             this.Bsalir.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Bsalir.Name = "Bsalir";
             this.Bsalir.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -124,17 +139,20 @@
             // 
             // Bingresar
             // 
+            this.Bingresar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Bingresar.BackColor = System.Drawing.Color.DarkGreen;
             this.Bingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bingresar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bingresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bingresar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bingresar.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bingresar.ForeColor = System.Drawing.Color.White;
             this.Bingresar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bingresar.IconColor = System.Drawing.Color.White;
             this.Bingresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Bingresar.IconSize = 25;
-            this.Bingresar.Location = new System.Drawing.Point(183, 404);
+            this.Bingresar.Location = new System.Drawing.Point(380, 580);
             this.Bingresar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Bingresar.Name = "Bingresar";
             this.Bingresar.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -152,10 +170,10 @@
             this.picFankyRecordsAdministrador.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFankyRecordsAdministrador.Dock = System.Windows.Forms.DockStyle.Right;
             this.picFankyRecordsAdministrador.Image = global::FankyRecords.Properties.Resources.Fanky_records1;
-            this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(715, 0);
+            this.picFankyRecordsAdministrador.Location = new System.Drawing.Point(1103, 0);
             this.picFankyRecordsAdministrador.Margin = new System.Windows.Forms.Padding(4);
             this.picFankyRecordsAdministrador.Name = "picFankyRecordsAdministrador";
-            this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(214, 549);
+            this.picFankyRecordsAdministrador.Size = new System.Drawing.Size(315, 916);
             this.picFankyRecordsAdministrador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFankyRecordsAdministrador.TabIndex = 16;
             this.picFankyRecordsAdministrador.TabStop = false;
@@ -165,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(929, 549);
+            this.ClientSize = new System.Drawing.Size(1418, 916);
             this.Controls.Add(this.LIniciarSesion);
             this.Controls.Add(this.picFankyRecordsAdministrador);
             this.Controls.Add(this.Bsalir);
