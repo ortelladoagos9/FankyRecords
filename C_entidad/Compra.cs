@@ -9,7 +9,7 @@ namespace FankyRecords.C_entidad
 {
     public class Compra
     {
-        public int ID_compra { get; set; }
+        public int ID_compras { get; set; }
         public int NumeroCompra { get; set; }
         public decimal MontoTotal { get; set; }
         public int NumeroFactura { get; set; }

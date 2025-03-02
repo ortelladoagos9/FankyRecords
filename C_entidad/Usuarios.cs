@@ -23,5 +23,10 @@ namespace FankyRecords.C_entidad
 
         public string RolDescripcion => Obj_rol?.Descripcion;
         public string NombreCompleto { get; set; }
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
     }
 }

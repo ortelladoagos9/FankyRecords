@@ -56,8 +56,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void devoluciones_Load(object sender, EventArgs e)
         {
-            DTFechaDevolucion.MaxDate = DateTime.Now;
-            DTFechaDevolucion.Value = DateTime.Now;
+            DTFechaDevolucion.MaxDate = DateTime.Now.Date;  // Establece el máximo en hoy (sin hora)
+            DTFechaDevolucion.MinDate = DateTime.Now.Date;  // Establece el mínimo en hoy (sin hora)
+            DTFechaDevolucion.Value = DateTime.Now.Date;    // Asegura que la fecha seleccionada sea hoy
+
+            // Solo mostrar la fecha en la vista
             DTFechaDevolucion.Format = DateTimePickerFormat.Short;
         }
     }

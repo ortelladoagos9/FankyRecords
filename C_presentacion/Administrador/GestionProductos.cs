@@ -301,7 +301,55 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             CargarCombo();
             CargarProductos();
+            // Suscribimos el evento para que se ejecute cuando los datos terminen de cargar
+            listadoProductos.DataBindingComplete += listadoProductos_DataBindingComplete;
+
+            listadoProductos.Columns["precioVenta"].DefaultCellStyle.Format = "N2";
+            listadoProductos.Columns["precioCompra"].DefaultCellStyle.Format = "N2";
+
+            listadoProductos.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("es-ES");
+
         }
+
+        private void listadoProductos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            AplicarColoresAdvertenciaStock();
+        }
+
+        private void AplicarColoresAdvertenciaStock()
+        {
+            bool hayAdvertencia = false; // Bandera para mostrar el mensaje solo una vez
+
+            foreach (DataGridViewRow fila in listadoProductos.Rows)
+            {
+                if (fila.Cells["stock"].Value != null && fila.Cells["stockmin"].Value != null)
+                {
+                    if (int.TryParse(fila.Cells["stock"].Value.ToString(), out int stock) &&
+                        int.TryParse(fila.Cells["stockmin"].Value.ToString(), out int stockMin))
+                    {
+                        if (stock <= stockMin)
+                        {
+                            fila.DefaultCellStyle.BackColor = System.Drawing.Color.Tomato;
+                            fila.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+
+                            hayAdvertencia = true; // Se activa la bandera
+                        }
+                        else
+                        {
+                            fila.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                            fila.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                        }
+                    }
+                }
+            }
+
+            // Muestra el mensaje solo si hay productos con stock bajo
+            if (hayAdvertencia)
+            {
+                MessageBox.Show("Algunos productos tienen stock por debajo del mínimo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
 
         private void CargarCombo()
         {
@@ -401,10 +449,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void contenedorDatos_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }
 

@@ -45,7 +45,6 @@
             this.MenuReportesAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.SubmenuReporteVentas = new FontAwesome.Sharp.IconMenuItem();
             this.SubmenuReporteCompras = new FontAwesome.Sharp.IconMenuItem();
-            this.MenuGraficosAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.MenuBackupAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.menuTituloAdministrador = new System.Windows.Forms.MenuStrip();
             this.IconSalirAdministrador = new FontAwesome.Sharp.IconMenuItem();
@@ -76,12 +75,11 @@
             this.MenuComprasAdministrador,
             this.MenuNegocioAdministrador,
             this.MenuReportesAdministrador,
-            this.MenuGraficosAdministrador,
             this.MenuBackupAdministrador});
             this.menuAdministrador.Location = new System.Drawing.Point(0, 107);
             this.menuAdministrador.Name = "menuAdministrador";
             this.menuAdministrador.Padding = new System.Windows.Forms.Padding(12, 2, 0, 2);
-            this.menuAdministrador.Size = new System.Drawing.Size(1418, 70);
+            this.menuAdministrador.Size = new System.Drawing.Size(1418, 86);
             this.menuAdministrador.TabIndex = 0;
             this.menuAdministrador.Text = "menuStrip1";
             // 
@@ -89,7 +87,7 @@
             // 
             this.MenuUsuariosAdministrador.AutoSize = false;
             this.MenuUsuariosAdministrador.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.MenuUsuariosAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuUsuariosAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuUsuariosAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuUsuariosAdministrador.IconChar = FontAwesome.Sharp.IconChar.UsersGear;
             this.MenuUsuariosAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -97,7 +95,7 @@
             this.MenuUsuariosAdministrador.IconSize = 45;
             this.MenuUsuariosAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuUsuariosAdministrador.Name = "MenuUsuariosAdministrador";
-            this.MenuUsuariosAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuUsuariosAdministrador.Size = new System.Drawing.Size(145, 70);
             this.MenuUsuariosAdministrador.Text = "Usuarios";
             this.MenuUsuariosAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuUsuariosAdministrador.Click += new System.EventHandler(this.MenuUsuariosAdministrador_Click);
@@ -105,7 +103,7 @@
             // MenuProductoAdministrador
             // 
             this.MenuProductoAdministrador.AutoSize = false;
-            this.MenuProductoAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProductoAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuProductoAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuProductoAdministrador.IconChar = FontAwesome.Sharp.IconChar.CompactDisc;
             this.MenuProductoAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -113,7 +111,7 @@
             this.MenuProductoAdministrador.IconSize = 43;
             this.MenuProductoAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuProductoAdministrador.Name = "MenuProductoAdministrador";
-            this.MenuProductoAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuProductoAdministrador.Size = new System.Drawing.Size(145, 70);
             this.MenuProductoAdministrador.Text = "Productos";
             this.MenuProductoAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuProductoAdministrador.Click += new System.EventHandler(this.MenuProductoAdministrador_Click);
@@ -121,7 +119,7 @@
             // MenuCategoriaAdministrativo
             // 
             this.MenuCategoriaAdministrativo.AutoSize = false;
-            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCategoriaAdministrativo.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuCategoriaAdministrativo.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuCategoriaAdministrativo.IconChar = FontAwesome.Sharp.IconChar.List;
             this.MenuCategoriaAdministrativo.IconColor = System.Drawing.Color.DarkRed;
@@ -129,7 +127,7 @@
             this.MenuCategoriaAdministrativo.IconSize = 45;
             this.MenuCategoriaAdministrativo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuCategoriaAdministrativo.Name = "MenuCategoriaAdministrativo";
-            this.MenuCategoriaAdministrativo.Size = new System.Drawing.Size(100, 59);
+            this.MenuCategoriaAdministrativo.Size = new System.Drawing.Size(152, 70);
             this.MenuCategoriaAdministrativo.Text = "Categorias";
             this.MenuCategoriaAdministrativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuCategoriaAdministrativo.Click += new System.EventHandler(this.MenuCategoriaAdministrativo_Click);
@@ -137,7 +135,7 @@
             // MenuProveedorAdministrador
             // 
             this.MenuProveedorAdministrador.AutoSize = false;
-            this.MenuProveedorAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProveedorAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuProveedorAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuProveedorAdministrador.IconChar = FontAwesome.Sharp.IconChar.TruckField;
             this.MenuProveedorAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -145,7 +143,7 @@
             this.MenuProveedorAdministrador.IconSize = 45;
             this.MenuProveedorAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuProveedorAdministrador.Name = "MenuProveedorAdministrador";
-            this.MenuProveedorAdministrador.Size = new System.Drawing.Size(152, 59);
+            this.MenuProveedorAdministrador.Size = new System.Drawing.Size(165, 70);
             this.MenuProveedorAdministrador.Text = "Proveedores";
             this.MenuProveedorAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuProveedorAdministrador.Click += new System.EventHandler(this.MenuProveedorAdministrador_Click);
@@ -156,7 +154,7 @@
             this.MenuVentasAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuRegistrarVentasAdministrador,
             this.SubmenuDetalleVentasAdministrador});
-            this.MenuVentasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuVentasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuVentasAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuVentasAdministrador.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.MenuVentasAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -164,7 +162,7 @@
             this.MenuVentasAdministrador.IconSize = 43;
             this.MenuVentasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuVentasAdministrador.Name = "MenuVentasAdministrador";
-            this.MenuVentasAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuVentasAdministrador.Size = new System.Drawing.Size(120, 70);
             this.MenuVentasAdministrador.Text = "Ventas";
             this.MenuVentasAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -179,7 +177,7 @@
             this.SubmenuRegistrarVentasAdministrador.IconSize = 25;
             this.SubmenuRegistrarVentasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuRegistrarVentasAdministrador.Name = "SubmenuRegistrarVentasAdministrador";
-            this.SubmenuRegistrarVentasAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuRegistrarVentasAdministrador.Size = new System.Drawing.Size(305, 40);
             this.SubmenuRegistrarVentasAdministrador.Text = "Registrar ventas";
             this.SubmenuRegistrarVentasAdministrador.Click += new System.EventHandler(this.SubmenuRegistrarVentasAdministrador_Click);
             // 
@@ -194,14 +192,14 @@
             this.SubmenuDetalleVentasAdministrador.IconSize = 25;
             this.SubmenuDetalleVentasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleVentasAdministrador.Name = "SubmenuDetalleVentasAdministrador";
-            this.SubmenuDetalleVentasAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuDetalleVentasAdministrador.Size = new System.Drawing.Size(305, 40);
             this.SubmenuDetalleVentasAdministrador.Text = "Detalle de venta";
             this.SubmenuDetalleVentasAdministrador.Click += new System.EventHandler(this.SubmenuDetalleVentasAdministrador_Click);
             // 
             // MenuDevolucionAdministrador
             // 
             this.MenuDevolucionAdministrador.AutoSize = false;
-            this.MenuDevolucionAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuDevolucionAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuDevolucionAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuDevolucionAdministrador.IconChar = FontAwesome.Sharp.IconChar.Redo;
             this.MenuDevolucionAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -209,7 +207,7 @@
             this.MenuDevolucionAdministrador.IconSize = 43;
             this.MenuDevolucionAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuDevolucionAdministrador.Name = "MenuDevolucionAdministrador";
-            this.MenuDevolucionAdministrador.Size = new System.Drawing.Size(152, 59);
+            this.MenuDevolucionAdministrador.Size = new System.Drawing.Size(170, 70);
             this.MenuDevolucionAdministrador.Text = "Devoluciones";
             this.MenuDevolucionAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuDevolucionAdministrador.Click += new System.EventHandler(this.MenuDevolucionAdministrador_Click);
@@ -220,7 +218,7 @@
             this.MenuComprasAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuRegistrarComprasAdministrador,
             this.SubmenuDetalleCompraAdministrador});
-            this.MenuComprasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuComprasAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuComprasAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuComprasAdministrador.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.MenuComprasAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -228,7 +226,7 @@
             this.MenuComprasAdministrador.IconSize = 45;
             this.MenuComprasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuComprasAdministrador.Name = "MenuComprasAdministrador";
-            this.MenuComprasAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuComprasAdministrador.Size = new System.Drawing.Size(140, 70);
             this.MenuComprasAdministrador.Text = "Compras";
             this.MenuComprasAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -243,7 +241,7 @@
             this.SubmenuRegistrarComprasAdministrador.IconSize = 25;
             this.SubmenuRegistrarComprasAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuRegistrarComprasAdministrador.Name = "SubmenuRegistrarComprasAdministrador";
-            this.SubmenuRegistrarComprasAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuRegistrarComprasAdministrador.Size = new System.Drawing.Size(328, 40);
             this.SubmenuRegistrarComprasAdministrador.Text = "Registrar compras";
             this.SubmenuRegistrarComprasAdministrador.Click += new System.EventHandler(this.SubmenuRegistrarComprasAdministrador_Click);
             // 
@@ -258,14 +256,14 @@
             this.SubmenuDetalleCompraAdministrador.IconSize = 25;
             this.SubmenuDetalleCompraAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuDetalleCompraAdministrador.Name = "SubmenuDetalleCompraAdministrador";
-            this.SubmenuDetalleCompraAdministrador.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuDetalleCompraAdministrador.Size = new System.Drawing.Size(328, 40);
             this.SubmenuDetalleCompraAdministrador.Text = "Detalle de compra";
             this.SubmenuDetalleCompraAdministrador.Click += new System.EventHandler(this.SubmenuDetalleCompraAdministrador_Click);
             // 
             // MenuNegocioAdministrador
             // 
             this.MenuNegocioAdministrador.AutoSize = false;
-            this.MenuNegocioAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuNegocioAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuNegocioAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuNegocioAdministrador.IconChar = FontAwesome.Sharp.IconChar.Cog;
             this.MenuNegocioAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -273,7 +271,7 @@
             this.MenuNegocioAdministrador.IconSize = 43;
             this.MenuNegocioAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuNegocioAdministrador.Name = "MenuNegocioAdministrador";
-            this.MenuNegocioAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuNegocioAdministrador.Size = new System.Drawing.Size(70, 59);
             this.MenuNegocioAdministrador.Text = "Negocio";
             this.MenuNegocioAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuNegocioAdministrador.Visible = false;
@@ -284,7 +282,7 @@
             this.MenuReportesAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuReporteVentas,
             this.SubmenuReporteCompras});
-            this.MenuReportesAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuReportesAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuReportesAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuReportesAdministrador.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
             this.MenuReportesAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -292,9 +290,10 @@
             this.MenuReportesAdministrador.IconSize = 45;
             this.MenuReportesAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuReportesAdministrador.Name = "MenuReportesAdministrador";
-            this.MenuReportesAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuReportesAdministrador.Size = new System.Drawing.Size(145, 70);
             this.MenuReportesAdministrador.Text = "Reportes";
             this.MenuReportesAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuReportesAdministrador.Click += new System.EventHandler(this.MenuReportesAdministrador_Click);
             // 
             // SubmenuReporteVentas
             // 
@@ -307,7 +306,7 @@
             this.SubmenuReporteVentas.IconSize = 25;
             this.SubmenuReporteVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuReporteVentas.Name = "SubmenuReporteVentas";
-            this.SubmenuReporteVentas.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuReporteVentas.Size = new System.Drawing.Size(315, 40);
             this.SubmenuReporteVentas.Text = "Reporte Ventas";
             this.SubmenuReporteVentas.Click += new System.EventHandler(this.SubmenuReporteVentas_Click);
             // 
@@ -322,30 +321,14 @@
             this.SubmenuReporteCompras.IconSize = 25;
             this.SubmenuReporteCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuReporteCompras.Name = "SubmenuReporteCompras";
-            this.SubmenuReporteCompras.Size = new System.Drawing.Size(230, 35);
+            this.SubmenuReporteCompras.Size = new System.Drawing.Size(315, 40);
             this.SubmenuReporteCompras.Text = "Reporte Compras";
             this.SubmenuReporteCompras.Click += new System.EventHandler(this.SubmenuReporteCompras_Click);
-            // 
-            // MenuGraficosAdministrador
-            // 
-            this.MenuGraficosAdministrador.AutoSize = false;
-            this.MenuGraficosAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuGraficosAdministrador.ForeColor = System.Drawing.Color.DarkRed;
-            this.MenuGraficosAdministrador.IconChar = FontAwesome.Sharp.IconChar.PieChart;
-            this.MenuGraficosAdministrador.IconColor = System.Drawing.Color.DarkRed;
-            this.MenuGraficosAdministrador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuGraficosAdministrador.IconSize = 45;
-            this.MenuGraficosAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuGraficosAdministrador.Name = "MenuGraficosAdministrador";
-            this.MenuGraficosAdministrador.Size = new System.Drawing.Size(100, 59);
-            this.MenuGraficosAdministrador.Text = "Gráficos";
-            this.MenuGraficosAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuGraficosAdministrador.Visible = false;
             // 
             // MenuBackupAdministrador
             // 
             this.MenuBackupAdministrador.AutoSize = false;
-            this.MenuBackupAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuBackupAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuBackupAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuBackupAdministrador.IconChar = FontAwesome.Sharp.IconChar.CloudUploadAlt;
             this.MenuBackupAdministrador.IconColor = System.Drawing.Color.DarkRed;
@@ -353,7 +336,7 @@
             this.MenuBackupAdministrador.IconSize = 45;
             this.MenuBackupAdministrador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MenuBackupAdministrador.Name = "MenuBackupAdministrador";
-            this.MenuBackupAdministrador.Size = new System.Drawing.Size(100, 59);
+            this.MenuBackupAdministrador.Size = new System.Drawing.Size(120, 70);
             this.MenuBackupAdministrador.Text = "Backup";
             this.MenuBackupAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuBackupAdministrador.Click += new System.EventHandler(this.MenuBackupAdministrador_Click);
@@ -414,12 +397,12 @@
             // 
             this.labFankyRecordsMenuAdministrador.AutoSize = true;
             this.labFankyRecordsMenuAdministrador.BackColor = System.Drawing.Color.DarkRed;
-            this.labFankyRecordsMenuAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFankyRecordsMenuAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFankyRecordsMenuAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labFankyRecordsMenuAdministrador.Location = new System.Drawing.Point(122, 39);
+            this.labFankyRecordsMenuAdministrador.Location = new System.Drawing.Point(120, 31);
             this.labFankyRecordsMenuAdministrador.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labFankyRecordsMenuAdministrador.Name = "labFankyRecordsMenuAdministrador";
-            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(210, 29);
+            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(305, 44);
             this.labFankyRecordsMenuAdministrador.TabIndex = 2;
             this.labFankyRecordsMenuAdministrador.Text = "Fanky Records";
             // 
@@ -427,12 +410,12 @@
             // 
             this.labUsuarioRolAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labUsuarioRolAdministrador.BackColor = System.Drawing.Color.DarkRed;
-            this.labUsuarioRolAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labUsuarioRolAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labUsuarioRolAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labUsuarioRolAdministrador.Location = new System.Drawing.Point(932, 39);
+            this.labUsuarioRolAdministrador.Location = new System.Drawing.Point(876, 40);
             this.labUsuarioRolAdministrador.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labUsuarioRolAdministrador.Name = "labUsuarioRolAdministrador";
-            this.labUsuarioRolAdministrador.Size = new System.Drawing.Size(112, 27);
+            this.labUsuarioRolAdministrador.Size = new System.Drawing.Size(113, 27);
             this.labUsuarioRolAdministrador.TabIndex = 4;
             this.labUsuarioRolAdministrador.Text = "Usuario:";
             // 
@@ -440,12 +423,12 @@
             // 
             this.labAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labAdministrador.BackColor = System.Drawing.Color.DarkRed;
-            this.labAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAdministrador.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labAdministrador.ForeColor = System.Drawing.Color.Gold;
-            this.labAdministrador.Location = new System.Drawing.Point(1033, 39);
+            this.labAdministrador.Location = new System.Drawing.Point(996, 40);
             this.labAdministrador.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labAdministrador.Name = "labAdministrador";
-            this.labAdministrador.Size = new System.Drawing.Size(184, 27);
+            this.labAdministrador.Size = new System.Drawing.Size(189, 27);
             this.labAdministrador.TabIndex = 5;
             this.labAdministrador.Text = "Administrador";
             // 
@@ -456,10 +439,10 @@
             this.contenedorAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.contenedorAdministrador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorAdministrador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.contenedorAdministrador.Location = new System.Drawing.Point(0, 177);
+            this.contenedorAdministrador.Location = new System.Drawing.Point(0, 193);
             this.contenedorAdministrador.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.contenedorAdministrador.Name = "contenedorAdministrador";
-            this.contenedorAdministrador.Size = new System.Drawing.Size(1418, 739);
+            this.contenedorAdministrador.Size = new System.Drawing.Size(1418, 723);
             this.contenedorAdministrador.TabIndex = 6;
             // 
             // picFankyRecordsAdministrador
@@ -523,7 +506,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuDevolucionAdministrador;
         private FontAwesome.Sharp.IconMenuItem MenuComprasAdministrador;
         private FontAwesome.Sharp.IconMenuItem MenuReportesAdministrador;
-        private FontAwesome.Sharp.IconMenuItem MenuGraficosAdministrador;
         private FontAwesome.Sharp.IconMenuItem MenuBackupAdministrador;
         private System.Windows.Forms.Label labAdministrador;
         private FontAwesome.Sharp.IconMenuItem SubmenuRegistrarVentasAdministrador;

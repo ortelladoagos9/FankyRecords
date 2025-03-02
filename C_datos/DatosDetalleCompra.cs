@@ -44,7 +44,7 @@ namespace FankyRecords.C_datos
                         },
                         Obj_registrarCompra = new Compra
                         {
-                            ID_compra = Convert.ToInt32(reader["ID_compra"]),
+                            ID_compras = Convert.ToInt32(reader["ID_compra"]),
                             NumeroCompra = Convert.ToInt32(reader["Compra"])
                         }   
                     });

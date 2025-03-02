@@ -11,6 +11,7 @@ using System.Windows.Media.Media3D;
 using FankyRecords.C_datos;
 using FankyRecords.C_entidad;
 using FankyRecords.C_negocio;
+using FankyRecords.C_presentacion.Modales;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -42,62 +43,81 @@ namespace FankyRecords.C_presentacion.Administrador
             TBUsuario.Clear();
             TBcuit.Clear();
             TBrazonSocial.Clear();
+            listadoCompras.Rows.Clear();
         }
 
         private void btnBuscarNroCompra_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBNumeroCompra.Text))
+            using (var modal = new MDCompra())
             {
-                MessageBox.Show("Debe ingresar el numero de compra para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            Compra compra = CD_Compras.ObtenerCompra(TBNumeroCompra.Text);
-            DetalleCompra detalleCompra = new DetalleCompra();
-            if (compra == null)
-            {
-                MessageBox.Show("No se encontró ninguna compra con ese número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                var result = modal.ShowDialog();
 
-            if (compra.ID_compra != 0)
-            {
-                TBNumeroCompra.Text = compra.NumeroCompra.ToString();
-                TBFecha.Text = compra.FechaCompra.ToString();
-                TBtipoDoc.Text = compra.Obj_Tipo_Doc.Descripcion;
-                TBNumFactura.Text = compra.NumeroFactura.ToString();
-                TBUsuario.Text = compra.Obj_usuarios.NombreCompleto;
-                TBcuit.Text = compra.Obj_proveedor.Cuit;
-                TBrazonSocial.Text = compra.Obj_proveedor.RazonSocial;
-                TBmontoTotal.Text = compra.MontoTotal.ToString();
-
-                listadoCompras.Rows.Clear();
-                if (detalleCompra.Obj_registrarCompra != null && compra.Obj_DetalleCompra.Count > 0)
+                if (result == DialogResult.OK)
                 {
-                    try
-                    {
-                        foreach (DetalleCompra dc in compra.Obj_DetalleCompra)
-                        {
-                            if (dc.Obj_producto != null)
-                            {
-                                listadoCompras.Rows.Add(
-                                    new object[] { dc.Obj_producto.Codigo, dc.Obj_producto.Nombre, dc.PrecioCompra, dc.Cantidad, dc.SubTotal });
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al cargar el detalle: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    TBNumeroCompra.Text = modal.CompraMD.NumeroCompra.ToString();
+                    TBFecha.Text = modal.CompraMD.FechaCompra.ToString("dd/MM/yyyy");
+                    TBtipoDoc.Text = modal.CompraMD.Obj_Tipo_Doc?.Descripcion ?? "N/A";
+                    TBNumFactura.Text = modal.CompraMD.NumeroFactura.ToString();
+                    TBUsuario.Text = modal.CompraMD.Obj_usuarios?.NombreCompleto ?? "N/A";
+                    TBcuit.Text = modal.CompraMD.Obj_proveedor?.Cuit ?? "N/A";
+                    TBrazonSocial.Text = modal.CompraMD.Obj_proveedor?.RazonSocial ?? "N/A";
+                    TBmontoTotal.Text = modal.CompraMD.MontoTotal.ToString("N2");
                 }
                 else
                 {
-                    MessageBox.Show("No hay detalles de compra para mostrar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TBNumeroCompra.Select();
+                    return;
+                }
+            }
+
+            // Obtener la compra de la base de datos
+            Compra compra = CD_Compras.ObtenerCompra(TBNumeroCompra.Text);
+
+            if (compra == null)
+            {
+                MessageBox.Show("No se encontró la compra.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (compra.Obj_DetalleCompra == null || compra.Obj_DetalleCompra.Count == 0)
+            {
+                MessageBox.Show("No hay detalles de compra disponibles.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Limpiar el DataGridView antes de cargar datos
+            listadoCompras.Rows.Clear();
+
+            // Habilitar generación automática de columnas si es necesario
+            if (listadoCompras.AutoGenerateColumns == false && listadoCompras.Columns.Count == 0)
+            {
+                listadoCompras.AutoGenerateColumns = true;
+            }
+
+            foreach (DetalleCompra dc in compra.Obj_DetalleCompra)
+            {
+                Console.WriteLine($"Producto: {dc.Obj_producto?.Nombre}, Cantidad: {dc.Cantidad}, Subtotal: {dc.SubTotal}");
+            }
+
+            // Agregar filas al DataGridView
+            foreach (DetalleCompra dc in compra.Obj_DetalleCompra)
+            {
+                if (dc.Obj_producto == null)
+                {
+                    MessageBox.Show("Un producto en los detalles de la compra es nulo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-                TBmontoTotal.Text = compra.MontoTotal.ToString("0.00");
+                listadoCompras.Rows.Add(
+                    dc.Obj_producto.Codigo,
+                    dc.Obj_producto.Nombre,
+                    dc.Obj_producto.Descripcion,
+                    dc.PrecioCompra.ToString("N2"),
+                    dc.Obj_producto.PrecioVenta.ToString("N2"),
+                    dc.Cantidad,
+                    dc.SubTotal.ToString("N2")
+                );
             }
         }
-
-    
     }
 }

@@ -11,5 +11,9 @@ namespace FankyRecords.C_entidad
         public int ID_Tipo_Doc { get; set; }
         public string Descripcion { get; set; }
 
+        public override string ToString()
+        {
+            return Descripcion; // Ahora mostrará el valor correcto
+        }
     }
 }

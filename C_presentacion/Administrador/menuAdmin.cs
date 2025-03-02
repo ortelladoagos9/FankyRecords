@@ -128,5 +128,9 @@ namespace FankyRecords.C_presentacion.Administrador
             AbrirFormulario((IconMenuItem)sender, new backup());
         }
 
+        private void MenuReportesAdministrador_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

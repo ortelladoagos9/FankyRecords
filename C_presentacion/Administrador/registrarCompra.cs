@@ -31,14 +31,17 @@ namespace FankyRecords.C_presentacion.Administrador
         private void registrarCompra_Load(object sender, EventArgs e)
         {
             CargarCombo();
+            
+            dtFechaCompra.MaxDate = DateTime.Now.Date;  // Establece el máximo en hoy (sin hora)
+            dtFechaCompra.MinDate = DateTime.Now.Date;  // Establece el mínimo en hoy (sin hora)
+            dtFechaCompra.Value = DateTime.Now.Date;    // Asegura que la fecha seleccionada sea hoy
 
-            dtFechaCompra.MaxDate = DateTime.Now.Date;
-            dtFechaCompra.MinDate = DateTime.Now.Date;
-            dtFechaCompra.Value = DateTime.Now.Date;
+            // Solo mostrar la fecha en la vista
             dtFechaCompra.Format = DateTimePickerFormat.Short;
-  
+
             TBNumFactura.Select();
         }
+
 
         private void BAgregarProd_Click(object sender, EventArgs e)
         {
@@ -53,7 +56,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 || C_negocio.Validaciones.EstaVacio(TBprecio_compra.Text)
                 || C_negocio.Validaciones.EstaVacio(TBproducto.Text)
                 || C_negocio.Validaciones.EstaVacio(TBNumFactura.Text)
-                || C_negocio.Validaciones.EstaVacio(TBCodProd.Text))
+                || C_negocio.Validaciones.EstaVacio(TBCodProd.Text)
+                || C_negocio.Validaciones.EstaVacio(TBDescripcion.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -107,6 +111,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             TBIdProducto.Text,
                             TBCodProd.Text,
                             TBproducto.Text,
+                            TBDescripcion.Text,
                             Convert.ToDecimal(TBprecio_compra.Text).ToString("N2"),
                             Convert.ToDecimal(TBPrecio_Venta.Text).ToString("N2"),
                             cantProd.Value.ToString(),
@@ -115,7 +120,7 @@ namespace FankyRecords.C_presentacion.Administrador
                         });
 
                         CalcularTotal();
-                        MessageBox.Show("El producto: " + TBproducto.Text + " se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El producto: " + TBproducto.Text + " " + TBDescripcion.Text + " se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     Limpiar();
                 }
@@ -141,12 +146,7 @@ namespace FankyRecords.C_presentacion.Administrador
             TBtotalPagar.Text = sumaTotal.ToString("N2");
         }
 
-        /*private void CargarCompra()
-        {
-            List<Compra> registrarCompra = CN_Compras.ListarCompras();
-            listaCompras.DataSource = registrarCompra;
-        }*/
-
+       
         private void registrarCompra_Click(object sender, EventArgs e)
         {
             RegistrarCompra();
@@ -166,31 +166,31 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             try
             {
-               
                 DataTable detalle_compra = new DataTable();
                 detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+                detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
                 detalle_compra.Columns.Add("Cantidad", typeof(int));
                 detalle_compra.Columns.Add("SubTotal", typeof(decimal));
                 detalle_compra.Columns.Add("ID_producto", typeof(int));
-                detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+                
 
                 foreach (DataGridViewRow fila in listaCompras.Rows)
                 {
                     if (
                         fila.Cells["Precio_Compra"].Value != null &&
+                        fila.Cells["Precio_Venta"].Value != null &&
                         fila.Cells["Cantidad"].Value != null &&
                         fila.Cells["Subtotal"].Value != null &&
-                        fila.Cells["ID_producto"].Value != null &&
-                        fila.Cells["Precio_Venta"].Value != null)
+                        fila.Cells["ID_producto"].Value != null)
                     {
                         detalle_compra.Rows.Add(
                             new object[]
                             {
                                 fila.Cells["Precio_Compra"].Value.ToString(),
+                                fila.Cells["Precio_Venta"].Value.ToString(),
                                 fila.Cells["Cantidad"].Value.ToString(),
                                 fila.Cells["Subtotal"].Value.ToString(),
-                                fila.Cells["ID_producto"].Value.ToString(),
-                                fila.Cells["Precio_Venta"].Value.ToString()
+                                fila.Cells["ID_producto"].Value.ToString()
                             }
                         );
                     }
@@ -211,12 +211,12 @@ namespace FankyRecords.C_presentacion.Administrador
                     NumeroCompra = Convert.ToInt32(numeroCompra),
                     MontoTotal = Convert.ToDecimal(TBtotalPagar.Text),
                     NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
-                    FechaCompra = Convert.ToDateTime(dtFechaCompra.Text),
+                    FechaCompra = dtFechaCompra.Value.Date.Add(DateTime.Now.TimeOfDay),
                     Obj_proveedor = new Proveedores() { ID_proveedor = Convert.ToInt32(TBIdProveedor.Text) },
                     Obj_usuarios = new Usuarios() { ID_usuarios = SesionUsuario.UsuarioActual.ID_usuarios},
                     Obj_Tipo_Doc = new TipoDoc() { ID_Tipo_Doc = idTipoDoc }
                 };
-               
+
                 string mensaje = string.Empty;
                 bool respuesta = CN_Compras.RegistrarCompra(compra,detalle_compra,out mensaje);
 
@@ -263,6 +263,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     TBIdProducto.Text = modal.Productomd.ID_producto.ToString();
                     TBCodProd.Text = modal.Productomd.Codigo.ToString();
                     TBproducto.Text = modal.Productomd.Nombre.ToString();
+                    TBDescripcion.Text = modal.Productomd.Descripcion.ToString();
                 }
                 else
                 {
@@ -294,6 +295,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             TBCodProd.Clear();
             TBproducto.Clear();
+            TBDescripcion.Clear();
             TBprecio_compra.Clear();
             cantProd.Value = 1;
             TBIdProducto.Clear();
@@ -308,7 +310,7 @@ namespace FankyRecords.C_presentacion.Administrador
             else
             {
                 decimal precioVenta = (Convert.ToDecimal(0.2) * Convert.ToDecimal(TBprecio_compra.Text)) + Convert.ToDecimal(TBprecio_compra.Text);
-                TBPrecio_Venta.Text = precioVenta.ToString();
+                TBPrecio_Venta.Text = precioVenta.ToString("N2");
             }
         }
 
@@ -342,7 +344,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (e.RowIndex < 0)
                 return;
 
-            if(e.ColumnIndex == 8)
+            if(e.ColumnIndex == 9)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -372,6 +374,16 @@ namespace FankyRecords.C_presentacion.Administrador
                     MessageBox.Show("Debe agregar un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }       
+        }
+
+        private void gbInfoProducto_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LCodigo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,11 +10,12 @@ namespace FankyRecords.C_entidad
     {
         public int ID_detalleCompra { get; set; }
         public decimal PrecioCompra { get; set; }
+        public decimal PrecioVenta { get; set; }
         public int Cantidad { get; set; }
         public decimal SubTotal { get; set; }
         public Productos Obj_producto { get; set; }
         public Compra Obj_registrarCompra { get; set; }
-        public decimal PrecioVenta { get; set; }
+       
 
         public string ProductoNombre => Obj_producto?.Nombre;
         public string ProductoCodigo => Obj_producto?.Codigo.ToString();

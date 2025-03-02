@@ -89,99 +89,180 @@ namespace FankyRecords.C_datos
             return respuesta;
         }
 
+        //OBTIENE LA COMPRA POR NUMERO DE COMPRA
         public Compra ObtenerCompra(string numero)
         {
-            Compra obj = new Compra();
+            Compra objCompra = null;  // Solo se inicializa si hay datos
             try
             {
-                conexion.Open();
+                if (conexion.State != ConnectionState.Open)
+                    conexion.Open();
+
                 string query = @"
-                        select c.ID_compras,
-                        CONCAT_WS(' ', u.Nombre, u.Apellido) as Usuario,
-                        p.Cuit, p.RazonSocial,
-                        td.Descripcion, c.NumeroCompra, c.MontoTotal,
-                        convert(char(10), c.FechaCompra, 103) as 'FechaCompra',c.NumeroFactura
-                        from [dbo].[Compras] c
-                        inner join [dbo].[Usuarios] u
-                        on u.ID_usuarios = c.ID_usuarios
-                        inner join [dbo].[Proveedores] p
-                        on p.ID_proveedor = c.ID_proveedor
-                        inner join [dbo].[Tipo_documento] td
-                        on td.ID_Tipo_Doc = c.ID_Tipo_Doc
+                       select c.ID_compras, c.NumeroCompra, c.MontoTotal as 'Total pagado', 
+                              c.NumeroFactura, convert(char(10), c.FechaCompra, 103) as 'Fecha Compra', 
+                              p.Cuit as 'CUIT Proveedor', p.RazonSocial as 'Razon Social Proveedor',
+                              CONCAT_WS(' ', u.Nombre, u.Apellido) as 'Usuario',
+                              td.Descripcion as 'Tipo Documento'
+                        from Compras c
+                        inner join Usuarios u on u.ID_usuarios = c.ID_usuarios
+                        inner join Proveedores p on p.ID_proveedor = c.ID_proveedor
+                        inner join Tipo_documento td on td.ID_Tipo_Doc = c.ID_Tipo_Doc
                         where c.NumeroCompra = @numero";
 
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@numero", numero);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    obj = new Compra()
+                    cmd.Parameters.AddWithValue("@numero", numero);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        ID_compra = Convert.ToInt32(reader["ID_compras"]),
-                        Obj_usuarios = new Usuarios() { NombreCompleto = reader["Usuario"].ToString() },
-                        Obj_proveedor = new Proveedores() { Cuit = reader["Cuit"].ToString(), RazonSocial = reader["RazonSocial"].ToString() },
-                        Obj_Tipo_Doc = new TipoDoc() { Descripcion = reader["Descripcion"].ToString() },
-                        NumeroCompra = Convert.ToInt32(reader["NumeroCompra"].ToString()),
-                        MontoTotal = Convert.ToDecimal(reader["MontoTotal"].ToString()),
-                        FechaCompra = Convert.ToDateTime(reader["FechaCompra"].ToString()),
-                        NumeroFactura = Convert.ToInt32(reader["NumeroFactura"].ToString())
-                    };
+                        if (reader.Read())  // Solo leer una fila
+                        {
+                            objCompra = new Compra()
+                            {
+                                ID_compras = Convert.ToInt32(reader["ID_compras"]),
+                                Obj_usuarios = new Usuarios() { NombreCompleto = reader["Usuario"].ToString() },
+                                Obj_proveedor = new Proveedores()
+                                {
+                                    Cuit = reader["CUIT Proveedor"].ToString(),
+                                    RazonSocial = reader["Razon Social Proveedor"].ToString()
+                                },
+                                Obj_Tipo_Doc = new TipoDoc() { Descripcion = reader["Tipo Documento"].ToString() },
+                                NumeroCompra = Convert.ToInt32(reader["NumeroCompra"]),
+                                MontoTotal = Convert.ToDecimal(reader["Total pagado"]),
+                                FechaCompra = Convert.ToDateTime(reader["Fecha Compra"]),
+                                NumeroFactura = Convert.ToInt32(reader["NumeroFactura"])
+                            };
+                        }
+                    }
                 }
-                // Obtener los detalles de la compra y asignarlos al objeto
-                if (obj.ID_compra > 0)
+
+                if (objCompra != null)
                 {
-                    obj.Obj_DetalleCompra = ObtenerDetalleCompra(obj.ID_compra);
+                    objCompra.Obj_DetalleCompra = ObtenerDetalleCompra(objCompra.ID_compras);
                 }
             }
             catch (Exception ex)
             {
-                obj = new Compra(); // Devuelve un objeto vacío en caso de error
+                throw new Exception("Error al obtener la compra: " + ex.Message, ex);
             }
             finally
-            { conexion.Close(); }
-            
-            return obj;
+            {
+                if (conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+
+            return objCompra;
         }
 
-
-        public List<DetalleCompra> ObtenerDetalleCompra(int id_compra)
+        //LISTADO DE COMPRAS PARA EL MODAL
+        public List<Compra> ListarCompras()
         {
-            List<DetalleCompra> listaDetalleCompra = new List<DetalleCompra>();
+            List<Compra> listaCompras = new List<Compra>();
+
             try
             {
                 conexion.Open();
+
                 string query = @"
-                        select p.Codigo, p.Nombre, dc.PrecioCompra, dc.Cantidad,dc.SubTotal
-                        from [dbo].[Detalle_Compras] dc
-                        inner join [dbo].[Productos] p
-                        on p.ID_producto = dc.ID_producto
-                        where dc.ID_compras = @id_compra";
-                
+                        select c.ID_compras,
+                        c.NumeroCompra,
+                        c.MontoTotal as 'Total pagado',
+                        c.NumeroFactura,
+                        convert(char(10), c.FechaCompra, 103) as 'Fecha Compra', 
+                        p.Cuit as 'CUIT Proveedor', p.RazonSocial as 'Razon Social Proveedor',
+                        CONCAT_WS(' ', u.Nombre, u.Apellido) as 'Usuario',
+                        td.Descripcion as 'Tipo Documento'
+                        from Compras c
+                        inner join Usuarios u
+                        on u.ID_usuarios = c.ID_usuarios
+                        inner join Proveedores p
+                        on p.ID_proveedor = c.ID_proveedor
+                        inner join Tipo_documento td
+                        on td.ID_Tipo_Doc = c.ID_Tipo_Doc";
+
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@id_compra", id_compra);
 
                 SqlDataReader reader = cmd.ExecuteReader();
-                
                 while (reader.Read())
                 {
-                    listaDetalleCompra.Add(new DetalleCompra ()
+                    listaCompras.Add(new Compra
                     {
-                        Obj_producto = new Productos() { Codigo = Convert.ToInt32(reader["Codigo"].ToString()), Nombre = reader["Nombre"].ToString() },
-                        PrecioCompra = Convert.ToDecimal(reader["PrecioCompra"].ToString()),
-                        Cantidad = Convert.ToInt32(reader["Cantidad"].ToString()),
-                        SubTotal = Convert.ToDecimal(reader["SubTotal"].ToString())
+                        ID_compras = Convert.ToInt32(reader["ID_compras"]),
+                        NumeroCompra = Convert.ToInt32(reader["NumeroCompra"]),
+                        MontoTotal = reader["Total pagado"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Total pagado"]),
+                        NumeroFactura = Convert.ToInt32(reader["NumeroFactura"]),
+                        FechaCompra = Convert.ToDateTime(reader["Fecha Compra"].ToString()),
+                        Obj_proveedor = new Proveedores() { Cuit = reader["CUIT Proveedor"].ToString(), RazonSocial = reader["Razon Social Proveedor"].ToString() },
+                        Obj_usuarios = new Usuarios() { NombreCompleto = reader["Usuario"].ToString() },
+                        Obj_Tipo_Doc = new TipoDoc() { Descripcion = reader["Tipo documento"].ToString() }                      
                     });
                 }
             }
             catch (Exception ex)
             {
-                listaDetalleCompra = new List<DetalleCompra>();
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return listaCompras;
+        }
+
+        //OBTIENE EL DETALLE DE COMPRA POR ID_COMPRA
+        public List<DetalleCompra> ObtenerDetalleCompra(int id_compra)
+        {
+            List<DetalleCompra> listaDetalleCompra = new List<DetalleCompra>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                    conexion.Open();
+
+                string query = @"
+                        select p.Codigo, p.Nombre, p.Descripcion,  
+                               FORMAT(dc.PrecioCompra, 'N2', 'es-ES') AS PrecioCompra, 
+                               FORMAT(p.PrecioVenta, 'N2', 'es-ES') AS PrecioVenta,
+                               dc.Cantidad, 
+                               FORMAT(dc.SubTotal, 'N2', 'es-ES') AS SubTotal  
+                        from Detalle_Compras dc
+                        inner join Productos p on p.ID_producto = dc.ID_producto
+                        where dc.ID_compras = @id_compra";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@id_compra", id_compra);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            listaDetalleCompra.Add(new DetalleCompra()
+                            {
+                                Obj_producto = new Productos()
+                                {
+                                    Codigo = Convert.ToInt32(reader["Codigo"]),
+                                    Nombre = reader["Nombre"].ToString(),
+                                    Descripcion = reader["Descripcion"].ToString(),
+                                    PrecioVenta = Convert.ToDecimal(reader["PrecioVenta"])
+                                },
+                                PrecioCompra = Convert.ToDecimal(reader["PrecioCompra"]),
+                                Cantidad = Convert.ToInt32(reader["Cantidad"]),
+                                SubTotal = Convert.ToDecimal(reader["SubTotal"])
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los detalles de la compra: " + ex.Message, ex);
             }
             finally
-            { conexion.Close(); }
-            
+            {
+                if (conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+
             return listaDetalleCompra;
         }
     }

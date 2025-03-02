@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -93,8 +94,20 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                        select p.ID_producto, p.Codigo,p.Nombre,p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria
-                        from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria";
+                        SELECT 
+                            p.ID_producto, 
+                            p.Codigo,
+                            p.Nombre,
+                            p.Descripcion, 
+                            p.Stock_min, 
+                            p.Stock, 
+                            FORMAT(p.PrecioCompra, 'N2', 'es-ES') AS PrecioCompra, 
+                            FORMAT(p.PrecioVenta, 'N2', 'es-ES') AS PrecioVenta, 
+                            p.Estado, 
+                            c.Id_categoria, 
+                            c.Descripcion AS Categoria
+                        FROM Productos p 
+                        INNER JOIN Categorias c ON p.Id_categoria = c.Id_categoria";
                 
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
@@ -108,7 +121,7 @@ namespace FankyRecords.C_datos
                         Nombre = reader["Nombre"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
                         Stock = reader["Stock"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Stock"]),
-                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioVenta"]),
+                        PrecioVenta = reader["PrecioVenta"] == DBNull.Value ? 0 :Convert.ToDecimal(reader["PrecioVenta"]),
                         PrecioCompra = reader["PrecioCompra"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["PrecioCompra"]),
                         Estado = reader["Estado"].ToString(),
                         Stock_min = Convert.ToInt32(reader["Stock_min"]),

@@ -185,9 +185,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void registrarVentas_Load(object sender, EventArgs e)
         {
-            DTFechaVenta.MaxDate = DateTime.Now.Date;
-            DTFechaVenta.MinDate = DateTime.Now.Date;
-            DTFechaVenta.Value = DateTime.Now.Date;
+            DTFechaVenta.MaxDate = DateTime.Now.Date;  // Establece el máximo en hoy (sin hora)
+            DTFechaVenta.MinDate = DateTime.Now.Date;  // Establece el mínimo en hoy (sin hora)
+            DTFechaVenta.Value = DateTime.Now.Date;    // Asegura que la fecha seleccionada sea hoy
+
+            // Solo mostrar la fecha en la vista
             DTFechaVenta.Format = DateTimePickerFormat.Short;
         }
     }

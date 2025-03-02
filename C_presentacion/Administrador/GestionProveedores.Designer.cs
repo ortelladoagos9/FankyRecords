@@ -83,7 +83,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bguardar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bguardar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bguardar.ForeColor = System.Drawing.Color.White;
             this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bguardar.IconColor = System.Drawing.Color.White;
@@ -93,7 +93,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Bguardar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Bguardar.Size = new System.Drawing.Size(206, 34);
+            this.Bguardar.Size = new System.Drawing.Size(206, 46);
             this.Bguardar.TabIndex = 8;
             this.Bguardar.Text = "Guardar";
             this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,17 +108,17 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beditar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beditar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beditar.ForeColor = System.Drawing.Color.White;
             this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.Beditar.IconColor = System.Drawing.Color.White;
             this.Beditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beditar.IconSize = 25;
-            this.Beditar.Location = new System.Drawing.Point(77, 210);
+            this.Beditar.Location = new System.Drawing.Point(77, 209);
             this.Beditar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beditar.Size = new System.Drawing.Size(206, 34);
+            this.Beditar.Size = new System.Drawing.Size(206, 46);
             this.Beditar.TabIndex = 10;
             this.Beditar.Text = "Editar";
             this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,17 +133,17 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beliminar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beliminar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beliminar.ForeColor = System.Drawing.Color.White;
             this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.Beliminar.IconColor = System.Drawing.Color.White;
             this.Beliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Beliminar.IconSize = 21;
-            this.Beliminar.Location = new System.Drawing.Point(77, 269);
+            this.Beliminar.Location = new System.Drawing.Point(77, 267);
             this.Beliminar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Beliminar.Name = "Beliminar";
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beliminar.Size = new System.Drawing.Size(206, 34);
+            this.Beliminar.Size = new System.Drawing.Size(206, 46);
             this.Beliminar.TabIndex = 11;
             this.Beliminar.Text = "Eliminar";
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,13 +177,13 @@ namespace FankyRecords.C_presentacion.Administrador
             // TBtelefono
             // 
             this.TBtelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBtelefono.Location = new System.Drawing.Point(582, 199);
+            this.TBtelefono.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBtelefono.Location = new System.Drawing.Point(615, 195);
             this.TBtelefono.Margin = new System.Windows.Forms.Padding(4);
             this.TBtelefono.MaxLength = 15;
             this.TBtelefono.Name = "TBtelefono";
             this.TBtelefono.ShortcutsEnabled = false;
-            this.TBtelefono.Size = new System.Drawing.Size(293, 29);
+            this.TBtelefono.Size = new System.Drawing.Size(293, 35);
             this.TBtelefono.TabIndex = 13;
             this.TBtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -192,12 +192,12 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBinactivop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RBinactivop.AutoSize = true;
             this.RBinactivop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RBinactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBinactivop.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBinactivop.ForeColor = System.Drawing.Color.DarkRed;
-            this.RBinactivop.Location = new System.Drawing.Point(725, 281);
+            this.RBinactivop.Location = new System.Drawing.Point(758, 283);
             this.RBinactivop.Margin = new System.Windows.Forms.Padding(4);
             this.RBinactivop.Name = "RBinactivop";
-            this.RBinactivop.Size = new System.Drawing.Size(109, 25);
+            this.RBinactivop.Size = new System.Drawing.Size(133, 31);
             this.RBinactivop.TabIndex = 12;
             this.RBinactivop.Text = "Inactivo";
             this.RBinactivop.UseVisualStyleBackColor = true;
@@ -208,12 +208,12 @@ namespace FankyRecords.C_presentacion.Administrador
             this.RBactivop.AutoSize = true;
             this.RBactivop.Checked = true;
             this.RBactivop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RBactivop.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBactivop.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBactivop.ForeColor = System.Drawing.Color.DarkRed;
-            this.RBactivop.Location = new System.Drawing.Point(606, 281);
+            this.RBactivop.Location = new System.Drawing.Point(639, 283);
             this.RBactivop.Margin = new System.Windows.Forms.Padding(4);
             this.RBactivop.Name = "RBactivop";
-            this.RBactivop.Size = new System.Drawing.Size(92, 25);
+            this.RBactivop.Size = new System.Drawing.Size(110, 31);
             this.RBactivop.TabIndex = 11;
             this.RBactivop.TabStop = true;
             this.RBactivop.Text = "Activo";
@@ -222,62 +222,62 @@ namespace FankyRecords.C_presentacion.Administrador
             // TBcorreo
             // 
             this.TBcorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBcorreo.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBcorreo.Location = new System.Drawing.Point(582, 121);
+            this.TBcorreo.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBcorreo.Location = new System.Drawing.Point(615, 112);
             this.TBcorreo.Margin = new System.Windows.Forms.Padding(4);
             this.TBcorreo.MaxLength = 100;
             this.TBcorreo.Name = "TBcorreo";
             this.TBcorreo.ShortcutsEnabled = false;
-            this.TBcorreo.Size = new System.Drawing.Size(293, 29);
+            this.TBcorreo.Size = new System.Drawing.Size(293, 35);
             this.TBcorreo.TabIndex = 9;
             // 
             // TBdomiciliop
             // 
             this.TBdomiciliop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBdomiciliop.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdomiciliop.Location = new System.Drawing.Point(165, 277);
+            this.TBdomiciliop.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBdomiciliop.Location = new System.Drawing.Point(198, 279);
             this.TBdomiciliop.Margin = new System.Windows.Forms.Padding(4);
             this.TBdomiciliop.MaxLength = 200;
             this.TBdomiciliop.Name = "TBdomiciliop";
             this.TBdomiciliop.ShortcutsEnabled = false;
-            this.TBdomiciliop.Size = new System.Drawing.Size(293, 29);
+            this.TBdomiciliop.Size = new System.Drawing.Size(293, 35);
             this.TBdomiciliop.TabIndex = 8;
             // 
             // TBcuit
             // 
             this.TBcuit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBcuit.Location = new System.Drawing.Point(165, 199);
+            this.TBcuit.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBcuit.Location = new System.Drawing.Point(198, 195);
             this.TBcuit.Margin = new System.Windows.Forms.Padding(4);
             this.TBcuit.MaxLength = 11;
             this.TBcuit.Name = "TBcuit";
             this.TBcuit.ShortcutsEnabled = false;
-            this.TBcuit.Size = new System.Drawing.Size(293, 29);
+            this.TBcuit.Size = new System.Drawing.Size(293, 35);
             this.TBcuit.TabIndex = 7;
             this.TBcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // TBRazonSocial
             // 
             this.TBRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBRazonSocial.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBRazonSocial.Location = new System.Drawing.Point(165, 121);
+            this.TBRazonSocial.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBRazonSocial.Location = new System.Drawing.Point(198, 112);
             this.TBRazonSocial.Margin = new System.Windows.Forms.Padding(4);
             this.TBRazonSocial.MaxLength = 200;
             this.TBRazonSocial.Name = "TBRazonSocial";
             this.TBRazonSocial.ShortcutsEnabled = false;
-            this.TBRazonSocial.Size = new System.Drawing.Size(293, 29);
+            this.TBRazonSocial.Size = new System.Drawing.Size(293, 35);
             this.TBRazonSocial.TabIndex = 6;
             // 
             // Lestadoproveedor
             // 
             this.Lestadoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lestadoproveedor.AutoSize = true;
-            this.Lestadoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lestadoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestadoproveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lestadoproveedor.Location = new System.Drawing.Point(582, 242);
+            this.Lestadoproveedor.Location = new System.Drawing.Point(615, 244);
             this.Lestadoproveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lestadoproveedor.Name = "Lestadoproveedor";
-            this.Lestadoproveedor.Size = new System.Drawing.Size(75, 21);
+            this.Lestadoproveedor.Size = new System.Drawing.Size(94, 27);
             this.Lestadoproveedor.TabIndex = 5;
             this.Lestadoproveedor.Text = "Estado";
             // 
@@ -285,12 +285,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.Lcorreoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lcorreoproveedor.AutoSize = true;
-            this.Lcorreoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcorreoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lcorreoproveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lcorreoproveedor.Location = new System.Drawing.Point(582, 86);
+            this.Lcorreoproveedor.Location = new System.Drawing.Point(615, 77);
             this.Lcorreoproveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lcorreoproveedor.Name = "Lcorreoproveedor";
-            this.Lcorreoproveedor.Size = new System.Drawing.Size(74, 21);
+            this.Lcorreoproveedor.Size = new System.Drawing.Size(95, 27);
             this.Lcorreoproveedor.TabIndex = 4;
             this.Lcorreoproveedor.Text = "Correo";
             // 
@@ -298,12 +298,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.Ltelefonoproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Ltelefonoproveedor.AutoSize = true;
-            this.Ltelefonoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ltelefonoproveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltelefonoproveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.Ltelefonoproveedor.Location = new System.Drawing.Point(582, 164);
+            this.Ltelefonoproveedor.Location = new System.Drawing.Point(615, 160);
             this.Ltelefonoproveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ltelefonoproveedor.Name = "Ltelefonoproveedor";
-            this.Ltelefonoproveedor.Size = new System.Drawing.Size(90, 21);
+            this.Ltelefonoproveedor.Size = new System.Drawing.Size(116, 27);
             this.Ltelefonoproveedor.TabIndex = 3;
             this.Ltelefonoproveedor.Text = "Teléfono";
             // 
@@ -311,12 +311,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.LdomicilioProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LdomicilioProveedor.AutoSize = true;
-            this.LdomicilioProveedor.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LdomicilioProveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LdomicilioProveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.LdomicilioProveedor.Location = new System.Drawing.Point(165, 242);
+            this.LdomicilioProveedor.Location = new System.Drawing.Point(198, 244);
             this.LdomicilioProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LdomicilioProveedor.Name = "LdomicilioProveedor";
-            this.LdomicilioProveedor.Size = new System.Drawing.Size(101, 21);
+            this.LdomicilioProveedor.Size = new System.Drawing.Size(129, 27);
             this.LdomicilioProveedor.TabIndex = 2;
             this.LdomicilioProveedor.Text = "Domicilio";
             // 
@@ -324,12 +324,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.Lcuit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lcuit.AutoSize = true;
-            this.Lcuit.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lcuit.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lcuit.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lcuit.Location = new System.Drawing.Point(165, 164);
+            this.Lcuit.Location = new System.Drawing.Point(198, 160);
             this.Lcuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lcuit.Name = "Lcuit";
-            this.Lcuit.Size = new System.Drawing.Size(51, 21);
+            this.Lcuit.Size = new System.Drawing.Size(65, 27);
             this.Lcuit.TabIndex = 1;
             this.Lcuit.Text = "Cuit";
             // 
@@ -337,19 +337,19 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.Lrazonsocial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lrazonsocial.AutoSize = true;
-            this.Lrazonsocial.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lrazonsocial.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lrazonsocial.ForeColor = System.Drawing.Color.DarkRed;
-            this.Lrazonsocial.Location = new System.Drawing.Point(165, 86);
+            this.Lrazonsocial.Location = new System.Drawing.Point(198, 77);
             this.Lrazonsocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lrazonsocial.Name = "Lrazonsocial";
-            this.Lrazonsocial.Size = new System.Drawing.Size(131, 21);
+            this.Lrazonsocial.Size = new System.Drawing.Size(167, 27);
             this.Lrazonsocial.TabIndex = 0;
             this.Lrazonsocial.Text = "Razón Social";
             // 
             // LGestionProveedor
             // 
             this.LGestionProveedor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LGestionProveedor.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LGestionProveedor.Font = new System.Drawing.Font("Century Schoolbook", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LGestionProveedor.ForeColor = System.Drawing.Color.DarkRed;
             this.LGestionProveedor.Location = new System.Drawing.Point(0, 0);
             this.LGestionProveedor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -470,12 +470,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.listaProveedores.AutoSize = true;
             this.listaProveedores.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaProveedores.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaProveedores.ForeColor = System.Drawing.Color.DarkRed;
             this.listaProveedores.Location = new System.Drawing.Point(0, 0);
             this.listaProveedores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.listaProveedores.Name = "listaProveedores";
-            this.listaProveedores.Size = new System.Drawing.Size(265, 27);
+            this.listaProveedores.Size = new System.Drawing.Size(322, 34);
             this.listaProveedores.TabIndex = 15;
             this.listaProveedores.Text = "Lista de Proveedores";
             // 
@@ -497,7 +497,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // 
             this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
             this.Lbuscar.Location = new System.Drawing.Point(1008, 0);
             this.Lbuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -510,12 +510,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // TBBuscador
             // 
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscador.ForeColor = System.Drawing.Color.Black;
             this.TBBuscador.Location = new System.Drawing.Point(1146, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(14, 5, 5, 5);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(204, 29);
+            this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 34;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -559,17 +559,17 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TBlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.TBlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBlimpiar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBlimpiar.ForeColor = System.Drawing.Color.White;
             this.TBlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.TBlimpiar.IconColor = System.Drawing.Color.White;
             this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TBlimpiar.IconSize = 21;
-            this.TBlimpiar.Location = new System.Drawing.Point(77, 327);
+            this.TBlimpiar.Location = new System.Drawing.Point(77, 325);
             this.TBlimpiar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBlimpiar.Name = "TBlimpiar";
             this.TBlimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TBlimpiar.Size = new System.Drawing.Size(206, 34);
+            this.TBlimpiar.Size = new System.Drawing.Size(206, 46);
             this.TBlimpiar.TabIndex = 12;
             this.TBlimpiar.Text = "Limpiar";
             this.TBlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

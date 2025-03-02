@@ -74,7 +74,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -88,15 +88,15 @@
             this.btnBuscarFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscarFecha.BackColor = System.Drawing.Color.White;
             this.btnBuscarFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarFecha.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarFecha.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarFecha.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnBuscarFecha.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarFecha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarFecha.IconSize = 25;
-            this.btnBuscarFecha.Location = new System.Drawing.Point(1023, 72);
+            this.btnBuscarFecha.Location = new System.Drawing.Point(1047, 75);
             this.btnBuscarFecha.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarFecha.Name = "btnBuscarFecha";
-            this.btnBuscarFecha.Size = new System.Drawing.Size(121, 29);
+            this.btnBuscarFecha.Size = new System.Drawing.Size(129, 35);
             this.btnBuscarFecha.TabIndex = 5;
             this.btnBuscarFecha.Text = "Buscar";
             this.btnBuscarFecha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -108,25 +108,25 @@
             this.DTfin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DTfin.CalendarFont = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTfin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DTfin.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTfin.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTfin.Location = new System.Drawing.Point(800, 72);
+            this.DTfin.Location = new System.Drawing.Point(797, 75);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
             this.DTfin.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(196, 32);
+            this.DTfin.Size = new System.Drawing.Size(232, 35);
             this.DTfin.TabIndex = 4;
             this.DTfin.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             // 
             // LFechaFin
             // 
             this.LFechaFin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LFechaFin.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaFin.Location = new System.Drawing.Point(649, 74);
+            this.LFechaFin.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFechaFin.Location = new System.Drawing.Point(641, 79);
             this.LFechaFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LFechaFin.Name = "LFechaFin";
-            this.LFechaFin.Size = new System.Drawing.Size(150, 27);
+            this.LFechaFin.Size = new System.Drawing.Size(151, 27);
             this.LFechaFin.TabIndex = 3;
             this.LFechaFin.Text = "Fecha Fin: ";
             this.LFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,25 +137,25 @@
             this.DTinicio.CalendarFont = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTinicio.CalendarTitleForeColor = System.Drawing.Color.DarkRed;
             this.DTinicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DTinicio.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTinicio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTinicio.Location = new System.Drawing.Point(425, 72);
+            this.DTinicio.Location = new System.Drawing.Point(397, 75);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTinicio.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(185, 32);
+            this.DTinicio.Size = new System.Drawing.Size(232, 35);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             // 
             // LFechaInicio
             // 
             this.LFechaInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LFechaInicio.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaInicio.Location = new System.Drawing.Point(251, 74);
+            this.LFechaInicio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFechaInicio.Location = new System.Drawing.Point(209, 79);
             this.LFechaInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LFechaInicio.Name = "LFechaInicio";
-            this.LFechaInicio.Size = new System.Drawing.Size(168, 27);
+            this.LFechaInicio.Size = new System.Drawing.Size(180, 27);
             this.LFechaInicio.TabIndex = 1;
             this.LFechaInicio.Text = "Fecha inicio:";
             this.LFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,7 +280,7 @@
             this.descargarExcel.BackColor = System.Drawing.Color.White;
             this.descargarExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.descargarExcel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.descargarExcel.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descargarExcel.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descargarExcel.IconChar = FontAwesome.Sharp.IconChar.File;
             this.descargarExcel.IconColor = System.Drawing.Color.DarkRed;
             this.descargarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -288,7 +288,7 @@
             this.descargarExcel.Location = new System.Drawing.Point(0, 0);
             this.descargarExcel.Margin = new System.Windows.Forms.Padding(2);
             this.descargarExcel.Name = "descargarExcel";
-            this.descargarExcel.Size = new System.Drawing.Size(236, 53);
+            this.descargarExcel.Size = new System.Drawing.Size(248, 53);
             this.descargarExcel.TabIndex = 2;
             this.descargarExcel.Text = "Descargar Excel";
             this.descargarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -299,15 +299,15 @@
             this.btnGenerarGrafico.BackColor = System.Drawing.Color.White;
             this.btnGenerarGrafico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerarGrafico.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnGenerarGrafico.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarGrafico.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarGrafico.IconChar = FontAwesome.Sharp.IconChar.PieChart;
             this.btnGenerarGrafico.IconColor = System.Drawing.Color.DarkRed;
             this.btnGenerarGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarGrafico.IconSize = 25;
-            this.btnGenerarGrafico.Location = new System.Drawing.Point(236, 0);
+            this.btnGenerarGrafico.Location = new System.Drawing.Point(248, 0);
             this.btnGenerarGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarGrafico.Name = "btnGenerarGrafico";
-            this.btnGenerarGrafico.Size = new System.Drawing.Size(242, 53);
+            this.btnGenerarGrafico.Size = new System.Drawing.Size(254, 53);
             this.btnGenerarGrafico.TabIndex = 6;
             this.btnGenerarGrafico.Text = "Generar Gráfico";
             this.btnGenerarGrafico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

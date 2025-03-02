@@ -15,6 +15,10 @@ namespace FankyRecords.C_entidad
         public string Estado { get; set; }
         public string Cuit { get; set; }   
         public string Domicilio { get; set; }
- 
+
+        public override string ToString()
+        {
+            return $"Cuit: {Cuit}, Razon Social: {RazonSocial}";
+        }
     }
 }

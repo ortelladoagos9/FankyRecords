@@ -64,9 +64,9 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -97,7 +97,7 @@
             // 
             this.Lbuscar.BackColor = System.Drawing.SystemColors.Window;
             this.Lbuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbuscar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbuscar.ForeColor = System.Drawing.Color.DarkRed;
             this.Lbuscar.Location = new System.Drawing.Point(1037, 0);
             this.Lbuscar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -111,7 +111,7 @@
             // 
             this.LListaProductos.BackColor = System.Drawing.SystemColors.Window;
             this.LListaProductos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LListaProductos.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LListaProductos.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LListaProductos.ForeColor = System.Drawing.Color.DarkRed;
             this.LListaProductos.Location = new System.Drawing.Point(0, 0);
             this.LListaProductos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -125,12 +125,12 @@
             // TBBuscador
             // 
             this.TBBuscador.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBuscador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBuscador.ForeColor = System.Drawing.Color.Black;
             this.TBBuscador.Location = new System.Drawing.Point(1146, 0);
             this.TBBuscador.Margin = new System.Windows.Forms.Padding(14, 4, 5, 4);
             this.TBBuscador.Name = "TBBuscador";
-            this.TBBuscador.Size = new System.Drawing.Size(204, 29);
+            this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 33;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
@@ -176,9 +176,9 @@
             this.nombre,
             this.descripcion,
             this.stock,
+            this.stockmin,
             this.precioVenta,
             this.precioCompra,
-            this.stockmin,
             this.estado,
             this.objcategoria});
             this.listadoProductos.DataSource = this.productosBindingSource;
@@ -186,6 +186,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -224,7 +225,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.btnLimpiar.IconColor = System.Drawing.Color.White;
@@ -233,7 +234,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(77, 327);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(206, 34);
+            this.btnLimpiar.Size = new System.Drawing.Size(206, 46);
             this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,7 +249,7 @@
             this.Beliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beliminar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beliminar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beliminar.ForeColor = System.Drawing.Color.White;
             this.Beliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.Beliminar.IconColor = System.Drawing.Color.White;
@@ -258,7 +259,7 @@
             this.Beliminar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Beliminar.Name = "Beliminar";
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beliminar.Size = new System.Drawing.Size(206, 34);
+            this.Beliminar.Size = new System.Drawing.Size(206, 46);
             this.Beliminar.TabIndex = 13;
             this.Beliminar.Text = "Eliminar";
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -273,7 +274,7 @@
             this.Beditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Beditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Beditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Beditar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Beditar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Beditar.ForeColor = System.Drawing.Color.White;
             this.Beditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.Beditar.IconColor = System.Drawing.Color.White;
@@ -283,7 +284,7 @@
             this.Beditar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Beditar.Name = "Beditar";
             this.Beditar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Beditar.Size = new System.Drawing.Size(206, 34);
+            this.Beditar.Size = new System.Drawing.Size(206, 46);
             this.Beditar.TabIndex = 12;
             this.Beditar.Text = "Editar";
             this.Beditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -298,7 +299,7 @@
             this.Bguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Bguardar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.Bguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bguardar.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bguardar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bguardar.ForeColor = System.Drawing.Color.White;
             this.Bguardar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bguardar.IconColor = System.Drawing.Color.White;
@@ -308,7 +309,7 @@
             this.Bguardar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Bguardar.Name = "Bguardar";
             this.Bguardar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Bguardar.Size = new System.Drawing.Size(206, 34);
+            this.Bguardar.Size = new System.Drawing.Size(206, 46);
             this.Bguardar.TabIndex = 11;
             this.Bguardar.Text = "Guardar";
             this.Bguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -331,7 +332,7 @@
             // 
             this.LGestionProductos.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LGestionProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LGestionProductos.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LGestionProductos.Font = new System.Drawing.Font("Century Schoolbook", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LGestionProductos.ForeColor = System.Drawing.Color.DarkRed;
             this.LGestionProductos.Location = new System.Drawing.Point(0, 0);
             this.LGestionProductos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -365,17 +366,16 @@
             this.contenedorDatos.Name = "contenedorDatos";
             this.contenedorDatos.Size = new System.Drawing.Size(1059, 408);
             this.contenedorDatos.TabIndex = 23;
-            this.contenedorDatos.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedorDatos_Paint);
             // 
             // TBStock_min
             // 
             this.TBStock_min.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBStock_min.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBStock_min.Location = new System.Drawing.Point(600, 192);
+            this.TBStock_min.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBStock_min.Location = new System.Drawing.Point(605, 198);
             this.TBStock_min.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBStock_min.MaxLength = 6;
             this.TBStock_min.Name = "TBStock_min";
-            this.TBStock_min.Size = new System.Drawing.Size(293, 29);
+            this.TBStock_min.Size = new System.Drawing.Size(293, 35);
             this.TBStock_min.TabIndex = 29;
             this.TBStock_min.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
@@ -383,11 +383,11 @@
             // 
             this.LStock_min.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LStock_min.AutoSize = true;
-            this.LStock_min.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LStock_min.Location = new System.Drawing.Point(600, 160);
+            this.LStock_min.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LStock_min.Location = new System.Drawing.Point(605, 168);
             this.LStock_min.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LStock_min.Name = "LStock_min";
-            this.LStock_min.Size = new System.Drawing.Size(140, 21);
+            this.LStock_min.Size = new System.Drawing.Size(179, 27);
             this.LStock_min.TabIndex = 28;
             this.LStock_min.Text = "Stock Mínimo";
             // 
@@ -397,13 +397,13 @@
             this.CBcategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBcategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriasBindingSource, "Id_categoria", true));
             this.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBcategoria.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBcategoria.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBcategoria.ForeColor = System.Drawing.Color.Black;
             this.CBcategoria.FormattingEnabled = true;
-            this.CBcategoria.Location = new System.Drawing.Point(600, 119);
+            this.CBcategoria.Location = new System.Drawing.Point(605, 114);
             this.CBcategoria.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CBcategoria.Name = "CBcategoria";
-            this.CBcategoria.Size = new System.Drawing.Size(293, 33);
+            this.CBcategoria.Size = new System.Drawing.Size(293, 35);
             this.CBcategoria.TabIndex = 1;
             // 
             // rBinactivo
@@ -411,11 +411,11 @@
             this.rBinactivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rBinactivo.AutoSize = true;
             this.rBinactivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBinactivo.Location = new System.Drawing.Point(767, 264);
+            this.rBinactivo.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBinactivo.Location = new System.Drawing.Point(772, 283);
             this.rBinactivo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.rBinactivo.Name = "rBinactivo";
-            this.rBinactivo.Size = new System.Drawing.Size(109, 25);
+            this.rBinactivo.Size = new System.Drawing.Size(133, 31);
             this.rBinactivo.TabIndex = 27;
             this.rBinactivo.TabStop = true;
             this.rBinactivo.Text = "Inactivo";
@@ -427,11 +427,11 @@
             this.rBactivo.AutoSize = true;
             this.rBactivo.Checked = true;
             this.rBactivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rBactivo.Location = new System.Drawing.Point(648, 264);
+            this.rBactivo.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rBactivo.Location = new System.Drawing.Point(653, 283);
             this.rBactivo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.rBactivo.Name = "rBactivo";
-            this.rBactivo.Size = new System.Drawing.Size(92, 25);
+            this.rBactivo.Size = new System.Drawing.Size(110, 31);
             this.rBactivo.TabIndex = 26;
             this.rBactivo.TabStop = true;
             this.rBactivo.Text = "Activo";
@@ -441,11 +441,11 @@
             // 
             this.LEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LEstado.AutoSize = true;
-            this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEstado.Location = new System.Drawing.Point(600, 233);
+            this.LEstado.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LEstado.Location = new System.Drawing.Point(605, 251);
             this.LEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LEstado.Name = "LEstado";
-            this.LEstado.Size = new System.Drawing.Size(75, 21);
+            this.LEstado.Size = new System.Drawing.Size(94, 27);
             this.LEstado.TabIndex = 22;
             this.LEstado.Text = "Estado";
             // 
@@ -453,19 +453,19 @@
             // 
             this.LCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LCategoria.AutoSize = true;
-            this.LCategoria.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCategoria.Location = new System.Drawing.Point(600, 88);
+            this.LCategoria.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCategoria.Location = new System.Drawing.Point(605, 83);
             this.LCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LCategoria.Name = "LCategoria";
-            this.LCategoria.Size = new System.Drawing.Size(102, 21);
+            this.LCategoria.Size = new System.Drawing.Size(130, 27);
             this.LCategoria.TabIndex = 21;
             this.LCategoria.Text = "Categoría";
             // 
             // TBdescripcion
             // 
             this.TBdescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBdescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBdescripcion.Location = new System.Drawing.Point(170, 264);
+            this.TBdescripcion.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBdescripcion.Location = new System.Drawing.Point(170, 283);
             this.TBdescripcion.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.TBdescripcion.MaxLength = 200;
             this.TBdescripcion.Multiline = true;
@@ -477,37 +477,37 @@
             // TBcodigo_prod
             // 
             this.TBcodigo_prod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBcodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBcodigo_prod.Location = new System.Drawing.Point(170, 119);
+            this.TBcodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBcodigo_prod.Location = new System.Drawing.Point(170, 114);
             this.TBcodigo_prod.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.TBcodigo_prod.MaxLength = 5;
             this.TBcodigo_prod.Name = "TBcodigo_prod";
             this.TBcodigo_prod.ShortcutsEnabled = false;
-            this.TBcodigo_prod.Size = new System.Drawing.Size(293, 29);
+            this.TBcodigo_prod.Size = new System.Drawing.Size(293, 35);
             this.TBcodigo_prod.TabIndex = 6;
             this.TBcodigo_prod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtnumeros_KeyPress);
             // 
             // TBnombre_prod
             // 
             this.TBnombre_prod.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBnombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombre_prod.Location = new System.Drawing.Point(170, 192);
+            this.TBnombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBnombre_prod.Location = new System.Drawing.Point(170, 198);
             this.TBnombre_prod.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.TBnombre_prod.MaxLength = 100;
             this.TBnombre_prod.Name = "TBnombre_prod";
             this.TBnombre_prod.ShortcutsEnabled = false;
-            this.TBnombre_prod.Size = new System.Drawing.Size(293, 29);
+            this.TBnombre_prod.Size = new System.Drawing.Size(293, 35);
             this.TBnombre_prod.TabIndex = 5;
             // 
             // LDescripcion
             // 
             this.LDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LDescripcion.AutoSize = true;
-            this.LDescripcion.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDescripcion.Location = new System.Drawing.Point(170, 233);
+            this.LDescripcion.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDescripcion.Location = new System.Drawing.Point(170, 251);
             this.LDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(122, 21);
+            this.LDescripcion.Size = new System.Drawing.Size(157, 27);
             this.LDescripcion.TabIndex = 2;
             this.LDescripcion.Text = "Descripción";
             // 
@@ -515,11 +515,11 @@
             // 
             this.LCodigo_prod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LCodigo_prod.AutoSize = true;
-            this.LCodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCodigo_prod.Location = new System.Drawing.Point(170, 88);
+            this.LCodigo_prod.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCodigo_prod.Location = new System.Drawing.Point(170, 83);
             this.LCodigo_prod.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LCodigo_prod.Name = "LCodigo_prod";
-            this.LCodigo_prod.Size = new System.Drawing.Size(76, 21);
+            this.LCodigo_prod.Size = new System.Drawing.Size(96, 27);
             this.LCodigo_prod.TabIndex = 1;
             this.LCodigo_prod.Text = "Código";
             // 
@@ -527,12 +527,12 @@
             // 
             this.LNombre_prod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNombre_prod.AutoSize = true;
-            this.LNombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LNombre_prod.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombre_prod.ForeColor = System.Drawing.Color.DarkRed;
-            this.LNombre_prod.Location = new System.Drawing.Point(170, 160);
+            this.LNombre_prod.Location = new System.Drawing.Point(170, 168);
             this.LNombre_prod.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LNombre_prod.Name = "LNombre_prod";
-            this.LNombre_prod.Size = new System.Drawing.Size(84, 21);
+            this.LNombre_prod.Size = new System.Drawing.Size(107, 27);
             this.LNombre_prod.TabIndex = 0;
             this.LNombre_prod.Text = "Nombre";
             // 
@@ -583,6 +583,15 @@
             this.stock.Name = "stock";
             this.stock.ReadOnly = true;
             // 
+            // stockmin
+            // 
+            this.stockmin.DataPropertyName = "Stock_min";
+            this.stockmin.FillWeight = 85F;
+            this.stockmin.HeaderText = "Stock mínimo";
+            this.stockmin.MinimumWidth = 6;
+            this.stockmin.Name = "stockmin";
+            this.stockmin.ReadOnly = true;
+            // 
             // precioVenta
             // 
             this.precioVenta.DataPropertyName = "PrecioVenta";
@@ -598,15 +607,6 @@
             this.precioCompra.MinimumWidth = 6;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.ReadOnly = true;
-            // 
-            // stockmin
-            // 
-            this.stockmin.DataPropertyName = "Stock_min";
-            this.stockmin.FillWeight = 85F;
-            this.stockmin.HeaderText = "Stock mínimo";
-            this.stockmin.MinimumWidth = 6;
-            this.stockmin.Name = "stockmin";
-            this.stockmin.ReadOnly = true;
             // 
             // estado
             // 
@@ -696,9 +696,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn objcategoria;
     }
