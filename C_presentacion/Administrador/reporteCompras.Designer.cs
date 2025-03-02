@@ -37,17 +37,6 @@
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
-            this.descargarExcel = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DTinicio = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DTfin = new System.Windows.Forms.DateTimePicker();
-            this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
-            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +51,22 @@
             this.precioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
+            this.descargarExcel = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DTinicio = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DTfin = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,6 +178,113 @@
             this.listadoReporteCompras.Size = new System.Drawing.Size(1182, 398);
             this.listadoReporteCompras.TabIndex = 1;
             // 
+            // fechaCompra
+            // 
+            this.fechaCompra.DataPropertyName = "FechaCompra";
+            this.fechaCompra.HeaderText = "FechaCompra";
+            this.fechaCompra.Name = "fechaCompra";
+            this.fechaCompra.ReadOnly = true;
+            // 
+            // iDTipoDoc
+            // 
+            this.iDTipoDoc.DataPropertyName = "ID_Tipo_Doc";
+            this.iDTipoDoc.HeaderText = "ID_Tipo_Doc";
+            this.iDTipoDoc.Name = "iDTipoDoc";
+            this.iDTipoDoc.ReadOnly = true;
+            // 
+            // numeroCompra
+            // 
+            this.numeroCompra.DataPropertyName = "NumeroCompra";
+            this.numeroCompra.HeaderText = "NumeroCompra";
+            this.numeroCompra.Name = "numeroCompra";
+            this.numeroCompra.ReadOnly = true;
+            this.numeroCompra.Visible = false;
+            // 
+            // montoTotal
+            // 
+            this.montoTotal.DataPropertyName = "MontoTotal";
+            this.montoTotal.HeaderText = "MontoTotal";
+            this.montoTotal.Name = "montoTotal";
+            this.montoTotal.ReadOnly = true;
+            // 
+            // usuarioRegistro
+            // 
+            this.usuarioRegistro.DataPropertyName = "UsuarioRegistro";
+            this.usuarioRegistro.HeaderText = "UsuarioRegistro";
+            this.usuarioRegistro.Name = "usuarioRegistro";
+            this.usuarioRegistro.ReadOnly = true;
+            this.usuarioRegistro.Visible = false;
+            // 
+            // cuitProveedor
+            // 
+            this.cuitProveedor.DataPropertyName = "CuitProveedor";
+            this.cuitProveedor.HeaderText = "CuitProveedor";
+            this.cuitProveedor.Name = "cuitProveedor";
+            this.cuitProveedor.ReadOnly = true;
+            // 
+            // razonSocial
+            // 
+            this.razonSocial.DataPropertyName = "RazonSocial";
+            this.razonSocial.HeaderText = "RazonSocial";
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
+            // 
+            // codigoProducto
+            // 
+            this.codigoProducto.DataPropertyName = "CodigoProducto";
+            this.codigoProducto.HeaderText = "CodigoProducto";
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.ReadOnly = true;
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.DataPropertyName = "NombreProducto";
+            this.nombreProducto.HeaderText = "NombreProducto";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
+            // 
+            // categoria
+            // 
+            this.categoria.DataPropertyName = "Categoria";
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Visible = false;
+            // 
+            // precioCompra
+            // 
+            this.precioCompra.DataPropertyName = "PrecioCompra";
+            this.precioCompra.HeaderText = "PrecioCompra";
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.ReadOnly = true;
+            // 
+            // precioventa
+            // 
+            this.precioventa.DataPropertyName = "Precioventa";
+            this.precioventa.HeaderText = "Precioventa";
+            this.precioventa.Name = "precioventa";
+            this.precioventa.ReadOnly = true;
+            this.precioventa.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "Cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // subTotal
+            // 
+            this.subTotal.DataPropertyName = "SubTotal";
+            this.subTotal.HeaderText = "SubTotal";
+            this.subTotal.Name = "subTotal";
+            this.subTotal.ReadOnly = true;
+            this.subTotal.Visible = false;
+            // 
+            // reporteComprasBindingSource
+            // 
+            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -284,6 +391,7 @@
             this.DTinicio.Size = new System.Drawing.Size(116, 24);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.ValueChanged += new System.EventHandler(this.DTinicio_ValueChanged);
             // 
             // label6
             // 
@@ -332,113 +440,6 @@
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
             // 
-            // reporteComprasBindingSource
-            // 
-            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
-            // 
-            // fechaCompra
-            // 
-            this.fechaCompra.DataPropertyName = "FechaCompra";
-            this.fechaCompra.HeaderText = "FechaCompra";
-            this.fechaCompra.Name = "fechaCompra";
-            this.fechaCompra.ReadOnly = true;
-            // 
-            // iDTipoDoc
-            // 
-            this.iDTipoDoc.DataPropertyName = "ID_Tipo_Doc";
-            this.iDTipoDoc.HeaderText = "ID_Tipo_Doc";
-            this.iDTipoDoc.Name = "iDTipoDoc";
-            this.iDTipoDoc.ReadOnly = true;
-            // 
-            // numeroCompra
-            // 
-            this.numeroCompra.DataPropertyName = "NumeroCompra";
-            this.numeroCompra.HeaderText = "NumeroCompra";
-            this.numeroCompra.Name = "numeroCompra";
-            this.numeroCompra.ReadOnly = true;
-            this.numeroCompra.Visible = false;
-            // 
-            // montoTotal
-            // 
-            this.montoTotal.DataPropertyName = "MontoTotal";
-            this.montoTotal.HeaderText = "MontoTotal";
-            this.montoTotal.Name = "montoTotal";
-            this.montoTotal.ReadOnly = true;
-            // 
-            // usuarioRegistro
-            // 
-            this.usuarioRegistro.DataPropertyName = "UsuarioRegistro";
-            this.usuarioRegistro.HeaderText = "UsuarioRegistro";
-            this.usuarioRegistro.Name = "usuarioRegistro";
-            this.usuarioRegistro.ReadOnly = true;
-            this.usuarioRegistro.Visible = false;
-            // 
-            // cuitProveedor
-            // 
-            this.cuitProveedor.DataPropertyName = "CuitProveedor";
-            this.cuitProveedor.HeaderText = "CuitProveedor";
-            this.cuitProveedor.Name = "cuitProveedor";
-            this.cuitProveedor.ReadOnly = true;
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.DataPropertyName = "RazonSocial";
-            this.razonSocial.HeaderText = "RazonSocial";
-            this.razonSocial.Name = "razonSocial";
-            this.razonSocial.ReadOnly = true;
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.DataPropertyName = "CodigoProducto";
-            this.codigoProducto.HeaderText = "CodigoProducto";
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.ReadOnly = true;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.DataPropertyName = "NombreProducto";
-            this.nombreProducto.HeaderText = "NombreProducto";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "Categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Visible = false;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.DataPropertyName = "PrecioCompra";
-            this.precioCompra.HeaderText = "PrecioCompra";
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
-            // 
-            // precioventa
-            // 
-            this.precioventa.DataPropertyName = "Precioventa";
-            this.precioventa.HeaderText = "Precioventa";
-            this.precioventa.Name = "precioventa";
-            this.precioventa.ReadOnly = true;
-            this.precioventa.Visible = false;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "Cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // subTotal
-            // 
-            this.subTotal.DataPropertyName = "SubTotal";
-            this.subTotal.HeaderText = "SubTotal";
-            this.subTotal.Name = "subTotal";
-            this.subTotal.ReadOnly = true;
-            this.subTotal.Visible = false;
-            // 
             // reporteCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -460,10 +461,10 @@
             this.Load += new System.EventHandler(this.reporteCompras_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

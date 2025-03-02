@@ -31,9 +31,15 @@ namespace FankyRecords.C_presentacion.Administrador
         }
 
         private void CompararFechas()
-        {
-            DateTime fecha1 = DTinicio.Value;
-            DateTime fecha2 = DTfin.Value;
+
+        {   
+            //Convertir un datetimepicker en string
+            string fechaComoString1 = DTinicio.Value.ToString();
+            string fechaComoString2 = DTfin.Value.ToString();
+
+            //Convertir un string en datetime
+            DateTime fecha1 = DateTime.Parse(fechaComoString1);
+            DateTime fecha2 = DateTime.Parse(fechaComoString2);
             int ID_proveedor = Convert.ToInt32(CBproveedor.SelectedValue);
            // int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
@@ -53,8 +59,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 List<ReporteCompras> lista = new List<ReporteCompras>();
 
                 lista = CN_Reporte.Compra(
-                    DTinicio.Value.ToString(),
-                    DTfin.Value.ToString(),
+                    DTinicio.Value,
+                    DTfin.Value,
                     ID_proveedor
                     );
 
@@ -72,7 +78,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     {
                         rc.FechaCompra,
                         rc.ID_Tipo_Doc,
-                         rc.MontoTotal,
+                        rc.MontoTotal,
                         rc.CuitProveedor,
                         rc.RazonSocial,
                         rc.CodigoProducto,
@@ -129,6 +135,11 @@ namespace FankyRecords.C_presentacion.Administrador
             {
 
             }
+        }
+
+        private void DTinicio_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

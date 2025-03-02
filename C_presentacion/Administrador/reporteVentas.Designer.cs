@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
@@ -38,12 +38,6 @@
             this.DTinicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteVentas = new System.Windows.Forms.DataGridView();
-            this.descargarExcel = new FontAwesome.Sharp.IconButton();
-            this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.fechaVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facturaNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +48,12 @@
             this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descargarExcel = new FontAwesome.Sharp.IconButton();
+            this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteVentas)).BeginInit();
             this.panel2.SuspendLayout();
@@ -146,6 +146,7 @@
             this.DTinicio.Size = new System.Drawing.Size(138, 24);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
+            this.DTinicio.ValueChanged += new System.EventHandler(this.DTinicio_ValueChanged);
             // 
             // label2
             // 
@@ -165,14 +166,14 @@
             this.listadoReporteVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaVenta,
@@ -185,14 +186,14 @@
             this.precioVenta,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoReporteVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteVentas.Location = new System.Drawing.Point(0, 256);
             this.listadoReporteVentas.Margin = new System.Windows.Forms.Padding(2);
@@ -201,6 +202,76 @@
             this.listadoReporteVentas.RowHeadersWidth = 51;
             this.listadoReporteVentas.Size = new System.Drawing.Size(1182, 398);
             this.listadoReporteVentas.TabIndex = 1;
+            // 
+            // fechaVenta
+            // 
+            this.fechaVenta.HeaderText = "Fecha Venta";
+            this.fechaVenta.MinimumWidth = 6;
+            this.fechaVenta.Name = "fechaVenta";
+            this.fechaVenta.ReadOnly = true;
+            // 
+            // tipoFactura
+            // 
+            this.tipoFactura.HeaderText = "Tipo Factura";
+            this.tipoFactura.MinimumWidth = 6;
+            this.tipoFactura.Name = "tipoFactura";
+            this.tipoFactura.ReadOnly = true;
+            // 
+            // facturaNum
+            // 
+            this.facturaNum.HeaderText = "Número Factura";
+            this.facturaNum.MinimumWidth = 6;
+            this.facturaNum.Name = "facturaNum";
+            this.facturaNum.ReadOnly = true;
+            // 
+            // ID_Cliente
+            // 
+            this.ID_Cliente.HeaderText = "ID Cliente";
+            this.ID_Cliente.MinimumWidth = 6;
+            this.ID_Cliente.Name = "ID_Cliente";
+            this.ID_Cliente.ReadOnly = true;
+            // 
+            // codProducto
+            // 
+            this.codProducto.HeaderText = "Código Producto";
+            this.codProducto.MinimumWidth = 6;
+            this.codProducto.Name = "codProducto";
+            this.codProducto.ReadOnly = true;
+            // 
+            // nomProducto
+            // 
+            this.nomProducto.HeaderText = "Nombre Producto";
+            this.nomProducto.MinimumWidth = 6;
+            this.nomProducto.Name = "nomProducto";
+            this.nomProducto.ReadOnly = true;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "Categoría";
+            this.categoria.MinimumWidth = 6;
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            // 
+            // precioVenta
+            // 
+            this.precioVenta.HeaderText = "Precio Venta";
+            this.precioVenta.MinimumWidth = 6;
+            this.precioVenta.Name = "precioVenta";
+            this.precioVenta.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // montoTotal
+            // 
+            this.montoTotal.HeaderText = "Monto Total";
+            this.montoTotal.MinimumWidth = 6;
+            this.montoTotal.Name = "montoTotal";
+            this.montoTotal.ReadOnly = true;
             // 
             // descargarExcel
             // 
@@ -284,76 +355,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(364, 53);
             this.panel5.TabIndex = 8;
-            // 
-            // fechaVenta
-            // 
-            this.fechaVenta.HeaderText = "Fecha Venta";
-            this.fechaVenta.MinimumWidth = 6;
-            this.fechaVenta.Name = "fechaVenta";
-            this.fechaVenta.ReadOnly = true;
-            // 
-            // tipoFactura
-            // 
-            this.tipoFactura.HeaderText = "Tipo Factura";
-            this.tipoFactura.MinimumWidth = 6;
-            this.tipoFactura.Name = "tipoFactura";
-            this.tipoFactura.ReadOnly = true;
-            // 
-            // facturaNum
-            // 
-            this.facturaNum.HeaderText = "Número Factura";
-            this.facturaNum.MinimumWidth = 6;
-            this.facturaNum.Name = "facturaNum";
-            this.facturaNum.ReadOnly = true;
-            // 
-            // ID_Cliente
-            // 
-            this.ID_Cliente.HeaderText = "ID Cliente";
-            this.ID_Cliente.MinimumWidth = 6;
-            this.ID_Cliente.Name = "ID_Cliente";
-            this.ID_Cliente.ReadOnly = true;
-            // 
-            // codProducto
-            // 
-            this.codProducto.HeaderText = "Código Producto";
-            this.codProducto.MinimumWidth = 6;
-            this.codProducto.Name = "codProducto";
-            this.codProducto.ReadOnly = true;
-            // 
-            // nomProducto
-            // 
-            this.nomProducto.HeaderText = "Nombre Producto";
-            this.nomProducto.MinimumWidth = 6;
-            this.nomProducto.Name = "nomProducto";
-            this.nomProducto.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoría";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.HeaderText = "Precio Venta";
-            this.precioVenta.MinimumWidth = 6;
-            this.precioVenta.Name = "precioVenta";
-            this.precioVenta.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // montoTotal
-            // 
-            this.montoTotal.HeaderText = "Monto Total";
-            this.montoTotal.MinimumWidth = 6;
-            this.montoTotal.Name = "montoTotal";
-            this.montoTotal.ReadOnly = true;
             // 
             // reporteVentas
             // 

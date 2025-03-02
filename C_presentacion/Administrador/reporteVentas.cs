@@ -54,8 +54,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 List<ReporteVentas> lista = new List<ReporteVentas>();
 
                 lista = CN_Reporte.Venta(
-                    DTinicio.Value.ToString(),
-                    DTfin.Value.ToString()
+                    DTinicio.Value,
+                    DTfin.Value
                     );
 
                 listadoReporteVentas.Rows.Clear();
@@ -82,6 +82,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
        
         private void reporteVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTinicio_ValueChanged(object sender, EventArgs e)
         {
 
         }
