@@ -18,12 +18,12 @@ namespace FankyRecords.C_negocio
         {
             objcd_reporte = new DatosReporte();
         }
-         public List<ReporteCompras> Compra(DateTime fechaInicio, DateTime fechaFin, int ID_proveedor)
+         public List<ReporteCompras> Compra(string fechaInicio, string fechaFin, int ID_proveedor)
         {
             return objcd_reporte.Compra(fechaInicio, fechaFin, ID_proveedor);
         }
 
-        public List<ReporteVentas> Venta(DateTime fechaInicio, DateTime fechaFin)
+        public List<ReporteVentas> Venta(string fechaInicio, string fechaFin)
         {
             return objcd_reporte.Venta(fechaInicio, fechaFin);
         }

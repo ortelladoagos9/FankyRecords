@@ -54,8 +54,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 List<ReporteVentas> lista = new List<ReporteVentas>();
 
                 lista = CN_Reporte.Venta(
-                    DTinicio.Value,
-                    DTfin.Value
+                    DTinicio.Value.ToString(),
+                    DTfin.Value.ToString()
                     );
 
                 listadoReporteVentas.Rows.Clear();
@@ -88,11 +88,6 @@ namespace FankyRecords.C_presentacion.Administrador
             DTfin.MaxDate = DateTime.Now.Date;
             DTfin.Value = DateTime.Now.Date;
             DTfin.Format = DateTimePickerFormat.Short;
-        }
-
-        private void DTinicio_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
