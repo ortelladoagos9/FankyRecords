@@ -11,7 +11,7 @@ namespace FankyRecords.C_datos
 {
     public class DatosReporte
     {
-        public List<ReporteCompras> Compra(string fechaInicio, string fechaFin, int ID_proveedor)
+        public List<ReporteCompras> Compra(DateTime fechaInicio, DateTime fechaFin, int ID_proveedor)
         {
             List<ReporteCompras> lista = new List<ReporteCompras>();
 
@@ -63,7 +63,7 @@ namespace FankyRecords.C_datos
         }
 
 
-        public List<ReporteVentas> Venta(string fechaInicio, string fechaFin)
+        public List<ReporteVentas> Venta(DateTime fechaInicio, DateTime fechaFin)
         {
             List<ReporteVentas> lista = new List<ReporteVentas>();
 
