@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,21 +36,6 @@
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
-            this.fechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
@@ -64,7 +48,6 @@
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +102,6 @@
             // listadoReporteCompras
             // 
             this.listadoReporteCompras.AllowUserToAddRows = false;
-            this.listadoReporteCompras.AutoGenerateColumns = false;
             this.listadoReporteCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoReporteCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
@@ -134,22 +116,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.listadoReporteCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fechaCompraDataGridViewTextBoxColumn,
-            this.iDTipoDocDataGridViewTextBoxColumn,
-            this.numeroCompraDataGridViewTextBoxColumn,
-            this.montoTotalDataGridViewTextBoxColumn,
-            this.usuarioRegistroDataGridViewTextBoxColumn,
-            this.cuitProveedorDataGridViewTextBoxColumn,
-            this.razonSocialDataGridViewTextBoxColumn,
-            this.codigoProductoDataGridViewTextBoxColumn,
-            this.nombreProductoDataGridViewTextBoxColumn,
-            this.categoriaDataGridViewTextBoxColumn,
-            this.precioCompraDataGridViewTextBoxColumn,
-            this.precioventaDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
-            this.subTotalDataGridViewTextBoxColumn});
-            this.listadoReporteCompras.DataSource = this.reporteComprasBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,113 +140,6 @@
             this.listadoReporteCompras.RowHeadersWidth = 51;
             this.listadoReporteCompras.Size = new System.Drawing.Size(1418, 440);
             this.listadoReporteCompras.TabIndex = 1;
-            // 
-            // fechaCompra
-            // 
-            this.fechaCompra.DataPropertyName = "FechaCompra";
-            this.fechaCompra.HeaderText = "FechaCompra";
-            this.fechaCompra.Name = "fechaCompra";
-            this.fechaCompra.ReadOnly = true;
-            // 
-            // iDTipoDoc
-            // 
-            this.iDTipoDoc.DataPropertyName = "ID_Tipo_Doc";
-            this.iDTipoDoc.HeaderText = "ID_Tipo_Doc";
-            this.iDTipoDoc.Name = "iDTipoDoc";
-            this.iDTipoDoc.ReadOnly = true;
-            // 
-            // numeroCompra
-            // 
-            this.numeroCompra.DataPropertyName = "NumeroCompra";
-            this.numeroCompra.HeaderText = "NumeroCompra";
-            this.numeroCompra.Name = "numeroCompra";
-            this.numeroCompra.ReadOnly = true;
-            this.numeroCompra.Visible = false;
-            // 
-            // montoTotal
-            // 
-            this.montoTotal.DataPropertyName = "MontoTotal";
-            this.montoTotal.HeaderText = "MontoTotal";
-            this.montoTotal.Name = "montoTotal";
-            this.montoTotal.ReadOnly = true;
-            // 
-            // usuarioRegistro
-            // 
-            this.usuarioRegistro.DataPropertyName = "UsuarioRegistro";
-            this.usuarioRegistro.HeaderText = "UsuarioRegistro";
-            this.usuarioRegistro.Name = "usuarioRegistro";
-            this.usuarioRegistro.ReadOnly = true;
-            this.usuarioRegistro.Visible = false;
-            // 
-            // cuitProveedor
-            // 
-            this.cuitProveedor.DataPropertyName = "CuitProveedor";
-            this.cuitProveedor.HeaderText = "CuitProveedor";
-            this.cuitProveedor.Name = "cuitProveedor";
-            this.cuitProveedor.ReadOnly = true;
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.DataPropertyName = "RazonSocial";
-            this.razonSocial.HeaderText = "RazonSocial";
-            this.razonSocial.Name = "razonSocial";
-            this.razonSocial.ReadOnly = true;
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.DataPropertyName = "CodigoProducto";
-            this.codigoProducto.HeaderText = "CodigoProducto";
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.ReadOnly = true;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.DataPropertyName = "NombreProducto";
-            this.nombreProducto.HeaderText = "NombreProducto";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "Categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Visible = false;
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.DataPropertyName = "PrecioCompra";
-            this.precioCompra.HeaderText = "PrecioCompra";
-            this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
-            // 
-            // precioventa
-            // 
-            this.precioventa.DataPropertyName = "Precioventa";
-            this.precioventa.HeaderText = "Precioventa";
-            this.precioventa.Name = "precioventa";
-            this.precioventa.ReadOnly = true;
-            this.precioventa.Visible = false;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "Cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // subTotal
-            // 
-            this.subTotal.DataPropertyName = "SubTotal";
-            this.subTotal.HeaderText = "SubTotal";
-            this.subTotal.Name = "subTotal";
-            this.subTotal.ReadOnly = true;
-            this.subTotal.Visible = false;
-            // 
-            // reporteComprasBindingSource
-            // 
-            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
             // 
             // panel4
             // 
@@ -460,7 +319,6 @@
             this.Load += new System.EventHandler(this.reporteCompras_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -484,7 +342,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
-        private System.Windows.Forms.BindingSource reporteComprasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCompraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDTipoDocDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroCompraDataGridViewTextBoxColumn;

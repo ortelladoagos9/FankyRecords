@@ -130,10 +130,5 @@ namespace FankyRecords.C_presentacion.Administrador
 
             }
         }
-
-        private void DTinicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
