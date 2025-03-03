@@ -37,20 +37,20 @@
             this.CBproveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
-            this.fechaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDTipoDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuitProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -175,118 +175,108 @@
             this.listadoReporteCompras.Size = new System.Drawing.Size(1418, 440);
             this.listadoReporteCompras.TabIndex = 1;
             // 
-            // fechaCompraDataGridViewTextBoxColumn
+            // fechaCompra
             // 
-            this.fechaCompraDataGridViewTextBoxColumn.DataPropertyName = "FechaCompra";
-            this.fechaCompraDataGridViewTextBoxColumn.HeaderText = "Fecha Compra";
-            this.fechaCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaCompraDataGridViewTextBoxColumn.Name = "fechaCompraDataGridViewTextBoxColumn";
-            this.fechaCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaCompra.DataPropertyName = "FechaCompra";
+            this.fechaCompra.HeaderText = "FechaCompra";
+            this.fechaCompra.Name = "fechaCompra";
+            this.fechaCompra.ReadOnly = true;
             // 
-            // iDTipoDocDataGridViewTextBoxColumn
+            // iDTipoDoc
             // 
-            this.iDTipoDocDataGridViewTextBoxColumn.DataPropertyName = "ID_Tipo_Doc";
-            this.iDTipoDocDataGridViewTextBoxColumn.HeaderText = "ID Tipo Doc";
-            this.iDTipoDocDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDTipoDocDataGridViewTextBoxColumn.Name = "iDTipoDocDataGridViewTextBoxColumn";
-            this.iDTipoDocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDTipoDocDataGridViewTextBoxColumn.Visible = false;
+            this.iDTipoDoc.DataPropertyName = "ID_Tipo_Doc";
+            this.iDTipoDoc.HeaderText = "ID_Tipo_Doc";
+            this.iDTipoDoc.Name = "iDTipoDoc";
+            this.iDTipoDoc.ReadOnly = true;
             // 
-            // numeroCompraDataGridViewTextBoxColumn
+            // numeroCompra
             // 
-            this.numeroCompraDataGridViewTextBoxColumn.DataPropertyName = "NumeroCompra";
-            this.numeroCompraDataGridViewTextBoxColumn.HeaderText = "Numero Compra";
-            this.numeroCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeroCompraDataGridViewTextBoxColumn.Name = "numeroCompraDataGridViewTextBoxColumn";
-            this.numeroCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroCompra.DataPropertyName = "NumeroCompra";
+            this.numeroCompra.HeaderText = "NumeroCompra";
+            this.numeroCompra.Name = "numeroCompra";
+            this.numeroCompra.ReadOnly = true;
+            this.numeroCompra.Visible = false;
             // 
-            // montoTotalDataGridViewTextBoxColumn
+            // montoTotal
             // 
-            this.montoTotalDataGridViewTextBoxColumn.DataPropertyName = "MontoTotal";
-            this.montoTotalDataGridViewTextBoxColumn.HeaderText = "Monto Total";
-            this.montoTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.montoTotalDataGridViewTextBoxColumn.Name = "montoTotalDataGridViewTextBoxColumn";
-            this.montoTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.montoTotal.DataPropertyName = "MontoTotal";
+            this.montoTotal.HeaderText = "MontoTotal";
+            this.montoTotal.Name = "montoTotal";
+            this.montoTotal.ReadOnly = true;
             // 
-            // usuarioRegistroDataGridViewTextBoxColumn
+            // usuarioRegistro
             // 
-            this.usuarioRegistroDataGridViewTextBoxColumn.DataPropertyName = "UsuarioRegistro";
-            this.usuarioRegistroDataGridViewTextBoxColumn.HeaderText = "Usuario Registro";
-            this.usuarioRegistroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usuarioRegistroDataGridViewTextBoxColumn.Name = "usuarioRegistroDataGridViewTextBoxColumn";
-            this.usuarioRegistroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioRegistro.DataPropertyName = "UsuarioRegistro";
+            this.usuarioRegistro.HeaderText = "UsuarioRegistro";
+            this.usuarioRegistro.Name = "usuarioRegistro";
+            this.usuarioRegistro.ReadOnly = true;
+            this.usuarioRegistro.Visible = false;
             // 
-            // cuitProveedorDataGridViewTextBoxColumn
+            // cuitProveedor
             // 
-            this.cuitProveedorDataGridViewTextBoxColumn.DataPropertyName = "CuitProveedor";
-            this.cuitProveedorDataGridViewTextBoxColumn.HeaderText = "Cuit Proveedor";
-            this.cuitProveedorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cuitProveedorDataGridViewTextBoxColumn.Name = "cuitProveedorDataGridViewTextBoxColumn";
-            this.cuitProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cuitProveedor.DataPropertyName = "CuitProveedor";
+            this.cuitProveedor.HeaderText = "CuitProveedor";
+            this.cuitProveedor.Name = "cuitProveedor";
+            this.cuitProveedor.ReadOnly = true;
             // 
-            // razonSocialDataGridViewTextBoxColumn
+            // razonSocial
             // 
-            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "RazonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "Razon Social";
-            this.razonSocialDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
-            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razonSocial.DataPropertyName = "RazonSocial";
+            this.razonSocial.HeaderText = "RazonSocial";
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
             // 
-            // codigoProductoDataGridViewTextBoxColumn
+            // codigoProducto
             // 
-            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProducto";
-            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "Codigo Producto";
-            this.codigoProductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
-            this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoProducto.DataPropertyName = "CodigoProducto";
+            this.codigoProducto.HeaderText = "CodigoProducto";
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.ReadOnly = true;
             // 
-            // nombreProductoDataGridViewTextBoxColumn
+            // nombreProducto
             // 
-            this.nombreProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreProducto";
-            this.nombreProductoDataGridViewTextBoxColumn.HeaderText = "Nombre Producto";
-            this.nombreProductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreProductoDataGridViewTextBoxColumn.Name = "nombreProductoDataGridViewTextBoxColumn";
-            this.nombreProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreProducto.DataPropertyName = "NombreProducto";
+            this.nombreProducto.HeaderText = "NombreProducto";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
             // 
-            // categoriaDataGridViewTextBoxColumn
+            // categoria
             // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoria.DataPropertyName = "Categoria";
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Visible = false;
             // 
-            // precioCompraDataGridViewTextBoxColumn
+            // precioCompra
             // 
-            this.precioCompraDataGridViewTextBoxColumn.DataPropertyName = "PrecioCompra";
-            this.precioCompraDataGridViewTextBoxColumn.HeaderText = "Precio Compra";
-            this.precioCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precioCompraDataGridViewTextBoxColumn.Name = "precioCompraDataGridViewTextBoxColumn";
-            this.precioCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioCompra.DataPropertyName = "PrecioCompra";
+            this.precioCompra.HeaderText = "PrecioCompra";
+            this.precioCompra.Name = "precioCompra";
+            this.precioCompra.ReadOnly = true;
             // 
-            // precioventaDataGridViewTextBoxColumn
+            // precioventa
             // 
-            this.precioventaDataGridViewTextBoxColumn.DataPropertyName = "Precioventa";
-            this.precioventaDataGridViewTextBoxColumn.HeaderText = "Precio Venta";
-            this.precioventaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precioventaDataGridViewTextBoxColumn.Name = "precioventaDataGridViewTextBoxColumn";
-            this.precioventaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioventa.DataPropertyName = "Precioventa";
+            this.precioventa.HeaderText = "Precioventa";
+            this.precioventa.Name = "precioventa";
+            this.precioventa.ReadOnly = true;
+            this.precioventa.Visible = false;
             // 
-            // cantidadDataGridViewTextBoxColumn
+            // cantidad
             // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidad.DataPropertyName = "Cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
-            // subTotalDataGridViewTextBoxColumn
+            // subTotal
             // 
-            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
-            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subTotal.DataPropertyName = "SubTotal";
+            this.subTotal.HeaderText = "SubTotal";
+            this.subTotal.Name = "subTotal";
+            this.subTotal.ReadOnly = true;
+            this.subTotal.Visible = false;
             // 
             // reporteComprasBindingSource
             // 
