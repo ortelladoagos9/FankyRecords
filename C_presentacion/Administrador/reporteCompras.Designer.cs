@@ -47,7 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DTfin = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
-            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Tipo_Doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reporteComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
@@ -296,7 +296,7 @@
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTfin.Location = new System.Drawing.Point(506, 56);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
-            this.DTfin.MaxDate = new System.DateTime(2024, 11, 20, 0, 0, 0, 0);
+            this.DTfin.MaxDate = new System.DateTime(2025, 3, 4, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
             this.DTfin.Size = new System.Drawing.Size(123, 24);
@@ -322,10 +322,6 @@
             this.btnBuscarFecha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.buscarFecha_Click);
-            // 
-            // reporteComprasBindingSource
-            // 
-            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
             // 
             // FechaCompra
             // 
@@ -380,6 +376,10 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
+            // 
+            // reporteComprasBindingSource
+            // 
+            this.reporteComprasBindingSource.DataSource = typeof(FankyRecords.C_entidad.ReporteCompras);
             // 
             // reporteCompras
             // 

@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -135,6 +137,60 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
+                DataTable dt = new DataTable();
+
+                foreach(DataGridViewColumn columna in listadoReporteCompras.Columns)
+                {
+                    dt.Columns.Add(columna.HeaderText, typeof(string));
+                }
+                foreach(DataGridViewRow row in listadoReporteCompras.Rows)
+                {
+                    if (row.Visible)
+                        dt.Rows.Add(new object[]
+                        {
+                            row.Cells[0].Value.ToString(),
+                            row.Cells[1].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[5].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
+                            row.Cells[9].Value.ToString(),
+                            row.Cells[10].Value.ToString(),
+                            row.Cells[11].Value.ToString(),
+                            row.Cells[12].Value.ToString(),
+                            row.Cells[13].Value.ToString(),
+
+                        });
+
+                    SaveFileDialog saveFile = new SaveFileDialog();
+                    saveFile.FileName = string.Format("ReporteCompras_(0).xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                    saveFile.Filter = "Excel Files | xlsx";
+
+                    if(saveFile.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            XLWorkbook wb = new XLWorkbook();
+                            var hoja = wb.Worksheets.Add(dt, "informe");
+                            hoja.columnUsed().AdjustToContents();
+                            wb.SaveAs(savefile.FileName);
+                            MessageBox.Show("Reporte generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        catch
+                        {
+
+                            MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        }
+                    }
+
+                }
+
+
 
             }
         }
