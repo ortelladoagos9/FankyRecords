@@ -22,7 +22,7 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
             CN_Reporte = new NegocioReporte();
             CN_Proveedor = new NegocioProveedores();
-            this.CBproveedor.SelectedIndex = 0; 
+           // this.CBproveedor.SelectedIndex = 0; 
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)
@@ -56,6 +56,8 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else 
             {
+
+
                 List<ReporteCompras> lista = new List<ReporteCompras>();
 
                 lista = CN_Reporte.Compra(
@@ -109,7 +111,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void reporteCompras_Load(object sender, EventArgs e)
         {
             
-            List<Proveedores> lista =  CN_Proveedor.ListarProveedores();
+            List<Proveedores> lista =   CN_Proveedor.ListarProveedores();
 
             CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
             foreach (Proveedores item in lista)
@@ -138,6 +140,21 @@ namespace FankyRecords.C_presentacion.Administrador
         }
 
         private void DTinicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBproveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
