@@ -44,46 +44,47 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void GuardarCliente()
         {
-                if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
-                    C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
-                    C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
-                    C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-                    C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
-                {
-                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                // Validación previa de duplicados en la base de datos
-                if (CN_Clientes.ExisteDocumento(TBdni.Text))
-                {
-                   MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   return;
-                }
-                if (CN_Clientes.ExisteTelefono(TBtelefono.Text))
-                {
-                   MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   return;
-                }
-                if (CN_Clientes.ExisteCorreo(TBemail.Text))
-                {
-                   MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   return;
-                }
+            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Validación previa de duplicados en la base de datos
+            if (CN_Clientes.ExisteDocumento(TBdni.Text))
+            {
+                MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (CN_Clientes.ExisteTelefono(TBtelefono.Text))
+            {
+                MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (CN_Clientes.ExisteCorreo(TBemail.Text))
+            {
+                MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                string email = TBemail.Text;
+            string email = TBemail.Text;
 
-                if (!C_negocio.Validaciones.EmailCorrecto(email))
-                {
-                    MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            if (!C_negocio.Validaciones.EmailCorrecto(email))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             Clientes clientes = new Clientes();
-            clientes.Documento = TBdni.Text;
-            clientes.Nombre = TBnombre.Text;
-            clientes.Apellido = TBapellido.Text;
-            clientes.Correo = TBemail.Text;
-            clientes.Telefono = TBtelefono.Text;
-            clientes.Estado = rBactivo.Checked ? "Activo" : "Inactivo";
+                clientes.Documento = TBdni.Text;
+                clientes.Nombre = TBnombre.Text;
+                clientes.Apellido = TBapellido.Text;
+                clientes.Correo = TBemail.Text;
+                clientes.Telefono = TBtelefono.Text;
+                clientes.Estado = rBactivo.Checked ? "Activo" : "Inactivo";
+            
             try
             {
                 DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo cliente?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -119,7 +120,6 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void listadoClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0) // Verifica que el índice de fila es válido
             {
                 DataGridViewRow row = listadoClientes.Rows[e.RowIndex];
@@ -159,7 +159,6 @@ namespace FankyRecords.C_presentacion.Vendedor
             }
         }
 
-
         private void Beditar_Click(object sender, EventArgs e)
         {
             EditarCliente();
@@ -167,59 +166,60 @@ namespace FankyRecords.C_presentacion.Vendedor
 
         private void EditarCliente()
         {
-                if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+            if (C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+            {
+                MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Verificar si el cliente existe en la base de datos
+            Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
+            if (clienteExistente == null)
+            {
+                MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            // Crear objeto clientes
+            Clientes clientes = new Clientes
+            {
+                ID_cliente = clienteSeleccionado, // Asignar el ID del proveedor seleccionado
+                Documento = TBdni.Text,
+                Nombre = TBnombre.Text,
+                Apellido = TBapellido.Text,
+                Correo = TBemail.Text,
+                Telefono = TBtelefono.Text,
+                Estado = rBactivo.Checked ? "Activo" : "Inactivo"
+            };
+            try
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar cliente?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Yes)
                 {
-                    MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                // Verificar si el cliente existe en la base de datos
-                Clientes clienteExistente = CN_Clientes.ObtenerClientePorID(clienteSeleccionado);
-                if (clienteExistente == null)
-                {
-                    MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Llamar al método de negocio para guardar/editar el proveedor
+                    CN_Clientes.GuardarCliente(clientes);
+
+                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarClientes();
                     Limpiar();
-                    return;
                 }
-                // Crear objeto clientes
-                Clientes clientes = new Clientes
-                {
-                    ID_cliente = clienteSeleccionado, // Asignar el ID del proveedor seleccionado
-                    Documento = TBdni.Text,
-                    Nombre = TBnombre.Text,
-                    Apellido = TBapellido.Text,
-                    Correo = TBemail.Text,
-                    Telefono = TBtelefono.Text,
-                    Estado = rBactivo.Checked ? "Activo" : "Inactivo"
-                };
-                try
-                {
-                    DialogResult ask = MessageBox.Show("¿Seguro que desea editar cliente?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (ask == DialogResult.Yes)
-                    {
-                        // Llamar al método de negocio para guardar/editar el proveedor
-                        CN_Clientes.GuardarCliente(clientes);
-
-                        MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Recargar datos y limpiar formulario
-                        CargarClientes();
-                        Limpiar();
-                    }
-                }
-                catch (Exception ex)
-                {
-                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
             EliminarClientes();
         }
+
         private void EliminarClientes()
         {
             if (C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
@@ -246,11 +246,15 @@ namespace FankyRecords.C_presentacion.Vendedor
                 // Recargar datos y limpiar formulario
                 CargarClientes();
                 Limpiar();
-            }
-            
+            }     
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ValidarYBuscar();
+        }
+
+        private void ValidarYBuscar()
         {
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
@@ -263,44 +267,54 @@ namespace FankyRecords.C_presentacion.Vendedor
             }
         }
 
-        //Metodo para buscar datos en el datagrid
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
+            string busqueda = termino.ToLower();
 
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            // Desactivar la selección para evitar conflictos
             listadoClientes.ClearSelection();
 
-            // Iterar sobre todas las filas del DataGridView
+            // Primero, deselecciona la celda actual
+            listadoClientes.CurrentCell = null;
+
             foreach (DataGridViewRow row in listadoClientes.Rows)
             {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listadoClientes.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listadoClientes.Rows)
                     {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listadoClientes.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
                     }
                 }
 
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listadoClientes.CurrentRow == row)
-                {
-                    listadoClientes.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
+                // Ahora es seguro modificar la visibilidad
                 row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
             }
 
-            // Mostrar mensaje si no se encontraron coincidencias
             if (!encontrado)
             {
-                MessageBox.Show("No se encontraron coincidencias.");
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
             }
         }
 
@@ -344,6 +358,15 @@ namespace FankyRecords.C_presentacion.Vendedor
             if (TBBuscador.Text == "")
             {
                 CargarClientes();
+            }
+        }
+
+        private void TBBuscador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
             }
         }
     }

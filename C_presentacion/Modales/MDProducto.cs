@@ -53,51 +53,12 @@ namespace FankyRecords.C_presentacion.Modales
                     Codigo = Convert.ToInt32(listadoProductos.Rows[iRow].Cells["codigo"].Value.ToString()),
                     Nombre = listadoProductos.Rows[iRow].Cells["nombre"].Value.ToString(),
                     Descripcion = listadoProductos.Rows[iRow].Cells["descripcion"].Value.ToString(),
+                    PrecioVenta = Convert.ToDecimal(listadoProductos.Rows[iRow].Cells["PrecioVenta"].Value.ToString()),
+                    Stock = Convert.ToInt32(listadoProductos.Rows[iRow].Cells["stock"].Value.ToString()),
                 };
                 // devuelve OK y cierra form
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-        }
-
-        private void BuscarDatos(string termino)
-        {
-            bool encontrado = false;
-
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
-            listadoProductos.ClearSelection();
-
-            // Iterar sobre todas las filas del DataGridView
-            foreach (DataGridViewRow row in listadoProductos.Rows)
-            {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
-                    {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
-                    }
-                }
-
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listadoProductos.CurrentRow == row)
-                {
-                    listadoProductos.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
-                row.Visible = filaVisible;
-            }
-
-            // Mostrar mensaje si no se encontraron coincidencias
-            if (!encontrado)
-            {
-                MessageBox.Show("No se encontraron coincidencias.");
-                TBBuscador.Clear();
             }
         }
 
@@ -116,6 +77,57 @@ namespace FankyRecords.C_presentacion.Modales
             {
                 string terminoBusqueda = TBBuscador.Text;
                 BuscarDatos(terminoBusqueda);
+            }
+        }
+
+        private void BuscarDatos(string termino)
+        {
+            bool encontrado = false;
+            string busqueda = termino.ToLower();
+
+            // Desactivar la selección para evitar conflictos
+            listadoProductos.ClearSelection();
+
+            // Primero, deselecciona la celda actual
+            listadoProductos.CurrentCell = null;
+
+            foreach (DataGridViewRow row in listadoProductos.Rows)
+            {
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listadoProductos.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listadoProductos.Rows)
+                    {
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listadoProductos.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
+                    }
+                }
+
+                // Ahora es seguro modificar la visibilidad
+                row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
+            }
+
+            if (!encontrado)
+            {
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
             }
         }
 

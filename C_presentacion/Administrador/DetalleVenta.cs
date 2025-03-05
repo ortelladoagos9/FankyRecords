@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FankyRecords.C_datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,14 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
+    //private datos CD_Compras;
+
     public partial class detalleVenta : Form
     {
         public detalleVenta()
         {
             InitializeComponent();
+            //CD_Compras = new DatosCompra();
         }
 
         private void TxtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -26,15 +30,20 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             // Limpiar todas las filas del DataGridView
             listadoVentas.Rows.Clear();
+            TBFecha.Clear();
+            TBTipoDoc.Clear();
+            TBUsuario.Clear();
+            TBNroDocumento.Clear();
+            TBNombreCompleto.Clear();
+            TBTotalAPagar.Clear();
+            TBRecibe.Clear();
+            TBCambio.Clear();
+            TBNroVenta.Clear();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (C_negocio.Validaciones.EstaVacio(TBNroDoc.Text))
-            {
-                MessageBox.Show("Debe ingresar el numero de documento para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
-
     }
 }

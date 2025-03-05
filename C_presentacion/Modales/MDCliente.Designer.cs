@@ -37,18 +37,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.TBBuscador = new System.Windows.Forms.TextBox();
-            this.listaproveedores = new System.Windows.Forms.DataGridView();
+            this.listaClientes = new System.Windows.Forms.DataGridView();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaproveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(51, 35);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // TBBuscador
             // 
@@ -130,16 +132,17 @@
             this.TBBuscador.Name = "TBBuscador";
             this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 33;
+            this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
             // 
-            // listaproveedores
+            // listaClientes
             // 
-            this.listaproveedores.AllowUserToAddRows = false;
-            this.listaproveedores.AutoGenerateColumns = false;
-            this.listaproveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.listaproveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.listaproveedores.BackgroundColor = System.Drawing.Color.White;
-            this.listaproveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listaproveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.listaClientes.AllowUserToAddRows = false;
+            this.listaClientes.AutoGenerateColumns = false;
+            this.listaClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listaClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.listaClientes.BackgroundColor = System.Drawing.Color.White;
+            this.listaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,17 +150,18 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listaproveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.listaproveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaproveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDclienteDataGridViewTextBoxColumn,
+            this.listaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.listaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_cliente,
             this.documento,
             this.nombre,
             this.apellido,
+            this.NombreCompleto,
             this.correo,
             this.telefono,
             this.estado});
-            this.listaproveedores.DataSource = this.clientesBindingSource;
+            this.listaClientes.DataSource = this.clientesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,32 +169,33 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaproveedores.DefaultCellStyle = dataGridViewCellStyle2;
-            this.listaproveedores.Location = new System.Drawing.Point(0, 109);
-            this.listaproveedores.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.listaproveedores.Name = "listaproveedores";
-            this.listaproveedores.ReadOnly = true;
-            this.listaproveedores.RowHeadersWidth = 51;
-            this.listaproveedores.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.listaproveedores.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.listaproveedores.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DarkRed;
-            this.listaproveedores.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.listaproveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaproveedores.Size = new System.Drawing.Size(1067, 446);
-            this.listaproveedores.TabIndex = 22;
+            this.listaClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.listaClientes.Location = new System.Drawing.Point(0, 109);
+            this.listaClientes.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.listaClientes.Name = "listaClientes";
+            this.listaClientes.ReadOnly = true;
+            this.listaClientes.RowHeadersWidth = 51;
+            this.listaClientes.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.listaClientes.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.listaClientes.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DarkRed;
+            this.listaClientes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.listaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listaClientes.Size = new System.Drawing.Size(1067, 446);
+            this.listaClientes.TabIndex = 22;
+            this.listaClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaClientes_CellDoubleClick);
             // 
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataSource = typeof(FankyRecords.C_entidad.Clientes);
             // 
-            // iDclienteDataGridViewTextBoxColumn
+            // ID_cliente
             // 
-            this.iDclienteDataGridViewTextBoxColumn.DataPropertyName = "ID_cliente";
-            this.iDclienteDataGridViewTextBoxColumn.HeaderText = "ID_cliente";
-            this.iDclienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDclienteDataGridViewTextBoxColumn.Name = "iDclienteDataGridViewTextBoxColumn";
-            this.iDclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDclienteDataGridViewTextBoxColumn.Visible = false;
+            this.ID_cliente.DataPropertyName = "ID_cliente";
+            this.ID_cliente.HeaderText = "ID_cliente";
+            this.ID_cliente.MinimumWidth = 6;
+            this.ID_cliente.Name = "ID_cliente";
+            this.ID_cliente.ReadOnly = true;
+            this.ID_cliente.Visible = false;
             // 
             // documento
             // 
@@ -207,6 +212,7 @@
             this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            this.nombre.Visible = false;
             // 
             // apellido
             // 
@@ -215,6 +221,15 @@
             this.apellido.MinimumWidth = 6;
             this.apellido.Name = "apellido";
             this.apellido.ReadOnly = true;
+            this.apellido.Visible = false;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "Nombre Completo";
+            this.NombreCompleto.MinimumWidth = 6;
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
             // 
             // correo
             // 
@@ -239,23 +254,26 @@
             this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             // 
             // MDCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.listaproveedores);
+            this.Controls.Add(this.listaClientes);
             this.Controls.Add(this.contenedorLista);
             this.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MDCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Clientes";
+            this.Load += new System.EventHandler(this.MDCliente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MDCliente_KeyDown);
             this.contenedorLista.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaproveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -269,14 +287,15 @@
         private System.Windows.Forms.Panel panel1;
         public FontAwesome.Sharp.IconButton btnBuscar;
         public System.Windows.Forms.TextBox TBBuscador;
-        public System.Windows.Forms.DataGridView listaproveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDclienteDataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView listaClientes;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.BindingSource clientesBindingSource;
     }
 }

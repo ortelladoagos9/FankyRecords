@@ -261,6 +261,7 @@
             this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 32;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
+            this.TBBuscador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBBuscador_KeyDown);
             // 
             // btnBuscar
             // 
@@ -388,7 +389,7 @@
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(206, 46);
             this.Beliminar.TabIndex = 14;
-            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.Text = "Desactivar";
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Beliminar.UseVisualStyleBackColor = false;

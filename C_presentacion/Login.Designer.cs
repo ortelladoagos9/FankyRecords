@@ -124,7 +124,7 @@
             this.Bsalir.IconChar = FontAwesome.Sharp.IconChar.CircleXmark;
             this.Bsalir.IconColor = System.Drawing.Color.White;
             this.Bsalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bsalir.IconSize = 25;
+            this.Bsalir.IconSize = 30;
             this.Bsalir.Location = new System.Drawing.Point(574, 600);
             this.Bsalir.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Bsalir.Name = "Bsalir";
@@ -151,7 +151,7 @@
             this.Bingresar.IconChar = FontAwesome.Sharp.IconChar.Laugh;
             this.Bingresar.IconColor = System.Drawing.Color.White;
             this.Bingresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bingresar.IconSize = 25;
+            this.Bingresar.IconSize = 30;
             this.Bingresar.Location = new System.Drawing.Point(380, 600);
             this.Bingresar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Bingresar.Name = "Bingresar";

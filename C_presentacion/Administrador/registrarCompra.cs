@@ -66,7 +66,9 @@ namespace FankyRecords.C_presentacion.Administrador
             try
             {
                 // Mensaje de confirmación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas agregar el producto: " + TBproducto.Text + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas agregar el producto: " 
+                    + TBproducto.Text + " " + TBDescripcion.Text + "?", "Confirmación", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     bool prodExiste = false;
@@ -98,7 +100,8 @@ namespace FankyRecords.C_presentacion.Administrador
                             fila.Cells["Precio_Venta"].Value = precioVentaActual.ToString("N2");
 
                             CalcularTotal();
-                            MessageBox.Show("La cantidad del producto " + TBproducto.Text + " se actualizó correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("La cantidad del producto "
+                                + TBproducto.Text + " " + TBDescripcion.Text + " se actualizó correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
                             return;
                         }
@@ -204,7 +207,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 string numeroCompra = string.Format("{0:00000}", idcorrelativo);
 
                 OpcionCombo opcionSeleccionada = (OpcionCombo)cbTipoDoc.SelectedItem;
-                int idTipoDoc = Convert.ToInt32(opcionSeleccionada.Valor); // Aquí obtienes el ID_Tipo_Doc.
+                int idTipoDoc = Convert.ToInt32(opcionSeleccionada.Valor); // obtengo el ID_Tipo_Doc.
 
                 Compra compra = new Compra()
                 {
@@ -268,6 +271,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 else
                 {
                     TBCodProd.Select();
+                    return;
                 }
             }
         }
@@ -287,6 +291,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 else
                 {
                     TBcuit.Select();
+                    return;
                 }
             }
         }

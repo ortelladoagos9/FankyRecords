@@ -62,47 +62,6 @@ namespace FankyRecords.C_presentacion.Modales
             }
         }
 
-        private void BuscarDatos(string termino)
-        {
-            bool encontrado = false;
-
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
-            listaproveedores.ClearSelection();
-
-            // Iterar sobre todas las filas del DataGridView
-            foreach (DataGridViewRow row in listaproveedores.Rows)
-            {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
-                    {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
-                    }
-                }
-
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listaproveedores.CurrentRow == row)
-                {
-                    listaproveedores.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
-                row.Visible = filaVisible;
-            }
-
-            // Mostrar mensaje si no se encontraron coincidencias
-            if (!encontrado)
-            {
-                MessageBox.Show("No se encontraron coincidencias.");
-                TBBuscador.Clear();
-            }
-        }
-
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             ValidarYBuscar();
@@ -121,6 +80,57 @@ namespace FankyRecords.C_presentacion.Modales
             }
         }
 
+        private void BuscarDatos(string termino)
+        {
+            bool encontrado = false;
+            string busqueda = termino.ToLower();
+
+            // Desactivar la selección para evitar conflictos
+            listaproveedores.ClearSelection();
+
+            // Primero, deselecciona la celda actual
+            listaproveedores.CurrentCell = null;
+
+            foreach (DataGridViewRow row in listaproveedores.Rows)
+            {
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listaproveedores.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listaproveedores.Rows)
+                    {
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listaproveedores.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
+                    }
+                }
+
+                // Ahora es seguro modificar la visibilidad
+                row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
+            }
+
+            if (!encontrado)
+            {
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
+            }
+        }
+
         private void TBBuscador_TextChanged(object sender, EventArgs e)
         {
             if (TBBuscador.Text == "")
@@ -128,7 +138,6 @@ namespace FankyRecords.C_presentacion.Modales
                 CargarProveedor();
             }
         }
-
         private void MDProveedor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

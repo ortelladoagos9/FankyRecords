@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             this.LGestionUsuarios = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
@@ -329,6 +329,7 @@
             this.TBclave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBclave.MaxLength = 10;
             this.TBclave.Name = "TBclave";
+            this.TBclave.PasswordChar = '*';
             this.TBclave.ShortcutsEnabled = false;
             this.TBclave.Size = new System.Drawing.Size(293, 35);
             this.TBclave.TabIndex = 23;
@@ -341,6 +342,7 @@
             this.TBconfirmarClave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TBconfirmarClave.MaxLength = 10;
             this.TBconfirmarClave.Name = "TBconfirmarClave";
+            this.TBconfirmarClave.PasswordChar = '*';
             this.TBconfirmarClave.ShortcutsEnabled = false;
             this.TBconfirmarClave.Size = new System.Drawing.Size(293, 35);
             this.TBconfirmarClave.TabIndex = 24;
@@ -410,10 +412,10 @@
             // 
             this.rutaFoto.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rutaFoto.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rutaFoto.Location = new System.Drawing.Point(848, 242);
+            this.rutaFoto.Location = new System.Drawing.Point(822, 242);
             this.rutaFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rutaFoto.Name = "rutaFoto";
-            this.rutaFoto.Size = new System.Drawing.Size(178, 35);
+            this.rutaFoto.Size = new System.Drawing.Size(204, 35);
             this.rutaFoto.TabIndex = 31;
             // 
             // Bfoto
@@ -423,7 +425,7 @@
             this.Bfoto.Location = new System.Drawing.Point(733, 242);
             this.Bfoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Bfoto.Name = "Bfoto";
-            this.Bfoto.Size = new System.Drawing.Size(101, 35);
+            this.Bfoto.Size = new System.Drawing.Size(81, 35);
             this.Bfoto.TabIndex = 30;
             this.Bfoto.Text = "Foto";
             this.Bfoto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -484,14 +486,14 @@
             this.listadoUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.listadoUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listadoUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_usuarios,
@@ -507,27 +509,27 @@
             this.Estado,
             this.RolDescripcion});
             this.listadoUsuarios.DataSource = this.usuariosBindingSource1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
             this.listadoUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoUsuarios.Location = new System.Drawing.Point(0, 508);
             this.listadoUsuarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listadoUsuarios.Name = "listadoUsuarios";
             this.listadoUsuarios.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.listadoUsuarios.RowHeadersWidth = 51;
             this.listadoUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoUsuarios.Size = new System.Drawing.Size(1418, 231);
@@ -589,7 +591,7 @@
             // Direccion
             // 
             this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.HeaderText = "Dirección";
             this.Direccion.MinimumWidth = 6;
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
@@ -597,7 +599,7 @@
             // Telefono
             // 
             this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
             this.Telefono.MinimumWidth = 6;
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
@@ -767,7 +769,7 @@
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(206, 46);
             this.Beliminar.TabIndex = 10;
-            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.Text = "Desactivar";
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Beliminar.UseVisualStyleBackColor = false;
@@ -823,6 +825,7 @@
             this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 32;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
+            this.TBBuscador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBBuscador_KeyDown);
             // 
             // btnBuscar
             // 

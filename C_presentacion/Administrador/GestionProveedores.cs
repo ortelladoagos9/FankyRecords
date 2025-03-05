@@ -25,7 +25,6 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
             CD_Proveedores = new DatosProveedores();
             CN_Proveedores = new NegocioProveedores();
-
         }
 
         private void Bguardar_Click(object sender, EventArgs e)
@@ -35,40 +34,40 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void GuardarProveedores()
         {
-                //Verificamos que todos los campos estésn completos.
-                if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
-                  C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
-                  C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
-                  C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
-                  C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
-                {
-                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                // Validación previa de duplicados en la base de datos
-                if (CN_Proveedores.ExisteProveedor(TBRazonSocial.Text))
-                {
-                    MessageBox.Show("El proveedor ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //validar correo
-                string email = TBcorreo.Text;
+            //Verificamos que todos los campos estésn completos.
+            if (C_negocio.Validaciones.EstaVacio(TBRazonSocial.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcuit.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBcorreo.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Validación previa de duplicados en la base de datos
+            if (CN_Proveedores.ExisteProveedor(TBRazonSocial.Text))
+            {
+                MessageBox.Show("El proveedor ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //validar correo
+            string email = TBcorreo.Text;
 
-                if (!C_negocio.Validaciones.EmailCorrecto(email))
-                {
-                   MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   return;
-                }
-               // Crear objeto proveedor
-              Proveedores proveedores = new Proveedores
-              {
+            if (!C_negocio.Validaciones.EmailCorrecto(email))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Crear objeto proveedor
+            Proveedores proveedores = new Proveedores
+            {
                 RazonSocial = TBRazonSocial.Text,
                 Correo = TBcorreo.Text,
                 Cuit = TBcuit.Text,
                 Domicilio = TBdomiciliop.Text,
                 Telefono = TBtelefono.Text,
                 Estado = RBactivop.Checked ? "Activo" : "Inactivo"
-              };
+            };
             try
             {
                 DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -122,11 +121,11 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             if (C_negocio.Validaciones.mensajeEliminar())
             {
-                    CN_Proveedores.EliminarProveedor(proveedorIdSeleccionado);
+                CN_Proveedores.EliminarProveedor(proveedorIdSeleccionado);
 
-                    // Recargar datos y limpiar formulario
-                    CargarProveedores();
-                    Limpiar();
+                // Recargar datos y limpiar formulario
+                CargarProveedores();
+                Limpiar();
             }
         }
 
@@ -192,8 +191,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }  
         }
 
-
         private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ValidarYBuscar();
+        }
+
+        private void ValidarYBuscar()
         {
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
@@ -206,44 +209,54 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        //Metodo para buscar datos en el datagrid
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
+            string busqueda = termino.ToLower();
 
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            // Desactivar la selección para evitar conflictos
             DGlistaproveedores.ClearSelection();
 
-            // Iterar sobre todas las filas del DataGridView
+            // Primero, deselecciona la celda actual
+            DGlistaproveedores.CurrentCell = null;
+
             foreach (DataGridViewRow row in DGlistaproveedores.Rows)
             {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && DGlistaproveedores.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in DGlistaproveedores.Rows)
                     {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            DGlistaproveedores.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
                     }
                 }
 
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && DGlistaproveedores.CurrentRow == row)
-                {
-                    DGlistaproveedores.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
+                // Ahora es seguro modificar la visibilidad
                 row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
             }
 
-            // Mostrar mensaje si no se encontraron coincidencias
             if (!encontrado)
             {
-                MessageBox.Show("No se encontraron coincidencias.");
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
             }
         }
 
@@ -255,6 +268,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void CargarProveedores()
         {
             List<Proveedores> proveedores = CN_Proveedores.ListarProveedores();
+            //var proveedoresActivos = proveedores.Where(c => c.Estado == "Activo").ToList();
             DGlistaproveedores.DataSource = proveedores;
         }
 
@@ -340,6 +354,15 @@ namespace FankyRecords.C_presentacion.Administrador
             if (TBBuscador.Text == "")
             {
                 CargarProveedores();
+            }
+        }
+
+        private void TBBuscador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
             }
         }
     }

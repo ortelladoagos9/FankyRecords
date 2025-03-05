@@ -40,13 +40,13 @@ namespace FankyRecords.C_presentacion.Administrador
               CBcategoria.Text,
             };
             return campos;
-        }  
-        
+        }
+
         private void Bguardar_Click(object sender, EventArgs e)
         {
             VerificarCamposYGuardar();
         }
-        
+
         private void VerificarCamposYGuardar()
         {
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
@@ -100,11 +100,13 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
-            }           
-        }
+            }
+        } 
+
         private void CargarProductos()
         {
             List<Productos> productos = CN_Productos.ListarProductos();
+            //var productosActivos = productos.Where(c => c.Estado == "Activo").ToList();
             listadoProductos.DataSource = productos;
         }
 
@@ -112,7 +114,6 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             C_negocio.Validaciones.EsNumero(e);
         } 
-
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
@@ -137,13 +138,12 @@ namespace FankyRecords.C_presentacion.Administrador
 
             if (C_negocio.Validaciones.mensajeEliminar())
             {
-                    CN_Productos.EliminarProductos(productoIdSeleccionado);
+                CN_Productos.EliminarProductos(productoIdSeleccionado);
 
-                    // Recargar datos y limpiar formulario
-                    CargarProductos();
-                    Limpiar();
-            }
-            
+                // Recargar datos y limpiar formulario
+                CargarProductos();
+                Limpiar();
+            }         
         }
 
         private void Beditar_Click(object sender, EventArgs e)
@@ -242,44 +242,54 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        //Metodo para buscar datos en el datagrid
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
+            string busqueda = termino.ToLower();
 
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            // Desactivar la selección para evitar conflictos
             listadoProductos.ClearSelection();
 
-            // Iterar sobre todas las filas del DataGridView
+            // Primero, deselecciona la celda actual
+            listadoProductos.CurrentCell = null;
+
             foreach (DataGridViewRow row in listadoProductos.Rows)
             {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listadoProductos.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listadoProductos.Rows)
                     {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listadoProductos.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
                     }
                 }
 
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listadoProductos.CurrentRow == row)
-                {
-                    listadoProductos.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
+                // Ahora es seguro modificar la visibilidad
                 row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
             }
 
-            // Mostrar mensaje si no se encontraron coincidencias
             if (!encontrado)
             {
-                MessageBox.Show("No se encontraron coincidencias.");
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
             }
         }
 
@@ -308,7 +318,6 @@ namespace FankyRecords.C_presentacion.Administrador
             listadoProductos.Columns["precioCompra"].DefaultCellStyle.Format = "N2";
 
             listadoProductos.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("es-ES");
-
         }
 
         private void listadoProductos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -349,7 +358,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show("Algunos productos tienen stock por debajo del mínimo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void CargarCombo()
         {
@@ -449,7 +457,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-       
+        private void TBBuscador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
+            }
+        }
     }
 }
 

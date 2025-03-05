@@ -159,15 +159,19 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
         }
 
+        //baja logica
         public void EliminarProveedor(int id_proveedor)
         {
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Proveedores WHERE ID_proveedor = @ID_proveedor";
-
+                string query = @"
+                        UPDATE Proveedores
+                        SET Estado = @Inactivo
+                        WHERE ID_proveedor = @ID_proveedor";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_proveedor", id_proveedor));
+                cmd.Parameters.Add(new SqlParameter("@Inactivo", "Inactivo"));
 
                 cmd.ExecuteNonQuery();
             }

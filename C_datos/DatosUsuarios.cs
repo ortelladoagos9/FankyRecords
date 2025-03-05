@@ -93,8 +93,8 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                        select u.ID_usuarios, u.Dni,u.Nombre,u.Apellido, u.Correo, u.Clave, u.Direccion, u.Telefono, u.Estado, u.FechaNacimiento, r.ID_rol, r.Descripcion as Rol
-                        from Usuarios u inner join Rol r on u.ID_rol= r.ID_rol";
+                select u.ID_usuarios, u.Dni,u.Nombre,u.Apellido, u.Correo, u.Clave, u.Direccion, u.Telefono, u.Estado, u.FechaNacimiento, r.ID_rol, r.Descripcion as Rol
+                from Usuarios u inner join Rol r on u.ID_rol= r.ID_rol";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
@@ -177,16 +177,19 @@ namespace FankyRecords.C_datos
             }
         }
 
-
+        //baja logica
         public void EliminarUsuarios(int ID_usuarios)
         {
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Usuarios WHERE ID_usuarios = @ID_usuarios";
-
+                string query = @"
+                        UPDATE Usuarios
+                        SET Estado = @Inactivo
+                        WHERE ID_usuarios = @ID_usuarios";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_usuarios", ID_usuarios));
+                cmd.Parameters.Add(new SqlParameter("@Inactivo", "Inactivo")); // Asigna el valor deseado
 
                 cmd.ExecuteNonQuery();
             }
@@ -194,7 +197,10 @@ namespace FankyRecords.C_datos
             {
                 throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
-            finally { conexion.Close(); }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public Usuarios ObtenerUsuariosPorID(int ID_usuarios)

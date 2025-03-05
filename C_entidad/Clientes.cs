@@ -15,5 +15,12 @@ namespace FankyRecords.C_entidad
         public string  Correo { get; set; }
         public string  Telefono {  get; set; }
         public string  Estado {  get; set; }
+
+        public string NombreCompleto { get; set; }
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
     }
 }

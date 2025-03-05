@@ -145,7 +145,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Beliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Beliminar.Size = new System.Drawing.Size(206, 46);
             this.Beliminar.TabIndex = 11;
-            this.Beliminar.Text = "Eliminar";
+            this.Beliminar.Text = "Desactivar";
             this.Beliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Beliminar.UseVisualStyleBackColor = false;
@@ -433,7 +433,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // Telefono
             // 
             this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
             this.Telefono.MinimumWidth = 6;
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
@@ -518,6 +518,7 @@ namespace FankyRecords.C_presentacion.Administrador
             this.TBBuscador.Size = new System.Drawing.Size(204, 35);
             this.TBBuscador.TabIndex = 34;
             this.TBBuscador.TextChanged += new System.EventHandler(this.TBBuscador_TextChanged);
+            this.TBBuscador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBBuscador_KeyDown);
             // 
             // btnBuscar
             // 

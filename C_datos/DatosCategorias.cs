@@ -1,4 +1,5 @@
 ﻿using FankyRecords.C_entidad;
+using FankyRecords.C_presentacion.Modales;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -141,12 +142,15 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM CATEGORIAS WHERE Id_categoria = @Id_categoria";
-
+                string query = @"
+                        UPDATE CATEGORIAS
+                        SET Estado = @Inactivo
+                        WHERE Id_categoria = @Id_categoria";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@Id_categoria", id_categoria));
+                cmd.Parameters.Add(new SqlParameter("@Inactivo", "Inactivo")); // Asigna el valor deseado
 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery(); 
             }
             catch (Exception ex)
             {

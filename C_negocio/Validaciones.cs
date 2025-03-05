@@ -110,17 +110,17 @@ namespace FankyRecords.C_negocio
         }
         public static bool mensajeEliminar()
         {
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Los datos serán desactivados. ¿Estás seguro de que deseas desactivarlos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
             {
-                MessageBox.Show("La operación de eliminado ha sido cancelada.",
+                MessageBox.Show("La operación de desactivar ha sido cancelada.",
                                          "Cancelado",
                                          MessageBoxButtons.OK,
                                          MessageBoxIcon.Warning);
                 return false;
             }
-            MessageBox.Show("Los datos han sido eliminados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Los datos han sido desactivados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return true;
         }

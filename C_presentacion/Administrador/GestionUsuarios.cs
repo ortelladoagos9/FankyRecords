@@ -60,7 +60,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-
         private List<string> ListaCampos()
         {
             // Lista de todos los TextBox y ComboBox que se deben validar
@@ -90,30 +89,35 @@ namespace FankyRecords.C_presentacion.Administrador
             // Verificar si algún campo está vacío
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos para guardar.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }  
             // Validación previa de duplicados en la base de datos
             if (CN_Usuarios.ExisteDocumento(TBdni.Text))
             {
-                MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DNI ya existe. No se permiten duplicados.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (CN_Usuarios.ExisteTelefono(TBtelefono.Text))
             {
-                MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El teléfono ya existe. No se permiten duplicados.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (CN_Usuarios.ExisteCorreo(TBemail.Text))
             {
-                MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El correo ya existe. No se permiten duplicados.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             string email = TBemail.Text;
             if (!C_negocio.Validaciones.EmailCorrecto(email))
             {
-                MessageBox.Show("El formato del correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El formato del correo electrónico no es válido.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -125,7 +129,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 return;
 
             }
-
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionado = new Rol
             {
@@ -155,34 +158,39 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un rol válido.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
-                    DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo usuario?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo usuario?", "Confirmar inserción", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (ask == DialogResult.Yes)
-                    {
-                        CN_Usuarios.GuardarUsuarios(usuario);
+                if (ask == DialogResult.Yes)
+                {
+                    CN_Usuarios.GuardarUsuarios(usuario);
 
-                        MessageBox.Show("El usuario: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Recargar datos y limpiar formulario
-                        CargarUsuarios();
-                        Limpiar();
-                    }
+                    MessageBox.Show("El usuario: " 
+                        + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se insertó correctamente", "Guardar", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Recargar datos y limpiar formulario
+                    CargarUsuarios();
+                    Limpiar();
+                }
             }
             catch (Exception ex)
             {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
         }
 
         private void CargarUsuarios()
         {
             List<Usuarios> usuarios = CN_Usuarios.ListarUsuarios();
+            //var usuariosActivos = usuarios.Where(c => c.Estado == "Activo").ToList();
             listadoUsuarios.DataSource = usuarios;
         }
 
@@ -218,7 +226,8 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
                 catch (IOException ex)
                 {
-                    MessageBox.Show($"Error al copiar el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al copiar el archivo: {ex.Message}", "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -239,14 +248,23 @@ namespace FankyRecords.C_presentacion.Administrador
             // Verificar si algún campo está vacío
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
-                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos campos para eliminar.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Verificar si el usuario existe en la base de datos
             Usuarios usuarioExistente = CN_Usuarios.ObtenerUsuariosPorID(usuarioIdSeleccionado);
             if (usuarioExistente == null)
             {
-                MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El usuario seleccionado no se encuentra en la base de datos.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (CBRol.Text == "Administrador")
+            {
+                MessageBox.Show("NO SE PUEDE ELIMINAR EL USUARIO ADMINISTRADOR!", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
                 return;
             }
@@ -261,35 +279,36 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-
         private void Beditar_Click(object sender, EventArgs e)
         {
-                VerificarCamposYEditar();
+            VerificarCamposYEditar();
         }
 
         private void VerificarCamposYEditar()
         {
-               // Verificar si algún campo está vacío
-              if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
-              {
-                    MessageBox.Show("Debe completar todos los campos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-              }
-                // Verificar si el usuario existe en la base de datos
-             try
-             {
+            // Verificar si algún campo está vacío
+            if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
+            {
+                MessageBox.Show("Debe completar todos los campos para editar", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Verificar si el usuario existe en la base de datos
+            try
+            {
                 Usuarios usuarioExistente = CN_Usuarios.ObtenerUsuariosPorID(usuarioIdSeleccionado);
-                 if (usuarioExistente == null)
-                 {
-                    MessageBox.Show("El usuario seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (usuarioExistente == null)
+                {
+                    MessageBox.Show("El usuario seleccionado no se encuentra en la base de datos.", "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Limpiar();
                     return;
-                 } 
-             }
-             catch (Exception ex)
-             {
+                } 
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
+            }
 
             string clave = TBclave.Text;
             string confirmarClave = TBconfirmarClave.Text;
@@ -302,12 +321,12 @@ namespace FankyRecords.C_presentacion.Administrador
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionado = new Rol
             {
-                 ID_rol = Convert.ToInt32(CBRol.SelectedValue),
-                 Descripcion = CBRol.Text
+                ID_rol = Convert.ToInt32(CBRol.SelectedValue),
+                Descripcion = CBRol.Text
             };
-               // Crear objeto usuarios
-             Usuarios usuario= new Usuarios
-             {
+            // Crear objeto usuarios
+            Usuarios usuario= new Usuarios
+            {
                 ID_usuarios= usuarioIdSeleccionado,
                 Dni = TBdni.Text,
                 Nombre = TBnombre.Text,
@@ -319,99 +338,115 @@ namespace FankyRecords.C_presentacion.Administrador
                 FechaNacimiento = Convert.ToDateTime(DTFechanac.Text),
                 Estado = rBactivo.Checked ? "Activo" : "Inactivo",
                 Obj_rol = rolSeleccionado  // Asigna el objeto de producto  
-             };
+            };
 
-             usuario.Obj_rol= rolSeleccionado;
+            usuario.Obj_rol= rolSeleccionado;
             
-             if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
-             {
+            if (CBRol.SelectedItem is OpcionCombo opcionSeleccionada)
+            {
                 usuario.Obj_rol.ID_rol = (int)opcionSeleccionada.Valor;
-             }
-             else
-             {
-                 MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un rol válido.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
-             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea editar usuario?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            {
+                DialogResult ask = MessageBox.Show("¿Seguro que deseas editar el usuario: "
+                    + this.TBnombre.Text + " " + this.TBapellido.Text + "?", "Confirmar edición", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                 if (ask == DialogResult.Yes)
-                 {
+                if (ask == DialogResult.Yes)
+                {
                     // Llamar al método de negocio para guardar/editar el producto
                     CN_Usuarios.GuardarUsuarios(usuario);
 
-                    MessageBox.Show("El usuario: " + this.TBnombre.Text + " " + this.TBapellido.Text + " se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El usuario: " 
+                        + this.TBnombre.Text + " " + this.TBapellido.Text + " se editó correctamente", "Guardar", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar la lista de productos
                     CargarUsuarios();
                     Limpiar();
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 Limpiar();
-             }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+            }
         }
-
-
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-                if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
-                {
-                    MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                string terminoBusqueda = TBBuscador.Text;
-                BuscarDatos(terminoBusqueda);
-                }
+            ValidarYBuscar();
         }
 
-        //Metodo para buscar datos en el datagrid
+        private void ValidarYBuscar()
+        {
+            if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
+            {
+                MessageBox.Show("Debe ingresar un dato para buscar", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string terminoBusqueda = TBBuscador.Text;
+                BuscarDatos(terminoBusqueda);
+            }
+        }
+
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
+            string busqueda = termino.ToLower();
 
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            // Desactivar la selección para evitar conflictos
             listadoUsuarios.ClearSelection();
 
-            // Iterar sobre todas las filas del DataGridView
+            // Primero, deselecciona la celda actual
+            listadoUsuarios.CurrentCell = null;
+
             foreach (DataGridViewRow row in listadoUsuarios.Rows)
             {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listadoUsuarios.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listadoUsuarios.Rows)
                     {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listadoUsuarios.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
                     }
                 }
 
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listadoUsuarios.CurrentRow == row)
-                {
-                    listadoUsuarios.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
+                // Ahora es seguro modificar la visibilidad
                 row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
             }
 
-            // Mostrar mensaje si no se encontraron coincidencias
             if (!encontrado)
             {
-                MessageBox.Show("No se encontraron coincidencias.");
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBBuscador.Clear();
             }
         }
-
-   
 
         private void listadoUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -470,10 +505,8 @@ namespace FankyRecords.C_presentacion.Administrador
                     // Si tienes una columna separada para la descripción del rol
                     CBRol.Text = row.Cells["RolDescripcion"].Value.ToString();
                 }
-                
             }
         }
-
 
         private void listadoUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -496,7 +529,7 @@ namespace FankyRecords.C_presentacion.Administrador
             if (TBBuscador.Text == "")
             {
                 CargarUsuarios();
-            }
+            }     
         }
 
         private void Limpiar()
@@ -524,7 +557,16 @@ namespace FankyRecords.C_presentacion.Administrador
         private void TBlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-        }  
+        }
+
+        private void TBBuscador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
+            }
+        }
     } 
 }
 

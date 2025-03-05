@@ -69,13 +69,66 @@ namespace FankyRecords.C_datos
             }
         }
 
+        //LISTADO DE CLIENTES PARA EL MODAL
+        public List<Clientes> ListarClientesModal()
+        {
+            List<Clientes> listaClientes = new List<Clientes>();
+
+            try
+            {
+                conexion.Open();
+
+                string query = @"
+                        select 
+                            ID_cliente, 
+                            Documento, 
+                            CONCAT_WS(' ', Nombre, Apellido) as 'NombreCompleto',
+                            Correo, 
+                            Telefono, 
+                            Estado 
+                        from Clientes";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    listaClientes.Add(new Clientes
+                    {
+                        ID_cliente = int.Parse(reader["ID_cliente"].ToString()),
+                        Documento = reader["Documento"].ToString(),
+                        NombreCompleto = reader["NombreCompleto"].ToString(),
+                        Correo = reader["Correo"].ToString(),
+                        Telefono = reader["Telefono"].ToString(),
+                        Estado = reader["Estado"].ToString(),
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+            }
+            finally { conexion.Close(); }
+
+            return listaClientes;
+        }
+
         public List<Clientes> ListarClientes()
         {
             List<Clientes> lista = new List<Clientes>();
             try
             {
                 conexion.Open();
-                string query = @"select ID_cliente, Documento, Nombre, Apellido, Correo, Telefono, Estado from Clientes";
+                string query = @"
+                        select 
+                            ID_cliente, 
+                            Documento, 
+                            Nombre, 
+                            Apellido, 
+                            Correo, 
+                            Telefono, 
+                            Estado 
+                        from Clientes";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -103,7 +156,7 @@ namespace FankyRecords.C_datos
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocurrio un error: " + ex.Message, ex);
+                throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
             }
             finally
             {
@@ -235,10 +288,13 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Clientes WHERE ID_cliente = @ID_cliente";
-
+                string query = @"
+                        UPDATE Clientes
+                        SET Estado = @Inactivo
+                        WHERE ID_cliente = @ID_cliente";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_cliente", ID_cliente));
+                cmd.Parameters.Add(new SqlParameter("@Inactivo", "Inactivo")); // Asigna el valor deseado
 
                 cmd.ExecuteNonQuery();
             }

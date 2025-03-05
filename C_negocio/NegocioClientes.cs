@@ -57,9 +57,21 @@ namespace FankyRecords.C_negocio
             return CD_Clientes.ListarClientes();
         }
 
+        public List<Clientes> ListarClientesModal()
+        {
+            return CD_Clientes.ListarClientesModal();
+        }
+        
         public void EliminarCliente(int ID_cliente)
         {
-            CD_Clientes.EliminarCliente(ID_cliente);
+            try
+            {
+                CD_Clientes.EliminarCliente(ID_cliente);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }  
         }
 
         public Clientes ObtenerClientePorID(int ID_cliente)

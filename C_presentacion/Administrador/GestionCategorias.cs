@@ -35,22 +35,21 @@ namespace FankyRecords.C_presentacion.Administrador
         private void GuardarCategorias()
         {
            
-                // Verificar que todos los campos requeridos estén completos
-                if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
-                {
-                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+            // Verificar que todos los campos requeridos estén completos
+            if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                // Validación previa de duplicados en la base de datos
-                if (CN_Categorias.ExisteCategoria(TBdescripcion.Text))
-                {
-                    MessageBox.Show("La categoría ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
-                    return;
-                }
-                
-                
+            // Validación previa de duplicados en la base de datos
+            if (CN_Categorias.ExisteCategoria(TBdescripcion.Text))
+            {
+                MessageBox.Show("La categoría ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+                         
             // Crear objeto categoría
             Categorias categorias = new Categorias
             {
@@ -77,9 +76,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
             }
-
         }
-
 
         private void Beliminar_Click(object sender, EventArgs e)
         {
@@ -103,13 +100,12 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             if (C_negocio.Validaciones.mensajeEliminar())
             {
-                    CN_Categorias.EliminarCategoria(categoriaIdSeleccionada);
+                CN_Categorias.EliminarCategoria(categoriaIdSeleccionada);
 
-                    // Recargar datos y limpiar formulario
-                    CargarCategorias();
-                    Limpiar();
-            }
-            
+                // Recargar datos y limpiar formulario
+                CargarCategorias();
+                Limpiar();
+            }      
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -205,6 +201,11 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ValidarYBuscar();
+        }
+
+        private void ValidarYBuscar()
+        {
             if (C_negocio.Validaciones.EstaVacio(TBBuscador.Text))
             {
                 MessageBox.Show("Debe ingresar un dato para buscar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -215,46 +216,56 @@ namespace FankyRecords.C_presentacion.Administrador
                 BuscarDatos(terminoBusqueda);
             }
         }
-
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
+            string busqueda = termino.ToLower();
 
-            // Desactivar la selección temporalmente para evitar conflictos al ocultar filas
+            // Desactivar la selección para evitar conflictos
             listadoCategorias.ClearSelection();
 
-            // Iterar sobre todas las filas del DataGridView
+            // Primero, deselecciona la celda actual
+            listadoCategorias.CurrentCell = null;
+
             foreach (DataGridViewRow row in listadoCategorias.Rows)
             {
-                bool filaVisible = false;
-
-                // Iterar sobre todas las celdas de la fila
+                // Concatenar los valores de las celdas para la búsqueda
+                string filaDatos = "";
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().ToLower().StartsWith(termino.ToLower()))
+                    if (cell.Value != null)
+                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                }
+
+                bool filaVisible = filaDatos.Contains(busqueda);
+
+                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                if (!filaVisible && listadoCategorias.CurrentRow == row)
+                {
+                    // Buscar otra fila visible para asignar el foco
+                    foreach (DataGridViewRow otraFila in listadoCategorias.Rows)
                     {
-                        filaVisible = true;
-                        encontrado = true;
-                        break; // Detener la búsqueda en esta fila si ya hay coincidencia
+                        if (otraFila != row && otraFila.Visible)
+                        {
+                            listadoCategorias.CurrentCell = otraFila.Cells[0];
+                            break;
+                        }
                     }
                 }
 
-                // Cambiar la fila actual para evitar que esté en una fila que se va a hacer invisible
-                if (!filaVisible && listadoCategorias.CurrentRow == row)
-                {
-                    listadoCategorias.CurrentCell = null; // Deseleccionar la celda actual
-                }
-
-                // Mostrar u ocultar la fila según si hubo coincidencia
+                // Ahora es seguro modificar la visibilidad
                 row.Visible = filaVisible;
+                if (filaVisible)
+                    encontrado = true;
             }
 
-            // Mostrar mensaje si no se encontraron coincidencias
             if (!encontrado)
             {
-                MessageBox.Show("No se encontraron coincidencias.");
+                MessageBox.Show("No se encontraron coincidencias.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBBuscador.Clear();
             }
-        }
+        } 
 
         private void Limpiar()
         {
@@ -290,6 +301,13 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-       
+        private void TBBuscador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
+                e.SuppressKeyPress = true;  // Evita el sonido de la tecla
+            }
+        }
     }
 }

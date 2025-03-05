@@ -17,11 +17,12 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class detalleCompra : Form
     {
-        private DatosCompra CD_Compras;
+        private NegocioCompras CN_Compras;
+
         public detalleCompra()
         {
             InitializeComponent();
-            CD_Compras = new DatosCompra();
+            CN_Compras = new NegocioCompras();
         }
 
         private void TxtPalabra_KeyPress(object sender, KeyPressEventArgs e)
@@ -71,7 +72,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
 
             // Obtener la compra de la base de datos
-            Compra compra = CD_Compras.ObtenerCompra(TBNumeroCompra.Text);
+            Compra compra = CN_Compras.ObtenerCompra(TBNumeroCompra.Text);
 
             if (compra == null)
             {

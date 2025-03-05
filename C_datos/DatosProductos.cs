@@ -86,7 +86,6 @@ namespace FankyRecords.C_datos
 
         public List<Productos> ListarProductos()
         {
-
             List<Productos> listaProductos = new List<Productos>();
 
             try
@@ -181,16 +180,18 @@ namespace FankyRecords.C_datos
             }
         }
 
-
         public void EliminarProductos(int ID_producto)
         {
             try
             {
                 conexion.Open();
-                string query = @"DELETE FROM Productos WHERE ID_producto = @ID_producto";
-
+                string query = @"
+                        UPDATE Productos
+                        SET Estado = @Inactivo
+                        WHERE ID_producto = @ID_producto";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.Add(new SqlParameter("@ID_producto", ID_producto));
+                cmd.Parameters.Add(new SqlParameter("@Inactivo", "Inactivo")); // Asigna el valor deseado
 
                 cmd.ExecuteNonQuery();
             }
@@ -208,10 +209,20 @@ namespace FankyRecords.C_datos
             {
                 conexion.Open();
                 string query = @"
-                         select p.ID_producto, p.Codigo, p.Nombre, p.Descripcion, p.Stock_min, p.Stock, p.PrecioCompra, p.PrecioVenta, p.Estado, c.Id_categoria, c.Descripcion as Categoria 
-                         from Productos p inner join Categorias c on p.Id_categoria = c.Id_categoria WHERE p.ID_producto = @ID_producto";
-
-
+                         select p.ID_producto, 
+                                p.Codigo, 
+                                p.Nombre, 
+                                p.Descripcion, 
+                                p.Stock_min, 
+                                p.Stock, 
+                                p.PrecioCompra, 
+                                p.PrecioVenta, 
+                                p.Estado, 
+                                c.Id_categoria, 
+                                c.Descripcion as Categoria 
+                        from Productos p inner join Categorias c 
+                        on p.Id_categoria = c.Id_categoria 
+                        WHERE p.ID_producto = @ID_producto";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@ID_producto", ID_producto);
 
@@ -245,7 +256,5 @@ namespace FankyRecords.C_datos
 
             return productos;
         }
-
-
     }
 }

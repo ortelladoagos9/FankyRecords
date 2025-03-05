@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,13 +38,14 @@
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.LListaProductos = new System.Windows.Forms.Label();
             this.listadoProductos = new System.Windows.Forms.DataGridView();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProductos)).BeginInit();
@@ -59,7 +60,7 @@
             this.contenedorLista.Controls.Add(this.LListaProductos);
             this.contenedorLista.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorLista.Location = new System.Drawing.Point(0, 0);
-            this.contenedorLista.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.contenedorLista.Margin = new System.Windows.Forms.Padding(7);
             this.contenedorLista.Name = "contenedorLista";
             this.contenedorLista.Size = new System.Drawing.Size(1067, 112);
             this.contenedorLista.TabIndex = 20;
@@ -100,7 +101,7 @@
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 20;
             this.btnBuscar.Location = new System.Drawing.Point(234, 39);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(6);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(51, 35);
             this.btnBuscar.TabIndex = 2;
@@ -142,14 +143,14 @@
             this.listadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.listadoProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_producto,
@@ -157,19 +158,20 @@
             this.nombre,
             this.descripcion,
             this.stock,
-            this.estadoDataGridViewTextBoxColumn});
+            this.estadoDataGridViewTextBoxColumn,
+            this.PrecioVenta});
             this.listadoProductos.DataSource = this.productosBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listadoProductos.Location = new System.Drawing.Point(0, 112);
-            this.listadoProductos.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.listadoProductos.Margin = new System.Windows.Forms.Padding(7);
             this.listadoProductos.Name = "listadoProductos";
             this.listadoProductos.ReadOnly = true;
             this.listadoProductos.RowHeadersWidth = 51;
@@ -181,6 +183,10 @@
             this.listadoProductos.Size = new System.Drawing.Size(1067, 442);
             this.listadoProductos.TabIndex = 21;
             this.listadoProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoProductos_CellDoubleClick);
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
             // 
             // ID_producto
             // 
@@ -232,9 +238,14 @@
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.Visible = false;
             // 
-            // productosBindingSource
+            // PrecioVenta
             // 
-            this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            this.PrecioVenta.DataPropertyName = "PrecioVenta";
+            this.PrecioVenta.HeaderText = "PrecioVenta";
+            this.PrecioVenta.MinimumWidth = 6;
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            this.PrecioVenta.Visible = false;
             // 
             // MDProducto
             // 
@@ -245,7 +256,7 @@
             this.Controls.Add(this.contenedorLista);
             this.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MDProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Productos";
@@ -276,5 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
     }
 }

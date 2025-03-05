@@ -19,8 +19,6 @@ namespace FankyRecords.C_entidad
         public TipoDoc Obj_Tipo_Doc { get; set; }
         // Inicializar la lista para evitar referencias nulas
         public List<DetalleCompra> Obj_DetalleCompra { get; set; } = new List<DetalleCompra>();
-
     }
-  
 }
   
