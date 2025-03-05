@@ -143,7 +143,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     dt.Columns.Add(columna.HeaderText, typeof(string));
                 }
-                foreach(DataGridViewRow row in listadoReporteCompras.Rows)
+                foreach (DataGridViewRow row in listadoReporteCompras.Rows)
                 {
                     if (row.Visible)
                         dt.Rows.Add(new object[]
@@ -157,25 +157,21 @@ namespace FankyRecords.C_presentacion.Administrador
                             row.Cells[6].Value.ToString(),
                             row.Cells[7].Value.ToString(),
                             row.Cells[8].Value.ToString(),
-                            row.Cells[9].Value.ToString(),
-                            row.Cells[10].Value.ToString(),
-                            row.Cells[11].Value.ToString(),
-                            row.Cells[12].Value.ToString(),
-                            row.Cells[13].Value.ToString(),
 
                         });
+                }
 
-                    SaveFileDialog saveFile = new SaveFileDialog();
-                    saveFile.FileName = string.Format("ReporteCompras_(0).xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
-                    saveFile.Filter = "Excel Files | xlsx";
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.FileName = string.Format("ReporteCompras_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.Filter = "Excel Files | *.xlsx";
 
-                    if(saveFile.ShowDialog() == DialogResult.OK)
-                    {
+                if(savefile.ShowDialog() == DialogResult.OK)
+                {
                         try
                         {
                             XLWorkbook wb = new XLWorkbook();
                             var hoja = wb.Worksheets.Add(dt, "informe");
-                            hoja.columnUsed().AdjustToContents();
+                            hoja.ColumnsUsed().AdjustToContents();
                             wb.SaveAs(savefile.FileName);
                             MessageBox.Show("Reporte generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -186,11 +182,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         }
-                    }
-
                 }
-
-
 
             }
         }
