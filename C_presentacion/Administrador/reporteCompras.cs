@@ -131,7 +131,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void descargarExcel_Click(object sender, EventArgs e)
         {
-            if(listadoReporteCompras.Rows.Count < 1)
+            if(listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -146,7 +146,17 @@ namespace FankyRecords.C_presentacion.Administrador
                 foreach (DataGridViewRow row in listadoReporteCompras.Rows)
                 {
                     if (row.Visible)
-                        dt.Rows.Add(new object[]
+                    {
+
+                        DataRow dataRow = dt.NewRow();
+                        for (int i = 0; i < listadoReporteCompras.Columns.Count; i++)
+                        {
+                            dataRow[i] = row.Cells[i].Value?.ToString() ?? string.Empty;
+                        }
+                        dt.Rows.Add(dataRow);
+                    }
+
+                   /* dt.Rows.Add(new object[]
                         {
                             row.Cells[0].Value.ToString(),
                             row.Cells[1].Value.ToString(),
@@ -158,7 +168,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             row.Cells[7].Value.ToString(),
                             row.Cells[8].Value.ToString(),
 
-                        });
+                        });*/
                 }
 
                 SaveFileDialog savefile = new SaveFileDialog();
