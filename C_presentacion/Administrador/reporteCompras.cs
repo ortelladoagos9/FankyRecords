@@ -42,8 +42,7 @@ namespace FankyRecords.C_presentacion.Administrador
             //Convertir un string en datetime
             DateTime fecha1 = DateTime.Parse(fechaComoString1);
             DateTime fecha2 = DateTime.Parse(fechaComoString2);
-            int ID_proveedor = Convert.ToInt32(CBproveedor.SelectedValue);
-           // int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
+            int ID_proveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
 
             // Comparar las fechas
@@ -101,6 +100,8 @@ namespace FankyRecords.C_presentacion.Administrador
         private void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
             CompararFechas();
+
+
         }
 
      
@@ -156,19 +157,6 @@ namespace FankyRecords.C_presentacion.Administrador
                         dt.Rows.Add(dataRow);
                     }
 
-                   /* dt.Rows.Add(new object[]
-                        {
-                            row.Cells[0].Value.ToString(),
-                            row.Cells[1].Value.ToString(),
-                            row.Cells[2].Value.ToString(),
-                            row.Cells[3].Value.ToString(),
-                            row.Cells[4].Value.ToString(),
-                            row.Cells[5].Value.ToString(),
-                            row.Cells[6].Value.ToString(),
-                            row.Cells[7].Value.ToString(),
-                            row.Cells[8].Value.ToString(),
-
-                        });*/
                 }
 
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -214,6 +202,12 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void CBproveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            listadoReporteCompras.Rows.Clear();
 
         }
     }
