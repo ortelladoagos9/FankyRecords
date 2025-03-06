@@ -208,6 +208,12 @@
     <Compile Include="C_presentacion\Modales\MDProveedor.Designer.cs">
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Modales\MDVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Modales\MDVenta.Designer.cs">
+      <DependentUpon>MDVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\OpcionCombo.cs" />
     <Compile Include="C_presentacion\SesionUsuario.cs" />
     <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
@@ -276,6 +282,9 @@
     <EmbeddedResource Include="C_presentacion\Modales\MDProveedor.resx">
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Modales\MDVenta.resx">
+      <DependentUpon>MDVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +330,7 @@
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Productos.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.ReporteCompras.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_entidad.Usuarios.datasource" />
+    <None Include="Properties\DataSources\FankyRecords.C_entidad.Venta.datasource" />
     <None Include="Properties\DataSources\FankyRecords.C_presentacion.Administrador.registrarCompra.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

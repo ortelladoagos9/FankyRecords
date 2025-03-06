@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FankyRecords.C_entidad
 {
-    internal class Venta
+    public class Venta
     {
         public int ID_ventas { get; set; }
         public int NumeroFactura { get; set; }

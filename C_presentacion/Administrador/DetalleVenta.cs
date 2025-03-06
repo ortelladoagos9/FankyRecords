@@ -1,4 +1,7 @@
 ﻿using FankyRecords.C_datos;
+using FankyRecords.C_entidad;
+using FankyRecords.C_negocio;
+using FankyRecords.C_presentacion.Modales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +14,14 @@ using System.Windows.Forms;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
-    //private datos CD_Compras;
-
     public partial class detalleVenta : Form
     {
+        private NegocioVentas CN_Ventas;
+
         public detalleVenta()
         {
             InitializeComponent();
-            //CD_Compras = new DatosCompra();
+            CN_Ventas = new NegocioVentas();
         }
 
         private void TxtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,7 +44,26 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            using (var modal = new MDVenta())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    TBNroVenta.Text = modal.VentaMD.NumeroFactura.ToString();
+                    TBFecha.Text = modal.VentaMD.FechaVenta.ToString("dd/MM/yyyy");
+                    TBTipoDoc.Text = modal.VentaMD.Obj_Tipo_Doc?.Descripcion ?? "N/A";
+                    TBUsuario.Text = modal.VentaMD.Obj_usuarios?.NombreCompleto ?? "N/A";
+                    TBNroDocumento.Text = modal.VentaMD.Obj_cliente?.Documento ?? "N/A";
+                    TBNombreCompleto.Text = modal.VentaMD.Obj_cliente?.NombreCompleto ?? "N/A";
+                    TBTotalPagado.Text = modal.VentaMD.MontoTotal.ToString("N2");
+                }
+                else
+                {
+                    TBNroVenta.Select();
+                    return;
+                }
+            }
         }
     }
 }

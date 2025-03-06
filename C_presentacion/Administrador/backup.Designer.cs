@@ -30,14 +30,14 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnNavegar = new System.Windows.Forms.Button();
-            this.Bcancelar = new FontAwesome.Sharp.IconButton();
-            this.Bbackup = new FontAwesome.Sharp.IconButton();
             this.TBrutaGuardar = new System.Windows.Forms.TextBox();
             this.TBbaseDatos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedorDetalleCompra = new System.Windows.Forms.Panel();
+            this.Bcancelar = new FontAwesome.Sharp.IconButton();
+            this.Bbackup = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,7 @@
             // BtnNavegar
             // 
             this.BtnNavegar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnNavegar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnNavegar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNavegar.Location = new System.Drawing.Point(1151, 274);
             this.BtnNavegar.Name = "BtnNavegar";
@@ -68,46 +69,6 @@
             this.BtnNavegar.Text = "Ruta";
             this.BtnNavegar.UseVisualStyleBackColor = true;
             this.BtnNavegar.Click += new System.EventHandler(this.BtnNavegar_Click);
-            // 
-            // Bcancelar
-            // 
-            this.Bcancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Bcancelar.BackColor = System.Drawing.Color.White;
-            this.Bcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bcancelar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bcancelar.IconChar = FontAwesome.Sharp.IconChar.CircleXmark;
-            this.Bcancelar.IconColor = System.Drawing.Color.DarkRed;
-            this.Bcancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bcancelar.IconSize = 30;
-            this.Bcancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Bcancelar.Location = new System.Drawing.Point(1151, 419);
-            this.Bcancelar.Name = "Bcancelar";
-            this.Bcancelar.Size = new System.Drawing.Size(164, 42);
-            this.Bcancelar.TabIndex = 7;
-            this.Bcancelar.Text = "Cancelar";
-            this.Bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bcancelar.UseVisualStyleBackColor = false;
-            this.Bcancelar.Click += new System.EventHandler(this.Bcancelar_Click);
-            // 
-            // Bbackup
-            // 
-            this.Bbackup.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Bbackup.BackColor = System.Drawing.Color.White;
-            this.Bbackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Bbackup.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bbackup.IconChar = FontAwesome.Sharp.IconChar.CircleUp;
-            this.Bbackup.IconColor = System.Drawing.Color.DarkRed;
-            this.Bbackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Bbackup.IconSize = 30;
-            this.Bbackup.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Bbackup.Location = new System.Drawing.Point(1151, 347);
-            this.Bbackup.Name = "Bbackup";
-            this.Bbackup.Size = new System.Drawing.Size(164, 42);
-            this.Bbackup.TabIndex = 6;
-            this.Bbackup.Text = "Backup";
-            this.Bbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bbackup.UseVisualStyleBackColor = false;
-            this.Bbackup.Click += new System.EventHandler(this.Bbackup_Click);
             // 
             // TBrutaGuardar
             // 
@@ -172,6 +133,46 @@
             this.contenedorDetalleCompra.Name = "contenedorDetalleCompra";
             this.contenedorDetalleCompra.Size = new System.Drawing.Size(1414, 68);
             this.contenedorDetalleCompra.TabIndex = 24;
+            // 
+            // Bcancelar
+            // 
+            this.Bcancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Bcancelar.BackColor = System.Drawing.Color.White;
+            this.Bcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bcancelar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bcancelar.IconChar = FontAwesome.Sharp.IconChar.CircleXmark;
+            this.Bcancelar.IconColor = System.Drawing.Color.DarkRed;
+            this.Bcancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bcancelar.IconSize = 30;
+            this.Bcancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.Bcancelar.Location = new System.Drawing.Point(1151, 419);
+            this.Bcancelar.Name = "Bcancelar";
+            this.Bcancelar.Size = new System.Drawing.Size(164, 42);
+            this.Bcancelar.TabIndex = 7;
+            this.Bcancelar.Text = "Cancelar";
+            this.Bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bcancelar.UseVisualStyleBackColor = false;
+            this.Bcancelar.Click += new System.EventHandler(this.Bcancelar_Click);
+            // 
+            // Bbackup
+            // 
+            this.Bbackup.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Bbackup.BackColor = System.Drawing.Color.White;
+            this.Bbackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bbackup.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bbackup.IconChar = FontAwesome.Sharp.IconChar.CircleUp;
+            this.Bbackup.IconColor = System.Drawing.Color.DarkRed;
+            this.Bbackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Bbackup.IconSize = 30;
+            this.Bbackup.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.Bbackup.Location = new System.Drawing.Point(1151, 347);
+            this.Bbackup.Name = "Bbackup";
+            this.Bbackup.Size = new System.Drawing.Size(164, 42);
+            this.Bbackup.TabIndex = 6;
+            this.Bbackup.Text = "Backup";
+            this.Bbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bbackup.UseVisualStyleBackColor = false;
+            this.Bbackup.Click += new System.EventHandler(this.Bbackup_Click);
             // 
             // backup
             // 
