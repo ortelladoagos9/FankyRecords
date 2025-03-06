@@ -28,18 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contenedor = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.TBCambio = new System.Windows.Forms.TextBox();
-            this.TBRecibe = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.LCambio = new System.Windows.Forms.Label();
-            this.LRecibe = new System.Windows.Forms.Label();
             this.TBNroVenta = new System.Windows.Forms.TextBox();
-            this.TBTotalAPagar = new System.Windows.Forms.TextBox();
-            this.LTotalAPagar = new System.Windows.Forms.Label();
+            this.TBTotalPagado = new System.Windows.Forms.TextBox();
+            this.LTotalPagado = new System.Windows.Forms.Label();
             this.LNroDoc = new System.Windows.Forms.Label();
             this.gbInformacionCliente = new System.Windows.Forms.GroupBox();
             this.TBNombreCompleto = new System.Windows.Forms.TextBox();
@@ -74,14 +70,10 @@
             // 
             this.contenedor.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.contenedor.Controls.Add(this.btnLimpiar);
-            this.contenedor.Controls.Add(this.TBCambio);
-            this.contenedor.Controls.Add(this.TBRecibe);
             this.contenedor.Controls.Add(this.btnBuscar);
-            this.contenedor.Controls.Add(this.LCambio);
-            this.contenedor.Controls.Add(this.LRecibe);
             this.contenedor.Controls.Add(this.TBNroVenta);
-            this.contenedor.Controls.Add(this.TBTotalAPagar);
-            this.contenedor.Controls.Add(this.LTotalAPagar);
+            this.contenedor.Controls.Add(this.TBTotalPagado);
+            this.contenedor.Controls.Add(this.LTotalPagado);
             this.contenedor.Controls.Add(this.LNroDoc);
             this.contenedor.Controls.Add(this.gbInformacionCliente);
             this.contenedor.Controls.Add(this.gbInformacionVentas);
@@ -106,36 +98,13 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 20;
-            this.btnLimpiar.Location = new System.Drawing.Point(1319, 160);
+            this.btnLimpiar.Location = new System.Drawing.Point(1330, 160);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(48, 35);
             this.btnLimpiar.TabIndex = 43;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // TBCambio
-            // 
-            this.TBCambio.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TBCambio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCambio.Location = new System.Drawing.Point(1236, 389);
-            this.TBCambio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBCambio.Name = "TBCambio";
-            this.TBCambio.ReadOnly = true;
-            this.TBCambio.Size = new System.Drawing.Size(159, 35);
-            this.TBCambio.TabIndex = 38;
-            // 
-            // TBRecibe
-            // 
-            this.TBRecibe.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TBRecibe.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBRecibe.Location = new System.Drawing.Point(1031, 389);
-            this.TBRecibe.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBRecibe.Name = "TBRecibe";
-            this.TBRecibe.ReadOnly = true;
-            this.TBRecibe.Size = new System.Drawing.Size(159, 35);
-            this.TBRecibe.TabIndex = 37;
-            this.TBRecibe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
             // btnBuscar
             // 
@@ -147,7 +116,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 20;
-            this.btnBuscar.Location = new System.Drawing.Point(1264, 160);
+            this.btnBuscar.Location = new System.Drawing.Point(1275, 160);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(48, 35);
@@ -155,68 +124,42 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // LCambio
-            // 
-            this.LCambio.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LCambio.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LCambio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCambio.ForeColor = System.Drawing.Color.DarkRed;
-            this.LCambio.Location = new System.Drawing.Point(1236, 354);
-            this.LCambio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LCambio.Name = "LCambio";
-            this.LCambio.Size = new System.Drawing.Size(159, 30);
-            this.LCambio.TabIndex = 36;
-            this.LCambio.Text = "Cambio:";
-            // 
-            // LRecibe
-            // 
-            this.LRecibe.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LRecibe.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LRecibe.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LRecibe.ForeColor = System.Drawing.Color.DarkRed;
-            this.LRecibe.Location = new System.Drawing.Point(1031, 354);
-            this.LRecibe.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LRecibe.Name = "LRecibe";
-            this.LRecibe.Size = new System.Drawing.Size(159, 30);
-            this.LRecibe.TabIndex = 35;
-            this.LRecibe.Text = "Se recibe:";
-            // 
             // TBNroVenta
             // 
             this.TBNroVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TBNroVenta.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNroVenta.Location = new System.Drawing.Point(1174, 116);
+            this.TBNroVenta.Location = new System.Drawing.Point(1173, 116);
             this.TBNroVenta.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBNroVenta.Name = "TBNroVenta";
             this.TBNroVenta.ReadOnly = true;
             this.TBNroVenta.ShortcutsEnabled = false;
-            this.TBNroVenta.Size = new System.Drawing.Size(193, 35);
+            this.TBNroVenta.Size = new System.Drawing.Size(205, 35);
             this.TBNroVenta.TabIndex = 41;
             this.TBNroVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumero_KeyPress);
             // 
-            // TBTotalAPagar
+            // TBTotalPagado
             // 
-            this.TBTotalAPagar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TBTotalAPagar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTotalAPagar.Location = new System.Drawing.Point(797, 389);
-            this.TBTotalAPagar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TBTotalAPagar.Name = "TBTotalAPagar";
-            this.TBTotalAPagar.ReadOnly = true;
-            this.TBTotalAPagar.Size = new System.Drawing.Size(185, 35);
-            this.TBTotalAPagar.TabIndex = 34;
+            this.TBTotalPagado.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TBTotalPagado.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBTotalPagado.Location = new System.Drawing.Point(1002, 388);
+            this.TBTotalPagado.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TBTotalPagado.Name = "TBTotalPagado";
+            this.TBTotalPagado.ReadOnly = true;
+            this.TBTotalPagado.Size = new System.Drawing.Size(193, 35);
+            this.TBTotalPagado.TabIndex = 34;
             // 
-            // LTotalAPagar
+            // LTotalPagado
             // 
-            this.LTotalAPagar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LTotalAPagar.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.LTotalAPagar.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTotalAPagar.ForeColor = System.Drawing.Color.DarkRed;
-            this.LTotalAPagar.Location = new System.Drawing.Point(797, 354);
-            this.LTotalAPagar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LTotalAPagar.Name = "LTotalAPagar";
-            this.LTotalAPagar.Size = new System.Drawing.Size(211, 30);
-            this.LTotalAPagar.TabIndex = 33;
-            this.LTotalAPagar.Text = "Total a pagar:";
+            this.LTotalPagado.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LTotalPagado.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.LTotalPagado.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTotalPagado.ForeColor = System.Drawing.Color.DarkRed;
+            this.LTotalPagado.Location = new System.Drawing.Point(1002, 353);
+            this.LTotalPagado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LTotalPagado.Name = "LTotalPagado";
+            this.LTotalPagado.Size = new System.Drawing.Size(211, 30);
+            this.LTotalPagado.TabIndex = 33;
+            this.LTotalPagado.Text = "Total pagado:";
             // 
             // LNroDoc
             // 
@@ -224,7 +167,7 @@
             this.LNroDoc.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.LNroDoc.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNroDoc.ForeColor = System.Drawing.Color.DarkRed;
-            this.LNroDoc.Location = new System.Drawing.Point(1174, 83);
+            this.LNroDoc.Location = new System.Drawing.Point(1168, 83);
             this.LNroDoc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNroDoc.Name = "LNroDoc";
             this.LNroDoc.Size = new System.Drawing.Size(239, 30);
@@ -253,17 +196,17 @@
             // TBNombreCompleto
             // 
             this.TBNombreCompleto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBNombreCompleto.Location = new System.Drawing.Point(439, 103);
+            this.TBNombreCompleto.Location = new System.Drawing.Point(418, 103);
             this.TBNombreCompleto.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBNombreCompleto.Name = "TBNombreCompleto";
             this.TBNombreCompleto.ReadOnly = true;
-            this.TBNombreCompleto.Size = new System.Drawing.Size(218, 35);
+            this.TBNombreCompleto.Size = new System.Drawing.Size(255, 35);
             this.TBNombreCompleto.TabIndex = 5;
             // 
             // TBNroDocumento
             // 
             this.TBNroDocumento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBNroDocumento.Location = new System.Drawing.Point(121, 103);
+            this.TBNroDocumento.Location = new System.Drawing.Point(100, 103);
             this.TBNroDocumento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBNroDocumento.Name = "TBNroDocumento";
             this.TBNroDocumento.ReadOnly = true;
@@ -274,7 +217,7 @@
             // 
             this.LNombreCompleto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNombreCompleto.AutoSize = true;
-            this.LNombreCompleto.Location = new System.Drawing.Point(439, 70);
+            this.LNombreCompleto.Location = new System.Drawing.Point(418, 70);
             this.LNombreCompleto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNombreCompleto.Name = "LNombreCompleto";
             this.LNombreCompleto.Size = new System.Drawing.Size(207, 27);
@@ -285,12 +228,12 @@
             // 
             this.LNroDocumento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LNroDocumento.AutoSize = true;
-            this.LNroDocumento.Location = new System.Drawing.Point(121, 70);
+            this.LNroDocumento.Location = new System.Drawing.Point(100, 70);
             this.LNroDocumento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LNroDocumento.Name = "LNroDocumento";
-            this.LNroDocumento.Size = new System.Drawing.Size(249, 27);
+            this.LNroDocumento.Size = new System.Drawing.Size(160, 27);
             this.LNroDocumento.TabIndex = 2;
-            this.LNroDocumento.Text = "Documento Cliente:";
+            this.LNroDocumento.Text = "DNI Cliente:";
             // 
             // gbInformacionVentas
             // 
@@ -317,7 +260,7 @@
             // 
             this.LUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LUsuario.AutoSize = true;
-            this.LUsuario.Location = new System.Drawing.Point(740, 62);
+            this.LUsuario.Location = new System.Drawing.Point(743, 62);
             this.LUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LUsuario.Name = "LUsuario";
             this.LUsuario.Size = new System.Drawing.Size(114, 27);
@@ -327,38 +270,38 @@
             // TBUsuario
             // 
             this.TBUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBUsuario.Location = new System.Drawing.Point(740, 97);
+            this.TBUsuario.Location = new System.Drawing.Point(743, 97);
             this.TBUsuario.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBUsuario.Name = "TBUsuario";
             this.TBUsuario.ReadOnly = true;
-            this.TBUsuario.Size = new System.Drawing.Size(218, 35);
+            this.TBUsuario.Size = new System.Drawing.Size(255, 35);
             this.TBUsuario.TabIndex = 8;
             // 
             // TBTipoDoc
             // 
             this.TBTipoDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBTipoDoc.Location = new System.Drawing.Point(440, 97);
+            this.TBTipoDoc.Location = new System.Drawing.Point(418, 97);
             this.TBTipoDoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBTipoDoc.Name = "TBTipoDoc";
             this.TBTipoDoc.ReadOnly = true;
-            this.TBTipoDoc.Size = new System.Drawing.Size(218, 35);
+            this.TBTipoDoc.Size = new System.Drawing.Size(255, 35);
             this.TBTipoDoc.TabIndex = 7;
             // 
             // TBFecha
             // 
             this.TBFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBFecha.Location = new System.Drawing.Point(142, 97);
+            this.TBFecha.Location = new System.Drawing.Point(100, 97);
             this.TBFecha.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TBFecha.Name = "TBFecha";
             this.TBFecha.ReadOnly = true;
-            this.TBFecha.Size = new System.Drawing.Size(218, 35);
+            this.TBFecha.Size = new System.Drawing.Size(255, 35);
             this.TBFecha.TabIndex = 6;
             // 
             // LTipoDoc
             // 
             this.LTipoDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LTipoDoc.AutoSize = true;
-            this.LTipoDoc.Location = new System.Drawing.Point(440, 62);
+            this.LTipoDoc.Location = new System.Drawing.Point(418, 62);
             this.LTipoDoc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LTipoDoc.Name = "LTipoDoc";
             this.LTipoDoc.Size = new System.Drawing.Size(217, 27);
@@ -369,7 +312,7 @@
             // 
             this.LFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LFecha.AutoSize = true;
-            this.LFecha.Location = new System.Drawing.Point(142, 62);
+            this.LFecha.Location = new System.Drawing.Point(100, 62);
             this.LFecha.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LFecha.Name = "LFecha";
             this.LFecha.Size = new System.Drawing.Size(91, 27);
@@ -409,14 +352,14 @@
             this.listadoVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listadoVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -426,14 +369,14 @@
             this.nombre_cliente,
             this.fecha,
             this.subtotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoVentas.DefaultCellStyle = dataGridViewCellStyle6;
             this.listadoVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoVentas.Location = new System.Drawing.Point(0, 496);
             this.listadoVentas.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -529,12 +472,8 @@
         private System.Windows.Forms.TextBox TBNroDocumento;
         private System.Windows.Forms.Label LNombreCompleto;
         private System.Windows.Forms.Label LNroDocumento;
-        private System.Windows.Forms.TextBox TBCambio;
-        private System.Windows.Forms.TextBox TBRecibe;
-        private System.Windows.Forms.Label LCambio;
-        private System.Windows.Forms.Label LRecibe;
-        private System.Windows.Forms.TextBox TBTotalAPagar;
-        private System.Windows.Forms.Label LTotalAPagar;
+        private System.Windows.Forms.TextBox TBTotalPagado;
+        private System.Windows.Forms.Label LTotalPagado;
         public System.Windows.Forms.Panel contenedorRegistrarVenta;
         public System.Windows.Forms.Label LDetalleVenta;
         public FontAwesome.Sharp.IconButton btnBuscar;

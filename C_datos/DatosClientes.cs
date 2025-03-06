@@ -20,14 +20,15 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                INSERT INTO Clientes (Documento, Nombre, Apellido, Correo, Telefono, Estado) 
-                VALUES (@Documento, @Nombre, @Apellido, @Correo, @Telefono, @Estado)";
+                INSERT INTO Clientes (Documento, Nombre, Apellido, Correo, Telefono, Domicilio, Estado) 
+                VALUES (@Documento, @Nombre, @Apellido, @Correo, @Telefono, @Domicilio, @Estado)";
 
                 SqlParameter documentoParam = new SqlParameter("@Documento", cliente.Documento);
                 SqlParameter nombreParam = new SqlParameter("@Nombre", cliente.Nombre);
                 SqlParameter apellidoParam = new SqlParameter("@Apellido", cliente.Apellido);
                 SqlParameter correoParam = new SqlParameter("@Correo", cliente.Correo);
                 SqlParameter telefonoParam = new SqlParameter("@Telefono", cliente.Telefono);
+                SqlParameter domicilioParam = new SqlParameter("@Domicilio", cliente.Domicilio);
                 SqlParameter estadoParam = new SqlParameter("@Estado", cliente.Estado);
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -36,6 +37,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.Add(apellidoParam);
                 cmd.Parameters.Add(correoParam);
                 cmd.Parameters.Add(telefonoParam);
+                cmd.Parameters.Add(domicilioParam);
                 cmd.Parameters.Add(estadoParam);
 
                 cmd.ExecuteNonQuery();
@@ -85,6 +87,7 @@ namespace FankyRecords.C_datos
                             CONCAT_WS(' ', Nombre, Apellido) as 'NombreCompleto',
                             Correo, 
                             Telefono, 
+                            Domicilio,
                             Estado 
                         from Clientes";
 
@@ -100,6 +103,7 @@ namespace FankyRecords.C_datos
                         NombreCompleto = reader["NombreCompleto"].ToString(),
                         Correo = reader["Correo"].ToString(),
                         Telefono = reader["Telefono"].ToString(),
+                        Domicilio = reader["Domicilio"].ToString(),
                         Estado = reader["Estado"].ToString(),
                     });
                 }
@@ -126,7 +130,8 @@ namespace FankyRecords.C_datos
                             Nombre, 
                             Apellido, 
                             Correo, 
-                            Telefono, 
+                            Telefono,
+                            Domicilio,
                             Estado 
                         from Clientes";
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -140,6 +145,7 @@ namespace FankyRecords.C_datos
                     Console.WriteLine(reader["Apellido"].ToString());
                     Console.WriteLine(reader["Correo"].ToString());
                     Console.WriteLine(reader["Telefono"].ToString());
+                    Console.WriteLine(reader["Domicilio"].ToString());
                     Console.WriteLine(reader["Estado"].ToString());
 
                     lista.Add(new Clientes
@@ -150,6 +156,7 @@ namespace FankyRecords.C_datos
                         Apellido = reader["Apellido"].ToString(),
                         Correo = reader["Correo"].ToString(),
                         Telefono = reader["Telefono"].ToString(),
+                        Domicilio = reader["Domicilio"].ToString(),
                         Estado = reader["Estado"].ToString(),
                     });
                 }
@@ -170,7 +177,16 @@ namespace FankyRecords.C_datos
             try
             {
                 conexion.Open();
-                string query = "UPDATE Clientes SET  Documento = @Documento, Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, Telefono = @Telefono,  Estado = @Estado WHERE ID_cliente = @ID_cliente";
+                string query = "UPDATE Clientes     " +
+                        "SET  " +
+                        "Documento = @Documento, " +
+                        "Nombre = @Nombre, " +
+                        "Apellido = @Apellido, " +
+                        "Correo = @Correo, " +
+                        "Telefono = @Telefono,  " +
+                        "Domicilio = @Domicilio, " +
+                        "Estado = @Estado " +
+                        "WHERE ID_cliente = @ID_cliente";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
 
@@ -179,6 +195,7 @@ namespace FankyRecords.C_datos
                 cmd.Parameters.AddWithValue("@Apellido", cliente.Apellido);
                 cmd.Parameters.AddWithValue("@Correo", cliente.Correo);
                 cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                cmd.Parameters.AddWithValue("@Domicilio", cliente.Domicilio);
                 cmd.Parameters.AddWithValue("@Estado", cliente.Estado); // Convertir "Activo"/"Inactivo" a bit
                 cmd.Parameters.AddWithValue("@ID_cliente", cliente.ID_cliente);
 
@@ -327,6 +344,7 @@ namespace FankyRecords.C_datos
                         Apellido = reader["Apellido"].ToString(),
                         Correo = reader["Correo"].ToString(),
                         Telefono = reader["Telefono"].ToString(),
+                        Domicilio = reader["Domicilio"].ToString(),
                         Estado = reader["Estado"].ToString()
                     };
                 }

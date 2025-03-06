@@ -48,7 +48,8 @@ namespace FankyRecords.C_presentacion.Vendedor
                 C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBDomicilio.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -83,6 +84,7 @@ namespace FankyRecords.C_presentacion.Vendedor
                 clientes.Apellido = TBapellido.Text;
                 clientes.Correo = TBemail.Text;
                 clientes.Telefono = TBtelefono.Text;
+                clientes.Domicilio = TBDomicilio.Text;
                 clientes.Estado = rBactivo.Checked ? "Activo" : "Inactivo";
             
             try
@@ -170,7 +172,8 @@ namespace FankyRecords.C_presentacion.Vendedor
                 C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBdni.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
-                C_negocio.Validaciones.EstaVacio(TBtelefono.Text))
+                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
+                C_negocio.Validaciones.EstaVacio(TBDomicilio.Text))
             {
                 MessageBox.Show("No hay datos para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -192,6 +195,7 @@ namespace FankyRecords.C_presentacion.Vendedor
                 Apellido = TBapellido.Text,
                 Correo = TBemail.Text,
                 Telefono = TBtelefono.Text,
+                Domicilio = TBDomicilio.Text,
                 Estado = rBactivo.Checked ? "Activo" : "Inactivo"
             };
             try
@@ -226,9 +230,10 @@ namespace FankyRecords.C_presentacion.Vendedor
                C_negocio.Validaciones.EstaVacio(TBnombre.Text) ||
                C_negocio.Validaciones.EstaVacio(TBapellido.Text) ||
                C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
-               C_negocio.Validaciones.EstaVacio(TBemail.Text))
+               C_negocio.Validaciones.EstaVacio(TBemail.Text) ||
+               C_negocio.Validaciones.EstaVacio(TBDomicilio.Text))
             {
-                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos para poder desactivar un cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Verificar si el cliente existe en la base de datos
@@ -364,6 +369,7 @@ namespace FankyRecords.C_presentacion.Vendedor
             TBnombre.Clear();
             TBapellido.Clear();
             TBtelefono.Clear();
+            TBDomicilio.Clear();
             TBdni.Clear();
             TBemail.Clear();
             rBactivo.Checked = true;
@@ -406,5 +412,7 @@ namespace FankyRecords.C_presentacion.Vendedor
                 e.SuppressKeyPress = true;  // Evita el sonido de la tecla
             }
         }
+
+     
     }
 }

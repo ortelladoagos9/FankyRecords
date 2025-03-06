@@ -124,7 +124,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
-                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos para poder desactivar un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Verificar si el producto existe en la base de datos

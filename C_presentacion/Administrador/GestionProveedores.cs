@@ -108,7 +108,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 C_negocio.Validaciones.EstaVacio(TBtelefono.Text) ||
                 C_negocio.Validaciones.EstaVacio(TBdomiciliop.Text))
             {
-                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos para poder desactivar un proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Verificar si el proveedor existe en la base de datos

@@ -248,7 +248,7 @@ namespace FankyRecords.C_presentacion.Administrador
             // Verificar si algún campo está vacío
             if (ListaCampos().Any(campo => C_negocio.Validaciones.EstaVacio(campo)))
             {
-                MessageBox.Show("Debe completar todos campos para eliminar.", "Error", 
+                MessageBox.Show("Debe completar todos los campos para poder desactivar un usuario.", "Error", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

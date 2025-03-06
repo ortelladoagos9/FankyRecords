@@ -87,7 +87,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             if (C_negocio.Validaciones.EstaVacio(TBdescripcion.Text))
             {
-                MessageBox.Show("No hay datos para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos para poder desactivar una categoría.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Verificar si la categoria existe en la base de datos

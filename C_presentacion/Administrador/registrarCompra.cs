@@ -169,79 +169,89 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             try
             {
-                DataTable detalle_compra = new DataTable();
-                detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
-                detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
-                detalle_compra.Columns.Add("Cantidad", typeof(int));
-                detalle_compra.Columns.Add("SubTotal", typeof(decimal));
-                detalle_compra.Columns.Add("ID_producto", typeof(int));
-                
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas registrar la compra?", "Confirmación",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                foreach (DataGridViewRow fila in listaCompras.Rows)
+                if (result == DialogResult.Yes)
                 {
-                    if (
-                        fila.Cells["Precio_Compra"].Value != null &&
-                        fila.Cells["Precio_Venta"].Value != null &&
-                        fila.Cells["Cantidad"].Value != null &&
-                        fila.Cells["Subtotal"].Value != null &&
-                        fila.Cells["ID_producto"].Value != null)
+                    DataTable detalle_compra = new DataTable();
+                    detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+                    detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+                    detalle_compra.Columns.Add("Cantidad", typeof(int));
+                    detalle_compra.Columns.Add("SubTotal", typeof(decimal));
+                    detalle_compra.Columns.Add("ID_producto", typeof(int));
+
+
+                    foreach (DataGridViewRow fila in listaCompras.Rows)
                     {
-                        detalle_compra.Rows.Add(
-                            new object[]
-                            {
-                                fila.Cells["Precio_Compra"].Value.ToString(),
-                                fila.Cells["Precio_Venta"].Value.ToString(),
-                                fila.Cells["Cantidad"].Value.ToString(),
-                                fila.Cells["Subtotal"].Value.ToString(),
-                                fila.Cells["ID_producto"].Value.ToString()
-                            }
-                        );
+                        if (fila.Cells["Precio_Compra"].Value != null &&
+                            fila.Cells["Precio_Venta"].Value != null &&
+                            fila.Cells["Cantidad"].Value != null &&
+                            fila.Cells["Subtotal"].Value != null &&
+                            fila.Cells["ID_producto"].Value != null)
+                        {
+                            detalle_compra.Rows.Add(
+                                new object[]
+                                {
+                                    fila.Cells["Precio_Compra"].Value.ToString(),
+                                    fila.Cells["Precio_Venta"].Value.ToString(),
+                                    fila.Cells["Cantidad"].Value.ToString(),
+                                    fila.Cells["Subtotal"].Value.ToString(),
+                                    fila.Cells["ID_producto"].Value.ToString()
+                                }
+                            );
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hay una fila con datos incompletos. Verifique los productos de la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+                    int idcorrelativo = CN_Compras.ObtenerCorrelativo();
+                    string numeroCompra = string.Format("{0:00000}", idcorrelativo);
+
+                    OpcionCombo opcionSeleccionada = (OpcionCombo)cbTipoDoc.SelectedItem;
+                    int idTipoDoc = Convert.ToInt32(opcionSeleccionada.Valor); // obtengo el ID_Tipo_Doc.
+
+                    Compra compra = new Compra()
+                    {
+                        NumeroCompra = Convert.ToInt32(numeroCompra),
+                        MontoTotal = Convert.ToDecimal(TBtotalPagar.Text),
+                        NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
+                        FechaCompra = dtFechaCompra.Value.Date.Add(DateTime.Now.TimeOfDay),
+                        Obj_proveedor = new Proveedores() { ID_proveedor = Convert.ToInt32(TBIdProveedor.Text) },
+                        Obj_usuarios = new Usuarios() { ID_usuarios = SesionUsuario.UsuarioActual.ID_usuarios },
+                        Obj_Tipo_Doc = new TipoDoc() { ID_Tipo_Doc = idTipoDoc }
+                    };
+
+                    string mensaje = string.Empty;
+                    bool respuesta = CN_Compras.RegistrarCompra(compra, detalle_compra, out mensaje);
+
+                    if (respuesta)
+                    {
+                        DialogResult result2 = MessageBox.Show("Numero de compra generada:\n" + numeroCompra + "\n\n¿Desea copiar al portapapeles?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            Clipboard.SetText(numeroCompra);
+                            MessageBox.Show("Numero de compra: " + numeroCompra + " copiado al portapapeles!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        TBIdProveedor.Text = "0";
+                        TBcuit.Text = "";
+                        TBrazonSocial.Text = "";
+                        TBNumFactura.Text = "";
+                        cbTipoDoc.SelectedIndex = 0;
+                        listaCompras.Rows.Clear();
+                        TBtotalPagar.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("Hay una fila con datos incompletos. Verifique los productos de la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                }
-
-                int idcorrelativo = CN_Compras.ObtenerCorrelativo();
-                string numeroCompra = string.Format("{0:00000}", idcorrelativo);
-
-                OpcionCombo opcionSeleccionada = (OpcionCombo)cbTipoDoc.SelectedItem;
-                int idTipoDoc = Convert.ToInt32(opcionSeleccionada.Valor); // obtengo el ID_Tipo_Doc.
-
-                Compra compra = new Compra()
-                {
-                    NumeroCompra = Convert.ToInt32(numeroCompra),
-                    MontoTotal = Convert.ToDecimal(TBtotalPagar.Text),
-                    NumeroFactura = Convert.ToInt32(TBNumFactura.Text),
-                    FechaCompra = dtFechaCompra.Value.Date.Add(DateTime.Now.TimeOfDay),
-                    Obj_proveedor = new Proveedores() { ID_proveedor = Convert.ToInt32(TBIdProveedor.Text) },
-                    Obj_usuarios = new Usuarios() { ID_usuarios = SesionUsuario.UsuarioActual.ID_usuarios},
-                    Obj_Tipo_Doc = new TipoDoc() { ID_Tipo_Doc = idTipoDoc }
-                };
-
-                string mensaje = string.Empty;
-                bool respuesta = CN_Compras.RegistrarCompra(compra,detalle_compra,out mensaje);
-
-                if (respuesta)
-                {
-                    DialogResult result = MessageBox.Show("Numero de compra generada:\n" + numeroCompra + "\n\n¿Desea copiar al portapapeles?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.Yes)
-                    {
-                        Clipboard.SetText(numeroCompra);
-                        MessageBox.Show("Numero de compra: " + numeroCompra + " copiado al portapapeles!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    TBIdProveedor.Text = "0";
-                    TBcuit.Text = "";
-                    TBrazonSocial.Text = "";
-                    TBNumFactura.Text = "";
-                    cbTipoDoc.SelectedIndex = 0;
-                    listaCompras.Rows.Clear();
-                    TBtotalPagar.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("La operación de registrar compra ha sido cancelada.", "Cancelado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch(Exception ex)

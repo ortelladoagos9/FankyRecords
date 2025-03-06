@@ -14,6 +14,8 @@ namespace FankyRecords.C_entidad
         public string Apellido { get; set; }
         public string  Correo { get; set; }
         public string  Telefono {  get; set; }
+        public string Domicilio { get; set; }
+
         public string  Estado {  get; set; }
 
         public string NombreCompleto { get; set; }

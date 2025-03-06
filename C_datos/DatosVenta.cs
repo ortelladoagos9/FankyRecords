@@ -173,6 +173,7 @@ namespace FankyRecords.C_datos
                                convert(char(10), v.FechaVenta, 103) as 'Fecha Venta', 
                                c.Documento as 'DNI Cliente', 
 	                           CONCAT_WS(' ', c.Nombre, c.Apellido) as 'Nombre Completo',
+                               c.Domicilio,
 	                           CONCAT_WS(' ', u.Nombre, u.Apellido) as 'Usuario',
                                td.Descripcion as 'Tipo Documento'
                         from Ventas v
@@ -192,7 +193,8 @@ namespace FankyRecords.C_datos
                         Obj_cliente = new Clientes()
                         {
                             Documento = reader["DNI Cliente"].ToString(),
-                            NombreCompleto = reader["Nombre Completo"].ToString()
+                            NombreCompleto = reader["Nombre Completo"].ToString(),
+                            Domicilio = reader["Domicilio"].ToString()
                         },
                         Obj_Tipo_Doc = new TipoDoc() { Descripcion = reader["Tipo Documento"].ToString() },
                         NumeroFactura = Convert.ToInt32(reader["NumeroFactura"]),
