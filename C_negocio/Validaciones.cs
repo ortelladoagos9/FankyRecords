@@ -20,6 +20,17 @@ namespace FankyRecords.C_negocio
             }
             return char.IsLetter(e.KeyChar);
         }
+        public static bool EsConcatenacionTextoNumero(KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && 
+                !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es una letra o numero, cancela el evento
+                e.Handled = true;
+            }
+            return (char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar));
+        }
+
         public static bool EsConcatenacionTexto(KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -61,13 +72,13 @@ namespace FankyRecords.C_negocio
             string confirmPassword = e2.ToString();
 
             // Validar si las contraseñas coinciden
-            if (password != confirmPassword)
+            if (!(password == confirmPassword))
             {
                 return false;
             }
 
             // Validar si la contraseña contiene espacios en blanco
-            if (password.Contains(" "))
+            if (password.Contains(" ") || confirmPassword.Contains(" "))
             {
                 return false;
             }
@@ -89,25 +100,7 @@ namespace FankyRecords.C_negocio
             }
             return true;
         }
-
-        public static bool mensajeConfirmacion()
-        {
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas guardar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
-            {
-                MessageBox.Show("La operación de guardado ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
-                return false;
-            }
-            MessageBox.Show("Los datos han sido guardados correctamente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-            return true;
-        }
+        
         public static bool mensajeEliminar()
         {
             DialogResult result = MessageBox.Show("Los datos serán desactivados. ¿Estás seguro de que deseas desactivarlos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -124,18 +117,7 @@ namespace FankyRecords.C_negocio
 
             return true;
         }
-        public static bool mensajeCancelar()
-        {
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cancelar la operación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
-            {
-                return false;
-            }
-            MessageBox.Show("La operación ha sido cancelada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            return true;
-        }
+        
         public static bool mensajeConfirmacionGenerarNC()
         {
             DialogResult result = MessageBox.Show("¿Estás seguro de que deseas generar Nota de Crédito por estos artículos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -149,40 +131,6 @@ namespace FankyRecords.C_negocio
                 return false;
             }
             MessageBox.Show("Se generó la Nota de Crédito correspondiente.",
-                                        "Éxito",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-            return true;
-        }
-        public static bool mensajeEditar()
-        {
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas editar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
-            {
-                MessageBox.Show("La operación de editar ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
-                return false;
-            }
-            MessageBox.Show("Los datos han sido editados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            return true;
-        }
-        public static bool mensajeBackup()
-        {
-            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas crear el backup de los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
-            {
-                MessageBox.Show("La operación ha sido cancelada.",
-                                         "Cancelado",
-                                         MessageBoxButtons.OK,
-                                         MessageBoxIcon.Warning);
-                return false;
-            }
-            MessageBox.Show("El backup se generó correctamente.",
                                         "Éxito",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);

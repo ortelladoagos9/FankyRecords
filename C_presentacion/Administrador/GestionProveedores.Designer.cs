@@ -52,6 +52,13 @@ namespace FankyRecords.C_presentacion.Administrador
             this.Lrazonsocial = new System.Windows.Forms.Label();
             this.LGestionProveedor = new System.Windows.Forms.Label();
             this.DGlistaproveedores = new System.Windows.Forms.DataGridView();
+            this.ID_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listaProveedores = new System.Windows.Forms.Label();
             this.contenedorLista = new System.Windows.Forms.Panel();
@@ -61,13 +68,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorBotones = new System.Windows.Forms.Panel();
             this.TBlimpiar = new FontAwesome.Sharp.IconButton();
             this.contenedorGestionUsuarios = new System.Windows.Forms.Panel();
-            this.ID_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGlistaproveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource1)).BeginInit();
@@ -406,6 +406,62 @@ namespace FankyRecords.C_presentacion.Administrador
             this.DGlistaproveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistaproveedores_CellClick);
             this.DGlistaproveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistaproveedores_CellDoubleClick);
             // 
+            // ID_proveedor
+            // 
+            this.ID_proveedor.DataPropertyName = "ID_proveedor";
+            this.ID_proveedor.HeaderText = "ID proveedor";
+            this.ID_proveedor.MinimumWidth = 6;
+            this.ID_proveedor.Name = "ID_proveedor";
+            this.ID_proveedor.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.DataPropertyName = "RazonSocial";
+            this.RazonSocial.HeaderText = "Razón Social";
+            this.RazonSocial.MinimumWidth = 6;
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cuit
+            // 
+            this.Cuit.DataPropertyName = "Cuit";
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.MinimumWidth = 6;
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.MinimumWidth = 6;
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
             // proveedoresBindingSource1
             // 
             this.proveedoresBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
@@ -532,62 +588,6 @@ namespace FankyRecords.C_presentacion.Administrador
             this.contenedorGestionUsuarios.Name = "contenedorGestionUsuarios";
             this.contenedorGestionUsuarios.Size = new System.Drawing.Size(1059, 69);
             this.contenedorGestionUsuarios.TabIndex = 21;
-            // 
-            // ID_proveedor
-            // 
-            this.ID_proveedor.DataPropertyName = "ID_proveedor";
-            this.ID_proveedor.HeaderText = "ID proveedor";
-            this.ID_proveedor.MinimumWidth = 6;
-            this.ID_proveedor.Name = "ID_proveedor";
-            this.ID_proveedor.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.DataPropertyName = "RazonSocial";
-            this.RazonSocial.HeaderText = "Razón Social";
-            this.RazonSocial.MinimumWidth = 6;
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Cuit
-            // 
-            this.Cuit.DataPropertyName = "Cuit";
-            this.Cuit.HeaderText = "Cuit";
-            this.Cuit.MinimumWidth = 6;
-            this.Cuit.Name = "Cuit";
-            this.Cuit.ReadOnly = true;
-            // 
-            // Domicilio
-            // 
-            this.Domicilio.DataPropertyName = "Domicilio";
-            this.Domicilio.HeaderText = "Domicilio";
-            this.Domicilio.MinimumWidth = 6;
-            this.Domicilio.Name = "Domicilio";
-            this.Domicilio.ReadOnly = true;
             // 
             // GestionProveedores
             // 

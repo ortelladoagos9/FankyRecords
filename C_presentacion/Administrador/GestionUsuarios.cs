@@ -123,9 +123,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
             string clave = TBclave.Text;
             string confirmarClave = TBconfirmarClave.Text;
-            if (!(clave == confirmarClave))
+            if (!C_negocio.Validaciones.ContraseñaCorrecta(clave, confirmarClave))
             {
-                MessageBox.Show("La clave es incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La clave es incorrecta o contiene espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
@@ -312,12 +312,13 @@ namespace FankyRecords.C_presentacion.Administrador
 
             string clave = TBclave.Text;
             string confirmarClave = TBconfirmarClave.Text;
-            if (!(clave == confirmarClave))
+            if (!C_negocio.Validaciones.ContraseñaCorrecta(clave, confirmarClave))
             {
-                MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La clave es incorrecta o contiene espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
+          
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionado = new Rol
             {

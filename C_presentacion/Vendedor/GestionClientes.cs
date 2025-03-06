@@ -37,6 +37,11 @@ namespace FankyRecords.C_presentacion.Vendedor
             C_negocio.Validaciones.EsNumero(e);
         }
 
+        private void TBDomicilio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            C_negocio.Validaciones.EsConcatenacionTextoNumero(e);
+        }
+
         private void Bguardar_Click(object sender, EventArgs e)
         {
             GuardarCliente();
@@ -151,7 +156,10 @@ namespace FankyRecords.C_presentacion.Vendedor
                 {
                     TBtelefono.Text = row.Cells["Telefono"].Value.ToString();
                 }
-
+                if (row.Cells["Domicilio"] != null)
+                {
+                    TBDomicilio.Text = row.Cells["Domicilio"].Value.ToString();
+                }
                 if (row.Cells["Estado"] != null)
                 {
                     string estado = row.Cells["Estado"].Value.ToString();
@@ -200,14 +208,14 @@ namespace FankyRecords.C_presentacion.Vendedor
             };
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea editar cliente?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar cliente?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Llamar al método de negocio para guardar/editar el proveedor
                     CN_Clientes.GuardarCliente(clientes);
 
-                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se editó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarClientes();
                     Limpiar();
@@ -241,6 +249,12 @@ namespace FankyRecords.C_presentacion.Vendedor
             if (clienteExistente == null)
             {
                 MessageBox.Show("El cliente seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (rBinactivo.Checked == true)
+            {
+                MessageBox.Show("El cliente ya se encuentra desactivado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
                 return;
             }
@@ -412,7 +426,5 @@ namespace FankyRecords.C_presentacion.Vendedor
                 e.SuppressKeyPress = true;  // Evita el sonido de la tecla
             }
         }
-
-     
     }
 }

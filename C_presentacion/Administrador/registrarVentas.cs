@@ -297,21 +297,25 @@ namespace FankyRecords.C_presentacion.Administrador
                         TBRecibe.Clear();
                         cbTipoDoc.SelectedIndex = 0;
                         listadoVentaProducto.Rows.Clear();
+                        permitirTextChanged = true;
                     }
                     else
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        permitirTextChanged = true; // Se habilita al fallar el registro
                     }
                 }
                 else
                 {
                     MessageBox.Show("La operación de crear venta ha sido cancelada.", "Cancelado",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    permitirTextChanged = true; // Se habilita al cancelar
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                permitirTextChanged = true; // Se habilita ante cualquier excepción
             }
         }
 

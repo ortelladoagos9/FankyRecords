@@ -29,17 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoClientes = new System.Windows.Forms.DataGridView();
-            this.ID_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorGestionClientes = new System.Windows.Forms.Panel();
             this.LGestionClientes = new System.Windows.Forms.Label();
             this.contenedorLista = new System.Windows.Forms.Panel();
@@ -68,12 +60,23 @@
             this.LDni = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
             this.LNombre = new System.Windows.Forms.Label();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.contenedorGestionClientes.SuspendLayout();
             this.contenedorLista.SuspendLayout();
             this.contenedorFotoBotones.SuspendLayout();
             this.contenedorDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoClientes
@@ -85,14 +88,14 @@
             this.listadoClientes.BackgroundColor = System.Drawing.Color.White;
             this.listadoClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_cliente,
@@ -101,16 +104,17 @@
             this.Apellido,
             this.Correo,
             this.Telefono,
+            this.Domicilio,
             this.Estado});
-            this.listadoClientes.DataSource = this.clientesBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoClientes.DefaultCellStyle = dataGridViewCellStyle4;
+            this.listadoClientes.DataSource = this.clientesBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.listadoClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoClientes.Location = new System.Drawing.Point(0, 508);
             this.listadoClientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -122,67 +126,6 @@
             this.listadoClientes.TabIndex = 12;
             this.listadoClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellClick);
             this.listadoClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoClientes_CellDoubleClick);
-            // 
-            // ID_cliente
-            // 
-            this.ID_cliente.DataPropertyName = "ID_cliente";
-            this.ID_cliente.HeaderText = "ID_cliente";
-            this.ID_cliente.MinimumWidth = 6;
-            this.ID_cliente.Name = "ID_cliente";
-            this.ID_cliente.ReadOnly = true;
-            this.ID_cliente.Visible = false;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Documento";
-            this.Documento.HeaderText = "DNI";
-            this.Documento.MinimumWidth = 6;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataSource = typeof(FankyRecords.C_entidad.Clientes);
             // 
             // contenedorGestionClientes
             // 
@@ -434,6 +377,7 @@
             this.TBDomicilio.ShortcutsEnabled = false;
             this.TBDomicilio.Size = new System.Drawing.Size(293, 35);
             this.TBDomicilio.TabIndex = 30;
+            this.TBDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDomicilio_KeyPress);
             // 
             // LDomicilio
             // 
@@ -615,6 +559,79 @@
             this.LNombre.TabIndex = 0;
             this.LNombre.Text = "Nombre";
             // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.MinimumWidth = 6;
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
+            // ID_cliente
+            // 
+            this.ID_cliente.DataPropertyName = "ID_cliente";
+            this.ID_cliente.HeaderText = "ID_cliente";
+            this.ID_cliente.MinimumWidth = 6;
+            this.ID_cliente.Name = "ID_cliente";
+            this.ID_cliente.ReadOnly = true;
+            this.ID_cliente.Visible = false;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "Documento";
+            this.Documento.HeaderText = "DNI";
+            this.Documento.MinimumWidth = 6;
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Clientes);
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataSource = typeof(FankyRecords.C_entidad.Clientes);
+            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
@@ -633,13 +650,14 @@
             this.Text = "GestionClientes";
             this.Load += new System.EventHandler(this.GestionClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.contenedorGestionClientes.ResumeLayout(false);
             this.contenedorLista.ResumeLayout(false);
             this.contenedorLista.PerformLayout();
             this.contenedorFotoBotones.ResumeLayout(false);
             this.contenedorDatos.ResumeLayout(false);
             this.contenedorDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,14 +692,16 @@
         public FontAwesome.Sharp.IconButton Blimpiar;
         public System.Windows.Forms.TextBox TBtelefono;
         private System.Windows.Forms.BindingSource clientesBindingSource;
+        public System.Windows.Forms.TextBox TBDomicilio;
+        public System.Windows.Forms.Label LDomicilio;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        public System.Windows.Forms.TextBox TBDomicilio;
-        public System.Windows.Forms.Label LDomicilio;
     }
 }

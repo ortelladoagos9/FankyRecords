@@ -36,8 +36,6 @@ namespace FankyRecords.C_presentacion.Administrador
             TBNroDocumento.Clear();
             TBNombreCompleto.Clear();
             TBTotalPagado.Clear();
-            TBRecibe.Clear();
-            TBCambio.Clear();
             TBNroVenta.Clear();
         }
 

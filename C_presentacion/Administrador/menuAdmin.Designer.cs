@@ -210,6 +210,7 @@
             this.MenuDevolucionAdministrador.Size = new System.Drawing.Size(170, 70);
             this.MenuDevolucionAdministrador.Text = "Devoluciones";
             this.MenuDevolucionAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuDevolucionAdministrador.Visible = false;
             this.MenuDevolucionAdministrador.Click += new System.EventHandler(this.MenuDevolucionAdministrador_Click);
             // 
             // MenuComprasAdministrador
@@ -402,7 +403,7 @@
             this.labFankyRecordsMenuAdministrador.Location = new System.Drawing.Point(120, 31);
             this.labFankyRecordsMenuAdministrador.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labFankyRecordsMenuAdministrador.Name = "labFankyRecordsMenuAdministrador";
-            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(305, 44);
+            this.labFankyRecordsMenuAdministrador.Size = new System.Drawing.Size(297, 43);
             this.labFankyRecordsMenuAdministrador.TabIndex = 2;
             this.labFankyRecordsMenuAdministrador.Text = "Fanky Records";
             // 

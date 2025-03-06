@@ -46,6 +46,7 @@
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -160,6 +161,7 @@
             this.NombreCompleto,
             this.correo,
             this.telefono,
+            this.Domicilio,
             this.estado});
             this.listaClientes.DataSource = this.clientesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -247,6 +249,14 @@
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.MinimumWidth = 6;
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
             // estado
             // 
             this.estado.DataPropertyName = "Estado";
@@ -296,6 +306,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }
