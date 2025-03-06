@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoCompras = new System.Windows.Forms.DataGridView();
+            this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorLista = new System.Windows.Forms.Panel();
             this.Lbuscar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,7 +42,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NumeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +51,9 @@
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listadoCompras
@@ -106,6 +106,10 @@
             this.listadoCompras.Size = new System.Drawing.Size(1067, 442);
             this.listadoCompras.TabIndex = 23;
             this.listadoCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCompras_CellDoubleClick);
+            // 
+            // compraBindingSource
+            // 
+            this.compraBindingSource.DataSource = typeof(FankyRecords.C_entidad.Compra);
             // 
             // contenedorLista
             // 
@@ -215,14 +219,10 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 508;
             // 
-            // compraBindingSource
-            // 
-            this.compraBindingSource.DataSource = typeof(FankyRecords.C_entidad.Compra);
-            // 
             // NumeroCompra
             // 
             this.NumeroCompra.DataPropertyName = "NumeroCompra";
-            this.NumeroCompra.HeaderText = "Numero Compra";
+            this.NumeroCompra.HeaderText = "Número Compra";
             this.NumeroCompra.MinimumWidth = 6;
             this.NumeroCompra.Name = "NumeroCompra";
             this.NumeroCompra.ReadOnly = true;
@@ -239,7 +239,7 @@
             // NumeroFactura
             // 
             this.NumeroFactura.DataPropertyName = "NumeroFactura";
-            this.NumeroFactura.HeaderText = "Numero Factura";
+            this.NumeroFactura.HeaderText = "Número Factura";
             this.NumeroFactura.MinimumWidth = 6;
             this.NumeroFactura.Name = "NumeroFactura";
             this.NumeroFactura.ReadOnly = true;
@@ -303,10 +303,10 @@
             this.Load += new System.EventHandler(this.MDCompra_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MDCompra_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.listadoCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             this.contenedorLista.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,6 +323,8 @@
         private System.Windows.Forms.BindingSource compraBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroFactura;
@@ -331,7 +333,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

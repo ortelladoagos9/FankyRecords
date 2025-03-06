@@ -52,12 +52,12 @@
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.listadoCategorias = new System.Windows.Forms.DataGridView();
-            this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Id_categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos.SuspendLayout();
             this.contenedorGestionCategorias.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
@@ -414,6 +414,18 @@
             this.listadoCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCategorias_CellClick);
             this.listadoCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCategorias_CellDoubleClick);
             // 
+            // categoriasBindingSource2
+            // 
+            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
+            // categoriasBindingSource1
+            // 
+            this.categoriasBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Categorias);
+            // 
             // Id_categoria
             // 
             this.Id_categoria.DataPropertyName = "Id_categoria";
@@ -427,7 +439,7 @@
             // Descripcion
             // 
             this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
@@ -439,18 +451,6 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            // 
-            // categoriasBindingSource2
-            // 
-            this.categoriasBindingSource2.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
-            // categoriasBindingSource
-            // 
-            this.categoriasBindingSource.DataSource = typeof(FankyRecords.C_entidad.Categorias);
-            // 
-            // categoriasBindingSource1
-            // 
-            this.categoriasBindingSource1.DataSource = typeof(FankyRecords.C_entidad.Categorias);
             // 
             // GestionCategorias
             // 

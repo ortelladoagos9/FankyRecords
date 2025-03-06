@@ -200,7 +200,7 @@
             // documento
             // 
             this.documento.DataPropertyName = "Documento";
-            this.documento.HeaderText = "Documento";
+            this.documento.HeaderText = "DNI";
             this.documento.MinimumWidth = 6;
             this.documento.Name = "documento";
             this.documento.ReadOnly = true;
@@ -242,7 +242,7 @@
             // telefono
             // 
             this.telefono.DataPropertyName = "Telefono";
-            this.telefono.HeaderText = "Telefono";
+            this.telefono.HeaderText = "Teléfono";
             this.telefono.MinimumWidth = 6;
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;

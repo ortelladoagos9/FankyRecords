@@ -38,11 +38,11 @@
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.TBBuscador = new System.Windows.Forms.TextBox();
             this.listaproveedores = new System.Windows.Forms.DataGridView();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID_proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contenedorLista.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaproveedores)).BeginInit();
@@ -176,6 +176,10 @@
             this.listaproveedores.TabIndex = 21;
             this.listaproveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGlistaproveedores_CellDoubleClick);
             // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
+            // 
             // ID_proveedor
             // 
             this.ID_proveedor.DataPropertyName = "ID_proveedor";
@@ -196,7 +200,7 @@
             // razonSocial
             // 
             this.razonSocial.DataPropertyName = "RazonSocial";
-            this.razonSocial.HeaderText = "Razon Social";
+            this.razonSocial.HeaderText = "Razón Social";
             this.razonSocial.MinimumWidth = 6;
             this.razonSocial.Name = "razonSocial";
             this.razonSocial.ReadOnly = true;
@@ -209,10 +213,6 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Visible = false;
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataSource = typeof(FankyRecords.C_entidad.Proveedores);
             // 
             // MDProveedor
             // 

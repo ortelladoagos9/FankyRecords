@@ -38,17 +38,6 @@
             this.TBtotalPagar = new System.Windows.Forms.TextBox();
             this.LTotalPagar = new System.Windows.Forms.Label();
             this.listaCompras = new System.Windows.Forms.DataGridView();
-            this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ID_compras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorDatos = new System.Windows.Forms.Panel();
             this.gbInfoProducto = new System.Windows.Forms.GroupBox();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
@@ -82,6 +71,17 @@
             this.LFechaCompra = new System.Windows.Forms.Label();
             this.registrarCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID_compras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorRegistrarCompra.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
@@ -225,87 +225,6 @@
             this.listaCompras.TabIndex = 2;
             this.listaCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaCompras_CellContentClick);
             this.listaCompras.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.listaCompras_CellPainting);
-            // 
-            // ID_producto
-            // 
-            this.ID_producto.HeaderText = "ID producto";
-            this.ID_producto.MinimumWidth = 6;
-            this.ID_producto.Name = "ID_producto";
-            this.ID_producto.ReadOnly = true;
-            this.ID_producto.Visible = false;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Precio_Compra
-            // 
-            this.Precio_Compra.HeaderText = "Precio Compra";
-            this.Precio_Compra.MinimumWidth = 6;
-            this.Precio_Compra.Name = "Precio_Compra";
-            this.Precio_Compra.ReadOnly = true;
-            // 
-            // Precio_Venta
-            // 
-            this.Precio_Venta.HeaderText = "Precio Venta";
-            this.Precio_Venta.MinimumWidth = 6;
-            this.Precio_Venta.Name = "Precio_Venta";
-            this.Precio_Venta.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Fecha_compra
-            // 
-            this.Fecha_compra.HeaderText = "Fecha Compra";
-            this.Fecha_compra.MinimumWidth = 6;
-            this.Fecha_compra.Name = "Fecha_compra";
-            this.Fecha_compra.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.MinimumWidth = 6;
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.FillWeight = 50F;
-            this.BtnEliminar.HeaderText = "";
-            this.BtnEliminar.MinimumWidth = 6;
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.ReadOnly = true;
-            this.BtnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ID_compras
-            // 
-            this.ID_compras.HeaderText = "ID_compras";
-            this.ID_compras.MinimumWidth = 6;
-            this.ID_compras.Name = "ID_compras";
-            this.ID_compras.ReadOnly = true;
-            this.ID_compras.Visible = false;
             // 
             // contenedorDatos
             // 
@@ -725,6 +644,87 @@
             // productosBindingSource
             // 
             this.productosBindingSource.DataSource = typeof(FankyRecords.C_entidad.Productos);
+            // 
+            // ID_producto
+            // 
+            this.ID_producto.HeaderText = "ID producto";
+            this.ID_producto.MinimumWidth = 6;
+            this.ID_producto.Name = "ID_producto";
+            this.ID_producto.ReadOnly = true;
+            this.ID_producto.Visible = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Precio_Compra
+            // 
+            this.Precio_Compra.HeaderText = "Precio Compra";
+            this.Precio_Compra.MinimumWidth = 6;
+            this.Precio_Compra.Name = "Precio_Compra";
+            this.Precio_Compra.ReadOnly = true;
+            // 
+            // Precio_Venta
+            // 
+            this.Precio_Venta.HeaderText = "Precio Venta";
+            this.Precio_Venta.MinimumWidth = 6;
+            this.Precio_Venta.Name = "Precio_Venta";
+            this.Precio_Venta.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Fecha_compra
+            // 
+            this.Fecha_compra.HeaderText = "Fecha Compra";
+            this.Fecha_compra.MinimumWidth = 6;
+            this.Fecha_compra.Name = "Fecha_compra";
+            this.Fecha_compra.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.MinimumWidth = 6;
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.FillWeight = 50F;
+            this.BtnEliminar.HeaderText = "";
+            this.BtnEliminar.MinimumWidth = 6;
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.ReadOnly = true;
+            this.BtnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ID_compras
+            // 
+            this.ID_compras.HeaderText = "ID_compras";
+            this.ID_compras.MinimumWidth = 6;
+            this.ID_compras.Name = "ID_compras";
+            this.ID_compras.ReadOnly = true;
+            this.ID_compras.Visible = false;
             // 
             // registrarCompra
             // 

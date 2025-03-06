@@ -200,7 +200,7 @@
             // codigo
             // 
             this.codigo.DataPropertyName = "Codigo";
-            this.codigo.HeaderText = "Codigo";
+            this.codigo.HeaderText = "Código";
             this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -216,7 +216,7 @@
             // descripcion
             // 
             this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.HeaderText = "Descripción";
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;

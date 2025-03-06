@@ -216,33 +216,71 @@ namespace FankyRecords.C_presentacion.Administrador
                 BuscarDatos(terminoBusqueda);
             }
         }
+
         private void BuscarDatos(string termino)
         {
             bool encontrado = false;
-            string busqueda = termino.ToLower();
+            string busqueda = termino.ToLower().Trim(); // Convertir a minúsculas y quitar espacios extra
 
             // Desactivar la selección para evitar conflictos
             listadoCategorias.ClearSelection();
-
-            // Primero, deselecciona la celda actual
             listadoCategorias.CurrentCell = null;
 
             foreach (DataGridViewRow row in listadoCategorias.Rows)
             {
-                // Concatenar los valores de las celdas para la búsqueda
-                string filaDatos = "";
+                bool filaVisible = false;
+
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null)
-                        filaDatos += cell.Value.ToString().ToLower() + " ";
+                    if (cell.Value == null)
+                        continue;
+
+                    string textoCelda = cell.Value.ToString().ToLower().Trim();
+
+                    // Separar el contenido de la celda en palabras (quitando espacios extras)
+                    string[] palabrasCelda = textoCelda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (busqueda.Contains(" "))
+                    {
+                        // Búsqueda multi-palabra: dividimos el término en palabras
+                        string[] palabrasBusqueda = busqueda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        // Revisar cada segmento contiguo de palabras en la celda con la cantidad de palabras en la búsqueda
+                        for (int i = 0; i <= palabrasCelda.Length - palabrasBusqueda.Length; i++)
+                        {
+                            bool coincideTodo = true;
+                            for (int j = 0; j < palabrasBusqueda.Length; j++)
+                            {
+                                // Se usa StartsWith para permitir coincidencias parciales en cada palabra
+                                if (!palabrasCelda[i + j].StartsWith(palabrasBusqueda[j]))
+                                {
+                                    coincideTodo = false;
+                                    break;
+                                }
+                            }
+                            if (coincideTodo)
+                            {
+                                filaVisible = true;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Búsqueda de una sola palabra: se comprueba si alguna palabra de la celda comienza con el término
+                        if (palabrasCelda.Any(palabra => palabra.StartsWith(busqueda)))
+                        {
+                            filaVisible = true;
+                        }
+                    }
+
+                    if (filaVisible)
+                        break;
                 }
 
-                bool filaVisible = filaDatos.Contains(busqueda);
-
-                // Si la fila debe ocultarse pero es la fila actual, cambiar el foco a otra fila visible
+                // Si la fila actual está oculta y es la fila con foco, cambiar a otra fila visible
                 if (!filaVisible && listadoCategorias.CurrentRow == row)
                 {
-                    // Buscar otra fila visible para asignar el foco
                     foreach (DataGridViewRow otraFila in listadoCategorias.Rows)
                     {
                         if (otraFila != row && otraFila.Visible)
@@ -253,7 +291,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                 }
 
-                // Ahora es seguro modificar la visibilidad
+                // Aplicar la visibilidad a la fila
                 row.Visible = filaVisible;
                 if (filaVisible)
                     encontrado = true;
@@ -265,7 +303,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBBuscador.Clear();
             }
-        } 
+        }
 
         private void Limpiar()
         {
