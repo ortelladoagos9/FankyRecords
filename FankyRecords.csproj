@@ -81,6 +81,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -231,6 +232,12 @@
     <Compile Include="C_presentacion\Modales\MDProveedor.Designer.cs">
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepCompras.Designer.cs">
+      <DependentUpon>MDRepCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\OpcionCombo.cs" />
     <Compile Include="C_presentacion\SesionUsuario.cs" />
     <Compile Include="C_presentacion\Vendedor\BuscarProducto.cs">
@@ -292,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDProveedor.resx">
       <DependentUpon>MDProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Modales\MDRepCompras.resx">
+      <DependentUpon>MDRepCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Vendedor\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>

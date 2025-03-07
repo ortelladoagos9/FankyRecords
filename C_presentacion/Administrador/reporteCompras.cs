@@ -99,7 +99,10 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
-            CompararFechas();
+            if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
+            {
+                MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
 
         }
