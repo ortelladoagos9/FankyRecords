@@ -25,12 +25,29 @@ namespace FankyRecords.C_negocio
             {
                 if (usuarios.ID_usuarios == 0)
                 {
-                    CD_Usuarios.AgregarUsuario(usuarios); // Si el ID es 0, es un nuevo producto
+                    CD_Usuarios.AgregarUsuario(usuarios); 
                 }
                 else
                 {
                     CD_Usuarios.EditarUsuarios(usuarios); // Si el ID es distinto de 0, es una actualización
                 }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return usuarios;
+        }
+
+        public Usuarios EditarMiUsuario(Usuarios usuarios)
+        {
+            try
+            {
+                if (usuarios.ID_usuarios != 0)
+                {
+                    CD_Usuarios.EditarMiUsuario(usuarios); 
+                }
+
             }
             catch (SqlException ex)
             {

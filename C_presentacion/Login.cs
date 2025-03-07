@@ -59,7 +59,7 @@ namespace FankyRecords.C_presentacion
                 if (ousuario.Obj_rol.Descripcion == "Administrador")
                 {
                     // Menu administrador
-                    Form menuAdministrador = new FormMenuAdmin();
+                    Form menuAdministrador = new FormMenuAdmin(ousuario);
 
                     // Mostrar el formulario
                     menuAdministrador.Show();
@@ -69,7 +69,7 @@ namespace FankyRecords.C_presentacion
                 else if (ousuario.Obj_rol.Descripcion == "Administrativo")
                 {
                     // Menu administrativo
-                    Form menuAdministrativo = new FormMenuAdministrativo();
+                    Form menuAdministrativo = new FormMenuAdministrativo(ousuario);
 
                     // Mostrar el formulario
                     menuAdministrativo.Show();
@@ -79,7 +79,7 @@ namespace FankyRecords.C_presentacion
                 else if (ousuario.Obj_rol.Descripcion == "Vendedor")
                 {
                     // Menu Vendedor
-                    Form menuVendedor = new FormMenuVendedor();
+                    Form menuVendedor = new FormMenuVendedor(ousuario);
 
                     // Mostrar el formulario
                     menuVendedor.Show();

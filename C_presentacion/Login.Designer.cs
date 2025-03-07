@@ -48,7 +48,7 @@
             this.TBClave.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBClave.Location = new System.Drawing.Point(414, 495);
             this.TBClave.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
-            this.TBClave.MaxLength = 8;
+            this.TBClave.MaxLength = 10;
             this.TBClave.Name = "TBClave";
             this.TBClave.PasswordChar = '*';
             this.TBClave.Size = new System.Drawing.Size(272, 40);

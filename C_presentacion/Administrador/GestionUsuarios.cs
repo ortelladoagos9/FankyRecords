@@ -123,6 +123,13 @@ namespace FankyRecords.C_presentacion.Administrador
 
             string clave = TBclave.Text;
             string confirmarClave = TBconfirmarClave.Text;
+
+            if (clave.Length < 4 || clave.Length > 10)
+            {
+                MessageBox.Show("La clave debe tener un mínimo de 4 caracteres y un máximo de 10 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!C_negocio.Validaciones.ContraseñaCorrecta(clave, confirmarClave))
             {
                 MessageBox.Show("La clave es incorrecta o contiene espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -312,13 +319,28 @@ namespace FankyRecords.C_presentacion.Administrador
 
             string clave = TBclave.Text;
             string confirmarClave = TBconfirmarClave.Text;
+
+            if (clave.Length < 4 || clave.Length > 10)
+            {
+                MessageBox.Show("La clave debe tener un mínimo de 4 caracteres y un máximo de 10 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!C_negocio.Validaciones.ContraseñaCorrecta(clave, confirmarClave))
             {
                 MessageBox.Show("La clave es incorrecta o contiene espacios en blanco.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-          
+
+            string email = TBemail.Text;
+            if (!C_negocio.Validaciones.EmailCorrecto(email))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Crear un objeto Rol basado en el valor del ComboBox
             Rol rolSeleccionado = new Rol
             {
@@ -394,88 +416,39 @@ namespace FankyRecords.C_presentacion.Administrador
             else
             {
                 string terminoBusqueda = TBBuscador.Text;
-                BuscarDatos(terminoBusqueda);
+                string[] columnas = { "Dni", "Nombre", "Apellido", "Correo", "Direccion", "Telefono", "FechaNacimiento", "Estado", "RolDescripcion" };
+                BuscarDatos(terminoBusqueda, listadoUsuarios, columnas);
             }
         }
 
-        private void BuscarDatos(string termino)
+        private void BuscarDatos(string termino, DataGridView grid, string[] columnasBusqueda)
         {
             bool encontrado = false;
-            string busqueda = termino.ToLower().Trim(); // Convertir a minúsculas y quitar espacios extra
+            string busqueda = termino.ToLower().Trim();
+            string[] palabrasBusqueda = busqueda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Desactivar la selección para evitar conflictos
-            listadoUsuarios.ClearSelection();
-            listadoUsuarios.CurrentCell = null;
+            grid.ClearSelection();
+            grid.CurrentCell = null;
 
-            foreach (DataGridViewRow row in listadoUsuarios.Rows)
+            foreach (DataGridViewRow row in grid.Rows)
             {
+                if (row.IsNewRow) continue; // Omitir fila nueva si es editable
+
                 bool filaVisible = false;
 
-                foreach (DataGridViewCell cell in row.Cells)
+                // Obtener el texto combinado de las columnas especificadas
+                string textoFila = ObtenerTextoFila(row, columnasBusqueda);
+                string[] palabrasFila = textoFila.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Verificar si todas las palabras de búsqueda están en la fila
+                if (palabrasBusqueda.All(palabra => palabrasFila.Any(p => p.StartsWith(palabra))))
                 {
-                    if (cell.Value == null)
-                        continue;
-
-                    string textoCelda = cell.Value.ToString().ToLower().Trim();
-
-                    // Separar el contenido de la celda en palabras (quitando espacios extras)
-                    string[] palabrasCelda = textoCelda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    if (busqueda.Contains(" "))
-                    {
-                        // Búsqueda multi-palabra: dividimos el término en palabras
-                        string[] palabrasBusqueda = busqueda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                        // Revisar cada segmento contiguo de palabras en la celda con la cantidad de palabras en la búsqueda
-                        for (int i = 0; i <= palabrasCelda.Length - palabrasBusqueda.Length; i++)
-                        {
-                            bool coincideTodo = true;
-                            for (int j = 0; j < palabrasBusqueda.Length; j++)
-                            {
-                                // Se usa StartsWith para permitir coincidencias parciales en cada palabra
-                                if (!palabrasCelda[i + j].StartsWith(palabrasBusqueda[j]))
-                                {
-                                    coincideTodo = false;
-                                    break;
-                                }
-                            }
-                            if (coincideTodo)
-                            {
-                                filaVisible = true;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Búsqueda de una sola palabra: se comprueba si alguna palabra de la celda comienza con el término
-                        if (palabrasCelda.Any(palabra => palabra.StartsWith(busqueda)))
-                        {
-                            filaVisible = true;
-                        }
-                    }
-
-                    if (filaVisible)
-                        break;
+                    filaVisible = true;
                 }
 
-                // Si la fila actual está oculta y es la fila con foco, cambiar a otra fila visible
-                if (!filaVisible && listadoUsuarios.CurrentRow == row)
-                {
-                    foreach (DataGridViewRow otraFila in listadoUsuarios.Rows)
-                    {
-                        if (otraFila != row && otraFila.Visible)
-                        {
-                            listadoUsuarios.CurrentCell = otraFila.Cells[0];
-                            break;
-                        }
-                    }
-                }
-
-                // Aplicar la visibilidad a la fila
                 row.Visible = filaVisible;
-                if (filaVisible)
-                    encontrado = true;
+                if (filaVisible) encontrado = true;
             }
 
             if (!encontrado)
@@ -484,6 +457,14 @@ namespace FankyRecords.C_presentacion.Administrador
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBBuscador.Clear();
             }
+        }
+
+        // Método para obtener el texto concatenado de las columnas especificadas
+        private string ObtenerTextoFila(DataGridViewRow row, string[] columnas)
+        {
+            return string.Join(" ", columnas
+                .Select(columna => row.Cells[columna]?.Value?.ToString().ToLower().Trim() ?? "")
+                .Where(texto => !string.IsNullOrEmpty(texto)));
         }
 
         private void listadoUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -604,6 +585,11 @@ namespace FankyRecords.C_presentacion.Administrador
                 ValidarYBuscar();  // Llama al método  ValidarYBuscar() cuando se presiona Enter
                 e.SuppressKeyPress = true;  // Evita el sonido de la tecla
             }
+        }
+
+        private void TBdireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            C_negocio.Validaciones.EsConcatenacionTextoNumero(e);
         }
     } 
 }

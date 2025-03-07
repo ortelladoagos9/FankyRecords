@@ -55,7 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.FechaCompraDetalle = new System.Windows.Forms.Label();
             this.listadoCompras = new System.Windows.Forms.DataGridView();
-            this.detalleCompraBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.ProductoCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +62,7 @@
             this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleCompraBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.contenedorDetalleCompra.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -410,12 +410,9 @@
             this.listadoCompras.Name = "listadoCompras";
             this.listadoCompras.ReadOnly = true;
             this.listadoCompras.RowHeadersWidth = 51;
+            this.listadoCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listadoCompras.Size = new System.Drawing.Size(1418, 231);
             this.listadoCompras.TabIndex = 1;
-            // 
-            // detalleCompraBindingSource2
-            // 
-            this.detalleCompraBindingSource2.DataSource = typeof(FankyRecords.C_entidad.DetalleCompra);
             // 
             // ProductoCodigo
             // 
@@ -466,6 +463,10 @@
             this.subtotal.MinimumWidth = 6;
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
+            // 
+            // detalleCompraBindingSource2
+            // 
+            this.detalleCompraBindingSource2.DataSource = typeof(FankyRecords.C_entidad.DetalleCompra);
             // 
             // detalleCompra
             // 

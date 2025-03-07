@@ -92,7 +92,7 @@ namespace FankyRecords.C_datos
         }
 
         //OBTIENE LA VENTA POR NUMERO DE VENTA
-        public Venta ObtenerVenta(string numero_venta)
+        public Venta ObtenerVenta(string Numero_Factura)
         {
             Venta objVenta = null;  // Solo se inicializa si hay datos
             try
@@ -111,11 +111,11 @@ namespace FankyRecords.C_datos
                         inner join Usuarios u on u.ID_usuarios = v.ID_usuarios
                         inner join Clientes c on c.ID_cliente = v.ID_cliente
                         inner join Tipo_documento td on td.ID_Tipo_Doc = v.ID_Tipo_Doc
-                        where v.NumeroVenta = @numero_venta";
+                        where v.NumeroFactura = @Numero_Factura";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    cmd.Parameters.AddWithValue("@numero_venta", numero_venta);
+                    cmd.Parameters.AddWithValue("@Numero_Factura", Numero_Factura);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

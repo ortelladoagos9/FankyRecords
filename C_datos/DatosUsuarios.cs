@@ -93,7 +93,8 @@ namespace FankyRecords.C_datos
                 conexion.Open();
 
                 string query = @"
-                select u.ID_usuarios, u.Dni,u.Nombre,u.Apellido, u.Correo, u.Clave, u.Direccion, u.Telefono, u.Estado, u.FechaNacimiento, r.ID_rol, r.Descripcion as Rol
+                select u.ID_usuarios, u.Dni,u.Nombre,u.Apellido, u.Correo, u.Clave, u.Direccion, u.Telefono, u.Estado, u.FechaNacimiento, r.ID_rol, r.Descripcion as Rol,
+                CONCAT_WS(' ', u.Nombre, u.Apellido) as 'Usuario'
                 from Usuarios u inner join Rol r on u.ID_rol= r.ID_rol";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
@@ -117,7 +118,8 @@ namespace FankyRecords.C_datos
                         {
                             ID_rol = Convert.ToInt32(reader["ID_rol"]),
                             Descripcion = reader["Rol"].ToString()
-                        }
+                        },
+                        NombreCompleto = reader["Usuario"].ToString()
                     });
                 }
             }
@@ -128,6 +130,49 @@ namespace FankyRecords.C_datos
             finally { conexion.Close(); }
 
             return listaUsuarios;
+        }
+
+        public void EditarMiUsuario(Usuarios usuario)
+        {
+            try
+            {
+                conexion.Open();
+
+                // Actualizar la tabla Productos
+                string queryUsuario = @"
+                 UPDATE Usuarios
+                 SET 
+                 Dni = @NuevoDni,
+                 Nombre = @NuevoNombre,
+                 Apellido = @NuevaApellido,
+                 Correo = @NuevoCorreo,
+                 Clave = @NuevoClave,
+                 Direccion = @NuevoDireccion,
+                 Telefono = @NuevoTelefono,
+                 FechaNacimiento = @NuevoFechaNacimiento
+                 WHERE ID_usuarios = @ID_usuarios";
+
+                SqlCommand cmdUsuario = new SqlCommand(queryUsuario, conexion);
+                cmdUsuario.Parameters.AddWithValue("@NuevoDni", usuario.Dni);
+                cmdUsuario.Parameters.AddWithValue("@NuevoNombre", usuario.Nombre);
+                cmdUsuario.Parameters.AddWithValue("@NuevaApellido", usuario.Apellido);
+                cmdUsuario.Parameters.AddWithValue("@NuevoCorreo", usuario.Correo);
+                cmdUsuario.Parameters.AddWithValue("@NuevoClave", usuario.Clave);
+                cmdUsuario.Parameters.AddWithValue("@NuevoDireccion", usuario.Direccion);
+                cmdUsuario.Parameters.AddWithValue("@NuevoTelefono", usuario.Telefono);
+                cmdUsuario.Parameters.AddWithValue("@NuevoFechaNacimiento", usuario.FechaNacimiento);
+                cmdUsuario.Parameters.AddWithValue("@ID_usuarios", usuario.ID_usuarios);
+
+                cmdUsuario.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar el usuario.", ex);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public void EditarUsuarios(Usuarios usuario)

@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using FankyRecords.C_entidad;
+using FankyRecords.C_negocio;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,10 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class FormMenuAdmin : Form
     {
-        //private static IconMenuItem menuActivo = null;
-        public FormMenuAdmin()
+        public FormMenuAdmin(Usuarios usuarioObj)
         {
             InitializeComponent();
+            SesionUsuario.UsuarioActual = usuarioObj;
         }
 
         private void IconSalirAdministrador_Click(object sender, EventArgs e)
@@ -131,6 +133,14 @@ namespace FankyRecords.C_presentacion.Administrador
         private void MenuReportesAdministrador_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormMenuAdmin_Load(object sender, EventArgs e)
+        {
+            if (SesionUsuario.UsuarioActual != null)
+            {
+                LUsuarioActual.Text = SesionUsuario.UsuarioActual.NombreCompleto;
+            }
         }
     }
 }

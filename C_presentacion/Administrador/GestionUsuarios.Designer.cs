@@ -249,6 +249,7 @@
             this.TBdireccion.Name = "TBdireccion";
             this.TBdireccion.Size = new System.Drawing.Size(293, 35);
             this.TBdireccion.TabIndex = 16;
+            this.TBdireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdireccion_KeyPress);
             // 
             // LEmail
             // 

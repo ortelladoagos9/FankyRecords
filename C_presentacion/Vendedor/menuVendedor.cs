@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using FankyRecords.C_entidad;
+using FankyRecords.C_presentacion.Administrador;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,10 @@ namespace FankyRecords.C_presentacion.Vendedor
 {
     public partial class FormMenuVendedor : Form
     {
-        public FormMenuVendedor()
+        public FormMenuVendedor(Usuarios usuarioObj)
         {
             InitializeComponent();
+            SesionUsuario.UsuarioActual = usuarioObj;
         }
 
         private void IconSalirVendedor_Click(object sender, EventArgs e)
@@ -84,6 +87,19 @@ namespace FankyRecords.C_presentacion.Vendedor
         private void MenuClientesVendedor_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new GestionClientes());
+        }
+
+        private void FormMenuVendedor_Load(object sender, EventArgs e)
+        {
+            if (SesionUsuario.UsuarioActual != null)
+            {
+                LUsuarioActual.Text = SesionUsuario.UsuarioActual.NombreCompleto;
+            }
+        }
+
+        private void MenuUsuariosVendedor_Click_1(object sender, EventArgs e)
+        {
+           AbrirFormulario((IconMenuItem)sender, new Vendedor.MiUsuario());
         }
     }
 }

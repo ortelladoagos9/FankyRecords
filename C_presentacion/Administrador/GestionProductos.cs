@@ -238,88 +238,39 @@ namespace FankyRecords.C_presentacion.Administrador
             else
             {
                 string terminoBusqueda = TBBuscador.Text;
-                BuscarDatos(terminoBusqueda);
+                string[] columnas = { "codigo", "nombre", "descripcion", "stock", "stockmin", "precioVenta", "precioCompra", "estado", "objcategoria" };
+                BuscarDatos(terminoBusqueda, listadoProductos, columnas);
             }
         }
 
-        private void BuscarDatos(string termino)
+        private void BuscarDatos(string termino, DataGridView grid, string[] columnasBusqueda)
         {
             bool encontrado = false;
-            string busqueda = termino.ToLower().Trim(); // Convertir a minúsculas y quitar espacios extra
+            string busqueda = termino.ToLower().Trim();
+            string[] palabrasBusqueda = busqueda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Desactivar la selección para evitar conflictos
-            listadoProductos.ClearSelection();
-            listadoProductos.CurrentCell = null;
+            grid.ClearSelection();
+            grid.CurrentCell = null;
 
-            foreach (DataGridViewRow row in listadoProductos.Rows)
+            foreach (DataGridViewRow row in grid.Rows)
             {
+                if (row.IsNewRow) continue; // Omitir fila nueva si es editable
+
                 bool filaVisible = false;
 
-                foreach (DataGridViewCell cell in row.Cells)
+                // Obtener el texto combinado de las columnas especificadas
+                string textoFila = ObtenerTextoFila(row, columnasBusqueda);
+                string[] palabrasFila = textoFila.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Verificar si todas las palabras de búsqueda están en la fila
+                if (palabrasBusqueda.All(palabra => palabrasFila.Any(p => p.StartsWith(palabra))))
                 {
-                    if (cell.Value == null)
-                        continue;
-
-                    string textoCelda = cell.Value.ToString().ToLower().Trim();
-
-                    // Separar el contenido de la celda en palabras (quitando espacios extras)
-                    string[] palabrasCelda = textoCelda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    if (busqueda.Contains(" "))
-                    {
-                        // Búsqueda multi-palabra: dividimos el término en palabras
-                        string[] palabrasBusqueda = busqueda.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-                        // Revisar cada segmento contiguo de palabras en la celda con la cantidad de palabras en la búsqueda
-                        for (int i = 0; i <= palabrasCelda.Length - palabrasBusqueda.Length; i++)
-                        {
-                            bool coincideTodo = true;
-                            for (int j = 0; j < palabrasBusqueda.Length; j++)
-                            {
-                                // Se usa StartsWith para permitir coincidencias parciales en cada palabra
-                                if (!palabrasCelda[i + j].StartsWith(palabrasBusqueda[j]))
-                                {
-                                    coincideTodo = false;
-                                    break;
-                                }
-                            }
-                            if (coincideTodo)
-                            {
-                                filaVisible = true;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Búsqueda de una sola palabra: se comprueba si alguna palabra de la celda comienza con el término
-                        if (palabrasCelda.Any(palabra => palabra.StartsWith(busqueda)))
-                        {
-                            filaVisible = true;
-                        }
-                    }
-
-                    if (filaVisible)
-                        break;
+                    filaVisible = true;
                 }
 
-                // Si la fila actual está oculta y es la fila con foco, cambiar a otra fila visible
-                if (!filaVisible && listadoProductos.CurrentRow == row)
-                {
-                    foreach (DataGridViewRow otraFila in listadoProductos.Rows)
-                    {
-                        if (otraFila != row && otraFila.Visible)
-                        {
-                            listadoProductos.CurrentCell = otraFila.Cells[0];
-                            break;
-                        }
-                    }
-                }
-
-                // Aplicar la visibilidad a la fila
                 row.Visible = filaVisible;
-                if (filaVisible)
-                    encontrado = true;
+                if (filaVisible) encontrado = true;
             }
 
             if (!encontrado)
@@ -328,6 +279,14 @@ namespace FankyRecords.C_presentacion.Administrador
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBBuscador.Clear();
             }
+        }
+
+        // Método para obtener el texto concatenado de las columnas especificadas
+        private string ObtenerTextoFila(DataGridViewRow row, string[] columnas)
+        {
+            return string.Join(" ", columnas
+                .Select(columna => row.Cells[columna]?.Value?.ToString().ToLower().Trim() ?? "")
+                .Where(texto => !string.IsNullOrEmpty(texto)));
         }
 
         private void Limpiar()
@@ -355,6 +314,28 @@ namespace FankyRecords.C_presentacion.Administrador
             listadoProductos.Columns["precioCompra"].DefaultCellStyle.Format = "N2";
 
             listadoProductos.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("es-ES");
+
+            bool hayAdvertencia = false; // Bandera para mostrar el mensaje solo una vez
+
+            foreach (DataGridViewRow fila in listadoProductos.Rows)
+            {
+                if (fila.Cells["stock"].Value != null && fila.Cells["stockmin"].Value != null)
+                {
+                    if (int.TryParse(fila.Cells["stock"].Value.ToString(), out int stock) &&
+                        int.TryParse(fila.Cells["stockmin"].Value.ToString(), out int stockMin))
+                    {
+                        if (stock <= stockMin)
+                        {
+                            hayAdvertencia = true; // Se activa la bandera
+                        }
+                    }
+                }
+            }
+            // Muestra el mensaje solo si hay productos con stock bajo
+            if (hayAdvertencia)
+            {
+                MessageBox.Show("Algunos productos tienen stock por debajo del mínimo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void listadoProductos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -364,7 +345,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void AplicarColoresAdvertenciaStock()
         {
-            bool hayAdvertencia = false; // Bandera para mostrar el mensaje solo una vez
+            //bool hayAdvertencia = false; // Bandera para mostrar el mensaje solo una vez
 
             foreach (DataGridViewRow fila in listadoProductos.Rows)
             {
@@ -378,7 +359,7 @@ namespace FankyRecords.C_presentacion.Administrador
                             fila.DefaultCellStyle.BackColor = System.Drawing.Color.Tomato;
                             fila.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
 
-                            hayAdvertencia = true; // Se activa la bandera
+                            //hayAdvertencia = true; // Se activa la bandera
                         }
                         else
                         {
@@ -389,11 +370,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
             }
 
-            // Muestra el mensaje solo si hay productos con stock bajo
-            if (hayAdvertencia)
-            {
-                MessageBox.Show("Algunos productos tienen stock por debajo del mínimo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
         }
 
         private void CargarCombo()

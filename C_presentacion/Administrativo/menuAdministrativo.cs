@@ -1,4 +1,5 @@
-﻿using FankyRecords.C_presentacion.Administrador;
+﻿using FankyRecords.C_entidad;
+using FankyRecords.C_presentacion.Administrador;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,10 @@ namespace FankyRecords.C_presentacion.Administrativo
 {
     public partial class FormMenuAdministrativo : Form
     {
-        public FormMenuAdministrativo()
+        public FormMenuAdministrativo(Usuarios usuarioObj)
         {
             InitializeComponent();
+            SesionUsuario.UsuarioActual = usuarioObj;
         }
 
         private void IconSalirAdministrativo_Click(object sender, EventArgs e)
@@ -85,6 +87,19 @@ namespace FankyRecords.C_presentacion.Administrativo
         private void SubmenuDetalleCompraAdministrador_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new Administrador.detalleCompra());
+        }
+
+        private void FormMenuAdministrativo_Load(object sender, EventArgs e)
+        {
+            if (SesionUsuario.UsuarioActual != null)
+            {
+                LUsuarioActual.Text = SesionUsuario.UsuarioActual.NombreCompleto;
+            }
+        }
+
+        private void MenuUsuariosAdministrativo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new Administrativo.MiUsuario());
         }
     }
 }
