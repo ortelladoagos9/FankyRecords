@@ -36,32 +36,29 @@ namespace FankyRecords.C_datos
                             lista.Add(new ReporteCompras()
                             {
                                 FechaCompra = DateTime.Parse(dr["fechaCompra"].ToString()),
-                                ID_Tipo_Doc = int.Parse(dr["ID_Tipo_Doc"].ToString()),
+                                NumeroFactura = int.Parse(dr["NumeroFactura"].ToString()),
                                 NumeroCompra = int.Parse(dr["NumeroCompra"].ToString()),
+                                TipoDoc = dr["TipoDoc"].ToString(),
                                 MontoTotal = decimal.Parse(dr["MontoTotal"].ToString()),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
                                 CuitProveedor = dr["CuitProveedor"].ToString(),
                                 RazonSocial = dr["RazonSocial"].ToString(),
                                 CodigoProducto = int.Parse(dr["CodigoProducto"].ToString()),
                                 NombreProducto = dr["NombreProducto"].ToString(),
-                                Categoria = dr["Categoria"].ToString(),
+                                DescripcionProducto = dr["DescripcionProducto"].ToString(),
                                 PrecioCompra = decimal.Parse(dr["PrecioCompra"].ToString()),
-                                Precioventa = decimal.Parse(dr["Precioventa"].ToString()),
-                                Cantidad = int.Parse(dr["Cantidad"].ToString()),
-                                SubTotal = decimal.Parse(dr["SubTotal"].ToString()),
+                                Cantidad = int.Parse(dr["Cantidad"].ToString())
                             });
-                        }
+                        }   
                     }
                 }
                 catch(Exception ex) 
                 {
                     lista = new List<ReporteCompras>();
                 }
-
             }
             return lista;
         }
-
 
         public List<ReporteVentas> Venta(DateTime fechaInicio, DateTime fechaFin)
         {

@@ -2,13 +2,12 @@
 using FankyRecords.C_negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using FankyRecords.C_presentacion.Modales;
+
+
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -29,9 +28,10 @@ namespace FankyRecords.C_presentacion.Administrador
             CompararFechas();              
         }
 
-        private void CompararFechas()
+        public void CompararFechas()
+        {
+            listadoReporteCompras.Rows.Clear();
 
-        {   
             //Convertir un datetimepicker en string
             string fechaComoString1 = DTinicio.Value.ToString();
             string fechaComoString2 = DTfin.Value.ToString();
@@ -39,8 +39,7 @@ namespace FankyRecords.C_presentacion.Administrador
             //Convertir un string en datetime
             DateTime fecha1 = DateTime.Parse(fechaComoString1);
             DateTime fecha2 = DateTime.Parse(fechaComoString2);
-            int ID_proveedor = Convert.ToInt32(CBproveedor.SelectedValue);
-           // int idProveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
+            int ID_proveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
 
             // Comparar las fechas
@@ -76,29 +75,47 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoReporteCompras.Rows.Add(new object[]
                     {
                         rc.FechaCompra,
-                        rc.ID_Tipo_Doc,
-                        rc.MontoTotal,
-                        rc.CuitProveedor,
-                        rc.RazonSocial,
+                        rc.NumeroCompra,
+                        rc.NumeroFactura,
+                        rc.TipoDoc,
                         rc.CodigoProducto,
                         rc.NombreProducto,
+                        rc.DescripcionProducto,
+                        rc.CuitProveedor,
+                        rc.RazonSocial,
                         rc.PrecioCompra,
                         rc.Cantidad,
-                       
+                        rc.MontoTotal,
+                        rc.UsuarioRegistro,
                     });
                 }
             }
         }
 
-        private void btnGenerarGrafico_Click(object sender, EventArgs e)
+        public void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
-            CompararFechas();
+            Grafico();
+        }
+
+        public void Grafico()
+        {
+            if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
+            {
+                MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                // Pasa el DataGridView a MDRepCompras
+                using (var modal = new MDRepCompras(listadoReporteCompras)) // Pasa el DataGridView al constructor
+                {
+                    modal.ShowDialog(); // Mostrar el modal
+                }
+            }
         }
 
         private void reporteCompras_Load(object sender, EventArgs e)
         {
-            
-            List<Proveedores> lista =  CN_Proveedor.ListarProveedores();
+            List<Proveedores> lista =   CN_Proveedor.ListarProveedores();
 
             //CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
             foreach (Proveedores item in lista)
@@ -121,14 +138,57 @@ namespace FankyRecords.C_presentacion.Administrador
 
         private void descargarExcel_Click(object sender, EventArgs e)
         {
-            if(listadoReporteCompras.Rows.Count < 1)
+            if(listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                DataTable dt = new DataTable();
 
+                foreach(DataGridViewColumn columna in listadoReporteCompras.Columns)
+                {
+                    dt.Columns.Add(columna.HeaderText, typeof(string));
+                }
+                foreach (DataGridViewRow row in listadoReporteCompras.Rows)
+                {
+                    if (row.Visible)
+                    {
+                        DataRow dataRow = dt.NewRow();
+                        for (int i = 0; i < listadoReporteCompras.Columns.Count; i++)
+                        {
+                            dataRow[i] = row.Cells[i].Value?.ToString() ?? string.Empty;
+                        }
+                        dt.Rows.Add(dataRow);
+                    }
+                }
+
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.FileName = string.Format("ReporteCompras_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.Filter = "Excel Files | *.xlsx";
+
+                if(savefile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(savefile.FileName);
+                        MessageBox.Show("Reporte generado correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar el reporte de compras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            listadoReporteCompras.Rows.Clear();
+            CBproveedor.SelectedIndex = 0;
         }
     }
 }

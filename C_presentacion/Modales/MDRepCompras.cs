@@ -1,0 +1,128 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using FankyRecords.C_presentacion.Administrador;
+
+
+
+namespace FankyRecords.C_presentacion.Modales
+{
+    public partial class MDRepCompras : Form
+    {
+
+        private readonly reporteCompras C_Reporte;
+        private readonly DataGridView listadoReporteCompras; // Guarda el DataGridView
+        public Chart GraficoCompras { get; set; }
+
+
+        // Recibe el DataGridView en el constructor
+        public MDRepCompras(DataGridView listadoReporteCompras)
+        {
+            InitializeComponent();
+            this.listadoReporteCompras = listadoReporteCompras; // Asigna el DataGridView recibido
+            C_Reporte = new reporteCompras();
+
+            this.KeyPreview = true;
+
+            // Inicializar el gráfico
+            GraficoCompras = new Chart();
+            GraficoCompras.Dock = DockStyle.Fill;
+            
+            Controls.Add(GraficoCompras);
+
+            // Configurar el área del gráfico
+            ChartArea chartArea = new ChartArea("MainArea");
+            GraficoCompras.ChartAreas.Add(chartArea);
+        }
+
+        // Crear gráfico de torta
+        public void crearGrafico()
+        {
+            // Contar las apariciones de cada proveedor
+            Dictionary<string, int> proveedorContador = new Dictionary<string, int>();
+
+            // Acceder al DataGridView pasado
+            foreach (DataGridViewRow row in listadoReporteCompras.Rows)
+            {
+                if (row.IsNewRow) continue;
+                string proveedor = row.Cells["RazonSocial"].Value?.ToString(); // Usa el operador null-conditional (?.)
+                if (string.IsNullOrEmpty(proveedor)) continue;  // Ignora filas sin valor de proveedor
+
+                if (proveedorContador.ContainsKey(proveedor))
+                {
+                    proveedorContador[proveedor]++;
+                }
+                else
+                {
+                    proveedorContador[proveedor] = 1;
+                }
+            }
+
+            // Crear el gráfico
+            GraficoCompras.Series.Clear();
+            Series serie = new Series
+            {
+                Name = "Proveedores",
+                IsValueShownAsLabel = true,
+                ChartType = SeriesChartType.Pie,
+                 LabelFormat = "0", // Si solo quieres mostrar los números de las compras
+            };
+            GraficoCompras.Series.Add(serie);
+
+            // Establecer la fuente para los labels de los puntos en el gráfico
+            Font labelFont = new Font("Century Schoolbook", 8.2f, FontStyle.Bold);
+
+            // Agregar puntos al gráfico
+            foreach (var proveedor in proveedorContador)
+            {
+                // Crear un DataPoint y agregarlo a la serie
+                DataPoint punto = new DataPoint();
+                punto.SetValueXY(proveedor.Key, proveedor.Value);  // Establecer el valor X (Proveedor) y Y (Cantidad)
+
+                // Establecer la etiqueta visible para cada punto en el gráfico
+                punto.Label = $"{proveedor.Key} ({proveedor.Value})"; // El nombre del proveedor y la cantidad
+
+                // Cambiar la fuente del Label del punto
+                punto.Font = labelFont;
+
+                // Establecer el ToolTip para cada punto
+                punto.ToolTip = $"{proveedor.Key} ({proveedor.Value})"; // Muestra nombre del proveedor en el tooltip
+
+                // Agregar el punto a la serie
+                serie.Points.Add(punto);
+            }
+
+            // Forzar redibujo del gráfico
+            GraficoCompras.Invalidate();
+            GraficoCompras.Update();
+            GraficoCompras.Refresh();
+
+            // Verificar si el gráfico es visible
+            GraficoCompras.Visible = true;
+        }
+
+        public void MDRepCompras_Load(object sender, EventArgs e)
+        {
+            // Agregar título al gráfico
+            Title title = new Title("Gráfico de Compras por Proveedor");
+            GraficoCompras.Titles.Add(title);
+
+            // Cambiar el estilo de la fuente del título
+            Font titleFont = new Font("Century Schoolbook", 10.2f, FontStyle.Bold);
+            title.Font = titleFont;
+            // Cambiar el color del título a DarkRed
+            title.ForeColor = Color.DarkRed;
+
+            this.Size = new Size(800, 600); // Ajusta el tamaño del formulario para permitir mostrar el gráfico
+            crearGrafico(); // Crear el gráfico al cargar el formulario
+        }
+
+        private void graficoCompras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    }
+}
