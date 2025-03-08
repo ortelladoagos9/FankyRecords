@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using FankyRecords.C_presentacion.Modales;
 
 
 namespace FankyRecords.C_presentacion.Administrador
@@ -97,17 +98,30 @@ namespace FankyRecords.C_presentacion.Administrador
            
         }
 
-        private void btnGenerarGrafico_Click(object sender, EventArgs e)
+        public void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
             if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                using (var modal = new MDRepCompras())
+                {
+                    var result = modal.ShowDialog();
 
+                    if (result == DialogResult.OK)
+                    {
+                      object value =  modal.graficoCompras.Series.Clear();
 
+                    }
+
+                }
+            }
         }
 
-     
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
