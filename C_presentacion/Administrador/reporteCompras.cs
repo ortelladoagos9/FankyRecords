@@ -59,8 +59,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else 
             {
-
-
                 List<ReporteCompras> lista = new List<ReporteCompras>();
 
                 lista = CN_Reporte.Compra(
@@ -131,8 +129,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 }
 
 
-
-
                 using (var modal = new MDRepCompras())
                 {
                     modal.ShowDialog();
@@ -163,9 +159,6 @@ namespace FankyRecords.C_presentacion.Administrador
 
                     // Verificar si el gráfico es visible
                     modal.GraficoCompras.Visible = true;
-
-
-
 
                 }
             }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using FankyRecords.C_entidad;
-using FankyRecords.C_negocio;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -19,8 +17,6 @@ namespace FankyRecords.C_presentacion.Modales
     public partial class MDRepCompras : Form
     {
         public Chart GraficoCompras { get; set; }
-
-        private readonly NegocioReporte CN_ReporteCompra;
         
         public MDRepCompras()
         {
