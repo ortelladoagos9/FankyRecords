@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 using FankyRecords.C_presentacion.Modales;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace FankyRecords.C_presentacion.Administrador
@@ -100,27 +101,76 @@ namespace FankyRecords.C_presentacion.Administrador
 
         public void btnGenerarGrafico_Click(object sender, EventArgs e)
         {
+            Grafico();
+        }
+
+        private void Grafico()
+        {
             if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                // Contar las apariciones de cada proveedor
+                Dictionary<string, int> proveedorContador = new Dictionary<string, int>();
+                foreach (DataGridViewRow row in listadoReporteCompras.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    string proveedor = row.Cells["RazonSocial"].Value.ToString();
+                    if (string.IsNullOrEmpty(proveedor)) continue;  // Ignora filas sin valor de proveedor
+
+                    if (proveedorContador.ContainsKey(proveedor))
+                    {
+                        proveedorContador[proveedor]++;
+                    }
+                    else
+                    {
+                        proveedorContador[proveedor] = 1;
+                    }
+                }
+
+
+
+
                 using (var modal = new MDRepCompras())
                 {
-                    var result = modal.ShowDialog();
+                    modal.ShowDialog();
 
-                    if (result == DialogResult.OK)
+                    // Crear gráfico de torta
+
+                    modal.GraficoCompras.Series.Clear();
+                    Series serie = new Series
                     {
-                      object value =  modal.graficoCompras.Series.Clear();
+                        Name = "Proveedores",
+                        IsValueShownAsLabel = true,
+                        ChartType = SeriesChartType.Pie
+                    };
+                    modal.GraficoCompras.Series.Add(serie);
 
+                    foreach (var proveedor in proveedorContador)
+                    {
+                        // Verificar que los datos se están agregando correctamente
+                        MessageBox.Show($"Proveedor: {proveedor.Key}, Cantidad: {proveedor.Value}");
+                        serie.Points.AddXY(proveedor.Key, proveedor.Value);
                     }
+
+                    // Forzar redibujo del gráfico
+                    modal.GraficoCompras.Invalidate();
+                    modal.GraficoCompras.Update();
+                    modal.GraficoCompras.Refresh();
+
+
+                    // Verificar si el gráfico es visible
+                    modal.GraficoCompras.Visible = true;
+
+
+
 
                 }
             }
+
         }
-
-
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)

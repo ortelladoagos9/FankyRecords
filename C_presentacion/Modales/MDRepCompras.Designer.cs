@@ -49,7 +49,7 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Series";
             this.graficoCompras.Series.Add(series1);
             this.graficoCompras.Size = new System.Drawing.Size(416, 362);
             this.graficoCompras.TabIndex = 0;
