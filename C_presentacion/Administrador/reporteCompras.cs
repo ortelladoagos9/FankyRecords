@@ -2,16 +2,11 @@
 using FankyRecords.C_negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 using FankyRecords.C_presentacion.Modales;
-using System.Windows.Forms.DataVisualization.Charting;
+
 
 
 namespace FankyRecords.C_presentacion.Administrador
@@ -36,7 +31,9 @@ namespace FankyRecords.C_presentacion.Administrador
 
         public void CompararFechas()
 
-        {   
+        {
+            listadoReporteCompras.Rows.Clear();
+
             //Convertir un datetimepicker en string
             string fechaComoString1 = DTinicio.Value.ToString();
             string fechaComoString2 = DTfin.Value.ToString();
@@ -142,8 +139,6 @@ namespace FankyRecords.C_presentacion.Administrador
             CBproveedor.DisplayMember = "Texto";
             CBproveedor.ValueMember = "Valor";
             CBproveedor.SelectedIndex = 0;
-
-
 
         }
 
