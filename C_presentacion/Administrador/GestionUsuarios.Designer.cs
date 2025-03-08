@@ -699,7 +699,7 @@
             this.TBlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.TBlimpiar.IconColor = System.Drawing.Color.White;
             this.TBlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.TBlimpiar.IconSize = 21;
+            this.TBlimpiar.IconSize = 25;
             this.TBlimpiar.Location = new System.Drawing.Point(79, 405);
             this.TBlimpiar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.TBlimpiar.Name = "TBlimpiar";

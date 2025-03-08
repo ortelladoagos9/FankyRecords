@@ -7,8 +7,6 @@ using System.Windows.Forms;
 using ClosedXML.Excel;
 using FankyRecords.C_presentacion.Modales;
 
-
-
 namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class reporteCompras : Form
@@ -23,9 +21,32 @@ namespace FankyRecords.C_presentacion.Administrador
             CN_Proveedor = new NegocioProveedores();
         }
 
-        private void buscarFecha_Click(object sender, EventArgs e)
+        private void reporteCompras_Load_1(object sender, EventArgs e)
         {
-            CompararFechas();              
+            List<Proveedores> lista = CN_Proveedor.ListarProveedores();
+
+            //CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
+            foreach (Proveedores item in lista)
+            {
+                CBproveedor.Items.Add(new OpcionCombo() { Valor = item.ID_proveedor, Texto = item.RazonSocial });
+            }
+
+            CBproveedor.DisplayMember = "Texto";
+            CBproveedor.ValueMember = "Valor";
+            CBproveedor.SelectedIndex = 0;
+
+            DTinicio.MaxDate = DateTime.Now.Date;
+            DTinicio.Value = DateTime.Now.Date;
+            DTinicio.Format = DateTimePickerFormat.Short;
+
+            DTfin.MaxDate = DateTime.Now.Date;
+            DTfin.Value = DateTime.Now.Date;
+            DTfin.Format = DateTimePickerFormat.Short;
+        }
+
+        private void btnBuscarFecha_Click(object sender, EventArgs e)
+        {
+            CompararFechas();
         }
 
         public void CompararFechas()
@@ -92,11 +113,6 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        public void btnGenerarGrafico_Click(object sender, EventArgs e)
-        {
-            Grafico();
-        }
-
         public void Grafico()
         {
             if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
@@ -113,32 +129,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void reporteCompras_Load(object sender, EventArgs e)
+        private void btnGenerarGrafico_Click_1(object sender, EventArgs e)
         {
-            List<Proveedores> lista =   CN_Proveedor.ListarProveedores();
-
-            //CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
-            foreach (Proveedores item in lista)
-            {
-                CBproveedor.Items.Add(new OpcionCombo() { Valor = item.ID_proveedor, Texto = item.RazonSocial});
-            }
-
-            CBproveedor.DisplayMember = "Texto";
-            CBproveedor.ValueMember = "Valor";
-            CBproveedor.SelectedIndex = 0;
-
-            DTinicio.MaxDate = DateTime.Now.Date;
-            DTinicio.Value = DateTime.Now.Date;
-            DTinicio.Format = DateTimePickerFormat.Short;
-
-            DTfin.MaxDate = DateTime.Now.Date;
-            DTfin.Value = DateTime.Now.Date;
-            DTfin.Format = DateTimePickerFormat.Short;
+            Grafico();
         }
 
-        private void descargarExcel_Click(object sender, EventArgs e)
+        private void descargarExcel_Click_1(object sender, EventArgs e)
         {
-            if(listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
+            if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -146,7 +144,7 @@ namespace FankyRecords.C_presentacion.Administrador
             {
                 DataTable dt = new DataTable();
 
-                foreach(DataGridViewColumn columna in listadoReporteCompras.Columns)
+                foreach (DataGridViewColumn columna in listadoReporteCompras.Columns)
                 {
                     dt.Columns.Add(columna.HeaderText, typeof(string));
                 }
@@ -167,7 +165,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 savefile.FileName = string.Format("ReporteCompras_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
                 savefile.Filter = "Excel Files | *.xlsx";
 
-                if(savefile.ShowDialog() == DialogResult.OK)
+                if (savefile.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
@@ -185,7 +183,7 @@ namespace FankyRecords.C_presentacion.Administrador
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             listadoReporteCompras.Rows.Clear();
             CBproveedor.SelectedIndex = 0;
