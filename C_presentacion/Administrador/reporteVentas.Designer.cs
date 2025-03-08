@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
@@ -168,14 +168,14 @@
             this.listadoReporteVentas.BackgroundColor = System.Drawing.Color.White;
             this.listadoReporteVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoReporteVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listadoReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaVenta,
@@ -188,14 +188,14 @@
             this.precioVenta,
             this.cantidad,
             this.montoTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteVentas.DefaultCellStyle = dataGridViewCellStyle4;
             this.listadoReporteVentas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoReporteVentas.Location = new System.Drawing.Point(0, 299);
             this.listadoReporteVentas.Margin = new System.Windows.Forms.Padding(2);
@@ -288,7 +288,7 @@
             this.descargarExcel.Location = new System.Drawing.Point(0, 0);
             this.descargarExcel.Margin = new System.Windows.Forms.Padding(2);
             this.descargarExcel.Name = "descargarExcel";
-            this.descargarExcel.Size = new System.Drawing.Size(248, 53);
+            this.descargarExcel.Size = new System.Drawing.Size(270, 53);
             this.descargarExcel.TabIndex = 2;
             this.descargarExcel.Text = "Descargar Excel";
             this.descargarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,10 +304,10 @@
             this.btnGenerarGrafico.IconColor = System.Drawing.Color.DarkRed;
             this.btnGenerarGrafico.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarGrafico.IconSize = 25;
-            this.btnGenerarGrafico.Location = new System.Drawing.Point(248, 0);
+            this.btnGenerarGrafico.Location = new System.Drawing.Point(270, 0);
             this.btnGenerarGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarGrafico.Name = "btnGenerarGrafico";
-            this.btnGenerarGrafico.Size = new System.Drawing.Size(254, 53);
+            this.btnGenerarGrafico.Size = new System.Drawing.Size(265, 53);
             this.btnGenerarGrafico.TabIndex = 6;
             this.btnGenerarGrafico.Text = "Generar Gráfico";
             this.btnGenerarGrafico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -153,9 +153,6 @@
   <metadata name="SubmenuDetalleCompraAdministrador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>27, 35</value>
   </metadata>
-  <metadata name="MenuNegocioAdministrador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>176, 35</value>
-  </metadata>
   <metadata name="MenuReportesAdministrador.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>653, 35</value>
   </metadata>

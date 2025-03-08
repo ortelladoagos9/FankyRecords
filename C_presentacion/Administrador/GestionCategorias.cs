@@ -58,14 +58,14 @@ namespace FankyRecords.C_presentacion.Administrador
             };
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar una nueva categoria?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar una nueva categoría?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Intentar guardar la categoría en la base de datos
                     CN_Categorias.GuardarCategoria(categorias);
 
-                    MessageBox.Show("La categoria: " + this.TBdescripcion.Text + " se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La categoría: " + this.TBdescripcion.Text + " se insertó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarCategorias();
                     Limpiar();
@@ -94,7 +94,13 @@ namespace FankyRecords.C_presentacion.Administrador
             Categorias categoriaExistente = CN_Categorias.ObtenerCategoriaPorID(categoriaIdSeleccionada);
             if (categoriaExistente == null)
             {
-                MessageBox.Show("La categoria seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La categoría seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (rBinactivo.Checked == true)
+            {
+                MessageBox.Show("La categoría ya se encuentra desactivada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
                 return;
             }
@@ -129,7 +135,7 @@ namespace FankyRecords.C_presentacion.Administrador
             Categorias categoriaExistente = CN_Categorias.ObtenerCategoriaPorID(categoriaIdSeleccionada);
             if (categoriaExistente == null)
             {
-                MessageBox.Show("La categoria seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La categoría seleccionada no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar();
                 return;
             }
@@ -142,14 +148,14 @@ namespace FankyRecords.C_presentacion.Administrador
             };
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea editar categoria?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar categoría?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Llamar al método de negocio para guardar/editar la categoría
                     CN_Categorias.GuardarCategoria(categorias);
 
-                    MessageBox.Show("La categoria: " + this.TBdescripcion.Text + " se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La categoría: " + this.TBdescripcion.Text + " se editó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarCategorias();
                     Limpiar();

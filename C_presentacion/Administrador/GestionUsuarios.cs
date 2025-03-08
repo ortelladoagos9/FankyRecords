@@ -275,6 +275,12 @@ namespace FankyRecords.C_presentacion.Administrador
                 Limpiar();
                 return;
             }
+            if (rBinactivo.Checked == true)
+            {
+                MessageBox.Show("El usuario ya se encuentra desactivado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+                return;
+            }
 
             if (C_negocio.Validaciones.mensajeEliminar())
             {

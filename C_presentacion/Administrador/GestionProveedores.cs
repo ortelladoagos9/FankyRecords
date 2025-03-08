@@ -70,14 +70,14 @@ namespace FankyRecords.C_presentacion.Administrador
             };
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo proveedor?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Intentar guardar la categoría en la base de datos
                     CN_Proveedores.GuardarProveedor(proveedores);
 
-                    MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se insertó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarProveedores();
                     Limpiar();
@@ -116,6 +116,12 @@ namespace FankyRecords.C_presentacion.Administrador
             if (proveedorExistente == null)
             {
                 MessageBox.Show("El proveedor seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (RBinactivop.Checked == true)
+            {
+                MessageBox.Show("El proveedor ya se encuentra desactivado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
                 return;
             }
@@ -179,14 +185,14 @@ namespace FankyRecords.C_presentacion.Administrador
             };
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea editar proveedor?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar proveedor?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Llamar al método de negocio para guardar/editar el proveedor
                     CN_Proveedores.GuardarProveedor(proveedores);
 
-                    MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El proveedor: " + this.TBRazonSocial.Text + " " + "se editó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar la lista de proveedores
                     CargarProveedores();
                     Limpiar();

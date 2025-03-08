@@ -258,9 +258,9 @@
             this.LmontoTotal.Location = new System.Drawing.Point(1050, 341);
             this.LmontoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LmontoTotal.Name = "LmontoTotal";
-            this.LmontoTotal.Size = new System.Drawing.Size(165, 27);
+            this.LmontoTotal.Size = new System.Drawing.Size(184, 27);
             this.LmontoTotal.TabIndex = 10;
-            this.LmontoTotal.Text = "Monto Total:";
+            this.LmontoTotal.Text = "Importe Total:";
             // 
             // groupBox1
             // 

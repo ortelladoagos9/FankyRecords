@@ -62,12 +62,12 @@ namespace FankyRecords.C_presentacion.Vendedor
             // Validación previa de duplicados en la base de datos
             if (CN_Clientes.ExisteDocumento(TBdni.Text))
             {
-                MessageBox.Show("El documento ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DNI ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (CN_Clientes.ExisteTelefono(TBtelefono.Text))
             {
-                MessageBox.Show("El telefono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El teléfono ya existe. No se permiten duplicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (CN_Clientes.ExisteCorreo(TBemail.Text))
@@ -94,14 +94,14 @@ namespace FankyRecords.C_presentacion.Vendedor
             
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo cliente?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo cliente?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Intentar guardar la categoría en la base de datos
                     CN_Clientes.GuardarCliente(clientes);
 
-                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El cliente: " + this.TBnombre.Text + " " + this.TBapellido.Text + " " + "se insertó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarClientes();
                     Limpiar();

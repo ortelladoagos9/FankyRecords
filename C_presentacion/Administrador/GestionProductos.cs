@@ -83,14 +83,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea insertar un nuevo producto?", "Confirmar inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Intentar guardar la categoría en la base de datos
                     CN_Productos.GuardarProductos(producto);
 
-                    MessageBox.Show("El Producto: " + this.TBnombre_prod.Text + " " + this.TBdescripcion.Text + " " + "se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El producto: " + this.TBnombre_prod.Text + " " + this.TBdescripcion.Text + " " + "se insertó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar datos y limpiar formulario
                     CargarProductos();
                     Limpiar();
@@ -132,6 +132,12 @@ namespace FankyRecords.C_presentacion.Administrador
             if (productoExistente == null)
             {
                 MessageBox.Show("El producto seleccionado no se encuentra en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+                return;
+            }
+            if (rBinactivo.Checked == true)
+            {
+                MessageBox.Show("El producto ya se encuentra desactivado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
                 return;
             }
@@ -205,14 +211,14 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             try
             {
-                DialogResult ask = MessageBox.Show("¿Seguro que desea editar producto?", "Confirmar edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ask = MessageBox.Show("¿Seguro que desea editar producto?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ask == DialogResult.Yes)
                 {
                     // Llamar al método de negocio para guardar/editar el producto
                     CN_Productos.GuardarProductos(productos);
 
-                    MessageBox.Show("El producto: " + this.TBnombre_prod.Text + " " + "se edito correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El producto: " + this.TBnombre_prod.Text + " " + "se editó correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Recargar la lista de productos
                     CargarProductos();
                     Limpiar();
@@ -368,9 +374,7 @@ namespace FankyRecords.C_presentacion.Administrador
                         }
                     }
                 }
-            }
-
-            
+            }          
         }
 
         private void CargarCombo()
