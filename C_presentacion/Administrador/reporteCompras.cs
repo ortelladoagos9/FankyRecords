@@ -25,7 +25,7 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             List<Proveedores> lista = CN_Proveedor.ListarProveedores();
 
-            //CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
+            CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
             foreach (Proveedores item in lista)
             {
                 CBproveedor.Items.Add(new OpcionCombo() { Valor = item.ID_proveedor, Texto = item.RazonSocial });
@@ -33,7 +33,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
             CBproveedor.DisplayMember = "Texto";
             CBproveedor.ValueMember = "Valor";
-            CBproveedor.SelectedIndex = 0;
+            CBproveedor.SelectedIndex = 0; 
 
             DTinicio.MaxDate = DateTime.Now.Date;
             DTinicio.Value = DateTime.Now.Date;
@@ -42,6 +42,7 @@ namespace FankyRecords.C_presentacion.Administrador
             DTfin.MaxDate = DateTime.Now.Date;
             DTfin.Value = DateTime.Now.Date;
             DTfin.Format = DateTimePickerFormat.Short;
+
         }
 
         private void btnBuscarFecha_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     listadoReporteCompras.Rows.Add(new object[]
                     {
-                        rc.FechaCompra,
+                        rc.FechaCompra.ToString("dd/MM/yyyy"),
                         rc.NumeroCompra,
                         rc.NumeroFactura,
                         rc.TipoDoc,
@@ -104,9 +105,9 @@ namespace FankyRecords.C_presentacion.Administrador
                         rc.DescripcionProducto,
                         rc.CuitProveedor,
                         rc.RazonSocial,
-                        rc.PrecioCompra,
+                        rc.PrecioCompra.ToString("N2"),
                         rc.Cantidad,
-                        rc.MontoTotal,
+                        rc.MontoTotal.ToString("N2"),
                         rc.UsuarioRegistro,
                     });
                 }
