@@ -34,7 +34,7 @@ namespace FankyRecords.C_presentacion.Administrador
             CompararFechas();              
         }
 
-        private void CompararFechas()
+        public void CompararFechas()
 
         {   
             //Convertir un datetimepicker en string
@@ -102,7 +102,7 @@ namespace FankyRecords.C_presentacion.Administrador
             Grafico();
         }
 
-        private void Grafico()
+        public void Grafico()
         {
             if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
@@ -110,56 +110,13 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-                // Contar las apariciones de cada proveedor
-                Dictionary<string, int> proveedorContador = new Dictionary<string, int>();
-                foreach (DataGridViewRow row in listadoReporteCompras.Rows)
+
+
+
+                // Pasa el DataGridView a MDRepCompras
+                using (var modal = new MDRepCompras(listadoReporteCompras)) // Pasa el DataGridView al constructor
                 {
-                    if (row.IsNewRow) continue;
-                    string proveedor = row.Cells["RazonSocial"].Value.ToString();
-                    if (string.IsNullOrEmpty(proveedor)) continue;  // Ignora filas sin valor de proveedor
-
-                    if (proveedorContador.ContainsKey(proveedor))
-                    {
-                        proveedorContador[proveedor]++;
-                    }
-                    else
-                    {
-                        proveedorContador[proveedor] = 1;
-                    }
-                }
-
-
-                using (var modal = new MDRepCompras())
-                {
-                    modal.ShowDialog();
-
-                    // Crear gráfico de torta
-
-                    modal.GraficoCompras.Series.Clear();
-                    Series serie = new Series
-                    {
-                        Name = "Proveedores",
-                        IsValueShownAsLabel = true,
-                        ChartType = SeriesChartType.Pie
-                    };
-                    modal.GraficoCompras.Series.Add(serie);
-
-                    foreach (var proveedor in proveedorContador)
-                    {
-                        // Verificar que los datos se están agregando correctamente
-                        MessageBox.Show($"Proveedor: {proveedor.Key}, Cantidad: {proveedor.Value}");
-                        serie.Points.AddXY(proveedor.Key, proveedor.Value);
-                    }
-
-                    // Forzar redibujo del gráfico
-                    modal.GraficoCompras.Invalidate();
-                    modal.GraficoCompras.Update();
-                    modal.GraficoCompras.Refresh();
-
-
-                    // Verificar si el gráfico es visible
-                    modal.GraficoCompras.Visible = true;
-
+                    modal.ShowDialog(); // Mostrar el modal
                 }
             }
 
