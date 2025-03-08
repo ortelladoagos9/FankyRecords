@@ -21,7 +21,6 @@ namespace FankyRecords.C_presentacion.Administrador
             InitializeComponent();
             CN_Reporte = new NegocioReporte();
             CN_Proveedor = new NegocioProveedores();
-           // this.CBproveedor.SelectedIndex = 0; 
         }
 
         private void buscarFecha_Click(object sender, EventArgs e)
@@ -30,7 +29,6 @@ namespace FankyRecords.C_presentacion.Administrador
         }
 
         public void CompararFechas()
-
         {
             listadoReporteCompras.Rows.Clear();
 
@@ -77,21 +75,21 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoReporteCompras.Rows.Add(new object[]
                     {
                         rc.FechaCompra,
-                        rc.ID_Tipo_Doc,
-                        rc.MontoTotal,
-                        rc.CuitProveedor,
-                        rc.RazonSocial,
+                        rc.NumeroCompra,
+                        rc.NumeroFactura,
+                        rc.TipoDoc,
                         rc.CodigoProducto,
                         rc.NombreProducto,
+                        rc.DescripcionProducto,
+                        rc.CuitProveedor,
+                        rc.RazonSocial,
                         rc.PrecioCompra,
                         rc.Cantidad,
-                       
+                        rc.MontoTotal,
+                        rc.UsuarioRegistro,
                     });
                 }
-
-
             }
-           
         }
 
         public void btnGenerarGrafico_Click(object sender, EventArgs e)
@@ -107,27 +105,16 @@ namespace FankyRecords.C_presentacion.Administrador
             }
             else
             {
-
-
-
                 // Pasa el DataGridView a MDRepCompras
                 using (var modal = new MDRepCompras(listadoReporteCompras)) // Pasa el DataGridView al constructor
                 {
                     modal.ShowDialog(); // Mostrar el modal
                 }
             }
-
-        }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void reporteCompras_Load(object sender, EventArgs e)
         {
-            
             List<Proveedores> lista =   CN_Proveedor.ListarProveedores();
 
             CBproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
@@ -139,7 +126,6 @@ namespace FankyRecords.C_presentacion.Administrador
             CBproveedor.DisplayMember = "Texto";
             CBproveedor.ValueMember = "Valor";
             CBproveedor.SelectedIndex = 0;
-
         }
 
         private void descargarExcel_Click(object sender, EventArgs e)
@@ -160,7 +146,6 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     if (row.Visible)
                     {
-
                         DataRow dataRow = dt.NewRow();
                         for (int i = 0; i < listadoReporteCompras.Columns.Count; i++)
                         {
@@ -168,7 +153,6 @@ namespace FankyRecords.C_presentacion.Administrador
                         }
                         dt.Rows.Add(dataRow);
                     }
-
                 }
 
                 SaveFileDialog savefile = new SaveFileDialog();
@@ -177,50 +161,26 @@ namespace FankyRecords.C_presentacion.Administrador
 
                 if(savefile.ShowDialog() == DialogResult.OK)
                 {
-                        try
-                        {
-                            XLWorkbook wb = new XLWorkbook();
-                            var hoja = wb.Worksheets.Add(dt, "informe");
-                            hoja.ColumnsUsed().AdjustToContents();
-                            wb.SaveAs(savefile.FileName);
-                            MessageBox.Show("Reporte generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        }
-                        catch
-                        {
-
-                            MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        }
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(savefile.FileName);
+                        MessageBox.Show("Reporte generado correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar el reporte de compras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
             }
-        }
-
-        private void DTinicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CBproveedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             listadoReporteCompras.Rows.Clear();
-
+            CBproveedor.SelectedIndex = 0;
         }
     }
 }

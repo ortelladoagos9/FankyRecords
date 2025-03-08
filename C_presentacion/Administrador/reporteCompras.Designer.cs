@@ -38,14 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
             this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Tipo_Doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -61,6 +65,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 61);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -87,7 +91,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte Compras";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // CBproveedor
             // 
@@ -99,9 +102,8 @@
             this.CBproveedor.Location = new System.Drawing.Point(752, 55);
             this.CBproveedor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(123, 25);
+            this.CBproveedor.Size = new System.Drawing.Size(123, 29);
             this.CBproveedor.TabIndex = 5;
-            this.CBproveedor.SelectedIndexChanged += new System.EventHandler(this.CBproveedor_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -111,12 +113,13 @@
             this.label2.Location = new System.Drawing.Point(642, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Proveedor:";
             // 
             // listadoReporteCompras
             // 
+            this.listadoReporteCompras.AllowUserToAddRows = false;
             this.listadoReporteCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listadoReporteCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
@@ -133,14 +136,18 @@
             this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FechaCompra,
-            this.ID_Tipo_Doc,
-            this.MontoTotal,
-            this.CuitProveedor,
-            this.RazonSocial,
+            this.NumeroCompra,
+            this.NumeroFactura,
+            this.TipoDoc,
             this.CodigoProducto,
             this.NombreProducto,
+            this.DescripcionProducto,
+            this.CuitProveedor,
+            this.RazonSocial,
             this.PrecioCompra,
-            this.Cantidad});
+            this.Cantidad,
+            this.MontoTotal,
+            this.UsuarioRegistro});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,62 +175,98 @@
             // 
             // FechaCompra
             // 
-            this.FechaCompra.HeaderText = "FechaCompra";
+            this.FechaCompra.HeaderText = "Fecha Compra";
+            this.FechaCompra.MinimumWidth = 6;
             this.FechaCompra.Name = "FechaCompra";
             this.FechaCompra.ReadOnly = true;
             // 
-            // ID_Tipo_Doc
+            // NumeroCompra
             // 
-            this.ID_Tipo_Doc.HeaderText = "ID_Tipo_Doc";
-            this.ID_Tipo_Doc.Name = "ID_Tipo_Doc";
-            this.ID_Tipo_Doc.ReadOnly = true;
+            this.NumeroCompra.HeaderText = "Número Compra";
+            this.NumeroCompra.MinimumWidth = 6;
+            this.NumeroCompra.Name = "NumeroCompra";
+            this.NumeroCompra.ReadOnly = true;
             // 
-            // MontoTotal
+            // NumeroFactura
             // 
-            this.MontoTotal.HeaderText = "MontoTotal";
-            this.MontoTotal.Name = "MontoTotal";
-            this.MontoTotal.ReadOnly = true;
+            this.NumeroFactura.HeaderText = "Número Factura";
+            this.NumeroFactura.MinimumWidth = 6;
+            this.NumeroFactura.Name = "NumeroFactura";
+            this.NumeroFactura.ReadOnly = true;
             // 
-            // CuitProveedor
+            // TipoDoc
             // 
-            this.CuitProveedor.HeaderText = "CuitProveedor";
-            this.CuitProveedor.Name = "CuitProveedor";
-            this.CuitProveedor.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "RazonSocial";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
+            this.TipoDoc.HeaderText = "Tipo Documento";
+            this.TipoDoc.MinimumWidth = 6;
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
             // 
             // CodigoProducto
             // 
-            this.CodigoProducto.HeaderText = "CodigoProducto";
+            this.CodigoProducto.HeaderText = "Código Producto";
+            this.CodigoProducto.MinimumWidth = 6;
             this.CodigoProducto.Name = "CodigoProducto";
             this.CodigoProducto.ReadOnly = true;
             // 
             // NombreProducto
             // 
-            this.NombreProducto.HeaderText = "NombreProducto";
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.MinimumWidth = 6;
             this.NombreProducto.Name = "NombreProducto";
             this.NombreProducto.ReadOnly = true;
             // 
+            // DescripcionProducto
+            // 
+            this.DescripcionProducto.HeaderText = "Descripción Producto";
+            this.DescripcionProducto.MinimumWidth = 6;
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
+            // 
+            // CuitProveedor
+            // 
+            this.CuitProveedor.HeaderText = "Cuit Proveedor";
+            this.CuitProveedor.MinimumWidth = 6;
+            this.CuitProveedor.Name = "CuitProveedor";
+            this.CuitProveedor.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razón Social";
+            this.RazonSocial.MinimumWidth = 6;
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
             // PrecioCompra
             // 
-            this.PrecioCompra.HeaderText = "PrecioCompra";
+            this.PrecioCompra.HeaderText = "Precio Compra";
+            this.PrecioCompra.MinimumWidth = 6;
             this.PrecioCompra.Name = "PrecioCompra";
             this.PrecioCompra.ReadOnly = true;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
+            // 
+            // MontoTotal
+            // 
+            this.MontoTotal.HeaderText = "Monto Total";
+            this.MontoTotal.MinimumWidth = 6;
+            this.MontoTotal.Name = "MontoTotal";
+            this.MontoTotal.ReadOnly = true;
+            // 
+            // UsuarioRegistro
+            // 
+            this.UsuarioRegistro.HeaderText = "Usuario Registro";
+            this.UsuarioRegistro.MinimumWidth = 6;
+            this.UsuarioRegistro.Name = "UsuarioRegistro";
+            this.UsuarioRegistro.ReadOnly = true;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.btnLimpiar);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnGenerarGrafico);
             this.panel4.Controls.Add(this.descargarExcel);
@@ -236,24 +279,25 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLimpiar.BackColor = System.Drawing.Color.White;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.btnLimpiar.IconColor = System.Drawing.Color.DarkRed;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 25;
-            this.btnLimpiar.Location = new System.Drawing.Point(400, 0);
+            this.btnLimpiar.Location = new System.Drawing.Point(286, 0);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(61, 53);
+            this.btnLimpiar.Size = new System.Drawing.Size(73, 53);
             this.btnLimpiar.TabIndex = 26;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnLimpiar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(823, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -317,7 +361,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1182, 142);
             this.panel3.TabIndex = 9;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label5
             // 
@@ -344,10 +387,9 @@
             this.DTinicio.MaxDate = new System.DateTime(2024, 11, 20, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(116, 24);
+            this.DTinicio.Size = new System.Drawing.Size(116, 28);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
-            this.DTinicio.ValueChanged += new System.EventHandler(this.DTinicio_ValueChanged);
             // 
             // label6
             // 
@@ -373,7 +415,7 @@
             this.DTfin.MaxDate = new System.DateTime(2025, 3, 4, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(123, 24);
+            this.DTfin.Size = new System.Drawing.Size(123, 28);
             this.DTfin.TabIndex = 4;
             this.DTfin.Value = new System.DateTime(2024, 10, 4, 0, 0, 0, 0);
             // 
@@ -403,7 +445,7 @@
             // 
             // reporteCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1182, 654);
@@ -423,6 +465,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reporteComprasBindingSource)).EndInit();
@@ -448,15 +491,19 @@
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
         private System.Windows.Forms.BindingSource reporteComprasBindingSource;
+        public FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Tipo_Doc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CuitProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CuitProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        public FontAwesome.Sharp.IconButton btnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioRegistro;
     }
 }
