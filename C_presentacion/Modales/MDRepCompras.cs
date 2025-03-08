@@ -72,14 +72,26 @@ namespace FankyRecords.C_presentacion.Modales
             {
                 Name = "Proveedores",
                 IsValueShownAsLabel = true,
-                ChartType = SeriesChartType.Pie
+                ChartType = SeriesChartType.Pie,
+                 LabelFormat = "0", // Si solo quieres mostrar los números de las compras
             };
             GraficoCompras.Series.Add(serie);
 
             // Agregar puntos al gráfico
             foreach (var proveedor in proveedorContador)
             {
-                serie.Points.AddXY(proveedor.Key, proveedor.Value);
+                // Crear un DataPoint y agregarlo a la serie
+                DataPoint punto = new DataPoint();
+                punto.SetValueXY(proveedor.Key, proveedor.Value);  // Establecer el valor X (Proveedor) y Y (Cantidad)
+
+                // Establecer la etiqueta visible para cada punto en el gráfico
+                punto.Label = $"{proveedor.Key} ({proveedor.Value})"; // El nombre del proveedor y la cantidad
+
+                // Establecer el ToolTip para cada punto
+                punto.ToolTip = $"{proveedor.Key} ({proveedor.Value})"; // Muestra nombre del proveedor en el tooltip
+
+                // Agregar el punto a la serie
+                serie.Points.Add(punto);
             }
 
             // Forzar redibujo del gráfico
