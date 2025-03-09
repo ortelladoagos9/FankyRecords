@@ -252,6 +252,12 @@
     <Compile Include="C_presentacion\Modales\MDProveedor.Designer.cs">
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepVentas.Designer.cs">
+      <DependentUpon>MDRepVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Modales\MDVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDProveedor.resx">
       <DependentUpon>MDProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Modales\MDRepVentas.resx">
+      <DependentUpon>MDRepVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDVenta.resx">
       <DependentUpon>MDVenta.cs</DependentUpon>
