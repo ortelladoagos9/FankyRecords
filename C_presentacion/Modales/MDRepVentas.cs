@@ -89,7 +89,7 @@ namespace FankyRecords.C_presentacion.Modales
             GraficoVentas.Series.Clear();
             Series serie = new Series
             {
-                Name = "Proveedores",
+                Name = "Productos",
                 IsValueShownAsLabel = true,
                 ChartType = SeriesChartType.Pie,
                 LabelFormat = "0", // Si solo quieres mostrar los números de las compras
@@ -144,13 +144,7 @@ namespace FankyRecords.C_presentacion.Modales
             // Configurar los ejes con sus títulos
             ChartArea chartAreaConfig = GraficoVentas.ChartAreas["MainArea"];
 
-            // Establecer nombre de eje X
-            chartAreaConfig.AxisX.Title = "Proveedor";
-            chartAreaConfig.AxisX.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
-
-            // Establecer nombre de eje Y
-            chartAreaConfig.AxisY.Title = "Cantidad de Productos";
-            chartAreaConfig.AxisY.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
+          
 
             this.Size = new Size(800, 600); // Ajusta el tamaño del formulario para permitir mostrar el gráfico
             crearGrafico(); // Crear el gráfico al cargar el formulario
