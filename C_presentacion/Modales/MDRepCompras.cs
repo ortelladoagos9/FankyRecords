@@ -128,7 +128,6 @@ namespace FankyRecords.C_presentacion.Modales
 
         public void MDRepCompras_Load(object sender, EventArgs e)
         {
-
             // Agregar título al gráfico
             Title title = new Title("Gráfico de Compras por Proveedor");
             GraficoCompras.Titles.Add(title);
