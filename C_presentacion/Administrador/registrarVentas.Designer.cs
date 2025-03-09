@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listadoVentaProducto = new System.Windows.Forms.DataGridView();
+            this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contenedorRegistrarVenta = new System.Windows.Forms.Panel();
             this.LRegistrarVenta = new System.Windows.Forms.Label();
             this.contenedorBotones = new System.Windows.Forms.Panel();
@@ -70,16 +80,7 @@
             this.TBNroDocumento = new System.Windows.Forms.TextBox();
             this.LNombreCompleto = new System.Windows.Forms.Label();
             this.LNroDocumento = new System.Windows.Forms.Label();
-            this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ID_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descargarPDF = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.listadoVentaProducto)).BeginInit();
             this.contenedorRegistrarVenta.SuspendLayout();
             this.contenedorBotones.SuspendLayout();
@@ -98,14 +99,14 @@
             this.listadoVentaProducto.BackgroundColor = System.Drawing.Color.White;
             this.listadoVentaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listadoVentaProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoVentaProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.listadoVentaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoVentaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Producto,
@@ -118,14 +119,14 @@
             this.subtotal,
             this.btnEliminar,
             this.ID_venta});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoVentaProducto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoVentaProducto.DefaultCellStyle = dataGridViewCellStyle10;
             this.listadoVentaProducto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listadoVentaProducto.Location = new System.Drawing.Point(0, 508);
             this.listadoVentaProducto.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -137,6 +138,78 @@
             this.listadoVentaProducto.TabIndex = 12;
             this.listadoVentaProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoVentaProducto_CellContentClick);
             this.listadoVentaProducto.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.listadoVentaProducto_CellPainting);
+            // 
+            // ID_Producto
+            // 
+            this.ID_Producto.HeaderText = "ID_Producto";
+            this.ID_Producto.MinimumWidth = 6;
+            this.ID_Producto.Name = "ID_Producto";
+            this.ID_Producto.ReadOnly = true;
+            this.ID_Producto.Visible = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // nombreProd
+            // 
+            this.nombreProd.HeaderText = "Nombre";
+            this.nombreProd.MinimumWidth = 6;
+            this.nombreProd.Name = "nombreProd";
+            this.nombreProd.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // precioVenta
+            // 
+            this.precioVenta.HeaderText = "Precio";
+            this.precioVenta.MinimumWidth = 6;
+            this.precioVenta.Name = "precioVenta";
+            this.precioVenta.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.MinimumWidth = 6;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "";
+            this.btnEliminar.MinimumWidth = 6;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            // 
+            // ID_venta
+            // 
+            this.ID_venta.HeaderText = "ID_venta";
+            this.ID_venta.MinimumWidth = 6;
+            this.ID_venta.Name = "ID_venta";
+            this.ID_venta.ReadOnly = true;
+            this.ID_venta.Visible = false;
             // 
             // contenedorRegistrarVenta
             // 
@@ -166,6 +239,7 @@
             // contenedorBotones
             // 
             this.contenedorBotones.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.contenedorBotones.Controls.Add(this.descargarPDF);
             this.contenedorBotones.Controls.Add(this.btnCrearVenta);
             this.contenedorBotones.Controls.Add(this.TBCambio);
             this.contenedorBotones.Controls.Add(this.TBRecibe);
@@ -191,7 +265,7 @@
             this.btnCrearVenta.IconColor = System.Drawing.Color.DarkRed;
             this.btnCrearVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCrearVenta.IconSize = 25;
-            this.btnCrearVenta.Location = new System.Drawing.Point(34, 406);
+            this.btnCrearVenta.Location = new System.Drawing.Point(34, 404);
             this.btnCrearVenta.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCrearVenta.Name = "btnCrearVenta";
             this.btnCrearVenta.Size = new System.Drawing.Size(178, 74);
@@ -669,77 +743,26 @@
             this.LNroDocumento.TabIndex = 2;
             this.LNroDocumento.Text = "Número Documento:";
             // 
-            // ID_Producto
+            // descargarPDF
             // 
-            this.ID_Producto.HeaderText = "ID_Producto";
-            this.ID_Producto.MinimumWidth = 6;
-            this.ID_Producto.Name = "ID_Producto";
-            this.ID_Producto.ReadOnly = true;
-            this.ID_Producto.Visible = false;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // nombreProd
-            // 
-            this.nombreProd.HeaderText = "Nombre";
-            this.nombreProd.MinimumWidth = 6;
-            this.nombreProd.Name = "nombreProd";
-            this.nombreProd.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.HeaderText = "Precio";
-            this.precioVenta.MinimumWidth = 6;
-            this.precioVenta.Name = "precioVenta";
-            this.precioVenta.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.MinimumWidth = 6;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "";
-            this.btnEliminar.MinimumWidth = 6;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            // 
-            // ID_venta
-            // 
-            this.ID_venta.HeaderText = "ID_venta";
-            this.ID_venta.MinimumWidth = 6;
-            this.ID_venta.Name = "ID_venta";
-            this.ID_venta.ReadOnly = true;
-            this.ID_venta.Visible = false;
+            this.descargarPDF.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.descargarPDF.BackColor = System.Drawing.Color.White;
+            this.descargarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.descargarPDF.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descargarPDF.ForeColor = System.Drawing.Color.DarkRed;
+            this.descargarPDF.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.descargarPDF.IconColor = System.Drawing.Color.DarkRed;
+            this.descargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.descargarPDF.IconSize = 25;
+            this.descargarPDF.Location = new System.Drawing.Point(34, 548);
+            this.descargarPDF.Margin = new System.Windows.Forms.Padding(2);
+            this.descargarPDF.Name = "descargarPDF";
+            this.descargarPDF.Size = new System.Drawing.Size(178, 83);
+            this.descargarPDF.TabIndex = 34;
+            this.descargarPDF.Text = "Descargar Factura";
+            this.descargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.descargarPDF.UseVisualStyleBackColor = false;
+            this.descargarPDF.Click += new System.EventHandler(this.descargarPDF_Click);
             // 
             // registrarVentas
             // 
@@ -825,5 +848,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_venta;
+        private FontAwesome.Sharp.IconButton descargarPDF;
     }
 }

@@ -56,10 +56,6 @@ namespace FankyRecords.C_datos
                 {
                     throw new Exception("El stock minimo debe ser mayor a 0", ex);
                 }
-                else if (ex.Message.Contains("CK_Productos_stock_mayor_stock_min"))
-                {
-                    throw new Exception("El stock minimo debe ser menor al stock", ex);
-                }
                 else if (ex.Message.Contains("CK_Productos_precioVenta"))
                 {
                     throw new Exception("El precio de venta debe ser mayor a 0", ex);

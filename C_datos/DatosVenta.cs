@@ -49,6 +49,85 @@ namespace FankyRecords.C_datos
             return idcorrelativo;
         }
 
+        public (string Nombre, string Descripcion) ObtenerDatosProducto(int idProducto)
+        {
+            string nombre = "Desconocido";
+            string descripcion = "Sin descripción";
+
+            try
+            {
+                conexion.Open();
+                string query = "SELECT Nombre, Descripcion FROM Productos WHERE ID_producto = @id";
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@id", idProducto);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            nombre = reader["Nombre"].ToString();
+                            descripcion = reader["Descripcion"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener datos del producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return (nombre, descripcion);
+        }
+
+        public Clientes ObtenerDatosCliente(int idCliente)
+        {
+            Clientes cliente = null;
+
+            try
+            {
+                conexion.Open();  
+	                          
+                string query = "SELECT " +
+                    "CONCAT_WS(' ', Nombre, Apellido) as 'NombreCompleto', " +
+                    "Documento, Domicilio, Telefono, Correo FROM Clientes WHERE ID_cliente = @id";
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@id", idCliente);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            cliente = new Clientes()
+                            {
+                                ID_cliente = idCliente,
+                                NombreCompleto = reader["NombreCompleto"].ToString(),
+                                Documento = reader["Documento"].ToString(),
+                                Domicilio = reader["Domicilio"].ToString(),
+                                Telefono = reader["Telefono"].ToString(),
+                                Correo = reader["Correo"].ToString()
+                            };
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener datos del cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return cliente;
+        }
+
+
         public bool RegistrarVentas(Venta venta, DataTable detalleVenta, out string Mensaje)
         {
             bool respuesta = false;

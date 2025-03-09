@@ -130,17 +130,17 @@ namespace FankyRecords.C_presentacion.Administrador
             AbrirFormulario((IconMenuItem)sender, new backup());
         }
 
-        private void MenuReportesAdministrador_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormMenuAdmin_Load(object sender, EventArgs e)
         {
             if (SesionUsuario.UsuarioActual != null)
             {
                 LUsuarioActual.Text = SesionUsuario.UsuarioActual.NombreCompleto;
             }
+        }
+
+        private void SubmenuReporteCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new reporteCategorias());
         }
     }
 }

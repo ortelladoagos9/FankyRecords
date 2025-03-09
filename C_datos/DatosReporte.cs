@@ -108,10 +108,51 @@ namespace FankyRecords.C_datos
             return lista;
         }
 
+        public List<ReporteCategorias> ReporteCategorias(DateTime fechaInicio, DateTime fechaFin, int id_categoria)
+        {
+            List<ReporteCategorias> listaReporteCategorias = new List<ReporteCategorias>();
 
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteCategorias", conexion);
+                    cmd.Parameters.AddWithValue("fechaInicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("fechaFin", fechaFin);
+                    cmd.Parameters.AddWithValue("idCategoria", id_categoria);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    conexion.Open();
 
-
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            listaReporteCategorias.Add(new ReporteCategorias()
+                            {
+                                FechaVenta = DateTime.Parse(dr["FechaVenta"].ToString()),
+                                NumeroFactura = int.Parse(dr["NumeroFactura"].ToString()),
+                                TipoDoc = dr["TipoDoc"].ToString(),
+                                UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
+                                Categoria = dr["Categoria"].ToString(),
+                                CodigoProducto = int.Parse(dr["CodigoProducto"].ToString()),
+                                NombreProducto = dr["NombreProducto"].ToString(),
+                                DescripcionProducto = dr["DescripcionProducto"].ToString(),
+                                PrecioVenta = decimal.Parse(dr["PrecioVenta"].ToString()),
+                                Cantidad = int.Parse(dr["Cantidad"].ToString()),
+                                SubTotal = decimal.Parse(dr["SubTotal"].ToString())
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Ocurrió un error inesperado: " + ex.Message, ex);
+                }
+            }
+            return listaReporteCategorias;
+        }
 
     }
 }

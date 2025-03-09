@@ -11,6 +11,10 @@ using System.Windows.Forms;
 using FankyRecords.C_presentacion.Modales;
 using FankyRecords.C_entidad;
 using FankyRecords.C_negocio;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
+using Font = iTextSharp.text.Font;
 
 namespace FankyRecords.C_presentacion.Administrador
 {
@@ -21,6 +25,8 @@ namespace FankyRecords.C_presentacion.Administrador
         private readonly NegocioVentas CN_Ventas;
         private readonly NegocioTipoDOc CN_TipoDoc;
         private Usuarios usuariosActual;
+        private Venta venta;
+        private DataTable detalleVenta;
 
         public registrarVentas(Usuarios usuarioObj = null)
         {
@@ -223,7 +229,7 @@ namespace FankyRecords.C_presentacion.Administrador
 
                 if (result == DialogResult.Yes)
                 {
-                    DataTable detalleVenta = new DataTable();
+                    detalleVenta = new DataTable();
                     detalleVenta.Columns.Add("PrecioVenta", typeof(decimal));
                     detalleVenta.Columns.Add("Cantidad", typeof(int));
                     detalleVenta.Columns.Add("SubTotal", typeof(decimal));
@@ -263,12 +269,12 @@ namespace FankyRecords.C_presentacion.Administrador
                     OpcionCombo opcionSeleccionada = (OpcionCombo)cbTipoDoc.SelectedItem;
                     int idTipoDoc = Convert.ToInt32(opcionSeleccionada.Valor); // obtengo el ID_Tipo_Doc.
 
-                    Venta venta = new Venta()
+                    venta = new Venta()
                     {
                         NumeroFactura = Convert.ToInt32(numeroFactura),
                         MontoTotal = Convert.ToDecimal(TBTotalAPagar.Text),
                         FechaVenta = DTFechaVenta.Value.Date.Add(DateTime.Now.TimeOfDay),
-                        Obj_cliente = new Clientes() { ID_cliente = Convert.ToInt32(TBIdCliente.Text) },
+                        Obj_cliente = CN_Ventas.ObtenerDatosCliente(Convert.ToInt32(TBIdCliente.Text)), 
                         Obj_usuarios = new Usuarios() { ID_usuarios = SesionUsuario.UsuarioActual.ID_usuarios },
                         Obj_Tipo_Doc = new TipoDoc() { ID_Tipo_Doc = idTipoDoc }
                     };
@@ -419,7 +425,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.basura, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.basura, new System.Drawing.Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }
@@ -439,6 +445,99 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     MessageBox.Show("Debe agregar un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void descargarPDF_Click(object sender, EventArgs e)
+        {
+            if (venta != null && detalleVenta != null)
+            {
+                GenerarFacturaPDF(venta, detalleVenta);
+            }
+            else
+            {
+                MessageBox.Show("No hay una venta registrada para generar el PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void GenerarFacturaPDF(Venta venta, DataTable detalleVenta)
+        {
+            try
+            {
+                // Ruta donde se guardará el PDF (Escritorio)
+                string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $@"\Factura_{venta.NumeroFactura}.pdf";
+
+                // Crear el documento
+                Document documento = new Document(PageSize.A4);
+                PdfWriter.GetInstance(documento, new FileStream(ruta, FileMode.Create));
+                documento.Open();
+
+                // Título
+                Font tituloFuente = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
+                Paragraph titulo = new Paragraph("FACTURA", tituloFuente);
+                titulo.Alignment = Element.ALIGN_CENTER;
+                documento.Add(titulo);
+                documento.Add(new Paragraph("\n"));
+
+                // Información de la venta
+                documento.Add(new Paragraph("Datos de la Venta:", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12)));
+                documento.Add(new Paragraph($"Número de Factura: {venta.NumeroFactura}"));
+                documento.Add(new Paragraph($"Fecha: {venta.FechaVenta}"));
+                documento.Add(new Paragraph($"Monto Total: ${venta.MontoTotal:N2}"));
+                documento.Add(new Paragraph("\n"));
+
+                // Información del cliente
+                documento.Add(new Paragraph("Datos del Cliente:", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12)));
+                documento.Add(new Paragraph($"Nombre y Apellido: {venta.Obj_cliente?.NombreCompleto ?? "No disponible"}"));
+                documento.Add(new Paragraph($"DNI: {venta.Obj_cliente?.Documento ?? "No disponible"}"));
+                documento.Add(new Paragraph($"Domicilio: {venta.Obj_cliente?.Domicilio ?? "No disponible"}"));
+                documento.Add(new Paragraph($"Teléfono: {venta.Obj_cliente?.Telefono ?? "No disponible"}"));
+                documento.Add(new Paragraph($"Correo: {venta.Obj_cliente?.Correo ?? "No disponible"}"));
+                documento.Add(new Paragraph("\n"));
+
+                // Tabla de productos
+                PdfPTable tabla = new PdfPTable(4);
+                tabla.WidthPercentage = 100;
+                tabla.SetWidths(new float[] { 30f, 40f, 15f, 15f });
+
+                // Encabezados de la tabla
+                tabla.AddCell("Nombre Producto");
+                tabla.AddCell("Descripción");
+                tabla.AddCell("Cantidad");
+                tabla.AddCell("Subtotal");
+
+                // Agregar datos de la tabla
+                foreach (DataRow row in detalleVenta.Rows)
+                {
+                    int idProducto = Convert.ToInt32(row["ID_producto"]);
+                    var (nombreProducto, descripcionProducto) = CN_Ventas.ObtenerDatosProducto(idProducto);
+
+                    // Formatear el subtotal con separadores de miles y decimales
+                    string subtotalFormateado = Convert.ToDecimal(row["SubTotal"]).ToString("N2", new CultureInfo("es-ES"));
+
+                    tabla.AddCell(nombreProducto);
+                    tabla.AddCell(descripcionProducto);
+                    tabla.AddCell(row["Cantidad"].ToString());
+                    tabla.AddCell(subtotalFormateado); // Aquí se usa el formato correcto
+                }
+
+                documento.Add(tabla);
+                documento.Add(new Paragraph("\n"));
+
+                // Mensaje de agradecimiento
+                documento.Add(new Paragraph("¡Gracias por su compra!", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
+
+                // Cerrar el documento
+                documento.Close();
+
+                MessageBox.Show($"Factura generada correctamente.\nGuardada en: {ruta}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir el PDF automáticamente
+                System.Diagnostics.Process.Start(ruta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

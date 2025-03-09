@@ -104,5 +104,25 @@ namespace FankyRecords.C_presentacion.Administrador
         {
 
         }
+
+        private void DTinicio_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LFechaFin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTfin_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LFechaInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

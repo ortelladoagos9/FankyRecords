@@ -7,6 +7,9 @@ using FankyRecords.C_datos;
 using FankyRecords.C_entidad;
 using System.Data.SqlClient;
 using System.Data;
+using FankyRecords.C_presentacion.Administrador;
+using System.Windows.Forms;
+using FankyRecords.C_presentacion.Modales;
 
 namespace FankyRecords.C_negocio
 {
@@ -22,6 +25,16 @@ namespace FankyRecords.C_negocio
         public int ObtenerCorrelativo()
         {
             return CD_Ventas.ObtenerCorrelativo();
+        }
+
+        public Clientes ObtenerDatosCliente(int idCliente)
+        {
+            return CD_Ventas.ObtenerDatosCliente(idCliente);
+        }
+
+        public (string Nombre, string Descripcion) ObtenerDatosProducto(int idProducto)
+        {
+            return CD_Ventas.ObtenerDatosProducto(idProducto);
         }
 
         public bool RegistrarVenta(Venta venta, DataTable detalleVenta, out string Mensaje)

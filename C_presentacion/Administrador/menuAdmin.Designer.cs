@@ -44,6 +44,7 @@
             this.MenuReportesAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.SubmenuReporteVentas = new FontAwesome.Sharp.IconMenuItem();
             this.SubmenuReporteCompras = new FontAwesome.Sharp.IconMenuItem();
+            this.SubmenuReporteCategorias = new FontAwesome.Sharp.IconMenuItem();
             this.MenuBackupAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTituloAdministrador = new System.Windows.Forms.MenuStrip();
@@ -267,7 +268,8 @@
             this.MenuReportesAdministrador.AutoSize = false;
             this.MenuReportesAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubmenuReporteVentas,
-            this.SubmenuReporteCompras});
+            this.SubmenuReporteCompras,
+            this.SubmenuReporteCategorias});
             this.MenuReportesAdministrador.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuReportesAdministrador.ForeColor = System.Drawing.Color.DarkRed;
             this.MenuReportesAdministrador.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
@@ -279,7 +281,6 @@
             this.MenuReportesAdministrador.Size = new System.Drawing.Size(150, 70);
             this.MenuReportesAdministrador.Text = "Reportes";
             this.MenuReportesAdministrador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuReportesAdministrador.Click += new System.EventHandler(this.MenuReportesAdministrador_Click);
             // 
             // SubmenuReporteVentas
             // 
@@ -289,10 +290,10 @@
             this.SubmenuReporteVentas.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.SubmenuReporteVentas.IconColor = System.Drawing.Color.DarkRed;
             this.SubmenuReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubmenuReporteVentas.IconSize = 25;
+            this.SubmenuReporteVentas.IconSize = 30;
             this.SubmenuReporteVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuReporteVentas.Name = "SubmenuReporteVentas";
-            this.SubmenuReporteVentas.Size = new System.Drawing.Size(315, 40);
+            this.SubmenuReporteVentas.Size = new System.Drawing.Size(343, 40);
             this.SubmenuReporteVentas.Text = "Reporte Ventas";
             this.SubmenuReporteVentas.Click += new System.EventHandler(this.SubmenuReporteVentas_Click);
             // 
@@ -304,12 +305,27 @@
             this.SubmenuReporteCompras.IconChar = FontAwesome.Sharp.IconChar.ChartGantt;
             this.SubmenuReporteCompras.IconColor = System.Drawing.Color.DarkRed;
             this.SubmenuReporteCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SubmenuReporteCompras.IconSize = 25;
+            this.SubmenuReporteCompras.IconSize = 30;
             this.SubmenuReporteCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SubmenuReporteCompras.Name = "SubmenuReporteCompras";
-            this.SubmenuReporteCompras.Size = new System.Drawing.Size(315, 40);
+            this.SubmenuReporteCompras.Size = new System.Drawing.Size(343, 40);
             this.SubmenuReporteCompras.Text = "Reporte Compras";
             this.SubmenuReporteCompras.Click += new System.EventHandler(this.SubmenuReporteCompras_Click);
+            // 
+            // SubmenuReporteCategorias
+            // 
+            this.SubmenuReporteCategorias.AutoSize = false;
+            this.SubmenuReporteCategorias.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.SubmenuReporteCategorias.ForeColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteCategorias.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.SubmenuReporteCategorias.IconColor = System.Drawing.Color.DarkRed;
+            this.SubmenuReporteCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SubmenuReporteCategorias.IconSize = 30;
+            this.SubmenuReporteCategorias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.SubmenuReporteCategorias.Name = "SubmenuReporteCategorias";
+            this.SubmenuReporteCategorias.Size = new System.Drawing.Size(343, 40);
+            this.SubmenuReporteCategorias.Text = "Reporte Categorías";
+            this.SubmenuReporteCategorias.Click += new System.EventHandler(this.SubmenuReporteCategorias_Click);
             // 
             // MenuBackupAdministrador
             // 
@@ -524,5 +540,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuCategoriaAdministrativo;
         private System.Windows.Forms.Label LUsuarioActual;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem SubmenuReporteCategorias;
     }
 }

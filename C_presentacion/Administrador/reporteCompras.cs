@@ -63,7 +63,11 @@ namespace FankyRecords.C_presentacion.Administrador
             DateTime fecha2 = DateTime.Parse(fechaComoString2);
             int ID_proveedor = Convert.ToInt32(((OpcionCombo)CBproveedor.SelectedItem).Valor.ToString());
 
-
+            if (fecha1 == fecha2)
+            {
+                MessageBox.Show("Las fechas deben ser diferentes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Comparar las fechas
             int resultado = DateTime.Compare(fecha1, fecha2);
 
@@ -71,23 +75,24 @@ namespace FankyRecords.C_presentacion.Administrador
             if (resultado > 0)
             {
                 // fecha1 es posterior a fecha2
-                MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!");
+                MessageBox.Show("La fecha de inicio es posterior a la fecha de fin!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else 
             {
                 List<ReporteCompras> lista = new List<ReporteCompras>();
 
-                lista = CN_Reporte.Compra(
+                lista = CN_Reporte.Compra
+                (
                     DTinicio.Value,
                     DTfin.Value,
                     ID_proveedor
-                    );
-
+                );
+          
                 // Verificar si la lista tiene datos
                 if (lista == null || lista.Count == 0)
                 {
-                    MessageBox.Show("No se encontraron datos para el rango de fechas y proveedor seleccionados.");
+                    MessageBox.Show("No se encontraron datos para el rango de fechas y proveedor seleccionados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 listadoReporteCompras.Rows.Clear();
@@ -188,6 +193,11 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             listadoReporteCompras.Rows.Clear();
             CBproveedor.SelectedIndex = 0;
+        }
+
+        private void CBproveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,9 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
     </Reference>
@@ -53,6 +56,9 @@
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
@@ -114,6 +120,7 @@
     <Compile Include="C_entidad\Proveedores.cs" />
     <Compile Include="C_entidad\Clientes.cs" />
     <Compile Include="C_entidad\Productos.cs" />
+    <Compile Include="C_entidad\ReporteCategorias.cs" />
     <Compile Include="C_entidad\ReporteCompras.cs" />
     <Compile Include="C_entidad\ReporteVentas.cs" />
     <Compile Include="C_entidad\Rol.cs" />
@@ -192,6 +199,12 @@
     <Compile Include="C_presentacion\Administrador\registrarVentas.Designer.cs">
       <DependentUpon>registrarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Administrador\reporteCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Administrador\reporteCategorias.Designer.cs">
+      <DependentUpon>reporteCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Administrador\reporteCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +265,12 @@
     <Compile Include="C_presentacion\Modales\MDProveedor.Designer.cs">
       <DependentUpon>MDProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_presentacion\Modales\MDRepCategorias.Designer.cs">
+      <DependentUpon>MDRepCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_presentacion\Modales\MDVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +330,9 @@
     <EmbeddedResource Include="C_presentacion\Administrador\registrarCompra.resx">
       <DependentUpon>registrarCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Administrador\reporteCategorias.resx">
+      <DependentUpon>reporteCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Administrador\reporteCompras.resx">
       <DependentUpon>reporteCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDProveedor.resx">
       <DependentUpon>MDProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_presentacion\Modales\MDRepCategorias.resx">
+      <DependentUpon>MDRepCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_presentacion\Modales\MDVenta.resx">
       <DependentUpon>MDVenta.cs</DependentUpon>

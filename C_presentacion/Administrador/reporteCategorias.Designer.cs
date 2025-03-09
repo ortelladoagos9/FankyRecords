@@ -1,6 +1,6 @@
 ﻿namespace FankyRecords.C_presentacion.Administrador
 {
-    partial class reporteCompras
+    partial class reporteCategorias
     {
         /// <summary>
         /// Required designer variable.
@@ -28,49 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.listadoReporteCategoria = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.LProveedor = new System.Windows.Forms.Label();
-            this.CBproveedor = new System.Windows.Forms.ComboBox();
+            this.LCategorias = new System.Windows.Forms.Label();
+            this.CBcategoria = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.LFechaInicio = new System.Windows.Forms.Label();
             this.DTinicio = new System.Windows.Forms.DateTimePicker();
             this.LFechaFin = new System.Windows.Forms.Label();
             this.DTfin = new System.Windows.Forms.DateTimePicker();
-            this.listadoReporteCompras = new System.Windows.Forms.DataGridView();
-            this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FechaVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDTipoDococ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CuitProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnGenerarGrafico = new FontAwesome.Sharp.IconButton();
             this.descargarExcel = new FontAwesome.Sharp.IconButton();
             this.btnBuscarFecha = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCategoria)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // listadoReporteCategoria
+            // 
+            this.listadoReporteCategoria.AllowUserToAddRows = false;
+            this.listadoReporteCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listadoReporteCategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.listadoReporteCategoria.BackgroundColor = System.Drawing.Color.White;
+            this.listadoReporteCategoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listadoReporteCategoria.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listadoReporteCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.listadoReporteCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoReporteCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FechaVenta,
+            this.NumeroFactura,
+            this.TipoDTipoDococ,
+            this.Categoria,
+            this.CodigoProducto,
+            this.NombreProducto,
+            this.DescripcionProducto,
+            this.PrecioVenta,
+            this.Cantidad,
+            this.SubTotal,
+            this.UsuarioRegistro});
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listadoReporteCategoria.DefaultCellStyle = dataGridViewCellStyle16;
+            this.listadoReporteCategoria.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listadoReporteCategoria.Location = new System.Drawing.Point(0, 299);
+            this.listadoReporteCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.listadoReporteCategoria.Name = "listadoReporteCategoria";
+            this.listadoReporteCategoria.ReadOnly = true;
+            this.listadoReporteCategoria.RowHeadersWidth = 51;
+            this.listadoReporteCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listadoReporteCategoria.Size = new System.Drawing.Size(1418, 440);
+            this.listadoReporteCategoria.TabIndex = 10;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.panel3.Controls.Add(this.LProveedor);
-            this.panel3.Controls.Add(this.CBproveedor);
+            this.panel3.Controls.Add(this.LCategorias);
+            this.panel3.Controls.Add(this.CBcategoria);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.LFechaInicio);
             this.panel3.Controls.Add(this.DTinicio);
@@ -82,31 +127,30 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1418, 232);
-            this.panel3.TabIndex = 8;
+            this.panel3.TabIndex = 11;
             // 
-            // LProveedor
+            // LCategorias
             // 
-            this.LProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LProveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LProveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.LProveedor.Location = new System.Drawing.Point(857, 73);
-            this.LProveedor.Name = "LProveedor";
-            this.LProveedor.Size = new System.Drawing.Size(154, 35);
-            this.LProveedor.TabIndex = 9;
-            this.LProveedor.Text = "Proveedor:";
+            this.LCategorias.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LCategorias.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCategorias.ForeColor = System.Drawing.Color.DarkRed;
+            this.LCategorias.Location = new System.Drawing.Point(864, 73);
+            this.LCategorias.Name = "LCategorias";
+            this.LCategorias.Size = new System.Drawing.Size(147, 35);
+            this.LCategorias.TabIndex = 9;
+            this.LCategorias.Text = "Categoría:";
             // 
-            // CBproveedor
+            // CBcategoria
             // 
-            this.CBproveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CBproveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBproveedor.FormattingEnabled = true;
-            this.CBproveedor.Location = new System.Drawing.Point(1013, 73);
-            this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(232, 40);
-            this.CBproveedor.TabIndex = 8;
-            this.CBproveedor.SelectedIndexChanged += new System.EventHandler(this.CBproveedor_SelectedIndexChanged);
+            this.CBcategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CBcategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBcategoria.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBcategoria.FormattingEnabled = true;
+            this.CBcategoria.Location = new System.Drawing.Point(1013, 73);
+            this.CBcategoria.Name = "CBcategoria";
+            this.CBcategoria.Size = new System.Drawing.Size(232, 40);
+            this.CBcategoria.TabIndex = 8;
             // 
             // panel4
             // 
@@ -190,68 +234,36 @@
             this.DTfin.TabIndex = 4;
             this.DTfin.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             // 
-            // listadoReporteCompras
+            // panel1
             // 
-            this.listadoReporteCompras.AllowUserToAddRows = false;
-            this.listadoReporteCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.listadoReporteCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.listadoReporteCompras.BackgroundColor = System.Drawing.Color.White;
-            this.listadoReporteCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listadoReporteCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listadoReporteCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.listadoReporteCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadoReporteCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FechaCompra,
-            this.NumeroCompra,
-            this.NumeroFactura,
-            this.TipoDoc,
-            this.CodigoProducto,
-            this.NombreProducto,
-            this.DescripcionProducto,
-            this.CuitProveedor,
-            this.RazonSocial,
-            this.PrecioCompra,
-            this.Cantidad,
-            this.MontoTotal,
-            this.UsuarioRegistro});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listadoReporteCompras.DefaultCellStyle = dataGridViewCellStyle10;
-            this.listadoReporteCompras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listadoReporteCompras.Location = new System.Drawing.Point(0, 299);
-            this.listadoReporteCompras.Margin = new System.Windows.Forms.Padding(2);
-            this.listadoReporteCompras.Name = "listadoReporteCompras";
-            this.listadoReporteCompras.ReadOnly = true;
-            this.listadoReporteCompras.RowHeadersWidth = 51;
-            this.listadoReporteCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listadoReporteCompras.Size = new System.Drawing.Size(1418, 440);
-            this.listadoReporteCompras.TabIndex = 9;
+            this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1418, 67);
+            this.panel1.TabIndex = 12;
             // 
-            // FechaCompra
+            // label1
             // 
-            this.FechaCompra.HeaderText = "Fecha Compra";
-            this.FechaCompra.MinimumWidth = 6;
-            this.FechaCompra.Name = "FechaCompra";
-            this.FechaCompra.ReadOnly = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1418, 67);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reporte Categorías";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // NumeroCompra
+            // FechaVenta
             // 
-            this.NumeroCompra.HeaderText = "Número Compra";
-            this.NumeroCompra.MinimumWidth = 6;
-            this.NumeroCompra.Name = "NumeroCompra";
-            this.NumeroCompra.ReadOnly = true;
+            this.FechaVenta.HeaderText = "Fecha Venta";
+            this.FechaVenta.MinimumWidth = 6;
+            this.FechaVenta.Name = "FechaVenta";
+            this.FechaVenta.ReadOnly = true;
             // 
             // NumeroFactura
             // 
@@ -260,12 +272,19 @@
             this.NumeroFactura.Name = "NumeroFactura";
             this.NumeroFactura.ReadOnly = true;
             // 
-            // TipoDoc
+            // TipoDTipoDococ
             // 
-            this.TipoDoc.HeaderText = "Tipo Documento";
-            this.TipoDoc.MinimumWidth = 6;
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
+            this.TipoDTipoDococ.HeaderText = "Tipo Documento";
+            this.TipoDTipoDococ.MinimumWidth = 6;
+            this.TipoDTipoDococ.Name = "TipoDTipoDococ";
+            this.TipoDTipoDococ.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
             // 
             // CodigoProducto
             // 
@@ -288,26 +307,12 @@
             this.DescripcionProducto.Name = "DescripcionProducto";
             this.DescripcionProducto.ReadOnly = true;
             // 
-            // CuitProveedor
+            // PrecioVenta
             // 
-            this.CuitProveedor.HeaderText = "Cuit Proveedor";
-            this.CuitProveedor.MinimumWidth = 6;
-            this.CuitProveedor.Name = "CuitProveedor";
-            this.CuitProveedor.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razón Social";
-            this.RazonSocial.MinimumWidth = 6;
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            // 
-            // PrecioCompra
-            // 
-            this.PrecioCompra.HeaderText = "Precio Compra";
-            this.PrecioCompra.MinimumWidth = 6;
-            this.PrecioCompra.Name = "PrecioCompra";
-            this.PrecioCompra.ReadOnly = true;
+            this.PrecioVenta.HeaderText = "Precio Venta";
+            this.PrecioVenta.MinimumWidth = 6;
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
             // 
             // Cantidad
             // 
@@ -316,12 +321,12 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
-            // MontoTotal
+            // SubTotal
             // 
-            this.MontoTotal.HeaderText = "Monto Total";
-            this.MontoTotal.MinimumWidth = 6;
-            this.MontoTotal.Name = "MontoTotal";
-            this.MontoTotal.ReadOnly = true;
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
             // 
             // UsuarioRegistro
             // 
@@ -329,30 +334,6 @@
             this.UsuarioRegistro.MinimumWidth = 6;
             this.UsuarioRegistro.Name = "UsuarioRegistro";
             this.UsuarioRegistro.ReadOnly = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1418, 67);
-            this.panel1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1418, 67);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte Compras";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnLimpiar
             // 
@@ -371,7 +352,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(81, 53);
             this.btnLimpiar.TabIndex = 26;
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGenerarGrafico
             // 
@@ -392,7 +373,7 @@
             this.btnGenerarGrafico.Text = "Generar Gráfico";
             this.btnGenerarGrafico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenerarGrafico.UseVisualStyleBackColor = false;
-            this.btnGenerarGrafico.Click += new System.EventHandler(this.btnGenerarGrafico_Click_1);
+            this.btnGenerarGrafico.Click += new System.EventHandler(this.btnGenerarGrafico_Click);
             // 
             // descargarExcel
             // 
@@ -413,7 +394,7 @@
             this.descargarExcel.Text = "Descargar Excel";
             this.descargarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.descargarExcel.UseVisualStyleBackColor = false;
-            this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click_1);
+            this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click);
             // 
             // btnBuscarFecha
             // 
@@ -436,34 +417,39 @@
             this.btnBuscarFecha.UseVisualStyleBackColor = false;
             this.btnBuscarFecha.Click += new System.EventHandler(this.btnBuscarFecha_Click);
             // 
-            // reporteCompras
+            // reporteCategorias
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1418, 739);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listadoReporteCompras);
+            this.Controls.Add(this.listadoReporteCategoria);
             this.Font = new System.Drawing.Font("Century Schoolbook", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "reporteCompras";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "reporteCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.reporteCompras_Load_1);
+            this.Text = "ReporteCategorias";
+            this.Load += new System.EventHandler(this.reporteCategorias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCategoria)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.listadoReporteCompras)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-
-
-
         #endregion
 
+        private System.Windows.Forms.DataGridView listadoReporteCategoria;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label LCategorias;
+        private System.Windows.Forms.ComboBox CBcategoria;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        public FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton btnGenerarGrafico;
         private FontAwesome.Sharp.IconButton descargarExcel;
         private System.Windows.Forms.Label LFechaInicio;
@@ -471,24 +457,18 @@
         private System.Windows.Forms.Label LFechaFin;
         private System.Windows.Forms.DateTimePicker DTfin;
         private FontAwesome.Sharp.IconButton btnBuscarFecha;
-        private System.Windows.Forms.DataGridView listadoReporteCompras;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LProveedor;
-        private System.Windows.Forms.ComboBox CBproveedor;
-        public FontAwesome.Sharp.IconButton btnLimpiar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDTipoDococ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CuitProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioRegistro;
-    }   
+    }
 }

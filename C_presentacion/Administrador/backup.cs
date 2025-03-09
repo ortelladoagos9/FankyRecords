@@ -64,7 +64,7 @@ namespace FankyRecords.C_presentacion.Administrador
                     command.ExecuteNonQuery();
                     Limpiar();
 
-                    MessageBox.Show("El backup se generó correctamente en: " + this.backupPath, "Éxito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("El backup de DB_FANKY_RECORDS se generó correctamente en: " + this.backupPath, "Éxito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
