@@ -70,7 +70,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1418, 67);
+            this.panel1.Size = new System.Drawing.Size(1370, 67);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -80,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1418, 67);
+            this.label1.Size = new System.Drawing.Size(1370, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte Ventas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -92,7 +92,7 @@
             this.DTfin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DTfin.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTfin.Location = new System.Drawing.Point(797, 75);
+            this.DTfin.Location = new System.Drawing.Point(773, 75);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
             this.DTfin.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
@@ -123,7 +123,7 @@
             this.DTinicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DTinicio.Font = new System.Drawing.Font("Century Schoolbook", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTinicio.Location = new System.Drawing.Point(397, 75);
+            this.DTinicio.Location = new System.Drawing.Point(373, 75);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTinicio.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
@@ -188,7 +188,7 @@
             this.listadoReporteVentas.Name = "listadoReporteVentas";
             this.listadoReporteVentas.ReadOnly = true;
             this.listadoReporteVentas.RowHeadersWidth = 51;
-            this.listadoReporteVentas.Size = new System.Drawing.Size(1418, 440);
+            this.listadoReporteVentas.Size = new System.Drawing.Size(1370, 440);
             this.listadoReporteVentas.TabIndex = 1;
             // 
             // fechaVenta
@@ -268,7 +268,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 67);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1418, 232);
+            this.panel2.Size = new System.Drawing.Size(1370, 232);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -284,7 +284,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1418, 232);
+            this.panel3.Size = new System.Drawing.Size(1370, 232);
             this.panel3.TabIndex = 7;
             // 
             // panel4
@@ -297,14 +297,14 @@
             this.panel4.Location = new System.Drawing.Point(0, 179);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1418, 53);
+            this.panel4.Size = new System.Drawing.Size(1370, 53);
             this.panel4.TabIndex = 7;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnLimpiar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(970, 0);
+            this.panel5.Location = new System.Drawing.Point(922, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(448, 53);
@@ -391,10 +391,10 @@
             // 
             // reporteVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1418, 739);
+            this.ClientSize = new System.Drawing.Size(1370, 739);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listadoReporteVentas);
             this.Controls.Add(this.panel1);
