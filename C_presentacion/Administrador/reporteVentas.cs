@@ -76,6 +76,7 @@ namespace FankyRecords.C_presentacion.Administrador
             
             // Comparar las fechas
             int resultado = DateTime.Compare(fecha1, fecha2);
+            
 
             // Establecer la condición basada en la comparación
             if (resultado > 0)
@@ -106,7 +107,7 @@ namespace FankyRecords.C_presentacion.Administrador
                 {
                     listadoReporteVentas.Rows.Add(new object[]
                     {
-                        rv.FechaVenta,
+                        rv.FechaVenta.ToString("dd/MM/yyyy"),
                         rv.ID_Tipo_Doc,
                         rv.NumeroFactura,
                         rv.ID_cliente,
