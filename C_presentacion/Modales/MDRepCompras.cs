@@ -12,6 +12,20 @@ namespace FankyRecords.C_presentacion.Modales
     public partial class MDRepCompras : Form
     {
 
+        // Propiedad pública para acceder al TextBox
+        public TextBox TextBoxFecha
+        {
+            get { return this.TBfechaInicio; }
+            set { this.TBfechaInicio.Text = value.Text; }
+        }
+        // Propiedad pública para acceder al TextBox
+        public TextBox TextBoxFecha2
+        {
+            get { return this.TBfechaFin; }
+            set { this.TBfechaFin.Text = value.Text; }
+        }
+
+
         private readonly reporteCompras C_Reporte;
         private readonly DataGridView listadoReporteCompras; // Guarda el DataGridView
         public Chart GraficoCompras { get; set; }
@@ -47,17 +61,26 @@ namespace FankyRecords.C_presentacion.Modales
             foreach (DataGridViewRow row in listadoReporteCompras.Rows)
             {
                 if (row.IsNewRow) continue;
+                
                 string proveedor = row.Cells["RazonSocial"].Value?.ToString(); // Usa el operador null-conditional (?.)
                 if (string.IsNullOrEmpty(proveedor)) continue;  // Ignora filas sin valor de proveedor
 
-                if (proveedorContador.ContainsKey(proveedor))
+
+                // Obtener la cantidad de productos adquiridos en esta fila
+                int cantidadProductos = 0;
+                if (int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out cantidadProductos))
                 {
-                    proveedorContador[proveedor]++;
+                    // Sumar la cantidad de productos al proveedor correspondiente
+                    if (proveedorContador.ContainsKey(proveedor))
+                    {
+                        proveedorContador[proveedor] += cantidadProductos; // Sumar a la cantidad total de productos
+                    }
+                    else
+                    {
+                        proveedorContador[proveedor] = cantidadProductos; // Inicializar la cantidad de productos
+                    }
                 }
-                else
-                {
-                    proveedorContador[proveedor] = 1;
-                }
+
             }
 
             // Crear el gráfico
@@ -66,8 +89,8 @@ namespace FankyRecords.C_presentacion.Modales
             {
                 Name = "Proveedores",
                 IsValueShownAsLabel = true,
-                ChartType = SeriesChartType.Pie,
-                 LabelFormat = "0", // Si solo quieres mostrar los números de las compras
+                ChartType = SeriesChartType.Column,
+                LabelFormat = "0", // Si solo quieres mostrar los números de las compras
             };
             GraficoCompras.Series.Add(serie);
 
@@ -82,7 +105,7 @@ namespace FankyRecords.C_presentacion.Modales
                 punto.SetValueXY(proveedor.Key, proveedor.Value);  // Establecer el valor X (Proveedor) y Y (Cantidad)
 
                 // Establecer la etiqueta visible para cada punto en el gráfico
-                punto.Label = $"{proveedor.Key} ({proveedor.Value})"; // El nombre del proveedor y la cantidad
+                punto.Label = $"{proveedor.Value}"; // La cantidad de productos
 
                 // Cambiar la fuente del Label del punto
                 punto.Font = labelFont;
@@ -105,6 +128,7 @@ namespace FankyRecords.C_presentacion.Modales
 
         public void MDRepCompras_Load(object sender, EventArgs e)
         {
+
             // Agregar título al gráfico
             Title title = new Title("Gráfico de Compras por Proveedor");
             GraficoCompras.Titles.Add(title);
@@ -114,6 +138,17 @@ namespace FankyRecords.C_presentacion.Modales
             title.Font = titleFont;
             // Cambiar el color del título a DarkRed
             title.ForeColor = Color.DarkRed;
+
+            // Configurar los ejes con sus títulos
+            ChartArea chartAreaConfig = GraficoCompras.ChartAreas["MainArea"];
+
+            // Establecer nombre de eje X
+            chartAreaConfig.AxisX.Title = "Proveedor";
+            chartAreaConfig.AxisX.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
+
+            // Establecer nombre de eje Y
+            chartAreaConfig.AxisY.Title = "Cantidad de Productos";
+            chartAreaConfig.AxisY.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
 
             this.Size = new Size(800, 600); // Ajusta el tamaño del formulario para permitir mostrar el gráfico
             crearGrafico(); // Crear el gráfico al cargar el formulario

@@ -81,7 +81,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 67);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1418, 232);
+            this.panel3.Size = new System.Drawing.Size(1370, 232);
             this.panel3.TabIndex = 8;
             // 
             // LProveedor
@@ -89,7 +89,7 @@
             this.LProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LProveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LProveedor.ForeColor = System.Drawing.Color.DarkRed;
-            this.LProveedor.Location = new System.Drawing.Point(857, 77);
+            this.LProveedor.Location = new System.Drawing.Point(833, 77);
             this.LProveedor.Name = "LProveedor";
             this.LProveedor.Size = new System.Drawing.Size(154, 27);
             this.LProveedor.TabIndex = 9;
@@ -102,9 +102,9 @@
             this.CBproveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBproveedor.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBproveedor.FormattingEnabled = true;
-            this.CBproveedor.Location = new System.Drawing.Point(1013, 73);
+            this.CBproveedor.Location = new System.Drawing.Point(989, 73);
             this.CBproveedor.Name = "CBproveedor";
-            this.CBproveedor.Size = new System.Drawing.Size(232, 35);
+            this.CBproveedor.Size = new System.Drawing.Size(232, 29);
             this.CBproveedor.TabIndex = 8;
             // 
             // panel4
@@ -117,14 +117,14 @@
             this.panel4.Location = new System.Drawing.Point(0, 179);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1418, 53);
+            this.panel4.Size = new System.Drawing.Size(1370, 53);
             this.panel4.TabIndex = 7;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnLimpiar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(970, 0);
+            this.panel5.Location = new System.Drawing.Point(922, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(448, 53);
@@ -196,7 +196,7 @@
             this.LFechaInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LFechaInicio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaInicio.ForeColor = System.Drawing.Color.DarkRed;
-            this.LFechaInicio.Location = new System.Drawing.Point(23, 77);
+            this.LFechaInicio.Location = new System.Drawing.Point(-1, 77);
             this.LFechaInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LFechaInicio.Name = "LFechaInicio";
             this.LFechaInicio.Size = new System.Drawing.Size(180, 27);
@@ -212,21 +212,22 @@
             this.DTinicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DTinicio.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTinicio.Location = new System.Drawing.Point(211, 73);
+            this.DTinicio.Location = new System.Drawing.Point(187, 73);
             this.DTinicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTinicio.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTinicio.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTinicio.Name = "DTinicio";
-            this.DTinicio.Size = new System.Drawing.Size(232, 35);
+            this.DTinicio.Size = new System.Drawing.Size(232, 30);
             this.DTinicio.TabIndex = 2;
             this.DTinicio.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
+            this.DTinicio.ValueChanged += new System.EventHandler(this.DTinicio_ValueChanged);
             // 
             // LFechaFin
             // 
             this.LFechaFin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LFechaFin.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaFin.ForeColor = System.Drawing.Color.DarkRed;
-            this.LFechaFin.Location = new System.Drawing.Point(455, 77);
+            this.LFechaFin.Location = new System.Drawing.Point(431, 77);
             this.LFechaFin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LFechaFin.Name = "LFechaFin";
             this.LFechaFin.Size = new System.Drawing.Size(151, 27);
@@ -241,12 +242,12 @@
             this.DTfin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DTfin.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTfin.Location = new System.Drawing.Point(611, 73);
+            this.DTfin.Location = new System.Drawing.Point(587, 73);
             this.DTfin.Margin = new System.Windows.Forms.Padding(2);
             this.DTfin.MaxDate = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             this.DTfin.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.DTfin.Name = "DTfin";
-            this.DTfin.Size = new System.Drawing.Size(232, 35);
+            this.DTfin.Size = new System.Drawing.Size(232, 30);
             this.DTfin.TabIndex = 4;
             this.DTfin.Value = new System.DateTime(2025, 2, 25, 0, 0, 0, 0);
             // 
@@ -261,7 +262,7 @@
             this.btnBuscarFecha.IconColor = System.Drawing.Color.DarkRed;
             this.btnBuscarFecha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarFecha.IconSize = 25;
-            this.btnBuscarFecha.Location = new System.Drawing.Point(1255, 73);
+            this.btnBuscarFecha.Location = new System.Drawing.Point(1231, 73);
             this.btnBuscarFecha.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarFecha.Name = "btnBuscarFecha";
             this.btnBuscarFecha.Size = new System.Drawing.Size(129, 35);
@@ -317,7 +318,7 @@
             this.listadoReporteCompras.ReadOnly = true;
             this.listadoReporteCompras.RowHeadersWidth = 51;
             this.listadoReporteCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listadoReporteCompras.Size = new System.Drawing.Size(1418, 440);
+            this.listadoReporteCompras.Size = new System.Drawing.Size(1370, 440);
             this.listadoReporteCompras.TabIndex = 9;
             // 
             // FechaCompra
@@ -419,7 +420,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1418, 67);
+            this.panel1.Size = new System.Drawing.Size(1370, 67);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -430,14 +431,14 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1418, 67);
+            this.label1.Size = new System.Drawing.Size(1370, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte Compras";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // reporteCompras
             // 
-            this.ClientSize = new System.Drawing.Size(1418, 739);
+            this.ClientSize = new System.Drawing.Size(1370, 739);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listadoReporteCompras);

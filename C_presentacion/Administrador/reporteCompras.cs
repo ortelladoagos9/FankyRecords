@@ -11,6 +11,8 @@ namespace FankyRecords.C_presentacion.Administrador
 {
     public partial class reporteCompras : Form
     {
+     
+
         private readonly NegocioReporte CN_Reporte;
         private readonly NegocioProveedores CN_Proveedor;
 
@@ -116,15 +118,23 @@ namespace FankyRecords.C_presentacion.Administrador
 
         public void Grafico()
         {
+
             if (listadoReporteCompras.Rows.Count == 0 || (listadoReporteCompras.Rows.Count == 1 && listadoReporteCompras.Rows[0].IsNewRow))
             {
                 MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                
                 // Pasa el DataGridView a MDRepCompras
                 using (var modal = new MDRepCompras(listadoReporteCompras)) // Pasa el DataGridView al constructor
                 {
+                    // Pasar la fecha de inicio al TextBox de MDRepCompras
+                    modal.TextBoxFecha.Text = DTinicio.Value.ToString("dd/MM/yyyy"); // Aquí formateamos la fecha
+
+                    // Pasar la fecha de fin al TextBox de MDRepCompras
+                    modal.TextBoxFecha2.Text = DTfin.Value.ToString("dd/MM/yyyy"); // Aquí formateamos la fecha
+
                     modal.ShowDialog(); // Mostrar el modal
                 }
             }
@@ -133,6 +143,7 @@ namespace FankyRecords.C_presentacion.Administrador
         private void btnGenerarGrafico_Click_1(object sender, EventArgs e)
         {
             Grafico();
+
         }
 
         private void descargarExcel_Click_1(object sender, EventArgs e)
@@ -188,6 +199,11 @@ namespace FankyRecords.C_presentacion.Administrador
         {
             listadoReporteCompras.Rows.Clear();
             CBproveedor.SelectedIndex = 0;
+        }
+
+        private void DTinicio_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
