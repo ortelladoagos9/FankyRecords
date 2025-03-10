@@ -5,13 +5,10 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using FankyRecords.C_presentacion.Administrador;
 
-
-
 namespace FankyRecords.C_presentacion.Modales
 {
     public partial class MDRepCompras : Form
     {
-
         // Propiedad pública para acceder al TextBox
         public TextBox TextBoxFecha
         {
@@ -24,12 +21,9 @@ namespace FankyRecords.C_presentacion.Modales
             get { return this.TBfechaFin; }
             set { this.TBfechaFin.Text = value.Text; }
         }
-
-
         private readonly reporteCompras C_Reporte;
         private readonly DataGridView listadoReporteCompras; // Guarda el DataGridView
         public Chart GraficoCompras { get; set; }
-
 
         // Recibe el DataGridView en el constructor
         public MDRepCompras(DataGridView listadoReporteCompras)
@@ -80,7 +74,6 @@ namespace FankyRecords.C_presentacion.Modales
                         proveedorContador[proveedor] = cantidadProductos; // Inicializar la cantidad de productos
                     }
                 }
-
             }
 
             // Crear el gráfico
@@ -88,34 +81,41 @@ namespace FankyRecords.C_presentacion.Modales
             Series serie = new Series
             {
                 Name = "Proveedores",
-                IsValueShownAsLabel = true,
+                IsValueShownAsLabel = false,
                 ChartType = SeriesChartType.Column,
                 LabelFormat = "0", // Si solo quieres mostrar los números de las compras
             };
             GraficoCompras.Series.Add(serie);
 
-            // Establecer la fuente para los labels de los puntos en el gráfico
-            Font labelFont = new Font("Century Schoolbook", 8.2f, FontStyle.Bold);
+            // Lista de colores para diferenciar cada categoría
+            Color[] colores = { Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Purple, Color.Yellow };
+            int colorIndex = 0;
 
             // Agregar puntos al gráfico
             foreach (var proveedor in proveedorContador)
             {
-                // Crear un DataPoint y agregarlo a la serie
                 DataPoint punto = new DataPoint();
-                punto.SetValueXY(proveedor.Key, proveedor.Value);  // Establecer el valor X (Proveedor) y Y (Cantidad)
+                punto.SetValueXY(proveedor.Key, proveedor.Value);
+                punto.Color = colores[colorIndex % colores.Length]; // Asigna un color distinto a cada barra
+                punto.ToolTip = $"{proveedor.Key}: ({proveedor.Value})";
 
-                // Establecer la etiqueta visible para cada punto en el gráfico
-                punto.Label = $"{proveedor.Value}"; // La cantidad de productos
-
-                // Cambiar la fuente del Label del punto
-                punto.Font = labelFont;
-
-                // Establecer el ToolTip para cada punto
-                punto.ToolTip = $"{proveedor.Key} ({proveedor.Value})"; // Muestra nombre del proveedor en el tooltip
-
-                // Agregar el punto a la serie
                 serie.Points.Add(punto);
+                colorIndex++; // Cambia al siguiente color en la lista
             }
+
+            // Configuración del eje X ()
+            GraficoCompras.ChartAreas[0].AxisX.Title = "Proveedores";
+            GraficoCompras.ChartAreas[0].AxisX.TitleFont = new Font("Century Schoolbook", 16, FontStyle.Bold);
+            GraficoCompras.ChartAreas[0].AxisX.TitleForeColor = Color.Gray;
+            GraficoCompras.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Schoolbook", 14, FontStyle.Bold);
+            GraficoCompras.ChartAreas[0].AxisX.Interval = 1;
+
+            // Configuración del eje Y (
+            GraficoCompras.ChartAreas[0].AxisY.Title = "Cantidad de productos comprados";
+            GraficoCompras.ChartAreas[0].AxisY.TitleFont = new Font("Century Schoolbook", 16, FontStyle.Bold);
+            GraficoCompras.ChartAreas[0].AxisY.TitleForeColor = Color.Gray;
+            GraficoCompras.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Schoolbook", 14, FontStyle.Bold);
+            GraficoCompras.ChartAreas[0].AxisY.Interval = 10; 
 
             // Forzar redibujo del gráfico
             GraficoCompras.Invalidate();
@@ -133,30 +133,12 @@ namespace FankyRecords.C_presentacion.Modales
             GraficoCompras.Titles.Add(title);
 
             // Cambiar el estilo de la fuente del título
-            Font titleFont = new Font("Century Schoolbook", 10.2f, FontStyle.Bold);
+            Font titleFont = new Font("Century Schoolbook", 16f, FontStyle.Bold);
             title.Font = titleFont;
             // Cambiar el color del título a DarkRed
             title.ForeColor = Color.DarkRed;
 
-            // Configurar los ejes con sus títulos
-            ChartArea chartAreaConfig = GraficoCompras.ChartAreas["MainArea"];
-
-            // Establecer nombre de eje X
-            chartAreaConfig.AxisX.Title = "Proveedor";
-            chartAreaConfig.AxisX.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
-
-            // Establecer nombre de eje Y
-            chartAreaConfig.AxisY.Title = "Cantidad de Productos";
-            chartAreaConfig.AxisY.TitleFont = new Font("Century Schoolbook", 10, FontStyle.Bold);
-
-            this.Size = new Size(800, 600); // Ajusta el tamaño del formulario para permitir mostrar el gráfico
             crearGrafico(); // Crear el gráfico al cargar el formulario
         }
-
-        private void graficoCompras_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

@@ -193,6 +193,12 @@ namespace FankyRecords.C_presentacion.Administrador
                 // Pasa el DataGridView a MDRepCategorias
                 using (var modal = new MDRepCategorias(listadoReporteCategoria)) // Pasa el DataGridView al constructor
                 {
+                    // Pasar la fecha de inicio al TextBox
+                    modal.TextBoxFecha.Text = DTinicio.Value.ToString("dd/MM/yyyy"); // Aquí formateamos la fecha
+
+                    // Pasar la fecha de fin al TextBox 
+                    modal.TextBoxFecha2.Text = DTfin.Value.ToString("dd/MM/yyyy"); // Aquí formateamos la fecha
+
                     modal.ShowDialog(); // Mostrar el modal
                 }
             }

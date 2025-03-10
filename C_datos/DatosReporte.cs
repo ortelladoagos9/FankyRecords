@@ -83,15 +83,16 @@ namespace FankyRecords.C_datos
                         {
                             lista.Add(new ReporteVentas()
                             {
-                                FechaVenta= DateTime.Parse(dr["fechaVenta"].ToString()),
-                                ID_Tipo_Doc = int.Parse(dr["ID_Tipo_Doc"].ToString()),
-                                NumeroFactura= int.Parse(dr["NumeroFactura"].ToString()),
+                                FechaVenta = DateTime.Parse(dr["FechaVenta"].ToString()),
+                                TipoDoc = dr["Descripcion"].ToString(),
+                                NumeroFactura = int.Parse(dr["NumeroFactura"].ToString()),
+                                NombreCompleto = dr["NombreCompleto"].ToString(),
+                                Documento = dr["Documento"].ToString(),
                                 MontoTotal = decimal.Parse(dr["MontoTotal"].ToString()),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
-                                ID_cliente = int.Parse(dr["ID_cliente"].ToString()),
                                 CodigoProducto = int.Parse(dr["CodigoProducto"].ToString()),
                                 NombreProducto = dr["NombreProducto"].ToString(),
-                                Categoria = dr["Categoria"].ToString(),
+                                DescripcionProducto = dr["DescripcionProducto"].ToString(),
                                 Precioventa = decimal.Parse(dr["Precioventa"].ToString()),
                                 Cantidad = int.Parse(dr["Cantidad"].ToString()),
                                 SubTotal = decimal.Parse(dr["SubTotal"].ToString()),
@@ -103,7 +104,6 @@ namespace FankyRecords.C_datos
                 {
                     lista = new List<ReporteVentas>();
                 }
-
             }
             return lista;
         }

@@ -108,15 +108,17 @@ namespace FankyRecords.C_presentacion.Administrador
                     listadoReporteVentas.Rows.Add(new object[]
                     {
                         rv.FechaVenta.ToString("dd/MM/yyyy"),
-                        rv.ID_Tipo_Doc,
                         rv.NumeroFactura,
-                        rv.ID_cliente,
+                        rv.TipoDoc, 
+                        rv.NombreCompleto, 
+                        rv.Documento,
                         rv.CodigoProducto,
                         rv.NombreProducto,
-                        rv.Categoria,
+                        rv.DescripcionProducto,
                         rv.Precioventa.ToString("N2"),
                         rv.Cantidad,
-                        rv.MontoTotal.ToString("N2")
+                        rv.MontoTotal.ToString("N2"),
+                        rv.UsuarioRegistro
                     });
                 }
             }
@@ -134,22 +136,12 @@ namespace FankyRecords.C_presentacion.Administrador
             DTfin.Format = DateTimePickerFormat.Short;
         }
 
-        private void DTinicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             listadoReporteVentas.Rows.Clear();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void descargarExcel_Click(object sender, EventArgs e)
+        private void descargarExcel_Click_1(object sender, EventArgs e)
         {
             if (listadoReporteVentas.Rows.Count == 0 || (listadoReporteVentas.Rows.Count == 1 && listadoReporteVentas.Rows[0].IsNewRow))
             {
@@ -196,26 +188,6 @@ namespace FankyRecords.C_presentacion.Administrador
                     }
                 }
             }
-        }
-
-        private void DTinicio_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LFechaFin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DTfin_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LFechaInicio_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

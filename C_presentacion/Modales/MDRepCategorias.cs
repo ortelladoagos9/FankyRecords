@@ -14,6 +14,17 @@ namespace FankyRecords.C_presentacion.Modales
 {
     public partial class MDRepCategorias : Form
     {
+        public TextBox TextBoxFecha
+        {
+            get { return this.TBfechaInicioV; }
+            set { this.TBfechaInicioV.Text = value.Text; }
+        }
+        // Propiedad pública para acceder al TextBox
+        public TextBox TextBoxFecha2
+        {
+            get { return this.TBfechaFinV; }
+            set { this.TBfechaFinV.Text = value.Text; }
+        }
         private readonly reporteCategorias C_Reporte;
         private readonly DataGridView listadoReporteCategoria; // Guarda el DataGridView
         public Chart GraficoCategorias { get; set; }

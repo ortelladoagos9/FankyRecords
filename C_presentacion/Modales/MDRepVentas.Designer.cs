@@ -37,59 +37,64 @@
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(44, 411);
+            this.label1.Location = new System.Drawing.Point(12, 690);
+            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 15);
+            this.label1.Size = new System.Drawing.Size(135, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Fecha Inicio";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TBfechaInicioV
             // 
             this.TBfechaInicioV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TBfechaInicioV.Location = new System.Drawing.Point(133, 406);
+            this.TBfechaInicioV.Location = new System.Drawing.Point(155, 690);
+            this.TBfechaInicioV.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.TBfechaInicioV.Name = "TBfechaInicioV";
             this.TBfechaInicioV.ReadOnly = true;
-            this.TBfechaInicioV.Size = new System.Drawing.Size(100, 20);
+            this.TBfechaInicioV.Size = new System.Drawing.Size(156, 32);
             this.TBfechaInicioV.TabIndex = 2;
             this.TBfechaInicioV.TabStop = false;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(586, 411);
+            this.label2.Location = new System.Drawing.Point(943, 690);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 15);
+            this.label2.Size = new System.Drawing.Size(117, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha Fin";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TBfechaFinV
             // 
             this.TBfechaFinV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBfechaFinV.Location = new System.Drawing.Point(661, 409);
+            this.TBfechaFinV.Location = new System.Drawing.Point(1067, 690);
+            this.TBfechaFinV.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.TBfechaFinV.Name = "TBfechaFinV";
             this.TBfechaFinV.ReadOnly = true;
-            this.TBfechaFinV.Size = new System.Drawing.Size(100, 20);
+            this.TBfechaFinV.Size = new System.Drawing.Size(156, 32);
             this.TBfechaFinV.TabIndex = 4;
             this.TBfechaFinV.TabStop = false;
             // 
             // MDRepVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1242, 734);
             this.Controls.Add(this.TBfechaFinV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TBfechaInicioV);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "MDRepVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Ventas";
             this.Load += new System.EventHandler(this.MDRepVentas_Load);
             this.ResumeLayout(false);

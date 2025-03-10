@@ -53,37 +53,31 @@ namespace FankyRecords.C_presentacion.Modales
             GraficoVentas.ChartAreas.Add(chartArea);
         }
 
-        // Crear gráfico de torta
         public void crearGrafico()
         {
-            // Contar las apariciones de cada proveedor
-            Dictionary<string, int> productoContador = new Dictionary<string, int>();
+            Dictionary<string, int> acumuladorProducto = new Dictionary<string, int>();
 
-            // Acceder al DataGridView pasado
+            // Acceder al DataGridView
             foreach (DataGridViewRow row in listadoReporteVentas.Rows)
             {
                 if (row.IsNewRow) continue;
 
-                string producto = row.Cells["nomProducto"].Value?.ToString(); // Usa el operador null-conditional (?.)
-                if (string.IsNullOrEmpty(producto)) continue;  // Ignora filas sin valor de proveedor
+                string producto = row.Cells["NombreProducto"].Value?.ToString();
+                if (string.IsNullOrEmpty(producto)) continue;
 
-
-                // Obtener la cantidad de productos adquiridos en esta fila
                 int cantidadProductos = 0;
-                if (int.TryParse(row.Cells["cantidad"].Value?.ToString(), out cantidadProductos))
+                if (int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out cantidadProductos))
                 {
-                    // Sumar la cantidad de productos al proveedor correspondiente
-                    if (productoContador.ContainsKey(producto))
-                    {
-                        productoContador[producto] += cantidadProductos; // Sumar a la cantidad total de productos
-                    }
+                    if (acumuladorProducto.ContainsKey(producto))
+                        acumuladorProducto[producto] += cantidadProductos;
                     else
-                    {
-                        productoContador[producto] = cantidadProductos; // Inicializar la cantidad de productos
-                    }
+                        acumuladorProducto[producto] = cantidadProductos;
                 }
-
             }
+
+            // Calcular el total de productos vendidos
+            int totalProductos = acumuladorProducto.Values.Sum();
+            if (totalProductos == 0) return; // Evitar errores si no hay productos
 
             // Crear el gráfico
             GraficoVentas.Series.Clear();
@@ -92,39 +86,81 @@ namespace FankyRecords.C_presentacion.Modales
                 Name = "Productos",
                 IsValueShownAsLabel = true,
                 ChartType = SeriesChartType.Pie,
-                LabelFormat = "0", // Si solo quieres mostrar los números de las compras
+                LabelFormat = "P2", // Formato de porcentaje con 2 decimales
             };
             GraficoVentas.Series.Add(serie);
 
-            // Establecer la fuente para los labels de los puntos en el gráfico
-            Font labelFont = new Font("Century Schoolbook", 8.2f, FontStyle.Bold);
+            // Configurar la leyenda
+            GraficoVentas.Legends.Clear();
+            Legend legend = new Legend
+            {
+                Docking = Docking.Right, // Ubicar la leyenda a la derecha
+                Font = new Font("Century Schoolbook", 12, FontStyle.Bold), // Fuente más grande para la leyenda
+                BackColor = Color.Transparent
+            };
+            GraficoVentas.Legends.Add(legend);
+
+            // Lista de colores vivos
+            Color[] coloresVivos = new Color[]
+            {
+                Color.FromArgb(255, 99, 132), // Rojo vibrante
+                Color.FromArgb(0, 0, 205), 
+                Color.FromArgb(255, 206, 86), // Amarillo brillante
+                Color.FromArgb(75, 192, 192), // Verde turquesa
+                Color.FromArgb(153, 102, 255), // Morado vibrante
+                Color.FromArgb(255, 159, 64), // Naranja fuerte
+                Color.FromArgb(255, 105, 180),
+                Color.FromArgb(0, 191, 255),                
+                Color.FromArgb(127, 255, 212),
+                Color.FromArgb(178, 34, 34),
+                Color.FromArgb(75, 0, 130),
+                Color.FromArgb(199, 21, 133),
+                Color.FromArgb(46, 139, 87),
+                Color.FromArgb(255, 0, 0),
+                Color.FromArgb(0, 255, 0),
+                Color.FromArgb(255, 20, 147),
+            };
+
+            int colorIndex = 0;
 
             // Agregar puntos al gráfico
-            foreach (var producto in productoContador)
+            foreach (var producto in acumuladorProducto)
             {
-                // Crear un DataPoint y agregarlo a la serie
-                DataPoint punto = new DataPoint();
-                punto.SetValueXY(producto.Key, producto.Value);  // Establecer el valor X (Proveedor) y Y (Cantidad)
+                double porcentaje = (double)producto.Value / totalProductos; // Calcular porcentaje
 
-                // Establecer la etiqueta visible para cada punto en el gráfico
-                punto.Label = $"{producto.Value}"; // La cantidad de productos
+                DataPoint punto = new DataPoint
+                {
+                    Label = porcentaje.ToString("P2"), // Mostrar en porcentaje
+                    LegendText = producto.Key, // Mostrar el nombre en la leyenda
+                    Font = new Font("Century Schoolbook", 11, FontStyle.Bold) // Fuente más grande para el porcentaje
+                };
 
-                // Cambiar la fuente del Label del punto
-                punto.Font = labelFont;
+                punto.SetValueXY(producto.Key, producto.Value);
+                punto.ToolTip = $"{producto.Key}: {producto.Value} unidades ({porcentaje:P2})";
 
-                // Establecer el ToolTip para cada punto
-                punto.ToolTip = $"{producto.Key} ({producto.Value})"; // Muestra nombre del proveedor en el tooltip
+                // Asignar un color vibrante
+                punto.Color = coloresVivos[colorIndex % coloresVivos.Length];
+                colorIndex++;
 
-                // Agregar el punto a la serie
+                // Mover las etiquetas hacia afuera
+                punto.LabelForeColor = Color.Black; // Cambia el color del texto para mejor visibilidad
+                punto.LabelAngle = 0; // Asegura que el texto esté recto
+                punto.LabelFormat = "P2"; // Formato de porcentaje
+                punto.LabelForeColor = Color.Black; // Color del texto
+                punto["PieLabelStyle"] = "Outside"; // Mueve las etiquetas fuera del círculo
+
                 serie.Points.Add(punto);
             }
+
+            // Configurar las líneas guía de las etiquetas
+            serie["PieLineColor"] = "Black"; // Hace que las líneas de guía sean negras
 
             // Forzar redibujo del gráfico
             GraficoVentas.Invalidate();
             GraficoVentas.Update();
             GraficoVentas.Refresh();
 
-            // Verificar si el gráfico es visible
+            // Mostrar el gráfico
             GraficoVentas.Visible = true;
         }
 
@@ -136,7 +172,7 @@ namespace FankyRecords.C_presentacion.Modales
             GraficoVentas.Titles.Add(title);
 
             // Cambiar el estilo de la fuente del título
-            Font titleFont = new Font("Century Schoolbook", 10.2f, FontStyle.Bold);
+            Font titleFont = new Font("Century Schoolbook", 16f, FontStyle.Bold);
             title.Font = titleFont;
             // Cambiar el color del título a DarkRed
             title.ForeColor = Color.DarkRed;
@@ -144,14 +180,7 @@ namespace FankyRecords.C_presentacion.Modales
             // Configurar los ejes con sus títulos
             ChartArea chartAreaConfig = GraficoVentas.ChartAreas["MainArea"];
 
-          
-
-            this.Size = new Size(800, 600); // Ajusta el tamaño del formulario para permitir mostrar el gráfico
             crearGrafico(); // Crear el gráfico al cargar el formulario
-
-
-
-
-        }
+        }  
     }
 }
