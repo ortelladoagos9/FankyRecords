@@ -127,6 +127,7 @@
             // 
             // contenedorDatos
             // 
+            this.contenedorDatos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.contenedorDatos.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.contenedorDatos.Controls.Add(this.TBtelefono);
             this.contenedorDatos.Controls.Add(this.rutaFoto);
@@ -148,7 +149,6 @@
             this.contenedorDatos.Controls.Add(this.LDni);
             this.contenedorDatos.Controls.Add(this.LApellido);
             this.contenedorDatos.Controls.Add(this.LNombre);
-            this.contenedorDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedorDatos.ForeColor = System.Drawing.Color.DarkRed;
             this.contenedorDatos.Location = new System.Drawing.Point(359, 69);
             this.contenedorDatos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -194,7 +194,7 @@
             // 
             // TBconfirmarClave
             // 
-            this.TBconfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBconfirmarClave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TBconfirmarClave.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBconfirmarClave.Location = new System.Drawing.Point(617, 414);
             this.TBconfirmarClave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -207,7 +207,7 @@
             // 
             // TBclave
             // 
-            this.TBclave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBclave.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TBclave.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBclave.Location = new System.Drawing.Point(617, 320);
             this.TBclave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -220,7 +220,7 @@
             // 
             // LConfirmarContraseña
             // 
-            this.LConfirmarContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LConfirmarContraseña.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LConfirmarContraseña.AutoSize = true;
             this.LConfirmarContraseña.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LConfirmarContraseña.Location = new System.Drawing.Point(617, 382);
@@ -232,7 +232,7 @@
             // 
             // LContraseña
             // 
-            this.LContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LContraseña.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LContraseña.AutoSize = true;
             this.LContraseña.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LContraseña.Location = new System.Drawing.Point(617, 288);
@@ -244,7 +244,7 @@
             // 
             // TBemail
             // 
-            this.TBemail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBemail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TBemail.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBemail.Location = new System.Drawing.Point(622, 132);
             this.TBemail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -255,7 +255,7 @@
             // 
             // LEmail
             // 
-            this.LEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LEmail.AutoSize = true;
             this.LEmail.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEmail.Location = new System.Drawing.Point(622, 100);
@@ -267,7 +267,7 @@
             // 
             // TBdireccion
             // 
-            this.TBdireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBdireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBdireccion.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBdireccion.Location = new System.Drawing.Point(158, 508);
             this.TBdireccion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -293,7 +293,7 @@
             // 
             // LDireccion
             // 
-            this.LDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LDireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.LDireccion.AutoSize = true;
             this.LDireccion.Font = new System.Drawing.Font("Century Schoolbook", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDireccion.Location = new System.Drawing.Point(158, 476);
